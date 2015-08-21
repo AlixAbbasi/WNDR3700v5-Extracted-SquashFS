@@ -1,0 +1,16 @@
+kernel/crypto/aes_generic.ko
+kernel/crypto/ansi_cprng.ko
+kernel/drivers/char/hs_dma.ko
+kernel/drivers/scsi/scsi_wait_scan.ko
+kernel/drivers/net/usb/asix.ko
+kernel/drivers/net/usb/cdc_ether.ko
+kernel/drivers/net/usb/cdc_ncm.ko
+kernel/drivers/net/usb/dm9601.ko
+kernel/drivers/net/usb/cdc_subset.ko
+kernel/drivers/net/wireless/rlt_wifi_ap/rlt_wifi.ko
+kernel/drivers/net/tun.ko
+kernel/drivers/usb/storage/usb-storage.ko
+kernel/drivers/usb/class/usblp.ko
+kernel/drivers/usb/serial/usbserial.ko
+kernel/drivers/usb/serial/usbserial_filter.ko
+kernel/net/nat/hw_nat/hw_nat.ko

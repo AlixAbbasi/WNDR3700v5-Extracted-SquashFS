@@ -1,0 +1,21 @@
+#!/bin/sh
+
+/bin/echo "ppp up" > /dev/console
+
+detectwan_info_file=$7
+
+# ipcp_script()
+
+echo failover info file $detectwan_info_file > /dev/console
+
+route -n > /dev/console
+
+/bin/echo interface $1 > $detectwan_info_file
+/bin/echo gateway $5 >>  $detectwan_info_file
+/bin/echo mask 255.255.255.255 >> $detectwan_info_file
+/bin/echo nameserver $DNS1 >> $detectwan_info_file
+
+/usr/sbin/rc detectrule start
+
+
+

@@ -1,0 +1,57 @@
+# this file should exec in rcS before starting 3g
+echo preapre_sys_for_3g
+[ -d /sys/bus/usb/ ] || mount -t sysfs none /sys/
+[ -f /proc/bus/usb/devices ] || mount -t usbfs none /proc/bus/usb
+
+# for sms mtd
+/bin/mknod /dev/zero c 1 5
+
+/bin/mknod /dev/ttyUSB0 c 188 0
+chmod 0666 /dev/ttyUSB0
+/bin/mknod /dev/ttyUSB1 c 188 1
+chmod 0666 /dev/ttyUSB1
+/bin/mknod /dev/ttyUSB2 c 188 2
+chmod 0666 /dev/ttyUSB2
+/bin/mknod /dev/ttyUSB3 c 188 3
+chmod 0666 /dev/ttyUSB3
+/bin/mknod /dev/ttyUSB4 c 188 4
+chmod 0666 /dev/ttyUSB4
+/bin/mknod /dev/ttyUSB5 c 188 5
+chmod 0666 /dev/ttyUSB5
+/bin/mknod /dev/ttyUSB6 c 188 6
+chmod 0666 /dev/ttyUSB6
+/bin/mknod /dev/ttyUSB7 c 188 7
+chmod 0666 /dev/ttyUSB7
+/bin/mknod /dev/ttyUSB8 c 188 8
+chmod 0666 /dev/ttyUSB8
+/bin/mknod /dev/ttyUSB9 c 188 9
+chmod 0666 /dev/ttyUSB9
+/bin/mknod /dev/ttyUSB10 c 188 10
+chmod 0666 /dev/ttyUSB10
+
+/bin/mknod /dev/ttyHS0 c 249 0
+chmod 0666 /dev/ttyHS0
+/bin/mknod /dev/ttyHS1 c 249 1
+chmod 0666 /dev/ttyHS1
+/bin/mknod /dev/ttyHS2 c 249 2
+chmod 0666 /dev/ttyHS2
+/bin/mknod /dev/ttyHS3 c 249 3
+chmod 0666 /dev/ttyHS3
+/bin/mknod /dev/scd0 b 11 0
+/bin/mknod /dev/scd1 b 11 1
+
+/bin/mkdir /etc/ppp/peers
+/bin/mkdir /etc/ppp/scripts
+cp /etc/3g /etc/ppp/peers/
+cp /etc/3g.chat /etc/ppp/scripts/
+/bin/mkdir /tmp/ppp
+/bin/mkdir /tmp/ppp/peers
+/bin/mkdir /tmp/ppp/scripts
+/bin/mkdir /var
+/bin/mkdir /var/usbmodem
+/bin/mkdir /var/usbmodem/1
+/bin/touch /var/usbmodem/1/debug_log
+echo preapre_sys_for_3g done
+
+
+

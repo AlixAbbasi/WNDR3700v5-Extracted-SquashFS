@@ -1,0 +1,53 @@
+#!/bin/sh
+#export PATH=$PATH:/gw/bin
+#export LD_LIBRARY_PATH=/lib:/gw/lib
+
+#[ -z "$1" ] && echo "Error: should be called from udhcpc" && exit 1
+
+#/bin/echo "dhcp6c.script: iapd=$new_iapd" > /dev/console
+#/bin/echo "dhcp6c.script: dns=$new_domain_name_servers" > /dev/console
+
+/usr/sbin/echo ipv6 dhcp6 UP script > /dev/console
+
+if [ -n "$new_domain_name_servers" ]; then
+/usr/sbin/echo ipv6 dhcp6 UP script new_domain_name_servers $new_domain_name_servers > /dev/console
+/bin/echo $new_domain_name_servers > /var/ip6dns.new
+fi
+
+if [ -n "$new_iapd" ]; then
+/usr/sbin/echo ipv6 dhcp6 UP script call for information-only request > /dev/console
+# this app timeout 5
+interface_to_send=`/bin/cat /etc/dhcp6c_infoonly.script | /bin/grep interface`
+interface_to_send=${interface_to_send#interface}
+/bin/echo interface_to_send $interface_to_send > /dev/console
+if [ -z $interface_to_send ]
+then
+	/bin/echo interface_to_send is NULL > /dev/console
+else
+	/tmp/dhcp6c_infoonly -i $interface_to_send -c /etc/dhcp6c_infoonly.script&
+	/usr/sbin/sleep 5
+	/usr/sbin/killall dhcp6c_infoonly
+	/usr/sbin/echo ipv6 dhcp6 UP script information-only request done > /dev/console
+fi
+
+
+/usr/sbin/echo ipv6 dhcp6 UP script new_iapd $new_iapd > /dev/console
+/bin/echo $new_iapd > /var/ip6prefix.new
+
+
+/usr/sbin/echo ipv6 dhcp6 UP script call lan6_restart > /dev/console
+#EVG1500 only support 2 agrs 
+#/usr/sbin/rc ipv6 lan6 restart
+/usr/sbin/rc lan6_restart start
+#/usr/sbin/rc radvd restart
+#/usr/sbin/rc dhcp6 restart
+#/usr/sbin/rc firewall6 restart
+fi
+
+
+#/usr/sbin/rc tlvpaser start
+#/usr/sbin/rc snmp restart
+#/usr/sbin/rc passthru start
+
+/usr/sbin/echo ipv6 dhcp6 UP script done > /dev/console
+
