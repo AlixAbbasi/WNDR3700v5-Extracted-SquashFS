@@ -1,0 +1,1648 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tag_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<message>
+<tag_code>25</tag_code>
+<translation> 下一步 </translation>
+<variable>Next</variable>
+</message>
+<message>
+<tag_code>88</tag_code>
+<translation>因特网服务提供商</translation>
+<variable>Internet Service Provider</variable>
+</message>
+<message>
+<tag_code>91</tag_code>
+<translation>登录</translation>
+<variable>Login</variable>
+</message>
+<message>
+<tag_code>175</tag_code>
+<translation>后退</translation>
+<variable>Back</variable>
+</message>
+<message>
+<tag_code>466</tag_code>
+<translation>设置向导</translation>
+<variable>Setup Wizard</variable>
+</message>
+<message>
+<tag_code>534</tag_code>
+<translation>国家和地区</translation>
+<variable>Country</variable>
+</message>
+<message>
+<tag_code>552</tag_code>
+<translation>无线</translation>
+<variable>Wireless</variable>
+</message>
+<message>
+<tag_code>597</tag_code>
+<translation>协议类型</translation>
+<variable>Connection Type</variable>
+</message>
+<message>
+<tag_code>708</tag_code>
+<translation>子网掩码</translation>
+<variable>Subnet Mask</variable>
+</message>
+<message>
+<tag_code>709</tag_code>
+<translation>缺省网关</translation>
+<variable>Default Gateway</variable>
+</message>
+<message>
+<tag_code>753</tag_code>
+<translation>重试</translation>
+<variable>Try again</variable>
+</message>
+<message>
+<tag_code>860</tag_code>
+<translation>检测到动态IP(DHCP)</translation>
+<variable>Dynamic IP (DHCP) detected</variable>
+</message>
+<message>
+<tag_code>875</tag_code>
+<translation>智能设置向导可检测您的因特网连接类型。</translation>
+<variable>The Smart Setup Wizard can detect the type of Internet connection that you have.</variable>
+</message>
+<message>
+<tag_code>876</tag_code>
+<translation>现在是否需要“智能设置向导”检测连接类型？</translation>
+<variable>Do you want the Smart Setup Wizard to try and detect the connection type now?</variable>
+</message>
+<message>
+<tag_code>877</tag_code>
+<translation>否。我自己配置路由器。</translation>
+<variable>No. I want to configure the router myself.</variable>
+</message>
+<message>
+<tag_code>3000</tag_code>
+<translation>- 确保电缆连接正确。有关说明，请参阅路由器安装指南。</translation>
+<variable>- Check that the cable connections are correct. Refer to the router Installation Guide for instructions.</variable>
+</message>
+<message>
+<tag_code>3001</tag_code>
+<translation>- 检查宽带调制解调器是否已正确重启。如果您使用的是带有备用电池的调制解调器，请取出电池再重新插入，以重启调制解调器。</translation>
+<variable>- Check that your broadband modem is power cycled correctly. If you have a battery-backed modem, remove and reinsert the battery to power cycle your modem.</variable>
+</message>
+<message>
+<tag_code>3003</tag_code>
+<translation>（格式AABBCCDDEEFF）</translation>
+<variable>(format AABBCCDDEEFF)</variable>
+</message>
+<message>
+<tag_code>3006</tag_code>
+<translation>1.您在执行接线步骤期间没有重启调制解调器。</translation>
+<variable>1.  The modem was not power cycled during the cabling step.</variable>
+</message>
+<message>
+<tag_code>3007</tag_code>
+<translation>2.黄色的以太网线缆未完全插入，或插入了错误的位置。</translation>
+<variable>2.  The yellow Ethernet cable is not fully inserted, or is inserted in the wrong place.</variable>
+</message>
+<message>
+<tag_code>3008</tag_code>
+<translation>MAC地址是一个唯一的编号。您可以在计算机或路由器的产品标签上找到其MAC地址。</translation>
+<variable>A MAC address is a unique number.  You can find the MAC address of the computer or router on its product label.</variable>
+</message>
+<message>
+<tag_code>3014</tag_code>
+<translation>检查以太网线缆后，请单击&lt;b&gt;重试&lt;/b&gt;。</translation>
+<variable>After you have checked the Ethernet cable, click &lt;b&gt;Try again&lt;/b&gt;.</variable>
+</message>
+<message>
+<tag_code>3015</tag_code>
+<translation>备用DNS服务器</translation>
+<variable>Alternate DNS Server</variable>
+</message>
+<message>
+<tag_code>3017</tag_code>
+<translation>正在应用因特网连接设置</translation>
+<variable>Applying Internet Connection Settings</variable>
+</message>
+<message>
+<tag_code>3020</tag_code>
+<translation>上一步</translation>
+<variable>Back</variable>
+</message>
+<message>
+<tag_code>3023</tag_code>
+<translation>请选择您保存的路由器设置备份文件，然后单击“下一步”继续。</translation>
+<variable>Browse to the router settings backup file you previously saved, and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3024</tag_code>
+<translation>正在检查因特网连接；请稍候。</translation>
+<variable>Checking the Internet connection; please wait …</variable>
+</message>
+<message>
+<tag_code>3025</tag_code>
+<translation>请单击此处</translation>
+<variable>Click here</variable>
+</message>
+<message>
+<tag_code>3028</tag_code>
+<translation>正在配置因特网连接</translation>
+<variable>Configuring the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3029</tag_code>
+<translation>恭喜！</translation>
+<variable>Congratulations!</variable>
+</message>
+<message>
+<tag_code>3030</tag_code>
+<translation>连接ID/名称</translation>
+<variable>Connection ID/Name</variable>
+</message>
+<message>
+<tag_code>3031</tag_code>
+<translation>继续</translation>
+<variable>Continue</variable>
+</message>
+<message>
+<tag_code>3034</tag_code>
+<translation>正在检测因特网连接</translation>
+<variable>Detecting the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3035</tag_code>
+<translation>因特网服务提供商(ISP)是否为您分配了固定（静态）IP地址？这是一种&lt;b&gt;极其罕见&lt;/b&gt;的特殊部署。 </translation>
+<variable>Did your Internet Service Provider (ISP) assign to you a fixed (static) IP address? This is a &lt;b&gt;very rare&lt;/b&gt; special deployment. </variable>
+</message>
+<message>
+<tag_code>3037</tag_code>
+<translation>需要NETGEAR精灵为您提供帮助吗？</translation>
+<variable>Do you want NETGEAR Genie to help?</variable>
+</message>
+<message>
+<tag_code>3038</tag_code>
+<translation>您希望NETGEAR精灵重试一次吗？</translation>
+<variable>Do you want NETGEAR Genie to try again?</variable>
+</message>
+<message>
+<tag_code>3043</tag_code>
+<translation>请输入因特网服务提供商分配的固定IP地址，然后单击“下一步”继续。</translation>
+<variable>Enter the fixed IP settings assigned by your Internet Service Provider and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3044</tag_code>
+<translation>请在这里输入MAC地址。</translation>
+<variable>Enter the MAC address here.</variable>
+</message>
+<message>
+<tag_code>3045</tag_code>
+<translation>请再次输入所需的信息。</translation>
+<variable>Enter the required information again.</variable>
+</message>
+<message>
+<tag_code>3046</tag_code>
+<translation>请在下面输入所需的信息。</translation>
+<variable>Enter the required information below.</variable>
+</message>
+<message>
+<tag_code>3049</tag_code>
+<translation>故障</translation>
+<variable>Failure</variable>
+</message>
+<message>
+<tag_code>3053</tag_code>
+<translation>固定因特网IP设置</translation>
+<variable>Fixed Internet IP Settings</variable>
+</message>
+<message>
+<tag_code>3054</tag_code>
+<translation>默认网关</translation>
+<variable>Gateway IP Address</variable>
+</message>
+<message>
+<tag_code>3060</tag_code>
+<translation>我已纠正以太网线缆问题。</translation>
+<variable>I corrected a problem with the Ethernet cable.</variable>
+</message>
+<message>
+<tag_code>3061</tag_code>
+<translation>我不知道。 </translation>
+<variable>I don't know. </variable>
+</message>
+<message>
+<tag_code>3062</tag_code>
+<translation>我备份过路由器的设置。我想将路由器恢复为这些设置。</translation>
+<variable>I have saved the router settings in a file and I want to restore the router to those settings.</variable>
+</message>
+<message>
+<tag_code>3063</tag_code>
+<translation>我刚刚重启调制解调器并等待了2分钟。</translation>
+<variable>I just power cycled the modem and waited for 2 minutes.</variable>
+</message>
+<message>
+<tag_code>3064</tag_code>
+<translation>我想自己配置因特网连接</translation>
+<variable>I want to configure the Internet connection myself</variable>
+</message>
+<message>
+<tag_code>3065</tag_code>
+<translation>&lt;b&gt;闲置超时&lt;/b&gt;（分钟）</translation>
+<variable>&lt;b&gt;Idle Timeout&lt;/b&gt;(In Minutes)</variable>
+</message>
+<message>
+<tag_code>3067</tag_code>
+<translation>如果您之前使用计算机或另一台路由器连接到因特网服务，则NETGEAR精灵可以使用之前能够正常工作的MAC地址。</translation>
+<variable>If you previously connected to your Internet service with a computer or another router,  NETGEAR Genie can use the same MAC address that worked before.</variable>
+</message>
+<message>
+<tag_code>3068</tag_code>
+<translation>重要的更新</translation>
+<variable>Important Update</variable>
+</message>
+<message>
+<tag_code>3073</tag_code>
+<translation>ISP用户名和/或密码不正确</translation>
+<variable>Incorrect ISP User name or Password</variable>
+</message>
+<message>
+<tag_code>3094</tag_code>
+<translation>请务必将电缆牢固插入宽带调制解调器端口及路由器的因特网端口。</translation>
+<variable>Make sure that the cable is securely plugged into both the broadband modem port and the router Internet port.</variable>
+</message>
+<message>
+<tag_code>3095</tag_code>
+<translation>我的IP地址</translation>
+<variable>My IP Address</variable>
+</message>
+<message>
+<tag_code>3097</tag_code>
+<translation>网络连接问题</translation>
+<variable>Network Connection Issue</variable>
+</message>
+<message>
+<tag_code>3098</tag_code>
+<translation>网络密钥（密码）</translation>
+<variable>network key (password)</variable>
+</message>
+<message>
+<tag_code>3099</tag_code>
+<translation>网络密钥（密码）</translation>
+<variable>network key (password)</variable>
+</message>
+<message>
+<tag_code>3100</tag_code>
+<translation> 下一步 </translation>
+<variable>Next</variable>
+</message>
+<message>
+<tag_code>3101</tag_code>
+<translation>路由器的因特网端口未插入以太网电缆。</translation>
+<variable>No Ethernet Cable Is Plugged into the Router Internet Port</variable>
+</message>
+<message>
+<tag_code>3103</tag_code>
+<translation>没有，我未从ISP处获得固定（静态）IP地址。</translation>
+<variable>No, I did not get a fixed (static) IP address from my ISP.</variable>
+</message>
+<message>
+<tag_code>3104</tag_code>
+<translation>不需要，我想自己配置因特网连接。</translation>
+<variable>No, I want to configure the Internet connection myself.</variable>
+</message>
+<message>
+<tag_code>3106</tag_code>
+<translation>不存在上述问题。</translation>
+<variable>None of the above.</variable>
+</message>
+<message>
+<tag_code>3113</tag_code>
+<translation>密码</translation>
+<variable>Password</variable>
+</message>
+<message>
+<tag_code>3118</tag_code>
+<translation>请检查以下项目。</translation>
+<variable>Please review the following items:</variable>
+</message>
+<message>
+<tag_code>3121</tag_code>
+<translation>请等待一会...</translation>
+<variable>Please wait a moment...</variable>
+</message>
+<message>
+<tag_code>3122</tag_code>
+<translation>检测到PPPoE因特网连接</translation>
+<variable>PPPoE DSL Internet Connection Detected</variable>
+</message>
+<message>
+<tag_code>3123</tag_code>
+<translation>检测到PPTP因特网连接</translation>
+<variable>PPTP Internet Connection Detected</variable>
+</message>
+<message>
+<tag_code>3124</tag_code>
+<translation>首选DNS服务器</translation>
+<variable>Preferred DNS Server</variable>
+</message>
+<message>
+<tag_code>3125</tag_code>
+<translation>打印此页</translation>
+<variable>Print this</variable>
+</message>
+<message>
+<tag_code>3126</tag_code>
+<translation>检测因特网连接时遇到问题 - IP地址</translation>
+<variable>Problem Detecting the Internet Connection - IP Address</variable>
+</message>
+<message>
+<tag_code>3127</tag_code>
+<translation>检测因特网连接时遇到问题 - MAC地址</translation>
+<variable>Problem Detecting the Internet Connection - MAC Address</variable>
+</message>
+<message>
+<tag_code>3128</tag_code>
+<translation>检测因特网连接时遇到问题</translation>
+<variable>Problem Detecting the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3130</tag_code>
+<translation>恢复路由器设置</translation>
+<variable>Restore Router Settings </variable>
+</message>
+<message>
+<tag_code>3131</tag_code>
+<translation>正在恢复路由器设置</translation>
+<variable>Restoring Router Settings</variable>
+</message>
+<message>
+<tag_code>3135</tag_code>
+<translation>路由器固件版本</translation>
+<variable>Router Firmware Version</variable>
+</message>
+<message>
+<tag_code>3144</tag_code>
+<translation>请选择一个选项，然后单击“下一步”继续。</translation>
+<variable>Select an option and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3147</tag_code>
+<translation>服务器地址</translation>
+<variable>Server Address</variable>
+</message>
+<message>
+<tag_code>3150</tag_code>
+<translation>带我畅游因特网</translation>
+<variable>Take me to the Internet</variable>
+</message>
+<message>
+<tag_code>3155</tag_code>
+<translation>很遗憾，路由器无法使用当前设置连接至因特网。</translation>
+<variable>The router cannot connect to the Internet with the current settings.</variable>
+</message>
+<message>
+<tag_code>3156</tag_code>
+<translation>这很可能是由以下原因之一造成的：</translation>
+<variable>This is most likely due to one of the following reasons:</variable>
+</message>
+<message>
+<tag_code>3157</tag_code>
+<translation>该过程需要花费几分钟时间；请稍候...</translation>
+<variable>This process can take a few minutes; please wait …</variable>
+</message>
+<message>
+<tag_code>3158</tag_code>
+<translation>该过程需要花费一至两分钟时间；请稍候...</translation>
+<variable>This process can take a minute or two; please wait...</variable>
+</message>
+<message>
+<tag_code>3159</tag_code>
+<translation>该路由器已预设以下唯一的无线网络名称(SSID)和</translation>
+<variable>This router is preset with the following unique wireless network name (SSID) and </variable>
+</message>
+<message>
+<tag_code>3160</tag_code>
+<translation>这张网页将在几秒钟内自动跳转到相应的页面。</translation>
+<variable>This screen will automatically return to the previous screen in a few seconds...</variable>
+</message>
+<message>
+<tag_code>3161</tag_code>
+<translation>为了避免和你的网络提供商的IP地址发生冲突, 路由器的IP地址已经更新到</translation>
+<variable>To avoid a conflict with your Internet Service Provider, your router's IP address has been updated to </variable>
+</message>
+<message>
+<tag_code>3163</tag_code>
+<translation>要解决此问题，请务必将黄色的以太网线缆牢固插入宽带调制解调器端口及路由器的因特网端口。</translation>
+<variable>To solve this problem, make sure that the yellow Ethernet cable is securely plugged in to the broadband modem port and the router Internet port.</variable>
+</message>
+<message>
+<tag_code>3164</tag_code>
+<translation>要解决此问题，请重启调制解调器（先关闭电源，再重新打开）。如果调制解调器带有备用电池，则要重启调制解调器，您可能需要取出电池再重新插入。开关一次电源以后，请等待2分钟，直到调制解调器完全启动为止。</translation>
+<variable>To solve this problem, power cycle the modem (turn it off and on). To power cycle a modem with battery backup, you might need to remove and reinsert its battery. After the power cycle, wait 2 minutes for the modem to completely start up.</variable>
+</message>
+<message>
+<tag_code>3165</tag_code>
+<translation>重试</translation>
+<variable>Try again</variable>
+</message>
+<message>
+<tag_code>3168</tag_code>
+<translation>用户名</translation>
+<variable>User Name</variable>
+</message>
+<message>
+<tag_code>3187</tag_code>
+<translation>无线网络标识(SSID)</translation>
+<variable>Wireless Network Name (SSID)</variable>
+</message>
+<message>
+<tag_code>3189</tag_code>
+<translation>无线</translation>
+<variable>Wireless</variable>
+</message>
+<message>
+<tag_code>3190</tag_code>
+<translation> 是 </translation>
+<variable>Yes</variable>
+</message>
+<message>
+<tag_code>3191</tag_code>
+<translation>是的。我的ISP为我分配了固定（静态）IP地址。</translation>
+<variable>Yes. My ISP assigned a fixed (static) IP address to me.</variable>
+</message>
+<message>
+<tag_code>3193</tag_code>
+<translation>您尚未连接到因特网。</translation>
+<variable>You are not yet connected to the Internet.</variable>
+</message>
+<message>
+<tag_code>3194</tag_code>
+<translation>您已成功连接至因特网。</translation>
+<variable>You are successfully connected to the Internet.</variable>
+</message>
+<message>
+<tag_code>3197</tag_code>
+<translation>您的路由器已预设WPA2-PSK无线安全设置，以防您的网络遭受未经授权的访问。要加入该无线网络，您必须输入网络密钥（密码）。这些预设设置对于该设备是唯一的，就像序列号一样。如需更改它们，可稍后在路由器Web GUI的“无线设置”屏幕中进行更改。</translation>
+<variable>Your router is preset with WPA2-PSK wireless security to protect your network from unwanted access. To join the wireless network, you must enter the network key (password). These preset settings are unique to this device, like a serial number.  If you want to change them, you can do so later in the Wireless Settings screen on the router web GUI.</variable>
+</message>
+<message>
+<tag_code>3198</tag_code>
+<translation>无线安全未在此路由器上启用。NETGEAR强烈建议</translation>
+<variable>Wireless security is not enabled on this router. NETGEAR highly recommends that you</variable>
+</message>
+<message>
+<tag_code>3199</tag_code>
+<translation>启用无线安全保护你的网络。</translation>
+<variable>to enable wireless security and protect your network.</variable>
+</message>
+<message>
+<tag_code>3210</tag_code>
+<translation>Auto-Detect</translation>
+<variable>Auto-Detect</variable>
+</message>
+<message>
+<tag_code>3212</tag_code>
+<translation>单击“下一步”以继续。</translation>
+<variable>Click "Next" to continue.</variable>
+</message>
+<message>
+<tag_code>3305</tag_code>
+<translation>配置助手结果</translation>
+<variable>Configuration Assistant Result</variable>
+</message>
+<message>
+<tag_code>3307</tag_code>
+<translation>单击</translation>
+<variable>click</variable>
+</message>
+<message>
+<tag_code>3309</tag_code>
+<translation>退出</translation>
+<variable>Quit</variable>
+</message>
+<message>
+<tag_code>3316</tag_code>
+<translation>以太网广域网配置完成</translation>
+<variable>Ethernet WAN Configuration Completed</variable>
+</message>
+<message>
+<tag_code>3317</tag_code>
+<translation>下一步，我们将引导您将路由器配置到您的移动宽带因特网连接上。</translation>
+<variable>Next, we will guide you through configuring the router to use your Mobile Broadband Internet connection.</variable>
+</message>
+<message>
+<tag_code>3318</tag_code>
+<translation>不能连接到网络</translation>
+<variable>Could not connect to the Internet</variable>
+</message>
+<message>
+<tag_code>3319</tag_code>
+<translation>可能出现以下问题。</translation>
+<variable>The problem could be one of the following.</variable>
+</message>
+<message>
+<tag_code>3320</tag_code>
+<translation>可能是不正确的配置设置</translation>
+<variable>Possible Incorrect Configuration Setting.</variable>
+</message>
+<message>
+<tag_code>3321</tag_code>
+<translation>Check the configuration settings you entered for your Modem.</translation>
+<variable>Check the configuration settings you entered for your Modem.</variable>
+</message>
+<message>
+<tag_code>3322</tag_code>
+<translation>不能访问因特网。</translation>
+<variable>Cannot access internet.</variable>
+</message>
+<message>
+<tag_code>3323</tag_code>
+<translation>Please verify that the modem has been activated and there is network coverage at your current location.</translation>
+<variable>Please verify that the modem has been activated and there is network coverage at your current location.</variable>
+</message>
+<message>
+<tag_code>3324</tag_code>
+<translation>移动宽带网络中的域名服务器出现问题。</translation>
+<variable>There is a problem with the DNS servers in the Mobile Broadband network.</variable>
+</message>
+<message>
+<tag_code>3325</tag_code>
+<translation>Check with your mobile service provider to verify that the service at your location is working properly then run the Setup Wizard Again.</translation>
+<variable>Check with your mobile service provider to verify that the service at your location is working properly then run the Setup Wizard Again.</variable>
+</message>
+<message>
+<tag_code>3326</tag_code>
+<translation>to return to the Internet settings screen.</translation>
+<variable>to return to the Internet settings screen.</variable>
+</message>
+<message>
+<tag_code>3327</tag_code>
+<translation>to try to connect to the network again.</translation>
+<variable>to try to connect to the network again.</variable>
+</message>
+<message>
+<tag_code>3328</tag_code>
+<translation>重试</translation>
+<variable>Retry</variable>
+</message>
+<message>
+<tag_code>3329</tag_code>
+<translation>连接成功</translation>
+<variable>Connection Success</variable>
+</message>
+<message>
+<tag_code>3330</tag_code>
+<translation>Your router is now successfully connected to network.</translation>
+<variable>Your router is now successfully connected to network.</variable>
+</message>
+<message>
+<tag_code>3331</tag_code>
+<translation>Click Next to view a summary of settings.</translation>
+<variable>Click Next to view a summary of settings.</variable>
+</message>
+<message>
+<tag_code>3332</tag_code>
+<translation>正在更新设置</translation>
+<variable>Updating Settings</variable>
+</message>
+<message>
+<tag_code>3333</tag_code>
+<translation>请等待一会...</translation>
+<variable>Please wait ...</variable>
+</message>
+<message>
+<tag_code>3334</tag_code>
+<translation>Abort</translation>
+<variable>Abort</variable>
+</message>
+<message>
+<tag_code>3338</tag_code>
+<translation>易共享移动宽带连接</translation>
+<variable>ReadySHARE Mobile Connect</variable>
+</message>
+<message>
+<tag_code>3339</tag_code>
+<translation>宽带设置</translation>
+<variable>Broadband Settings</variable>
+</message>
+<message>
+<tag_code>3340</tag_code>
+<translation>首先使用有线网络，如果断开使用3G/4G移动网络</translation>
+<variable>User Ethernet connection first and if fail use 3G/4G mobile connection</variable>
+</message>
+<message>
+<tag_code>3341</tag_code>
+<translation>总是使用3G/4G移动宽带连接</translation>
+<variable>Always use 3G/4G mobile connection</variable>
+</message>
+<message>
+<tag_code>3342</tag_code>
+<translation>断开3G/4G连接</translation>
+<variable>Disable 3G/4G connection</variable>
+</message>
+<message>
+<tag_code>3343</tag_code>
+<translation>移动宽带设置</translation>
+<variable>Mobile Broadband Settings</variable>
+</message>
+<message>
+<tag_code>3344</tag_code>
+<translation>接入号码</translation>
+<variable>Access Number</variable>
+</message>
+<message>
+<tag_code>3345</tag_code>
+<translation>APN</translation>
+<variable>APN</variable>
+</message>
+<message>
+<tag_code>3346</tag_code>
+<translation>PDP类型</translation>
+<variable>PDP Type</variable>
+</message>
+<message>
+<tag_code>3347</tag_code>
+<translation>Connect on Demand</translation>
+<variable>Connect on Demand</variable>
+</message>
+<message>
+<tag_code>3348</tag_code>
+<translation>启动时自动连接</translation>
+<variable>Connect automatically at startup</variable>
+</message>
+<message>
+<tag_code>3349</tag_code>
+<translation>当连接断开时自动重新连接</translation>
+<variable>Reconnect automatically When connection is lost</variable>
+</message>
+<message>
+<tag_code>3350</tag_code>
+<translation>正在连接</translation>
+<variable>Connecting</variable>
+</message>
+<message>
+<tag_code>3351</tag_code>
+<translation>正在检测3G上网卡</translation>
+<variable>Detecting Modem</variable>
+</message>
+<message>
+<tag_code>3352</tag_code>
+<translation>不支持该3G上网卡</translation>
+<variable>Modem Not Supported</variable>
+</message>
+<message>
+<tag_code>3353</tag_code>
+<translation>正在初始化3G网卡</translation>
+<variable>Initializing Modem</variable>
+</message>
+<message>
+<tag_code>3354</tag_code>
+<translation>检查SIM卡</translation>
+<variable>Checking SIM card</variable>
+</message>
+<message>
+<tag_code>3355</tag_code>
+<translation>未检测到SIM卡</translation>
+<variable>NO SIM Card</variable>
+</message>
+<message>
+<tag_code>3356</tag_code>
+<translation>检查PIN</translation>
+<variable>PIN Checking</variable>
+</message>
+<message>
+<tag_code>3357</tag_code>
+<translation>需要输入PIN码</translation>
+<variable>PIN required on SIM</variable>
+</message>
+<message>
+<tag_code>3358</tag_code>
+<translation>PIN准备完毕</translation>
+<variable>PIN is ready</variable>
+</message>
+<message>
+<tag_code>3359</tag_code>
+<translation>SIM卡锁定</translation>
+<variable>Modem SIM locked</variable>
+</message>
+<message>
+<tag_code>3360</tag_code>
+<translation>正在扫描网路</translation>
+<variable>Scanning Network</variable>
+</message>
+<message>
+<tag_code>3361</tag_code>
+<translation>无网络覆盖</translation>
+<variable>NO Network Coverage</variable>
+</message>
+<message>
+<tag_code>3362</tag_code>
+<translation>无线宽带未连接</translation>
+<variable>Wireless Broadband Not Connected</variable>
+</message>
+<message>
+<tag_code>3363</tag_code>
+<translation>正在连接</translation>
+<variable>Connecting</variable>
+</message>
+<message>
+<tag_code>3364</tag_code>
+<translation>已连接</translation>
+<variable>Connected</variable>
+</message>
+<message>
+<tag_code>3365</tag_code>
+<translation>连接失败</translation>
+<variable>Connection Fail</variable>
+</message>
+<message>
+<tag_code>3366</tag_code>
+<translation>空闲</translation>
+<variable>Idle</variable>
+</message>
+<message>
+<tag_code>3367</tag_code>
+<translation>正在认证</translation>
+<variable>Identifying</variable>
+</message>
+<message>
+<tag_code>3368</tag_code>
+<translation>SIM卡需要PUK</translation>
+<variable>PUK required on SIM</variable>
+</message>
+<message>
+<tag_code>3369</tag_code>
+<translation>正在初始化</translation>
+<variable>Initializing</variable>
+</message>
+<message>
+<tag_code>3370</tag_code>
+<translation>PIN2 required on SIM</translation>
+<variable>PIN2 required on SIM</variable>
+</message>
+<message>
+<tag_code>3371</tag_code>
+<translation>PUK2 required on SIM</translation>
+<variable>PUK2 required on SIM</variable>
+</message>
+<message>
+<tag_code>3372</tag_code>
+<translation>未输入APN</translation>
+<variable>NO APN Configured</variable>
+</message>
+<message>
+<tag_code>3373</tag_code>
+<translation>移动连接超时</translation>
+<variable>Mobile Connection Idle</variable>
+</message>
+<message>
+<tag_code>3374</tag_code>
+<translation>Mobile Broadband Radio OFF</translation>
+<variable>Mobile Broadband Radio OFF</variable>
+</message>
+<message>
+<tag_code>3375</tag_code>
+<translation>Wii LAN Adapter Plugged</translation>
+<variable>Wii LAN Adapter Plugged</variable>
+</message>
+<message>
+<tag_code>3376</tag_code>
+<translation>无连接</translation>
+<variable>Not Connected</variable>
+</message>
+<message>
+<tag_code>3377</tag_code>
+<translation>未连接USB设备</translation>
+<variable>No USB Modem Plugged</variable>
+</message>
+<message>
+<tag_code>3378</tag_code>
+<translation>MEP PIN code required</translation>
+<variable>MEP PIN code required</variable>
+</message>
+<message>
+<tag_code>3379</tag_code>
+<translation>错误APN</translation>
+<variable>Wrong APN</variable>
+</message>
+<message>
+<tag_code>3380</tag_code>
+<translation>Roaming NOT Allowed</translation>
+<variable>Roaming NOT Allowed</variable>
+</message>
+<message>
+<tag_code>3381</tag_code>
+<translation>Choosing Connection Mode</translation>
+<variable>Choosing Connection Mode</variable>
+</message>
+<message>
+<tag_code>3382</tag_code>
+<translation>一直使用以太网连接</translation>
+<variable>Always use Ethernet connection</variable>
+</message>
+<message>
+<tag_code>3383</tag_code>
+<translation>总是使用移动宽带连接</translation>
+<variable>Always use Mobile Broadband connection</variable>
+</message>
+<message>
+<tag_code>3384</tag_code>
+<translation>正在检测3G/4G上网卡</translation>
+<variable>Detecting Mobile Broadband Modem</variable>
+</message>
+<message>
+<tag_code>3385</tag_code>
+<translation>正在连接网络</translation>
+<variable>Connecting to Network</variable>
+</message>
+<message>
+<tag_code>3386</tag_code>
+<translation>未检测到3G上网卡</translation>
+<variable>No USB Broadband Modem is Deteced</variable>
+</message>
+<message>
+<tag_code>3387</tag_code>
+<translation>确认您的3G上网卡已插入到路由器的USB端口</translation>
+<variable>Make sure that the USB boardband modem is securely plugged</variable>
+</message>
+<message>
+<tag_code>3388</tag_code>
+<translation>找不到移动宽带网络</translation>
+<variable>No Mobile Broadband Network</variable>
+</message>
+<message>
+<tag_code>3389</tag_code>
+<translation>未检测到SIM卡</translation>
+<variable>No SIM Card Detected</variable>
+</message>
+<message>
+<tag_code>3390</tag_code>
+<translation>未检测到SIM卡或SIM卡被拒绝</translation>
+<variable>SIM card not detected or SIM card rejected</variable>
+</message>
+<message>
+<tag_code>3391</tag_code>
+<translation>请检测SIM卡正确安装就位以及SIM卡的有效性.</translation>
+<variable>Please check to ensure SIM card is installed and is properly seated or SIM card is valid.</variable>
+</message>
+<message>
+<tag_code>3392</tag_code>
+<translation>PIN码问题</translation>
+<variable>PIN Issue</variable>
+</message>
+<message>
+<tag_code>3393</tag_code>
+<translation>请输入PIN码.</translation>
+<variable>Please input PIN code.</variable>
+</message>
+<message>
+<tag_code>3394</tag_code>
+<translation>您想设置PIN码吗？</translation>
+<variable>Do you want to setup PIN code?</variable>
+</message>
+<message>
+<tag_code>3395</tag_code>
+<translation>不支持该3G上网卡</translation>
+<variable>USB modem not supported</variable>
+</message>
+<message>
+<tag_code>3396</tag_code>
+<translation>请到NETGEAR官网查找最新的固件以及它所支持的设备。</translation>
+<variable>Please check the NETGEAR website for the latest firmware and supported devices.</variable>
+</message>
+<message>
+<tag_code>3397</tag_code>
+<translation>请输入服务提供商的配置</translation>
+<variable>Please Enter Service Provider Configuration</variable>
+</message>
+<message>
+<tag_code>3398</tag_code>
+<translation>请选择因特网服务提供商，然后点击下一步。</translation>
+<variable>Please select the Internet Service Provider and then click Next.</variable>
+</message>
+<message>
+<tag_code>3399</tag_code>
+<translation>如果您的移动宽带服务提供商不在下拉菜单中，请选择其它。</translation>
+<variable>If your Mobile Broadband service provide is not in pulldown list, please select Other.</variable>
+</message>
+<message>
+<tag_code>3400</tag_code>
+<translation>请输入配置参数。如果您不知道这些参数，请联系您的服务提供商。</translation>
+<variable>Please enter the configuration parameters. If you do not know what they are, please contact your service provide.</variable>
+</message>
+<message>
+<tag_code>3401</tag_code>
+<translation>移动宽带端口</translation>
+<variable>Mobile Broadband Port</variable>
+</message>
+<message>
+<tag_code>3402</tag_code>
+<translation>重启后自动连接internet</translation>
+<variable>Enable automatic internet connection reset at</variable>
+</message>
+<message>
+<tag_code>3403</tag_code>
+<translation>意大利</translation>
+<variable>Italy</variable>
+</message>
+<message>
+<tag_code>3404</tag_code>
+<translation>澳大利亚</translation>
+<variable>Austria</variable>
+</message>
+<message>
+<tag_code>3405</tag_code>
+<translation>英国</translation>
+<variable>UK</variable>
+</message>
+<message>
+<tag_code>3406</tag_code>
+<translation>丹麦</translation>
+<variable>Denmark</variable>
+</message>
+<message>
+<tag_code>3407</tag_code>
+<translation>瑞典</translation>
+<variable>Sweden</variable>
+</message>
+<message>
+<tag_code>3408</tag_code>
+<translation>澳大利亚</translation>
+<variable>Australia</variable>
+</message>
+<message>
+<tag_code>3409</tag_code>
+<translation>爱尔兰</translation>
+<variable>Ireland</variable>
+</message>
+<message>
+<tag_code>3410</tag_code>
+<translation>香港</translation>
+<variable>Hong Kong</variable>
+</message>
+<message>
+<tag_code>3411</tag_code>
+<translation>越南</translation>
+<variable>Vietnam</variable>
+</message>
+<message>
+<tag_code>3412</tag_code>
+<translation>印度尼西亚</translation>
+<variable>Indonesia</variable>
+</message>
+<message>
+<tag_code>3413</tag_code>
+<translation>美国</translation>
+<variable>USA</variable>
+</message>
+<message>
+<tag_code>3414</tag_code>
+<translation>用户指定</translation>
+<variable>User Defined</variable>
+</message>
+<message>
+<tag_code>3415</tag_code>
+<translation>Remember PIN</translation>
+<variable>Remember PIN</variable>
+</message>
+<message>
+<tag_code>3416</tag_code>
+<translation>PUK Code</translation>
+<variable>PUK Code</variable>
+</message>
+<message>
+<tag_code>3417</tag_code>
+<translation>PIN2 Code</translation>
+<variable>PIN2 Code</variable>
+</message>
+<message>
+<tag_code>3418</tag_code>
+<translation>PUK2 Code</translation>
+<variable>PUK2 Code</variable>
+</message>
+<message>
+<tag_code>3419</tag_code>
+<translation>Network Mode</translation>
+<variable>Network Mode</variable>
+</message>
+<message>
+<tag_code>3420</tag_code>
+<translation>使用内置天线</translation>
+<variable>Use internal antenna</variable>
+</message>
+<message>
+<tag_code>3421</tag_code>
+<translation>Idle Timeout (minutes)</translation>
+<variable>Idle Timeout (minutes)</variable>
+</message>
+<message>
+<tag_code>3422</tag_code>
+<translation>(单位: 分钟)</translation>
+<variable>(in minutes)</variable>
+</message>
+<message>
+<tag_code>3423</tag_code>
+<translation>APN Auto Lookup</translation>
+<variable>APN Auto Lookup</variable>
+</message>
+<message>
+<tag_code>3424</tag_code>
+<translation>has detected Mobile Broadband settings for you, do you want to use these settings?</translation>
+<variable>has detected Mobile Broadband settings for you, do you want to use these settings?</variable>
+</message>
+<message>
+<tag_code>3425</tag_code>
+<translation>ISP</translation>
+<variable>ISP</variable>
+</message>
+<message>
+<tag_code>3426</tag_code>
+<translation>manually setup</translation>
+<variable>manually setup</variable>
+</message>
+<message>
+<tag_code>3427</tag_code>
+<translation>因特网连接模式</translation>
+<variable>Internet Connection Mode</variable>
+</message>
+<message>
+<tag_code>3428</tag_code>
+<translation>故障转移检测方法</translation>
+<variable>Failover Detection Method</variable>
+</message>
+<message>
+<tag_code>3429</tag_code>
+<translation>使用广域网域名服务器进行域名查找</translation>
+<variable>DNS lookup using WAN DNS Server</variable>
+</message>
+<message>
+<tag_code>3430</tag_code>
+<translation>通过主机进行域名查找</translation>
+<variable>Perform a DNS lookup by a hostname</variable>
+</message>
+<message>
+<tag_code>3431</tag_code>
+<translation>Ping此IP地址</translation>
+<variable>Ping this IP address</variable>
+</message>
+<message>
+<tag_code>3432</tag_code>
+<translation>重试间隔为</translation>
+<variable>Retry Interval is</variable>
+</message>
+<message>
+<tag_code>3433</tag_code>
+<translation>（单位：秒）</translation>
+<variable>(In Seconds)</variable>
+</message>
+<message>
+<tag_code>3434</tag_code>
+<translation>故障转移时间为</translation>
+<variable>Failover after</variable>
+</message>
+<message>
+<tag_code>3435</tag_code>
+<translation>（间隔）</translation>
+<variable>(In Intervals)</variable>
+</message>
+<message>
+<tag_code>3436</tag_code>
+<translation>恢复时间为</translation>
+<variable>Resume after</variable>
+</message>
+<message>
+<tag_code>3437</tag_code>
+<translation>启用硬件链接检测</translation>
+<variable>Enable Hardware link detection</variable>
+</message>
+<message>
+<tag_code>3438</tag_code>
+<translation>中国</translation>
+<variable>China</variable>
+</message>
+<message>
+<tag_code>3439</tag_code>
+<translation>俄罗斯</translation>
+<variable>Rusia</variable>
+</message>
+<message>
+<tag_code>3440</tag_code>
+<translation>AP 模式</translation>
+<variable>AP Mode</variable>
+</message>
+<message>
+<tag_code>3441</tag_code>
+<translation>启用 AP 模式</translation>
+<variable>Enable AP Mode</variable>
+</message>
+<message>
+<tag_code>3442</tag_code>
+<translation>动态获取 IP 地址</translation>
+<variable>Get IP Address Dynamically</variable>
+</message>
+<message>
+<tag_code>3443</tag_code>
+<translation>动态获取 DNS 服务器地址</translation>
+<variable>Get DNS Server Address Dynamically</variable>
+</message>
+<message>
+<tag_code>3444</tag_code>
+<translation>无线接入点模式可让此设备作为独立的无线接入点在您的现有网络上运行。</translation>
+<variable>Wireless AP mode allows this device to work as a stand-alone wireless access point on your existing network.</variable>
+</message>
+<message>
+<tag_code>3445</tag_code>
+<translation>在此设备上启用固定 IP 设置（不推荐）</translation>
+<variable>Enable fixed IP settings on this device (not recommended)</variable>
+</message>
+<message>
+<tag_code>3446</tag_code>
+<translation>请遵循以下说明，以获得最佳的设置和性能：</translation>
+<variable>Please follow these instructions to have the optimal setup and performance:</variable>
+</message>
+<message>
+<tag_code>3447</tag_code>
+<translation>&lt;b&gt;第 1 步：&lt;/b&gt;确保此设备的&lt;b&gt;因特网端口&lt;/b&gt;已通过线缆连接到现有路由器的&lt;b&gt;一个局域网端口&lt;/b&gt;上。</translation>
+<variable>&lt;b&gt;Step1:&lt;/b&gt;Make sure this device's &lt;b&gt;Internet port&lt;/b&gt; is connected with an cable to &lt;b&gt;one of the LAN ports&lt;/b&gt; on the existing router.</variable>
+</message>
+<message>
+<tag_code>3448</tag_code>
+<translation>&lt;b&gt;第 2 步：&lt;/b&gt;如果现有路由器具备无线功能，请将它关闭或禁用，以免与此新接入点设备产生干扰。或者，至少使用另一无线频道运行。</translation>
+<variable>&lt;b&gt;Step2:&lt;/b&gt;If your existing router has wireless capability, turn it off or disable it, to avoid interference with this new AP device. Or at least run it at a defferent wireless channel.</variable>
+</message>
+<message>
+<tag_code>3449</tag_code>
+<translation>完成后，单击“应用”继续</translation>
+<variable>Once you are done, click Apply to continue</variable>
+</message>
+<message>
+<tag_code>3450</tag_code>
+<translation>&lt;b&gt;注意：&lt;/b&gt;在单击“应用”后，此设备将改为使用现有路由器分配的新 IP 地址，可能会造成此网页不再可用。请关闭网页浏览器，然后再重新启动并访问 http://www.routerlogin.net/。</translation>
+<variable>&lt;b&gt;Note:&lt;/b&gt;After you click Apply,this device will change to a new IP assigned by your existing router,therefore this web page might not be available. Please close and restart web browser to http://www.routerlogin.net/ again.</variable>
+</message>
+<message>
+<tag_code>3451</tag_code>
+<translation>运行模式</translation>
+<variable>Operation Mode</variable>
+</message>
+<message>
+<tag_code>3452</tag_code>
+<translation>接入点</translation>
+<variable>AP</variable>
+</message>
+<message>
+<tag_code>3453</tag_code>
+<translation>PIN码</translation>
+<variable>PIN code</variable>
+</message>
+<message>
+<tag_code>3454</tag_code>
+<translation>中国移动</translation>
+<variable>China Mobile</variable>
+</message>
+<message>
+<tag_code>3455</tag_code>
+<translation>中国联通</translation>
+<variable>China Unicom</variable>
+</message>
+<message>
+<tag_code>3456</tag_code>
+<translation>中国电信</translation>
+<variable>China Telecom</variable>
+</message>
+<message>
+<tag_code>3457</tag_code>
+<translation>其它</translation>
+<variable>Other</variable>
+</message>
+<message>
+<tag_code>3458</tag_code>
+<translation>运营商名称</translation>
+<variable>Operator Name</variable>
+</message>
+<message>
+<tag_code>3459</tag_code>
+<translation>信号强度</translation>
+<variable>Signal Strength</variable>
+</message>
+<message>
+<tag_code>3460</tag_code>
+<translation>3G/4G 设置已完成!</translation>
+<variable>3G/4G setup is done!</variable>
+</message>
+<message>
+<tag_code>3461</tag_code>
+<translation>USB 移动宽带调制解调器设置</translation>
+<variable>USB Mobile Broadband Modem Settings</variable>
+</message>
+<message>
+<tag_code>3462</tag_code>
+<translation>3G/4G 连接模式</translation>
+<variable>3G/4G Connection Mode</variable>
+</message>
+<message>
+<tag_code>3463</tag_code>
+<translation>连接协议</translation>
+<variable>Connection Protocol</variable>
+</message>
+<message>
+<tag_code>3475</tag_code>
+<translation>注意：</translation>
+<variable>Note:</variable>
+</message>
+<message>
+<tag_code>3476</tag_code>
+<translation>设置移动宽带</translation>
+<variable>Setup Mobile Broadband</variable>
+</message>
+<message>
+<tag_code>3477</tag_code>
+<translation>此路由器也可以连接到 3G/4G 移动网络。 如果有支持的 3G/4G 移动宽带适配器，您可以使用下方的移动宽带按钮设置向导。</translation>
+<variable>This router is also capable of connecting to 3G/4G Mobile Network. If you have a supported 3G/4G mobile broadband adapter, you can use the Setup Mobile Broadband button below to run the wizard.</variable>
+</message>
+<message>
+<tag_code>3478</tag_code>
+<translation>否。 我希望继续设置 3G/4G 移动宽带连接。</translation>
+<variable>No, I want to continue to set up the 3G/4G mobile broadband connection.</variable>
+</message>
+<message>
+<tag_code>3479</tag_code>
+<translation>正在安装驱动器...</translation>
+<variable>Installing Driver…</variable>
+</message>
+<message>
+<tag_code>3480</tag_code>
+<translation>NETGEAR 精灵正在安装适配器驱动器。 这可能需要一到两分钟。 请稍候...</translation>
+<variable>NETGEAR genie is installing the adapter driver. It might take a minute or two. Please wait…</variable>
+</message>
+<message>
+<tag_code>3481</tag_code>
+<translation>3G/4G 连接问题</translation>
+<variable>3G/4G Connection Issue</variable>
+</message>
+<message>
+<tag_code>3482</tag_code>
+<translation>路由器无法进行 3G/4G 连接。</translation>
+<variable>The router cannot make a 3G/4G connection.</variable>
+</message>
+<message>
+<tag_code>3483</tag_code>
+<translation>请查阅如下错误：</translation>
+<variable>Please review the following error:</variable>
+</message>
+<message>
+<tag_code>3484</tag_code>
+<translation>该移动宽带调制解调器的类型不受支持。 您可以尝试另一类型。</translation>
+<variable>The mobile broadband modem is not a supported type. You can try a different one.</variable>
+</message>
+<message>
+<tag_code>3485</tag_code>
+<translation>否。 请使用以太网连接来连接因特网。</translation>
+<variable>No, Take me to the Internet using an Ethernet connection.</variable>
+</message>
+<message>
+<tag_code>3486</tag_code>
+<translation>未检测到 USB 宽带适配器。 请检查您的 USB 连接。</translation>
+<variable>No USB broadband adapter detected. Check your USB connection.</variable>
+</message>
+<message>
+<tag_code>3487</tag_code>
+<translation>路由器无法建立因特网连接。 请与您的移动宽带服务提供商检查设置。</translation>
+<variable>The router cannot establish an Internet connection. Check the settings with your mobile broadband service provider.</variable>
+</message>
+<message>
+<tag_code>3488</tag_code>
+<translation>以太网设置已完成!</translation>
+<variable>Ethernet setup is done!</variable>
+</message>
+<message>
+<tag_code>3489</tag_code>
+<translation>配置设置</translation>
+<variable>Configure Settings</variable>
+</message>
+<message>
+<tag_code>3492</tag_code>
+<translation>我希望继续设置 3G/4G 移动宽带连接。</translation>
+<variable>I want to continue to set up the 3G/4G mobile broadband connection.</variable>
+</message>
+<message>
+<tag_code>3709</tag_code>
+<translation>分享生活 分享回忆 因分享而深刻</translation>
+<variable>Share your life, share your memory, sharing makes your life more memorable.</variable>
+</message>
+<message>
+<tag_code>3710</tag_code>
+<translation>网件云提供云端私密小圈子</translation>
+<variable>NETGEAR Cloud provids a private and secure cloud sharing circle.</variable>
+</message>
+<message>
+<tag_code>3711</tag_code>
+<translation>只有您与在意的人分享生活的一切</translation>
+<variable>You and your cared ones can share everything in your life.</variable>
+</message>
+<message>
+<tag_code>3712</tag_code>
+<translation>请继续探索以下功能</translation>
+<variable>Please explore the features below</variable>
+</message>
+<message>
+<tag_code>3713</tag_code>
+<translation>带我前往网件云</translation>
+<variable>Take me to NETGEAR Cloud</variable>
+</message>
+<message>
+<tag_code>3716</tag_code>
+<translation>网件云</translation>
+<variable>NETGEAR Cloud</variable>
+</message>
+<message>
+<tag_code>3717</tag_code>
+<translation>3G/4G 移动宽带</translation>
+<variable>3G/4G Mobile Broadband</variable>
+</message>
+<message>
+<tag_code>4400</tag_code>
+<translation>上一步</translation>
+<variable>Previous</variable>
+</message>
+<message>
+<tag_code>4401</tag_code>
+<translation>下载以下路由器应用程序：</translation>
+<variable>Downloading the following router apps:</variable>
+</message>
+<message>
+<tag_code>4402</tag_code>
+<translation>精灵应用程序。 一种个人控制面板，可让您监视、控制和修复您的家庭网络。</translation>
+<variable>genie app. A personal dashboard that lets you monitor, control, and repair your home network.</variable>
+</message>
+<message>
+<tag_code>4403</tag_code>
+<translation>易共享 Vault 应用程序（仅适用于 Windows 计算机）。 实现 Windows 计算机自动连续备份至连接到路由器的 USB 驱动盘。</translation>
+<variable>ReadySHARE Vault app (Only for Windows computers). Enables automatic continuous backup of a Windows computer to a USB drive that’s connected to your router.</variable>
+</message>
+<message>
+<tag_code>4404</tag_code>
+<translation>正在下载…</translation>
+<variable>Downloading…</variable>
+</message>
+<message>
+<tag_code>4405</tag_code>
+<translation>下载完成后安装精灵应用程序。</translation>
+<variable>Install the genie app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4406</tag_code>
+<translation>安装精灵应用程序后单击下一步按钮以完成路由器配置。</translation>
+<variable>Click the Next button after you install the genie app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4407</tag_code>
+<translation>下载完成后安装易共享 Vault 应用程序。</translation>
+<variable>Install the ReadySHARE Vault app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4408</tag_code>
+<translation>安装易共享 Vault 应用程序后单击下一步按钮以完成路由器配置。</translation>
+<variable>Click the Next button after you Install the ReadySHARE Vault app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4409</tag_code>
+<translation>正在处理您的请求…</translation>
+<variable>Processing your request…</variable>
+</message>
+<message>
+<tag_code>4410</tag_code>
+<translation>Install the Genie app and ReadySHARE Vault app after the download completes.</translation>
+<variable>Install the Genie app and ReadySHARE Vault app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4411</tag_code>
+<translation>Click the Next button after you install the Genie app and ReadySHARE Vault app to finish configuring the router.</translation>
+<variable>Click the Next button after you install the Genie app and ReadySHARE Vault app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4412</tag_code>
+<translation>安装后请单击“下一步”。</translation>
+<variable>After the installation, please click Next.</variable>
+</message>
+<message>
+<tag_code>4413</tag_code>
+<translation>系统将安装</translation>
+<variable>System will install</variable>
+</message>
+<message>
+<tag_code>4414</tag_code>
+<translation>单击“运行”以开始安装</translation>
+<variable>Click Run to start installing</variable>
+</message>
+<message>
+<tag_code>4415</tag_code>
+<translation>固件升级助手</translation>
+<variable>Firmware Upgrade Assistant</variable>
+</message>
+<message>
+<tag_code>4416</tag_code>
+<translation>现在更新路由器固件。请等待...</translation>
+<variable>Upgrading Router Firmware now. Please Wait</variable>
+</message>
+<message>
+<tag_code>4417</tag_code>
+<translation>注意：固件升级将花</translation>
+<variable>Note: It will take about</variable>
+</message>
+<message>
+<tag_code>4418</tag_code>
+<translation>分钟.&lt;br&gt;请勿关闭电源或按复位键.</translation>
+<variable>minutes for firmware upgrade.&lt;br&gt;Please don't turn off the power or press reset button.</variable>
+</message>
+<message>
+<tag_code>4419</tag_code>
+<translation>请等待一会...</translation>
+<variable>Please wait ...</variable>
+</message>
+<message>
+<tag_code>4420</tag_code>
+<translation>取消</translation>
+<variable>Cancel</variable>
+</message>
+<message>
+<tag_code>4421</tag_code>
+<translation>路由器正在下载新版本.请等待...</translation>
+<variable>The Router is downloading the new version now. Please wait...</variable>
+</message>
+<message>
+<tag_code>4422</tag_code>
+<translation>发现新固件版本。 要现在升级新版本吗？</translation>
+<variable>A new version has been found. Do You want to upgrade to the new version now?</variable>
+</message>
+<message>
+<tag_code>4423</tag_code>
+<translation>当前版本</translation>
+<variable>Current Version</variable>
+</message>
+<message>
+<tag_code>4424</tag_code>
+<translation>新固件版本</translation>
+<variable>New Firmware Version</variable>
+</message>
+<message>
+<tag_code>4425</tag_code>
+<translation>该过程需要花费一至两分钟时间；请稍候...</translation>
+<variable>This process can take a minute or two; please wait...</variable>
+</message>
+<message>
+<tag_code>4426</tag_code>
+<translation>检测固件版本</translation>
+<variable>Firmware Version Check</variable>
+</message>
+<message>
+<tag_code>4427</tag_code>
+<translation>没有可用的新固件版本。</translation>
+<variable>No new firmware version available.</variable>
+</message>
+<message>
+<tag_code>4428</tag_code>
+<translation>确定</translation>
+<variable>OK</variable>
+</message>
+<message>
+<tag_code>4429</tag_code>
+<translation>正在检查您的网络设置，请稍候...</translation>
+<variable>Checking your network setup,please wait...</variable>
+</message>
+<message>
+<tag_code>4430</tag_code>
+<translation>检测到您网络中已存在其他的路由器或网关设备。</translation>
+<variable>An existing router or gateway is detected in your network</variable>
+</message>
+<message>
+<tag_code>4431</tag_code>
+<translation>除新接入的 NETGEAR 路由器之外，您的网络中还存在另一台路由器。如果您希望保留连接第一台路由器，精灵建议您将 NETGEAR 路由器设置为“接入点”模式。NETGEAR 路由器处于“接入点”模式时，您可以用它来加入网络，另一台路由器的设置和工作不受影响。</translation>
+<variable>Your NETGEAR router is connected to a network that already has another router. If you want to leave the first router connected, genie recommends using Access Point mode for the NETGEAR router. When the NETGEAR router is in Access Point mode, you can use it to join the network and the other router continues to perform the same network tasks as before.</variable>
+</message>
+<message>
+<tag_code>4432</tag_code>
+<translation>是否要将本设备设置为“接入点”模式？</translation>
+<variable>Do you want to setup this device in Access Point mode</variable>
+</message>
+<message>
+<tag_code>4433</tag_code>
+<translation>是（推荐）</translation>
+<variable>Yes (recommended)</variable>
+</message>
+<message>
+<tag_code>4434</tag_code>
+<translation>否，我希望它以默认的路由器模式运行</translation>
+<variable>No, I would like to run it in default mode as a router</variable>
+</message>
+<message>
+<tag_code>4435</tag_code>
+<translation>要以接入点模式将此路由器添加到网络中</translation>
+<variable>To add this router to your network in Access Point Mode</variable>
+</message>
+<message>
+<tag_code>4436</tag_code>
+<translation>此新设备的 IP 地址</translation>
+<variable>IP Address of this new device</variable>
+</message>
+<message>
+<tag_code>4437</tag_code>
+<translation>从现有路由器动态获取 IP 地址</translation>
+<variable>Get IP Address dynamically from existing router</variable>
+</message>
+<message>
+<tag_code>4438</tag_code>
+<translation>使用固定 IP 地址（不推荐）</translation>
+<variable>Use fixed IP Address (not recommended)</variable>
+</message>
+<message>
+<tag_code>4439</tag_code>
+<translation>注意：您单击“下一步”后，此路由器将被分配一个新 IP 地址。出现此情况时，您的浏览器可能会从网络中断开。要重新连接路由器，请关闭窗口，然后重新启动浏览器。</translation>
+<variable>Note: After you click Next, this router will be assigned a new IP address. When it happens your browser might be disconnected from the network. To reconnect to the router, close the window and launch your browser again.</variable>
+</message>
+<message>
+<tag_code>4441</tag_code>
+<translation></translation>
+<variable>Your NETGEAR router is connected to a network that already has another router.This means that you must select an operation mode:</variable>
+</message>
+<message>
+<tag_code>4442</tag_code>
+<translation></translation>
+<variable>Router Mode</variable>
+</message>
+<message>
+<tag_code>4443</tag_code>
+<translation></translation>
+<variable>Router mode gives you two different networks:The existing network from the original router,and another network form your new NETGEAR router.If all of your devices connect to NETGEAR router,recommend to use Router Mode.</variable>
+</message>
+<message>
+<tag_code>4444</tag_code>
+<translation></translation>
+<variable>Access Point Mode</variable>
+</message>
+<message>
+<tag_code>4445</tag_code>
+<translation></translation>
+<variable>This mode keeps the existing network from the original router only.Not all of the NETGEAR router's features are available in Access Point mode.If you have devices connect to both existing router and NETGEAR router,recommend to use Access Point Mode.</variable>
+</message>
+<message>
+<tag_code>4446</tag_code>
+<translation>了解更多</translation>
+<variable>Learn More</variable>
+</message>
+<message>
+<tag_code>4447</tag_code>
+<translation>警告</translation>
+<variable>WARNING</variable>
+</message>
+<message>
+<tag_code>4448</tag_code>
+<translation></translation>
+<variable>Your router is about to setup to Access Point Mode.You may experience short network interruption due to your router and client will need to obtain new IP address from your existing Router.If you lost network connection,you may manually connect to router again by visiting www.routerlogin.net.</variable>
+</message>
+<message>
+<tag_code>4449</tag_code>
+<translation></translation>
+<variable>The following router features are not available if you choose Access Point mode:</variable>
+</message>
+<message>
+<tag_code>4450</tag_code>
+<translation>家长控制</translation>
+<variable>Parental control</variable>
+</message>
+<message>
+<tag_code>4451</tag_code>
+<translation>站点限制</translation>
+<variable>Block sites</variable>
+</message>
+<message>
+<tag_code>4452</tag_code>
+<translation>服务限制</translation>
+<variable>Block services</variable>
+</message>
+<message>
+<tag_code>4453</tag_code>
+<translation>端口映射</translation>
+<variable>Port forwarding</variable>
+</message>
+<message>
+<tag_code>4454</tag_code>
+<translation>端口触发</translation>
+<variable>Port triggering</variable>
+</message>
+<message>
+<tag_code>4455</tag_code>
+<translation>静态路由</translation>
+<variable>Static route</variable>
+</message>
+<message>
+<tag_code>4456</tag_code>
+<translation>流量控制</translation>
+<variable>Traffic meter</variable>
+</message>
+<message>
+<tag_code>4457</tag_code>
+<translation>远程管理</translation>
+<variable>Remote management</variable>
+</message>
+<message>
+<tag_code>4458</tag_code>
+<translation>访客网络</translation>
+<variable>Guest network</variable>
+</message>
+</tag_msg>

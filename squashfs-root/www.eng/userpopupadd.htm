@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+
+<!--
+
+
+function checkData()
+{
+    var cf = document.forms[0];
+    var pass1 = cf.userpop_passwd.value;
+    var pass2 = cf.cpasswd.value;
+    
+    if(cf.userpop_user.value.length == 0)
+    {
+        alert(getErrorMsgByVar("gsm_msg_un")+" "+getErrorMsgByVar("gsm_msg_username_blank"));
+        return false;
+    }
+    if(cf.userpop_user.value == "guest")
+    {
+	alert(getErrorMsgByVar("gsm_msg_user_exist"));
+	return false;
+    }
+    if(cf.userpop_user.value == "admin")
+    {
+	alert(getErrorMsgByVar("gsm_msg_user_exist"));
+	return false;
+    }
+    if(cf.userpop_passwd.value.length == 0)
+    {
+        alert(getErrorMsgByVar("gsm_msg_pw")+" "+getErrorMsgByVar("gsm_msg_password_blank"));
+        return false;
+    }
+    if(pass1!=pass2)
+    {
+        alert(getErrorMsgByVar("gsm_msg_nomatch_pwd"));
+        return false;
+    }
+      if(!isDigitAlpha(cf.userpop_user.value)){
+     		alert(getErrorMsgByVar("gsm_msg_username_only_letterornumber"));
+     		return false;
+     		}
+      if(!isDigitAlpha(cf.userpop_passwd.value)){
+      	alert(getErrorMsgByVar("gsm_msg_passwd_only_letterornumber"));
+      	return false;
+      	}
+    dataToHidden(cf);
+    return true;
+}
+
+-->
+</script></head><body link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF" onLoad="">
+<form name="User_Pop_up" method="POST" action="setup.cgi@post_par2#">
+<div class="page_title" languageCode="810">ADD User</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="common_bt" type="button" name="Clear" value="Clear" onClick="window.location.reload();" languageCode="817">
+&nbsp;
+<input class="cancel_bt" type="reset" name="Cancel" value="Cancel" onClick="location.href='setup.cgi?next_file=user_management.htm'" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="submit" name="Save" value="User Add" onClick="return checkData();" languageCode="816">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tbody><tr><td class="hlc"><span languageCode="811">User Properties</span>:</td>
+			<td class="hrc"></td>
+		</tr><tr><td class="hlc"><span languageCode="223">User Name</span>:</td>
+			<td><input maxlength="15" size="20" value="@userpop_user#" name="userpop_user"></td>
+		</tr><tr><td class="hlc"><span languageCode="812">User Password</span>:</td>
+			<td><input type="password" maxlength="15" size="20" value="@userpop_passwd#" name="userpop_passwd"></td>
+		</tr><tr><td class="hlc"><span languageCode="813">Confirm Password</span>:</td>
+			<td><input type="password" maxlength="15" size="20" value="@cpasswd#" name="cpasswd"></td>
+		</tr><tr><td class="hlc"><span languageCode="814">User Group</span>:</td>
+			<td><select size="1" name="userpop_group" languageCode="815">@userpop_group#</select></td>
+		</tr><tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2" align="center"></td>
+		</tr></tbody></table>
+	<input type="hidden" name="h_userpop_add" value="@h_userpop_add#"><input type="hidden" name="todo" value="save"><input type="hidden" name="this_file" value="userpopupadd.htm"><input type="hidden" name="next_file" value="user_management.htm"><input type="hidden" name="message" value="@msg_text#"><input type="hidden" name="SID" value="@SID#">
+</div>		
+</form>
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

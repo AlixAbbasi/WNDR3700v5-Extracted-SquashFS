@@ -1,0 +1,1244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/hijack_03A_wanInput.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/funcs.js" type=text/javascript></SCRIPT>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+<!--
+/*==============City list================*/
+/*
+var cityArr = new Array();
+cityArr[0] = "none";
+cityArr[1] = "Almetevsk";
+cityArr[2] = "Arhangelsk";
+cityArr[3] = "Astrahan";
+cityArr[4] = "Balakovo";
+cityArr[5] = "Balashiha";
+cityArr[6] = "Barnaul";
+cityArr[7] = "Bataysk";
+cityArr[8] = "Bolgograd";
+cityArr[9] = "Bryansk";
+cityArr[10] = "Chelyabinsk";
+cityArr[11] = "Cherepovec";
+cityArr[12] = "Desnogorsk";
+cityArr[13] = "Dolgoprudniy";
+cityArr[14] = "Domodedovo";
+cityArr[15] = "Dzerzhinsk";
+cityArr[16] = "Ekaterinburg";
+cityArr[17] = "Elektrostal";
+cityArr[18] = "Engels";
+cityArr[19] = "Habarovsk";
+cityArr[20] = "Himki";
+cityArr[21] = "Himki-Kurkino";
+cityArr[22] = "Irkutsk";
+cityArr[23] = "Ivanovo";
+cityArr[24] = "Izhevsk";
+cityArr[25] = "Kaliningrad";
+cityArr[26] = "Kaluga";
+cityArr[27] = "Kamensk-Uralskiy";
+cityArr[28] = "Kashira";
+cityArr[29] = "Kazan";
+cityArr[30] = "Kemerovo";
+cityArr[31] = "Kirov";
+cityArr[32] = "Kislovodsk";
+cityArr[33] = "Kohma";
+cityArr[34] = "Kolpino";
+cityArr[35] = "Kostroma";
+cityArr[36] = "Krasnodar";
+cityArr[37] = "Krasnoyarsk";
+cityArr[38] = "Kursk";
+cityArr[39] = "Lipetsk";
+cityArr[40] = "Lyubertcy";
+cityArr[41] = "Mahachkala";
+cityArr[42] = "Mendeleevo";
+cityArr[43] = "Mendeleevsk";
+cityArr[44] = "Mineralnye Vody";
+cityArr[45] = "Moscow";
+cityArr[46] = "Mozhaysk";
+cityArr[47] = "Naberezhnye Chelny";
+cityArr[48] = "Neftekamsk";
+cityArr[49] = "Nizhnekamsk";
+cityArr[50] = "Nizhniy Novgorod";
+cityArr[51] = "Nizhniy Tagil";
+cityArr[52] = "Noginsk";
+cityArr[53] = "Novokuznetsk";
+cityArr[54] = "Novomoskovsk";
+cityArr[55] = "Novosibirsk";
+cityArr[56] = "Obninsk";
+cityArr[57] = "Odincovo";
+cityArr[58] = "Oktyabrskiy";
+cityArr[59] = "Omsk";
+cityArr[60] = "Orel";
+cityArr[61] = "Orenburg";
+cityArr[62] = "Pavlovskiy Posad";
+cityArr[63] = "Penza";
+cityArr[64] = "Perm";
+cityArr[65] = "Pyatigorsk";
+cityArr[66] = "Rostov-na-Donu";
+cityArr[67] = "Ryazan";
+cityArr[68] = "Rybninsk";
+cityArr[69] = "Saint-Petersburg";
+cityArr[70] = "Samara";
+cityArr[71] = "Saratov";
+cityArr[72] = "Sarov";
+cityArr[73] = "Severodvinsk";
+cityArr[74] = "Shatura";
+cityArr[75] = "Shekino";
+cityArr[76] = "Shuya";
+cityArr[77] = "Smolensk";
+cityArr[78] = "Sochi";
+cityArr[79] = "Taganrog";
+cityArr[80] = "Tataev";
+cityArr[81] = "Tolyatti";
+cityArr[82] = "Tomsk";
+cityArr[83] = "Tula";
+cityArr[84] = "Tver";
+cityArr[85] = "Tyumen";
+cityArr[86] = "Ufa";
+cityArr[87] = "Ulyanovsk";
+cityArr[88] = "Uzlovaya";
+cityArr[89] = "Vladivostok";
+cityArr[90] = "Vmitrovgrad";
+cityArr[91] = "Volgodonsk";
+cityArr[92] = "Volzhskiy";
+cityArr[93] = "Voronezh";
+cityArr[94] = "Yaroslavl";
+cityArr[95] = "Yoshkar-Ola";
+cityArr[96] = "Yuzhno-Sahalinsk";
+cityArr[97] = "Zelenograd";
+cityArr[98] = "Zheleznovodsk";
+cityArr[99] = "Zheleznogorsk";
+
+cityArr[100] = "end";
+*/
+/*=============ISP List==============*/
+/*
+var ISPArr = new Array();
+ISPArr[0] = "none";
+ISPArr[1] = "2КОМ (DHCP)";
+ISPArr[2] = "2КОМ (PPTP)";
+ISPArr[3] = "ABN (Albeon)";
+ISPArr[4] = "ABV-Internet";
+ISPArr[5] = "Academ.org";
+ISPArr[6] = "Aist";
+ISPArr[7] = "AkademNet";
+ISPArr[8] = "AKADO";
+ISPArr[9] = "AKADO (Coaxial)";
+ISPArr[10] = "AKADO (Ethernet)";
+ISPArr[11] = "Anthill";
+ISPArr[12] = "Arbital";
+ISPArr[13] = "Asteis-Telecom";
+ISPArr[14] = "Asteis-Telecom (VPN)";
+ISPArr[15] = "Avtovo.net";
+ISPArr[16] = "Awax-Telecom";
+ISPArr[17] = "Beeline";
+ISPArr[18] = "BigFish";
+ISPArr[19] = "BirulevoNET";
+ISPArr[20] = "Borodino-Telecom";
+ISPArr[21] = "Butovo.com";
+ISPArr[22] = "ButovoNet";
+ISPArr[23] = "Cabinet";
+ISPArr[24] = "Camsan";
+ISPArr[25] = "CentraLink";
+ISPArr[26] = "Cifra";
+ISPArr[27] = "City Online";
+ISPArr[28] = "City online (CLN)";
+ISPArr[29] = "CityTelecom.ru";
+ISPArr[30] = "Comgate";
+ISPArr[31] = "Consul.com";
+ISPArr[32] = "Cubio";
+ISPArr[33] = "CyberNet";
+ISPArr[34] = "Degunino.net";
+ISPArr[35] = "Demos Datacom";
+ISPArr[36] = "Diamond Network";
+ISPArr[37] = "Digital city";
+ISPArr[38] = "DNlab";
+ISPArr[39] = "Dom.ru";
+ISPArr[40] = "Dominanta";
+ISPArr[41] = "Elektron Telecom";
+ISPArr[42] = "Elenet";
+ISPArr[43] = "Eltel";
+ISPArr[44] = "Enter";
+ISPArr[45] = "Funnet Telecom";
+ISPArr[46] = "Gelios.net";
+ISPArr[47] = "Gorcom (DHCP)";
+ISPArr[48] = "GP Internet";
+ISPArr[49] = "GTK";
+ISPArr[50] = "Hitnet";
+ISPArr[51] = "Hohloma";
+ISPArr[52] = "HomeNet";
+ISPArr[53] = "HomeUser";
+ISPArr[54] = "Hovanka.Ru";
+ISPArr[55] = "Ido Telecom";
+ISPArr[56] = "Igra-Service";
+ISPArr[57] = "Igra-Service (VPN)";
+ISPArr[58] = "iLAN";
+ISPArr[59] = "Imsys";
+ISPArr[60] = "Inet Com";
+ISPArr[61] = "Insys";
+ISPArr[62] = "Insys (Unlimited)";
+ISPArr[63] = "Intercon";
+ISPArr[64] = "InterLAN (NEAD)";
+ISPArr[65] = "InterLAN (SAD, SEAD)";
+ISPArr[66] = "Internet-Cosmos";
+ISPArr[67] = "Intersvyaz (PPTP)";
+ISPArr[68] = "InterZet";
+ISPArr[69] = "IntraStar";
+ISPArr[70] = "Iskratelecom";
+ISPArr[71] = "KolpinoNet";
+ISPArr[72] = "Konkovo.Net";
+ISPArr[73] = "KoptevoNet";
+ISPArr[74] = "Kurkino.Net.Ru";
+ISPArr[75] = "Kvidex Telecom";
+ISPArr[76] = "Lanport";
+ISPArr[77] = "Lantek";
+ISPArr[78] = "Layner Telecom";
+ISPArr[79] = "Lentel (IPN)";
+ISPArr[80] = "Lentel (VPN)";
+ISPArr[81] = "LinkLine";
+ISPArr[82] = "Local Telecom";
+ISPArr[83] = "LuxTelecom";
+ISPArr[84] = "Mark";
+ISPArr[85] = "Maryno.net";
+ISPArr[86] = "Masterlink (PPPoE)";
+ISPArr[87] = "Masterlink (PPTP)";
+ISPArr[88] = "Mizar Proekt";
+ISPArr[89] = "MnevnikiOnline";
+ISPArr[90] = "MNS";
+ISPArr[91] = "MNS (Unlimited)";
+ISPArr[92] = "Mosinter";
+ISPArr[93] = "Multima";
+ISPArr[94] = "NEMIYA";
+ISPArr[95] = "NetByNet (PPPoE)";
+ISPArr[96] = "NetByNet (PPTP)";
+ISPArr[97] = "Netline";
+ISPArr[98] = "Netorn";
+ISPArr[99] = "Netorn (subnetwork 13, gerdan)";
+ISPArr[100] = "Nevalink";
+ISPArr[101] = "New Link Telecom";
+ISPArr[102] = "NNZ-Home";
+ISPArr[103] = "NorthNet";
+ISPArr[104] = "Onlime";
+ISPArr[105] = "OST Net";
+ISPArr[106] = "PeterStar";
+ISPArr[107] = "Planeta";
+ISPArr[108] = "Polustrovo.net";
+ISPArr[109] = "PowerNet";
+ISPArr[110] = "Prime-Telecom";
+ISPArr[111] = "Prof Telecom";
+ISPArr[112] = "PROV.RU";
+ISPArr[113] = "PSK-net";
+ISPArr[114] = "Pulnet";
+ISPArr[115] = "Pushkin-net";
+ISPArr[116] = "QWERTY";
+ISPArr[117] = "Realnet";
+ISPArr[118] = "Real-Net";
+ISPArr[119] = "Ruscentrosvyaz";
+ISPArr[120] = "RusCom";
+ISPArr[121] = "RusCom (direct IP)";
+ISPArr[122] = "Siberia Networks";
+ISPArr[123] = "Sibintercom";
+ISPArr[124] = "Skynet";
+ISPArr[125] = "SmartHome";
+ISPArr[126] = "Smile (Infoline)";
+ISPArr[127] = "South-West Networks";
+ISPArr[128] = "Spark";
+ISPArr[129] = "Starlink Telecom (DHCP)";
+ISPArr[130] = "Starlink Telecom (PPPoE)";
+ISPArr[131] = "Summa Telecom";
+ISPArr[132] = "Sviblovo On-Line (PPPoE)";
+ISPArr[133] = "Sviblovo On-Line (PPTP)";
+ISPArr[134] = "Tattelecom";
+ISPArr[135] = "Techmarket-Net";
+ISPArr[136] = "TelecomProfit";
+ISPArr[137] = "Teleport";
+ISPArr[138] = "Teleset-Ufa";
+ISPArr[139] = "Teyla";
+ISPArr[140] = "TiERA";
+ISPArr[141] = "TKT";
+ISPArr[142] = "Tolyatti Telecom";
+ISPArr[143] = "TTK North-West";
+ISPArr[144] = "Tushino Telecom (DHCP)";
+ISPArr[145] = "Tushino Telecom (PPPoE)";
+ISPArr[146] = "TVT";
+ISPArr[147] = "UCA Networks";
+ISPArr[148] = "UltraNet";
+ISPArr[149] = "Uniline";
+ISPArr[150] = "Unis";
+ISPArr[151] = "UniWeb";
+ISPArr[152] = "Velnet Telecom";
+ISPArr[153] = "Viartcom";
+ISPArr[154] = "Vik Master";
+ISPArr[155] = "Volina";
+ISPArr[156] = "VPK-Telecom";
+ISPArr[157] = "Well-Com";
+ISPArr[158] = "WestCall";
+ISPArr[159] = "WKT Networks";
+ISPArr[160] = "Yasenevo Online";
+ISPArr[161] = "Yauza Telecom";
+ISPArr[162] = "Yauza Telecom (Real IP)";
+ISPArr[163] = "Yumos";
+ISPArr[164] = "Complat";
+ISPArr[165] = "Compot";
+
+ISPArr[166] = "end";
+*/
+
+/*==============City list================*/
+
+var cityArr = new Array();
+cityArr[0] = "Отсутствует";
+cityArr[1] = "Альметьевск";
+cityArr[2] = "Архангельск";
+cityArr[3] = "Астрахань";
+cityArr[4] = "Балаково";
+cityArr[5] = "Балашиха";
+cityArr[6] = "Барнаул";
+cityArr[7] = "Батайск";
+cityArr[8] = "Волгоград";
+cityArr[9] = "Брянск";
+cityArr[10] = "Челябинск";
+cityArr[11] = "Череповец";
+cityArr[12] = "Десногорск";
+cityArr[13] = "Долгопрудный";
+cityArr[14] = "Домодедово";
+cityArr[15] = "Дзержинск";
+cityArr[16] = "Екатеринбург";
+cityArr[17] = "Электросталь";
+cityArr[18] = "Энгельс";
+cityArr[19] = "Хабаровск";
+cityArr[20] = "Химки";
+cityArr[21] = "Химки-Куркино";
+cityArr[22] = "Иркутск";
+cityArr[23] = "Иваново";
+cityArr[24] = "Ижевск";
+cityArr[25] = "Калининград";
+cityArr[26] = "Калуга";
+cityArr[27] = "Каменск-Уральский";
+cityArr[28] = "Кашира";
+cityArr[29] = "Казань";
+cityArr[30] = "Кемерово";
+cityArr[31] = "Киров";
+cityArr[32] = "Кисловодск";
+cityArr[33] = "Кохма";
+cityArr[34] = "Колпино";
+cityArr[35] = "Кострома";
+cityArr[36] = "Краснодар";
+cityArr[37] = "Красноярск";
+cityArr[38] = "Курск";
+cityArr[39] = "Липецк";
+cityArr[40] = "Люберцы";
+cityArr[41] = "Махачкала";
+cityArr[42] = "Менделеево";
+cityArr[43] = "Менделеевск";
+cityArr[44] = "Минеральные Воды";
+cityArr[45] = "Москва";
+cityArr[46] = "Можайск";
+cityArr[47] = "Набережные Челны";
+cityArr[48] = "Нефтекамск";
+cityArr[49] = "Нижнекамск";
+cityArr[50] = "Нижний Новгород";
+cityArr[51] = "Нижний Тагил";
+cityArr[52] = "Ногинск";
+cityArr[53] = "Новокузнецк";
+cityArr[54] = "Новомосковск";
+cityArr[55] = "Новосибирск";
+cityArr[56] = "Обнинск";
+cityArr[57] = "Одинцово";
+cityArr[58] = "Октябрьский";
+cityArr[59] = "Омск";
+cityArr[60] = "Орел";
+cityArr[61] = "Оренбург";
+cityArr[62] = "Павловский Посад";
+cityArr[63] = "Пенза";
+cityArr[64] = "Пермь";
+cityArr[65] = "Пятигорск";
+cityArr[66] = "Ростов-на-Дону";
+cityArr[67] = "Рязань";
+cityArr[68] = "Рыбинск";
+cityArr[69] = "Санкт-Петербург";
+cityArr[70] = "Самара";
+cityArr[71] = "Саратов";
+cityArr[72] = "Саров";
+cityArr[73] = "Северодвинск";
+cityArr[74] = "Шатура";
+cityArr[75] = "Щекино";
+cityArr[76] = "Шуя";
+cityArr[77] = "Смоленск";
+cityArr[78] = "Сочи";
+cityArr[79] = "Таганрог";
+cityArr[80] = "Тутаев";
+cityArr[81] = "Тольятти";
+cityArr[82] = "Томск";
+cityArr[83] = "Тула";
+cityArr[84] = "Тверь";
+cityArr[85] = "Тюмень";
+cityArr[86] = "Уфа";
+cityArr[87] = "Ульяновск";
+cityArr[88] = "Узловая";
+cityArr[89] = "Владивосток";
+cityArr[90] = "Димитровград";
+cityArr[91] = "Волгодонск";
+cityArr[92] = "Волжский";
+cityArr[93] = "Воронеж";
+cityArr[94] = "Ярославль";
+cityArr[95] = "Йошкар-Ола";
+cityArr[96] = "Южно-Сахалинск";
+cityArr[97] = "Зеленоград";
+cityArr[98] = "Железноводск";
+
+cityArr[99] = "Конец";
+
+/*=============ISP List==============*/
+
+var ISPArr = new Array();
+ISPArr[0] = "Отсутствует";
+ISPArr[1] = "2КОМ (DHCP)";
+ISPArr[2] = "2КОМ (PPTP)";
+ISPArr[3] = "АБН (Albeon)";
+ISPArr[4] = "АБВ-Интернет";
+ISPArr[5] = "Academ.org";
+ISPArr[6] = "Аист";
+ISPArr[7] = "AkademNet";
+ISPArr[8] = "АКАДО";
+ISPArr[9] = "АКАДО (ТВ кабель)";
+ISPArr[10] = "АКАДО (Ethernet кабель)";
+ISPArr[11] = "Антхил";
+ISPArr[12] = "Arbital";
+ISPArr[13] = "Астэйс-Телеком";
+ISPArr[14] = "Астэйс-Телеком (VPN)";
+ISPArr[15] = "Автово.нет";
+ISPArr[16] = "Авакс-телеком";
+ISPArr[17] = "Билайн";
+ISPArr[18] = "BigFish";
+ISPArr[19] = "BirulevoNET";
+ISPArr[20] = "Бородино-Телеком";
+ISPArr[21] = "Butovo.com";
+ISPArr[22] = "ButovoNet";
+ISPArr[23] = "КАБiNET";
+ISPArr[24] = "Камсан";
+ISPArr[25] = "ЦентраЛинк";
+ISPArr[26] = "Цифра";
+ISPArr[27] = "Город ОнЛайн";
+ISPArr[28] = "Сити онлайн (CLN)";
+ISPArr[29] = "CityTelecom.ru";
+ISPArr[30] = "Комгейт";
+ISPArr[31] = "Консул.ком";
+ISPArr[32] = "Cubio";
+ISPArr[33] = "CyberNet";
+ISPArr[34] = "Degunino.net";
+ISPArr[35] = "Демос Датаком";
+ISPArr[36] = "Diamond Network";
+ISPArr[37] = "Электронный город";
+ISPArr[38] = "DNlab";
+ISPArr[39] = "Дом.ru";
+ISPArr[40] = "Доминанта";
+ISPArr[41] = "Электрон Телеком";
+ISPArr[42] = "Эленет";
+ISPArr[43] = "Элтел";
+ISPArr[44] = "Enter";
+ISPArr[45] = "Фаннет Телеком";
+ISPArr[46] = "Gelios.net";
+ISPArr[47] = "ГорКом (DHCP)";
+ISPArr[48] = "GP Internet";
+ISPArr[49] = "ГТК";
+ISPArr[50] = "Hitnet";
+ISPArr[51] = "Хохлома";
+ISPArr[52] = "HomeNet";
+ISPArr[53] = "HomeUser";
+ISPArr[54] = "Хованка.Ру";
+ISPArr[55] = "Айдо Телеком";
+ISPArr[56] = "Игра-Сервис";
+ISPArr[57] = "Игра-Сервис (VPN)";
+ISPArr[58] = "iLAN";
+ISPArr[59] = "Imsys";
+ISPArr[60] = "Инет Ком";
+ISPArr[61] = "Инсис";
+ISPArr[62] = "Инсис (Безлимитный тариф)";
+ISPArr[63] = "Интеркон";
+ISPArr[64] = "InterLAN (СВАО)";
+ISPArr[65] = "InterLAN (ЮАО, ЮВАО)";
+ISPArr[66] = "Интернет-Космос";
+ISPArr[67] = "Интерсвязь (PPTP)";
+ISPArr[68] = "InterZet";
+ISPArr[69] = "IntraStar";
+ISPArr[70] = "Искрателеком";
+ISPArr[71] = "KolpinoNet";
+ISPArr[72] = "Konkovo.Net";
+ISPArr[73] = "КоптевоНет";
+ISPArr[74] = "Kurkino.Net.Ru";
+ISPArr[75] = "Квидекс Телеком";
+ISPArr[76] = "Lanport";
+ISPArr[77] = "Лантек";
+ISPArr[78] = "Лайнер Телеком";
+ISPArr[79] = "Lentel (IPN)";
+ISPArr[80] = "Lentel (VPN)";
+ISPArr[81] = "LinkLine";
+ISPArr[82] = "Локал Телеком";
+ISPArr[83] = "LuxTelecom";
+ISPArr[84] = "Марк";
+ISPArr[85] = "Марьино.net";
+ISPArr[86] = "Masterlink (PPPoE)";
+ISPArr[87] = "Masterlink (PPTP)";
+ISPArr[88] = "Мизар Проект";
+ISPArr[89] = "МневникиОнлайн";
+ISPArr[90] = "MNS";
+ISPArr[91] = "MNS (Безлимитный тариф)";
+ISPArr[92] = "Мосинтер";
+ISPArr[93] = "Мультима";
+ISPArr[94] = "NEMIYA";
+ISPArr[95] = "NetByNet (PPPoE)";
+ISPArr[96] = "NetByNet (PPTP)";
+ISPArr[97] = "Нетлайн";
+ISPArr[98] = "Неторн";
+ISPArr[99] = "Неторн (подсеть 13, gerdan)";
+ISPArr[100] = "Невалинк";
+ISPArr[101] = "Нью Линк Телеком";
+ISPArr[102] = "Ниеншанц-Хоум";
+ISPArr[103] = "NorthNet";
+ISPArr[104] = "Onlime";
+ISPArr[105] = "ОСТ НЕТ";
+ISPArr[106] = "ПетерСтар";
+ISPArr[107] = "Планета";
+ISPArr[108] = "Polustrovo.net";
+ISPArr[109] = "PowerNet";
+ISPArr[110] = "Прайм-Телеком";
+ISPArr[111] = "Проф Телеком";
+ISPArr[112] = "PROV.RU";
+ISPArr[113] = "PSK-net";
+ISPArr[114] = "Пулнет";
+ISPArr[115] = "Пушкин-Net";
+ISPArr[116] = "QWERTY";
+ISPArr[117] = "Реалнет";
+ISPArr[118] = "Real-Net";
+ISPArr[119] = "Русцентросвязь";
+ISPArr[120] = "РусКом";
+ISPArr[121] = "РусКом (Прямой IP)";
+ISPArr[122] = "Сибирские Сети";
+ISPArr[123] = "Сибинтерком";
+ISPArr[124] = "Скайнет";
+ISPArr[125] = "SmartHome";
+ISPArr[126] = "Смайл (Инфолайн)";
+ISPArr[127] = "Юго-Западные сети";
+ISPArr[128] = "Спарк";
+ISPArr[129] = "Старлинк Телеком (DHCP)";
+ISPArr[130] = "Старлинк Телеком (PPPoE)";
+ISPArr[131] = "Сумма Телеком";
+ISPArr[132] = "Он-Лайн (PPPoE)";
+ISPArr[133] = "Он-Лайн (PPTP)";
+ISPArr[134] = "Таттелеком";
+ISPArr[135] = "Техмаркет-Сеть";
+ISPArr[136] = "ТелекомПрофит";
+ISPArr[137] = "Телепорт";
+ISPArr[138] = "Телесеть-Уфа";
+ISPArr[139] = "Teyla";
+ISPArr[140] = "TiERA";
+ISPArr[141] = "ТКТ";
+ISPArr[142] = "Тольятти Телеком";
+ISPArr[143] = "ТТК Северо-Запад";
+ISPArr[144] = "Тушино Телеком (DHCP)";
+ISPArr[145] = "Тушино Телеком (PPPoE)";
+ISPArr[146] = "ТВТ";
+ISPArr[147] = "UCA Networks";
+ISPArr[148] = "UltraNet";
+ISPArr[149] = "Юнионлайн";
+ISPArr[150] = "Unis";
+ISPArr[151] = "UniWeb";
+ISPArr[152] = "Велнет Телеком";
+ISPArr[153] = "Виартком";
+ISPArr[154] = "ВИК Мастер";
+ISPArr[155] = "Волина";
+ISPArr[156] = "ВПК-Телеком";
+ISPArr[157] = "Well-Com";
+ISPArr[158] = "ВестКолл";
+ISPArr[159] = "WKT Networks";
+ISPArr[160] = "Ясенево Онлайн";
+ISPArr[161] = "Яуза Телеком";
+ISPArr[162] = "Яуза Телеком (Реальный IP)";
+ISPArr[163] = "ЮМОС";
+ISPArr[164] = "Complat";
+ISPArr[165] = "Compot";
+
+ISPArr[166] = "Конец";
+ISPArr[167] = "Ростелеком";
+
+/*===============City---->ISP MAP================*/
+var City_ISP_Arr = new Array();
+City_ISP_Arr[1] = [
+{txt:'Таттелеком', val:'134'},
+{txt:'ТВТ', val:'146'}
+];
+City_ISP_Arr[2] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[3] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[4] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[5] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[6] = [
+{txt:'Дом.ru', val:'39'},
+{txt:'Enter', val:'44'}
+];
+City_ISP_Arr[7] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[7] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[8] = [
+{txt:'Билайн', val:'17'},
+{txt:'Дом.ru', val:'39'}
+];
+City_ISP_Arr[9] = [
+{txt:'Билайн', val:'17'},
+{txt:'Спарк', val:'128'}
+];
+City_ISP_Arr[10] = [
+{txt:'Дом.ru', val:'39'},
+{txt:'Инсис', val:'61'},
+{txt:'Инсис (Безлимитный тариф)', val:'62'},
+{txt:'Интерсвязь (PPTP)', val:'67'}
+];
+City_ISP_Arr[11] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[12] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[13] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[14] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[15] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[16] = [
+{txt:'АКАДО', val:'8'},
+{txt:'Билайн', val:'17'},
+{txt:'КАБiNET', val:'23'},
+{txt:'Инсис', val:'61'},
+{txt:'Инсис (Безлимитный тариф)', val:'62'},
+{txt:'Мизар Проект', val:'88'},
+{txt:'Планета', val:'107'},
+{txt:'РусКом', val:'120'},
+{txt:'РусКом (Прямой IP)', val:'121'},
+{txt:'Скайнет', val:'124'},
+{txt:'ВИК Мастер', val:'154'}
+];
+City_ISP_Arr[17] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[18] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[19] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[20] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[21] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[22] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[23] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[24] = [
+{txt:'Дом.ru', val:'39'},
+{txt:'Лайнер Телеком', val:'78'},
+{txt:'Марк', val:'84'}
+];
+City_ISP_Arr[25] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[26] = [
+{txt:'Билайн', val:'17'},
+{txt:'Спарк', val:'128'}
+];
+City_ISP_Arr[27] = [
+{txt:'Инсис', val:'61'},
+{txt:'Инсис (Безлимитный тариф)', val:'62'}
+];
+City_ISP_Arr[28] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[29] = [
+{txt:'Билайн', val:'17'},
+{txt:'Дом.ru', val:'39'},
+{txt:'Таттелеком', val:'134'}
+];
+City_ISP_Arr[30] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[31] = [
+{txt:'Дом.ru', val:'39'}
+];
+City_ISP_Arr[32] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[33] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[34] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[35] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[36] = [
+{txt:'Билайн', val:'17'},
+{txt:'Спарк', val:'128'}
+];
+City_ISP_Arr[37] = [
+{txt:'Билайн', val:'17'},
+{txt:'CityTelecom.ru', val:'29'},
+{txt:'Дом.ru', val:'39'},
+{txt:'Игра-Сервис', val:'56'},
+{txt:'Игра-Сервис (VPN)', val:'57'},
+{txt:'Мультима', val:'93'}
+];
+City_ISP_Arr[38] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[39] = [
+{txt:'Билайн', val:'17'},
+{txt:'Дом.ru', val:'39'},
+{txt:'Сумма Телеком', val:'131'}
+];
+City_ISP_Arr[40] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[41] = [
+{txt:'Сумма Телеком', val:'131'}
+];
+City_ISP_Arr[42] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[43] = [
+{txt:'ТВТ', val:'146'}
+];
+City_ISP_Arr[44] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[45] = [
+{txt:'2КОМ (DHCP)', val:'1'},
+{txt:'2КОМ (PPTP)', val:'2'},
+{txt:'АБН (Albeon)', val:'3'},
+{txt:'AkademNet', val:'7'},
+{txt:'АКАДО (ТВ кабель)', val:'9'},
+{txt:'АКАДО (Ethernet кабель)', val:'10'},
+{txt:'Астэйс-Телеком', val:'13'},
+{txt:'Астэйс-Телеком (VPN)', val:'14'},
+{txt:'Авакс-телеком', val:'16'},
+{txt:'Билайн', val:'17'},
+{txt:'BirulevoNET', val:'19'},
+{txt:'Бородино-Телеком', val:'20'},
+{txt:'Butovo.com', val:'21'},
+{txt:'ButovoNet', val:'22'},
+{txt:'Камсан', val:'24'},
+{txt:'Сити онлайн (CLN)', val:'28'},
+{txt:'CityTelecom.ru', val:'29'},
+{txt:'Complat', val:'164'},
+{txt:'Compot', val:'165'},
+{txt:'Консул.ком', val:'31'},
+{txt:'Degunino.net', val:'34'},
+{txt:'DNlab', val:'38'},
+{txt:'Gelios.net', val:'46'},
+{txt:'ГорКом (DHCP)', val:'47'},
+{txt:'GP Internet', val:'48'},
+{txt:'Хованка.Ру', val:'54'},
+{txt:'Imsys', val:'59'},
+{txt:'Инет Ком', val:'60'},
+{txt:'InterLAN (СВАО)', val:'64'},
+{txt:'InterLAN (ЮАО, ЮВАО)', val:'65'},
+{txt:'Интернет-Космос', val:'66'},
+{txt:'Искрателеком', val:'70'},
+{txt:'Konkovo.Net', val:'72'},
+{txt:'КоптевоНет', val:'73'},
+{txt:'Kurkino.Net.Ru', val:'74'},
+{txt:'Квидекс Телеком', val:'75'},
+{txt:'Lanport', val:'76'},
+{txt:'Лантек', val:'77'},
+{txt:'LinkLine', val:'81'},
+{txt:'Локал Телеком', val:'82'},
+{txt:'Марьино.net', val:'85'},
+{txt:'Masterlink (PPPoE)', val:'86'},
+{txt:'Masterlink (PPTP)', val:'87'},
+{txt:'МневникиОнлайн', val:'89'},
+{txt:'Мосинтер', val:'92'},
+{txt:'NetByNet (PPPoE)', val:'95'},
+{txt:'NetByNet (PPTP)', val:'96'},
+{txt:'Нетлайн', val:'97'},
+{txt:'Неторн', val:'98'},
+{txt:'Неторн (подсеть 13, gerdan)', val:'99'},
+{txt:'NorthNet', val:'103'},
+{txt:'Onlime', val:'104'},
+{txt:'ОСТ НЕТ', val:'105'},
+{txt:'Проф Телеком', val:'111'},
+{txt:'PROV.RU', val:'112'},
+{txt:'PSK-net', val:'113'},
+{txt:'QWERTY', val:'116'},
+{txt:'Русцентросвязь', val:'119'},
+{txt:'Смайл (Инфолайн)', val:'126'},
+{txt:'Старлинк Телеком (DHCP)', val:'129'},
+{txt:'Старлинк Телеком (PPPoE)', val:'130'},
+{txt:'Свиблово Он-Лайн (PPPoE)', val:'132'},
+{txt:'Свиблово Он-Лайн (PPTP)', val:'133'},
+{txt:'Техмаркет-Сеть', val:'135'},
+{txt:'ТелекомПрофит', val:'136'},
+{txt:'Тушино Телеком (DHCP)', val:'144'},
+{txt:'Тушино Телеком (PPPoE)', val:'145'},
+{txt:'UCA Networks', val:'147'},
+{txt:'UltraNet', val:'148'},
+{txt:'Юнионлайн', val:'149'},
+{txt:'Велнет Телеком', val:'152'},
+{txt:'Волина', val:'155'},
+{txt:'ВПК-Телеком', val:'156'},
+{txt:'Ясенево Онлайн', val:'160'},
+{txt:'Яуза Телеком', val:'161'},
+{txt:'Яуза Телеком (Реальный IP)', val:'162'},
+{txt:'ЮМОС', val:'163'},
+];
+City_ISP_Arr[46] = [
+{txt:'Бородино-Телеком', val:'20'}
+];
+City_ISP_Arr[47] = [
+{txt:'Дом.ru', val:'39'},
+{txt:'Таттелеком', val:'134'},
+{txt:'ТВТ', val:'146'}
+];
+City_ISP_Arr[48] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[49] = [
+{txt:'Дом.ru', val:'39'},
+{txt:'Таттелеком', val:'134'},
+{txt:'ТВТ', val:'146'}
+];
+City_ISP_Arr[50] = [
+{txt:'АБВ-Интернет', val:'4'},
+{txt:'Билайн', val:'17'},
+{txt:'Бородино-Телеком', val:'20'},
+{txt:'Дом.ru', val:'39'},
+{txt:'Imsys', val:'59'},
+{txt:'Сумма Телеком', val:'131'},
+];
+City_ISP_Arr[51] = [
+{txt:'Инсис', val:'61'}
+];
+City_ISP_Arr[52] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[53] = [
+{txt:'Enter', val:'44'}
+];
+City_ISP_Arr[54] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[55] = [
+{txt:'Academ.org', val:'5'},
+{txt:'Комгейт', val:'30'},
+{txt:'Электронный город', val:'37'},
+{txt:'Дом.ru', val:'39'},
+{txt:'HomeNet', val:'52'},
+{txt:'Real-Net', val:'118'},
+{txt:'Сибирские Сети', val:'122'}
+];
+City_ISP_Arr[56] = [
+{txt:'Спарк', val:'128'}
+];
+City_ISP_Arr[57] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[58] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[59] = [
+{txt:'Билайн', val:'17'},
+{txt:'Дом.ru', val:'39'},
+{txt:'Сибинтерком', val:'123'}
+];
+City_ISP_Arr[60] = [
+{txt:'Билайн', val:'17'},
+{txt:'Сумма Телеком', val:'131'}
+];
+City_ISP_Arr[61] = [
+{txt:'Билайн', val:'17'},
+{txt:'Дом.ru', val:'39'}
+];
+City_ISP_Arr[62] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[63] = [
+{txt:'Дом.ru', val:'39'}
+];
+City_ISP_Arr[64] = [
+{txt:'Билайн', val:'17'},
+{txt:'Дом.ru', val:'39'}
+];
+City_ISP_Arr[65] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[66] = [
+{txt:'Билайн', val:'17'},
+{txt:'Спарк', val:'128'},
+{txt:'Сумма Телеком', val:'131'}
+];
+City_ISP_Arr[67] = [
+{txt:'Спарк', val:'128'}
+];
+City_ISP_Arr[68] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[69] = [
+{txt:'Антхил', val:'11'},
+{txt:'Arbital', val:'12'},
+{txt:'Автово.нет', val:'15'},
+{txt:'Билайн', val:'17'},
+{txt:'BigFish', val:'18'},
+{txt:'Цифра', val:'26'},
+{txt:'Город ОнЛайн', val:'27'},
+{txt:'CityTelecom.ru', val:'29'},
+{txt:'Cubio', val:'32'},
+{txt:'CyberNet', val:'33'},
+{txt:'Демос Датаком', val:'35'},
+{txt:'Diamond Network', val:'36'},
+{txt:'Доминанта', val:'40'},
+{txt:'Электрон Телеком', val:'41'},
+{txt:'Эленет', val:'42'},
+{txt:'Элтел', val:'43'},
+{txt:'ГТК', val:'49'},
+{txt:'Hitnet', val:'50'},
+{txt:'Хохлома', val:'51'},
+{txt:'HomeUser', val:'53'},
+{txt:'iLAN', val:'58'},
+{txt:'InterZet', val:'68'},
+{txt:'IntraStar', val:'69'},
+{txt:'KolpinoNet', val:'71'},
+{txt:'Lentel (IPN)', val:'79'},
+{txt:'Lentel (VPN)', val:'80'},
+{txt:'LuxTelecom', val:'83'},
+{txt:'MNS', val:'90'},
+{txt:'MNS (Безлимитный тариф)', val:'91'},
+{txt:'NEMIYA', val:'94'},
+{txt:'Невалинк', val:'100'},
+{txt:'Нью Линк Телеком', val:'101'},
+{txt:'Ниеншанц-Хоум', val:'102'},
+{txt:'ПетерСтар', val:'106'},
+{txt:'Polustrovo.net', val:'108'},
+{txt:'Прайм-Телеком', val:'110'},
+{txt:'Пулнет', val:'114'},
+{txt:'Пушкин-Net', val:'115'},
+{txt:'Реалнет', val:'117'},
+{txt:'Скайнет', val:'124'},
+{txt:'SmartHome', val:'125'},
+{txt:'Юго-Западные сети', val:'127'},
+{txt:'Сумма Телеком', val:'131'},
+{txt:'Телепорт', val:'137'},
+{txt:'Teyla', val:'139'},
+{txt:'TiERA', val:'140'},
+{txt:'ТТК Северо-Запад', val:'143'},
+{txt:'Unis', val:'150'},
+{txt:'UniWeb', val:'151'},
+{txt:'Виартком', val:'153'},
+{txt:'Well-Com', val:'157'},
+{txt:'ВестКолл', val:'158'},
+{txt:'WKT Networks', val:'159'}
+];
+City_ISP_Arr[70] = [
+{txt:'Аист', val:'6'},
+{txt:'Билайн', val:'17'},
+{txt:'Дом.ru', val:'39'}
+];
+City_ISP_Arr[71] = [
+{txt:'Билайн', val:'17'},
+{txt:'Дом.ru', val:'39'},
+{txt:'Фаннет Телеком', val:'45'}
+];
+City_ISP_Arr[72] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[73] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[74] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[75] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[76] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[77] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[78] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[79] = [
+{txt:'Спарк', val:'128'}
+];
+City_ISP_Arr[80] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[81] = [
+{txt:'Аист', val:'6'},
+{txt:'Билайн', val:'17'},
+{txt:'Айдо Телеком', val:'55'},
+{txt:'Тольятти Телеком', val:'142'}
+];
+City_ISP_Arr[82] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[83] = [
+{txt:'Билайн', val:'17'},
+{txt:'Спарк', val:'128'},
+{txt:'Сумма Телеком', val:'131'}
+];
+City_ISP_Arr[84] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[85] = [
+{txt:'Билайн', val:'17'},
+{txt:'Дом.ru', val:'39'},
+{txt:'Enter', val:'44'}
+];
+City_ISP_Arr[86] = [
+{txt:'Билайн', val:'17'},
+{txt:'Телесеть-Уфа', val:'138'}
+];
+City_ISP_Arr[87] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[88] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[89] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[90] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[91] = [
+{txt:'Спарк', val:'128'}
+];
+City_ISP_Arr[92] = [
+{txt:'Билайн', val:'17'},
+{txt:'Дом.ru', val:'39'},
+{txt:'PowerNet', val:'109'}
+];
+City_ISP_Arr[93] = [
+{txt:'Билайн', val:'17'},
+{txt:'ЦентраЛинк', val:'25'},
+{txt:'Дом.ru', val:'39'},
+{txt:'Интеркон', val:'63'},
+{txt:'Сумма Телеком', val:'131'},
+{txt:'Ростелеком', val:'167'}
+];
+City_ISP_Arr[94] = [
+{txt:'Билайн', val:'17'},
+{txt:'Enter', val:'44'}
+];
+City_ISP_Arr[95] = [
+{txt:'Дом.ru', val:'39'}
+];
+City_ISP_Arr[96] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[97] = [
+{txt:'Билайн', val:'17'}
+];
+City_ISP_Arr[98] = [
+{txt:'Билайн', val:'17'}
+];
+
+/*==============function==========*/
+function removeOptions(selectObj)
+{
+    if (typeof selectObj != 'object')
+    {
+        selectObj = document.getElementById(selectObj);
+    }
+    var len = selectObj.options.length;
+    for (var i=0; i < len; i++)
+    {
+        selectObj.options[0] = null;
+    }
+}
+
+function set_isp_idx(isp_idx)
+{
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[0];
+	
+	cf.h_rus_isp_idx.value = isp_idx;
+}
+
+function set_select_isp_opt(city_idx)
+{
+	var sel_obj = document.getElementById("select_isp");
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[0];
+	
+	//clear option
+    removeOptions(sel_obj);
+    
+    var idx = parseInt(city_idx);
+    
+    cf.h_rus_city_idx.value = city_idx;
+    
+    if(idx == 0)
+    {
+		alert("No city selected!");
+		return;
+    }
+    
+    var len = City_ISP_Arr[idx].length;
+    
+    /*add "none" opt*/
+    sel_obj.options[0] = new Option("Отсутствует", "0");
+    
+    for(var i = 1; i <= len; i++ )
+    {
+		sel_obj.options[i] = new Option(City_ISP_Arr[idx][i-1].txt, City_ISP_Arr[idx][i-1].val);
+	}
+}
+
+function add_select_city_opt()
+{
+	var sel_obj = document.getElementById("select_city");
+	/*Get city array's length*/
+	var len = cityArr.length;
+	
+	//clear option
+    removeOptions(sel_obj);
+    
+    for(var i = 0; i < len; i++)
+    {
+		sel_obj.options[i] = new Option(cityArr[i], i.toString());
+	}
+}
+
+function initPage()
+{
+
+	var btns_container_div = document.getElementById("btnsContainer_div");
+	var quit_wiz = document.getElementById("quit_wizard_img");
+	
+	btns_container_div.onclick = function()
+	{
+		return post_city_isp_value();
+	}
+	
+	quit_wiz.onclick = function()
+	{
+		return redir_brs_start();
+	}
+	
+	add_select_city_opt();
+	
+}
+
+function redir_brs_start()
+{
+	top.location.href = "BRS_start.htm";
+}
+
+function post_city_isp_value()
+{
+	/*Add select option to value's trans*/
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[0];
+
+	cf.submit();
+
+	return true;
+}
+
+function getManual()
+{
+	var city_obj = document.getElementById("select_city");
+	var isp_obj = document.getElementById("select_isp");
+
+	if(city_obj.options[city_obj.selectedIndex].text=="Отсутствует"||isp_obj.options[isp_obj.selectedIndex].text=="Отсутствует")
+	{
+		var forms = document.getElementsByTagName("form");
+		var cf = forms[0];
+		cf.submit();
+	}
+}
+
+addLoadEvent(initPage);
+
+-->
+</script>
+</HEAD>
+
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+
+<DIV class=wizard_words_div>
+<H1><span languageCode = "3264">Choose your city and ISP name:</span></H1>
+	<DIV class=wanInput_content_rus_div>
+		<DIV class=wanInput_left_rus_div id=rus_city align=left><span languageCode = "3265">City</span></DIV>
+		<DIV class=wanInput_select_city_isp_rus_div>
+			<select name="select_city" id="select_city" onchange="set_select_isp_opt(this.options[this.selectedIndex].value);">
+			</select>
+		</DIV>
+		<DIV class=wanInput_left_rus_div id=rus_isp align=left><span languageCode = "3266">ISP</span></DIV>
+		<DIV class=wanInput_select_city_isp_rus_div>
+			<select name="select_isp" id="select_isp" onchange="set_isp_idx(this.options[this.selectedIndex].value);">
+			</select>
+		</DIV>
+		<DIV style="CLEAR: both"></DIV>
+				<br/><br/>
+		<DIV>
+		<span languageCode="3490">You can click to manually setup your router </span><u style="cursor:pointer;color:blue" onclick="getManual()"><span languageCode="3491">Manual setup</span></u>
+		</DIV>
+	</DIV>
+</DIV>
+
+<table width="100%">
+<tr>
+<td width="50%">
+<DIV class=wizard_buttons_div id=quit_Btns_div align=center>
+	<DIV class=buttons_img_div id=quit_wizard_img><IMG src="image/ca-little-purple-button.gif">
+		<DIV class=buttons_words_div id=quit_wizard align=center><span languageCode="3304">Quit Wizard</span></DIV>
+	</DIV>
+</DIV>
+</td>
+<td>
+<DIV class=wizard_buttons_div id=next_Btns_div >
+	<DIV class=buttons_img_div id=btnsContainer_div><IMG src="image/ca-little-purple-button.gif">
+		<DIV class=buttons_words_div id=btn_text_div align=center><span languageCode = "25">Next</span></DIV>
+	</DIV>
+</DIV>
+</td>
+</tr>
+</table>
+</DIV>
+<input type="hidden" name="h_rus_city_idx" value="none">
+<input type="hidden" name="h_rus_isp_idx" value="none">
+<input type="hidden" name="todo" value="brs_rus_city_isp_check">
+<input type="hidden" name="this_file" value="BRS_RUS_select_city_isp.html">
+<input type="hidden" name="SID" value="@SID#">
+
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

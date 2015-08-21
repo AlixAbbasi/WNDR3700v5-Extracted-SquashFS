@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/hijack_02_genieHelp.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+var genie_ping_result = "@genie_ping_result#";
+var refresh_times = "@refresh_times#";
+var state = "@brs_state#";
+function check_pingresult()
+{
+   
+    var cf = document.forms[0];
+
+    if(genie_ping_result == "success")
+    {        
+            this.location.href = "BRS_success.html";
+
+        return true;
+    }
+    else if(genie_ping_result == "failed" || refresh_times > 5)
+    {
+		
+	top.location.href="BRS_ap_select.html";	
+        return true;
+    }
+    else
+        this.location.href="BRS_ap_apply_setting_wait.html";
+}
+function wait_before_check()
+{
+    setTimeout('check_pingresult();',2000);
+}
+//-->
+</script></head>
+<body bgcolor="#ffffff" onload="wait_before_check();">
+<FORM action="setup.cgi@post_par#" method=post>
+
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div id=choices_div>
+<H1><span languageCode = "3017">Applying Internet Connection Settings</span></H1>
+<P><span languageCode = "3158">This porcess can take a minute or tow;please wait...</span></P>
+</DIV></DIV>
+
+<input type="hidden" name="SID" value="@SID#">
+
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="BRS_ap_apply_setting_wait.html">
+<input type="hidden" name="next_file" value="BRS_ap_apply_setting_wait.html">
+
+</FORM>  
+   	
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</body>
+</html>

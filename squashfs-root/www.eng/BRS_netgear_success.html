@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
+<HEAD>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style/hijack_style.css" />
+<link rel="stylesheet" type="text/css" href="style/hijack_ether_success.css" />
+<script language="javascript" type="text/javascript" src="script/brs_hijack.js"></script>
+<script language="javascript" type="text/javascript" src="script/brs_hijack_ether_success.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT  language=javascript type=text/javascript>
+var registered = "@brs_state#";
+
+///* 22281: add sn after success href */
+//2 seconds to restart dnrd
+//setTimeout('top.location.href = "@ntgr_reg_url#";',2000);
+//top.location.href = "@ntgr_reg_url#";
+
+var wan_gotIP = "@if_wan_up#";
+var refresh_times = @refresh_times#;
+var wan_conn_method = "@h_sysWAN_conn_method#";
+var is_3g_support = "@is_3g_support#";
+function do_submit()
+{
+    document.forms[0].submit();
+}
+function check_wanup()
+{
+    if(wan_gotIP == "UP")
+    {
+        setTimeout('top.location.href = "@ntgr_reg_url#";',2000);
+        return true;
+    }
+    else
+    {
+        //setTimeout('do_submit()',25000);
+        setTimeout('this.location.href="./BRS_netgear_success.html"',10000);
+    }
+}
+</SCRIPT>
+</HEAD>
+<BODY onload="check_wanup();">
+<FORM action="setup.cgi@post_par2#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+<DIV class=waiting_img_div id=applySettings_wait align=center><IMG alt=waiting src="image/wait30.gif"> </DIV></DIV>
+</DIV>
+<input type="hidden" name="this_file" value="BRS_netgear_success.html">
+<input type="hidden" name="next_file" value="BRS_netgear_success.html">
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# udhcpc script edited by Tim Riker <Tim@Rikers.org>
+
+[ -z "$1" ] && echo "Error: should be called from udhcpc" && exit 1
+
+GATEWAY=""
+[ -n "$broadcast" ] && BROADCAST="broadcast $broadcast"
+[ -n "$subnet" ] && NETMASK="netmask $subnet"
+
+case "$1" in
+	deconfig)
+		/sbin/ifconfig $interface 0.0.0.0
+		/bin/rm -f  /etc/ppp/pptp.dns
+
+		/bin/echo > /tmp/l2tpfailover
+		/bin/rc l2tp stop
+		rm -rf /tmp/l2tpfailover
+		;;
+
+	renew|bound)
+		/sbin/ifconfig $interface $ip $BROADCAST $NETMASK
+
+		rm -rf /etc/ppp/pptp.dns
+		[ -n "$domain" ] && echo search $domain > /etc/ppp/pptp.dns
+		for i in $dns ; do
+			echo nameserver $i >> /etc/ppp/pptp.dns
+		done
+
+		if [ -n "$router" ] ; then
+
+			for i in $router ; do
+				if [ "$GATEWAY" = "" ]; then
+					GATEWAY=$i
+					echo $GATEWAY > "/tmp/gateway"
+				fi
+			done
+
+		fi
+
+		for i in $dns ; do
+			route add $i gw $GATEWAY
+		done
+
+		/bin/echo > /tmp/l2tpfailover
+		/bin/rc l2tp start
+		rm -rf /tmp/l2tpfailover
+		;;
+esac
+
+exit 0

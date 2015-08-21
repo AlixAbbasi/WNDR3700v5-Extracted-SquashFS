@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><link rel="stylesheet" href="style/top.css">
+<script language="javascript" type="text/javascript" src="funcs.js"></script>
+<script language="javascript" type="text/javascript" src="top.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript">
+var type = parent.type;
+var dis_lang_crl = "1";
+var jp_multiPPPoE = "0";
+var wan_status = "1";
+var config_status = 9999;
+var updateFirmware = 1;
+var updateLanguage = 0;
+var wan_status_flag = "@wan_up_time#"; 
+var gui_language = "@h_language2#"; 
+
+function disable_lang()
+{
+    var cf = document.forms[0];
+	
+    cf.language.disabled="disabled";
+}
+function getUrlParam(url, param) 
+{ 
+    var re = new RegExp("(///?|&)" + param + "=([^&]+)(&|$)", "i"); 
+    var m = url.match(re); 
+    if (m)
+    {
+ 	    return m[2];
+    } 
+    else
+    {
+        return '';
+    } 	 
+} 
+
+
+function checkData()
+{
+    var cf = document.forms[0];
+    var language_var = getSelected(cf.language);
+    var confirm_message1 = getErrorMsgByVar("gsm_msg_switch_language_from");//"Do you want to switch from"; 
+    var confirm_message2 = getErrorMsgByVar("gsm_msg_switch_language_to");//"(the current language)to"; 
+    var confirm_message3 = confirm_message1+" "+cf.h_language.value+confirm_message2+" "+language_var+"?";
+    
+    if(language_var != cf.h_language.value) {
+	setTimeout(function(){
+		if(confirm(confirm_message3) == true)
+		{
+		    dataToHidden(cf);
+		    top.formframe.location.href="CheckNewLang.html";
+		    cf.language.disabled="disabled";
+		    cf.submit();
+		    return true;
+		}
+	    	else
+	    	    return false;
+	},10);
+        
+    }
+    else 
+    {
+        return false;
+    }
+}
+
+window.onresize = function(){
+	load_top_value();
+}
+</script>
+<title>NETGEAR Router @model_name#</title>
+<meta http-equiv=content-type content='text/html; charset=UTF-8'>
+<meta content="MSHTML 6.00.2800.1141" name="GENERATOR">
+</head>
+
+<body onload="dataToVisible(document.forms[0]);load_top_value();">
+
+<form method="GET" action="setup.cgi">
+
+<div id="logo"></div>
+<div id="logout" class="logout_bt" onclick='if(parent.guest !=1) top.location.href="setup.cgi?todo=logout";'><b languageCode = "490">Logout</b></div>
+<div id="router-name">@model_name#</div>
+<div id="labels">
+	<div id="basic_label" class="label_unclick" onclick="goto_top('index.htm');"><b><span languageCode = "3021">BASIC</span></b></div>
+	<div id="space_label"></div>
+	<div id="advanced_label" class="label_unclick" onclick="goto_top('adv_index.htm');"><b><span languageCode = "480">ADVANCED</span></b></div>
+</div>
+<div id="firm_version"><span languageCode = "3135">Router Firmware Version</span><br />@fw_version#</div>
+@new_fw_s#
+<div id="update_info" class="update_info_down" onclick="firmwareUpgrade();">
+	<div id="update_info_left"></div>
+	<div id="update_info_middle"><i languageCode = "3209">A new firmware upgrade is available. Click here to get it.</i></div>
+	<div id="update_info_right"></div>
+</div>
+@new_fw_e#
+<div id="select_language" align=right>
+<table>
+<tr><td colspan="2">
+    <select name="language" id="lang_sel" onChange="checkData()">
+				<option value="Auto">Auto</option>
+	            <option value="English">English</option>
+	            <option value="German">Deutsch</option>
+	            <option value="Chinese">中文</option>
+                    <option value="Japanese">日本語</option>
+	            <option value="Korean">한국쒿</option>
+	            <option value="Russian">Русский</option>
+	            <option value="Spanish">Español</option>
+	            <option value="Polish">Polski</option>
+	            <option value="French">Français</option>
+	            <option value="Italian">Italiano</option>
+	            <option value="Swedish">Svenska</option>
+	            <option value="Danish">Dansk</option>
+	            <option value="Dutch">Nederlands</option>
+	            <option value="Greek">Ελληνικά</option>
+	            <option value="Norwegian">Norsk</option>
+	            <option value="Czech">Čeština</option>
+	            <option value="Slovenian">Slovenščina</option>
+	            <option value="Portuguese">Português</option>
+	            <option value="Hungarian">Magyar</option>
+	            <option value="Romanian">Română</option>
+	            <option value="Finnish">Suomi</option>
+	            <option value="Slovak">Slovenčin</option>
+	</select></td>
+<!--
+<td>
+<input type="SUBMIT" name="Apply" value="Apply" onClick="return checkData()" languageCode="50">
+</td>
+-->
+</tr></table>
+</div>
+
+<input type="hidden" name="todo" value="changelanguage">
+<input type="hidden" name="this_file" value="top.html">
+<input type="hidden" name="next_file" value="index.htm">
+<input type="hidden" name="SID" value="@SID#">
+<input type="hidden" name="h_language" value="@h_language#">
+</form>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+
+</body>
+</html>
+

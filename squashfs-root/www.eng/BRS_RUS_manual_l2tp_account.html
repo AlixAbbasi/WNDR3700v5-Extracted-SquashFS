@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+<title>NETGEAR Router @model_name# </title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style/hijack_style.css" />
+<link rel="stylesheet" type="text/css" href="style/RU_staticIP.css" />
+<script language="javascript" type="text/javascript" src="script/brs_hijack.js"></script>
+<script language="javascript" type="text/javascript" src="script/RU_pptp_l2tp_manual.js"></script>
+<script language="javascript" type="text/javascript" src="script/funcs.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript">
+
+function initPage()
+{
+	var btns_container_div1 = document.getElementById("btnsContainer_div1");
+	btns_container_div1.onclick = function()
+	{
+		location.href = "BRS_RUS_manual_vpn_type_select.html";	
+	}
+}
+
+addLoadEvent(initPage);
+</script>
+</head>
+
+<body>
+<FORM action="setup.cgi@post_par#" method=post>
+
+<div class="wizard_content_div">
+
+<div class="wizard_words_div">
+
+			<H1><span languageCode = "3289">Please enter the following settings(you may find it in the brochure your ISP provided).Service name is optional.</span></H1>
+
+			<div id="mainContent_div">
+
+				<div id="loginName" class="input_left_div" align="right">
+					<span languageCode="91">Login</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="text" id="inputName" align="right" maxlength="60" name="l2tp_username" class="input_text" />
+				</div>
+
+				<div id="passwd" class="input_left_div" align="right">
+					<span languageCode="3113">Password</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="password" id="inputPasswd" align="right" maxlength="16" name="l2tp_passwd" class="input_text" />
+				</div>
+
+				<div id="serverIP" class="input_left_div" align="right">
+					<span languageCode="3147">Server Address</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="text" align="right" id="inputServerIP" name="l2tp_serv_ip" class="input_text" />
+				</div>
+
+				<div style="clear:both"></div>
+			</div>
+
+	</div>
+
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=btnsContainer_div1><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "175">Back</span></DIV></DIV>
+<DIV class=buttons_img_div id=btnsContainer_div2><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span></DIV></DIV>
+</DIV></DIV>
+
+
+</div>
+<input type="hidden" name="WANAssign" value="Dynamic">
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="h_l2tp_dod" value="0">
+<input type="hidden" name="h_DNSAssign" value="0">
+<input type="hidden" name="this_file" value="BRS_RUS_manual_l2tp_account.html">
+<input type="hidden" name="next_file" value="BRS_RUS_manual_ip_type_check.html">
+
+</form>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</body>
+
+</html>

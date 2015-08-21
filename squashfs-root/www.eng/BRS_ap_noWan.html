@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8">
+<LINK href="style/hijack_style.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+function initPage()
+{
+	var btns_container_div = document.getElementById("btnsContainer_div");
+	btns_container_div.onclick = function()
+	{
+		return clickNext();
+	}
+	//show firmware version
+        showFirmVersion("");
+}
+function clickNext()
+{
+   	var choices_div = document.getElementById("choices_div");
+	var choices = choices_div.getElementsByTagName("input");
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[0];
+	if(choices[0].checked)
+	{
+            this.location.href = "BRS_01_checkNet_trigger.html";
+	}
+	else if(choices[1].checked)
+	{
+	    if(confirm(getErrorMsgByVar("bh_no_genie_help_confirm")) == false)
+			return false;
+	    top.location.href="BRS_start.htm";
+	}
+	else
+	{
+		alert(getErrorMsgByVar("bh_select_an_option"));
+		return false;
+	}
+	return true;	
+}
+addLoadEvent(initPage);
+    </SCRIPT>
+</HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div id=no_wan>
+
+<DIV class=wizard_words_div>
+
+
+<H1 class=h1_red><span languageCode = "3101">No Ethernet Cable Is Plugged into the Router Internet Port</span></H1>
+<P><span languageCode = "3094">Make sure that the cable is securely plugged into both the broadband modem port and the router Internet port.</span></P>
+
+
+<DIV class=radio_choice_divs id=choices_div>
+<P><span languageCode = "3038">Do you want NETGEAR Genie to try again?</span></P>
+<DIV class=radio_div><INPUT type=radio CHECKED value=0 name=help_choice> <span languageCode = "3190">Yes</span></DIV>
+<DIV class=radio_div><INPUT type=radio value=1 name=help_choice> <span languageCode = "3104">No, I want to configure the Internet connection myself.</span></DIV>
+</DIV>
+</DIV>
+
+<DIV class=wizard_buttons_div id=buttons_div_02 align=center>
+<DIV class=buttons_img_div id=btnsContainer_div align=center><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div id=btn_div name="Next"><span languageCode = "25">Next</span></DIV></DIV></DIV>
+
+</DIV>
+
+<input type="hidden" name="todo" value="brs_ping">
+<input type="hidden" name="this_file" value="BRS_ap_noWan.html">
+<input type="hidden" name="next_file" value="BRS_check_ap.html">
+<input type="hidden" name="SID" value="@SID#">
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

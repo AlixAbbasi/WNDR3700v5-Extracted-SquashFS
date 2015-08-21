@@ -1,0 +1,80 @@
+<html>
+<head>
+<META name="description" content="@model_name#">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META http-equiv="Pragma" content="no-cache">
+<META HTTP-equiv="Cache-Control" content="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+
+<title>Update Setting</title>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script type="text/javascript">
+<!--
+var pchar = "|"; // progress char
+var maxchars = 65;
+var delay_time = @common_updating_delay#; // msecs
+var charcount = 0;
+
+function makeStr(strsize, fillchar)
+{
+	var temp = "";
+	for (i=0; i < strsize ; i ++)
+		temp = temp + fillchar;
+	return temp;
+}
+function updateProgress()
+{
+	var cf = document.forms[0];
+	if (charcount < maxchars)
+	{
+		charcount ++;
+		cf.progress.value = makeStr(charcount,pchar);
+		setTimeout("updateProgress()",delay_time);
+	}
+	else
+	{
+		window.location.href=cf.next_file.value;
+	}
+}
+
+//-->
+</script>
+<style type="text/css">
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; BACKGROUND: white; COLOR: #09c; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif
+}
+.prgbar { font-family:Arial; padding:0px; height: 20px; width: 200px; font-weight: bolder; font-size: 10pt; color: #0000FF}
+</style>
+</head>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="updateProgress()">
+<form name="update" action="setup.cgi@post_par#" method="post" onSubmit="return false">
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+</tr>
+<tr>
+	<td align="left">
+	 <h1 languageCode = "738">Updating Settings</h1>
+
+    </td>
+ <td nowrap align="left"> &nbsp; </td>
+ <td nowrap><input type="text" name="progress" class="prgbar" readonly value=""></td>
+ <td nowrap align="left"> &nbsp; </td>
+</tr>
+   <tr>
+ <td colspan="4" height="12"><hr color="#0099CC"></td>
+</tr>
+
+</table>
+
+<input type="hidden" name="next_file" value="@common_updating_nextfile#">
+
+</form>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY>
+</html>

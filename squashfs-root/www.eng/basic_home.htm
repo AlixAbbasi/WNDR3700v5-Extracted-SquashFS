@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><link rel="stylesheet" href="style/basic_home.css">
+<script language=javascript type=text/javascript src=funcs.js></script>
+<script language=javascript type=text/javascript src=basic.js></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<title>NETGEAR Router @model_name#</title><meta http-equiv=content-type content='text/html; charset=UTF-8'>
+<meta content="MSHTML 6.00.2800.1141" name="GENERATOR"></head>
+
+
+<body onLoad="" bgcolor="#ffffff">
+<form method="post" action="/func.cgi?/BRS_03A_detcInetType.html timestamp=16813208">
+<input type="hidden" name="submit_flag" value="wizard_detwan">
+
+<script language="javascript" type="text/javascript">
+	//Alert:Don't delete these vars below!
+var portstatus = "1";
+var enable_action=1;
+var enabled_wds=0;
+var enabled_wps=1;
+var gui_region="English";
+var wiz_lang="@h_language#"
+
+var select_basic="1";
+var select_type="0";
+
+//wan status
+var wan_status_flag = "@wan_up_time#";
+var enable_ap_flag = "@ap_mode#";
+//wireless
+var wlan_status_flag = "@wlan_if_up_flag#";
+var wlan_security_type = "@h_security_type#";
+var wlan_ssid = "@ssid#";
+			//---WEP---
+var wlan_wep_key_index = @h_wep_key_no#;
+var wlan_wep_key = new Array();
+wlan_wep_key[0] = "@KEY1#";
+wlan_wep_key[1] = "@KEY2#";
+wlan_wep_key[2] = "@KEY3#";
+wlan_wep_key[3] = "@KEY4#";
+			//---WPA---
+var wlan_wpa_key = "@passphrase#";
+			//---WPA-ENTER---
+var wlan_wpaEnter_key = "@textWpaeRadiusSecret#";
+
+//attach devices
+var attach_device_nums = "@device_num#";
+
+
+//Guest Network
+var Guest_wlan_status_flag = "@guest_wlan_status_flag#";
+var Guest_wlan_security_type = "@h_mssid_security_type#";
+var Guest_wlan_ssid = "@gssid#";
+//WPA-ENTER
+var Guest_wlan_wpaEnter_key = "@mwpaEnterKey#";
+			//---WEP---
+var Guest_wlan_wep_key_index = @h_m_wep_key_no#;
+var Guest_wlan_wep_key = new Array();
+Guest_wlan_wep_key[0] = "@m_KEY1#";
+Guest_wlan_wep_key[1] = "@m_KEY2#";
+Guest_wlan_wep_key[2] = "@m_KEY3#";
+Guest_wlan_wep_key[3] = "@m_KEY4#";
+			//---WPA---
+var Guest_wlan_wpa_key = "@mwpakey#";
+var readyshare_status="@readyshare_status#";
+
+//Parental Control
+var parental_ctrl_flag = 1;
+var ParentalControl="@opendns_enable#";
+
+</script>
+
+<div id="form">
+<div id="form_content">
+<script>
+/*-- internet --*/
+	if(enable_ap_flag == 1 || (enable_ap_flag != 1 && wan_status_flag != "00:00:00"))
+		document.write('<div id="internet" class="basic_icon" onclick="click_action(\'internet\');">');
+	else//bug 24002:Basic--home--internet status should be update
+		document.write('<div id="internet" class="basic_icon_error" onclick="click_action(\'no_internet\');">');
+
+		document.write('<div class="icon_name"><br /><br /><br /><br /><br /><span languageCode = \"70\">Internet</span></div>');
+
+	if(enable_ap_flag == 1 || (enable_ap_flag != 1 && wan_status_flag != "00:00:00"))
+	{
+		document.write('<div id="internet_stat" class="icon_status"><span languageCode = \"643\">STATUS</span>: <b languageCode = \"3056\">GOOD</b></div>');
+		setIconClass("internet_stat", "STATUS: GOOD");
+	}
+	else{
+		document.write('<div id="internet_stat" class="icon_status"><b languageCode = \"3048\">Error</b> <a><span languageCode = \"3204\">Not Connected</span> </a></div>');
+		setIconClass("internet_stat", "Error Not Connected");
+	}
+	document.write('</div>');
+/*-- wireless --*/
+var ssid = "--";
+var passphrase = "--";
+	if(wlan_status_flag == "1")
+	{
+		if(wlan_security_type != "Disable")
+		{
+			document.write('<div id="wireless" class="basic_icon" onclick="click_action(\'wireless\');">');
+			document.write('<div class="icon_name"><br/><br/><br/><br/><br/><span languageCode = \"552\">Wireless</span></div>');
+			ssid = wlan_ssid;
+//			if( ssid.length > 10 )
+//				ssid = ssid.substr(0,10) + "...";
+			//choose password first
+			if(wlan_security_type == "WEP")
+			{
+				passphrase = wlan_wep_key[wlan_wep_key_index - 1];
+			}else
+			if((wlan_security_type == "WPA-PSK") || (wlan_security_type == "WPA2-PSK") || (wlan_security_type == "AUTO-PSK"))
+			{
+				passphrase = wlan_wpa_key;
+			}else
+			if(wlan_security_type == "WPA-ENTER")
+			{
+				passphrase = wlan_wpaEnter_key;
+			}
+//			if( passphrase.length > 10 )
+//			passphrase = passphrase.substr(0,10) + "...";
+			document.write('<div id="wlan_stat" class="icon_long_status"><marquee behavior="scroll" onmouseover=stop() onmouseout=start()><span languageCode = \"32\">SSID</span>: <b>'+ssid+'</b><br/><span languageCode = \"3113\">Password</span>: <b>'+passphrase+'</b></marquee></div>');
+			setIconClass_noDouble("wlan_stat", "Password "+passphrase);
+		}
+		else
+		{
+			document.write('<div id="wireless" class="basic_icon_warning" onclick="click_action(\'wireless\');">');
+			document.write('<div class="icon_name"><br/><br/><br/><br/><br/><span languageCode = \"552\">Wireless</span></div>');
+			document.write('<div id="wlan_stat" class="icon_status"><b languageCode = \"225\">Warning</b> <a languageCode = \"3205\">No Security</a></div>');
+			setIconClass("wlan_stat", "Warning No Security");
+		}
+	}
+	else
+	{
+		document.write('<div id="wireless" class="basic_icon_warning" onclick="click_action(\'wireless\');">');
+		document.write('<div class="icon_name"><br/><br/><br/><br/><br/><span languageCode = \"552\">Wireless</span></div>');
+		document.write('<div id="wlan_stat" class="icon_status"><b languageCode = \"225\">Warning</b> <a languageCode = \"3110\">OFF</a></div>');
+		setIconClass("wlan_stat","Warning OFF");
+	}
+	document.write('</div>');
+</script>
+
+<!-- attach device  Alert:Here is a Cgi here!-->
+	<div id="attached" class="basic_icon" onclick="click_action('attached');">
+		<div class="icon_name"><br/><br/><br/><br/><br/><span languageCode = "190">Attached Devices</span></div>
+		<!--div class="icon_status">STATUS: <b>GOOD</b> <br/>Number of devices :-->
+		<div class="icon_status"><span languageCode = "3109">Number of devices</span>:<b>
+		<script language="javascript" type="text/javascript">
+			document.write(attach_device_nums);
+		</script></b>
+		</div>
+	</div>
+
+<!-- parental controls -->
+	<div id="parental" class="basic_icon" onclick="click_action('parental');">
+		<div class="icon_name"><br/><br/><br/><br/><br/><span languageCode = "3112">Parental Controls</span></div>
+		<!--div id="parant_control_stat" class="icon_status"><span languageCode = "643">STATUS</span>: <b-->
+		<script language="javascript" type="text/javascript">
+		if(parental_ctrl_flag == 0)
+		{
+		    if(wiz_lang == "Russian")
+			    document.write('<div id="parant_control_stat" class="icon_status"><marquee behavior="scroll" onmouseover=stop() onmouseout=start()><span languageCode = \"643\">STATUS</span>: <b languageCode = \"3220\">NOT SUPPORTED</b></marquee></div>');
+			else
+			    document.write('<div id="parant_control_stat" class="icon_status"><span languageCode = \"643\">STATUS</span>: <b languageCode = \"3220\">NOT SUPPORTED</b></div>');
+			setIconClass_noDouble("parant_control_stat", "STATUS: NOT SUPPORTED");
+		}
+		else
+		{
+		  	if (ParentalControl == "1")
+		  	{
+		  		document.write('<div id="parant_control_stat" class="icon_status"><span languageCode = \"643\">STATUS</span>: <b languageCode = \"3041\">ENABLED</b></div>');
+				setIconClass("parant_control_stat", "STATUS: ENABLED");
+			}
+		  	else
+			{
+			    if(wiz_lang == "Russian")
+		  		    document.write('<div id="parant_control_stat" class="icon_status"><marquee behavior="scroll" onmouseover=stop() onmouseout=start()><span languageCode = "643">STATUS</span>: <b languageCode = \"3107\">NOT ENABLED</b></marquee></div>');
+				else
+                    document.write('<div id="parant_control_stat" class="icon_status"><span languageCode = "643">STATUS</span>: <b languageCode = \"3107\">NOT ENABLED</b></div>');
+				setIconClass_noDouble("parant_control_stat", "STATUS: NOT ENABLED");
+			}
+		}
+		</script>
+	</div>
+<!-- readyshare -->
+	<div id="readyshare" class="basic_icon" onclick="click_action('readyshare');">
+		<div class="icon_name"><br/><br/><br/><br/><br/><span languageCode = "3226">ReadySHARE</span></div>
+		<script language="javascript" type="text/javascript">
+			//if(device_num == 0 )
+			if(readyshare_status == "0")
+			{
+			    if(wiz_lang == "Russian")
+				    document.write('<div id="readyshare_stat" class="icon_status"><marquee behavior="scroll" onmouseover=stop() onmouseout=start()><span languageCode = \"643\">STATUS</span>: <b languageCode = \"3102\">No USB drive</b></marquee></div>');
+				else
+				    document.write('<div id="readyshare_stat" class="icon_status"><span languageCode = \"643\">STATUS</span>: <b languageCode = \"3102\">No USB drive</b></div>');
+				setIconClass_noDouble("readyshare_stat", "STATUS: No USB drive");
+			}
+			else
+			{
+				document.write('<div id="readyshare_stat" class="icon_status"><span languageCode = "643">STATUS</span>: <b languageCode = \"3129\">READY</b></div>');
+				setIconClass("readyshare_stat", "STATUS: READY");
+			}
+			if(parent.usb_router_flag == 0)
+				document.getElementById("readyshare").style.display = "none";
+
+		</script>
+	</div>
+<!-- guest network -->
+	<div id="guest" class="basic_icon" onclick="click_action('guest');">
+		<div class="icon_name"><br/><br/><br/><br/><br/><span languageCode = "470">Guest Network</span></div>
+		<!--div class="icon_status">STATUS:<b-->
+
+		<script language="javascript" type="text/javascript">
+		if( Guest_wlan_status_flag != "1" )
+		{
+		    if(wiz_lang == "Russian")
+			    document.write('<div id="guestNetwork_stat" class="icon_status"><marquee behavior="scroll" onmouseover=stop() onmouseout=start()><span languageCode = \"643\">STATUS</span>: <b languageCode = \"3107\">NOT ENABLED</b></marquee></div>');
+			else
+			    document.write('<div id="guestNetwork_stat" class="icon_status"><span languageCode = \"643\">STATUS</span>: <b languageCode = \"3107\">NOT ENABLED</b></div>');
+			setIconClass_noDouble("guestNetwork_stat", "STATUS:  NOT ENABLED");
+		}
+		else
+		{
+			var guest_ssid = Guest_wlan_ssid;
+			var guest_passph = "--";
+			if( (Guest_wlan_security_type=="2") || (Guest_wlan_security_type=="3") || (Guest_wlan_security_type=="4"))
+			{
+				guest_passph = Guest_wlan_wpa_key;
+			}
+			else if(Guest_wlan_security_type == "1")
+			{
+				guest_passph = Guest_wlan_wep_key[Guest_wlan_wep_key_index - 1];
+			}
+			else if(Guest_wlan_security_type == "7")
+			{
+				guest_passph = Guest_wlan_wpaEnter_key;
+			}
+			else
+			{
+		//		guest_ssid = "NONE";
+				guest_passph = "NONE";
+			}
+/*
+			if( guest_ssid.length > 10 )
+				guest_ssid = guest_ssid.substr(0,10) + "...";
+			if( guest_passph.length > 10 )
+				guest_passph = guest_passph.substr(0,10) + "...";
+*/
+			document.write('<div id="guestNetwork_stat" class="icon_long_status"><marquee behavior="scroll" onmouseover=stop() onmouseout=start()><span languageCode = \"32\">SSID</span>: <b>'+guest_ssid+'</b><br/><span languageCode = \"3113\">Password</span>: <b>'+guest_passph+'</b></marquee></div>');
+			setIconClass_noDouble( "guestNetwork_stat", "Password: "+guest_passph)
+
+		}
+
+		</script>
+		</div><!-- guest -->
+</div><!-- form_content -->
+</div><!-- form -->
+</form>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+
+</body>
+</html>
+<!--div class="icon_status"><b>Warning</b> <a></a></div-->
+<!--<div class="icon_status"><b>Error</b> <a> </a></div> -->

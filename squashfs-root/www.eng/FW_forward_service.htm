@@ -1,0 +1,415 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta name="description" content="WNR2500_multilangual">
+<title>NETGEAR Router @model_name#</title>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<link rel="stylesheet" href="style/form.css">
+<script language="javascript" type="text/javascript" src="funcs.js"></script>
+<!-- link rel="stylesheet" href="form.css" -->
+<style type="text/javascript">
+        classes.num.all.fontFamily = "Courier";
+        classes.num.all.fontSize = "10pt" ;
+</style>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+
+function init()
+{
+    var cf = document.forms[0];
+
+    ip1to4(cf.c4_server_ip, cf.server_ip1, cf.server_ip2, cf.server_ip3, cf.server_ip4);
+    cf.srvtype.selectedIndex = cf.h_srvtype.value;
+    if(cf.portname.value == "")
+    {
+        var lanSplit = cf.lanIP.value.split(".");
+
+        cf.server_ip1.value=lanSplit[0];
+        cf.server_ip2.value=lanSplit[1];
+        cf.server_ip3.value=lanSplit[2];
+        cf.server_ip4.value="";
+    }
+    
+    if((cf.ex_port_range.value) != "" && (cf.ex_port_range.value == cf.in_port_range.value) )
+        {
+                cf.same_range.checked = true;
+        }
+        else
+                cf.same_range.checked = false;
+
+	if(cf.ex_port_range.value == "" && cf.in_port_range.value == "" && cf.portname.value == "")
+		cf.same_range.checked = true;
+    return true;
+}
+
+var dev_ip = "@c4_sysLANIPAddr#";
+var dev_mask = "@c4_sysLANSubnetMask#";
+function isNumeric2(str, max) {
+    if(str.length == 0 || str == null ) {
+               return true;
+    }
+
+    var i = parseInt(str, 10);
+    if(i>max) {	  
+        return true;
+    }
+    var s=ignoreSpaces(str);
+    for(i=0; i<s.length; i++) {
+        var c = s.substring(i, i+1);
+        if("0"<= c && c<= "9") {
+            continue;
+        }
+        return true;
+    }
+    return false;
+}
+function Check()
+{
+    var cf = document.forms[0];
+    var ex_port_range=cf.ex_port_range.value;
+    var in_port_range=cf.in_port_range.value;
+    var ex_range=ex_port_range.split(",");
+    var ex_port_range2="",in_port_range2="";
+    var in_range=in_port_range.split(",");
+    var i,j,tmp1,tmp2;
+    if(cf.portname.value==""||cf.portname.value.match(/[^(\x20-\x7E\xA0)]/ ))
+    {
+                alert(getErrorMsgByVar("gsm_msg_pfw_no_cus_service_name"));
+                cf.portname.focus();
+                return false;
+        }
+    cf.portname.value = cf.portname.value.replace(/\xA0/g," ");
+
+	if(ex_port_range =="" || in_port_range =="")
+	{
+		alert(getErrorMsgByVar("gsm_msg_blk_serv_port_invalid"));
+		return false;
+	}
+
+
+
+	if(ex_range.length == in_range.length)
+	{
+		for(i=0;i<ex_range.length;i++)
+		{
+			if(ex_range[i].indexOf("-") != -1 && in_range[i].indexOf("-") !=-1) //port ranges ex: 50-60
+			{
+				tmp1=ex_range[i].split("-");
+				tmp2=in_range[i].split("-");
+				if(parseInt(tmp1[0], 10) <1 || parseInt(tmp1[1], 10) <1 || parseInt(tmp2[0], 10) <1 || parseInt(tmp2[1], 10) <1)
+				{
+					alert(getErrorMsgByVar("gsm_msg_FW_st_port_ad_mst_bg"));
+					return false;
+				}
+				
+				if(isNumeric2(tmp1[0],65534) || isNumeric2(tmp1[1],65534) || isNumeric2(tmp2[0],65534) || isNumeric2(tmp2[1],65534))
+				{
+					alert(getErrorMsgByVar("gsm_msg_FW_st_port_ad_mst_ls"));
+					return false;
+				}
+
+				if((parseInt(tmp1[0], 10) - parseInt(tmp1[1], 10)) != (parseInt(tmp2[0], 10) - parseInt(tmp2[1], 10)))
+				{
+					alert(getErrorMsgByVar("gsm_msg_blk_serv_port_invalid"));
+					return false;
+				}
+				if(parseInt(tmp1[1], 10) < parseInt(tmp1[0], 10))
+				{
+					ex_port_range2 +=parseInt(tmp1[1], 10)+"-"+parseInt(tmp1[0], 10)+",";
+					in_port_range2 +=parseInt(tmp2[1], 10)+"-"+parseInt(tmp2[0], 10)+",";
+				}
+				else
+				{
+					ex_port_range2 +=parseInt(tmp1[0], 10)+"-"+parseInt(tmp1[1], 10)+",";
+					in_port_range2 +=parseInt(tmp2[0], 10)+"-"+parseInt(tmp2[1], 10)+",";
+				}
+			}
+			else if (ex_range[i].indexOf("-") == -1 && in_range[i].indexOf("-") ==-1)//single port ex: 30
+			{
+			  if(ex_range[i].length!=0 && ex_range[i].length!=0)
+                          {
+				if(parseInt(ex_range[i], 10) < 1 || parseInt(in_range[i], 10)<1)
+				{
+					alert(getErrorMsgByVar("gsm_msg_FW_st_port_ad_mst_bg"));
+					return false;
+				}
+				if(isNumeric2(ex_range[i],65534) || isNumeric2(in_range[i],65534) )
+				{
+					alert(getErrorMsgByVar("gsm_msg_FW_st_port_ad_mst_ls"));
+					return false;
+				}
+				ex_port_range2 +=parseInt(ex_range[i], 10)+"-"+parseInt(ex_range[i], 10)+",";
+				in_port_range2 +=parseInt(in_range[i], 10)+"-"+parseInt(in_range[i], 10)+",";
+                          }
+			}
+			else
+			{
+				alert(getErrorMsgByVar("gsm_msg_blk_serv_port_invalid"));
+				return false;
+			}
+		}
+				ex_port_range2=ex_port_range2.substring(0,ex_port_range2.length-1); //remove ","
+				in_port_range2=in_port_range2.substring(0,in_port_range2.length-1);
+	}
+	else{
+		alert(getErrorMsgByVar("gsm_msg_blk_serv_port_invalid"));
+		return false;
+	}
+
+
+
+/*
+        if(parseInt(cf.ex_port_start.value, 10) < 1 || parseInt(cf.in_port_start.value, 10) < 1)
+        {
+                alert(getErrorMsgByVar("gsm_msg_FW_st_port_ad_mst_bg"));
+//              cf.port_start.focus();
+                return false;
+    }
+        if(parseInt(cf.ex_port_end.value, 10) < 1 || parseInt(cf.in_port_end.value, 10) < 1)
+        {
+                alert(getErrorMsgByVar("gsm_msg_FW_nd_port_ad_mst_bg"));
+//              cf.port_end.focus();
+                return false;
+    }
+        if(isNumeric(cf.ex_port_start,65534) || isNumeric(cf.in_port_start,65534))
+        {
+                alert(getErrorMsgByVar("gsm_msg_FW_st_port_ad_mst_ls"));
+//              cf.port_start.focus();
+                return false;
+        }
+        if(isNumeric(cf.ex_port_end,65534) || isNumeric(cf.in_port_end,65534))
+        {
+                alert(getErrorMsgByVar("gsm_msg_FW_nd_port_ad_mst_ls"));
+//              cf.port_end.focus();
+                return false;
+        }
+        if(parseInt(cf.ex_port_start.value, 10) > parseInt(cf.ex_port_end.value, 10) ||
+           parseInt(cf.in_port_start.value, 10) > parseInt(cf.in_port_end.value, 10))
+        {
+                alert(getErrorMsgByVar("gsm_msg_blk_serv_port_range_err"));
+//              cf.port_start.focus();
+                return false;
+    }
+*/
+    if(badLANIP(cf.server_ip1, cf.server_ip2, cf.server_ip3, cf.server_ip4, 254)|| (parseInt(cf.server_ip4.value, 10)==0)) {
+        alert(getErrorMsgByVar("gsm_msg_eth_inv_ip"));
+        return false;
+    }
+    cf.c4_pfw_ip.value = cf.server_ip1.value+"."+cf.server_ip2.value+"."+cf.server_ip3.value+"."+cf.server_ip4.value;
+
+    if(IsLanIpValid(dev_ip, dev_mask, cf.c4_pfw_ip.value) == false) {
+        alert(getErrorMsgByVar("gsm_msg_eth_inv_ip"));
+        return false;
+    }
+
+        follow_ex_port();
+
+        //cf.in_port_end.value = parseInt(cf.in_port_start.value, 10) + (parseInt(cf.ex_port_end.value, 10) - parseInt(cf.ex_port_start.value, 10));
+
+        /* We need to convert "013" to "13". -- Argon */
+        cf.ex_port_range.value = ex_port_range2;
+        
+        
+        cf.in_port_range.value = in_port_range2;
+
+    return true;
+
+}
+
+function Final()
+{
+    var cf = document.forms[0];
+
+        if(cf.c4_server_ip.value != "") {
+            cf.edit.value = "1";
+        cf.ruleSelect.value = cf.h_ruleSelect.value;    /* h_ruleSelect should start from 0 */
+        }
+        else {
+            cf.edit.value = "0";
+    }
+    cf.c4_pfw_ip.value=cf.server_ip1.value + "." + cf.server_ip2.value+ "." + cf.server_ip3.value+ "." + cf.server_ip4.value;
+    cf.h_pfw_name.value=cf.portname.value;
+    cf.h_pfw_proto.value = cf.srvtype.selectedIndex;
+    cf.h_pfw_ex_range.value = cf.ex_port_range.value;
+    //cf.h_pfw_ex_eport.value = cf.ex_port_end.value;
+    cf.h_pfw_in_range.value = cf.in_port_range.value;
+    //cf.h_pfw_in_eport.value = cf.in_port_end.value;
+    cf.submit();
+    return true;
+}
+
+var data_array=[@jsa_pclist#];
+function getData()
+{
+        var cf = document.forms[0];
+        var index = radioSelectedIndex(cf.IPSelect);
+
+        if ((index > -1) && (index < data_array.length))
+        {
+                cf.c4_pfw_ip.value = data_array[index][0];
+                ip1to4(cf.c4_pfw_ip, cf.server_ip1, cf.server_ip2, cf.server_ip3, cf.server_ip4);
+        }
+        else
+        {       cf.server_ip1.value = cf.server_ip2.value = cf.server_ip3.value = cf.server_ip4.value = ""; }
+}
+
+function follow_ex_port()
+{
+        var cf = document.forms[0];
+
+        if(cf.same_range.checked)
+        {
+                cf.in_port_range.readOnly = true;
+                cf.in_port_range.style.color = "gray";
+                cf.in_port_range.value = cf.ex_port_range.value;
+        }
+        else
+        {
+                cf.in_port_range.readOnly = false;
+                cf.in_port_range.style.color = "black";
+        }
+        return true;
+}
+
+function update_in_end_port()
+{
+        var cf = document.forms[0];
+        if(cf.ex_port_start.value != "" && cf.ex_port_end.value != "" && cf.in_port_start.value != ""
+            && parseInt(cf.ex_port_start.value, 10) <= parseInt(cf.ex_port_end.value, 10))
+            cf.in_port_end.value = parseInt(cf.in_port_start.value, 10) + (parseInt(cf.ex_port_end.value, 10) - parseInt(cf.ex_port_start.value, 10));
+}
+
+//-->
+
+</script></head><body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="init();follow_ex_port();">
+<form name="formname" action="setup.cgi@post_par#" method="POST" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title" languageCode="291">Ports - Custom Services</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="button" name="Cancel" value="Cancel" onClick="location.href='FW_forward.htm'" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="button" name="Apply" value="Apply" onClick="if(!Check()) return false; if(Final()) buttonToDisabled(document.forms[0])" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+        <tr><td colspan="2">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                                <td nowrap width="37%" languageCode="3313">Service Name</td>
+                                <td nowrap width="63%"><input type="text" name="portname" size="30" maxlength="30" value="@pfw_name#"></td></tr><tr><td nowrap width="37%" languageCode="144">Service Type</td>
+                                <td nowrap width="63%">
+                                        <select name="srvtype" size="1">
+                                                <option value="BOTH">TCP/UDP</option>
+                                                <option value="TCP">TCP</option><option value="UDP">UDP</option>
+                                        </select>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td nowrap width="37%" languageCode="3802">External Port Range</td>
+                                <td nowrap width="63%"><input type="text" class="num" name="ex_port_range" size="30" maxlength="256" value="@pfw_ex_port_range#" onFocus="this.select();" onChange="follow_ex_port();"></td>
+                        </tr>
+                        <tr>
+                                <td nowrap colspan="2" languageCode="3801">(Specify port numbers and/or port ranges split by commas ,example:30,50-60,65500-65510)</td>                              
+                        </tr>
+                        <tr>
+                                <td nowrap width="63%"><input type="checkbox" name="same_range" value="use_same_port" onclick="follow_ex_port();"><span languageCode="3311">Use the same port range for Internal port</span></td>
+                        </tr>
+                        <tr>
+                                <td nowrap width="37%" languageCode="3803">Internal Port Range</td>
+                                <td nowrap width="63%"><input type="text" class="num" name="in_port_range" size="30" maxlength="256" value="@pfw_in_port_range#"  onFocus="this.select(); " onChange="follow_ex_port();" c></td>
+                        </tr>
+                        <tr>
+                                <td nowrap colspan="2" languageCode="3801">(Specify port numbers and/or port ranges split by commas ,example:30,50-60,65500-65510)</td>
+                                
+                        </tr>
+                        <tr>
+                                <td nowrap width="37%" languageCode="3306">Internal IP Address</td>
+                                <td nowrap width="63%" >
+                                           <input type="text" class="num" name="server_ip1" size="4" maxlength="3" value="192" onFocus="this.select();"><span>.</span>
+                            <input type="text" class="num" name="server_ip2" size="4" maxlength="3" value="168" onFocus="this.select();"><span>.</span>
+                            <input type="text" class="num" name="server_ip3" size="4" maxlength="3" value="0" onFocus="this.select();"><span>.</span>
+                            <input type="text" class="num" name="server_ip4" size="4" maxlength="3" value="" onFocus="this.select();">
+                                </td>
+                        </tr>
+                        <tr>
+                                <td nowrap width="37%" ></td>
+                                <td nowrap width="63%" languageCode="3312">
+                                        Or select from currently attached devices
+                                </td>
+                        </tr>
+                        <tr>
+                                <td nowrap width="37%" ></td>
+                                <td nowrap width="63%">
+                                        <table class="tables" id="AttachedDevice" border="1" cellpadding="2" cellspacing="0" width="100%">
+                                        <tr class="table_header">
+                                                <td nowrap width="10%" align="center">
+                                                        <span class="thead"></span>
+                                                </td>
+                                                <td nowrap width="20%" align="center">
+                                                        <span class="thead" languageCode="71">IP Address</span>
+                                                </td>
+                                                <td nowrap width="30%" align="center"> 
+                                                        <span class="thead" languageCode="192">Device Name </span>
+                                                </td>
+                                        </tr>
+                                        @forward_dev_list#
+                                        </table>
+                                </td>
+                        </tr>
+                </table>
+        </td></tr>
+        <tr><td colspan="2" background="liteblue.gif" height="12">&nbsp;</td></tr>
+        <tr><td colspan="2" align="center"></td></tr>
+</table>
+        <input type="hidden" name="todo" value="pfw_add">
+        <input type="hidden" name="entryData" value="@pfw_array_data#">
+        <input type="hidden" name="h_pfw_name" value="">
+        <input type="hidden" name="c4_pfw_ip" value="">
+        <input type="hidden" name="h_pfw_proto" value="">
+        <input type="hidden" name="h_pfw_ex_range" value="">
+        <input type="hidden" name="h_pfw_in_range" value="">
+        <input type="hidden" name="h_ruleSelect" value="@h_ruleSelect#">
+        <input type="hidden" name="ruleSelect" value="">
+        <input type="hidden" name="edit" value="@edit#">
+        <input type="hidden" name="lanIP" value="@c4_sysLANIPAddr#">
+        <input type="hidden" name="h_srvtype" value="@h_srvtype#">
+        <input type="hidden" name="c4_server_ip" value="@c4_server_ip#">
+        <input type="hidden" name="this_file" value="FW_forward_service.htm">
+        <input type="hidden" name="next_file" value="FW_forward.htm">
+        <input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+                <iframe name="help_iframe" id="helpframe" src="FW_forward_service_h.htm" allowtransparency="true" width="100%" frameborder="0">
+                </iframe>
+</div>
+<div id="help_switch" class="close_help">
+         <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+        show_hidden_help_top_button(1);
+        var frame_div = top.document.getElementById("formframe_div");
+        frame_div.onresize =  function(){
+                if(help_flag == 0)  show_hidden_help_top_button(1);
+                else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+        window.onresize =  function(){
+                if(help_flag == 0)  show_hidden_help_top_button(1);
+                else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

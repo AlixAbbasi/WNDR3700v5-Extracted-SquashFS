@@ -1,0 +1,17 @@
+#info_div { height:100px; width:600px; }
+
+#allBtns_div { width:900px;  margin:20px auto;}
+
+#allBtns_div .success_buttons_split { height:30px; width:1%; margin:10px 10px; float:left; }
+
+#btnsContainer_div1 { width:18%; float:left; left:50px }
+
+#btnsContainer_div2 { width:15%; float:left; left:100px}
+
+#btnsContainer_div3 { width:25%; float:right; right:220px}
+
+#words_div_success{  margin:30px 10% 0px 10%;}
+
+.tooltip { cursor: pointer }
+
+#a { color: blue; text-decoration: underline; cursor: pointer; }

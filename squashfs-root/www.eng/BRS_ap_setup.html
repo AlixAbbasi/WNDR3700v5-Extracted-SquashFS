@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8">
+<LINK href="style/hijack_style.css" type=text/css rel=stylesheet>
+<LINK href="style/hijack_02_genieHelp.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="utility.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<script language="javascript" type="text/javascript" src="linux.js"></SCRIPT>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+
+var DisableFixedIP = false;
+var DisableFixedDNS = false;
+
+
+
+function setIP()
+{
+    var cf = document.forms[0];
+    var dflag = getRadioCheckedValue(cf.APAssign);
+    if(dflag == "disable"){
+      setDisabled(1,cf.APether1,cf.APether2,cf.APether3,cf.APether4,cf.APMask1,cf.APMask2,cf.APMask3,cf.APMask4,cf.APGateway1,cf.APGateway2,cf.APGateway3,cf.APGateway4);
+      DisableFixedIP = true;
+      document.getElementById("fix_tbl").style.display = "none";
+    }
+    else{
+    	setDisabled(0,cf.APether1,cf.APether2,cf.APether3,cf.APether4,cf.APMask1,cf.APMask2,cf.APMask3,cf.APMask4,cf.APGateway1,cf.APGateway2,cf.APGateway3,cf.APGateway4);
+      DisableFixedIP = false;
+      document.getElementById("fix_tbl").style.display = "block";
+    }
+}
+
+function setDNS()
+{
+    var cf = document.forms[0];
+    var dflag = getRadioCheckedValue(cf.APAssign);
+    if(dflag == "disable"){
+      setDisabled(1,cf.AP_DAddr1,cf.AP_DAddr2,cf.AP_DAddr3,cf.AP_DAddr4,cf.AP_PDAddr1,cf.AP_PDAddr2,cf.AP_PDAddr3,cf.AP_PDAddr4);
+      DisableFixedDNS = true;
+      document.getElementById("fix_tbl").style.display = "none";
+      
+    }
+    else{
+    	setDisabled(0,cf.AP_DAddr1,cf.AP_DAddr2,cf.AP_DAddr3,cf.AP_DAddr4,cf.AP_PDAddr1,cf.AP_PDAddr2,cf.AP_PDAddr3,cf.AP_PDAddr4);
+      DisableFixedDNS = false;
+      document.getElementById("fix_tbl").style.display = "block";
+    }
+}
+/* Check IP Address Format*/
+function checkIPMain(ip,max) {
+    if( isNumeric(ip, max) ) {
+        if(ip.disabled == false) {
+            ip.focus();
+        }
+        return true;
+    }
+}
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+
+	if(cf.ap_mode.checked)
+	    {
+	        var WPethr;
+	        var WMask;
+	        var fixgw;
+	        if (cf.APAssign[1].checked)
+	        {
+	            if(badLANIP(cf.APether1,cf.APether2,cf.APether3,cf.APether4,254)
+	                || (parseInt(cf.APether4.value, 10)==0))
+	                msg+= getErrorMsgByVar("bh_invalid_ip");
+	            if(badMASK(cf.APMask1,cf.APMask2,cf.APMask3,cf.APMask4))
+	                msg+= getErrorMsgByVar("bh_invalid_mask");
+	            //Gateway last byte could be zero
+	            if(badSubLANIP(cf.APGateway1,cf.APGateway2,cf.APGateway3,cf.APGateway4,254))
+	                msg+= getErrorMsgByVar("bh_invalid_gateway");
+	            if (msg.length > 1)
+	            {
+	                alert(msg);
+	                return false;
+	            }
+	            /* check IP setting valid */
+	            APether = cf.APether1.value + "." + cf.APether2.value + "." + cf.APether3.value +"." + cf.APether4.value;
+	            APMask = cf.APMask1.value + "." + cf.APMask2.value + "." + cf.APMask3.value +"." + cf.APMask4.value;
+	            fixgw = cf.APGateway1.value + "." + cf.APGateway2.value + "." + cf.APGateway3.value +"." + cf.APGateway4.value;
+	            if(IsGatewayValid(APether, APMask, fixgw) == false){
+	                msg += getErrorMsgByVar("bh_invalid_gateway");
+	            }
+	            msg += checkDNSValid(
+	                    cf.AP_DAddr1, cf.AP_DAddr2, cf.AP_DAddr3, cf.AP_DAddr4,
+	                    cf.AP_PDAddr1, cf.AP_PDAddr2, cf.AP_PDAddr3, cf.AP_PDAddr4);
+	        }
+	    }
+	if(msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+
+	dataToHidden(cf);
+	cf.h_APDNSAssign.value=cf.h_APAssign.value;
+	document.forms[0].submit();
+}
+function init()
+{	
+	var btns_container_div = document.getElementById("btnsContainer_div");
+	btns_container_div.onclick = function()
+	{
+		return checkData();
+	}
+}
+// -->
+</script></head>
+<body bgcolor="#ffffff" onLoad="init();document.forms[0].elements[0].focus();">
+<form method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+ 
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div id=choices_div>
+<H1><span languageCode = "4435">To add this router to your network in Access Point Mode</span></H1>
+</DIV>	
+</DIV>	
+   <table border="0" cellpadding="0" cellspacing="3" width="90%">
+          <tr style="display:none"> <td colspan="2"> <input type="checkbox" name="ap_mode" checked ><span languageCode="">Enable Access Point Mode</span></td></tr>
+        <tr><td colspan="2"><img src="spacer.gif" width="60" height="12" border="0"><span languageCode="4436"> IP Address of this new device</span></td></tr>
+        <tr><td colspan="2"><img src="spacer.gif" width="55" height="12" border="0"><input type="radio" name="APAssign" value="disable" onClick="setIP();setDNS()" CHECKED><span languageCode="4437">Get IP Address dynamically from existing router</span></td></tr>
+        <tr><td colspan="2"><img src="spacer.gif" width="55" height="12" border="0"><input type="radio" name="APAssign" value="enable" onClick="setIP();setDNS()"><span languageCode="4438">Use fixed IP Address (not recommended).</span></td></tr>
+          
+          <tr><td><div id="fix_tbl" style="display:none"><table border="0" cellpadding="5" cellspacing="3" width="100%">
+          <tr><td nowrap><img src="spacer.gif" width="60" height="12" border="0"><span languageCode="71">IP Address</span></td>
+              <td nowrap align="right" class="num">
+              <input type="text" name="APether1" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+		<input type="text" name="APether2" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+		<input type="text" name="APether3" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+		<input type="text" name="APether4" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()"></td>
+        	</tr>
+        	<tr><td nowrap><img src="spacer.gif" width="60" height="12" border="0"><span languageCode="75">IP Subnet Mask</span></td>
+              <td align="right" class="num">
+              <input type="text" name="APMask1" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.<input type="text" name="APMask2" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.<input type="text" name="APMask3" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.<input type="text" name="APMask4" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()"></td></tr>
+        			<tr><td nowrap><img src="spacer.gif" width="60" height="12" border="0"><span languageCode="3054">Gateway IP Address</span></td>
+              <td align="right" class="num">
+              <input type="text" name="APGateway1" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+		<input type="text" name="APGateway2" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+		<input type="text" name="APGateway3" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+		<input type="text" name="APGateway4" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()"></td>
+        	</tr>
+       	<tr><td><img src="spacer.gif" width="60" height="12" border="0"><span languageCode="80">Primary DNS</span></td>
+          		<td align="right" class="num"><input type="text" name="AP_DAddr1" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="AP_DAddr2" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="AP_DAddr3" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="AP_DAddr4" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()"></td>
+        	</tr>
+        	<tr><td><img src="spacer.gif" width="60" height="12" border="0"><span languageCode="81">Secondary DNS</span></td>
+          		<td align="right" class="num"><input type="text" name="AP_PDAddr1" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="AP_PDAddr2" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="AP_PDAddr3" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="AP_PDAddr4" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()"></td>
+        	</tr>
+					</table></div></td></tr>
+			</table>
+			<table border="0" cellpadding="5" cellspacing="3" width="90%">
+          <tr><td colspan="2">
+            	<img src="spacer.gif" width="30" height="12" border="0">
+              <span languageCode="4439">&lt;b&gt;Note:&lt;/b&gt;After you click Apply, this device will change to a new IP assigned by your existing router, therefore this web page might not be available. Please close and restart the web browser to http://www.routerlogin.net/ again.</span></td>
+          </tr>	<tr><td colspan="2"><img src="spacer.gif" height="15" border="0"></td></tr>
+			</table>
+<DIV class=wizard_buttons_div id=buttons_div_02 align=center>
+<DIV class=buttons_img_div id=btnsContainer_div align=center><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div id=btn_div name="Next"><span languageCode = "25">Next</span></DIV></DIV></DIV>
+
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="BRS_ap_setup.html">
+<input type="hidden" name="next_file" value="BRS_ap_setup.html">
+<input type="hidden" name="SID" value="@SID#">
+<input type="hidden" name="h_ap_mode" value="@h_ap_mode#">
+<input type="hidden" name="h_APAssign" value="@h_APAssign#">
+<input type="hidden" name="h_APDNSAssign" value="@h_APDNSAssign#">
+<input type="hidden" name="c4_APether" value="@c4_APether#">
+<input type="hidden" name="c4_APMask" value="@c4_APMask#">
+<input type="hidden" name="c4_APGateway" value="@c4_APGateway#">
+<input type="hidden" name="c4_AP_DAddr" value="@c4_AP_DAddr#">
+<input type="hidden" name="c4_AP_PDAddr" value="@c4_AP_PDAddr#">
+
+</form>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

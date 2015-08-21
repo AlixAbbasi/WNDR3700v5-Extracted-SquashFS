@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+
+function checkSel(){
+
+	var cf = document.forms[0];
+
+    if (document.formname.WANDetc[0].checked == true){
+//	cf.next_file.value="WIZ_detwan.htm";
+	cf.next_file.value="BRS_01_checkNet_trigger.html";
+	cf.submit();
+    }
+    else if  (document.formname.WANDetc[1].checked == true){
+	 cf.next_file.value="BAS_basic.htm";
+         cf.submit();
+    /*Auto link to setup->internet page.*/    
+		if(top.document.getElementById("setup_sub").style.display == "none")
+			parent.open_or_close_sub("setup");
+			
+		parent.click_adv_action("internet");
+    }
+    else alert(getErrorMsgByVar("gsm_msg_wiz_no_sel"));
+}
+function init()
+{
+	var cf = document.forms[0];
+	if(parent.guest == 1)
+	{
+		cf.Next.disabled="disabled";
+		cf.Next.className="common_gray_bt";
+	}
+}
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);document.forms[0].elements[0].focus();init();">
+<form name="formname" method="POST" action="setup.cgi@post_par#">
+<div class="page_title" languageCode="466">Setup Wizard</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="apply_bt" type="Button" name="Next" value="Next" onClick="checkSel();buttonToDisabled(document.forms[0])" languageCode="25">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="4" width="100%"><tr><td colspan="2"><b languageCode="875">The Smart Setup Wizard can detect the type of Internet connection that you have.</b></td>
+	</tr><tr><td colspan="2"><b languageCode="876">Do you want the Smart Setup Wizard to try and detect the connection type now?</b></td>
+	</tr><tr><td colspan="2"><input type="radio" name="WANDetc" value="AutoDetc" checked><b languageCode="61">Yes</b>.</td>
+	</tr><tr><td colspan="2" nowrap><input type="radio" name="WANDetc" value="MyDetc"><b languageCode="877">No. I want to configure the router myself.</b></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2" align="center"></td>
+	</tr></table>
+	<input type="hidden" name="this_file" value="WIZ_sel.htm">
+	<input type="hidden" name="next_file" value="wiz_msg.htm">
+	<input type="hidden" name="todo" value="wizard_init">
+	<input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="WIZ_sel_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# udhcpc script edited by Tim Riker <Tim@Rikers.org>
+
+[ -z "$1" ] && echo "Error: should be called from udhcpc" && exit 1
+
+[ -n "$broadcast" ] && BROADCAST="broadcast $broadcast"
+[ -n "$subnet" ] && NETMASK="netmask $subnet"
+
+#env > "/var/run/dhcpc.env.$w"
+echo "wan$w: dhcpc $1" > /dev/console
+
+detectwan_info_file=$info
+
+echo failover info file $detectwan_info_file > /dev/console
+
+case "$1" in
+	deconfig)
+		/bin/rm /tmp/dhcpc.lease
+		echo "udhcpc.failover.script: lease" > /dev/console
+		;;
+
+	renew|bound)
+		/sbin/ifconfig $interface $ip $BROADCAST $NETMASK
+
+		echo "udhcpc.failover.script: dhcpc wan up" > /dev/console
+		echo gw $router dev $interface dns $dns > /dev/console
+
+		echo interface $interface > $detectwan_info_file
+		echo gateway $router >> $detectwan_info_file
+		echo mask $subnet >> $detectwan_info_file
+		echo nameserver $dns >> $detectwan_info_file
+                rc detectrule start
+
+                exit
+
+		;;
+esac
+
+exit 0

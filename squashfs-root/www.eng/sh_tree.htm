@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Subdirectory</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT"> 
+<LINK REL="stylesheet" TYPE="text/css" HREF="form.css">
+<script language="JavaScript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="JavaScript" type="text/javascript">
+<!-- Start Script
+
+var this_folder ="@this_folder#";
+
+function first_load()
+{
+	if (!parent.sh_bar.file_loaded)
+		load_timeout = setTimeout("first_load()", 500);
+	else{
+		parent.sh_bar.set_current(this_folder);
+		parent.sh_bar.document.path_form.do_create.disabled=false;
+		parent.sh_bar.document.path_form.new_folder.value="";		
+	}
+}
+// End Script -->
+</SCRIPT>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" style="FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif; MARGIN: 6px 3% 6px 3%" onLoad="showMsg(); first_load(); disableForms(@disable_form#);">
+<FORM name="path_form" bgcolor="#FFFFFF">
+<TABLE cellSpacing=0 bgcolor="#FFFFFF" cellPadding=2 border=0 width="100%">
+<tr>
+	<td Style="FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif; color:#333333; background-color:#ffffff; height:15px;">
+<DL>
+    <DT><A href="javascript:(parent.sh_bar.open_dir('/'))"><IMG height=13 src="folder_o.gif" width=16 border=0>/</A></DT> 
+    <DD>
+		<A href="javascript:(parent.sh_bar.uptoParent())"><IMG name='' src="up_icon.gif" width="15" height="15" border=0></A> <A href="javascript:(parent.sh_bar.uptoParent())">.. (Parent Directory)</A><BR>
+	@folder_list#</DD>
+</DL>
+</td>
+</tr>
+<TR> 
+	  <TD align='center'> <div align="center">
+          <input type="button" name="do_ok" value="Apply" onClick="parent.sh_bar.finish()" languageCode="18">
+          &nbsp;<input type="button" name="do_close" value="Cancel" onClick="parent.sh_bar.close()" languageCode="19"> </div></TD>
+</TR>
+<p></p>  
+<INPUT type="hidden" name="this_file" value="sh_tree.htm">
+<INPUT type="hidden" name="next_file" value="sh_tree.htm">
+<INPUT type="Hidden" name="message" value="@msg_text#">
+</table>
+</form>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY>
+</HTML>

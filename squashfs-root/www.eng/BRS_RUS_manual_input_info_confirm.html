@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/hijack_03A_wanInput.css" type=text/css rel=stylesheet><LINK href="style/RU_staticIP.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/funcs.js" type=text/javascript></SCRIPT>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+
+var vlan_support="@vlan_support#";
+
+@brs_rus_total_information_confirm#
+
+function initPage()
+{
+
+	var btns_container_div1 = document.getElementById("btnsContainer_div1");
+	var btns_container_div2 = document.getElementById("btnsContainer_div2");
+	btns_container_div1.onclick = function()
+	{
+		if(vlan_support == "1")
+			location.href = "BRS_RUS_vlan_setting.html";
+		else
+			location.href = "BRS_RUS_manual_spoof_mac.html";
+	}
+	btns_container_div2.onclick = function()
+	{
+		return check_before_post();
+	}
+    showFirmVersion("none");
+
+    show_div();
+}
+
+function show_div()
+{
+	var dns = "@h_DNSAssign#"; //1 , 0
+	document.getElementById("div_conn_mode").style.display="block";
+
+	if(wan_mode == "DHCPClient")
+	{
+		return;
+	}
+	else if(wan_mode == "FixedIP")
+	{
+		document.getElementById("div_fixip").style.display="block";
+	}
+	else if(wan_mode == "PPTP" || wan_mode == "L2TP" || wan_mode == "PPPoE")
+	{
+		document.getElementById("div_account").style.display="block";
+
+		if(wan_mode == "PPPoE")
+		{
+			if(internet_ip != "")
+				document.getElementById("div_pppoe_internet").style.display="block";
+			if(intranet_ip != "")
+				document.getElementById("div_intranet").style.display="block";
+		}
+		else
+		{
+			document.getElementById("div_server_addr").style.display="block";
+			if(intranet_ip != "")
+				document.getElementById("div_intranet").style.display="block";
+			if(intranet_gw != "")
+				document.getElementById("div_intranet_gw").style.display="block";
+		}
+	}
+
+	if(dns1 != "")
+		document.getElementById("div_dns").style.display="block";
+
+	return;
+}
+
+function check_before_post()
+{
+	/*Add select option to value's trans*/
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[0];
+
+	cf.submit();
+
+	return true;
+}
+
+addLoadEvent(initPage);
+-->
+</script>
+</HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+
+	<DIV class=wizard_words_div>
+	<H1><span languagecode="3277">You have finished manual configuration process. Please go through your settings once again to see whether you've made any mistakes:</span></H1>
+	</DIV>
+<DIV class=wizard_words_div>
+<div id="div_conn_mode" style="display:none" >
+        <DIV>
+	<span><b languagecode="94">Connection Mode</b></span>: <script>document.write(wan_mode);</script>
+        </DIV>
+</div>
+<div id="div_account" style="display:none" >
+        <DIV>
+        	<br>
+	<span ><B languagecode="67">Account:</B></span>
+	<br>
+	<span languagecode="3168">User Name</span>: <script>document.write(user_name);</script>
+	<br>
+	<span languagecode="3113">Password</span>: <script>document.write(user_passwd);</script>
+	<br>
+	<div id="div_server_addr" style="display:none">
+	<DIV>
+	<span languagecode="3147">Server Address</span>: <script>document.write(server);</script>
+    </DIV>
+	</div>
+        </DIV>
+</div>
+
+<div id="div_fixip" style="display:none" >
+        <DIV>
+        	<br>
+	<span ><B languagecode="870">Static IP (Fixed) Addresses</B></span>
+	<br>
+	<span languagecode="71">IP Address</span>: <script>document.write(fix_ip);</script>
+	<br>
+	<span languagecode="708">Subnet Mask</span>: <script>document.write(fix_netmask);</script>
+	<br>
+	<span languagecode="709">Default Gateway</span>: <script>document.write(fix_gateway);</script>
+        </DIV>
+</div>
+
+<div id="div_pppoe_internet" style="display:none" >
+        <DIV>
+        	<br>
+	<span><b languageCode="70">Internet</b> <b languageCode="71">IP Address</b><B>(PPPoE)</B></span>
+	<br>
+	<span>IP: <script>document.write(internet_ip);</script></span>
+        </DIV>
+</div>
+
+<div id="div_intranet" style="display:none" >
+        <DIV>
+        	<br>
+	<span><B languagecode="3259">Intranet Port:</B></span>
+	<br>
+	<span languagecode="3275">Intranet IP</span>: <script>document.write(intranet_ip);</script>
+	<br>
+	<span languagecode="708">Subnet Mask</span>: <script>document.write(intranet_mask);</script>
+	<div id="div_intranet_gw" style="display:none">
+	<DIV>
+	<span languagecode="709">Default Gateway</span>: <script>document.write(intranet_gw);</script>
+	</DIV>
+	</div>
+	</DIV>
+</div>
+
+<div id="div_dns" style="display:none" >
+	<DIV>
+		<br>
+	<span ><B languagecode="77">Domain Name Server (DNS) Address:</B></span>
+	<br>
+	<span languagecode="80">Primary DNS</span>: <script>document.write(dns1);</script>
+	<br>
+	<span languagecode="81">Second DNS</span>: <script>document.write(dns2);</script>
+	</DIV>
+
+</div>
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=btnsContainer_div1><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "175">Back</span></DIV></DIV>
+<DIV class=buttons_img_div id=btnsContainer_div2><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span></DIV></DIV>
+</DIV>
+</DIV>
+</DIV>
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="BRS_RUS_manual_input_info_confirm.html">
+<input type="hidden" name="next_file" value="BRS_04_applySettings.html">
+<input type="hidden" name="SID" value="@SID#">
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

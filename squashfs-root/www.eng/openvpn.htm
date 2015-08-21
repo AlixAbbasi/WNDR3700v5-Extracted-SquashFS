@@ -1,0 +1,458 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><style type="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+
+
+
+
+var ipv6_protocol = "@ip6_status#";
+var ddns_status="@ddns_status#";
+var wan_mode="@wantype#";
+var wan_ipType="@wan_iptype#";
+var openvpn_status="@openvpn_status#";
+var windows_flag=0;
+var mac_flag=0;
+var iPhone_flag=0;
+var andriod_flag=0;
+
+//openvpn port range warning message is different from other.
+function checkInt(text_input_field, field_name, min_value, max_value, required)
+// NOTE: Doesn't allow negative numbers, required is true/false
+{
+	var str = text_input_field.value;
+	var error_msg= "";
+
+	if (text_input_field.value.length==0) // blank
+	{
+		if (required)
+			error_msg = addstr("%s " + getErrorMsgByVar("gsm_msg_blank") + "\n",field_name);
+	}
+	else // not blank, check contents
+	{
+		for (var i=0; i< str.length; i++)
+		{
+			if ((str.charAt(i)< '0') || (str.charAt(i) > '9'))
+				error_msg = addstr("%s " + getErrorMsgByVar("gsm_msg_check_invalid"),field_name);
+		}
+		if (error_msg.length< 2) // don't parse if invalid
+		{
+			var int_value = parseInt(str, 10);
+			if (int_value< min_value || int_value > max_value)
+				error_msg = addstr(getErrorMsgByVar("gsm_msg_openvpn_wrong_port"));
+				//alert("The Service Port has to be less than or equal to 65534.");
+		}
+		
+	}
+	if (error_msg.length > 1)
+		error_msg = error_msg + "\n";
+	return(error_msg);
+}
+function show_instruction(flag)
+{
+	document.getElementById("windows").style.display="none";
+	document.getElementById("mac").style.display="none";
+	document.getElementById("iPhone").style.display="none";
+	document.getElementById("andriod").style.display="none";
+	if(flag == "windows")
+	{
+		if(windows_flag % 2 == 0)
+			document.getElementById("windows").style.display="";
+		mac_flag=0;
+		iPhone_flag=0;
+		andriod_flag=0;
+	}
+	else if(flag == "mac")
+	{
+		if(mac_flag % 2 ==0)
+			document.getElementById("mac").style.display="";
+		windows_flag=0;
+		iPhone_flag=0;
+		andriod_flag=0;
+	}
+	else if(flag == "iPhone")
+	{
+		if(iPhone_flag % 2 ==0)
+			document.getElementById("iPhone").style.display="";
+		windows_flag=0;
+		mac_flag=0;
+		andriod_flag=0;
+	}
+	else if(flag == "andriod")
+	{
+		if(andriod_flag % 2 ==0)
+			document.getElementById("andriod").style.display="";
+		windows_flag=0;
+		mac_flag=0;
+		iPhone_flag=0;
+	}
+}
+function set_old()
+{
+	var cf = document.forms[0];
+	if(cf.h_openvpn_enable.value == "enable")
+	{
+		cf.h_old_openvpn_enable.value = "enable";
+	}
+	else
+	{
+		cf.h_old_openvpn_enable.value = "disable";
+	}
+}
+function ddns_check()
+{
+	
+	if(openvpn_status != "1"){
+		alert(getErrorMsgByVar("gsm_msg_openvpn_apply"));
+		//alert("Please enable the VPN Service and click \"Apply\" button first.");
+		return false;
+	}
+
+	if(ddns_status != "1"){
+		alert(getErrorMsgByVar("gsm_msg_openvpn_ddns_not_enable"));
+		//alert("Currently your Dynamic DNS service is not enabled, and the IP address for your Internet connection will be used for client configurations. When the IP address for your Internet connection is changed, you will have to download and install the configuration files again.");
+	}
+
+	return true;
+}
+
+function checkData()
+{
+	
+	
+	var cf = document.forms[0];
+	var msg = "";
+	var old_tun_protocol = "@h_openvpn_tun_protocol#",old_tap_protocol = "@h_openvpn_tap_protocol#";
+	var new_tun_protocol,new_tap_protocol;
+	var old_tun_port="@openvpn_tun_port#",old_tap_port="@openvpn_tap_port#";
+	var old_type="@h_openvpn_type#";
+	var new_type;
+  if(cf.openvpn_enable.checked)
+  {
+
+	if(ddns_status != "1" && wan_ipType !="Fixed")
+	{
+		alert(getErrorMsgByVar("gsm_msg_openvpn_need_ddns_or_static_ip_1"));
+		//alert("VPN Service needs to enable DDNS  or use Static IP address for your Internet connection.");
+		return false;
+	}
+	if(ipv6_protocol != "0")
+	{
+		alert(getErrorMsgByVar("gsm_msg_openvpn_not_with_ipv6_2"));
+		//alert("VPN Service does not work with an IPv6 Internet connection. If you want to use VPN Service, you must disable the IPv6 Internet connection first. (In the IPv6 screen, select Disabled and click the Apply button.)");
+		return false;
+	}
+	if(ddns_status != "1")
+	{
+		alert(getErrorMsgByVar("gsm_msg_openvpn_need_ddns_or_static_ip_2"));
+		//alert("Dynamic DNS service is suggested to be used alone with the VPN Service. Please make sure you will enable the Dynamic DNS service or use Static IP address for your Internet connection.");
+	}
+	if(cf.openvpn_tun_protocol[0].checked)
+		new_tun_protocol = 'udp';
+	else
+		new_tun_protocol = 'tcp';
+	
+	if(cf.openvpn_tap_protocol[0].checked)
+		new_tap_protocol = 'udp';
+	else
+		new_tap_protocol = 'tcp';
+
+	if(cf.openvpn_type[0].checked)
+		new_type = 'all';
+	else if(cf.openvpn_type[1].checked)
+		new_type = 'lan';
+	else
+		new_type = 'auto';
+	if((new_tun_protocol != old_tun_protocol) || (new_tap_protocol != old_tap_protocol) ||  (cf.openvpn_tun_port.value != old_tun_port) || (cf.openvpn_tap_port.value != old_tap_port) || (new_type != old_type)){
+		alert(getErrorMsgByVar("gsm_msg_openvpn_change_settings"));
+		//alert("You have changed your VPN Service configurations, please follow the Step 2 and Step 3 to download and install the configuration files on each of your VPN client devices (overwrite existing configuration files).");
+	}
+  }
+  
+	msg+= checkInt(cf.openvpn_tun_port, getErrorMsgByVar("gsm_msg_rmt_port_num"), 1, 65534, true);
+	msg+= checkInt(cf.openvpn_tap_port, getErrorMsgByVar("gsm_msg_rmt_port_num"), 1, 65534, true);
+	if(cf.openvpn_tun_port.value == cf.openvpn_tap_port.value)
+	{
+		alert("tun port should be different form tap port");
+		return false;
+	}
+	if(msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+
+	dataToHidden(cf);
+	
+	return true;
+}
+
+// -->
+</script></head>
+<body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);document.forms[0].elements[0].focus();set_old();">
+<form method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title" languageCode="4000">VPN Service</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+<tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="button" value="Cancel" onclick='location.href="openvpn.htm";' languageCode="51">
+&nbsp;
+<input class="apply_bt" type="SUBMIT" name="Apply" value="Apply" onClick="return checkData();" languageCode="50">
+</td></tr>
+</table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+	
+	
+  <tr><td colspan="2"> 
+	<input type="checkbox" name="openvpn_enable" value=""><b languageCode="4001">Enable VPN Service</b>
+  </td></tr>
+   	
+  <tr><td colspan="2" background="liteblue.gif" height="12"></td></tr>
+  <tr><td colspan="2"><span languaeCode="">OpenVPN configuration package download</span></TD></TR>
+  <tr>
+		<td colspan="2" align="left">
+		<input type="BUTTON" class="common_bt" value="For Windows" languageCode="4500" onclick="if(!ddns_check()) return false; window.location.href = 'setup.cgi?next_file=windows.zip&todo=generate_client_config';" >
+		<input type="BUTTON" class="common_bt" value="For non-Windows" languageCode="4501" onclick="if(!ddns_check()) return false; window.location.href = 'setup.cgi?next_file=non-windows.zip&todo=generate_client_config';">
+		<input type="BUTTON" class="common_bt" value="For Smart Phone"  onclick="if(!ddns_check()) return false; window.location.href = 'setup.cgi?next_file=smartphone.zip&todo=generate_client_config';">
+		</td>
+	
+	</tr>
+  <tr><td colspan="2" background="liteblue.gif" height="12"></td></tr>
+  <tr><td colspan="2"><span languaeCode="">OpenVPN client setup instruction</span></TD></TR>
+  <tr><td colspan="2" align="left">
+	<a  style="text-decoration:underline;cursor:pointer" onclick="show_instruction('windows');windows_flag++;">Windows</a> &nbsp;&nbsp;
+	<a  style="text-decoration:underline;cursor:pointer" onclick="show_instruction('mac');mac_flag++;">MAC</a>&nbsp;&nbsp;
+	<a  style="text-decoration:underline;cursor:pointer" onclick="show_instruction('iPhone');iPhone_flag++;">iPhone/iPad</a>&nbsp;&nbsp;
+	<a  style="text-decoration:underline;cursor:pointer" onclick="show_instruction('andriod');andriod_flag++;">Andriod</a>
+  </td></tr>	
+  <tbody id="windows" style="display:none">   <!--windows instruciton -->
+  <TR><TD colspan="2">
+	<span languageCode="">To install Windows VPN client on your client devices:</span>
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="4010">Step 1: Select the Enable VPN Service check box and click the Apply button.</span>
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="4011">Step 2: Download the client utility from </span>
+	<a style="color:#0000EE" href=http://openvpn.net/index.php/download/community-downloads.html target="_blank">http://openvpn.net/index.php/download/community-downloads.html</a>
+	<span languageCode="4012"> and install it on the devices where you want to run the VPN client.</span>
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="">Step 3: Click the below button to download the configuration files for your VPN clients. </span>
+  </TD></TR>
+
+		<TR><TD colspan="2" align="center"><input type="BUTTON" class="common_bt" value="For Windows" languageCode="4500" onclick="if(!ddns_check()) return false; window.location.href = 'setup.cgi?next_file=windows.zip&todo=generate_client_config';" ></TD></TR>
+	
+<TR><TD colspan="2">
+	<span languageCode="4015">Step 4:Unzip the configuration files you have just downloaded and copy them to the folder where the VPN client is installed on your device.For a client device with Windows64-bit system, the VPN client is installed at &quot;C:\Program files\OpenVPN\config\&quot; by default.</span>
+</TD></TR>
+
+<TR><TD colspan="2">
+	<span languageCode="4016">Step 5: For a client device with Windows, you need to modify the VPN interface name to &quot;NETGEAR-VPN&quot;. The VPN interface usually has a Device Name as &quot;TAP-Windows Adapter&quot;.</span>
+</TD></TR>
+
+<TR><TD colspan="2">
+<span languageCode="4017">Step 6: Client utility must be installed and run by a user who has administrative privileges. </span>
+<BR><img src="image/pvpn.jpg" width="900" ><BR>
+</TD></TR>
+
+
+<TR><TD colspan="2">
+	<span languageCode="4018">Step 7: For help connecting using OpenVPN clients, please refer to </span>
+	<a style="color:#0000EE" href=http://openvpn.net/index.php/open-source/documentation/howto.html#quick target="_blank">http://openvpn.net/index.php/open-source/documentation/howto.html#quick</a>
+
+	<BR><span languageCode="4019">Note: if you want to make any change in Advanced Configurations section, please make the changes before you download the configuration files in Step 3.</span>
+</TD></TR>
+</tbody>
+
+<tbody id="mac" style="display:none"> <!--Mac instruction -->
+  <TR><TD colspan="2">
+	<span languageCode="">To install Mac VPN client on your client devices:</span>
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="4010">Step 1: Select the Enable VPN Service check box and click the Apply button.</span>
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="4011">Step 2: Download the client utility from </span>
+	<a style="color:#0000EE" href=http://openvpn.net/index.php/download/community-downloads.html target="_blank">http://openvpn.net/index.php/download/community-downloads.html</a>
+	<span languageCode="4012"> and install it on the devices where you want to run the VPN client.</span>
+
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="">Step 3: Click the below button to download the configuration files for your VPN clients. </span>
+  </TD></TR>
+
+<TR><TD colspan="2" align="center">
+<input type="BUTTON" class="common_bt" value="For non-Windows" languageCode="4501" onclick="if(!ddns_check()) return false; window.location.href = 'setup.cgi?next_file=non-windows.zip&todo=generate_client_config';">
+</TD></TR>
+	
+<TR><TD colspan="2">
+	<span languageCode="">Step 4: Unzip the configuration files you have just downloaded and copy them to the folder where the VPN client is installed on your device.</span>
+</TD></TR>
+
+<TR><TD colspan="2">
+	<span languageCode="">Step 5: Client utility must be installed and run by a user who has administrative privileges. For help connecting using OpenVPN clients, please refer to </span>
+	<a style="color:#0000EE" href=http://openvpn.net/index.php/open-source/documentation/howto.html#quick target="_blank">http://openvpn.net/index.php/open-source/documentation/howto.html#quick</a>
+	<span languageCode=""> and </span>
+	<a style="color:#0000EE" href=http://openvpn.net/index.php/access-server/docs/admin-guides-sp-859543150/howto-desktop-client-configuration/495-connecting-to-openvpn-access-server-using-the-connect-client-on-mac.html target="_blank">http://openvpn.net/index.php/access-server/docs/admin-guides-sp-859543150/howto-desktop-client-configuration/495-connecting-to-openvpn-access-server-using-the-connect-client-on-mac.html</a>
+
+	<BR><span languageCode="4019">Note: if you want to make any change in Advanced Configurations section, please make the changes before you download the configuration files in Step 3.</span>
+</TD></TR>
+</tbody>
+
+<tbody id="iPhone" style="display:none">  <!--iPhone/iPad instruction -->
+  <TR><TD colspan="2">
+	<span languageCode="">To install iPhone/iPad VPN client on your client devices:</span>
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="4010">Step 1: Select the Enable VPN Service check box and click the Apply button.</span>
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="">Step 2: Download the client utility (e.g. OpenVPN Connect) from Apple App Store </span>
+	<span languageCode="4012"> and install it on the devices where you want to run the VPN client.</span>
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="">Step 3: Click the below button to download the configuration files for your VPN clients. </span>
+  </TD></TR>
+
+<TR><TD colspan="2" align="center">
+<input type="BUTTON" class="common_bt" value="For Smart Phone"  onclick="if(!ddns_check()) return false; window.location.href = 'setup.cgi?next_file=smartphone.zip&todo=generate_client_config';">
+</TD></TR>
+	
+<TR><TD colspan="2">
+	<span languageCode="">Step 4: Copy the configuration file you have just downloaded to your client device. </span>
+</TD></TR>
+
+
+<TR><TD colspan="2">
+<span languageCode="">Step 5: Client utility must be installed and import the configuration file, please refer to </span>
+	<a style="color:#0000EE" href=http://www.vpngate.net/en/howto_openvpn.aspx#ios target="_blank">http://www.vpngate.net/en/howto_openvpn.aspx#ios</a>
+</TD></TR>
+
+
+<TR><TD colspan="2">
+	<!--span languageCode="4018">Step 6: For help connecting using OpenVPN clients, please refer to </span>
+	<a style="color:#0000EE" href=http://openvpn.net/index.php/open-source/documentation/howto.html#quick target="_blank">http://openvpn.net/index.php/open-source/documentation/howto.html#quick</a-->
+
+	<BR><span languageCode="4019">Note: if you want to make any change in Advanced Configurations section, please make the changes before you download the configuration files in Step 3.</span>
+</TD></TR>
+</tbody>
+
+<tbody id="andriod" style="display:none">  <!--andriod instruction -->
+  <TR><TD colspan="2">
+	<span languageCode="">To install Andriod VPN client on your client devices:</span>
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="4010">Step 1: Select the Enable VPN Service check box and click the Apply button.</span>
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="">Step 2: Download the client utility (e.g. OpenVPN Connect) from Google Play Store </span>
+	<span languageCode="4012"> and install it on the devices where you want to run the VPN client.</span>
+
+  </TD></TR>
+  <TR><TD colspan="2">
+	<span languageCode="">Step 3: Click the below button to download the configuration files for your VPN clients. </span>
+  </TD></TR>
+
+<TR><TD colspan="2" align="center">
+<input type="BUTTON" class="common_bt" value="For Smart Phone"  onclick="if(!ddns_check()) return false; window.location.href = 'setup.cgi?next_file=smartphone.zip&todo=generate_client_config';">
+</TD></TR>
+	
+<TR><TD colspan="2">
+<span languageCode="">Step 4: Copy the configuration file you have just downloaded to your client device. </span>
+</TD></TR>
+
+
+<TR><TD colspan="2">
+<span languageCode="">Step 5: Client utility must be installed and import the configuration file, please refer to </span>
+<a style="color:#0000EE" href=http://www.vpngate.net/en/howto_openvpn.aspx#android target="_blank">http://www.vpngate.net/en/howto_openvpn.aspx#android</a>
+</TD></TR>
+
+
+<TR><TD colspan="2">
+	<!--span languageCode="4018">Step 6: For help connecting using OpenVPN clients, please refer to </span>
+	<a style="color:#0000EE" href=http://openvpn.net/index.php/open-source/documentation/howto.html#quick target="_blank">http://openvpn.net/index.php/open-source/documentation/howto.html#quick</a-->
+
+	<BR><span languageCode="4019">Note: if you want to make any change in Advanced Configurations section, please make the changes before you download the configuration files in Step 3.</span>
+</TD></TR>
+</tbody>
+
+<tr><td colspan="2" background="liteblue.gif" height="12"></td></tr>
+<tr>
+	
+	<td align="left" colspan="2"><b languageCode="4003">Advanced Configurations</b></td>
+</tr>
+<TR>
+<TD ><span languageCode="">TUN Mode Service Type</span>
+<input type="radio" name="openvpn_tun_protocol" value="udp" > UDP
+<input type="radio" name="openvpn_tun_protocol" value="tcp" > TCP 
+</TD>
+</TR>
+<tr>
+    <td width="50%" align="left" nowrap><span languageCode="">TUN Mode Service Port </span><input type="text" name="openvpn_tun_port" value = "@openvpn_tun_port#" size="6" height="12" maxlength="8"></td>
+</tr>
+
+<TR>
+<TD ><span languageCode="">TAP Mode Service Type</span>
+<input type="radio" name="openvpn_tap_protocol" value="udp" > UDP
+<input type="radio" name="openvpn_tap_protocol" value="tcp" > TCP 
+</TD>
+</TR>
+
+<tr>
+    <td width="50%" align="left" nowrap><span languageCode="">TAP Mode Service Port </span><input type="text" name="openvpn_tap_port" value = "@openvpn_tap_port#" size="6" height="12" maxlength="8"></td>
+</tr>
+
+<TR>
+<TD nowrap><span languageCode="4006">Clients will use this VPN connection to access</span>
+<input type="radio" name="openvpn_type" value="all"  > <span languageCode="4007">All sites on the Internet & Home Network </span>
+<input type="radio" name="openvpn_type" value="lan"  > <span languageCode="4008">Home Network only</span>
+<input type="radio" name="openvpn_type" value="auto" ><span languageCode="4009"> Auto</span> </TD>
+</TR>
+</table>
+</div>
+			
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="h_openvpn_enable" value="@h_openvpn_enable#">
+<input type="hidden" name="h_old_openvpn_enable" value="">
+<input type="hidden" name="h_openvpn_tun_protocol" value="@h_openvpn_tun_protocol#">
+<input type="hidden" name="h_openvpn_tap_protocol" value="@h_openvpn_tap_protocol#">
+<input type="hidden" name="h_openvpn_type" value="@h_openvpn_type#">
+<input type="hidden" name="SID" value="@SID#">
+
+<input type="hidden" name="this_file" value="openvpn.htm">
+<input type="hidden" name="next_file" value="openvpn.htm">
+
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="openvpn_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

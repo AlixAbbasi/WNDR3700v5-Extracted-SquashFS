@@ -1,0 +1,90 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!--
+var pchar = "||"; // progress char
+var maxchars = 30;
+var delay_time = 2000; // msecs
+var charcount = 0;
+
+function makeStr(strSize, fillChar)
+{
+	var temp = "";
+	for (i=0; i < strSize ; i ++)
+		temp = temp + fillChar;
+	return temp;
+}
+function updateProgress()
+{
+	var cf = document.forms[0];
+	//Make it static for both adv_indx and Russia Wizard.
+	var nextF = cf.next_file.value;
+	var iswiz_sel = /\bindex\.htm\b/;
+	var isfw_upg = /\badv_index\.htm\b/;
+	var iswifi_ap = /\bWLG_ap\.htm\b/;
+	var iswifi_settings = /\bWLG_dualband_idx\.htm\b/;
+	var iswifi_guest = /\bWLG_dualband_guest_idx\.htm\b/;
+	var iswifi_adv = /\bWLG_dualband_adv\.htm\b/;
+	var iswifi_acl = /\bWLG_acl\.htm\b/;
+	var iswifi_wds = /\bWLG_dualband_wds\.htm\b/;
+	var isvlan = /\bVLAN_tables\.htm\b/;
+	
+	if(charcount == 1 && iswiz_sel.test(nextF))//it's factory and backup,need long time to reboot
+	{
+		maxchars = 30;
+		delay_time = 4000;
+	}
+	else if(charcount == 1 && (iswifi_settings.test(nextF) || iswifi_guest.test(nextF) || iswifi_adv.test(nextF) || iswifi_acl.test(nextF) || iswifi_wds.test(nextF) || isvlan.test(nextF)))
+	{
+		maxchars = 30;
+		delay_time = 800;
+	}
+	if (charcount < maxchars)
+	{
+		charcount ++;
+		cf.progress.value = makeStr(charcount,pchar);
+		setTimeout("updateProgress()",delay_time);
+	}
+	else
+	{
+		var reg = /(http:\/\/.+?)\/.*/; // match "http://192.168.1.1/"
+		if(iswiz_sel.test(nextF) && reg.test(nextF))
+		{
+			var newurl =  nextF.replace(reg,"$1") + "/index.htm";
+			top.location.href = newurl;
+			return;
+		}
+		if(isfw_upg.test(nextF))
+		{
+			var newurl =  nextF.replace(reg,"$1") ;
+			top.location.href = newurl;
+			return;
+		}
+		if(iswifi_ap.test(nextF))
+		{
+			top.location.href = "http://www.routerlogin.net";
+			return;
+		}
+		window.location.href = nextF;
+	}
+}
+//-->
+</script><style type="text/css">
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; BACKGROUND: white; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, sans-serif
+}
+.prgbar { font-family:Arial; padding:0px; height: 20px; width: 200px; font-weight: bolder; font-size: 10pt; color: #0000FF}
+</style></head><body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="updateProgress()">
+<form name="update" action="setup.cgi@post_par#" method="post" onSubmit="return false">
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr></tr><tr><td align="left">
+	 <h1 languageCode="738">Updating Settings</h1>
+ </td>
+ <td nowrap align="left">&nbsp;</td>
+ <td nowrap><input type="text" name="progress" class="prgbar" value=""></td>
+ <td nowrap align="left">&nbsp;</td>
+</tr><tr><!-- RULE --><!--<td colspan="4" background="liteblue.gif" height="12"> &nbsp;</td>--><td colspan="4" height="12"><hr color="#0099CC"></td>
+</tr></table><input type="hidden" name="next_file" value="@next_file#"></form>
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

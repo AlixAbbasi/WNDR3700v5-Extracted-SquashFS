@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>NETGEAR Router @model_name# </title>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style/hijack_style.css" />
+<script language="javascript" type="text/javascript" src="script/brs_hijack.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></SCRIPT>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<style type="text/css">
+	#allBtns_div { width:600px;  margin:10px auto;}
+
+	#allBtns_div .success_buttons_split { height:30px; width:10%; margin:0px 0px; float:left; }
+
+	#btnsContainer_div1 { width:30%; float:left; right :30px;}	
+
+	#btnsContainer_div2 { width:30%; float:right; }
+	.tr_div img {width:100%;height:30%}
+</style>
+<SCRIPT language=javascript type=text/javascript>
+var pre_file="@this_file#";
+var ap_flag="@ap_flag#";
+var wifi_client="@wifi_client#";
+var pwd="@passphrase#";
+var pwd2="@passphrase_an#";
+function initPage()
+{
+	var btns_div1 = document.getElementById("btnsContainer_div1");
+	var btns_div2 = document.getElementById("btnsContainer_div2");	
+	if(ap_flag == 1)
+		document.getElementById("ap").style.display="";
+	else
+		document.getElementById("router").style.display="";
+	if(pwd == pwd2)
+		document.getElementById("pwd_same").style.display="";
+	else
+		document.getElementById("pwd_not_same").style.display="";
+	show_or_hide();
+	btns_div1.onclick = function()
+	{
+		if (pre_file != "")
+			location.href=pre_file;
+		else 
+			location.href="BRS_ap_select.html";
+
+	return true;
+	}
+	btns_div2.onclick = function()
+	{
+		var cf = document.forms[0];
+		
+		if(cf.help_choice[0].checked)
+		{
+		    if(!checkData())
+			return false;
+		    if(ap_flag == 1)
+		    	cf.next_file.value="BRS_ap_warning.html";
+		    else if(wifi_client == 1)
+			cf.next_file.value="BRS_ap_wifi_info.html";
+		    else
+			cf.next_file.value="BRS_success.html";
+			
+		    dataToHidden(cf);
+		    document.forms[0].submit();
+		}
+		else if(cf.help_choice[1].checked)
+		{
+		     if(ap_flag==1)
+		     	location.href="BRS_ap_warning.html";
+		     else
+		     	location.href="BRS_success.html";
+		}
+		else
+		{
+			alert("You must specify whether you can disable your gateway's WiFi");
+			return false;
+		}
+	}
+	return true;
+	
+}
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "",msg2="";
+	msg += checkBlank(cf.ssid,getErrorMsgByVar("gsm_msg_resv_name")+" (SSID)");
+	if (msg.length > 1)
+                return alertR(msg);
+	msg2+=checkBlank(cf.ssid_an,getErrorMsgByVar("gsm_msg_resv_name")+" (SSID)");
+	if (msg2.length > 1)
+                return alertR(msg2);
+	if (cf.ssid.value.match(/[^(\x20-\x7E\xA0)]/) || cf.ssid_an.value.match(/[^(\x20-\x7E\xA0)]/)) {
+        	return alertR(getErrorMsgByVar("gsm_msg_inv_ssid"));
+        }
+	if(cf.passphrase.value.length< 8 || cf.passphrase_an.value.length< 8)
+                return alertR(getErrorMsgByVar("gsm_msg_wls_wpa_key_must_8"));
+        if(cf.passphrase.value.length > 63)
+	    {
+	        if ( isHex(cf.passphrase.value) == false )
+	        {
+	            alert(getErrorMsgByVar("gsm_msg_wls_wpa_key_must_63"));
+	            return false;
+	        }
+	    }
+
+	if(cf.passphrase_an.value.length > 63)
+	    {
+	        if ( isHex(cf.passphrase_an.value) == false )
+	        {
+	            alert(getErrorMsgByVar("gsm_msg_wls_wpa_key_must_63"));
+	            return false;
+	        }
+	    }
+	    if (cf.passphrase.value.match(/[^(\x20-\x7E\xA0)]/) || cf.passphrase_an.value.match(/[^(\x20-\x7E\xA0)]/)) 
+	    {
+	        alert(getErrorMsgByVar("gsm_msg_wls_wpa_key_forbid"));
+	        return false;
+	    }
+	return true;
+}
+function show_or_hide()
+{
+	var cf = document.forms[0];
+	if(cf.help_choice[0].checked)
+	{
+		document.getElementById("yes").style.display="";
+		document.getElementById("no").style.display="none";
+	}
+	else if(cf.help_choice[1].checked)
+	{
+		document.getElementById("no").style.display="";
+		document.getElementById("yes").style.display="none";
+	}
+}
+addLoadEvent(initPage);
+</SCRIPT></HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+
+<DIV id="router" style="display:none">
+<H1><span languageCode = "">Router Mode</span></H1>
+<p><span languageCode = "">NETGEAR recommends that you disable your existing gateway's WiFi to avoid these problems:</span></p>
+<p><span languageCode = "">Accidental connection to the existing gateway instead of the new NETGEAR router</span></p>
+<p><span languageCode = "">Interference between the new NETGEAR router and the existing gateway's WiFi</span></p>
+</DIV>
+<DIV id="ap" style="display:none">
+<H1><span languageCode = "">AP Mode</span></H1>
+<p><span languageCode = "">To avoid WiFi interference that might compromise WiFi performance,NETGEAR recommends that you disable your existing gateway's WiFi.</span></p>
+</DIV>
+<p><span languageCode = "">Can you disable your existing gateway's WiFi?</span></p>
+<DIV class=helpChoice_divs id=choices_div>
+	<DIV class=radio_div>
+	<INPUT type=radio  value=0 name=help_choice onClick="show_or_hide()"><b languageCode = "">Yes</b>	
+	</DIV>
+	<DIV id="yes" style="display:none">
+	<p><span languageCode = "">Copy your current WiFi settings from the existing gateway and enter them here.Then disalbe your existing gateway's WiFi.</p>
+	<table border="0" cellpadding="0" cellspacing="3" width="90%">
+	<tr class=tr_div><td><img src="image/R6220-G5.gif" border="0"></td><td><img src="image/R6220-G6.gif" border="0"></td></tr>
+	
+	<tr><td languageCode = "">2.4GHz Wireless Network Name(SSID):</td>
+	    <td><input type="text" name="ssid"  size="20" maxlength="32"></td>
+	</tr>
+	<tr><td>2.4GHz Wireless Network Password(Network Key):</td>
+	<td><input type="text" name="passphrase" size="20" maxlength="64" onFocus="this.select()"></td></tr>
+	<tr><td languageCode = "">5GHz Wireless Network Name(SSID)</td>
+		<td><input type="text" name="ssid_an"  size="20" maxlength="32"></td></tr>
+	<tr><td>5GHz Wireless Network Password(Network Key):</td>
+	<td><input type="text" name="passphrase_an" size="20" maxlength="64" onFocus="this.select()"></td></tr>
+	</table>
+	</DIV>
+
+	<DIV class=radio_div>
+	<INPUT type=radio  value=1 name=help_choice onClick="show_or_hide()"><b languageCode = "">No</b>
+	</DIV>
+	<DIV id="no" style="display:none">
+	<p>To prevent your WiFi devices from connecting to the existing gateway,use the following name (SSID) and password(network key) to connect all your WiFi devices to this router:</p>
+	<table id="pwd_not_same" border="0" cellpadding="0" cellspacing="3" width="90%" style="display:none">
+	<tr><td languageCode = "">2.4GHz Wireless Network Name(SSID):</td>
+	    <td>@ssid#</td>
+	</tr>
+	<tr><td languageCode = "">2.4GHz Wireless Network Password(Network Key):</td>
+	<td>@passphrase#</td></tr>
+	<tr><td languageCode = "">5GHz Wireless Network Name(SSID)</td>
+		<td>@ssid_an#</td></tr>
+	<tr><td languageCode = "">5GHz Wireless Network Password(Network Key):</td>
+	<td>@passphrase_an#</td></tr>
+	</table>
+	<table id="pwd_same" border="0" cellpadding="0" cellspacing="3" width="90%" style="display:none">
+	<tr><td languageCode = "">2.4GHz Wireless Network Name(SSID):</td>
+	    <td>@ssid#</td>
+	</tr>
+	<tr><td languageCode = "">5GHz Wireless Network Name(SSID)</td>
+		<td>@ssid_an#</td></tr>
+	<tr><td languageCode = "">Wireless Network Key(Password):</td>
+	<td>@passphrase_an#</td></tr>
+	</table>
+	<DIV>
+</DIV>
+
+
+</DIV>
+<BR>
+<BR>
+<BR>
+<BR>
+<DIV class=wizard_buttons_div id=allBtns_div>
+	<DIV class=buttons_img_div id=btnsContainer_div1 align=center><IMG src="image/ca-little-purple-button.gif">
+		<DIV class=buttons_words_div><span languageCode = "175">Back</span></DIV>
+	</DIV>
+	<DIV class=buttons_img_div id=btnsContainer_div2 align=center><IMG src="image/ca-little-purple-button.gif">
+		<DIV class=buttons_words_div><span languageCode = "3100">Next</span></DIV>
+	</DIV>	
+</DIV>
+</DIV>
+<input type="hidden" name="SID" value="@SID#">
+
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="BRS_ap_wifi_setting.html">
+<input type="hidden" name="next_file" value="BRS_ap_wifi_info.html">
+</FORM>
+
+	<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

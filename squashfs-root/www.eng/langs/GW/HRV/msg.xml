@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<error_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<message>
+		<err_code>13421</err_code>
+		<translation>Prvo odaberite opciju.</translation>
+		<variable>bh_select_an_option</variable>
+	</message>
+	<message>
+		<err_code>13422</err_code>
+		<translation>Korisničko ime ne može biti prazno.</translation>
+		<variable>bh_login_name_null</variable>
+	</message>
+	<message>
+		<err_code>13423</err_code>
+		<translation>Lozinka nije valjana.</translation>
+		<variable>bh_password_error</variable>
+	</message>
+	<message>
+		<err_code>13424</err_code>
+		<translation>Unesite vrijeme neaktivnosti.[NEL]</translation>
+		<variable>bh_idle_time_null</variable>
+	</message>
+	<message>
+		<err_code>13425</err_code>
+		<translation>Vrijeme neaktivnosti nije valjano. Unesite ispravan broj.[NEL]</translation>
+		<variable>bh_invalid_idle_time</variable>
+	</message>
+	<message>
+		<err_code>13426</err_code>
+		<translation>IP adresa nije valjana. Unesite ponovo ili ostavite prazno.</translation>
+		<variable>bh_invalid_myip</variable>
+	</message>
+	<message>
+		<err_code>13427</err_code>
+		<translation>IP adresa pristupnika nije ispravna. Unesite ponovo.</translation>
+		<variable>bh_invalid_gateway</variable>
+	</message>
+	<message>
+		<err_code>13428</err_code>
+		<translation>Računalo ne podržava pisač.</translation>
+		<variable>bh_not_support_print</variable>
+	</message>
+	<message>
+		<err_code>13429</err_code>
+		<translation>Naziv datoteke ne može biti prazan.</translation>
+		<variable>bh_filename_null</variable>
+	</message>
+	<message>
+		<err_code>13430</err_code>
+		<translation>Dodijelite ispravnu datoteku. Oblik datoteke je *.</translation>
+		<variable>bh_not_correct_file</variable>
+	</message>
+	<message>
+		<err_code>13431</err_code>
+		<translation>IP adresa nije valjana. Unesite ponovo.</translation>
+		<variable>bh_invalid_ip</variable>
+	</message>
+	<message>
+		<err_code>13432</err_code>
+		<translation>Maska podmreže nije valjana. Unesite ponovo.[NEL]</translation>
+		<variable>bh_invalid_mask</variable>
+	</message>
+	<message>
+		<err_code>13433</err_code>
+		<translation>IP adresa za WAN ne smije biti u istoj podmreži kao IP adresa za WAN.</translation>
+		<variable>bh_same_lan_wan_subnet</variable>
+	</message>
+	<message>
+		<err_code>13434</err_code>
+		<translation>Naziv datoteke ne može biti prazan.</translation>
+		<variable>bh_filename_null</variable>
+	</message>
+	<message>
+		<err_code>13435</err_code>
+		<translation>Za konfiguriranje internetske veze potrebno je iskustvo u radu s mrežom. Jeste li sigurni?</translation>
+		<variable>bh_no_genie_help_confirm</variable>
+	</message>
+	<message>
+		<err_code>13436</err_code>
+		<translation>Upozorenje! [NEL]Vraćanje postavki iz konfiguracijske datoteke izbrisat će sve trenutne postavke. [NEL]Jeste li sigurni da to želite učiniti?</translation>
+		<variable>bh_ask_for_restore</variable>
+	</message>
+		<message>
+		<err_code>13438</err_code>
+		<translation>MAC adresa nije valjana. Unesite ponovo.</translation>
+		<variable>gsm_msg_invalid_mac</variable>
+	</message>
+	<message>
+		<err_code>13439</err_code>
+		<translation>Naziv</translation>
+		<variable>gsm_msg_resv_name</variable>
+	</message>
+	<message>
+		<err_code>13440</err_code>
+		<translation>must not be blank.[NEL]</translation>
+		<variable>gsm_msg_blank</variable>
+	</message>
+	<message>
+		<err_code>13441</err_code>
+		<translation>Character is not allowed in SSID.</translation>
+		<variable>gsm_msg_inv_ssid</variable>
+	</message>
+	<message>
+		<err_code>13442</err_code>
+		<translation>Insufficient passphrase length. It should be a minimum of 8 characters long.</translation>
+		<variable>gsm_msg_wls_wpa_key_must_8</variable>
+	</message>
+	<message>
+		<err_code>13443</err_code>
+		<translation>A passphrase consists of either 8~63 ASCII characters or exactly 64 hex-digits. A hex digit is one of these characters: 0, 1, 2, ..., 8, 9, A, B, C, D, E, F.</translation>
+		<variable>gsm_msg_wls_wpa_key_must_63</variable>
+	</message>
+	<message>
+		<err_code>13444</err_code>
+		<translation>Character is not allowed in passphrase.</translation>
+		<variable>gsm_msg_wls_wpa_key_forbid</variable>
+	</message>
+</error_msg>

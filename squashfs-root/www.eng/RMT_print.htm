@@ -1,0 +1,80 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style/form.css">
+    <script language=javascript type=text/javascript src="funcs.js"></script>
+    <script language=javascript type=text/javascript src="string.js"></script>
+    <title>Remote Share Printing</title>
+</head>
+
+<body >
+<div id="main" class="main">
+	<tr>
+		<td colspan="2"><h1 span languageCode = "3208">ReadySHARE Printing</h1></td>
+	</tr>
+    <table width="100%" border="0" cellpadding="0" cellspacing="3">
+        <tr>
+            <td colspan="2">
+                <img src="liteblue.gif" width="100%" height="12">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+		    <p><span languageCode = "3234">Print Sharing for Windows PCs and Mac Computers with a USB Printer</span></p>
+		    <p><b><span languageCode = "3235">How It Works?</span></b></p>
+		    <p><span languageCode = "3236">Step 1: Connect the USB printer to the router's USB port with a USB printer cable.</span></p>
+		    <p><span languageCode = "3237">Step 2: Install the USB printer driver software on each computer that will share the printer.</span><br>
+		    <span languageCode = "3238">If you do not have the driver, contact the company that made the printer to locate and download the latest printer driver software.</span></p>
+		    <p><span languageCode = "3239">Step 3: On each computer that will share the printer, download the NETGEAR USB Control Center utility from <a class='linktype' target='_blank' href='http://www.netgear.com/readyshare'>http://www.netgear.com/readyshare</a>.</span></p>
+		    <p><span languageCode = "3240">Follow the instructions in the utility to connect to the printer from your computer and print.</span></p>
+	    </td>
+        </tr>
+    </table>
+<!--
+	<tr>
+		<td colspan="2"><h1 span languageCode = "3253"></h1></h1></td>
+	</tr>
+    <table width="100%" border="0" cellpadding="0" cellspacing="3">
+        <tr>
+            <td colspan="2">
+                <img src="liteblue.gif" width="100%" height="12">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+		    <p><span languageCode = "3254"></span></p>
+		    <p><b><span languageCode = "3235"></span></b></p>
+		    <p><span languageCode = "3255"></span></p>
+		    <p><span languageCode = "3256"></span><br>
+		    <p><span languageCode = "3257"></span></p>
+	    </td>
+        </tr>
+    </table>
+-->
+</div>
+<div id=help style="display: none">
+ 	<iframe name="help_iframe" id="helpframe" src="h_RMT_print.htm" allowtransparency="true" width="100%" frameborder="0" >
+ 	</iframe>
+ </div>
+<div id="help_switch" class="close_help" >
+	<img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if( help_flag == 0 )  show_hidden_help(1);
+		else{show_hidden_help(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if( help_flag == 0 )  show_hidden_help(1);
+		else{show_hidden_help(--help_flag);help_flag++;}
+};}
+</script>
+<div id="help_space" onclick="show_hidden_help(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onclick="show_hidden_help(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onclick="show_hidden_help(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</body>
+</html>

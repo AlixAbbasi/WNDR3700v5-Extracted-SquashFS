@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta name="description" content="WNR2500_multilangual">
+<title>NETGEAR Router @model_name#</title>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript" src="funcs.js"></script>
+<link rel="stylesheet" href="style/form.css">
+<script language="javascript" type="text/javascript" src="funcs.js"></script>
+<!-- link rel="stylesheet" href="form.css" --><style type="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript" src="advanced.js"></script>
+
+<script language="javascript" type="text/javascript">
+function loadhtm()
+{
+	var is_lan_access = @ipmac_lan_access#;
+	var rt_num = @rt_list_entry_num#;
+	var en_ipmac = "@h_en_ipmac#";
+
+	document.forms[0].elements[0].focus();
+	if( is_lan_access == 0 && rt_num == 0 && en_ipmac != "enable")  //if it is wan remote access DUT, and the reserve Table is null, we cannot enable function
+	{
+		document.forms[0].en_ipmac.disabled=true;
+		document.forms[0].Edit.disabled=true;
+		document.forms[0].Edit.className="common_gray_bt";
+		document.forms[0].Apply.disabled=true;
+	}
+	else
+	{
+	if(document.forms[0].en_ipmac.checked)
+	{
+		document.forms[0].Edit.disabled=false;
+			if(rt_num == 0)
+		{		
+			alert(getErrorMsgByVar("gsm_msg_ipmac_warning"));
+		}
+	}
+	else
+	{
+		document.forms[0].Edit.disabled=true;
+		document.forms[0].Edit.className="common_gray_bt";
+	}
+}
+}
+function checkData()
+{
+	parent.topframe.document.forms[0].next_file.value = 'IP_Mac.htm';
+	dataToHidden(document.forms[0]);
+	return true;
+}
+function menu_change()
+{
+	location.href='./LAN_lan.htm';
+	top.load_menu('im');	
+}
+</script>
+</head>
+<body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);loadhtm()" onResize="if(document.layers) return false;">
+<form name="frmIPMac" method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0]);">
+<div class="page_title"><span languageCode="3334">ARP Protection/IP-MAC Binding</span></div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="button" name="Cancel" value="Cancel" onClick="location.href='./IP_Mac.htm'" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="SUBMIT" name="Apply" value="Apply" onClick="return checkData()" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+	<tr><td colspan="2" nowrap><input type="checkbox" name="en_ipmac" value="en_ipmac"><b languageCode="3335">Enable IP-MAC Binding</b></td>
+	</tr>	
+	<tr><td>
+		<div id="helpfile" style="display:block">
+		<p languageCode="3336">IP-MAC binding protects your router from ARP attacks. With this function enabled, your router uses the LAN setup address reservation table under LAN setup as the static ARP. You can add, remove, or edit the IP-MAC binding pairs in the address reservation table. WARNING! Devices that are not registered in this table will NOT have internet access. Ensure that at least one LAN device's IP and MAC address pair is registered in this table. You can use the Edit button on this screen to directly access the address reservation table.</p></div>
+	</td></tr>
+	
+	<tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr>
+
+	<tr>
+	<td colspan="2" align="center">
+	<input class="edit_bt" type="button" name="Edit" value=" Edit " onClick="menu_change()" languageCode="147">
+	</td></tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2" align="center"></td>
+	</tr></table>
+<input type="hidden" name="h_en_ipmac" value="@h_en_ipmac#">
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="IP_Mac.htm">
+<input type="hidden" name="next_file" value="IP_Mac.htm">
+<input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="IP_Mac_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

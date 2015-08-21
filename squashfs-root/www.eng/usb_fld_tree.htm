@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta name="description" content="@model_name#_multilangual">
+<title>NETGEAR Router @model_name#</title>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<link rel="stylesheet" href="dtree.css">
+<link rel="stylesheet" href="style/form.css">
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript" src="dtree.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+
+function init()
+{
+	var cf = document.forms[0];
+	dataToVisible(cf);
+	cf.h_folder.value = cf.currentpath.value;
+}
+
+function checkData()
+{
+ 	var cf = document.forms[0];
+ 	dataToHidden(cf);
+ 	cf.todo.value="browse_apply";
+	cf.submit();
+	return true;
+}
+
+@foldersTree#
+
+function draw_tree()
+{
+    var n=0;
+
+    //new tree
+    d = new dTree('d',selectednode);
+    //add node
+    for( n=0; n<nodeNumber; n++){
+        var str = eval( 'node' + n);
+        str = str.replace( / /g,"&nbsp;");
+        echo_info = str.split('*');
+        if(echo_info[0]=='0')
+            d.add(n,echo_info[0],echo_info[1],echo_info[2],echo_info[4],'dtreesda.gif','dtreesda.gif');
+		else if(echo_info[5] == '1')
+			d.add(n,echo_info[0],echo_info[1],echo_info[2],echo_info[4],'dtreepage.gif', 'dtreepage.gif');
+		else
+            d.add(n,echo_info[0],echo_info[1],echo_info[2],echo_info[4],null,null);
+    }
+    //show all tree
+    document.write(d);
+}
+
+//-->
+</script>
+
+</head><body bgcolor="#ffffff" onLoad="init();">
+<form name="usb_fld_tree" method="post" action="setup.cgi@post_par2#">
+<div class="page_title" languageCode="805">Browse for Folder</div>
+<div class="fix_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td align="center">
+<input class="apply_bt" type="button" name="Apply" value="OK" onClick="checkData()" languageCode="168">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td>
+		</td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td>
+		<center>
+		<table border="0" cellpadding="0" cellspacing="0"><td valign="top">
+			<script>draw_tree();</script>
+			<!-- ie6 not support this.
+			<noscript languageCode="806">Please enable JavaScript in your Browser, or use a different Browser.</noscript>
+			-->
+			</td>
+		</table></center>
+		</td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr></table>
+
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td align="center"><input class="common_bt" type="button" name="close" value="Close Window" onClick="self.close()" languageCode="115"></td>
+	</tr></table><input type="hidden" name="usbDevice" value="@usbDevice#"><input type="hidden" name="h_folder" value=""><input type="hidden" name="h_shareName" value="@shareName#"><input type="hidden" name="h_usb_read_access" value="@h_usb_read_access#"><input type="hidden" name="h_usb_read_access" value="@h_usb_read_access#"><input type="hidden" name="shareFolderSelect" value="@shareFolderSelect#"><input type="hidden" name="h_ruleSelect" value="@h_ruleSelect#"><input type="hidden" name="edit" value="@edit#">
+	<input type=hidden name="todo" value="save">
+	<input type=hidden name="nodenumber" value="">
+	<input type=hidden name="currentpath" value="@currentpath#">
+	<input type=hidden name="nodevalue" value="">
+	<input type="hidden" name="this_file" value="usb_fld_tree.htm">
+	<input type="hidden" name="next_file" value="usb_fld_tree.htm">
+	<input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

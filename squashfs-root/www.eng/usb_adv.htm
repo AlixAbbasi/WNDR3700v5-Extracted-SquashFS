@@ -1,0 +1,455 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!--
+
+var attached_dev="@attached_dev#";  //0 means no devices attached, 1 means yes
+var is_remote="@is_remote#";
+
+function print_all_dir()
+{
+	var all_dir = "@ava_network_folders_radio#";
+	var dir_array = all_dir.split('\x02');
+	var len = dir_array.length - 1;
+	var direc_item;
+	var i, j;
+	var root_name = 0;
+	var read_access_no_pwd = 0;
+	var msg = "";
+
+	for(i = 0; i < len; i++)
+	{
+		direc_item = dir_array[i].split('\x01');
+		root_name = 0;
+		if(direc_item[0] == '0')
+		{
+			/* Spec says :
+			 *	   In a case where the default share has been deleted and no other share name
+			 * for that root folder exists, the Share Name would display "Not Shared".
+			 *	   So if we add a share name for the root folder, shouldn't display "Not Shared".
+			 * 																				---- Joe
+			 */
+			for(j = 1; j < len; j++)
+			{
+			/* If the root folder is deleted, direc_item is like :
+			 * 		"0, volum_name, root folder, 1, total_space, free_space"
+			 * We creat a share folder, direc_item is like :
+			 * 		"1, volum_name, readyshare, share_name, IP, read_access, write_access, share_path, 1, total_space, free_space"
+			 *
+			 *	We should only compare the share_path in the same patition, volum_name has the patition info like :
+			 *  	XXXXXXXXX:patition_flag
+			 */
+				if(direc_item[1].split(':')[1] == dir_array[j].split('\x01')[1].split(':')[1]  // in the same patition
+				&& direc_item[2] == dir_array[j].split('\x01')[7])    // share the same root folder
+				{
+					root_name++;
+				}
+			}
+			if(root_name == 0)
+			{
+				document.write("<tr><td class='LL' width='5'>\n");
+				document.write("<input type='radio' value='"+direc_item[1]+"' name='shareFolderSelect'></td>\n");
+				document.write("<td class='usbLL' nowrap>Not Shared</td>\n");
+				document.write("<td class='usbLL' width='150'>&nbsp;</td>\n");
+				document.write("<td class='usbLL' width='150'>&nbsp;</td>\n");
+				document.write("<td class='usbLL' width='100'>"+direc_item[2]+"</td>\n");
+				document.write("<td class='usbLL' width='150'>"+direc_item[3]+"</td>\n");
+				document.write("<td class='usbLL' width='80'>"+direc_item[4]+"</td>\n");
+				document.write("<td class='usbLL' width='80'>"+direc_item[5]+"</td></tr>\n");
+			}
+		}
+		else
+		{
+			document.write("<tr><td class='LL' width='5'>\n ");
+			document.write("<input type='radio' value='"+direc_item[1]+"' name='shareFolderSelect'></td>");
+			document.write(" <td class='usbLL'><script> show_smb_connection('"+direc_item[2]+"\\\\"+direc_item[3]+"', '"+direc_item[4]+"') </script></td>\n");
+			document.write(" <td class='usbLL' width='150'>"+direc_item[5]+"</td>\n");
+			document.write(" <td class='usbLL' width='150'>"+direc_item[6]+"</td>\n");
+			document.write("<td class='usbLL' width='100'>"+direc_item[7]+"</td>\n");
+			document.write("<td class='usbLL' width='150'>"+direc_item[8]+"</td>\n");
+			document.write("<td class='usbLL' width='80'>"+direc_item[9]+"</td>\n");
+			document.write("<td class='usbLL' width='80'>"+direc_item[10]+"</td></tr>");
+		}
+		if(direc_item[5] == "All - no password")
+			read_access_no_pwd++;
+	}
+	if(len != 0 && read_access_no_pwd == 0){
+		msg+=getErrorMsgByVar("gsm_msg_usb_no_read_access");
+		alert(msg);
+	}
+}
+
+function show_smb_connection(name, ip)
+{
+	var buf = "";
+
+	var browser = get_browser_type();
+	if (is_remote=="true")
+		buf += '\\\\' + name;
+	else if (browser == 'ie')
+		buf += '<a href="\\\\' + name +'" class="cnA" target="_blank">\\\\' + name + '</a>';
+	else if (browser == "safari")
+		buf += '<a href="smb://' + ip + '/" class="cnA" target="_blank">\\\\' + name + '</a>';
+	else
+		buf += '\\\\' + name;
+	document.write(buf);
+}
+function show_http_connection(name)
+	{
+	var buf = "";
+	if (is_remote=="true")
+		buf += 'http://' + name + '.routerlogin.net/shares';
+	else
+		buf += '<a href="http://' + name + '.routerlogin.net/shares" class="cnA" target="_blank">http://' + name + '.routerlogin.net/shares</a>';
+	document.write(buf);
+			}
+function show_https_connection(name, port)
+{
+	var buf = "";
+	if (name == "0.0.0.0")
+		buf += 'https://' + name + '/shares';
+	else
+		buf += '<a href="https://' + name + ':' + port +'/shares" class="cnA" target="_blank">https://' + name + '/shares</a>';
+	document.write(buf);
+		}
+function show_ftp_connection(name,user)
+{
+	var buf = "";
+	if (is_remote=="true")
+		buf += 'ftp://' + name + '.routerlogin.net/shares';
+	else
+		buf += '<a href="ftp://' + user + name + '.routerlogin.net/shares" class="cnA" target="_blank">ftp://' + name + '.routerlogin.net/shares</a>';
+	document.write(buf);
+	}
+function show_ftp_wan_connection(name, user, port)
+{
+	var buf = "";
+	if (name == "0.0.0.0")
+		buf += 'ftp://' + name + '/shares';
+	else
+		buf += '<a href="ftp://' + user + name + ':' + port +'/shares" class="cnA" target="_blank">ftp://' + name + '/shares</a>';
+	document.write(buf);
+}
+
+function button_grey()
+{
+	var cf = document.forms[0];
+    if (attached_dev == 0) {
+	cf.safeRemove.disabled = true;
+	cf.Edit.disabled = true;
+	cf.Create.disabled = true;
+	cf.Delete.disabled = true;
+	}
+	else {
+	cf.safeRemove.disabled = false;
+	cf.Edit.disabled = false;
+	cf.Create.disabled = false;
+	cf.Delete.disabled = false;
+	}
+
+}
+
+
+function set_old()
+{
+	var cf = document.forms[0];
+	if(cf.h_enableHvia.value == "enable")
+	{
+		cf.h_old_http_wan.value = "enable";
+	}
+	else
+	{
+		cf.h_old_http_wan.value = "disable";
+	}
+
+	if(cf.h_enableFvia.value == "enable")
+	{
+		cf.h_old_ftp_wan.value = "enable";
+	}
+	else
+	{
+		cf.h_old_ftp_wan.value = "disable";
+	}
+
+	cf.h_old_storage_machine.value = cf.deviceName.value;
+}
+
+function init()
+{
+	var cf = document.forms[0];
+	dataToVisible(cf);
+	cf.elements[0].focus();
+	button_grey();
+	set_old();
+}
+
+function check_port_range()
+{
+	var cf = document.forms[0];
+	var msg = "";
+
+	if(parseInt(cf.HTTP_via_port.value, 10) != 80 && parseInt(cf.HTTP_via_port.value, 10) != 443)
+		msg += checkInt(cf.HTTP_via_port, "Http "+getErrorMsgByVar("gsm_msg_usb_port"), 1024, 65534, true);
+	if(parseInt(cf.FTP_via_port.value, 10) != 21)
+		msg += checkInt(cf.FTP_via_port, "Ftp "+getErrorMsgByVar("gsm_msg_usb_port"), 1024, 65534, true);
+	return msg;
+}
+
+var invalid_netname_char = "`~!@@#$^&*()=+[]{}\\|;:'\",<>/?#";
+
+function check_invalid_char(cmp_str, invalid_char)
+{
+	var msg = "";
+
+	for(var i=0; i<cmp_str.length; i++)
+	{
+		var c = cmp_str.charAt(i);
+		if(invalid_char.indexOf(c)>=0)
+			msg += (c +" ");
+	}
+	if (msg.length >= 1)
+	{
+		msg = getErrorMsgByVar("gsm_msg_usb_inv_char_network_name") + msg;
+		return msg;
+	}
+
+	return "";
+}
+
+function checkData()
+{
+ 	var cf = document.forms[0];
+	var msg = "";
+	var netName = cf.deviceName.value;
+	var wgroupName = cf.workGroup.value;
+
+	msg += check_invalid_char(netName, invalid_netname_char);
+	if (wgroupName.match(/[^(\x20-\x7E\xA0)]/ ))
+    {
+	    msg += getErrorMsgByVar("gsm_msg_invalid") + " " + getErrorMsgByVar("gsm_msg_share_name");
+	}
+    if(netName.indexOf(".")>0)
+		msg+=getErrorMsgByVar("gsm_msg_sev_inv_char_device_name");
+
+	msg+= checkBlank(cf.deviceName, getErrorMsgByVar("gsm_msg_network_name"));
+	msg+= checkBlank(cf.workGroup, getErrorMsgByVar("gsm_msg_workgroup"));
+	msg+= check_port_range();
+
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+
+	dataToHidden(cf);
+	cf.submit();
+}
+
+function edit_rule()
+{
+	var cf = document.forms[0];
+	var msg = "setup.cgi?next_file=usb_edit_fld.htm&usb_opener_htm="+cf.this_file.value;
+	var radioIndex = radioSelectedIndex(cf.shareFolderSelect);
+	var size = cf.shareFolderSelect.length;
+
+	if(isNaN(size))
+        	size=1;
+
+        if (radioIndex > -1)
+        {
+		if(size==1)
+			msg += "&edit=1&shareFolderSelect="+ cf.shareFolderSelect.value;
+		else
+			msg += "&edit=1&shareFolderSelect="+ cf.shareFolderSelect[radioIndex].value;
+		//alert(msg);
+		openDataSubWin(msg, usbFLDsub )
+	}
+	else alert(getErrorMsgByVar("gsm_msg_usb_no_sel_radio"));
+}
+
+function add_rule()
+{
+	var cf = document.forms[0];
+	var msg = "setup.cgi?next_file=usb_new_fld.htm&edit=0&usb_opener_htm="+cf.this_file.value;
+	openDataSubWin(msg, usbFLDsub );
+}
+
+function delete_rule()
+{
+	var cf = document.forms[0];
+	var msg = "setup.cgi?next_file=usb_adv.htm"
+	var radioIndex = radioSelectedIndex(cf.shareFolderSelect);
+	var size = cf.shareFolderSelect.length;
+	var up_msg = getErrorMsgByVar("gsm_msg_usb_cfm_delete");
+
+	if (!confirm(up_msg))
+		return false;
+	if(isNaN(size))
+		size=1;
+	if (radioIndex > -1)
+	{
+		cf.next_file.value="usb_adv.htm";
+		cf.todo.value="delfolder";
+		cf.ruleSelect.value=radioIndex;
+		dataToHidden(cf);
+		cf.submit();
+	}
+	else
+		alert(getErrorMsgByVar("gsm_msg_usb_no_sel_radio"));
+	return false;
+}
+
+function remove_dev()
+{
+        var cf = document.forms[0];
+        var msg = "setup.cgi?next_file=remove_usb_dev.htm&usb_opener_htm="+cf.this_file.value;
+        openDataSubWin(msg, usbFLDsub );
+}
+
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="init();">
+<form name="usb_adv" method="post" action="setup.cgi@post_par#">
+<div class="page_title" languageCode="764">USB Storage (Advanced Settings)</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="common_bt" type="button" name="Refresh" value="Refresh" onClick="self.location.href='setup.cgi?next_file=usb_adv.htm'" languageCode="194">
+&nbsp;
+<input class="apply_bt" type="button" name="Apply" value="Apply" onClick="checkData()" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td class="hlc"><a href="javascript:loadhelp('usb_adv','NetworkName')" tabindex="-1">
+		<b languageCode="765">Network/Device Name</b> </a>: <input type="text" name="deviceName" size="15" maxlength="15" value="@deviceName#"></td>
+	</tr><tr><td class="hlc"><a href="javascript:loadhelp('usb_adv','Workgroup')" tabindex="-1">
+		<b languageCode="766">Workgroup</b> </a>: <input type="text" name="workGroup" size="15" maxlength="15" value="@workGroup#"></td>
+	</tr><tr><td colspan="2" height="10"></td>
+	</tr><tr><td colspan="2">
+		<TABLE id="AccessMethod" class="tables" border="0" cellpadding="2" cellspacing="0" width="100%">
+			<TR class="table_header">
+<th class="usbLL" align="left" width="80" languageCode = "313">Enable</th>
+				<th class="usbLL" align="left" languageCode="767">Access Method</th>
+				<th class="usbLL" align="left" languageCode="768">Link</th>
+				<th class="LL" align="left" width="50" languageCode="145">Port</th>
+			</tr>
+			<TR class="odd_line">
+<td><input type="checkbox" name="enableNet" value="enable" ></td>
+				<td align="left" languageCode="769">Network Neighborhood/MacShare</td>
+				<td><script type="text/javascript">
+	if(WhichBrowser()==1){
+		if(is_remote=="true")
+			document.write("\\\\@deviceName#");
+		else
+		document.write("<a href=\"\\\\@deviceName#\" class=\"cnA\" target=\"_blank\">	\\\\@deviceName#	");
+	}else if(WhichBrowser()==2){
+		document.write("\\\\@deviceName#");
+	}else if(WhichBrowser()==3){
+		if(is_remote=="true")
+			document.write("\\\\@deviceName#");
+		else
+		document.write("<a href=\"smb:\/\/@deviceName#\" class=\"cnA\" target=\"_blank\">smb:\/\/@deviceName#");
+	}else{
+		document.write("<a class=\"cnA\" target=\"_blank\">\\\\@deviceName#");
+	}
+
+</script></td>
+				<td align="left">-</td>
+			</tr>
+			<TR class="even_line">
+	<td align="left">
+				<input type="checkbox" name="enableHTTP" value="enable" >
+				</td>
+				<td align="left">HTTP</td>
+				<td align="left">
+					<script> show_http_connection("@deviceName#") </script>
+					</td>
+				<td align="left">80</td>
+			</tr>
+			<TR class="odd_line">
+				<td align="left">
+				<input type="checkbox" name="enableHvia" value="disable" >
+				</td>
+				<td align="left">HTTPS (<span languageCode="779">via internet</span>)</td>
+				<td align="left"><a href="@wan_http_url#" class="cnA" target="_blank"> @wan_http_url# </a></td>
+				<td align="left"><input type="text" name="HTTP_via_port" value="@HTTP_via_port#" size="5" maxlength="5"></td>
+			</tr>
+			<TR class="even_line">
+				<td align="left">
+				<input type="checkbox" name="enableFTP" value="enable" >
+				</td>
+				<td align="left">FTP</td>
+				<td align="left">
+		<script> show_ftp_connection("@deviceName#", "@ftp_user#") </script>
+					</td>
+				<td align="left">21</td>
+			</tr>
+			<TR class="odd_line">
+				<td align="left">
+				<input type="checkbox" name="enableFvia" value="disable" >
+				</td>
+				<td>FTP (<span languageCode="779">via internet</span>)</td>
+				<td align="left"><a href="@wan_ftp_url_login#" class="cnA" target="_blank"> @wan_ftp_url# </a></td>
+				<td align="left"><input type="text" name="FTP_via_port" value="@FTP_via_port#" size="5" maxlength="5"></td>
+			</tr><!-- END | Sample for @shr_network_folders# --></table></td>
+	</tr>
+	<TR class="odd_line">
+		<td colspan="2" height="10"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td class="hlc"><a href="javascript:loadhelp('_usb_basic','NetworkFolders')" tabindex="-1"> <b languageCode="782">Available Network Folders</b> </a></td>
+		<td class="hrc"></td>
+	</tr><tr><td colspan="2">
+		<TABLE id="AvailableFolder" class="tables" border="0" cellpadding="2" cellspacing="0" width="100%">
+			<TR class="table_header">
+		<th class="LL" width="5">&nbsp;</th>
+		<th class="usbLL" languageCode = "786">Share Name</th>
+		<th class="usbLL" width="150" languageCode = "787">Read Access</th>
+		<th class="usbLL" width="150" languageCode = "788">Write Access</th>
+		<th class="usbLL" width="100" languageCode = "189">Folder Name</th>
+		<th class="usbLL" width="150" languageCode = "783">Volume Name</th>
+		<th class="usbLL" width="80" languageCode = "784">Total Space</th>
+		<th class="usbLL" width="80" languageCode = "785">Free Space</th>
+	</tr>
+	<script type="text/javascript">
+	print_all_dir();
+    </script>
+	</table>	</td>
+	</tr><tr><td colspan="2" height="10"></td>
+	</tr><tr><td colspan="2" align="left">
+<input class="edit_bt" type="button" name="Edit" value=" Edit " onClick="edit_rule()" languageCode="147">
+&nbsp;
+<input class="long_add_bt" type="button" name="Create" value="Create Network Folder" onClick="add_rule()" languageCode="789">
+&nbsp;
+<input class="delete_bt" type="button" name="Delete" value=" Delete " onClick="delete_rule()" languageCode="148"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td align="left"><b>Note: </b>To set up or modify your ReadyCLOUD user account, visit <a href="http://readycloud-test3.netgear.com" target="_blank" style="color:#0000ff">http://readycloud.netgear.com</a> to setup it.</td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td align="left"><input class="long_common_bt" type="button" name="safeRemove" value="Safely Remove USB Device" onClick="remove_dev()" languageCode="790"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td align="left"></td>
+	</tr></table><input type="hidden" name="h_old_storage_machine" value=""><input type="hidden" name="h_old_http_wan" value=""><input type="hidden" name="h_old_ftp_wan" value=""><input type="hidden" name="h_enableNet" value="@h_enableNet#"><input type="hidden" name="h_enableHTTP" value="@h_enableHTTP#"><input type="hidden" name="h_enableHvia" value="@h_enableHvia#"><input type="hidden" name="h_enableFTP" value="@h_enableFTP#"><input type="hidden" name="h_enableFvia" value="@h_enableFvia#"><input type="hidden" name="h_shareFolderSelect" value="@h_shareFolderSelect#"><input type="hidden" name="ruleSelect" value=""><input type="hidden" name="todo" value="save"><input type="hidden" name="this_file" value="usb_adv.htm"><input type="hidden" name="next_file" value="usb_adv.htm"><input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="h_usb_adv.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+//-->
+</script>
+<script>
+	function init()
+	{
+		var wds_enable = "@h_wds_enable#";
+		var wds1_enable = "@h_wds1_enable#";
+		var ap_enable = "@h_ap_mode#";
+		var accesscntl_flag = "@accesscntl_flag#";
+
+		if(wds_enable == "enable" || wds1_enable == "enable" || ap_enable == "enable" || accesscntl_flag == "0")
+		{
+			document.getElementById("url_ac").disabled = true;
+			document.getElementById("link2access").style.display = "none";
+			document.getElementById("access_status").style.display = "none";
+			document.getElementById("access_rule").style.display = "none";
+		}
+
+		if(accesscntl_flag == "0")
+		{
+			document.getElementById("wired_status").style.display = "none";
+			document.getElementById("wireless_status").style.display = "none";
+		}
+
+		document.getElementById("url_ac").style.cursor = "pointer";
+
+	}
+</script>
+</head><body bgcolor="#ffffff" onLoad="init();">
+<form method="get" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title" languageCode="190">Attached Devices</div>
+<div class="fix_button">
+</div>
+<div id="main" class="main_top_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+<tr id="link2access"><td nowrap colspan="3" align="right"><span languageCode="4200">Go to  <a  style="text-decoration:underline;color:#0000ff;" id="url_ac" onclick="goto_formframe('AccessControl.htm&todo=cfg_init')">Access Control</a> to allow or block devices.</span></td></tr>
+<tr><td width="40%"></td><td id="access_status" align="left"><span languageCode="3900">Access Control</span>: @access_control_status#</td><td nowrap  align="right">
+<input class="common_bt" type="button" name="Refresh" value="Refresh" languageCode="194" onClick="location.href='DEV_wait_refresh.htm'">
+</td></tr>
+<tr id="access_rule"><td width="40%"></td><td align="left"><span languageCode="4204">General Rule</span>: @rules_status#</td><td></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2">
+		<b languageCode="191">Wired Devices</b>
+		<TABLE d="WiredDevice" class="tables" border="0" cellpadding="2" cellspacing="0" width="100%">
+			<TR class="table_header">
+				<td id="wired_status" nowrap width="10%" align="center">
+			    <span class="thead" languageCode="643">Status</span>
+				</td>
+				<td nowrap width="30%" align="center"> 
+				<span class="thead" languageCode="192">Device Name </span>
+				</td>
+				<td nowrap width="20%" align="center">
+				<span class="thead" languageCode="71">IP Address</span>
+				</td>
+				<td nowrap width="30%" align="center">
+				<span class="thead" languageCode="83">MAC Address</span>
+				</td>
+				<td nowrap width="10%" align="center">
+			    	<span class="thead" languageCode="597">Connection Type</span>
+				</td>
+			</tr>
+			@rt_list_device#
+		</table></td>
+	</tr><tr><td colspan="2">
+	<br><b languageCode="193">Wireless Devices(Wireless intruders also show up here)</b>
+		<TABLE id="WirelessDevice" class="tables" border="0" cellpadding="2" cellspacing="0" width="100%">
+			<TR class="table_header">
+				<td nowrap id="wireless_status" width="10%" align="center"><span class="thead" languageCode="643">Status</span></td>
+				<td nowrap width="30%" align="center"><span class="thead" languageCode="192">Device Name</span></td>
+				<td nowrap width="20%" align="center"><span class="thead" languageCode="71">IP Address</span></td>
+				<td nowrap width="30%" align="center"><span class="thead" languageCode="83">MAC Address</span></td>
+				<td nowrap width="10%" align="center"><span class="thead" languageCode="597">Connection Type</span>
+				</td>
+				
+			</tr>
+			@rt_list_wl_device#
+		</table></td>
+	</tr>
+	<tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2" align="center"></td>
+	</tr></table><input type="hidden" name="todo" value="nbtscan_refresh"><input type="hidden" name="this_file" value="DEV_devices.htm"><input type="hidden" name="next_file" value="DEV_devices.htm"><input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="DEV_device_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

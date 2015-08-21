@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8">
+<LINK href="style/hijack_style.css" type=text/css rel=stylesheet>
+<LINK href="style/hijack_02_genieHelp.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+function initPage()
+{
+	var btns_container_div = document.getElementById("btnsContainer_div");
+	btns_container_div.onclick = function()
+	{
+		return nextChecking();
+	}
+//	//show firmware version
+//        showFirmVersion("none");
+}
+function nextChecking()
+{
+	var choices_div = document.getElementById("choices_div");
+	var choices = choices_div.getElementsByTagName("input");
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[0];
+	if(choices[0].checked)
+	{
+            this.location.href = "BRS_help_me_choice_01.html";
+	}
+	else if(choices[1].checked)
+	{
+		var cf = document.forms[0];
+		
+		if(cf.router_ap[0].checked)
+		{
+		    location.href = "setup.cgi?next_file=BRS_ap_wifi_setting.html&this_file=BRS_ap_select.html&todo=remove_ap_flag";
+		}
+		else if(cf.router_ap[1].checked)
+		{
+		     location.href="setup.cgi?next_file=BRS_ap_wifi_setting.html&this_file=BRS_ap_select.html&todo=raise_ap_flag";
+		}
+	}
+	else
+	{
+		alert(getErrorMsgByVar("bh_select_an_option"));
+		return false;
+	}
+	return true;
+}
+function show_or_hide()
+{
+	var choices_div = document.getElementById("choices_div");
+	var choices = choices_div.getElementsByTagName("input");
+	if(choices[0].checked)
+	{
+		document.getElementById("switch_mode").style.display="none";
+	}
+	else if (choices[1].checked)
+	{
+		document.getElementById("switch_mode").style.display="";		
+	}
+}
+addLoadEvent(initPage);
+</SCRIPT>
+</HEAD>
+<body bgcolor="#ffffff" >
+<FORM action="setup.cgi@post_par#" method=post>
+
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div id=choices_div>
+<H1><span languageCode = "4430">An existing router or gateway is detected in your network</span></H1>
+<P><span languageCode = "">It appears that you are installing the NETGEAR router behind your existing Internet provider WiFi router or gateway.You can choose to install your router in different operation modes.</span></P>
+<DIV class=helpChoice_divs id=choices_div>
+
+<DIV class=radio_div><INPUT type=radio CHECKED value=0 name=help_choice onClick="show_or_hide();"><b languageCode = "">Help Me Choose</b>
+<p><span languageCode="">genie walks you through a few questions and then suggests the operation mode that is best for you.</span></p></DIV>
+
+<DIV class=radio_div><INPUT type=radio  value=1 name=help_choice onClick="show_or_hide();"><b languageCode = "">Let Me Choose</b>
+<span languageCode="">(You can always change the mode by running the Setup Wizard again.)</span></DIV>
+
+<DIV style="display:none" id=switch_mode>
+<DIV class=radio_div><INPUT type=radio CHECKED value=1 name=router_ap><b languageCode = "4442">Router Mode</b><a  style="text-decoration:underline;color:#0000ff;" target="_blank"  href="./image/R6220-G1.jpg" languageCode = "">(Click here to see an illustration.)</a>
+<p><span languageCode="">This mode allows you to take advantage of NETGEAR <a  style="text-decoration:underline;color:#0000ff;" target="_blank"  href="./BRS_ap_msg1.html" languageCode = "">router functions</a>.The NETGEAR router is set up as a normal WiFi router behind your existing router or gateway.This mode requires that all of your devices be connected to the new NETGEAR router and not to your existing gateway.</span></p></DIV>
+<DIV class=radio_div><INPUT type=radio value=2 name=router_ap> <b languageCode = "4444">Access Point Mode</b><a  style="text-decoration:underline;color:#0000ff;" target="_blank"  href="./image/R6220-G2.jpg" languageCode = "">(Click here to see an illustration.)</a> 
+<p><span languageCode ="">This mode is appropriate for easy setup if devices are already connected to your existing router or gateway,or if you just want to use this new NETGEAR router to extend your WiFi coverage.Some <a  style="text-decoration:underline;color:#0000ff;" target="_blank"  href="./BRS_ap_msg1.html" languageCode = "">router functions </a>are not available in access point mode.</span></p></DIV>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" style="text-decoration:underline;color:#0000ff;" href="./BRS_ap_msg2.html" languageCode = "4446">Learn More</a>
+</DIV>
+
+</DIV></DIV>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<DIV class=wizard_buttons_div id=buttons_div_02 align=center>
+<DIV class=buttons_img_div id=btnsContainer_div align=center><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div id=btn_div name="Next"><span languageCode = "25">Next</span></DIV></DIV></DIV></DIV>
+
+<input type="hidden" name="SID" value="@SID#">
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="BRS_ap_select.html">
+<input type="hidden" name="next_file" value="BRS_ap_select.html">
+
+</FORM>  
+   		
+
+
+
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</body>
+</html>

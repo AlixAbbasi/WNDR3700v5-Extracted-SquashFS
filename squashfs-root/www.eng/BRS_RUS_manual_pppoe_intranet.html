@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/RU_staticIP.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="utility.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="linux.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/funcs.js" type=text/javascript></SCRIPT>
+
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+var lan_ip="@c4_sysLANIPAddr#";
+var lan_subnet="@c4_sysLANSubnetMask#";
+
+function initPage()
+{
+    var btns_container_div1 = document.getElementById("btnsContainer_div1");
+    btns_container_div1.onclick = function()
+    {
+    location.href = "BRS_RUS_manual_ip_type_check.html";
+    }
+    var btns_container_div2 = document.getElementById("btnsContainer_div2");
+    btns_container_div2.onclick = function()
+    {
+        var forms = document.getElementsByTagName("form");
+        var cf = forms[0];
+        dataToHidden(cf);
+        cf.submit();
+    }
+
+    showFirmVersion("none");
+}
+addLoadEvent(initPage);
+
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+<H1><span languageCode = "3283">Please enter static IP address and/or DNS servers for your internet interface if your ISP provide such information. In most cases you should skip this step keeping default values(Getting dynamically from ISP)</span></H1>
+<DIV id=mainContent_div>
+<P><span languageCode = "3275">Intranet IP Address</span>:</P>
+<DIV id=staticIP_choices_div>
+<DIV class=radio_div><INPUT type=radio CHECKED value="0" name=static_ip_choice align=center> <span languageCode = "72">Get Dynamically from ISP</span></DIV>
+<DIV class=radio_div><INPUT type=radio value="1" name=static_ip_choice align=center> <span languageCode = "73">Use Static IP Address</span>:</DIV></DIV>
+<!--<DIV class=input_left_div id=IP_addr align=right><span languageCode = "71">IP Address</span></DIV>
+<DIV class=input_img_div>
+    <INPUT class=input_text id=inputIPaddr maxLength=15 align=center name=c4_pppoe_myip> </DIV>
+<DIV class=input_left_div id=Sub_mask align=right><span languageCode = "75">IP Subnet Mask</span></DIV>
+<DIV class=input_img_div>
+    <INPUT class=input_text id=inputSubMask maxLength=15 align=center name=c4_pppoeLocalSubnetMask> </DIV>
+-->
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+	<tr>
+	<td nowrap align="right"><span languageCode = "71">IP Address</span></td>
+	<td nowrap align="center" class="num">
+		<input type="text" class="num" size="4" value="" maxlength="3" name="pppoe_myip1">.
+		<input type="text" class="num" size="4" value="" maxlength="3" name="pppoe_myip2">.
+		<input type="text" class="num" size="4" value="" maxlength="3" name="pppoe_myip3">.
+		<input type="text" class="num" size="4" value="" maxlength="3" name="pppoe_myip4">
+	</td>
+	</tr>
+	<tr>
+	<td nowrap align="right"><span languageCode = "75">IP Subnet Mask</span></td>
+	<td nowrap align="center" class="num">
+		<input type="text" class="num" size="4" value="" maxlength="3" name="pppoeLocalSubnetMask1">.
+		<input type="text" class="num" size="4" value="" maxlength="3" name="pppoeLocalSubnetMask2">.
+		<input type="text" class="num" size="4" value="" maxlength="3" name="pppoeLocalSubnetMask3">.
+		<input type="text" class="num" size="4" value="" maxlength="3" name="pppoeLocalSubnetMask4">
+	</td>
+	</tr>
+	</table>
+
+<DIV style="CLEAR: both"></DIV></DIV></DIV>
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=btnsContainer_div1><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "175">Back</span></DIV></DIV>
+<DIV class=buttons_img_div id=btnsContainer_div2><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span></DIV></DIV>
+</DIV></DIV>
+
+<input type="hidden" name="c4_pppoe_myip" value="@c4_pppoe_myip#">
+<input type="hidden" name="c4_pppoeLocalSubnetMask" value="@c4_pppoeLocalSubnetMask#">
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="BRS_RUS_manual_pppoe_intranet.html">
+<input type="hidden" name="next_file" value="BRS_RUS_manual_spoof_mac.html">
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

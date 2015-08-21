@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><style type="text/javascript">
+classes.num.all.fontFamily = "Courier";
+classes.num.all.fontSize = "10pt" ;
+</style><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript" src="qos.js"></script><script language="javascript" type="text/javascript">
+<!--
+/* parseAllPolicy() in qos.js will parser these format values */
+var apply_qos_rules = "@apply_qos_rules#";      /* String format */
+var apply_qos_rules_list="";                    /* sigle array format  []  */
+var apply_qos="";                               /* double-array format [][]*/
+
+var predef_qos_rules = "@predef_qos_rules#";    /* String format */
+var predef_qos_rule_list="";                    /* sigle array format  []  */
+var predef_qos="";                              /* double-array format [][]*/
+
+var apply_qos_rules_count=0;
+var predef_qos_rules_count=0;
+
+var qn = parseInt("@qn#", 10);
+var qos_prio_level = "@qos_prio_level#";
+
+var ed_mode_flag=1;
+
+function loadSettings()
+{
+	setPolicyName();
+	setPolicyItems();
+	var cf = document.forms[0];
+	cf.apps.disabled = true;
+	cf.category.disabled = true;
+	cf.name.disabled = true;
+}
+
+//-->
+</script></head><body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="parseAllPolicy();loadSettings();">
+<form name="formname" method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title" languageCode="577">QoS - Priority Rules</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="button" name="cancel" value="Cancel" onClick="location.href='QOS_main.htm'" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="submit" name="apply" value="Apply" onClick="return click_apply();" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td colspan="2" tabindex="-1"><b languageCode="578">Priority</b></td></tr><tr><td width="50%" size="1" languageCode="579">QoS Policy for</td>
+ <td width="50%">
+ <input type="text" name="name" size="33" maxlength="32"></td>
+</tr><tr style="display:none"><td width="50%" tabindex="-1" languageCode="580">Priority Category</td>
+ <td width="50%">
+<select name="category" size="1" onchange="show_qos_apps_edit();"><option value="0" languageCode="581">Applications</option><option value="1" languageCode="582">Online Gaming</option><option value="2" languageCode="83">MAC Address</option></select></td>
+</tr><tr><td width="50%" tabindex="-1" languageCode="581">Applications</td><td width="50%">
+<select name="apps" size="1" onchange="setPolicyName();show_customer_edit();"><option value="0" languageCode="584" id="MSN Messenger">MSN Messenger</option><option value="1" id="Skype">Skype</option><option value="2" languageCode="585" id="Yahoo Messenger">Yahoo Messenger</option><option value="3" languageCode="586" id="IP Phone">IP Phone</option><option value="4" languageCode="587" id="Vonage IP Phone">Vonage IP Phone</option><option value="5" languageCode="278"
+	id="NetMeeting">NetMeeting</option><option value="6" id="AIM">AIM</option><option value="7" languageCode="589" id="Google Talk">Google Talk</option><option value="8" id="Netgear EVA">Netgear EVA</option><option value="9" id="SSH">SSH</option><option value="10" id="Telnet">Telnet</option><option value="11" id="VPN">VPN</option><option value="12" id="FTP">FTP</option><option value="13" id="SMTP">SMTP</option><option value="14" id="WWW">WWW</option><option
+	value="15" id="DNS">DNS</option><option value="16" id="eMule/eDonkey">eMule/eDonkey</option><option value="17" id="Kazaa">Kazaa</option><option value="18" id="Gnutella">Gnutella</option><option value="19" id="BT/Azureus">BT/Azureus</option><option value="20" id="Counter Strike">Counter Strike</option><option value="21" id="Age of Empires">Age of Empires</option><option value="22" id="Everquest">Everquest</option><option value="23" id="Quake 2">Quake 2</option><option
+	value="24" id="Quake 3">Quake 3</option><option value="25" id="Unreal Tourment">Unreal Tourment</option><option value="26" id="Warcraft">Warcraft</option><option value="99" languageCode="591" id="Add a new application">Add a new application</option></select></td></tr><tr><td width="50%" tabindex="-1" languageCode="578">Priority</td>
+<td width="50%">
+<select name="priority"><option value="3" languageCode="592">Highest</option><option value="2" languageCode="593">High</option><option value="1" languageCode="594">Normal</option><option value="0" languageCode="595">Low</option></select></td>
+</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12">&nbsp;</td>
+</tr></table><tr><td colspan="2" align="center"></td></tr><input type="hidden" name="todo" value="save"><input type="hidden" name="apply_qos_rules" value=""><input type="hidden" name="qos_edit_idx" value="@qos_edit_idx#"><input type="hidden" name="this_file" value="QOS_edit.htm"><input type="hidden" name="next_file" value="QOS_main.htm">
+<input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><style type="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+
+
+function moveRule(fObj, radioObj, actionStr)
+{
+	var ptext = "\nNew position:" ; var pos ;
+	var radioIndex = radioSelectedIndex(radioObj);
+	var size;
+
+	if (radioIndex > -1)
+	{
+		size = radioObj.length;
+		if(isNaN(size))
+			size=1;
+
+		do {
+			pos = prompt(ptext,"") ;
+			if(!pos) return;
+			if ((pos< 1)  || (pos > size) || (parseInt(pos, 10) == radioIndex+1))  // number from 1, not 0
+				ptext = getErrorMsgByVar("gsm_msg_fw_inv_position");
+			} while ((pos< 1)  || (pos > size) || (parseInt(pos, 10) == radioIndex+1))
+			fObj.new_position.value = parseInt(pos, 10) - 1;
+			stdAction(fObj, actionStr);
+	}
+	else alert(getErrorMsgByVar("gsm_msg_fw_no_select"));
+}
+
+function saveEnable()
+{
+	var cf = document.forms[0];
+	var form_size = cf.elements.length;
+	cf.out_enable.value = "";
+	cf.in_enable.value = "";
+
+	for (var i = 0; i< form_size; i++)
+	{
+		if (cf.elements[i].type == "checkbox")
+		{
+		    if(cf.elements[i].name.substring(0,5)=="outcb")
+		        cf.out_enable.value+= (cf.elements[i].checked) ? "1" : "0";
+		    if(cf.elements[i].name.substring(0,4)=="incb")
+		         cf.in_enable.value+= (cf.elements[i].checked) ? "1" : "0";
+	     }
+	}
+}
+
+function setChBoxes()
+{
+	var cf = document.forms[0]; 	var i;  var oref;
+	for (i = 0; i< cf.out_enable.value.length; i++)
+	{
+		if (oref = eval("cf.outcb" + i))
+			oref.checked = (cf.out_enable.value.charAt(i) == "1" ) ? true : false;
+	}
+	for (i = 0; i< cf.in_enable.value.length; i++)
+	{
+		if (oref = eval("cf.incb" + i))
+			oref.checked = (cf.in_enable.value.charAt(i) == "1" ) ? true : false;
+	}
+}
+
+var BLK="@inboundBlock#" ;
+
+function init()
+{
+	var cf = document.forms[0];
+	if(BLK=="ALLOW always") {
+		document.getElementById('InBBLK').innerHTML = getErrorMsgByVar("gsm_msg_fw_allow_always");
+	}
+}
+
+function check_data()
+{
+    var cf = document.forms[0];
+    var msg = "";
+//	if (cf.dmz_enable.checked)
+//		msg = checkInt(cf.dmzip4, "DMZ IP", 1, 254, true);
+    if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+	cf.todo.value = "save";
+	dataToHidden(cf);
+	saveEnable();  // must be after daaToHidden()
+	return true;
+}
+//<body bgcolor="#ffffff" onload="dataToVisible(document.forms[0]);setChBoxes();loadhelp('_fwrl');document.forms[0].elements[0].focus();">
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);setChBoxes();init();document.forms[0].elements[0].focus();">
+<form name="fwrules" method="POST" action="setup.cgi@post_par#">
+<div class="page_title" languageCode="335">Firewall Rules</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="RESET" name="Cancel" value="Cancel" onClick="setTimeout('dataToVisible(document.forms[0])',250)" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="submit" name="apply" value="Apply" onClick="return check_data()" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2"><a href="javascript:loadhelp('_fwrl','out')" tabindex="-1"><b languageCode="336">Outbound Services</b></a></td>
+	</tr><tr><td colspan="2">
+		<TABLE class="tables" border="0" cellpadding="2" cellspacing="0" width="100%">
+			<TR class="table_header">
+				<td nowrap align="center" width="6%"><span class="thead"></span></td>
+				<td nowrap align="center" width="6%"><span class="thead">#</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="313">Enable</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="93">Service Name</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="337">Action</span></td>
+				<td nowrap align="center"><span class="thead">LAN</span> <span class="thead" languageCode="339">Users</span></td>
+				<td nowrap align="center"><span class="thead">WAN</span> <span class="thead" languageCode="341">Servers</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="342">Log</span></td>
+			</tr>
+			@rule_list_out#
+			<TR class="even_line">
+				<td nowrap align="center"><span class="thead"></span></td>
+				<td nowrap align="center"><span class="thead" languageCode="343">Default</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="61">Yes</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="319">Any</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="344">ALLOW always</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="319">Any</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="319">Any</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="129">Never</span></td>
+			</tr></table></td>
+	</tr><tr><td colspan="2" align="center"><br><input class="add_bt" type="button" name="outadd" value=" Add " onClick="this.form.next_file.value='rule_out.htm';stdAction(this.form,'newfile')" languageCode="146">
+&nbsp;
+<input class="edit_bt" type="button" name="outedit" value=" Edit " onClick="this.form.next_file.value='rule_out.htm';radioTable(this.form,this.form.out_sel,'edit')" languageCode="147">
+&nbsp;
+<input class="common_bt" type="button" name="outmove" value=" Move " onClick="moveRule(this.form,this.form.out_sel,'outmove')" languageCode="353">
+&nbsp;
+<input class="delete_bt" type="button" name="outdelete" value="Delete" onClick="this.form.next_file.value='rule_out.htm'; radioTable(this.form,this.form.out_sel,'delete')" languageCode="148"></td>
+	</tr><tr><td colspan="2"><a href="javascript:loadhelp('_fwrl','in')" tabindex="-1"><b languageCode="345">Inbound Services</b></a></td>
+	</tr><tr><td colspan="2">
+		<TABLE class="tables" border="0" cellpadding="2" cellspacing="0" width="100%">
+			<TR class="table_header">
+				<td nowrap align="center" width="6%"><span class="thead"></span></td>
+				<td nowrap align="center" width="6%"><span class="thead">#</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="313">Enable</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="93">Service Name</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="337">Action</span></td>
+				<td nowrap align="center"><span class="thead">LAN <span languageCode="202">Server :</span> <span languageCode="346">IPAddress</span></span></td>
+				<td nowrap align="center"><span class="thead">WAN</span> <span class="thead" languageCode="339">Users</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="342">Log</span></td>
+			</tr>
+			@rule_list_in#
+			<!--
+This comment is added to seperate two variables
+-->
+			@dmz_xx#
+			<TR class="even_line">
+				<td nowrap align="center"><span class="thead"></span></td>
+				<td nowrap align="center"><span class="thead" languageCode="343">Default</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="61">Yes</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="319">Any</span></td>
+				<td nowrap align="center" id="InBBLK"><span class="ttext" languageCode="347">BLOCK always</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="319">Any</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="319">Any</span></td>
+				<td nowrap align="center"><span class="ttext" languageCode="129">Never</span></td>
+			</tr></table></td>
+	</tr><tr><td colspan="2" align="center"><br><input class="add_bt" type="button" name="inadd" value=" Add " onClick="this.form.next_file.value='rule_in.htm';stdAction(this.form,'newfile')" languageCode="146">
+&nbsp;	
+<input class="edit_bt" type="button" name="inedit" value=" Edit " onClick="this.form.next_file.value='rule_in.htm';radioTable(this.form,this.form.in_sel,'edit')" languageCode="147">
+&nbsp;
+<input class="common_bt" type="button" name="intmove" value=" Move " onClick="moveRule(this.form,this.form.in_sel,'inmove')" languageCode="353">
+&nbsp;
+<input class="delete_bt" type="button" name="indelete" value="Delete" onClick="this.form.next_file.value='rule_in.htm';radioTable(this.form,this.form.in_sel,'delete')" languageCode="148"></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><td colspan="2" height="18"><a href="javascript:loadhelp('_fwrl','import')" tabindex="-1"><b><span languageCode="349">Instant Messaging</span> (IM) <span languageCode="350">Ports</span></b></a><br><input type="radio" name="import_enable" value="1"><span languageCode="351">Close IM Ports</span><br><input type="radio" name="import_enable" value="0"><span languageCode="352">Open IM Ports(IM ports are open by default)</span><br></td>
+
+	<tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2" align="center"></td>
+	</tr></table><!--
+Radio buttons are named in_sel & out_sel
+  => value returned in h_in_sel & h_out_sel
+Checkboxes are named incbN &  outcbN (where N is number starting from 0)
+ => on/off value set and returned in in_enable & out_enable (string with 0 & 1, no separator)
+--><input type="hidden" name="h_in_sel" value=""><!-- blank on load --><input type="hidden" name="h_out_sel" value=""><!-- blank on load --><input type="hidden" name="in_enable" value="@in_enable#"><input type="hidden" name="out_enable" value="@out_enable#"><input type="hidden" name="h_import_enable" value="@h_import_enable#"><input type="hidden" name="new_position" value=""><!-- blank on load --><input type="hidden" name="todo" value="save"><!-- save, newfile, inedit, outedit, indelete, outdelete, inmove, outmove --><input type="hidden" name="this_file" value="fw_rules.htm"><input type="hidden" name="next_file" value="fw_rules.htm"><input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="h_fwrl.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

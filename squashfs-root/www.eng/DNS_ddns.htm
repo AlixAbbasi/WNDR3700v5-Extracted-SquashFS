@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+var openvpn_status="@openvpn_status#";
+var openvpn_flag ="@openvpn_flag#";
+var is_PR="@PR#";
+function ShowResult() {
+	openDataSubWin('./DDNS_wait_time.htm','alwaysRaised,dependent,resizable,scrollbars,width=450,height=150,left=200,top=200');
+}
+
+function checkData()
+{
+ 	var cf = document.forms[0];
+	var msg = "";
+	var hostname = "";
+    var ddns_name = cf.sysDNSProviderlist.options[cf.sysDNSProviderlist.selectedIndex].value;
+
+    if( ddns_name == "dyndns")
+    {
+        hostname = cf.sysDNSHost.value;
+    	if(cf.sysDNSActive.checked)
+    	{
+    	    msg+= checkBlank(cf.sysDNSHost, getErrorMsgByVar("gsm_msg_ddns_host_name"));
+    	    msg+= checkBlank(cf.sysDNSUser, getErrorMsgByVar("gsm_msg_ddns_user_name"));
+    	    msg+= checkBlank(cf.sysDNSPassword, getErrorMsgByVar("gsm_msg_ddns_pw"));
+    	}
+    }
+    else if( ddns_name == "noipdns")
+    {
+        hostname = cf.sysNOIPDNSHost.value;
+        if(cf.sysDNSActive.checked)
+        {
+            msg+= checkBlank(cf.sysNOIPDNSHost, getErrorMsgByVar("gsm_msg_ddns_host_name"));
+            msg+= checkBlank(cf.sysNOIPDNSUser, getErrorMsgByVar("gsm_msg_ddns_user_name"));
+            msg+= checkBlank(cf.sysNOIPDNSPassword, getErrorMsgByVar("gsm_msg_ddns_pw"));
+        }
+    }
+
+    else if( ddns_name == "qdns")
+    {
+        hostname = cf.sysDNS3322Host.value;
+	if(cf.sysDNSActive.checked)
+	{
+	    msg+= checkBlank(cf.sysDNS3322Host, getErrorMsgByVar("gsm_msg_ddns_host_name"));
+	    msg+= checkBlank(cf.sysDNS3322User, getErrorMsgByVar("gsm_msg_ddns_user_name"));
+	    msg+= checkBlank(cf.sysDNS3322Password, getErrorMsgByVar("gsm_msg_ddns_pw"));
+	}
+    }
+    else if( ddns_name == "peanuthull")
+    {
+    	if(cf.sysDNSActive.checked)
+    	{
+    	    msg+= checkBlank(cf.sysDNSPeanuthullUser, getErrorMsgByVar("gsm_msg_ddns_user_name"));
+    	    msg+= checkBlank(cf.sysDNSPeanuthullPassword, getErrorMsgByVar("gsm_msg_ddns_pw"));
+    	}
+    }
+
+	/* check if DDNS host name has invalid character */
+	if (ddns_name != "peanuthull" && hostname.length > 0
+	&& isValidStr(hostname.toLowerCase(), ValidStr_ddns, hostname.length) == false) {
+	    msg+= getErrorMsgByVar("gsm_msg_ddns_host_invalid");
+	}
+
+	if (msg.length > 1) {
+	    alert(msg);
+	    return false;
+	}
+	dataToHidden(cf);
+	return true;
+}
+
+function check_ddns_change()
+{
+	if(openvpn_flag == "1")
+	{
+		if (openvpn_status == "1")
+		{	
+			alert(getErrorMsgByVar("gsm_msg_openvpn_change_ddns"));
+			//alert("You have changed your Dynamic DNS settings,which is being used by the");
+		}
+	}
+	return true;
+}
+
+function check_ddns_type()
+{
+	var cf = document.forms[0];
+    var ddns_name = cf.sysDNSProviderlist.options[cf.sysDNSProviderlist.selectedIndex].value;
+    cf.Button.disabled=false;
+
+    if(ddns_name == "netgear")
+    {
+		if(cf.sysDNSActive.checked)
+			location.href = "setup.cgi?todo=ddns_service_change&this_file=DNS_ddns.htm&service_type=netgear&tmp_DNSActive=1";
+		else
+			location.href = "setup.cgi?todo=ddns_service_change&this_file=DNS_ddns.htm&service_type=netgear&tmp_DNSActive=0";
+
+    }
+
+    else if( ddns_name == "dyndns")
+    {
+	    show_hide("DYNDNS"        , true);
+	    show_hide("DDNS3322"      , false);
+	    show_hide("DDNSPeanuthull", false);
+	    show_hide("NOIPDDNS"      , false);
+    }
+    else if( ddns_name == "noipdns")
+    {
+	    show_hide("DYNDNS"        , false);
+	    show_hide("DDNS3322"      , false);
+            show_hide("DDNSPeanuthull", false);
+            show_hide("NOIPDDNS"      , true);
+   }
+    else if( ddns_name == "qdns")
+    {
+	    show_hide("DYNDNS"        , false);
+	    show_hide("DDNS3322"      , true);
+	    show_hide("DDNSPeanuthull", false);
+	    show_hide("NOIPDDNS"      , false);
+    }
+    else if( ddns_name == "peanuthull")
+    {
+	    show_hide("DYNDNS"        , false);
+	    show_hide("DDNS3322"      , false);
+	    show_hide("DDNSPeanuthull", true);
+	    show_hide("NOIPDDNS"      , false);
+	    cf.Button.disabled=true;
+    }
+	if(is_PR == 1)
+		document.getElementById("3322").style.display="";
+}
+
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);loadhelp('DNS_ddns');document.forms[0].elements[0].focus();check_ddns_type();" onUnload="closeWin(datSubWinVar);">
+<form method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title" languageCode="218">Dynamic DNS</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="common_bt" type="button" name="Button" value="Show Status" onClick="ShowResult()" languageCode="224">
+&nbsp;
+<input class="cancel_bt" type="RESET" name="Cancel" value="Cancel" onClick="setTimeout('dataToVisible(document.forms[0])',250);" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="SUBMIT" name="Apply" value="Apply" onClick="return checkData()" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2"><input type="checkbox" name="sysDNSActive" value=""><a href="javascript:loadhelp('DNS_ddns','setup')" tabindex="-1"><b languageCode="219">Use a Dynamic DNS Service</b></a>
+		</td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr>
+
+    <tr>
+        <td width="50%" align="left" nowrap><a href="javascript:loadhelp('DNS_ddns','provider')" tabindex="-1"><b languageCode="220">Service Provider</b></a></td>
+		<td width="50%" align="right">
+         <select name="sysDNSProviderlist" size="1"  onChange="check_ddns_type();check_ddns_change();">
+         	<option value="netgear" selected>NETGEAR</option>
+          <option value="dyndns" selected>www.DynDNS.org</option>
+          <option value="noipdns">www.No-IP.com</option>
+          <option value="qdns" id="3322" style="display:none">www.3322.org</option>
+@hide_oray_s#
+          <option value="peanuthull">www.oray.cn</option>
+@hide_oray_e#
+         </select>
+        </td>
+	</tr>
+
+<!-- DynDNS -->
+ <tr>
+  <td colspan=3>
+   <div ID="DYNDNS" style="display:none">
+    <table border="0" cellpadding="0" cellspacing="3" width="100%">
+     <tr>
+      <td width="50%" align="left" nowrap languageCode="222">Host Name</td>
+      <td width="50%" align="right">
+       <input type="text" name="sysDNSHost" size="32" maxlength="255" style="width:300px;" value="@sysDNSHost#" onChange="check_ddns_change()">
+      </td>
+	</tr>
+     <tr>
+      <td width="50%" align="left" languageCode="223">User Name</td>
+      <td width="50%" align="right">
+       <input type="text" name="sysDNSUser" size="32" maxlength="64" style="width:300px;" value="@sysDNSUser#">
+      </td>
+     </tr>
+     <tr>
+      <td width="50%" align="left" languageCode="92">Password</td>
+      <td width="50%" align="right">
+       <input type="password" name="sysDNSPassword" size="32" maxlength="64" style="width:300px;" value="@sysDNSPassword#">
+      </td>
+	</tr>
+    </table>
+   </div>
+  </td>
+	</tr>
+<!--noip-->
+ <tr>
+  <td colspan=3>
+   <div ID="NOIPDDNS" style="display:none">
+    <table border="0" cellpadding="0" cellspacing="3" width="100%">
+     <tr>
+      <td width="50%" align="left" nowrap languageCode="222">Host Name</td>
+      <td width="50%" align="right">
+       <input type="text" name="sysNOIPDNSHost" size="32" maxlength="255" style="width:300px;" value="@sysNOIPDNSHost#" onChange="check_ddns_change()">
+      </td>
+        </tr>
+     <tr>
+      <td width="50%" align="left" languageCode="223">User Name</td>
+      <td width="50%" align="right">
+       <input type="text" name="sysNOIPDNSUser" size="32" maxlength="64" style="width:300px;" value="@sysNOIPDNSUser#">
+      </td>
+     </tr>
+     <tr>
+      <td width="50%" align="left" languageCode="92">Password</td>
+      <td width="50%" align="right">
+       <input type="password" name="sysNOIPDNSPassword" size="32" maxlength="64" style="width:300px;" value="@sysNOIPDNSPassword#">
+      </td>
+        </tr>
+    </table>
+   </div>
+  </td>
+  </tr>
+
+    <!-- 3322 -->
+ <tr>
+  <td colspan=3>
+   <div ID="DDNS3322" style="display:none">
+    <table border="0" cellpadding="0" cellspacing="3" width="100%">
+     <tr>
+        <td width="50%" align="left" nowrap languageCode="222">Host Name</td>
+		<td width="50%" align="right"><input type="text" name="sysDNS3322Host" size="32" maxlength="255" style="width:300px;" value="@sysDNS3322Host#" onChange="check_ddns_change()"></td>
+	</tr>
+     <tr>
+        <td width="50%" align="left" languageCode="223">User Name</td>
+		<td width="50%" align="right"><input type="text" name="sysDNS3322User" size="32" maxlength="64" style="width:300px;" value="@sysDNS3322User#"></td>
+	</tr>
+     <tr>
+        <td width="50%" align="left" languageCode="92">Password</td>
+		<td width="50%" align="right"><input type="password" name="sysDNS3322Password" size="32" maxlength="64" style="width:300px;" value="@sysDNS3322Password#"></td>
+	</tr>
+
+     <tr><td colspan="2" background="liteblue.gif" height="12"></td></tr>
+    <tr>
+      <td colspan="2" align="left"><input name="sysDNS3322WildCard" value="" type="checkbox"><span languageCode="2007">Use wildcards</span></td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+
+    <!-- Peanuthull -->
+ <tr>
+  <td colspan=3>
+   <div ID="DDNSPeanuthull" style="display:none">
+    <table border="0" cellpadding="0" cellspacing="3" width="100%">
+     <tr>
+      <td width="50%" align="left" languageCode="222">Host Name</td>
+      <td width="50%" align="right"><input disabled="disabled" type="text" name="sysDNSPeanuthullHost" size="32" maxlength="60" style="width:300px;" value="" onChange="check_ddns_change()"></td>
+     </tr>
+     <tr>
+      <td width="50%" align="left" languageCode="223">User Name</td>
+      <td width="50%" align="right"><input type="text" name="sysDNSPeanuthullUser" size="32" maxlength="60" style="width:300px;" value="@sysDNSPeanuthullUser#"></td>
+     </tr>
+     <tr>
+      <td width="50%" align="left" languageCode="92">Password</td>
+      <td width="50%" align="right"><input type="password" name="sysDNSPeanuthullPassword" size="32" maxlength="60" style="width:300px;" value="@sysDNSPeanuthullPassword#"></td>
+     </tr>
+     <tr>
+      <td colspan="2" background="liteblue.gif" height="12"></td>
+     </tr>
+     <tr>
+      <td width="50%" align="left" nowrap languageCode="2008">Service Provider Links:</td>
+      <td width="50%" align="left">
+      <a class="href_underline" href="javascript:void(0);" onclick="window.open('http://www.oray.cn/passport/register.php');" languageCode="2012">Oray dynamic DNS resolve service request</a>
+      </td>
+     </tr>
+     <tr>
+      <td width="50%" align="left" nowrap>&nbsp</td>
+      <td width="50%" align="left">
+      <a class="href_underline" href="javascript:void(0);" onclick="window.open('http://www.oray.cn/peanuthull/service.php');" languageCode="2013">Upgrade to Peanuthull DDNS professional service</a>
+      </td>
+     </tr>
+     <tr>
+      <td width="50%" align="left" nowrap>&nbsp</td>
+      <td width="50%" align="left">
+      <a class="href_underline" href="javascript:void(0);" onclick="window.open('http://www.oray.cn/ask');" languageCode="2014">Peanuthull DDNS help</a>
+      </td>
+     </tr>
+     <tr>
+      <td width="50%" align="left" nowrap languageCode="2009">Link Status:</td>
+      <td width="50%" align="left">@sysDNSPeanuthullLinkStatus#</td>
+     </tr>
+     <tr>
+      <td width="50%" align="left" nowrap languageCode="2010">Service Type:</td>
+      <td width="50%" align="left">@sysDNSPeanuthullServiceType#</td>
+     </tr>
+     <tr>
+      <td width="50%" align="left" nowrap languageCode="2011">Domain Name Info:</td>
+      <td width="50%" align="left">@sysDNSPeanuthullDNSInfo#</td>
+     </tr>
+    </table>
+   </div>
+  </td>
+    </tr>
+
+    <tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td></tr>
+    <tr><td colspan="2" align="center"></td>
+		<!--
+	<input class="common_bt" type="button" name="Button" value="Show Status" onClick="location.href='./st_ddns.htm'"></td>
+-->
+	</tr>
+   </table>
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="DNS_ddns.htm">
+<input type="hidden" name="next_file" value="DNS_ddns.htm">
+<!-- ServerStart -->
+<input type="hidden" name="h_sysDNSActive" value="@h_sysDNSActive#">
+<input type="hidden" name="h_sysDNSProviderlist" value="@h_sysDNSProviderlist#">
+<input type="hidden" name="h_sysDNSWildCard" value="@h_sysDNSWildCard#">
+<input type="hidden" name="h_sysDNS3322WildCard" value="@h_sysDNS3322WildCard#">
+<!-- ServerEnd -->
+<input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="DNS_ddns_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

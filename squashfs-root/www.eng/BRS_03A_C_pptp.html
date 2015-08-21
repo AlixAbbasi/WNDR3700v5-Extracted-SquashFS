@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+<title>NETGEAR Router @model_name# </title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style/hijack_style.css" />
+<link rel="stylesheet" type="text/css" href="style/hijack_03A_C_pptp.css" />
+<script language="javascript" type="text/javascript" src="script/brs_hijack.js"></script>
+<script language="javascript" type="text/javascript" src="script/brs_hijack_03A_C_pptp.js"></script>
+<script language="javascript" type="text/javascript" src="script/funcs.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+
+</head>
+
+<body>
+<FORM action="setup.cgi@post_par#" method=post>
+
+<div class="wizard_content_div">
+
+<div class="wizard_words_div">
+
+			<span><H1 languageCode="3123">PPTP Intetnet Connection Detected</H1></span>
+			<p><span languageCode="3046">Enter the required information below.</span></p>
+
+			<div id="mainContent_div">
+
+				<div id="loginName" class="input_left_div" align="right">
+					<span languageCode="91">Login</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="text" id="inputName" align="right" maxlength="63" name="pptp_username" class="input_text" />
+				</div>
+
+				<div id="passwd" class="input_left_div" align="right">
+					<span languageCode="3113">Password</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="password" id="inputPasswd" align="right" maxlength="63" name="pptp_passwd" class="input_text" />
+				</div>
+
+				<div id="idleTimeout" class="input_left_div" align="right">
+					<span languageCode="3065">Idle Time-Out(in minutes)</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="text" align="right" id="inputIdle" maxlength="5" name="pptp_idletime" class="input_text" value="5"/>
+				</div>
+
+				<div id="IP_addr" class="input_left_div" align="right">
+					<span languageCode="3095">My IP Address</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="text" align="right" id="inputIPaddr" maxlength="15" name="ip_address" class="input_text" />
+				</div>
+				<div id="Netmask" class="input_left_div" align="right">
+					<span languageCode="708">Subnet Mask</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="text" align="right" id="inputNetMask" name="c4_pptpcLocalSubnetMask" class="input_text" />
+				</div>
+				<div id="serverIP" class="input_left_div" align="right">
+					<span languageCode="3147">Server Address</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="text" align="right" id="inputServerIP" name="pptp_serv_ip" class="input_text" />
+				</div>
+
+				<div id="Gateway" class="input_left_div" align="right">
+					<span languageCode="3054">Gateway IP Address</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="text" align="right" id="inputGateway" maxlength="15" name="gateway" class="input_text" />
+				</div>
+
+				<div id="connectionID" class="input_left_div" align="right">
+					<span languageCode="3030">Connection ID/Name</span>
+				</div>
+				<div class="input_img_div">
+					<img src="image/ca_text_pic.gif" />
+					<input type="text" align="right" id="inputConID" maxlength="63" name="pptp_conn_id" class="input_text" />
+				</div>
+
+				<div style="clear:both"></div>
+			</div>
+
+	</div>
+
+	<div id="allBtns_div" class="wizard_buttons_div" align="right">
+		<div id="btnsContainer_div" class="buttons_img_div" >
+			<img src="image/ca-little-purple-button.gif" />
+			<div id="btn_text_div" class="buttons_words_div" align="center" name="Next">
+				<span languageCode="3100">Next</span>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+<input type="hidden" name="WANAssign" value="Dynamic">
+<input type="hidden" id="c4_myip_" name="c4_myip_">
+<input type="hidden" id="c4_mygw_" name="c4_mygw_">
+<input type="hidden" name="todo" value="brs_reset_save">
+<input type="hidden" name="h_pptp_dod" value="1">
+<input type="hidden" name="h_DNSAssign" value="0">
+<input type="hidden" name="this_file" value="BRS_03A_C_pptp.html">
+<input type="hidden" name="next_file" value="BRS_04_applySettings.html">
+<input type="hidden" name="SID" value="@SID#">
+
+</form>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</body>
+
+</html>

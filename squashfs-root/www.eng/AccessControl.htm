@@ -1,0 +1,519 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><style type="text/javascript">
+classes.num.all.fontFamily = "Courier";
+classes.num.all.fontSize = "10pt" ;
+</style><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript">
+var man_mac = "@cur_mac#";
+
+function blockDev()
+{
+	var i;
+	var devmac = "";
+	var cur_device = document.getElementsByName("device_sel");
+	for(i = 0; i < cur_device.length; i ++)
+	{
+		if(cur_device[i].checked == true)
+		{
+			if(man_mac == cur_device[i].value)
+			{
+				alert(getErrorMsgByVar("gsm_msg_block_manage_device"));
+				return false;
+			}
+			else
+				devmac = devmac + cur_device[i].value + ";";
+		}
+	}
+	document.getElementsByName("block_devmac")[0].value = devmac;
+	document.getElementsByName("allow_devmac")[0].value = "";
+	dataToHidden(document.forms[0]);
+	document.forms[0].submit();
+	return true;
+}
+
+function allowDev()
+{
+	var i;
+	var devmac = "";
+	var cur_device = document.getElementsByName("device_sel");
+	for(i = 0; i < cur_device.length; i ++)
+	{
+		if(cur_device[i].checked == true)
+			devmac = devmac + cur_device[i].value + ";";
+	}
+	document.getElementsByName("allow_devmac")[0].value = devmac;
+	document.getElementsByName("block_devmac")[0].value = "";
+	dataToHidden(document.forms[0]);
+	document.forms[0].submit();
+	return true;
+}
+
+function checkAcclist()
+{
+	var chked = 0;
+	var allowbtn = document.getElementsByName("Allow")[0];
+	var blockbtn = document.getElementsByName("Block")[0];
+	var editbtn = document.getElementsByName("EditCurrent")[0];
+	var ifcheck = document.getElementById("acswitch").checked;
+	var cur_device = document.getElementsByName("device_sel"); 
+	for(i = 0; i < cur_device.length; i ++)
+	{
+		if(cur_device[i].checked == true)
+		{
+			chked ++;
+		}
+	}
+	if(ifcheck == true)
+	{
+		if(chked == 0)
+		{
+			allowbtn.className = "common_gray_bt";
+			allowbtn.disabled = true;
+			blockbtn.className = "common_gray_bt";
+			blockbtn.disabled = true;
+		}
+		else
+		{
+			allowbtn.className = "common_bt";
+			allowbtn.disabled = false;
+			blockbtn.className = "common_bt";
+			blockbtn.disabled = false;
+		}
+/* enable edit button */
+		if(chked == 1)
+		{
+			editbtn.className = "common_bt";
+			editbtn.disabled = false;
+		}
+/* disable edit button */
+		else
+		{
+			editbtn.className = "common_gray_bt";
+			editbtn,disabled = true;
+		}
+	}
+}
+
+function selAll()
+{
+	var i;
+	var all_sel = document.getElementsByName("all_sel");
+	var cur_device = document.getElementsByName("device_sel");
+	if(all_sel[0].checked == true)
+	{
+		for(i = 0; i < cur_device.length; i ++)
+			cur_device[i].checked = true;
+	}
+	if(all_sel[0].checked == false)
+	{
+		for(i = 0; i < cur_device.length; i ++)
+			cur_device[i].checked = false;
+	}
+}
+
+function selAllow()
+{
+	var i;
+	var allow_sel = document.getElementById("all_sel_allow");
+	var allow_device = document.getElementsByName("device_allow");
+	if(allow_sel.checked == true)
+	{
+		for(i = 0; i < allow_device.length; i ++)
+			allow_device[i].checked = true;
+	}
+	if(allow_sel.checked == false)
+	{
+		for(i = 0; i < allow_device.length; i ++)
+			allow_device[i].checked = false;
+	}
+}
+
+function selBlock()
+{
+	var i;
+	var block_sel = document.getElementById("all_sel_block");
+	var block_device = document.getElementsByName("device_block");
+	if(block_sel.checked == true)
+	{
+		for(i = 0; i < block_device.length; i ++)
+			block_device[i].checked = true;
+	}
+	if(block_sel.checked == false)
+	{
+		for(i = 0; i < block_device.length; i ++)
+			block_device[i].checked = false;
+	}
+}
+
+function clickBlock()
+{
+	var showstates = document.getElementById("ncblock").style;
+	if(showstates.display == "none")
+	{
+		showstates.display = "";
+		document.getElementById("arrow_block").src = "image/arrow_down.gif";
+	}
+	else
+	{
+		showstates.display = "none";
+		document.getElementById("arrow_block").src = "image/arrow_right.gif";
+	}
+}
+
+function clickAllow()
+{
+	var showstates = document.getElementById("ncallow").style;
+	if(showstates.display == "none")
+	{
+		showstates.display = "";
+		document.getElementById("arrow_allow").src = "image/arrow_down.gif";
+	}
+	else
+	{
+		showstates.display = "none";
+		document.getElementById("arrow_allow").src = "image/arrow_right.gif";
+	}
+}
+
+
+function delAllow()
+{
+	var arr = new Array();
+	var i;
+	var devmac = "";
+	var allow_dev = document.getElementsByName("device_allow");
+	for(i = 0; i < allow_dev.length; i ++)
+	{
+		if(allow_dev[i].checked == true)
+		{
+			arr = allow_dev[i].value.split("\x01");
+			devmac = devmac + arr[0] + ";";
+		}
+	}
+	document.getElementsByName("del_allowmac")[0].value = devmac;
+	document.forms[0].submit();
+	return true;
+}
+
+function delBlock()
+{
+	var i;
+	var arr = new Array();
+	var devmac = "";
+	var block_dev = document.getElementsByName("device_block");
+	for(i = 0; i < block_dev.length; i ++)
+	{
+		if(block_dev[i].checked == true)
+		{
+			arr = block_dev[i].value.split("\x01");
+			devmac = devmac + arr[0] + ";";
+		}
+	}
+	document.getElementsByName("del_blockmac")[0].value = devmac;
+	document.forms[0].submit();
+	return true;
+}
+
+function addAllow()
+{
+	var cf = document.forms[0];
+	var entry_num = document.getElementsByName("device_allow").length;
+	if(entry_num >= 128)
+		return false;
+
+	cf.allow_or_block.value = "0";
+	cf.next_file.value = "add_ac_dev.htm";
+	stdAction(cf, "save");
+	return true;
+}
+
+function addBlock()
+{
+	var cf = document.forms[0];
+	var entry_num = document.getElementsByName("device_block").length;
+	if(entry_num >= 128)
+		return false;
+
+	cf.allow_or_block.value = "1";
+	cf.next_file.value = "add_ac_dev.htm";
+	stdAction(cf, "save");
+	return true;
+}
+
+function editAllow()
+{
+	var cf = document.forms[0];
+	var i;
+	var allow_dev = document.getElementsByName("device_allow");
+	for(i = 0; i < allow_dev.length; i ++)
+	{
+		if(allow_dev[i].checked == true)
+		{
+			cf.edit_dev_info.value = allow_dev[i].value;
+			break;
+		}
+	}
+
+	cf.allow_or_block.value = "0";
+	cf.next_file.value = "edit_ac_dev.htm";
+	stdAction(cf, "save");
+	return true;
+}
+
+function editBlock()
+{
+	var cf = document.forms[0];
+	var i;
+	var block_dev = document.getElementsByName("device_block");
+	for(i = 0; i < block_dev.length; i ++)
+	{
+		if(block_dev[i].checked == true)
+		{
+			cf.edit_dev_info.value = block_dev[i].value;
+			break;
+		}
+	}
+
+	cf.allow_or_block.value = "1";
+	cf.next_file.value = "edit_ac_dev.htm";
+	stdAction(cf, "save");
+	return true;
+}
+
+function editCurrent()
+{
+	var cf = document.forms[0];
+	var i;
+	var cur_dev = document.getElementsByName("device_sel");
+	for(i = 0; i < cur_dev.length; i ++)
+	{
+		if(cur_dev[i].checked == true)
+		{
+			cf.edit_devmac.value = cur_dev[i].value;
+			break;
+		}
+	}
+	cf.cur_dev_flag.value = "1";
+	cf.next_file.value = "edit_ac_dev.htm";
+	stdAction(cf, "save");
+	return true;
+}
+
+function checkAllowEdit()
+{
+	var cf = document.forms[0];
+	var i, cnt;
+	var allow_dev = document.getElementsByName("device_allow");
+	cnt = 0;
+	for(i = 0; i < allow_dev.length; i ++)
+	{
+		if(allow_dev[i].checked == true)
+			cnt ++;
+	}
+	if(cnt == 1)
+	{
+		cf.Edit_allow.disabled = false;
+		cf.Edit_allow.className = "common_bt";
+	}
+	else
+	{
+		cf.Edit_allow.disabled = true;
+		cf.Edit_allow.className = "common_gray_bt";
+	}
+
+	if(cnt > 0)
+	{
+		cf.Delete_allow.disabled = false;
+		cf.Delete_allow.className = "common_bt";
+	}
+	else
+	{
+		cf.Delete_allow.disabled = true;
+		cf.Delete_allow.className = "common_gray_bt";
+	}
+}
+
+function checkBlockEdit()
+{
+	var cf = document.forms[0];
+	var i, cnt;
+	var block_dev = document.getElementsByName("device_block");
+	cnt = 0;
+	for(i = 0; i < block_dev.length; i ++)
+	{
+		if(block_dev[i].checked == true)
+			cnt ++;
+	}
+	if(cnt == 1)
+	{
+		cf.Edit_block.disabled = false;
+		cf.Edit_block.className = "common_bt";
+	}
+	else
+	{
+		cf.Edit_block.disabled = true;
+		cf.Edit_block.className = "common_gray_bt";
+	}
+
+	if(cnt > 0)
+	{
+		cf.Delete_block.disabled = false;
+		cf.Delete_block.className = "common_bt";
+	}
+	else
+	{
+		cf.Delete_block.disabled = true;
+		cf.Delete_block.className = "common_gray_bt";
+	}
+}
+
+function accheck()
+{
+	var acmode = document.getElementsByName("acmode");
+	var ifcheck = document.getElementById("acswitch").checked;
+	var device_sel = document.getElementsByName("device_sel");
+	var i;
+	if(ifcheck == false)
+	{
+		for(i = 0; i < acmode.length; i ++)
+		{
+			acmode[i].disabled = true;
+		}
+		for(i = 0; i < device_sel.length; i ++)
+		{
+			device_sel[i].disabled = true;
+		}
+		document.getElementById("all_sel").disabled = true;
+	}
+	else
+	{
+		for(i = 0; i < acmode.length; i ++)
+		{
+			acmode[i].disabled = false;
+		}
+		for(i = 0; i < device_sel.length; i ++)
+		{
+			device_sel[i].disabled = false;
+		}
+		document.getElementById("all_sel").disabled = false;
+	}
+}
+
+
+
+function checkData()
+{
+	var cf = document.forms[0];
+	dataToHidden(cf);
+	return true;
+}
+</script></head>
+<body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]); accheck()">
+<form name="accesscontrol" action="setup.cgi@post_par#" method="post" onsubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title" languageCode="3900">Access Control</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="RESET" name="Cancel" value="Cancel" onClick="location.href='AccessControl.htm';" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="SUBMIT" name="Apply" value="Apply" onClick="return checkData()" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+	<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2" height="18"><b languageCode="3901">You can use Access Control to allow or block computers or electronic devices from accessing your network</b><br><input type="checkbox" name="acswitch" id="acswitch" value="acswitch" onclick="accheck();"><span languageCode="3902" >Turn on Access Control</span><br><b languageCode="3903">Access Rules:</b><span languageCode="3904"> This is a general rule. You can also allow or block individual
+					devices</span><br><input type="radio" name="acmode" value="AllowNew"><span languageCode="3905">Allow all new devices to connect</span><br><input type="radio" name="acmode" value="BlockNew"><span languageCode="3906">Block all new devices from connecting</span></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2" align="center"><input class="common_gray_bt" disabled=true type="button" name="Allow" languageCode="3909" value="Allow" onclick = "allowDev();">&nbsp;&nbsp;
+	<input class="common_gray_bt" disabled=true type="button" name="Block" languageCode="3910" value="Block" onclick = "blockDev();">&nbsp;&nbsp;<input class="common_gray_bt" disabled=true type="button"  name="EditCurrent" languageCode="147" value="Edit" onclick="editCurrent();">&nbsp;&nbsp;
+			<input class="common_bt" type="submit" name="Refresh" languageCode="194" value="Refresh" onclick = "location.reload(); return false;"></td>
+	</tr>
+</table>
+		<table border = "1" cellpadding = "0" cellspacing = "3" width = "100%">
+				<tr class = "table_header">
+					<td nowrap align="center" width = "6%">
+						<input type= "checkbox" name = "all_sel" id = "all_sel" onclick = "selAll(); checkAcclist();">
+					</td>
+					<td nowrap align = "center" width = "14%"><span languageCode="643">Status</span></td>
+					<td nowrap align = "center" width = "20%"><span languageCode="192">Device Name</span></td>
+					<td nowrap align = "center" width = "20%"><span languageCode="199">IP Address</span></td>
+					<td nowrap align = "center" width = "25%"><span languageCode="260">MAC Address</span></td>
+					<td nowrap align = "center" width = "15%"><span languageCode="597">Connection Type</span></td>
+				</tr>
+				@access_control_list#
+			</table>
+			<p><span onclick="clickAllow();" style="cursor:pointer"><img id="arrow_allow" src="image/arrow_right.gif"></img><b languageCode="3907">View list of allowed devices not currently connected to the network</b></span></p>
+			<div>
+				<img width="100%" src="liteblue.gif" height="12"></img>
+			</div>
+			<div id="ncallow" style="display:none">
+				<div align="left" style="margin:10px">
+					<table border="0" cellpadding="0" cellspacing="3">
+						<tr><td><input class="common_gray_bt" type="button" languageCode="148" name="Delete_allow" disabled=true value="Delete" onclick="delAllow();"	></td>
+							<td><input class="common_bt" type="button" languageCode="146" name="Add_allow" value="Add" onclick="addAllow();"></td>
+							<td><input class="common_gray_bt" type="button" languageCode="147" name="Edit_allow" value="Edit" onclick="editAllow();" disabled=true></td></tr></table>
+				</div>
+			<table  border="1" cellpadding="0" cellspacing="3" width="100%">
+				<tr class = "table_header">
+					<td nowrap align="center" width = "10%">
+						<input type = "checkbox" name = "all_sel_allow" id = "all_sel_allow" onclick = "selAllow();checkAllowEdit()">
+					</td>
+					<td nowrap align="center" width = "35%"><span languageCode="192">Device Name</span></td>
+					<td nowrap align="center" width = "35%"><span languageCode="260">MAC Address</span></td>
+					<td nowrap align="center" width = "20%"><span languageCode="597">Connection Type</span></td>
+				</tr>
+				@allow_dev_list#
+				</table>
+			</div>
+			<p><span onclick="clickBlock();" style="cursor:pointer"><img id="arrow_block" src="image/arrow_right.gif"></img><b languageCode="3908">View list of blocked devices not currently connected to the network</b></span></p>
+			<div>
+				<img width="100%" src="liteblue.gif" height="12"></img>
+			</div>
+			<div id="ncblock" style="display:none">
+				<div align="left" style="margin:10px">
+					<table border="0" cellpadding="0" cellspacing="3">
+						<tr><td><input class="common_gray_bt" type="button" languageCode="148" name="Delete_block" disabled=true value="Delete" onclick="delBlock();"></td>
+							<td><input class="common_bt" type="button" languageCode="146" name="Add_block" value="Add" onclick="addBlock();"></td>
+							<td><input class="common_gray_bt" type="button" languageCode="147" name="Edit_block" value="Edit" onclick="editBlock();" disabled=true></td></tr></table>
+				</div>
+			<table  border="1" cellpadding="0" cellspacing="3" width="100%">
+				<tr class = "table_header">
+					<td nowrap align="center" width = "10%">
+						<input type = "checkbox" name = "all_sel_block" id = "all_sel_block" onclick = "selBlock();checkBlockEdit()">
+					</td>
+					<td nowrap align="center" width = "35%"><span languageCode="192">Device Name</span></td>
+					<td nowrap align="center" width = "35%"><span languageCode="260">MAC Address</span></td>
+					<td nowrap align="center" width = "20%"><span languageCode="597">Connection Type</span></td>
+				</tr>
+				@block_dev_list#
+			</table>
+		</div>
+		<input type="hidden" name="todo" value="save"><!-- addkeyword, clearallkeywords, delkeyword --><input type="hidden" name="this_file" value="AccessControl.htm"><input type="hidden" name="next_file" value="AccessControl.htm"><input type="hidden" name="cur_dev_flag" value="0"><input type="hidden" name="edit_dev_info" value=""><input type="hidden" name="edit_devmac" value=""><input type="hidden" name="allow_or_block" value=""><input type="hidden" name="h_acswitch" value="@h_acswitch#"><input type="hidden" name="h_acmode" value="@h_acmode#"><input type="hidden" name="block_devmac" value="@block_devmac#"><input type="hidden" name="allow_devmac"
+value="@allow_devmac#"><input type="hidden" name="del_allowmac" value="@del_allowmac#"><input type="hidden" name="del_blockmac" value="@del_blockmac#"><input type="hidden" name="Text" value=""><input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="AccessControl_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

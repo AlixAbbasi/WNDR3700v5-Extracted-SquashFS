@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual">
+<title>NETGEAR Router @model_name#</title>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<link rel="stylesheet" href="style/form.css">
+<script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" -->
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript" src="advanced.js"></script>
+<script language="javascript" type="text/javascript">
+
+<!--
+var disable = false;
+
+var enabled_wds=@wds_mode#;
+
+function init()
+{
+	switchSupp();
+}
+function showWpsAlert()
+{
+	var cf = document.forms[0];
+	if(cf.show_wps_alert.value != "0")
+	{
+		alert(getErrorMsgByVar("gsm_msg_wps_in_prog_warn"));
+	    return  false ;
+	}
+	return  true ;
+}
+
+function switchSupp()
+{
+	var cf = document.forms[0];
+	var i;
+	if (!(cf.wds_enable.checked)){
+		cf.sta_assoc_disable.disabled = true;
+		cf.wds_mode[0].disabled = cf.wds_mode[1].disabled = true;
+		cf.sysLANIPAddr1.disabled = cf.sysLANIPAddr2.disabled = cf.sysLANIPAddr3.disabled = cf.sysLANIPAddr4.disabled = true;
+		eval("cf.ptp_mac").disabled = true;
+		eval("cf.pmp_mac1").disabled = eval("cf.pmp_mac2").disabled = eval("cf.pmp_mac3").disabled = eval("cf.pmp_mac4").disabled = true;
+	}else{
+		cf.sta_assoc_disable.disabled = false;
+		cf.wds_mode[0].disabled = cf.wds_mode[1].disabled = false;
+		cf.sysLANIPAddr1.disabled = cf.sysLANIPAddr2.disabled = cf.sysLANIPAddr3.disabled = cf.sysLANIPAddr4.disabled=false;
+		setMAC();
+	}
+}
+
+function WdsWarming()
+{
+	var cf = document.forms[0];
+
+	if(cf.wds_enable.checked)
+	{
+			if(
+			//(cf.h_wifi_secu_type.value == "WPA-PSK") ||
+			//		(cf.h_wifi_secu_type.value == "WPA2-PSK") ||
+			//		(cf.h_wifi_secu_type.value == "AUTO-PSK") ||
+					(cf.h_wifi_secu_type.value == "WPA-ENTER")) {
+				alert(getErrorMsgByVar("gsm_msg_wds_sec_opt"));
+				cf.wds_enable.checked = false;
+				switchSupp();
+			}
+		if(cf.h_w_channel.value == "0"){
+			alert(getErrorMsgByVar("gsm_msg_wds_auto_no_rpt"));
+			cf.wds_enable.checked = false;
+			switchSupp();
+
+			/*Automantically link to wireless page. TD bug 42 suggestion.*/
+    		if(top.document.getElementById("setup_sub").style.display == "none")
+				parent.open_or_close_sub("setup");
+
+			parent.click_adv_action("wireless");
+		}
+	}
+}
+
+function setMAC()
+{
+ 	var cf = document.forms[0];
+
+	if(cf.wds_mode[0].checked){
+		// repeater mode.
+		cf.sysLANIPAddr1.disabled = cf.sysLANIPAddr2.disabled = cf.sysLANIPAddr3.disabled = cf.sysLANIPAddr4.disabled = false;
+		eval("cf.ptp_mac").disabled = false;
+		eval("cf.pmp_mac1").disabled = eval("cf.pmp_mac2").disabled = eval("cf.pmp_mac3").disabled = eval("cf.pmp_mac4").disabled = true;
+	}else if(cf.wds_mode[1].checked){
+		// multi mode.
+		cf.sysLANIPAddr1.disabled = cf.sysLANIPAddr2.disabled = cf.sysLANIPAddr3.disabled = cf.sysLANIPAddr4.disabled = true;
+		eval("cf.ptp_mac").disabled = true;
+		eval("cf.pmp_mac1").disabled = eval("cf.pmp_mac2").disabled = eval("cf.pmp_mac3").disabled = eval("cf.pmp_mac4").disabled = false;
+	}
+}
+
+function checkData( save_only )
+{
+ 	var cf = document.forms[0];
+
+    if(!showWpsAlert()) return false;
+	if( save_only == 1)
+        cf.save_only.value="1";
+    else
+        cf.save_only.value="0";
+
+	var msg = "";
+
+	if((cf.wds_enable.checked)&&(cf.wds_mode[0].checked)){
+		// repeater mode.
+		if((cf.sysLANIPAddr1.value == "") || (cf.sysLANIPAddr2.value == "") ||
+				(cf.sysLANIPAddr3.value == "") || (cf.sysLANIPAddr4.value == "")){
+			msg += getErrorMsgByVar("gsm_msg_wds_set_new_ip");
+		}
+		else if (badLANIP(cf.sysLANIPAddr1, cf.sysLANIPAddr2, cf.sysLANIPAddr3, cf.sysLANIPAddr4, 254)
+		|| (parseInt(cf.sysLANIPAddr4.value) == 0)) {
+            msg+= getErrorMsgByVar("gsm_msg_wds_inv_ip_range");
+        }
+
+		if (cf.ptp_mac.value.length==0)
+		{
+		    msg+= getErrorMsgByVar("gsm_msg_wds_station_mac");
+	    }
+        else if(!checkMacStr(cf.ptp_mac.value.toUpperCase()))
+			msg+= getErrorMsgByVar("gsm_msg_wls_inv_mac");
+	    cf.ptp_mac.value=cf.ptp_mac.value.toUpperCase();
+	}
+
+ 	if ((cf.wds_enable.checked)&&(cf.wds_mode[1].checked)){
+		// multi mode.
+		if ((cf.pmp_mac1.value.length==0) && (cf.pmp_mac2.value.length==0)
+		&& (cf.pmp_mac3.value.length==0) && (cf.pmp_mac4.value.length==0)) {
+			msg+= getErrorMsgByVar("gsm_msg_wds_repeater_mac");
+			alert(msg);
+			return false;
+		}
+		var mac1=cf.pmp_mac1.value.toUpperCase();
+		mac1 = mac1.replace(/:/g,"");
+        mac1 = mac1.replace(/-/g,"");
+		var mac2 =cf.pmp_mac2.value.toUpperCase();
+		mac2 = mac2.replace(/:/g,"");
+        mac2 = mac2.replace(/-/g,"");
+		var mac3 =cf.pmp_mac3.value.toUpperCase();
+		mac3 = mac3.replace(/:/g,"");
+        mac3 = mac3.replace(/-/g,"");
+		var mac4 =cf.pmp_mac4.value.toUpperCase();
+		mac4 = mac4.replace(/:/g,"");
+        mac4 = mac4.replace(/-/g,"");
+		if (cf.pmp_mac1.value.length != 0 && !checkMacStr(mac1)) {
+			msg+= getErrorMsgByVar("gsm_msg_wls_inv_mac");
+			alert(msg);
+			return false;
+		}
+
+		if (cf.pmp_mac2.value.length != 0) {
+			if (!checkMacStr(mac2)
+			|| (mac2 == mac1) || (mac2 == mac3)
+			|| (mac2 == mac4)) {
+				msg+= getErrorMsgByVar("gsm_msg_wls_inv_mac");
+				alert(msg);
+				return false;
+			}
+		}
+
+		if (cf.pmp_mac3.value.length != 0) {
+			if (!checkMacStr(mac3)
+			|| (mac3 == mac1) || (mac3 == mac2)
+			|| (mac3 == mac4)) {
+				msg+= getErrorMsgByVar("gsm_msg_wls_inv_mac");
+				alert(msg);
+				return false;
+			}
+		}
+
+		if (cf.pmp_mac4.value.length != 0) {
+			if (!checkMacStr(mac4)
+			|| (mac4 == mac1) || (mac4 == mac2)
+			|| (mac4 == mac3)) {
+				msg+= getErrorMsgByVar("gsm_msg_wls_inv_mac");
+			}
+		}
+		cf.pmp_mac1.value=cf.pmp_mac1.value.toUpperCase();
+		cf.pmp_mac2.value=cf.pmp_mac2.value.toUpperCase();
+		cf.pmp_mac3.value=cf.pmp_mac3.value.toUpperCase();
+		cf.pmp_mac4.value=cf.pmp_mac4.value.toUpperCase();
+	}
+	if (msg.length > 1){
+		alert(msg);
+		return false;
+	}
+	dataToHidden(cf);
+
+	return true;
+
+	if ( save_only == 1)
+        return true;
+
+    return confirm(getErrorMsgByVar("gsm_msg_wds_update_only"));
+}
+
+function loadmenu()
+{
+	//top.contents.location.href="./@menupage#";
+	//eturn true;
+	if(top.is_advindex_pg==1)
+    	top.load_menu('wds');
+}
+
+var DisablePMac = false;
+var DisableMPMac = false;
+var DisableRPMac = false;
+
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);document.forms[0].elements[0].focus();init();loadmenu();">
+
+<form method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title" languageCode="481">Wireless Repeating Function</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="button" name="Cancel" value="Cancel" onClick="location.href='WLG_wds.htm';" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="SUBMIT" name="Apply" value="Apply" onClick="if(!checkData(0)) return false;" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="4" nowrap valign="top" width="608">
+		<input type="checkbox" name="wds_enable" value="wds_enable" onClick="switchSupp();WdsWarming()"><a href="javascript:loadhelp('WLG_wds','en_repeat')" tabindex="-1">
+		<b languageCode="899">Enable Wireless Repeating Function</b></a></td>
+	</tr><tr><td colspan="2">&nbsp;</td>
+    </tr><tr><td colspan="2" nowrap valign="top"><img src="spacer.gif" width="20" height="2" border="0"><input type="checkbox" name="sta_assoc_disable" value="sta_assoc_disable"><span languageCode="900">Disable Wireless Client Association</span>
+		</td>
+	</tr><tr><td colspan="4" nowrap valign="middle" width="608"><img src="spacer.gif" width="20" height="2" border="0"><span languageCode="901">Wireless MAC of this router</span> : <b>@c6_localmac#</b></td>
+	</tr><tr><td colspan="2">&nbsp;</td>
+	</tr><tr><td colspan="4" nowrap valign="top" width="608">
+		  <img src="spacer.gif" width="20" height="2" border="0"><input type="radio" name="wds_mode" value="1" onClick="setMAC()"><a href="javascript:loadhelp('WLG_wds','repeat')" tabindex="-1">
+			<b languageCode="903">Wireless Repeater</b></a></td>
+	</tr><tr><td nowrap><img src="spacer.gif" width="40" height="1" border="0"><span languageCode="702">Repeater IP Address</span>
+		</td>
+		<td width="297">
+		<input type="text" name="sysLANIPAddr1" class="num" size="4" value="@sysLANIPAddr1#" maxlength="3" tabindex="1">. <input type="text" name="sysLANIPAddr2" class="num" size="4" value="@sysLANIPAddr2#" maxlength="3" tabindex="2">. <input type="text" name="sysLANIPAddr3" class="num" size="4" value="@sysLANIPAddr3#" maxlength="3" tabindex="3">. <input type="text" name="sysLANIPAddr4" class="num" size="4" value="@sysLANIPAddr4#" maxlength="3" tabindex="4"></td>
+	</tr><tr><td nowrap><img src="spacer.gif" width="40" height="1" border="0"><span languageCode="700">Base Station MAC Address</span>
+		</td>
+		<td width="297"><input type="text" class="num" name="ptp_mac" size="17" maxlength="17" value="@ptp_mac#"></td>
+	</tr><tr><td colspan="4" nowrap valign="top" width="608"></td>
+	</tr><tr><td colspan="4" nowrap valign="top" width="608">
+		<img src="spacer.gif" width="20" height="2" border="0"><input type="radio" name="wds_mode" value="2" onClick="setMAC()"><a href="javascript:loadhelp('WLG_wds','base')" tabindex="-1">
+		<b languageCode="904">Wireless Base Station</b></a></td>
+	</tr><tr><td nowrap><img src="spacer.gif" width="40" height="1" border="0"><span languageCode="2017">Repeater MAC Address 1</span></td>
+		<td nowrap width="297"><input type="text" class="num" name="pmp_mac1" size="17" maxlength="17" value="@pmp_mac1#"></td>
+	</tr><tr><td nowrap><img src="spacer.gif" width="40" height="1" border="0"><span languageCode="2018">Repeater MAC Address 2</span></td>
+		<td nowrap width="297"><input type="text" class="num" name="pmp_mac2" size="17" maxlength="17" value="@pmp_mac2#"></td>
+	</tr><tr><td nowrap><img src="spacer.gif" width="40" height="1" border="0"><span languageCode="2019">Repeater MAC Address 3</span></td>
+		<td nowrap width="297"><input type="text" class="num" name="pmp_mac3" size="17" maxlength="17" value="@pmp_mac3#"></td>
+	</tr><tr><td nowrap><img src="spacer.gif" width="40" height="1" border="0"><span languageCode="2020">Repeater MAC Address 4</span></td>
+		<td nowrap width="297"><input type="text" class="num" name="pmp_mac4" size="17" maxlength="17" value="@pmp_mac4#"></td>
+	</tr><!-- RULE --><tr><td colspan="4" background="liteblue.gif" height="12" width="608"></td>
+	</tr><tr><td colspan="4" align="center"></td>
+	</tr></table><!-- ServerStart --><input type="hidden" name="h_wds_enable" value="@h_wds_enable#"><input type="hidden" name="h_wds_mode" value="@h_wds_mode#"><!-- ServerEnd --><!--<input type="hidden" name="c6_bridge0mac" value="@c6_bridge0mac#">
+<input type="hidden" name="c4_sysLANIPAddr" value="@c4_sysLANIPAddr#">
+<input type="hidden" name="c6_bridge1mac" value="@c6_bridge1mac#">
+<input type="hidden" name="c6_bridge2mac" value="@c6_bridge2mac#">
+<input type="hidden" name="c6_bridge3mac" value="@c6_bridge3mac#">
+<input type="hidden" name="c6_bridge4mac" value="@c6_bridge4mac#">
+--><input type="hidden" name="h_sta_assoc_disable" value="@h_sta_assoc_disable#"><!--
+<input type="hidden" name="h_wds_dis_asso2" value="@h_wds_dis_asso2#">
+<input type="hidden" name="c6_repeater1mac" value="@c6_repeater1mac#">
+<input type="hidden" name="c6_repeater2mac" value="@c6_repeater2mac#">
+<input type="hidden" name="c6_repeater3mac" value="@c6_repeater3mac#">
+<input type="hidden" name="c6_repeater4mac" value="@c6_repeater4mac#">
+--><input type="hidden" name="h_w_channel" value="@h_w_channel#"><input type="hidden" name="show_wps_alert" value="@show_wps_alert#"><input type="hidden" name="h_wifi_secu_type" value="@h_security_type#"><input type="hidden" name="idx_num" value="0"><input type="hidden" name="save_only" value="sss"><input type="hidden" name="todo" value="save"><input type="hidden" name="this_file" value="WLG_wds.htm"><input type="hidden" name="next_file" value="WLG_wds.htm"><input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="WLG_wds_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

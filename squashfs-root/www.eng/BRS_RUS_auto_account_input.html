@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/hijack_03A_wanInput.css" type=text/css rel=stylesheet><LINK href="style/RU_staticIP.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/funcs.js" type=text/javascript></SCRIPT>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+<!--
+var conn_type = "@brs_rus_conn_type#";
+function div_init()
+{
+	if(conn_type == "3" || conn_type == "4")
+	{
+		document.getElementById("div_pppoe").style.display="block";
+	}else
+	if(conn_type == "5" || conn_type == "6")
+	{
+		document.getElementById("div_pptp").style.display="block";
+	}else
+	if(conn_type == "7" || conn_type == "8")
+	{
+		document.getElementById("div_l2tp").style.display="block";
+	}
+
+
+}
+
+function initPage()
+{
+	//pppoe
+	document.getElementById("pppoe_post_div").onclick = function()
+	{
+		return post_vpn_account(0);
+	}
+	//pptp
+	document.getElementById("pptp_post_div").onclick = function()
+	{
+		return post_vpn_account(1);
+	}
+	//l2tp
+	document.getElementById("l2tp_post_div").onclick = function()
+	{
+		return post_vpn_account(2);
+	}
+	document.getElementById("pptp_btnsContainer_div").onclick = function()
+	{
+		location.href = "BRS_RUS_select_city_isp.html";
+	}
+	document.getElementById("l2tp_btnsContainer_div").onclick = function()
+	{
+		location.href = "BRS_RUS_select_city_isp.html";
+	}
+	document.getElementById("pppoe_btnsContainer_div").onclick = function()
+	{
+		location.href = "BRS_RUS_select_city_isp.html";
+	}
+	div_init();
+}
+
+function post_vpn_account(form_idx)
+{
+	/*Add select option to value's trans*/
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[form_idx];
+
+	cf.submit();
+
+	return true;
+}
+
+addLoadEvent(initPage);
+-->
+</script>
+</HEAD>
+
+<BODY>
+<div id="div_pppoe" style="display:none">
+<FORM id="pppoe_form" action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+
+<H1><span languageCode = "3289">Please enter the following settings(you may find it in the brouchure your ISP provided):</span></H1>
+<DIV class=wanInput_content_div>
+
+	<DIV class=wanInput_left_div id=loginName align=right><span languageCode = "91">Login</span></DIV>
+	<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif">
+	<INPUT id=inputName maxLength=63 align=right name="pppoe_username"> </DIV>
+
+	<DIV class=wanInput_left_div id=passwd align=right><span languageCode = "3113">Password</span></DIV>
+	<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif">
+	<INPUT id=inputPasswd maxLength=63 align=right value="" name="pppoe_passwd"> </DIV>
+
+	<DIV style="CLEAR: both"></DIV>
+</DIV>
+
+</DIV>
+
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=pppoe_btnsContainer_div><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "175">Back</span></DIV></DIV>
+<DIV class=buttons_img_div id=pppoe_post_div><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span></DIV>
+</DIV>
+</DIV>
+
+</DIV>
+
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="WANAssign" value="Dynamic">
+<input type="hidden" name="h_DNSAssign" value="0">
+<input type="hidden" name="h_pppoe_dod" value="0">	<!--Always on-->
+<input type="hidden" name="pppoe_servicename" value="@brs_rus_pppoe_serv_name#">		<!--Get from tmp nv, then set it-->
+<input type="hidden" name="this_file" value="BRS_RUS_auto_account_input.html">
+<input type="hidden" name="SID" value="@SID#">
+</FORM>
+</div>
+
+<div id="div_pptp" style="display:none">
+<FORM id="pptp_form" action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+
+<H1><span languageCode = "3289">Please enter the following settings(you may find it in the brouchure your ISP provided):</span></H1>
+<DIV class=wanInput_content_div>
+
+	<DIV class=wanInput_left_div id=loginName align=right><span languageCode = "91">Login</span></DIV>
+	<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif">
+	<INPUT id=inputName maxLength=63 align=right name="pptp_username"> </DIV>
+
+	<DIV class=wanInput_left_div id=passwd align=right><span languageCode = "3113">Password</span></DIV>
+	<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif">
+	<INPUT id=inputPasswd maxLength=63 align=right value="" name="pptp_passwd"> </DIV>
+
+	<DIV class=wanInput_left_div id=server align=right><span languageCode = "110">Server Address</span></DIV>
+	<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif">
+	<INPUT id=inputservadd maxLength=16 align=right value="@brs_rus_serv_add#" name="pptp_serv_ip"> </DIV>
+
+	<DIV style="CLEAR: both"></DIV>
+</DIV>
+
+</DIV>
+
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=pptp_btnsContainer_div><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "175">Back</span></DIV></DIV>
+<DIV class=buttons_img_div id=pptp_post_div><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span></DIV></DIV></DIV></DIV>
+
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="WANAssign" value="Dynamic">
+<input type="hidden" name="h_DNSAssign" value="0">
+<input type="hidden" name="h_pptp_dod" value="0">
+<input type="hidden" name="this_file" value="BRS_RUS_auto_account_input.html">
+<input type="hidden" name="SID" value="@SID#">
+</FORM>
+</div>
+
+<div id="div_l2tp" style="display:none">
+<FORM id="l2tp_form" action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+
+<H1><span languageCode = "3289">Please enter the following settings(you may find it in the brouchure your ISP provided):</span></H1>
+<DIV class=wanInput_content_div>
+
+	<DIV class=wanInput_left_div id=loginName align=right><span languageCode = "91">Login</span></DIV>
+	<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif">
+	<INPUT id=inputName maxLength=64 align=right name="l2tp_username"> </DIV>
+
+	<DIV class=wanInput_left_div id=passwd align=right><span languageCode = "3113">Password</span></DIV>
+	<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif">
+	<INPUT id=inputPasswd maxLength=16 align=right value="" name="l2tp_passwd"> </DIV>
+
+	<DIV class=wanInput_left_div id=server align=right><span languageCode = "110">Server Address</span></DIV>
+	<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif">
+	<INPUT id=inputservadd maxLength=16 align=right value="@brs_rus_serv_add#" name="l2tp_serv_ip"> </DIV>
+
+	<DIV style="CLEAR: both"></DIV>
+</DIV>
+
+</DIV>
+
+<DIV class=wizard_buttons_div id=allBtns_div align=right>
+<DIV class=buttons_img_div id=l2tp_btnsContainer_div><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "175">Back</span></DIV></DIV>
+<DIV class=buttons_img_div id=l2tp_post_div><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span></DIV></DIV></DIV></DIV>
+
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="WANAssign" value="Dynamic">
+<input type="hidden" name="h_DNSAssign" value="0">
+<input type="hidden" name="h_l2tp_dod" value="0">
+<input type="hidden" name="this_file" value="BRS_RUS_auto_account_input.html">
+<input type="hidden" name="SID" value="@SID#">
+</FORM>
+</div>
+
+
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/RU_staticIP.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/RU_pppoe_manual.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/funcs.js" type=text/javascript></SCRIPT>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript">
+
+function initPage()
+{
+	var btns_container_div1 = document.getElementById("btnsContainer_div1");
+	btns_container_div1.onclick = function()
+	{
+		location.href = "BRS_RUS_manual_vpn_type_select.html";	
+	}
+}
+
+addLoadEvent(initPage);
+</script>
+</HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+<H1><span languageCode = "3289">Please enter the following settings(you may find it in the brouchure your ISP provided):</span><span languageCode = "3273">Service name is optional</span>.</H1>
+<DIV class=wanInput_content_div>
+<DIV class=wanInput_left_div id=loginName align=right><span languageCode = "91">Login</span></DIV>
+<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif"> <INPUT id=inputName maxLength=64 align=right name="pppoe_username"> </DIV>
+<DIV class=wanInput_left_div id=passwd align=right><span languageCode = "3113">Password</span></DIV>
+<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif"> <INPUT id=inputPasswd maxLength=16 align=right value="" name="pppoe_passwd"> </DIV>
+<DIV class=wanInput_left_div id=serviceName align=right><span languageCode = "93">Service Name</span></DIV>
+<DIV class=wanInput_Img_div><IMG src="image/ca_text_pic.gif"> <INPUT id=inputServiceName maxLength=50 align=right value="" name="pppoe_servicename"> </DIV>
+<DIV style="CLEAR: both"></DIV></DIV></DIV>
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=btnsContainer_div1><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "175">Back</span></DIV></DIV>
+<DIV class=buttons_img_div id=btnsContainer_div2><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span></DIV></DIV>
+</DIV></DIV>
+
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="WANAssign" value="Dynamic">
+<input type="hidden" name="h_pppoe_dod" value="0">
+<input type="hidden" name="h_DNSAssign" value="0">
+<input type="hidden" name="this_file" value="BRS_RUS_manual_pppoe_account.html">
+<input type="hidden" name="next_file" value="BRS_RUS_manual_pppoe_internet.html">
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

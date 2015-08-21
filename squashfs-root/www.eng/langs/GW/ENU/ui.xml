@@ -1,0 +1,1972 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tag_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<message>
+<tag_code>25</tag_code>
+<translation>Next</translation>
+<variable>Next</variable>
+</message>
+<message>
+<tag_code>61</tag_code>
+<translation>Yes</translation>
+<variable>Yes</variable>
+</message>
+<message>
+<tag_code>62</tag_code>
+<translation>No</translation>
+<variable>No</variable>
+</message>
+<message>
+<tag_code>67</tag_code>
+<translation>Account Name</translation>
+<variable>Account Name</variable>
+</message>
+<message>
+<tag_code>71</tag_code>
+<translation>IP Address</translation>
+<variable>IP Address</variable>
+</message>
+<message>
+<tag_code>72</tag_code>
+<translation>Get Dynamically from ISP</translation>
+<variable>Get Dynamically from ISP</variable>
+</message>
+<message>
+<tag_code>73</tag_code>
+<translation>Use Static IP Address</translation>
+<variable>Use Static IP Address</variable>
+</message>
+<message>
+<tag_code>74</tag_code>
+<translation>Connection Mode</translation>
+<variable>Connection Mode</variable>
+</message>
+<message>
+<tag_code>75</tag_code>
+<translation>IP Subnet Mask</translation>
+<variable>IP Subnet Mask</variable>
+</message>
+<message>
+<tag_code>76</tag_code>
+<translation>Gateway</translation>
+<variable>Gateway</variable>
+</message>
+<message>
+<tag_code>77</tag_code>
+<translation>Domain Name Server (DNS) Address</translation>
+<variable>Domain Name Server (DNS) Address</variable>
+</message>
+<message>
+<tag_code>78</tag_code>
+<translation>Get Automatically from ISP</translation>
+<variable>Get Automatically from ISP</variable>
+</message>
+<message>
+<tag_code>79</tag_code>
+<translation>Use These DNS Servers</translation>
+<variable>Use These DNS Servers</variable>
+</message>
+<message>
+<tag_code>80</tag_code>
+<translation>Primary DNS</translation>
+<variable>Primary DNS</variable>
+</message>
+<message>
+<tag_code>81</tag_code>
+<translation>Secondary DNS</translation>
+<variable>Secondary DNS</variable>
+</message>
+<message>
+<tag_code>84</tag_code>
+<translation>Use Default Address</translation>
+<variable>Use Default Address</variable>
+</message>
+<message>
+<tag_code>85</tag_code>
+<translation>Use Computer MAC Address</translation>
+<variable>Use Computer MAC Address</variable>
+</message>
+<message>
+<tag_code>86</tag_code>
+<translation>Use This MAC Address</translation>
+<variable>Use This MAC Address</variable>
+</message>
+<message>
+<tag_code>88</tag_code>
+<translation>Internet Service Provider</translation>
+<variable>Internet Service Provider</variable>
+</message>
+<message>
+<tag_code>91</tag_code>
+<translation>Login</translation>
+<variable>Login</variable>
+</message>
+<message>
+<tag_code>93</tag_code>
+<translation>Service Name</translation>
+<variable>Service Name</variable>
+</message>
+<message>
+<tag_code>94</tag_code>
+<translation>Connection Mode</translation>
+<variable>Connection Mode</variable>
+</message>
+<message>
+<tag_code>110</tag_code>
+<translation>Server Address</translation>
+<variable>Server Address</variable>
+</message>
+<message>
+<tag_code>175</tag_code>
+<translation>Back</translation>
+<variable>Back</variable>
+</message>
+<message>
+<tag_code>466</tag_code>
+<translation>Setup Wizard</translation>
+<variable>Setup Wizard</variable>
+</message>
+<message>
+<tag_code>534</tag_code>
+<translation>Country</translation>
+<variable>Country</variable>
+</message>
+<message>
+<tag_code>552</tag_code>
+<translation>Wireless</translation>
+<variable>Wireless</variable>
+</message>
+<message>
+<tag_code>597</tag_code>
+<translation>Connection Type</translation>
+<variable>Connection Type</variable>
+</message>
+<message>
+<tag_code>708</tag_code>
+<translation>Subnet Mask</translation>
+<variable>Subnet Mask</variable>
+</message>
+<message>
+<tag_code>709</tag_code>
+<translation>Default Gateway</translation>
+<variable>Default Gateway</variable>
+</message>
+<message>
+<tag_code>753</tag_code>
+<translation>Try again</translation>
+<variable>Try again</variable>
+</message>
+<message>
+<tag_code>860</tag_code>
+<translation>Dynamic IP (DHCP) detected</translation>
+<variable>Dynamic IP (DHCP) detected</variable>
+</message>
+<message>
+<tag_code>870</tag_code>
+<translation>Static IP (Fixed) Addresses</translation>
+<variable>Static IP (Fixed) Addresses</variable>
+</message>
+<message>
+<tag_code>875</tag_code>
+<translation>The Smart Setup Wizard can detect the type of Internet connection that you have.</translation>
+<variable>The Smart Setup Wizard can detect the type of Internet connection that you have.</variable>
+</message>
+<message>
+<tag_code>876</tag_code>
+<translation>Do you want the Smart Setup Wizard to try and detect the connection type now?</translation>
+<variable>Do you want the Smart Setup Wizard to try and detect the connection type now?</variable>
+</message>
+<message>
+<tag_code>877</tag_code>
+<translation>No. I want to configure the router myself.</translation>
+<variable>No. I want to configure the router myself.</variable>
+</message>
+<message>
+<tag_code>3000</tag_code>
+<translation>- Check that the cable connections are correct. Refer to the router Installation Guide for instructions.</translation>
+<variable>- Check that the cable connections are correct. Refer to the router Installation Guide for instructions.</variable>
+</message>
+<message>
+<tag_code>3001</tag_code>
+<translation>- Check that your broadband modem is power cycled correctly. If you have a battery-backed modem, remove and reinsert the battery to power cycle your modem.</translation>
+<variable>- Check that your broadband modem is power cycled correctly. If you have a battery-backed modem, remove and reinsert the battery to power cycle your modem.</variable>
+</message>
+<message>
+<tag_code>3003</tag_code>
+<translation>(format AABBCCDDEEFF)</translation>
+<variable>(format AABBCCDDEEFF)</variable>
+</message>
+<message>
+<tag_code>3006</tag_code>
+<translation>1.  The modem was not power cycled during the cabling step.</translation>
+<variable>1.  The modem was not power cycled during the cabling step.</variable>
+</message>
+<message>
+<tag_code>3007</tag_code>
+<translation>2.  The yellow Ethernet cable is not fully inserted, or is inserted in the wrong place.</translation>
+<variable>2.  The yellow Ethernet cable is not fully inserted, or is inserted in the wrong place.</variable>
+</message>
+<message>
+<tag_code>3008</tag_code>
+<translation>A MAC address is a unique number.  You can find the MAC address of the computer or router on its product label.</translation>
+<variable>A MAC address is a unique number.  You can find the MAC address of the computer or router on its product label.</variable>
+</message>
+<message>
+<tag_code>3014</tag_code>
+<translation>After you have checked the Ethernet cable, click &lt;b&gt;Try again&lt;/b&gt;.</translation>
+<variable>After you have checked the Ethernet cable, click &lt;b&gt;Try again&lt;/b&gt;.</variable>
+</message>
+<message>
+<tag_code>3015</tag_code>
+<translation>Alternate DNS Server</translation>
+<variable>Alternate DNS Server</variable>
+</message>
+<message>
+<tag_code>3017</tag_code>
+<translation>Applying Internet Connection Settings</translation>
+<variable>Applying Internet Connection Settings</variable>
+</message>
+<message>
+<tag_code>3020</tag_code>
+<translation>Back</translation>
+<variable>Back</variable>
+</message>
+<message>
+<tag_code>3023</tag_code>
+<translation>Browse to the router settings backup file you previously saved, and click &lt;b&gt;Next&lt;/b&gt; to proceed.</translation>
+<variable>Browse to the router settings backup file you previously saved, and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3024</tag_code>
+<translation>Checking the Internet connection; please wait …</translation>
+<variable>Checking the Internet connection; please wait …</variable>
+</message>
+<message>
+<tag_code>3025</tag_code>
+<translation>Click here</translation>
+<variable>Click here</variable>
+</message>
+<message>
+<tag_code>3028</tag_code>
+<translation>Configuring the Internet Connection</translation>
+<variable>Configuring the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3029</tag_code>
+<translation>Congratulations!</translation>
+<variable>Congratulations!</variable>
+</message>
+<message>
+<tag_code>3030</tag_code>
+<translation>Connection ID/Name</translation>
+<variable>Connection ID/Name</variable>
+</message>
+<message>
+<tag_code>3031</tag_code>
+<translation>Continue</translation>
+<variable>Continue</variable>
+</message>
+<message>
+<tag_code>3034</tag_code>
+<translation>Detecting the Internet Connection</translation>
+<variable>Detecting the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3035</tag_code>
+<translation>Did your Internet Service Provider (ISP) assign to you a fixed (static) IP address? This is a &lt;b&gt;very rare&lt;/b&gt; special deployment. </translation>
+<variable>Did your Internet Service Provider (ISP) assign to you a fixed (static) IP address? This is a &lt;b&gt;very rare&lt;/b&gt; special deployment. </variable>
+</message>
+<message>
+<tag_code>3037</tag_code>
+<translation>Do you want NETGEAR Genie to help?</translation>
+<variable>Do you want NETGEAR Genie to help?</variable>
+</message>
+<message>
+<tag_code>3038</tag_code>
+<translation>Do you want NETGEAR Genie to try again?</translation>
+<variable>Do you want NETGEAR Genie to try again?</variable>
+</message>
+<message>
+<tag_code>3043</tag_code>
+<translation>Enter the fixed IP settings assigned by your Internet Service Provider and click &lt;b&gt;Next&lt;/b&gt; to proceed.</translation>
+<variable>Enter the fixed IP settings assigned by your Internet Service Provider and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3044</tag_code>
+<translation>Enter the MAC address here.</translation>
+<variable>Enter the MAC address here.</variable>
+</message>
+<message>
+<tag_code>3045</tag_code>
+<translation>Enter the required information again.</translation>
+<variable>Enter the required information again.</variable>
+</message>
+<message>
+<tag_code>3046</tag_code>
+<translation>Enter the required information below.</translation>
+<variable>Enter the required information below.</variable>
+</message>
+<message>
+<tag_code>3049</tag_code>
+<translation>Failure</translation>
+<variable>Failure</variable>
+</message>
+<message>
+<tag_code>3053</tag_code>
+<translation>Fixed Internet IP Settings</translation>
+<variable>Fixed Internet IP Settings</variable>
+</message>
+<message>
+<tag_code>3054</tag_code>
+<translation>Gateway IP Address</translation>
+<variable>Gateway IP Address</variable>
+</message>
+<message>
+<tag_code>3060</tag_code>
+<translation>I corrected a problem with the Ethernet cable.</translation>
+<variable>I corrected a problem with the Ethernet cable.</variable>
+</message>
+<message>
+<tag_code>3061</tag_code>
+<translation>I don't know. </translation>
+<variable>I don't know. </variable>
+</message>
+<message>
+<tag_code>3062</tag_code>
+<translation>I have saved the router settings in a file and I want to restore the router to those settings.</translation>
+<variable>I have saved the router settings in a file and I want to restore the router to those settings.</variable>
+</message>
+<message>
+<tag_code>3063</tag_code>
+<translation>I just power cycled the modem and waited for 2 minutes.</translation>
+<variable>I just power cycled the modem and waited for 2 minutes.</variable>
+</message>
+<message>
+<tag_code>3064</tag_code>
+<translation>I want to configure the Internet connection myself</translation>
+<variable>I want to configure the Internet connection myself</variable>
+</message>
+<message>
+<tag_code>3065</tag_code>
+<translation>&lt;b&gt;Idle Timeout&lt;/b&gt;(In Minutes)</translation>
+<variable>&lt;b&gt;Idle Timeout&lt;/b&gt;(In Minutes)</variable>
+</message>
+<message>
+<tag_code>3067</tag_code>
+<translation>If you previously connected to your Internet service with a computer or another router,  NETGEAR Genie can use the same MAC address that worked before.</translation>
+<variable>If you previously connected to your Internet service with a computer or another router,  NETGEAR Genie can use the same MAC address that worked before.</variable>
+</message>
+<message>
+<tag_code>3068</tag_code>
+<translation>Important Update</translation>
+<variable>Important Update</variable>
+</message>
+<message>
+<tag_code>3073</tag_code>
+<translation>Incorrect ISP User name or Password</translation>
+<variable>Incorrect ISP User name or Password</variable>
+</message>
+<message>
+<tag_code>3094</tag_code>
+<translation>Make sure that the cable is securely plugged into both the broadband modem port and the router Internet port.</translation>
+<variable>Make sure that the cable is securely plugged into both the broadband modem port and the router Internet port.</variable>
+</message>
+<message>
+<tag_code>3095</tag_code>
+<translation>My IP Address</translation>
+<variable>My IP Address</variable>
+</message>
+<message>
+<tag_code>3097</tag_code>
+<translation>Network Connection Issue</translation>
+<variable>Network Connection Issue</variable>
+</message>
+<message>
+<tag_code>3098</tag_code>
+<translation>network key (password)</translation>
+<variable>network key (password)</variable>
+</message>
+<message>
+<tag_code>3099</tag_code>
+<translation>network key (password)</translation>
+<variable>network key (password)</variable>
+</message>
+<message>
+<tag_code>3100</tag_code>
+<translation>Next</translation>
+<variable>Next</variable>
+</message>
+<message>
+<tag_code>3101</tag_code>
+<translation>No Ethernet Cable Is Plugged into the Router Internet Port</translation>
+<variable>No Ethernet Cable Is Plugged into the Router Internet Port</variable>
+</message>
+<message>
+<tag_code>3103</tag_code>
+<translation>No, I did not get a fixed (static) IP address from my ISP.</translation>
+<variable>No, I did not get a fixed (static) IP address from my ISP.</variable>
+</message>
+<message>
+<tag_code>3104</tag_code>
+<translation>No, I want to configure the Internet connection myself.</translation>
+<variable>No, I want to configure the Internet connection myself.</variable>
+</message>
+<message>
+<tag_code>3106</tag_code>
+<translation>None of the above.</translation>
+<variable>None of the above.</variable>
+</message>
+<message>
+<tag_code>3113</tag_code>
+<translation>Password</translation>
+<variable>Password</variable>
+</message>
+<message>
+<tag_code>3118</tag_code>
+<translation>Please review the following items:</translation>
+<variable>Please review the following items:</variable>
+</message>
+<message>
+<tag_code>3121</tag_code>
+<translation>Please wait a moment...</translation>
+<variable>Please wait a moment...</variable>
+</message>
+<message>
+<tag_code>3122</tag_code>
+<translation>PPPoE DSL Internet Connection Detected</translation>
+<variable>PPPoE DSL Internet Connection Detected</variable>
+</message>
+<message>
+<tag_code>3123</tag_code>
+<translation>PPTP Internet Connection Detected</translation>
+<variable>PPTP Internet Connection Detected</variable>
+</message>
+<message>
+<tag_code>3124</tag_code>
+<translation>Preferred DNS Server</translation>
+<variable>Preferred DNS Server</variable>
+</message>
+<message>
+<tag_code>3125</tag_code>
+<translation>Print this</translation>
+<variable>Print this</variable>
+</message>
+<message>
+<tag_code>3126</tag_code>
+<translation>Problem Detecting the Internet Connection - IP Address</translation>
+<variable>Problem Detecting the Internet Connection - IP Address</variable>
+</message>
+<message>
+<tag_code>3127</tag_code>
+<translation>Problem Detecting the Internet Connection - MAC Address</translation>
+<variable>Problem Detecting the Internet Connection - MAC Address</variable>
+</message>
+<message>
+<tag_code>3128</tag_code>
+<translation>Problem Detecting the Internet Connection</translation>
+<variable>Problem Detecting the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3130</tag_code>
+<translation>Restore Router Settings </translation>
+<variable>Restore Router Settings </variable>
+</message>
+<message>
+<tag_code>3131</tag_code>
+<translation>Restoring Router Settings</translation>
+<variable>Restoring Router Settings</variable>
+</message>
+<message>
+<tag_code>3135</tag_code>
+<translation>Router Firmware Version</translation>
+<variable>Router Firmware Version</variable>
+</message>
+<message>
+<tag_code>3144</tag_code>
+<translation>Select an option and click &lt;b&gt;Next&lt;/b&gt; to proceed.</translation>
+<variable>Select an option and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3147</tag_code>
+<translation>Server Address</translation>
+<variable>Server Address</variable>
+</message>
+<message>
+<tag_code>3150</tag_code>
+<translation>Take me to the Internet</translation>
+<variable>Take me to the Internet</variable>
+</message>
+<message>
+<tag_code>3155</tag_code>
+<translation>The router cannot connect to the Internet with the current settings.</translation>
+<variable>The router cannot connect to the Internet with the current settings.</variable>
+</message>
+<message>
+<tag_code>3156</tag_code>
+<translation>This is most likely due to one of the following reasons:</translation>
+<variable>This is most likely due to one of the following reasons:</variable>
+</message>
+<message>
+<tag_code>3157</tag_code>
+<translation>This process can take a few minutes; please wait...</translation>
+<variable>This process can take a few minutes; please wait...</variable>
+</message>
+<message>
+<tag_code>3158</tag_code>
+<translation>This process can take a minute or two; please wait...</translation>
+<variable>This process can take a minute or two; please wait...</variable>
+</message>
+<message>
+<tag_code>3159</tag_code>
+<translation>This router is preset with the following unique wireless network name (SSID) and </translation>
+<variable>This router is preset with the following unique wireless network name (SSID) and </variable>
+</message>
+<message>
+<tag_code>3160</tag_code>
+<translation>This screen will automatically return to the previous screen in a few seconds...</translation>
+<variable>This screen will automatically return to the previous screen in a few seconds...</variable>
+</message>
+<message>
+<tag_code>3161</tag_code>
+<translation>To avoid a conflict with your Internet Service Provider, your router's IP address has been updated to </translation>
+<variable>To avoid a conflict with your Internet Service Provider, your router's IP address has been updated to </variable>
+</message>
+<message>
+<tag_code>3163</tag_code>
+<translation>To solve this problem, make sure that the yellow Ethernet cable is securely plugged in to the broadband modem port and the router Internet port.</translation>
+<variable>To solve this problem, make sure that the yellow Ethernet cable is securely plugged in to the broadband modem port and the router Internet port.</variable>
+</message>
+<message>
+<tag_code>3164</tag_code>
+<translation>To solve this problem, power cycle the modem (turn it off and on). To power cycle a modem with battery backup, you might need to remove and reinsert its battery. After the power cycle, wait 2 minutes for the modem to completely start up.</translation>
+<variable>To solve this problem, power cycle the modem (turn it off and on). To power cycle a modem with battery backup, you might need to remove and reinsert its battery. After the power cycle, wait 2 minutes for the modem to completely start up.</variable>
+</message>
+<message>
+<tag_code>3165</tag_code>
+<translation>Try again</translation>
+<variable>Try again</variable>
+</message>
+<message>
+<tag_code>3168</tag_code>
+<translation>User Name</translation>
+<variable>User Name</variable>
+</message>
+<message>
+<tag_code>3187</tag_code>
+<translation>Wireless Network Name (SSID)</translation>
+<variable>Wireless Network Name (SSID)</variable>
+</message>
+<message>
+<tag_code>3189</tag_code>
+<translation>Wireless</translation>
+<variable>Wireless</variable>
+</message>
+<message>
+<tag_code>3190</tag_code>
+<translation>Yes</translation>
+<variable>Yes</variable>
+</message>
+<message>
+<tag_code>3191</tag_code>
+<translation>Yes. My ISP assigned a fixed (static) IP address to me.</translation>
+<variable>Yes. My ISP assigned a fixed (static) IP address to me.</variable>
+</message>
+<message>
+<tag_code>3193</tag_code>
+<translation>You are not yet connected to the Internet.</translation>
+<variable>You are not yet connected to the Internet.</variable>
+</message>
+<message>
+<tag_code>3194</tag_code>
+<translation>You are successfully connected to the Internet.</translation>
+<variable>You are successfully connected to the Internet.</variable>
+</message>
+<message>
+<tag_code>3197</tag_code>
+<translation>Your router is preset with WPA2-PSK wireless security to protect your network from unwanted access. To join the wireless network, you must enter the network key (password). These preset settings are unique to this device, like a serial number.  If you want to change them, you can do so later in the Wireless Settings screen on the router web GUI.</translation>
+<variable>Your router is preset with WPA2-PSK wireless security to protect your network from unwanted access. To join the wireless network, you must enter the network key (password). These preset settings are unique to this device, like a serial number.  If you want to change them, you can do so later in the Wireless Settings screen on the router web GUI.</variable>
+</message>
+<message>
+<tag_code>3198</tag_code>
+<translation>Wireless security is not enabled on this router. NETGEAR highly recommends that you</translation>
+<variable>Wireless security is not enabled on this router. NETGEAR highly recommends that you</variable>
+</message>
+<message>
+<tag_code>3199</tag_code>
+<translation>to enable wireless security and protect your network.</translation>
+<variable>to enable wireless security and protect your network.</variable>
+</message>
+<message>
+<tag_code>3210</tag_code>
+<translation>Auto-Detect</translation>
+<variable>Auto-Detect</variable>
+</message>
+<message>
+<tag_code>3212</tag_code>
+<translation>Click "Next" to continue.</translation>
+<variable>Click "Next" to continue.</variable>
+</message>
+<message>
+<tag_code>3259</tag_code>
+<translation>Intranet Port</translation>
+<variable>Intranet Port</variable>
+</message>
+<message>
+<tag_code>3264</tag_code>
+<translation>Choose your city and ISP name:</translation>
+<variable>Choose your city and ISP name:</variable>
+</message>
+<message>
+<tag_code>3265</tag_code>
+<translation>City</translation>
+<variable>City</variable>
+</message>
+<message>
+<tag_code>3266</tag_code>
+<translation>ISP</translation>
+<variable>ISP</variable>
+</message>
+<message>
+<tag_code>3267</tag_code>
+<translation>Manual configuration</translation>
+<variable>Manual configuration</variable>
+</message>
+<message>
+<tag_code>3268</tag_code>
+<translation>If your ISP is not presented in the list, please proceed with </translation>
+<variable>If your ISP is not presented in the list, please proceed with </variable>
+</message>
+<message>
+<tag_code>3269</tag_code>
+<translation>Do you require to enter login and password for Internet access? Choose "Yes" , if you need to start connection to the Internet manually each type after turning on a PC . Otherwise choose "No".</translation>
+<variable>Do you require to enter login and password for Internet access? Choose "Yes" , if you need to start connection to the Internet manually each type after turning on a PC . Otherwise choose "No".</variable>
+</message>
+<message>
+<tag_code>3270</tag_code>
+<translation>You have chosen "Yes". That means you have a VPN connection, which could be PPTP, L2TP or PPPoE type depending on the ISP. If you do not know what VPN type your ISP is using, you may call your ISP support or check it on a PC directly connected to Internet by clicking "Details" in the Status page of your VPN connection.</translation>
+<variable>You have chosen "Yes". That means you have a VPN connection, which could be PPTP, L2TP or PPPoE type depending on the ISP. If you do not know what VPN type your ISP is using, you may call your ISP support or check it on a PC directly connected to Internet by clicking "Details" in the Status page of your VPN connection.</variable>
+</message>
+<message>
+<tag_code>3271</tag_code>
+<translation>Choose your VPN type:</translation>
+<variable>Choose your VPN type:</variable>
+</message>
+<message>
+<tag_code>3272</tag_code>
+<translation>You have chosen "No". That means you have Dynamic IP (DHCP) or Static IP connection mode. You need to choose, whether your settings are received dynamically or assigned manually.</translation>
+<variable>You have chosen "No". That means you have Dynamic IP (DHCP) or Static IP connection mode. You need to choose, whether your settings are received dynamically or assigned manually.</variable>
+</message>
+<message>
+<tag_code>3273</tag_code>
+<translation>service name is optional</translation>
+<variable>service name is optional</variable>
+</message>
+<message>
+<tag_code>3274</tag_code>
+<translation>Does your ISP provide you local resources? This might include local ftp server, trackers, DC++ hubs, IPTV, etc.</translation>
+<variable>Does your ISP provide you local resources? This might include local ftp server, trackers, DC++ hubs, IPTV, etc.</variable>
+</message>
+<message>
+<tag_code>3275</tag_code>
+<translation>Intranet IP Address</translation>
+<variable>Intranet IP Address</variable>
+</message>
+<message>
+<tag_code>3276</tag_code>
+<translation>Attention! You have Static IP settings for your intranet interface. That means you might need to add static routes for ISP local resources working correctly. Please proceed to the Static routes page in router's GUI after CA finishes the setup process.</translation>
+<variable>Attention! You have Static IP settings for your intranet interface. That means you might need to add static routes for ISP local resources working correctly. Please proceed to the Static routes page in router's GUI after CA finishes the setup process.</variable>
+</message>
+<message>
+<tag_code>3277</tag_code>
+<translation>You have finished manual configuration process. Please go through your settings once again to see whether you've made any mistakes:</translation>
+<variable>You have finished manual configuration process. Please go through your settings once again to see whether you've made any mistakes:</variable>
+</message>
+<message>
+<tag_code>3278</tag_code>
+<translation>Please click "Check connection" button to check your internet connection.</translation>
+<variable>Please click "Check connection" button to check your internet connection.</variable>
+</message>
+<message>
+<tag_code>3279</tag_code>
+<translation>Router has failed connecting to the internet. The cause might be in the wrong input settings or ISP downtime. Choose "Back" to check your settings and try again or "Start from the beginning" to go through the wizard again.</translation>
+<variable>Router has failed connecting to the internet. The cause might be in the wrong input settings or ISP downtime. Choose "Back" to check your settings and try again or "Start from the beginning" to go through the wizard again.</variable>
+</message>
+<message>
+<tag_code>3280</tag_code>
+<translation>Start from the beginning</translation>
+<variable>Start from the beginning</variable>
+</message>
+<message>
+<tag_code>3281</tag_code>
+<translation>Congratulations! You have successfully connected to the internet!</translation>
+<variable>Congratulations! You have successfully connected to the internet!</variable>
+</message>
+<message>
+<tag_code>3282</tag_code>
+<translation>Check connection</translation>
+<variable>Check connection</variable>
+</message>
+<message>
+<tag_code>3283</tag_code>
+<translation>Please enter static IP address and/or DNS servers for your internet interface if your ISP provided such information. In most cases you should skip this step keeping default values (Get dynamically from ISP).</translation>
+<variable>Please enter static IP address and/or DNS servers for your internet interface if your ISP provided such information. In most cases you should skip this step keeping default values (Get dynamically from ISP).</variable>
+</message>
+<message>
+<tag_code>3284</tag_code>
+<translation>Router MAC Address</translation>
+<variable>Router MAC Address</variable>
+</message>
+<message>
+<tag_code>3285</tag_code>
+<translation>Use default</translation>
+<variable>Use default</variable>
+</message>
+<message>
+<tag_code>3286</tag_code>
+<translation>VPN type</translation>
+<variable>VPN type</variable>
+</message>
+<message>
+<tag_code>3287</tag_code>
+<translation>PPPoE IP address</translation>
+<variable>PPPoE IP address</variable>
+</message>
+<message>
+<tag_code>3288</tag_code>
+<translation>Does your ISP provide local resources</translation>
+<variable>Does your ISP provide local resources</variable>
+</message>
+<message>
+<tag_code>3289</tag_code>
+<translation>Please enter the following settings(you may find it in the brouchure your ISP provided):</translation>
+<variable>Please enter the following settings(you may find it in the brouchure your ISP provided):</variable>
+</message>
+<message>
+<tag_code>3290</tag_code>
+<translation>Your ISP is using MAC address binding for security reasons. If you are configuring the router from a PC previously connected to the internet, please choose "Use Computer MAC Address". You may want to keep the router's MAC address or change it manually, but you will be required to ask your ISP to update their MAC address information.</translation>
+<variable>Your ISP is using MAC address binding for security reasons. If you are configuring the router from a PC previously connected to the internet, please choose "Use Computer MAC Address". You may want to keep the router's MAC address or change it manually, but you will be required to ask your ISP to update their MAC address information.</variable>
+</message>
+<message>
+<tag_code>3291</tag_code>
+<translation>Router has failed connecting to the internet. The cause might be in wrong input settings, ISP downtime, settings changes made by ISP (which are not correspond to the ones stored in router) or incorrectly chosen ISP connection type (if your ISP has different types of connection). Choose "Configuration manually" to reconfigure your router's internet connection manually. Choose \"Configure later\" to quit wizard.</translation>
+<variable>Router has failed connecting to the internet. The cause might be in wrong input settings, ISP downtime, settings changes made by ISP (which are not correspond to the ones stored in router) or incorrectly chosen ISP connection type (if your ISP has different types of connection). Choose "Configuration manually" to reconfigure your router's internet connection manually. Choose \"Configure later\" to quit wizard.</variable>
+</message>
+<message>
+<tag_code>3292</tag_code>
+<translation>Configuration manually</translation>
+<variable>Configuration manually</variable>
+</message>
+<message>
+<tag_code>3293</tag_code>
+<translation>Configure later</translation>
+<variable>Configure later</variable>
+</message>
+<message>
+<tag_code>3294</tag_code>
+<translation>Choose your city and ISP name:</translation>
+<variable>Choose your city and ISP name:</variable>
+</message>
+<message>
+<tag_code>3295</tag_code>
+<translation>Your ISP is using static IP address connection type. You need to enter the following information</translation>
+<variable>Your ISP is using static IP address connection type. You need to enter the following information</variable>
+</message>
+<message>
+<tag_code>3296</tag_code>
+<translation>Your ISP is using static IP address for local resource access. Please provide the following settings(DNS servers are optional and only filled when you received them from ISP):</translation>
+<variable>Your ISP is using static IP address for local resource access. Please provide the following settings(DNS servers are optional and only filled when you received them from ISP):</variable>
+</message>
+<message>
+<tag_code>3297</tag_code>
+<translation>Your ISP is using Static IP address for local resources access. Please enter intranet IP address and subnet mask. If you have a gateway specified, you can add it later during static routes configuration.</translation>
+<variable>Your ISP is using Static IP address for local resources access. Please enter intranet IP address and subnet mask. If you have a gateway specified, you can add it later during static routes configuration.</variable>
+</message>
+<message>
+<tag_code>3298</tag_code>
+<translation>Please select one ...</translation>
+<variable>Please select one ...</variable>
+</message>
+<message>
+<tag_code>3299</tag_code>
+<translation>Your ISP may provide Dynamic IP (DHCP) or Static IP connection mode for your intranet interface. You need to choose, whether your settings are received dynamically or assigned manually.</translation>
+<variable>Your ISP may provide Dynamic IP (DHCP) or Static IP connection mode for your intranet interface. You need to choose, whether your settings are received dynamically or assigned manually.</variable>
+</message>
+<message>
+<tag_code>3300</tag_code>
+<translation>Enter DNS servers manually only if your ISP provided you with such information.</translation>
+<variable>Enter DNS servers manually only if your ISP provided you with such information.</variable>
+</message>
+<message>
+<tag_code>3301</tag_code>
+<translation>Some ISPs using MAC address binding for security reasons. Please specify, whether router should use his own MAC address, your current PC's MAC address or manually add MAC address required.</translation>
+<variable>Some ISPs using MAC address binding for security reasons. Please specify, whether router should use his own MAC address, your current PC's MAC address or manually add MAC address required.</variable>
+</message>
+<message>
+<tag_code>3304</tag_code>
+<translation>Quit Wizard</translation>
+<variable>Quit Wizard</variable>
+</message>
+<message>
+<tag_code>3305</tag_code>
+<translation>Configuration Assistant Result</translation>
+<variable>Configuration Assistant Result</variable>
+</message>
+<message>
+<tag_code>3307</tag_code>
+<translation>Click </translation>
+<variable>Click </variable>
+</message>
+<message>
+<tag_code>3309</tag_code>
+<translation>Quit</translation>
+<variable>Quit</variable>
+</message>
+<message>
+<tag_code>3316</tag_code>
+<translation>Ethernet WAN Configuration Completed</translation>
+<variable>Ethernet WAN Configuration Completed</variable>
+</message>
+<message>
+<tag_code>3317</tag_code>
+<translation>Next, we will guide you through configuring the router to use your Mobile Broadband Internet connection.</translation>
+<variable>Next, we will guide you through configuring the router to use your Mobile Broadband Internet connection.</variable>
+</message>
+<message>
+<tag_code>3318</tag_code>
+<translation>Can Not Connect to The Internet </translation>
+<variable>Can Not Connect to The Internet </variable>
+</message>
+<message>
+<tag_code>3319</tag_code>
+<translation>The problem could be one of the following.</translation>
+<variable>The problem could be one of the following.</variable>
+</message>
+<message>
+<tag_code>3320</tag_code>
+<translation>Possible Incorrect Configuration Setting.</translation>
+<variable>Possible Incorrect Configuration Setting.</variable>
+</message>
+<message>
+<tag_code>3321</tag_code>
+<translation>Check the configuration settings you entered for your Modem.</translation>
+<variable>Check the configuration settings you entered for your Modem.</variable>
+</message>
+<message>
+<tag_code>3322</tag_code>
+<translation>Cannot access internet.  </translation>
+<variable>Cannot access internet.  </variable>
+</message>
+<message>
+<tag_code>3323</tag_code>
+<translation>Please verify that the modem has been activated and there is network coverage at your current location.</translation>
+<variable>Please verify that the modem has been activated and there is network coverage at your current location.</variable>
+</message>
+<message>
+<tag_code>3324</tag_code>
+<translation>There is a problem with the DNS servers in the Mobile Broadband network.</translation>
+<variable>There is a problem with the DNS servers in the Mobile Broadband network.</variable>
+</message>
+<message>
+<tag_code>3325</tag_code>
+<translation>Check with your mobile service provider to verify that the service at your location is working properly then run the Setup Wizard Again.</translation>
+<variable>Check with your mobile service provider to verify that the service at your location is working properly then run the Setup Wizard Again.</variable>
+</message>
+<message>
+<tag_code>3326</tag_code>
+<translation> to return to the Internet settings screen.</translation>
+<variable> to return to the Internet settings screen.</variable>
+</message>
+<message>
+<tag_code>3327</tag_code>
+<translation> to try to connect to the network again.</translation>
+<variable> to try to connect to the network again.</variable>
+</message>
+<message>
+<tag_code>3328</tag_code>
+<translation>Retry</translation>
+<variable>Retry</variable>
+</message>
+<message>
+<tag_code>3329</tag_code>
+<translation>Connection Success</translation>
+<variable>Connection Success</variable>
+</message>
+<message>
+<tag_code>3330</tag_code>
+<translation>Your router is now successfully connected to network.</translation>
+<variable>Your router is now successfully connected to network.</variable>
+</message>
+<message>
+<tag_code>3331</tag_code>
+<translation>Click Next to view a summary of settings.</translation>
+<variable>Click Next to view a summary of settings.</variable>
+</message>
+<message>
+<tag_code>3332</tag_code>
+<translation>Updating Settings</translation>
+<variable>Updating Settings</variable>
+</message>
+<message>
+<tag_code>3333</tag_code>
+<translation>Please wait...</translation>
+<variable>Please wait...</variable>
+</message>
+<message>
+<tag_code>3334</tag_code>
+<translation>Abort</translation>
+<variable>Abort</variable>
+</message>
+<message>
+<tag_code>3338</tag_code>
+<translation>ReadySHARE Mobile Connect</translation>
+<variable>ReadySHARE Mobile Connect</variable>
+</message>
+<message>
+<tag_code>3339</tag_code>
+<translation>Broadband Settings</translation>
+<variable>Broadband Settings</variable>
+</message>
+<message>
+<tag_code>3340</tag_code>
+<translation>User Ethernet connection first and if fail use 3G/4G mobile connection</translation>
+<variable>User Ethernet connection first and if fail use 3G/4G mobile connection</variable>
+</message>
+<message>
+<tag_code>3341</tag_code>
+<translation>Always use 3G/4G mobile connection</translation>
+<variable>Always use 3G/4G mobile connection</variable>
+</message>
+<message>
+<tag_code>3342</tag_code>
+<translation>Disable 3G/4G connection</translation>
+<variable>Disable 3G/4G connection</variable>
+</message>
+<message>
+<tag_code>3343</tag_code>
+<translation>Mobile Broadband Settings</translation>
+<variable>Mobile Broadband Settings</variable>
+</message>
+<message>
+<tag_code>3344</tag_code>
+<translation>Access Number</translation>
+<variable>Access Number</variable>
+</message>
+<message>
+<tag_code>3345</tag_code>
+<translation>APN</translation>
+<variable>APN</variable>
+</message>
+<message>
+<tag_code>3346</tag_code>
+<translation>PDP Type</translation>
+<variable>PDP Type</variable>
+</message>
+<message>
+<tag_code>3347</tag_code>
+<translation>Connect on Demand</translation>
+<variable>Connect on Demand</variable>
+</message>
+<message>
+<tag_code>3348</tag_code>
+<translation>Connect automatically at startup</translation>
+<variable>Connect automatically at startup</variable>
+</message>
+<message>
+<tag_code>3349</tag_code>
+<translation>Reconnect automatically When connection is lost</translation>
+<variable>Reconnect automatically When connection is lost</variable>
+</message>
+<message>
+<tag_code>3350</tag_code>
+<translation>Connecting</translation>
+<variable>Connecting</variable>
+</message>
+<message>
+<tag_code>3351</tag_code>
+<translation>Detecting Modem</translation>
+<variable>Detecting Modem</variable>
+</message>
+<message>
+<tag_code>3352</tag_code>
+<translation>Modem Not Supported</translation>
+<variable>Modem Not Supported</variable>
+</message>
+<message>
+<tag_code>3353</tag_code>
+<translation>Initializing Modem</translation>
+<variable>Initializing Modem</variable>
+</message>
+<message>
+<tag_code>3354</tag_code>
+<translation>Checking SIM card</translation>
+<variable>Checking SIM card</variable>
+</message>
+<message>
+<tag_code>3355</tag_code>
+<translation>NO SIM Card</translation>
+<variable>NO SIM Card</variable>
+</message>
+<message>
+<tag_code>3356</tag_code>
+<translation>PIN Checking</translation>
+<variable>PIN Checking</variable>
+</message>
+<message>
+<tag_code>3357</tag_code>
+<translation>PIN required on SIM</translation>
+<variable>PIN required on SIM</variable>
+</message>
+<message>
+<tag_code>3358</tag_code>
+<translation>PIN is ready</translation>
+<variable>PIN is ready</variable>
+</message>
+<message>
+<tag_code>3359</tag_code>
+<translation>Modem SIM locked</translation>
+<variable>Modem SIM locked</variable>
+</message>
+<message>
+<tag_code>3360</tag_code>
+<translation>Scanning Network</translation>
+<variable>Scanning Network</variable>
+</message>
+<message>
+<tag_code>3361</tag_code>
+<translation>NO Network Coverage</translation>
+<variable>NO Network Coverage</variable>
+</message>
+<message>
+<tag_code>3362</tag_code>
+<translation>Wireless Broadband Not Connected</translation>
+<variable>Wireless Broadband Not Connected</variable>
+</message>
+<message>
+<tag_code>3363</tag_code>
+<translation>Connecting</translation>
+<variable>Connecting</variable>
+</message>
+<message>
+<tag_code>3364</tag_code>
+<translation>Connected</translation>
+<variable>Connected</variable>
+</message>
+<message>
+<tag_code>3365</tag_code>
+<translation>Connection Fail</translation>
+<variable>Connection Fail</variable>
+</message>
+<message>
+<tag_code>3366</tag_code>
+<translation>Idle</translation>
+<variable>Idle</variable>
+</message>
+<message>
+<tag_code>3367</tag_code>
+<translation>Identifying</translation>
+<variable>Identifying</variable>
+</message>
+<message>
+<tag_code>3368</tag_code>
+<translation>PUK required on SIM</translation>
+<variable>PUK required on SIM</variable>
+</message>
+<message>
+<tag_code>3369</tag_code>
+<translation>Initializing</translation>
+<variable>Initializing</variable>
+</message>
+<message>
+<tag_code>3370</tag_code>
+<translation>PIN2 required on SIM</translation>
+<variable>PIN2 required on SIM</variable>
+</message>
+<message>
+<tag_code>3371</tag_code>
+<translation>PUK2 required on SIM</translation>
+<variable>PUK2 required on SIM</variable>
+</message>
+<message>
+<tag_code>3372</tag_code>
+<translation>NO APN Configured</translation>
+<variable>NO APN Configured</variable>
+</message>
+<message>
+<tag_code>3373</tag_code>
+<translation>Mobile Connection Idle</translation>
+<variable>Mobile Connection Idle</variable>
+</message>
+<message>
+<tag_code>3374</tag_code>
+<translation>Mobile Broadband Radio OFF</translation>
+<variable>Mobile Broadband Radio OFF</variable>
+</message>
+<message>
+<tag_code>3375</tag_code>
+<translation>Wii LAN Adapter Plugged</translation>
+<variable>Wii LAN Adapter Plugged</variable>
+</message>
+<message>
+<tag_code>3376</tag_code>
+<translation>Not Connected</translation>
+<variable>Not Connected</variable>
+</message>
+<message>
+<tag_code>3377</tag_code>
+<translation>No USB Modem Plugged</translation>
+<variable>No USB Modem Plugged</variable>
+</message>
+<message>
+<tag_code>3378</tag_code>
+<translation>MEP PIN code required</translation>
+<variable>MEP PIN code required</variable>
+</message>
+<message>
+<tag_code>3379</tag_code>
+<translation>Wrong APN</translation>
+<variable>Wrong APN</variable>
+</message>
+<message>
+<tag_code>3380</tag_code>
+<translation>Roaming NOT Allowed</translation>
+<variable>Roaming NOT Allowed</variable>
+</message>
+<message>
+<tag_code>3381</tag_code>
+<translation>Choosing Connection Mode</translation>
+<variable>Choosing Connection Mode</variable>
+</message>
+<message>
+<tag_code>3382</tag_code>
+<translation>Always use Ethernet connection</translation>
+<variable>Always use Ethernet connection</variable>
+</message>
+<message>
+<tag_code>3383</tag_code>
+<translation>Always use Mobile Broadband connection</translation>
+<variable>Always use Mobile Broadband connection</variable>
+</message>
+<message>
+<tag_code>3384</tag_code>
+<translation>Detecting Mobile Broadband Modem</translation>
+<variable>Detecting Mobile Broadband Modem</variable>
+</message>
+<message>
+<tag_code>3385</tag_code>
+<translation>Connecting to Network</translation>
+<variable>Connecting to Network</variable>
+</message>
+<message>
+<tag_code>3386</tag_code>
+<translation>No USB Broadband Modem is Deteced</translation>
+<variable>No USB Broadband Modem is Deteced</variable>
+</message>
+<message>
+<tag_code>3387</tag_code>
+<translation>Make sure that the USB boardband modem is securely plugged</translation>
+<variable>Make sure that the USB boardband modem is securely plugged</variable>
+</message>
+<message>
+<tag_code>3388</tag_code>
+<translation>No Mobile Broadband Network</translation>
+<variable>No Mobile Broadband Network</variable>
+</message>
+<message>
+<tag_code>3389</tag_code>
+<translation>No SIM Card Detected</translation>
+<variable>No SIM Card Detected</variable>
+</message>
+<message>
+<tag_code>3390</tag_code>
+<translation>SIM card not detected or SIM card rejected</translation>
+<variable>SIM card not detected or SIM card rejected</variable>
+</message>
+<message>
+<tag_code>3391</tag_code>
+<translation>Please check to ensure SIM card is installed and is properly seated or SIM card is valid.</translation>
+<variable>Please check to ensure SIM card is installed and is properly seated or SIM card is valid.</variable>
+</message>
+<message>
+<tag_code>3392</tag_code>
+<translation>PIN Issue</translation>
+<variable>PIN Issue</variable>
+</message>
+<message>
+<tag_code>3393</tag_code>
+<translation>Please input PIN code.</translation>
+<variable>Please input PIN code.</variable>
+</message>
+<message>
+<tag_code>3394</tag_code>
+<translation>Do you want to setup PIN code?</translation>
+<variable>Do you want to setup PIN code?</variable>
+</message>
+<message>
+<tag_code>3395</tag_code>
+<translation>USB modem not supported</translation>
+<variable>USB modem not supported</variable>
+</message>
+<message>
+<tag_code>3396</tag_code>
+<translation>Please check the NETGEAR website for the latest firmware and supported devices.</translation>
+<variable>Please check the NETGEAR website for the latest firmware and supported devices.</variable>
+</message>
+<message>
+<tag_code>3397</tag_code>
+<translation>Please Enter Service Provider Configuration</translation>
+<variable>Please Enter Service Provider Configuration</variable>
+</message>
+<message>
+<tag_code>3398</tag_code>
+<translation>Please select the Internet Service Provider and then click Next.</translation>
+<variable>Please select the Internet Service Provider and then click Next.</variable>
+</message>
+<message>
+<tag_code>3399</tag_code>
+<translation>If your Mobile Broadband service provide is not in pulldown list, please select Other.</translation>
+<variable>If your Mobile Broadband service provide is not in pulldown list, please select Other.</variable>
+</message>
+<message>
+<tag_code>3400</tag_code>
+<translation>Please enter the configuration parameters. If you do not know what they are, please contact your service provide.</translation>
+<variable>Please enter the configuration parameters. If you do not know what they are, please contact your service provide.</variable>
+</message>
+<message>
+<tag_code>3401</tag_code>
+<translation>Mobile Broadband Port</translation>
+<variable>Mobile Broadband Port</variable>
+</message>
+<message>
+<tag_code>3402</tag_code>
+<translation>Enable automatic internet connection reset at</translation>
+<variable>Enable automatic internet connection reset at</variable>
+</message>
+<message>
+<tag_code>3403</tag_code>
+<translation>Italy</translation>
+<variable>Italy</variable>
+</message>
+<message>
+<tag_code>3404</tag_code>
+<translation>Austria</translation>
+<variable>Austria</variable>
+</message>
+<message>
+<tag_code>3405</tag_code>
+<translation>UK</translation>
+<variable>UK</variable>
+</message>
+<message>
+<tag_code>3406</tag_code>
+<translation>Denmark</translation>
+<variable>Denmark</variable>
+</message>
+<message>
+<tag_code>3407</tag_code>
+<translation>Sweden</translation>
+<variable>Sweden</variable>
+</message>
+<message>
+<tag_code>3408</tag_code>
+<translation>Australia</translation>
+<variable>Australia</variable>
+</message>
+<message>
+<tag_code>3409</tag_code>
+<translation>Ireland</translation>
+<variable>Ireland</variable>
+</message>
+<message>
+<tag_code>3410</tag_code>
+<translation>Hong Kong</translation>
+<variable>Hong Kong</variable>
+</message>
+<message>
+<tag_code>3411</tag_code>
+<translation>Vietnam</translation>
+<variable>Vietnam</variable>
+</message>
+<message>
+<tag_code>3412</tag_code>
+<translation>Indonesia</translation>
+<variable>Indonesia</variable>
+</message>
+<message>
+<tag_code>3413</tag_code>
+<translation>USA</translation>
+<variable>USA</variable>
+</message>
+<message>
+<tag_code>3414</tag_code>
+<translation>User defined</translation>
+<variable>User defined</variable>
+</message>
+<message>
+<tag_code>3415</tag_code>
+<translation>Remember PIN</translation>
+<variable>Remember PIN</variable>
+</message>
+<message>
+<tag_code>3416</tag_code>
+<translation>PUK Code</translation>
+<variable>PUK Code</variable>
+</message>
+<message>
+<tag_code>3417</tag_code>
+<translation>PIN2 Code</translation>
+<variable>PIN2 Code</variable>
+</message>
+<message>
+<tag_code>3418</tag_code>
+<translation>PUK2 Code</translation>
+<variable>PUK2 Code</variable>
+</message>
+<message>
+<tag_code>3419</tag_code>
+<translation>Network Mode</translation>
+<variable>Network Mode</variable>
+</message>
+<message>
+<tag_code>3420</tag_code>
+<translation>Use internal antenna</translation>
+<variable>Use internal antenna</variable>
+</message>
+<message>
+<tag_code>3421</tag_code>
+<translation>Idle Timeout (minutes)</translation>
+<variable>Idle Timeout (minutes)</variable>
+</message>
+<message>
+<tag_code>3422</tag_code>
+<translation>(in minutes)</translation>
+<variable>(in minutes)</variable>
+</message>
+<message>
+<tag_code>3423</tag_code>
+<translation>APN Auto Lookup</translation>
+<variable>APN Auto Lookup</variable>
+</message>
+<message>
+<tag_code>3424</tag_code>
+<translation>has detected Mobile Broadband settings for you, do you want to use these settings?</translation>
+<variable>has detected Mobile Broadband settings for you, do you want to use these settings?</variable>
+</message>
+<message>
+<tag_code>3425</tag_code>
+<translation>ISP</translation>
+<variable>ISP</variable>
+</message>
+<message>
+<tag_code>3426</tag_code>
+<translation>manually setup</translation>
+<variable>manually setup</variable>
+</message>
+<message>
+<tag_code>3427</tag_code>
+<translation>Internet Connection Mode</translation>
+<variable>Internet Connection Mode</variable>
+</message>
+<message>
+<tag_code>3428</tag_code>
+<translation>Failover Detection Method</translation>
+<variable>Failover Detection Method</variable>
+</message>
+<message>
+<tag_code>3429</tag_code>
+<translation>DNS lookup using WAN DNS Server</translation>
+<variable>DNS lookup using WAN DNS Server</variable>
+</message>
+<message>
+<tag_code>3430</tag_code>
+<translation>Perform a DNS lookup by a hostname</translation>
+<variable>Perform a DNS lookup by a hostname</variable>
+</message>
+<message>
+<tag_code>3431</tag_code>
+<translation>Ping this IP address</translation>
+<variable>Ping this IP address</variable>
+</message>
+<message>
+<tag_code>3432</tag_code>
+<translation>Retry Interval is</translation>
+<variable>Retry Interval is</variable>
+</message>
+<message>
+<tag_code>3433</tag_code>
+<translation>(In Seconds)</translation>
+<variable>(In Seconds)</variable>
+</message>
+<message>
+<tag_code>3434</tag_code>
+<translation>Failover after</translation>
+<variable>Failover after</variable>
+</message>
+<message>
+<tag_code>3435</tag_code>
+<translation>(In Intervals)</translation>
+<variable>(In Intervals)</variable>
+</message>
+<message>
+<tag_code>3436</tag_code>
+<translation>Resume after</translation>
+<variable>Resume after</variable>
+</message>
+<message>
+<tag_code>3437</tag_code>
+<translation>Enable Hardware link detection</translation>
+<variable>Enable Hardware link detection</variable>
+</message>
+<message>
+<tag_code>3438</tag_code>
+<translation>China</translation>
+<variable>China</variable>
+</message>
+<message>
+<tag_code>3439</tag_code>
+<translation>Russia</translation>
+<variable>Rusia</variable>
+</message>
+<message>
+<tag_code>3440</tag_code>
+<translation>AP Mode</translation>
+<variable>AP Mode</variable>
+</message>
+<message>
+<tag_code>3441</tag_code>
+<translation>Enable AP Mode</translation>
+<variable>Enable AP Mode</variable>
+</message>
+<message>
+<tag_code>3442</tag_code>
+<translation>Get IP Address Dynamically</translation>
+<variable>Get IP Address Dynamically</variable>
+</message>
+<message>
+<tag_code>3443</tag_code>
+<translation>Get DNS Server Address Dynamically</translation>
+<variable>Get DNS Server Address Dynamically</variable>
+</message>
+<message>
+<tag_code>3444</tag_code>
+<translation>Wireless AP mode allows this device to work as a stand-alone wireless access point on your existing network.</translation>
+<variable>Wireless AP mode allows this device to work as a stand-alone wireless access point on your existing network.</variable>
+</message>
+<message>
+<tag_code>3445</tag_code>
+<translation>Enable fixed IP settings on this device (not recommended)</translation>
+<variable>Enable fixed IP settings on this device (not recommended)</variable>
+</message>
+<message>
+<tag_code>3446</tag_code>
+<translation>Please follow these instructions to have the optimal setup and performance:</translation>
+<variable>Please follow these instructions to have the optimal setup and performance:</variable>
+</message>
+<message>
+<tag_code>3447</tag_code>
+<translation>&lt;b&gt;Step1:&lt;/b&gt;Make sure this device's &lt;b&gt;Internet port&lt;/b&gt; is connected with an cable to &lt;b&gt;one of the LAN ports&lt;/b&gt; on the existing router.</translation>
+<variable>&lt;b&gt;Step1:&lt;/b&gt;Make sure this device's &lt;b&gt;Internet port&lt;/b&gt; is connected with an cable to &lt;b&gt;one of the LAN ports&lt;/b&gt; on the existing router.</variable>
+</message>
+<message>
+<tag_code>3448</tag_code>
+<translation>&lt;b&gt;Step2:&lt;/b&gt;If your existing router has wireless capability, turn it off or disable it, to avoid interference with this new AP device. Or at least run it at a defferent wireless channel.</translation>
+<variable>&lt;b&gt;Step2:&lt;/b&gt;If your existing router has wireless capability, turn it off or disable it, to avoid interference with this new AP device. Or at least run it at a defferent wireless channel.</variable>
+</message>
+<message>
+<tag_code>3449</tag_code>
+<translation>Once you are done, click Apply to continue</translation>
+<variable>Once you are done, click Apply to continue</variable>
+</message>
+<message>
+<tag_code>3450</tag_code>
+<translation>&lt;b&gt;Note:&lt;/b&gt;After you click Apply,this device will change to a new IP assigned by your existing router,therefore this web page might not be available. Please close and restart web browser to http://www.routerlogin.net/ again.</translation>
+<variable>&lt;b&gt;Note:&lt;/b&gt;After you click Apply,this device will change to a new IP assigned by your existing router,therefore this web page might not be available. Please close and restart web browser to http://www.routerlogin.net/ again.</variable>
+</message>
+<message>
+<tag_code>3451</tag_code>
+<translation>Operation Mode</translation>
+<variable>Operation Mode</variable>
+</message>
+<message>
+<tag_code>3452</tag_code>
+<translation>AP</translation>
+<variable>AP</variable>
+</message>
+<message>
+<tag_code>3453</tag_code>
+<translation>PIN code</translation>
+<variable>PIN code</variable>
+</message>
+<message>
+<tag_code>3454</tag_code>
+<translation>China Mobile</translation>
+<variable>China Mobile</variable>
+</message>
+<message>
+<tag_code>3455</tag_code>
+<translation>China Unicom</translation>
+<variable>China Unicom</variable>
+</message>
+
+
+
+
+<message>
+<tag_code>3456</tag_code>
+<translation>China Telecom</translation>
+<variable>China Telecom</variable>
+</message>
+<message>
+<tag_code>3457</tag_code>
+<translation>Other</translation>
+<variable>Other</variable>
+</message>
+<message>
+<tag_code>3458</tag_code>
+<translation>Operator Name</translation>
+<variable>Operator Name</variable>
+</message>
+<message>
+<tag_code>3459</tag_code>
+<translation>Signal Strength</translation>
+<variable>Signal Strength</variable>
+</message>
+<message>
+<tag_code>3460</tag_code>
+<translation>3G/4G setup is done!</translation>
+<variable>3G/4G setup is done!</variable>
+</message>
+<message>
+<tag_code>3461</tag_code>
+<translation>USB Mobile Broadband Modem Settings</translation>
+<variable>USB Mobile Broadband Modem Settings</variable>
+</message>
+<message>
+<tag_code>3462</tag_code>
+<translation>3G/4G Connection Mode</translation>
+<variable>3G/4G Connection Mode</variable>
+</message>
+<message>
+<tag_code>3463</tag_code>
+<translation>Connection Protocol</translation>
+<variable>Connection Protocol</variable>
+</message>
+<message>
+<tag_code>3475</tag_code>
+<translation>Note:</translation>
+<variable>Note:</variable>
+</message>
+<message>
+<tag_code>3476</tag_code>
+<translation>Setup Mobile Broadband</translation>
+<variable>Setup Mobile Broadband</variable>
+</message>
+<message>
+<tag_code>3477</tag_code>
+<translation>This router is also capable of connecting to 3G/4G Mobile Network. If you have a supported 3G/4G mobile broadband adapter, you can use the Setup Mobile Broadband button below to run the wizard.</translation>
+<variable>This router is also capable of connecting to 3G/4G Mobile Network. If you have a supported 3G/4G mobile broadband adapter, you can use the Setup Mobile Broadband button below to run the wizard.</variable>
+</message>
+<message>
+<tag_code>3478</tag_code>
+<translation>No, I want to continue to set up the 3G/4G mobile broadband connection.</translation>
+<variable>No, I want to continue to set up the 3G/4G mobile broadband connection.</variable>
+</message>
+<message>
+<tag_code>3479</tag_code>
+<translation>Installing Driver…</translation>
+<variable>Installing Driver…</variable>
+</message>
+<message>
+<tag_code>3480</tag_code>
+<translation>NETGEAR genie is installing the adapter driver. It might take a minute or two. Please wait…</translation>
+<variable>NETGEAR genie is installing the adapter driver. It might take a minute or two. Please wait…</variable>
+</message>
+<message>
+<tag_code>3481</tag_code>
+<translation>3G/4G Connection Issue.</translation>
+<variable>3G/4G Connection Issue</variable>
+</message>
+<message>
+<tag_code>3482</tag_code>
+<translation>The router cannot make a 3G/4G connection.</translation>
+<variable>The router cannot make a 3G/4G connection.</variable>
+</message>
+<message>
+<tag_code>3483</tag_code>
+<translation>Please review the following error:</translation>
+<variable>Please review the following error:</variable>
+</message>
+<message>
+<tag_code>3484</tag_code>
+<translation>The mobile broadband modem is not a supported type. You can try a different one.</translation>
+<variable>The mobile broadband modem is not a supported type. You can try a different one.</variable>
+</message>
+<message>
+<tag_code>3485</tag_code>
+<translation>No, Take me to the Internet using an Ethernet connection.</translation>
+<variable>No, Take me to the Internet using an Ethernet connection.</variable>
+</message>
+<message>
+<tag_code>3486</tag_code>
+<translation>No USB broadband adapter detected. Check your USB connection.</translation>
+<variable>No USB broadband adapter detected. Check your USB connection.</variable>
+</message>
+<message>
+<tag_code>3487</tag_code>
+<translation>The router cannot establish an Internet connection. Check the settings with your mobile broadband service provider.</translation>
+<variable>The router cannot establish an Internet connection. Check the settings with your mobile broadband service provider.</variable>
+</message>
+<message>
+<tag_code>3488</tag_code>
+<translation>Ethernet setup is done!</translation>
+<variable>Ethernet setup is done!</variable>
+</message>
+<message>
+<tag_code>3489</tag_code>
+<translation>Configure Settings</translation>
+<variable>Configure Settings</variable>
+</message>
+<message>
+<tag_code>3490</tag_code>
+<translation>If your ISP is not presented in the list, please proceed with </translation>
+<variable>If your ISP is not presented in the list, please proceed with </variable>
+</message>
+<message>
+<tag_code>3491</tag_code>
+<translation>Manual configuration</translation>
+<variable>Manual configuration</variable>
+</message>
+<message>
+<tag_code>3492</tag_code>
+<translation>I want to continue to set up the 3G/4G mobile broadband connection.</translation>
+<variable>I want to continue to set up the 3G/4G mobile broadband connection.</variable>
+</message>
+<message>
+<tag_code>3618</tag_code>
+<translation>VLAN/IPTV Setup</translation>
+<variable>VLAN/IPTV Setup</variable>
+</message>
+<message>
+<tag_code>3709</tag_code>
+<translation>Share your life, share your memory, sharing makes your life more memorable.</translation>
+<variable>Share your life, share your memory, sharing makes your life more memorable.</variable>
+</message>
+<message>
+<tag_code>3710</tag_code>
+<translation>NETGEAR Cloud provides a private and secure cloud sharing circle.</translation>
+<variable>NETGEAR Cloud provides a private and secure cloud sharing circle.</variable>
+</message>
+<message>
+<tag_code>3711</tag_code>
+<translation>You and your cared ones can share everything in your life.</translation>
+<variable>You and your cared ones can share everything in your life.</variable>
+</message>
+<message>
+<tag_code>3712</tag_code>
+<translation>Please explore the feature below.</translation>
+<variable>Please explore the feature below.</variable>
+</message>
+<message>
+<tag_code>3713</tag_code>
+<translation>Take me to NETGEAR Cloud.</translation>
+<variable>Take me to NETGEAR Cloud.</variable>
+</message>
+<message>
+<tag_code>3716</tag_code>
+<translation>NETGEAR Cloud</translation>
+<variable>NETGEAR Cloud</variable>
+</message>
+<message>
+<tag_code>3717</tag_code>
+<translation>3G/4G Mobile Broadband</translation>
+<variable>3G/4G Mobile Broadband</variable>
+</message>
+<message>
+<tag_code>4400</tag_code>
+<translation>Previous</translation>
+<variable>Previous</variable>
+</message>
+<message>
+<tag_code>4401</tag_code>
+<translation>Downloading the following router apps:</translation>
+<variable>Downloading the following router apps:</variable>
+</message>
+<message>
+<tag_code>4402</tag_code>
+<translation>Genie app. A personal dashboard that lets you monitor, control, and repair your home network.</translation>
+<variable>Genie app. A personal dashboard that lets you monitor, control, and repair your home network.</variable>
+</message>
+<message>
+<tag_code>4403</tag_code>
+<translation>ReadySHARE Vault app (Only for Windows computers). Enables automatic continuous backup of a Windows computer to a USB drive that’s connected to your router.</translation>
+<variable>ReadySHARE Vault app (Only for Windows computers). Enables automatic continuous backup of a Windows computer to a USB drive that’s connected to your router.</variable>
+</message>
+<message>
+<tag_code>4404</tag_code>
+<translation>Downloading…</translation>
+<variable>Downloading…</variable>
+</message>
+<message>
+<tag_code>4405</tag_code>
+<translation>Install the Genie app after the download completes.</translation>
+<variable>Install the Genie app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4406</tag_code>
+<translation>Click the Next button after you install the Genie app to finish configuring the router.</translation>
+<variable>Click the Next button after you install the Genie app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4407</tag_code>
+<translation>Install the ReadySHARE Vault app after the download completes.</translation>
+<variable>Install the ReadySHARE Vault app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4408</tag_code>
+<translation>Click the Next button after you Install the ReadySHARE Vault app to finish configuring the router.</translation>
+<variable>Click the Next button after you Install the ReadySHARE Vault app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4409</tag_code>
+<translation>Processing your request…</translation>
+<variable>Processing your request…</variable>
+</message>
+<message>
+<tag_code>4410</tag_code>
+<translation>Install the Genie app and ReadySHARE Vault app after the download completes.</translation>
+<variable>Install the Genie app and ReadySHARE Vault app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4411</tag_code>
+<translation>Click the Next button after you install the Genie app and ReadySHARE Vault app to finish configuring the router.</translation>
+<variable>Click the Next button after you install the Genie app and ReadySHARE Vault app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4412</tag_code>
+<translation>After the installation, please click Next.</translation>
+<variable>After the installation, please click Next.</variable>
+</message>
+<message>
+<tag_code>4413</tag_code>
+<translation>System will install</translation>
+<variable>System will install</variable>
+</message>
+<message>
+<tag_code>4414</tag_code>
+<translation>Click Run to start installing</translation>
+<variable>Click Run to start installing</variable>
+</message>
+<message>
+<tag_code>4415</tag_code>
+<translation>Firmware Upgrade Assistant</translation>
+<variable>Firmware Upgrade Assistant</variable>
+</message>
+<message>
+<tag_code>4416</tag_code>
+<translation>Upgrading Router Firmware now. Please Wait</translation>
+<variable>Upgrading Router Firmware now. Please Wait</variable>
+</message>
+<message>
+<tag_code>4417</tag_code>
+<translation>Note: It will take about</translation>
+<variable>Note: It will take about</variable>
+</message>
+<message>
+<tag_code>4418</tag_code>
+<translation>minutes for firmware upgrade.&lt;br&gt;Please don't turn off the power or press reset button.</translation>
+<variable>minutes for firmware upgrade.&lt;br&gt;Please don't turn off the power or press reset button.</variable>
+</message>
+<message>
+<tag_code>4419</tag_code>
+<translation>Please wait ...</translation>
+<variable>Please wait ...</variable>
+</message>
+<message>
+<tag_code>4420</tag_code>
+<translation>Cancel</translation>
+<variable>Cancel</variable>
+</message>
+<message>
+<tag_code>4421</tag_code>
+<translation>The Router is downloading the new version now. Please wait...</translation>
+<variable>The Router is downloading the new version now. Please wait...</variable>
+</message>
+<message>
+<tag_code>4422</tag_code>
+<translation>A new version has been found. Do You want to upgrade to the new version now?</translation>
+<variable>A new version has been found. Do You want to upgrade to the new version now?</variable>
+</message>
+<message>
+<tag_code>4423</tag_code>
+<translation>Current Version</translation>
+<variable>Current Version</variable>
+</message>
+<message>
+<tag_code>4424</tag_code>
+<translation>New Firmware Version</translation>
+<variable>New Firmware Version</variable>
+</message>
+<message>
+<tag_code>4425</tag_code>
+<translation>This process can take a minute or two; please wait...</translation>
+<variable>This process can take a minute or two; please wait...</variable>
+</message>
+<message>
+<tag_code>4426</tag_code>
+<translation>Firmware Version Check</translation>
+<variable>Firmware Version Check</variable>
+</message>
+<message>
+<tag_code>4427</tag_code>
+<translation>No new firmware version available.</translation>
+<variable>No new firmware version available.</variable>
+</message>
+<message>
+<tag_code>4428</tag_code>
+<translation>OK</translation>
+<variable>OK</variable>
+</message>
+<message>
+<tag_code>4429</tag_code>
+<translation>Checking your network setup,please wait...</translation>
+<variable>Checking your network setup,please wait...</variable>
+</message>
+<message>
+<tag_code>4430</tag_code>
+<translation>An existing router or gateway is detected in your network</translation>
+<variable>An existing router or gateway is detected in your network</variable>
+</message>
+<message>
+<tag_code>4431</tag_code>
+<translation>Your NETGEAR router is connected to a network that already has another router. If you want to leave the first router connected, genie recommends using Access Point mode for the NETGEAR router. When the NETGEAR router is in Access Point mode, you can use it to join the network and the other router continues to perform the same network tasks as before.</translation>
+<variable>Your NETGEAR router is connected to a network that already has another router. If you want to leave the first router connected, genie recommends using Access Point mode for the NETGEAR router. When the NETGEAR router is in Access Point mode, you can use it to join the network and the other router continues to perform the same network tasks as before.</variable>
+</message>
+<message>
+<tag_code>4432</tag_code>
+<translation>Do you want to setup this device in Access Point mode</translation>
+<variable>Do you want to setup this device in Access Point mode</variable>
+</message>
+<message>
+<tag_code>4433</tag_code>
+<translation>Yes (recommended)</translation>
+<variable>Yes (recommended)</variable>
+</message>
+<message>
+<tag_code>4434</tag_code>
+<translation>No, I would like to run it in default mode as a router</translation>
+<variable>No, I would like to run it in default mode as a router</variable>
+</message>
+<message>
+<tag_code>4435</tag_code>
+<translation>To add this router to your network in Access Point Mode</translation>
+<variable>To add this router to your network in Access Point Mode</variable>
+</message>
+<message>
+<tag_code>4436</tag_code>
+<translation>IP Address of this new device</translation>
+<variable>IP Address of this new device</variable>
+</message>
+<message>
+<tag_code>4437</tag_code>
+<translation>Get IP Address dynamically from existing router</translation>
+<variable>Get IP Address dynamically from existing router</variable>
+</message>
+<message>
+<tag_code>4438</tag_code>
+<translation>Use fixed IP Address (not recommended)</translation>
+<variable>Use fixed IP Address (not recommended)</variable>
+</message>
+<message>
+<tag_code>4439</tag_code>
+<translation>Note: After you click Next, this router will be assigned a new IP address. When it happens your browser might be disconnected from the network. To reconnect to the router, close the window and launch your browser again.</translation>
+<variable>Note: After you click Next, this router will be assigned a new IP address. When it happens your browser might be disconnected from the network. To reconnect to the router, close the window and launch your browser again.</variable>
+</message>
+<message>
+<tag_code>4441</tag_code>
+<translation>Your NETGEAR router is connected to a network that already has another router.This means that you must select an operation mode:</translation>
+<variable>Your NETGEAR router is connected to a network that already has another router.This means that you must select an operation mode:</variable>
+</message>
+<message>
+<tag_code>4442</tag_code>
+<translation>Router Mode</translation>
+<variable>Router Mode</variable>
+</message>
+<message>
+<tag_code>4443</tag_code>
+<translation>Router mode gives you two different networks:The existing network from the original router,and another network form your new NETGEAR router.If all of your devices connect to NETGEAR router,recommend to use Router Mode.</translation>
+<variable>Router mode gives you two different networks:The existing network from the original router,and another network form your new NETGEAR router.If all of your devices connect to NETGEAR router,recommend to use Router Mode.</variable>
+</message>
+<message>
+<tag_code>4444</tag_code>
+<translation>Access Point Mode</translation>
+<variable>Access Point Mode</variable>
+</message>
+<message>
+<tag_code>4445</tag_code>
+<translation>This mode keeps the existing network from the original router only.Not all of the NETGEAR router's features are available in Access Point mode.If you have devices connect to both existing router and NETGEAR router,recommend to use Access Point Mode.</translation>
+<variable>This mode keeps the existing network from the original router only.Not all of the NETGEAR router's features are available in Access Point mode.If you have devices connect to both existing router and NETGEAR router,recommend to use Access Point Mode.</variable>
+</message>
+<message>
+<tag_code>4446</tag_code>
+<translation>Learn More</translation>
+<variable>Learn More</variable>
+</message>
+<message>
+<tag_code>4447</tag_code>
+<translation>WARNING</translation>
+<variable>WARNING</variable>
+</message>
+<message>
+<tag_code>4448</tag_code>
+<translation>Your router is about to setup to Access Point Mode.You may experience short network interruption due to your router and client will need to obtain new IP address from your existing Router.If you lost network connection,you may manually connect to router again by visiting www.routerlogin.net.</translation>
+<variable>Your router is about to setup to Access Point Mode.You may experience short network interruption due to your router and client will need to obtain new IP address from your existing Router.If you lost network connection,you may manually connect to router again by visiting www.routerlogin.net.</variable>
+</message>
+<message>
+<tag_code>4449</tag_code>
+<translation>The following router features are not available if you choose Access Point mode:</translation>
+<variable>The following router features are not available if you choose Access Point mode:</variable>
+</message>
+<message>
+<tag_code>4450</tag_code>
+<translation>Parental Controls</translation>
+<variable>Parental control</variable>
+</message>
+<message>
+<tag_code>4451</tag_code>
+<translation>Block Sites</translation>
+<variable>Block sites</variable>
+</message>
+<message>
+<tag_code>4452</tag_code>
+<translation>Block Services</translation>
+<variable>Block services</variable>
+</message>
+<message>
+<tag_code>4453</tag_code>
+<translation>Port Forwarding</translation>
+<variable>Port forwarding</variable>
+</message>
+<message>
+<tag_code>4454</tag_code>
+<translation>Port Triggering</translation>
+<variable>Port triggering</variable>
+</message>
+<message>
+<tag_code>4455</tag_code>
+<translation>Static route</translation>
+<variable>Static route</variable>
+</message>
+<message>
+<tag_code>4456</tag_code>
+<translation>Traffic meter</translation>
+<variable>Traffic meter</variable>
+</message>
+<message>
+<tag_code>4457</tag_code>
+<translation>Remote management</translation>
+<variable>Remote management</variable>
+</message>
+<message>
+<tag_code>4458</tag_code>
+<translation>Guest network</translation>
+<variable>Guest network</variable>
+</message>
+</tag_msg>

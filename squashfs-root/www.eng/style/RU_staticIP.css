@@ -1,0 +1,19 @@
+#mainContent_div { width:70%; margin:0 auto; }
+
+#allBtns_div { width:70%; margin:0 auto;}
+
+#btnsContainer_div1 { width:35%; float:left; }
+
+#btnsContainer_div2 { width:35%; float:right; }
+
+#pppoe_btnsContainer_div { width:25%; float:left; }
+
+#pppoe_post_div { width:25%; float:right; }
+
+#pptp_btnsContainer_div { width:25%; float:left; }
+
+#pptp_post_div { width:25%; float:right; }
+
+#l2tp_btnsContainer_div { width:25%; float:left; }
+
+#l2tp_post_div { width:25%; float:right; }

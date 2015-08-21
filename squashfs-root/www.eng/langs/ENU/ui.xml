@@ -1,0 +1,6321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tag_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<message>
+<tag_code>20</tag_code>
+<translation>Add WPS Client</translation>
+</message>
+<message>
+<tag_code>21</tag_code>
+<translation>New and easy way to connect to the wireless router using Wi-Fi Protected Setup (WPS)</translation>
+</message>
+<message>
+<tag_code>22</tag_code>
+<translation>A wireless client has to support the WPS function if you want to use this wizard to add the client to your WPS-enabled wireless router.</translation>
+</message>
+<message>
+<tag_code>23</tag_code>
+<translation>Please check the user manual and gift box of your wireless client to see whether it supports the WPS function.</translation>
+</message>
+<message>
+<tag_code>24</tag_code>
+<translation>If your wireless client does not support the WPS function, you have to configure your wireless client manually so that it has the same SSID and wireless security settings as this router.</translation>
+</message>
+<message>
+<tag_code>25</tag_code>
+<translation>Next</translation>
+</message>
+<message>
+<tag_code>26</tag_code>
+<translation>Advanced Wireless Settings</translation>
+</message>
+<message>
+<tag_code>29</tag_code>
+<translation>Push 'N' Connect</translation>
+</message>
+<message>
+<tag_code>32</tag_code>
+<translation>Name (SSID)</translation>
+</message>
+<message>
+<tag_code>34</tag_code>
+<translation>Region</translation>
+</message>
+<message>
+<tag_code>36</tag_code>
+<translation>Channel</translation>
+</message>
+<message>
+<tag_code>38</tag_code>
+<translation>Wireless AP</translation>
+</message>
+<message>
+<tag_code>40</tag_code>
+<translation>Broadcast Name</translation>
+</message>
+<message>
+<tag_code>42</tag_code>
+<translation>Security</translation>
+</message>
+<message>
+<tag_code>44</tag_code>
+<translation>WPS Settings</translation>
+</message>
+<message>
+<tag_code>45</tag_code>
+<translation>Configured</translation>
+</message>
+<message>
+<tag_code>46</tag_code>
+<translation>Router's PIN</translation>
+</message>
+<message>
+<tag_code>47</tag_code>
+<translation>Not Configured</translation>
+</message>
+<message>
+<tag_code>48</tag_code>
+<translation>Disable Router's PIN</translation>
+</message>
+<message>
+<tag_code>49</tag_code>
+<translation>Keep Existing Wireless Settings</translation>
+</message>
+<message>
+<tag_code>50</tag_code>
+<translation>Apply</translation>
+</message>
+<message>
+<tag_code>51</tag_code>
+<translation>Cancel</translation>
+</message>
+<message>
+<tag_code>52</tag_code>
+<translation>Backup Settings</translation>
+</message>
+<message>
+<tag_code>53</tag_code>
+<translation>Save a copy of current settings</translation>
+</message>
+<message>
+<tag_code>54</tag_code>
+<translation>Restore saved settings from a file</translation>
+</message>
+<message>
+<tag_code>55</tag_code>
+<translation>Revert to factory default settings</translation>
+</message>
+<message>
+<tag_code>56</tag_code>
+<translation>Back Up</translation>
+</message>
+<message>
+<tag_code>57</tag_code>
+<translation>Restore</translation>
+</message>
+<message>
+<tag_code>58</tag_code>
+<translation>Erase</translation>
+</message>
+<message>
+<tag_code>59</tag_code>
+<translation>Loading the factory default settings will erase all the current settings.</translation>
+</message>
+<message>
+<tag_code>60</tag_code>
+<translation>Are you sure you want to do this?</translation>
+</message>
+<message>
+<tag_code>61</tag_code>
+<translation>Yes</translation>
+</message>
+<message>
+<tag_code>62</tag_code>
+<translation>No</translation>
+</message>
+<message>
+<tag_code>63</tag_code>
+<translation>Loading file ...</translation>
+</message>
+<message>
+<tag_code>64</tag_code>
+<translation>Basic Settings</translation>
+</message>
+<message>
+<tag_code>65</tag_code>
+<translation>Does your Internet connection require a login?</translation>
+</message>
+<message>
+<tag_code>67</tag_code>
+<translation>Account Name(If Required)</translation>
+</message>
+<message>
+<tag_code>69</tag_code>
+<translation>Domain Name(If Required)</translation>
+</message>
+<message>
+<tag_code>70</tag_code>
+<translation>Internet</translation>
+</message>
+<message>
+<tag_code>71</tag_code>
+<translation>IP Address</translation>
+</message>
+<message>
+<tag_code>72</tag_code>
+<translation>Get Dynamically from ISP</translation>
+</message>
+<message>
+<tag_code>73</tag_code>
+<translation>Use Static IP Address</translation>
+</message>
+<message>
+<tag_code>74</tag_code>
+<translation>Connection</translation>
+</message>
+<message>
+<tag_code>75</tag_code>
+<translation>IP Subnet Mask</translation>
+</message>
+<message>
+<tag_code>76</tag_code>
+<translation>Gateway</translation>
+</message>
+<message>
+<tag_code>77</tag_code>
+<translation>Domain Name Server (DNS) Address</translation>
+</message>
+<message>
+<tag_code>78</tag_code>
+<translation>Get Automatically from ISP</translation>
+</message>
+<message>
+<tag_code>79</tag_code>
+<translation>Use These DNS Servers</translation>
+</message>
+<message>
+<tag_code>80</tag_code>
+<translation>Primary DNS</translation>
+</message>
+<message>
+<tag_code>81</tag_code>
+<translation>Secondary DNS</translation>
+</message>
+<message>
+<tag_code>82</tag_code>
+<translation>Router</translation>
+</message>
+<message>
+<tag_code>83</tag_code>
+<translation>MAC Address</translation>
+</message>
+<message>
+<tag_code>84</tag_code>
+<translation>Use Default Address</translation>
+</message>
+<message>
+<tag_code>85</tag_code>
+<translation>Use Computer MAC Address</translation>
+</message>
+<message>
+<tag_code>86</tag_code>
+<translation>Use This MAC Address</translation>
+</message>
+<message>
+<tag_code>87</tag_code>
+<translation>Test</translation>
+</message>
+<message>
+<tag_code>88</tag_code>
+<translation>Internet Service Provider</translation>
+</message>
+<message>
+<tag_code>89</tag_code>
+<translation>PPTP</translation>
+</message>
+<message>
+<tag_code>90</tag_code>
+<translation>PPPoE</translation>
+</message>
+<message>
+<tag_code>91</tag_code>
+<translation>Login</translation>
+</message>
+<message>
+<tag_code>92</tag_code>
+<translation>Password</translation>
+</message>
+<message>
+<tag_code>93</tag_code>
+<translation>Service Name(If Required)</translation>
+</message>
+<message>
+<tag_code>94</tag_code>
+<translation>Connection Mode</translation>
+</message>
+<message>
+<tag_code>95</tag_code>
+<translation>Always On</translation>
+</message>
+<message>
+<tag_code>96</tag_code>
+<translation>Dial on Demand</translation>
+</message>
+<message>
+<tag_code>97</tag_code>
+<translation>Manually Connect</translation>
+</message>
+<message>
+<tag_code>98</tag_code>
+<translation>&lt;b&gt;Idle Timeout&lt;/b&gt;(In Minutes)</translation>
+</message>
+<message>
+<tag_code>100</tag_code>
+<translation>Get Dynamically from ISP</translation>
+</message>
+<message>
+<tag_code>101</tag_code>
+<translation>Use Static IP Address</translation>
+</message>
+<message>
+<tag_code>103</tag_code>
+<translation>Router MAC Address</translation>
+</message>
+<message>
+<tag_code>104</tag_code>
+<translation>Use Default Address</translation>
+</message>
+<message>
+<tag_code>105</tag_code>
+<translation>Use Computer MAC Address</translation>
+</message>
+<message>
+<tag_code>106</tag_code>
+<translation>Use This MAC Address</translation>
+</message>
+<message>
+<tag_code>107</tag_code>
+<translation>Internet Service Provider</translation>
+</message>
+<message>
+<tag_code>109</tag_code>
+<translation>My IP Address</translation>
+</message>
+<message>
+<tag_code>110</tag_code>
+<translation>Server Address</translation>
+</message>
+<message>
+<tag_code>111</tag_code>
+<translation>Connection ID/Name</translation>
+</message>
+<message>
+<tag_code>112</tag_code>
+<translation>Use These DNS Servers</translation>
+</message>
+<message>
+<tag_code>113</tag_code>
+<translation>Testing Internet Connection</translation>
+</message>
+<message>
+<tag_code>114</tag_code>
+<translation>This page will automatically display the NETGEAR website if a successful Internet connection is detected.</translation>
+</message>
+<message>
+<tag_code>115</tag_code>
+<translation>Close Window</translation>
+</message>
+<message>
+<tag_code>116</tag_code>
+<translation>Connection Time</translation>
+</message>
+<message>
+<tag_code>118</tag_code>
+<translation>Connecting to server</translation>
+</message>
+<message>
+<tag_code>120</tag_code>
+<translation>Negotiation</translation>
+</message>
+<message>
+<tag_code>122</tag_code>
+<translation>Authentication</translation>
+</message>
+<message>
+<tag_code>124</tag_code>
+<translation>Getting IP address</translation>
+</message>
+<message>
+<tag_code>126</tag_code>
+<translation>If connnection fails, check your Login, Password, and other data.</translation>
+</message>
+<message>
+<tag_code>127</tag_code>
+<translation>Block Sites</translation>
+</message>
+<message>
+<tag_code>128</tag_code>
+<translation>Keyword Blocking</translation>
+</message>
+<message>
+<tag_code>129</tag_code>
+<translation>Never</translation>
+</message>
+<message>
+<tag_code>130</tag_code>
+<translation>Per Schedule</translation>
+</message>
+<message>
+<tag_code>131</tag_code>
+<translation>Always</translation>
+</message>
+<message>
+<tag_code>132</tag_code>
+<translation>Type keyword or domain name here.</translation>
+</message>
+<message>
+<tag_code>133</tag_code>
+<translation>Block sites containing these keywords or domain names:</translation>
+</message>
+<message>
+<tag_code>135</tag_code>
+<translation>Allow trusted IP address to visit blocked sites</translation>
+</message>
+<message>
+<tag_code>136</tag_code>
+<translation>Trusted IP Address</translation>
+</message>
+<message>
+<tag_code>137</tag_code>
+<translation>Add Keyword</translation>
+</message>
+<message>
+<tag_code>138</tag_code>
+<translation>Delete Keyword</translation>
+</message>
+<message>
+<tag_code>139</tag_code>
+<translation>Clear List</translation>
+</message>
+<message>
+<tag_code>140</tag_code>
+<translation>Block Services</translation>
+</message>
+<message>
+<tag_code>141</tag_code>
+<translation>Services Blocking</translation>
+</message>
+<message>
+<tag_code>142</tag_code>
+<translation>Service Table</translation>
+</message>
+<message>
+<tag_code>144</tag_code>
+<translation>Service Type</translation>
+</message>
+<message>
+<tag_code>145</tag_code>
+<translation>Port</translation>
+</message>
+<message>
+<tag_code>146</tag_code>
+<translation>Add</translation>
+</message>
+<message>
+<tag_code>147</tag_code>
+<translation>Edit</translation>
+</message>
+<message>
+<tag_code>148</tag_code>
+<translation>Delete</translation>
+</message>
+<message>
+<tag_code>149</tag_code>
+<translation>Block Services Setup</translation>
+</message>
+<message>
+<tag_code>151</tag_code>
+<translation>Protocol</translation>
+</message>
+<message>
+<tag_code>155</tag_code>
+<translation>Starting Port</translation>
+</message>
+<message>
+<tag_code>157</tag_code>
+<translation>Ending Port</translation>
+</message>
+<message>
+<tag_code>158</tag_code>
+<translation>Service Type/User Defined</translation>
+</message>
+<message>
+<tag_code>159</tag_code>
+<translation>Filter Services For</translation>
+</message>
+<message>
+<tag_code>160</tag_code>
+<translation>Only This IP Address</translation>
+</message>
+<message>
+<tag_code>161</tag_code>
+<translation>IP Address Range</translation>
+</message>
+<message>
+<tag_code>162</tag_code>
+<translation>to</translation>
+</message>
+<message>
+<tag_code>163</tag_code>
+<translation>All IP Addresses</translation>
+</message>
+<message>
+<tag_code>164</tag_code>
+<translation>Web Site Blocked By NETGEAR Firewall</translation>
+</message>
+<message>
+<tag_code>166</tag_code>
+<translation>No Internet connection</translation>
+</message>
+<message>
+<tag_code>167</tag_code>
+<translation>The router has no Internet connection, it can't download the specified language file from NETGEAR web site. If you haven't set up the router's Internet port, please run the Installation CD, otherwise, please manually connect the router to Internet and try this function again.</translation>
+</message>
+<message>
+<tag_code>168</tag_code>
+<translation>OK</translation>
+</message>
+<message>
+<tag_code>169</tag_code>
+<translation>Firmware Upgrade Assistant</translation>
+</message>
+<message>
+<tag_code>173</tag_code>
+<translation>Firmware Version Check</translation>
+</message>
+<message>
+<tag_code>175</tag_code>
+<translation>Back</translation>
+</message>
+<message>
+<tag_code>176</tag_code>
+<translation>The router is downloading the new version now. Please wait...</translation>
+</message>
+<message>
+<tag_code>177</tag_code>
+<translation>Upgrading Router Firmware now. Please Wait</translation>
+</message>
+<message>
+<tag_code>178</tag_code>
+<translation>Note: It will take about </translation>
+</message>
+<message>
+<tag_code>179</tag_code>
+<translation> minutes for firmware upgrade.&lt;br&gt;Please don't turn off the power or press reset button.</translation>
+</message>
+<message>
+<tag_code>180</tag_code>
+<translation>Upload</translation>
+</message>
+<message>
+<tag_code>181</tag_code>
+<translation>Please wait ...</translation>
+</message>
+<message>
+<tag_code>182</tag_code>
+<translation>GUI Language Update</translation>
+</message>
+<message>
+<tag_code>183</tag_code>
+<translation>Downloading and updating the language table, please wait for approximate one minute...</translation>
+</message>
+<message>
+<tag_code>184</tag_code>
+<translation>Remote</translation>
+</message>
+<message>
+<tag_code>185</tag_code>
+<translation>Unknown</translation>
+</message>
+<message>
+<tag_code>186</tag_code>
+<translation>Device</translation>
+</message>
+<message>
+<tag_code>187</tag_code>
+<translation>All</translation>
+</message>
+<message>
+<tag_code>188</tag_code>
+<translation>Selected USB device</translation>
+</message>
+<message>
+<tag_code>189</tag_code>
+<translation>Folder Name</translation>
+</message>
+<message>
+<tag_code>190</tag_code>
+<translation>Attached Devices</translation>
+</message>
+<message>
+<tag_code>191</tag_code>
+<translation>Wired Devices</translation>
+</message>
+<message>
+<tag_code>192</tag_code>
+<translation>Device Name</translation>
+</message>
+<message>
+<tag_code>193</tag_code>
+<translation>Wireless Devices (Wireless intruders also show up here)</translation>
+</message>
+<message>
+<tag_code>194</tag_code>
+<translation>Refresh</translation>
+</message>
+<message>
+<tag_code>195</tag_code>
+<translation>Diagnostics</translation>
+</message>
+<message>
+<tag_code>196</tag_code>
+<translation>Ping an IP address</translation>
+</message>
+<message>
+<tag_code>197</tag_code>
+<translation>Perform a DNS Lookup</translation>
+</message>
+<message>
+<tag_code>198</tag_code>
+<translation>Internet Name</translation>
+</message>
+<message>
+<tag_code>199</tag_code>
+<translation>IP Address</translation>
+</message>
+<message>
+<tag_code>202</tag_code>
+<translation>Server :</translation>
+</message>
+<message>
+<tag_code>204</tag_code>
+<translation>Display the Routing Table</translation>
+</message>
+<message>
+<tag_code>205</tag_code>
+<translation>Reboot the Router</translation>
+</message>
+<message>
+<tag_code>206</tag_code>
+<translation>Ping</translation>
+</message>
+<message>
+<tag_code>207</tag_code>
+<translation>Lookup</translation>
+</message>
+<message>
+<tag_code>208</tag_code>
+<translation>Display</translation>
+</message>
+<message>
+<tag_code>209</tag_code>
+<translation>Reboot</translation>
+</message>
+<message>
+<tag_code>210</tag_code>
+<translation>Diagnostics - Ping</translation>
+</message>
+<message>
+<tag_code>211</tag_code>
+<translation>Ping Results</translation>
+</message>
+<message>
+<tag_code>212</tag_code>
+<translation>@ping_output#</translation>
+</message>
+<message>
+<tag_code>213</tag_code>
+<translation>Diagnostics - Routing Table</translation>
+</message>
+<message>
+<tag_code>214</tag_code>
+<translation>Destination</translation>
+</message>
+<message>
+<tag_code>215</tag_code>
+<translation>Mask</translation>
+</message>
+<message>
+<tag_code>216</tag_code>
+<translation>Metric</translation>
+</message>
+<message>
+<tag_code>217</tag_code>
+<translation>Active</translation>
+</message>
+<message>
+<tag_code>218</tag_code>
+<translation>Dynamic DNS</translation>
+</message>
+<message>
+<tag_code>219</tag_code>
+<translation>Use a Dynamic DNS Service</translation>
+</message>
+<message>
+<tag_code>220</tag_code>
+<translation>Service Provider</translation>
+</message>
+<message>
+<tag_code>222</tag_code>
+<translation>Host Name</translation>
+</message>
+<message>
+<tag_code>223</tag_code>
+<translation>User Name</translation>
+</message>
+<message>
+<tag_code>224</tag_code>
+<translation>Show Status</translation>
+</message>
+<message>
+<tag_code>225</tag_code>
+<translation>Warning</translation>
+</message>
+<message>
+<tag_code>226</tag_code>
+<translation>System authentication failed.</translation>
+</message>
+<message>
+<tag_code>227</tag_code>
+<translation>Please contact your system administrator for the correct information.</translation>
+</message>
+<message>
+<tag_code>228</tag_code>
+<translation>Failure</translation>
+</message>
+<message>
+<tag_code>229</tag_code>
+<translation>Please select a custom service to delete.</translation>
+</message>
+<message>
+<tag_code>230</tag_code>
+<translation>This screen will automatically return to the previous screen in a few seconds...</translation>
+</message>
+<message>
+<tag_code>231</tag_code>
+<translation>Please select a service to edit.</translation>
+</message>
+<message>
+<tag_code>232</tag_code>
+<translation>E-mail</translation>
+</message>
+<message>
+<tag_code>233</tag_code>
+<translation>Turn E-mail Notification On</translation>
+</message>
+<message>
+<tag_code>234</tag_code>
+<translation>Send alerts and logs through e-mail</translation>
+</message>
+<message>
+<tag_code>235</tag_code>
+<translation>Your Outgoing Mail Server</translation>
+</message>
+<message>
+<tag_code>236</tag_code>
+<translation>Send to This E-mail Address</translation>
+</message>
+<message>
+<tag_code>237</tag_code>
+<translation>My mail server requires authentication</translation>
+</message>
+<message>
+<tag_code>238</tag_code>
+<translation>Send Alert Immediately</translation>
+</message>
+<message>
+<tag_code>239</tag_code>
+<translation>When someone attempts to visit a blocked site</translation>
+</message>
+<message>
+<tag_code>240</tag_code>
+<translation>Send logs according to this schedule</translation>
+</message>
+<message>
+<tag_code>241</tag_code>
+<translation>When log is full</translation>
+</message>
+<message>
+<tag_code>242</tag_code>
+<translation>Hourly</translation>
+</message>
+<message>
+<tag_code>243</tag_code>
+<translation>Daily</translation>
+</message>
+<message>
+<tag_code>244</tag_code>
+<translation>Weekly</translation>
+</message>
+<message>
+<tag_code>245</tag_code>
+<translation>None</translation>
+</message>
+<message>
+<tag_code>246</tag_code>
+<translation>Day</translation>
+</message>
+<message>
+<tag_code>247</tag_code>
+<translation>Sunday</translation>
+</message>
+<message>
+<tag_code>248</tag_code>
+<translation>Monday</translation>
+</message>
+<message>
+<tag_code>249</tag_code>
+<translation>Tuesday</translation>
+</message>
+<message>
+<tag_code>250</tag_code>
+<translation>Wednesday</translation>
+</message>
+<message>
+<tag_code>251</tag_code>
+<translation>Thursday</translation>
+</message>
+<message>
+<tag_code>252</tag_code>
+<translation>Friday</translation>
+</message>
+<message>
+<tag_code>253</tag_code>
+<translation>Saturday</translation>
+</message>
+<message>
+<tag_code>254</tag_code>
+<translation>Time</translation>
+</message>
+<message>
+<tag_code>255</tag_code>
+<translation>Secure connection (use SSL)</translation>
+</message>
+<message>
+<tag_code>267</tag_code>
+<translation>am</translation>
+</message>
+<message>
+<tag_code>268</tag_code>
+<translation>pm</translation>
+</message>
+<message>
+<tag_code>269</tag_code>
+<translation>Port Forwarding / Port Triggering</translation>
+</message>
+<message>
+<tag_code>270</tag_code>
+<translation>Please select the service type.</translation>
+</message>
+<message>
+<tag_code>271</tag_code>
+<translation>Port Forwarding</translation>
+</message>
+<message>
+<tag_code>272</tag_code>
+<translation>Port Triggering</translation>
+</message>
+<message>
+<tag_code>273</tag_code>
+<translation>Server IP Address</translation>
+</message>
+<message>
+<tag_code>277</tag_code>
+<translation>IP_Phone</translation>
+</message>
+<message>
+<tag_code>278</tag_code>
+<translation>NetMeeting</translation>
+</message>
+<message>
+<tag_code>279</tag_code>
+<translation>News</translation>
+</message>
+<message>
+<tag_code>281</tag_code>
+<translation>Real-Audio</translation>
+</message>
+<message>
+<tag_code>282</tag_code>
+<translation>Telnet</translation>
+</message>
+<message>
+<tag_code>283</tag_code>
+<translation>Start Port</translation>
+</message>
+<message>
+<tag_code>284</tag_code>
+<translation>End Port</translation>
+</message>
+<message>
+<tag_code>285</tag_code>
+<translation>Edit Service</translation>
+</message>
+<message>
+<tag_code>286</tag_code>
+<translation>Delete Service</translation>
+</message>
+<message>
+<tag_code>287</tag_code>
+<translation>Add Custom Service</translation>
+</message>
+<message>
+<tag_code>288</tag_code>
+<translation>Rule</translation>
+</message>
+<message>
+<tag_code>289</tag_code>
+<translation>Pre-set Port Forwarding Rule</translation>
+</message>
+<message>
+<tag_code>290</tag_code>
+<translation>Custom Rule</translation>
+</message>
+<message>
+<tag_code>291</tag_code>
+<translation>Ports - Custom Services</translation>
+</message>
+<message>
+<tag_code>292</tag_code>
+<translation>Starting Port</translation>
+</message>
+<message>
+<tag_code>294</tag_code>
+<translation>Ending Port</translation>
+</message>
+<message>
+<tag_code>295</tag_code>
+<translation>Logs</translation>
+</message>
+<message>
+<tag_code>296</tag_code>
+<translation>Current Time</translation>
+</message>
+<message>
+<tag_code>298</tag_code>
+<translation>Include in Log</translation>
+</message>
+<message>
+<tag_code>299</tag_code>
+<translation>Attempted access to allowed sites</translation>
+</message>
+<message>
+<tag_code>300</tag_code>
+<translation>Attempted access to blocked sites and services</translation>
+</message>
+<message>
+<tag_code>301</tag_code>
+<translation>Connections to the Web-based interface of this Router</translation>
+</message>
+<message>
+<tag_code>302</tag_code>
+<translation>Router operation (startup, get time etc)</translation>
+</message>
+<message>
+<tag_code>303</tag_code>
+<translation>Known DoS attacks and Port Scans</translation>
+</message>
+<message>
+<tag_code>304</tag_code>
+<translation>Port Forwarding / Port Triggering</translation>
+</message>
+<message>
+<tag_code>305</tag_code>
+<translation>Wireless access</translation>
+</message>
+<message>
+<tag_code>306</tag_code>
+<translation>Clear Log</translation>
+</message>
+<message>
+<tag_code>307</tag_code>
+<translation>Send Log</translation>
+</message>
+<message>
+<tag_code>309</tag_code>
+<translation>Disable Port Triggering</translation>
+</message>
+<message>
+<tag_code>310</tag_code>
+<translation>(in minutes)</translation>
+</message>
+<message>
+<tag_code>311</tag_code>
+<translation>Port Triggering Time-out</translation>
+</message>
+<message>
+<tag_code>312</tag_code>
+<translation>Port Triggering Portmap Table</translation>
+</message>
+<message>
+<tag_code>313</tag_code>
+<translation>Enable</translation>
+</message>
+<message>
+<tag_code>314</tag_code>
+<translation>Inbound Connection</translation>
+</message>
+<message>
+<tag_code>315</tag_code>
+<translation>Service User</translation>
+</message>
+<message>
+<tag_code>316</tag_code>
+<translation>Add Service</translation>
+</message>
+<message>
+<tag_code>317</tag_code>
+<translation>Edit Service</translation>
+</message>
+<message>
+<tag_code>318</tag_code>
+<translation>Service</translation>
+</message>
+<message>
+<tag_code>319</tag_code>
+<translation>Any</translation>
+</message>
+<message>
+<tag_code>320</tag_code>
+<translation>Single address</translation>
+</message>
+<message>
+<tag_code>321</tag_code>
+<translation>Triggering Port</translation>
+</message>
+<message>
+<tag_code>322</tag_code>
+<translation>Required Inbound Connection</translation>
+</message>
+<message>
+<tag_code>323</tag_code>
+<translation>Remote Management</translation>
+</message>
+<message>
+<tag_code>324</tag_code>
+<translation>Turn Remote Management On</translation>
+</message>
+<message>
+<tag_code>325</tag_code>
+<translation>Remote Management Address</translation>
+</message>
+<message>
+<tag_code>327</tag_code>
+<translation>Allow Remote Access By</translation>
+</message>
+<message>
+<tag_code>328</tag_code>
+<translation>Only This Computer</translation>
+</message>
+<message>
+<tag_code>330</tag_code>
+<translation>Address Range</translation>
+</message>
+<message>
+<tag_code>331</tag_code>
+<translation>From</translation>
+</message>
+<message>
+<tag_code>332</tag_code>
+<translation>to</translation>
+</message>
+<message>
+<tag_code>333</tag_code>
+<translation>Everyone</translation>
+</message>
+<message>
+<tag_code>334</tag_code>
+<translation>Port Number</translation>
+</message>
+<message>
+<tag_code>335</tag_code>
+<translation>Firewall Rules</translation>
+</message>
+<message>
+<tag_code>336</tag_code>
+<translation>Outbound Services</translation>
+</message>
+<message>
+<tag_code>337</tag_code>
+<translation>Action</translation>
+</message>
+<message>
+<tag_code>339</tag_code>
+<translation>Users</translation>
+</message>
+<message>
+<tag_code>341</tag_code>
+<translation>Servers</translation>
+</message>
+<message>
+<tag_code>342</tag_code>
+<translation>Log</translation>
+</message>
+<message>
+<tag_code>343</tag_code>
+<translation>Default</translation>
+</message>
+<message>
+<tag_code>344</tag_code>
+<translation>ALLOW always</translation>
+</message>
+<message>
+<tag_code>345</tag_code>
+<translation>Inbound Services</translation>
+</message>
+<message>
+<tag_code>346</tag_code>
+<translation>IP Address</translation>
+</message>
+<message>
+<tag_code>347</tag_code>
+<translation>BLOCK always</translation>
+</message>
+<message>
+<tag_code>349</tag_code>
+<translation>Instant Messaging</translation>
+</message>
+<message>
+<tag_code>350</tag_code>
+<translation>Ports</translation>
+</message>
+<message>
+<tag_code>351</tag_code>
+<translation>Close IM Ports</translation>
+</message>
+<message>
+<tag_code>352</tag_code>
+<translation>Open IM Ports(IM ports are open by default)</translation>
+</message>
+<message>
+<tag_code>353</tag_code>
+<translation>Move</translation>
+</message>
+<message>
+<tag_code>354</tag_code>
+<translation>Schedule</translation>
+</message>
+<message>
+<tag_code>355</tag_code>
+<translation>Days to Block</translation>
+</message>
+<message>
+<tag_code>356</tag_code>
+<translation>Every Day</translation>
+</message>
+<message>
+<tag_code>357</tag_code>
+<translation>Time of day to block:</translation>
+</message>
+<message>
+<tag_code>358</tag_code>
+<translation>(use 24-hour clock)</translation>
+</message>
+<message>
+<tag_code>359</tag_code>
+<translation>All Day</translation>
+</message>
+<message>
+<tag_code>360</tag_code>
+<translation>Start</translation>
+</message>
+<message>
+<tag_code>362</tag_code>
+<translation>Hour</translation>
+</message>
+<message>
+<tag_code>363</tag_code>
+<translation>Minute</translation>
+</message>
+<message>
+<tag_code>364</tag_code>
+<translation>End</translation>
+</message>
+<message>
+<tag_code>365</tag_code>
+<translation>Time Zone</translation>
+</message>
+<message>
+<tag_code>366</tag_code>
+<translation>(GMT-12:00) International Date Line West</translation>
+</message>
+<message>
+<tag_code>367</tag_code>
+<translation>(GMT-11:00) Midway Island, Samoa</translation>
+</message>
+<message>
+<tag_code>368</tag_code>
+<translation>(GMT-10:00) Hawaii</translation>
+</message>
+<message>
+<tag_code>369</tag_code>
+<translation>(GMT-09:00) Alaska</translation>
+</message>
+<message>
+<tag_code>370</tag_code>
+<translation>(GMT-08:00) Pacific Time (US &amp; Canada); Tijuana</translation>
+</message>
+<message>
+<tag_code>371</tag_code>
+<translation>(GMT-07:00) Arizona, Chihuahua, La Paz, Mazatlan</translation>
+</message>
+<message>
+<tag_code>372</tag_code>
+<translation>(GMT-07:00) Mountain Time (US &amp; Canada)</translation>
+</message>
+<message>
+<tag_code>373</tag_code>
+<translation>(GMT-06:00) Central America, Central Time (US &amp; Canada)</translation>
+</message>
+<message>
+<tag_code>374</tag_code>
+<translation>(GMT-06:00) Guadalajara, Mexico City, Monterrey, Saskatchewan</translation>
+</message>
+<message>
+<tag_code>376</tag_code>
+<translation>(GMT-05:00) Bogota, Lima, Quito</translation>
+</message>
+<message>
+<tag_code>377</tag_code>
+<translation>(GMT-05:00) Eastern Time (US &amp; Canada)</translation>
+</message>
+<message>
+<tag_code>378</tag_code>
+<translation>(GMT-05:00) Indiana (East)</translation>
+</message>
+<message>
+<tag_code>379</tag_code>
+<translation>(GMT-04:00) Atlantic Time (Canada), Caracas, La Paz, Santiago</translation>
+</message>
+<message>
+<tag_code>380</tag_code>
+<translation>(GMT-03:30) Newfoundland</translation>
+</message>
+<message>
+<tag_code>383</tag_code>
+<translation>(GMT-03:00) Brasilia, Buenos Aires, Georgetown, Greenland</translation>
+</message>
+<message>
+<tag_code>385</tag_code>
+<translation>(GMT-02:00) Mid-Atlantic</translation>
+</message>
+<message>
+<tag_code>386</tag_code>
+<translation>(GMT-01:00) Azores, Cape Verde Is.</translation>
+</message>
+<message>
+<tag_code>387</tag_code>
+<translation>(GMT) Casablanca, Monrovia</translation>
+</message>
+<message>
+<tag_code>388</tag_code>
+<translation>(GMT) Greenwich Mean Time: Dublin, Edinburgh, Lisbon, London</translation>
+</message>
+<message>
+<tag_code>389</tag_code>
+<translation>(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</translation>
+</message>
+<message>
+<tag_code>390</tag_code>
+<translation>(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</translation>
+</message>
+<message>
+<tag_code>391</tag_code>
+<translation>(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</translation>
+</message>
+<message>
+<tag_code>392</tag_code>
+<translation>(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb, West Central Africa</translation>
+</message>
+<message>
+<tag_code>393</tag_code>
+<translation>(GMT+02:00) Athens, Beirut, Istanbul, Minsk</translation>
+</message>
+<message>
+<tag_code>394</tag_code>
+<translation>(GMT+02:00) Bucharest, Cairo, Harare, Pretoria</translation>
+</message>
+<message>
+<tag_code>397</tag_code>
+<translation>(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius, Jerusalem</translation>
+</message>
+<message>
+<tag_code>399</tag_code>
+<translation>(GMT+03:00) Baghdad, Kuwait, Nairobi, Riyadh</translation>
+</message>
+<message>
+<tag_code>400</tag_code>
+<translation>(GMT+03:00) Baghdad, Kuwait, Nairobi, Riyadh, Tehran</translation>
+</message>
+<message>
+<tag_code>401</tag_code>
+<translation>(GMT+04:00) Moscow, St. Petersburg, Volgograd</translation>
+</message>
+<message>
+<tag_code>404</tag_code>
+<translation>(GMT+04:00) Abu Dhabi, Muscat, Baku, Tbilisi, Yerevan, Kabul</translation>
+</message>
+<message>
+<tag_code>406</tag_code>
+<translation>(GMT+05:00) Ekaterinburg, Islamabad, Karachi, Tashkent</translation>
+</message>
+<message>
+<tag_code>409</tag_code>
+<translation>(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi ,Kathmandu</translation>
+</message>
+<message>
+<tag_code>411</tag_code>
+<translation>(GMT+06:00) Almaty, Astana, Dhaka, Sri Jayawardenepura, Rangoon ,Yekaterinburg</translation>
+</message>
+<message>
+<tag_code>412</tag_code>
+<translation>(GMT+07:00) Bangkok, Jakarta, Hanoi, Novosibirsk</translation>
+</message>
+<message>
+<tag_code>413</tag_code>
+<translation>(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi ,Krasnoyarsk</translation>
+</message>
+<message>
+<tag_code>414</tag_code>
+<translation>(GMT+08:00)  Ulaan Bataar, Kuala Lumpur, Singapore, Perth, Taipei</translation>
+</message>
+<message>
+<tag_code>417</tag_code>
+<translation>(GMT+09:00) Tokyo, Osaka, Sapporo, Seoul,  Adelaide, Darwin,Irkutsk</translation>
+</message>
+<message>
+<tag_code>422</tag_code>
+<translation>(GMT+10:00) Brisbane, Canberra, Melbourne, Sydney</translation>
+</message>
+<message>
+<tag_code>423</tag_code>
+<translation>(GMT+10:00) Yakutsk</translation>
+</message>
+<message>
+<tag_code>424</tag_code>
+<translation>(GMT+10:00) Guam, Port Moresby, Hobart</translation>
+</message>
+<message>
+<tag_code>426</tag_code>
+<translation>(GMT+11:00) Vladivostok</translation>
+</message>
+<message>
+<tag_code>427</tag_code>
+<translation>(GMT+11:00) Magadan, Solomon Is., New Caledonia</translation>
+</message>
+<message>
+<tag_code>429</tag_code>
+<translation>(GMT+12:00) Fiji, Auckland, Wellington, Marshall Is.</translation>
+</message>
+<message>
+<tag_code>430</tag_code>
+<translation>(GMT+13:00) Nukualofa</translation>
+</message>
+<message>
+<tag_code>431</tag_code>
+<translation>Automatically adjust for daylight savings time</translation>
+</message>
+<message>
+<tag_code>432</tag_code>
+<translation>Current Time</translation>
+</message>
+<message>
+<tag_code>433</tag_code>
+<translation>Services</translation>
+</message>
+<message>
+<tag_code>434</tag_code>
+<translation>Important Update</translation>
+</message>
+<message>
+<tag_code>435</tag_code>
+<translation>To avoid a conflict with your Internet Service Provider, your router's IP address has been updated to </translation>
+</message>
+<message>
+<tag_code>437</tag_code>
+<translation>You must now update the IP addresses in your router's configuration settings for each relevant service,such as port forwarding and IP address reservation.</translation>
+</message>
+<message>
+<tag_code>438</tag_code>
+<translation>Close Window</translation>
+</message>
+<message>
+<tag_code>439</tag_code>
+<translation>Setup requires JavaScript Support</translation>
+</message>
+<message>
+<tag_code>440</tag_code>
+<translation>To provide an enhanced user interface, this Router uses JavaScript extensively.</translation>
+</message>
+<message>
+<tag_code>441</tag_code>
+<translation>Currently, your Browser does NOT support JavaScript.</translation>
+</message>
+<message>
+<tag_code>442</tag_code>
+<translation>Please enable JavaScript in your Browser, or use a different Browser.</translation>
+</message>
+<message>
+<tag_code>443</tag_code>
+<translation>Do you want to switch from</translation>
+</message>
+<message>
+<tag_code>445</tag_code>
+<translation>( the current language ) to</translation>
+</message>
+<message>
+<tag_code>446</tag_code>
+<translation>Country</translation>
+</message>
+<message>
+<tag_code>447</tag_code>
+<translation>Setup</translation>
+</message>
+<message>
+<tag_code>449</tag_code>
+<translation>RIP Direction</translation>
+</message>
+<message>
+<tag_code>450</tag_code>
+<translation>Both</translation>
+</message>
+<message>
+<tag_code>451</tag_code>
+<translation>In Only</translation>
+</message>
+<message>
+<tag_code>452</tag_code>
+<translation>Out Only</translation>
+</message>
+<message>
+<tag_code>453</tag_code>
+<translation>RIP Version</translation>
+</message>
+<message>
+<tag_code>454</tag_code>
+<translation>Disabled</translation>
+</message>
+<message>
+<tag_code>455</tag_code>
+<translation>Off</translation>
+</message>
+<message>
+<tag_code>456</tag_code>
+<translation>On</translation>
+</message>
+<message>
+<tag_code>455</tag_code>
+<translation>Off</translation>
+</message>
+<message>
+<tag_code>456</tag_code>
+<translation>On</translation>
+</message>
+<message>
+<tag_code>458</tag_code>
+<translation>Use Router as DHCP Server</translation>
+</message>
+<message>
+<tag_code>459</tag_code>
+<translation>Address Reservation</translation>
+</message>
+<message>
+<tag_code>460</tag_code>
+<translation>Address Reservation Table</translation>
+</message>
+<message>
+<tag_code>461</tag_code>
+<translation>Please choose a reserve address to delete.</translation>
+</message>
+<message>
+<tag_code>463</tag_code>
+<translation>Please choose a reserve address to edit.</translation>
+</message>
+<message>
+<tag_code>464</tag_code>
+<translation>Thank you for using the NETGEAR Web-based Router Configuration Utility.</translation>
+</message>
+<message>
+<tag_code>465</tag_code>
+<translation>Goodbye</translation>
+</message>
+<message>
+<tag_code>466</tag_code>
+<translation>Setup Wizard</translation>
+</message>
+<message>
+<tag_code>467</tag_code>
+<translation>Add WPS Client</translation>
+</message>
+<message>
+<tag_code>468</tag_code>
+<translation>Wireless Settings(2.4GHz)</translation>
+</message>
+<message>
+<tag_code>469</tag_code>
+<translation>Wireless Settings(5GHz)</translation>
+</message>
+<message>
+<tag_code>470</tag_code>
+<translation>Guest Network</translation>
+</message>
+<message>
+<tag_code>473</tag_code>
+<translation>USB Storage</translation>
+</message>
+<message>
+<tag_code>474</tag_code>
+<translation>Advanced Settings</translation>
+</message>
+<message>
+<tag_code>475</tag_code>
+<translation>Content Filtering</translation>
+</message>
+<message>
+<tag_code>476</tag_code>
+<translation>Maintenance</translation>
+</message>
+<message>
+<tag_code>477</tag_code>
+<translation>Router Status</translation>
+</message>
+<message>
+<tag_code>478</tag_code>
+<translation>Set Password</translation>
+</message>
+<message>
+<tag_code>479</tag_code>
+<translation>Router Upgrade</translation>
+</message>
+<message>
+<tag_code>480</tag_code>
+<translation>ADVANCED</translation>
+</message>
+<message>
+<tag_code>481</tag_code>
+<translation>Wireless Repeating Function</translation>
+</message>
+<message>
+<tag_code>483</tag_code>
+<translation>Static Routes</translation>
+</message>
+<message>
+<tag_code>485</tag_code>
+<translation>Traffic Meter</translation>
+</message>
+<message>
+<tag_code>486</tag_code>
+<translation>USB Settings</translation>
+</message>
+<message>
+<tag_code>487</tag_code>
+<translation>Web Support</translation>
+</message>
+<message>
+<tag_code>488</tag_code>
+<translation>Knowledge Base</translation>
+</message>
+<message>
+<tag_code>489</tag_code>
+<translation>Documentation</translation>
+</message>
+<message>
+<tag_code>490</tag_code>
+<translation>Logout</translation>
+</message>
+<message>
+<tag_code>492</tag_code>
+<translation>Setup Wizard</translation>
+</message>
+<message>
+<tag_code>493</tag_code>
+<translation>Basic Settings</translation>
+</message>
+<message>
+<tag_code>494</tag_code>
+<translation>Wireless Settings</translation>
+</message>
+<message>
+<tag_code>495</tag_code>
+<translation>Block Sites</translation>
+</message>
+<message>
+<tag_code>496</tag_code>
+<translation>Backup Settings</translation>
+</message>
+<message>
+<tag_code>497</tag_code>
+<translation>Router Upgrade</translation>
+</message>
+<message>
+<tag_code>498</tag_code>
+<translation>Dynamic DNS</translation>
+</message>
+<message>
+<tag_code>500</tag_code>
+<translation>Static Routes</translation>
+</message>
+<message>
+<tag_code>501</tag_code>
+<translation>Add WPS Client</translation>
+</message>
+<message>
+<tag_code>502</tag_code>
+<translation>Remote Management</translation>
+</message>
+<message>
+<tag_code>503</tag_code>
+<translation>Select Language</translation>
+</message>
+<message>
+<tag_code>504</tag_code>
+<translation>Jan</translation>
+</message>
+<message>
+<tag_code>505</tag_code>
+<translation>Feb</translation>
+</message>
+<message>
+<tag_code>506</tag_code>
+<translation>Mar</translation>
+</message>
+<message>
+<tag_code>507</tag_code>
+<translation>Apr</translation>
+</message>
+<message>
+<tag_code>508</tag_code>
+<translation>May</translation>
+</message>
+<message>
+<tag_code>509</tag_code>
+<translation>Jun</translation>
+</message>
+<message>
+<tag_code>510</tag_code>
+<translation>Jul</translation>
+</message>
+<message>
+<tag_code>511</tag_code>
+<translation>Aug</translation>
+</message>
+<message>
+<tag_code>512</tag_code>
+<translation>Sep</translation>
+</message>
+<message>
+<tag_code>513</tag_code>
+<translation>Oct</translation>
+</message>
+<message>
+<tag_code>514</tag_code>
+<translation>Nov</translation>
+</message>
+<message>
+<tag_code>515</tag_code>
+<translation>Dec</translation>
+</message>
+<message>
+<tag_code>524</tag_code>
+<translation>Device Mode</translation>
+</message>
+<message>
+<tag_code>525</tag_code>
+<translation>Device Name</translation>
+</message>
+<message>
+<tag_code>527</tag_code>
+<translation>Device Mode</translation>
+</message>
+<message>
+<tag_code>528</tag_code>
+<translation>Router (Modem + Router)</translation>
+</message>
+<message>
+<tag_code>529</tag_code>
+<translation>Modem (Modem only)</translation>
+</message>
+<message>
+<tag_code>530</tag_code>
+<translation>ADSL Settings</translation>
+</message>
+<message>
+<tag_code>531</tag_code>
+<translation>Modem Status</translation>
+</message>
+<message>
+<tag_code>533</tag_code>
+<translation>Select the Country and Language</translation>
+</message>
+<message>
+<tag_code>534</tag_code>
+<translation>Country</translation>
+</message>
+<message>
+<tag_code>536</tag_code>
+<translation>Language</translation>
+</message>
+<message>
+<tag_code>537</tag_code>
+<translation>Firmware Version</translation>
+</message>
+<message>
+<tag_code>540</tag_code>
+<translation>Modem</translation>
+</message>
+<message>
+<tag_code>541</tag_code>
+<translation>ADSL Firmware Version</translation>
+</message>
+<message>
+<tag_code>544</tag_code>
+<translation>DownStream Connection Speed</translation>
+</message>
+<message>
+<tag_code>546</tag_code>
+<translation>UpStream Connection Speed</translation>
+</message>
+<message>
+<tag_code>551</tag_code>
+<translation>Wired</translation>
+</message>
+<message>
+<tag_code>552</tag_code>
+<translation>Wireless</translation>
+</message>
+<message>
+<tag_code>554</tag_code>
+<translation>Name</translation>
+</message>
+<message>
+<tag_code>561</tag_code>
+<translation>Mode</translation>
+</message>
+<message>
+<tag_code>563</tag_code>
+<translation>Show Statistics</translation>
+</message>
+<message>
+<tag_code>564</tag_code>
+<translation>At present, no Internet connection exists, so it is not possible to access Netgear's Web site and retrieve the requested document.</translation>
+</message>
+<message>
+<tag_code>565</tag_code>
+<translation>No Internet connection is detected. The router cannot check the NETGEAR server for updated firmware. After setting up your Internet connection, go to the Router Upgrade screen to check for updated firmware.</translation>
+</message>
+<message>
+<tag_code>566</tag_code>
+<translation>No Internet connection detected.</translation>
+</message>
+<message>
+<tag_code>567</tag_code>
+<translation>Please Check the Connections to the WNR2000.</translation>
+</message>
+<message>
+<tag_code>568</tag_code>
+<translation>Retry</translation>
+</message>
+<message>
+<tag_code>569</tag_code>
+<translation>Re-pack Criteria:</translation>
+</message>
+<message>
+<tag_code>571</tag_code>
+<translation>(30 minutes)</translation>
+</message>
+<message>
+<tag_code>572</tag_code>
+<translation>401 Unauthorized</translation>
+</message>
+<message>
+<tag_code>573</tag_code>
+<translation>Please contact your system administrator for the correct information.</translation>
+</message>
+<message>
+<tag_code>574</tag_code>
+<translation>Old Password</translation>
+</message>
+<message>
+<tag_code>576</tag_code>
+<translation>Repeat New Password</translation>
+</message>
+<message>
+<tag_code>577</tag_code>
+<translation>QoS - Priority Rules</translation>
+</message>
+<message>
+<tag_code>578</tag_code>
+<translation>Priority</translation>
+</message>
+<message>
+<tag_code>579</tag_code>
+<translation>QoS Policy for</translation>
+</message>
+<message>
+<tag_code>580</tag_code>
+<translation>Priority Category</translation>
+</message>
+<message>
+<tag_code>581</tag_code>
+<translation>Applications</translation>
+</message>
+<message>
+<tag_code>582</tag_code>
+<translation>Online Gaming</translation>
+</message>
+<message>
+<tag_code>583</tag_code>
+<translation>Ethernet LAN Port</translation>
+</message>
+<message>
+<tag_code>584</tag_code>
+<translation>MSN Messenger</translation>
+</message>
+<message>
+<tag_code>585</tag_code>
+<translation>Yahoo Messenger</translation>
+</message>
+<message>
+<tag_code>586</tag_code>
+<translation>IP Phone</translation>
+</message>
+<message>
+<tag_code>587</tag_code>
+<translation>Vonage IP Phone</translation>
+</message>
+<message>
+<tag_code>589</tag_code>
+<translation>Google Talk</translation>
+</message>
+<message>
+<tag_code>591</tag_code>
+<translation>Add a new application</translation>
+</message>
+<message>
+<tag_code>592</tag_code>
+<translation>Highest</translation>
+</message>
+<message>
+<tag_code>593</tag_code>
+<translation>High</translation>
+</message>
+<message>
+<tag_code>594</tag_code>
+<translation>Normal</translation>
+</message>
+<message>
+<tag_code>595</tag_code>
+<translation>Low</translation>
+</message>
+<message>
+<tag_code>596</tag_code>
+<translation>Specified Port Range</translation>
+</message>
+<message>
+<tag_code>597</tag_code>
+<translation>Connection Type</translation>
+</message>
+<message>
+<tag_code>605</tag_code>
+<translation>Add a new game</translation>
+</message>
+<message>
+<tag_code>606</tag_code>
+<translation>MAC Device List</translation>
+</message>
+<message>
+<tag_code>608</tag_code>
+<translation>LAN Port</translation>
+</message>
+<message>
+<tag_code>613</tag_code>
+<translation>QoS Priority Rule list</translation>
+</message>
+<message>
+<tag_code>614</tag_code>
+<translation>QoS Policy</translation>
+</message>
+<message>
+<tag_code>615</tag_code>
+<translation>Description</translation>
+</message>
+<message>
+<tag_code>616</tag_code>
+<translation>Add Priority Rule</translation>
+</message>
+<message>
+<tag_code>617</tag_code>
+<translation>Enable WMM (Wi-Fi multimedia) settings</translation>
+</message>
+<message>
+<tag_code>618</tag_code>
+<translation>Turn Internet Access QoS On</translation>
+</message>
+<message>
+<tag_code>619</tag_code>
+<translation>Turn Bandwidth Control On</translation>
+</message>
+<message>
+<tag_code>620</tag_code>
+<translation>Uplink bandwidth</translation>
+</message>
+<message>
+<tag_code>621</tag_code>
+<translation>Maximum</translation>
+</message>
+<message>
+<tag_code>622</tag_code>
+<translation>Kbps</translation>
+</message>
+<message>
+<tag_code>623</tag_code>
+<translation>Mbps</translation>
+</message>
+<message>
+<tag_code>625</tag_code>
+<translation>Automatically check Internet Uplink bandwidth</translation>
+</message>
+<message>
+<tag_code>626</tag_code>
+<translation>Check</translation>
+</message>
+<message>
+<tag_code>627</tag_code>
+<translation>Set Up QoS Rule</translation>
+</message>
+<message>
+<tag_code>628</tag_code>
+<translation>Uplink Bandwidth Check Assistant</translation>
+</message>
+<message>
+<tag_code>629</tag_code>
+<translation>Attempting to detect uplink bandwidth . Please Wait</translation>
+</message>
+<message>
+<tag_code>630</tag_code>
+<translation>Rebooting the router now, please wait …</translation>
+</message>
+<message>
+<tag_code>631</tag_code>
+<translation>Progress</translation>
+</message>
+<message>
+<tag_code>634</tag_code>
+<translation>Please wait ...</translation>
+</message>
+<message>
+<tag_code>635</tag_code>
+<translation>Safely Remove USB Device</translation>
+</message>
+<message>
+<tag_code>636</tag_code>
+<translation>Selected USB device</translation>
+</message>
+<message>
+<tag_code>637</tag_code>
+<translation>Poll Interval</translation>
+</message>
+<message>
+<tag_code>638</tag_code>
+<translation>(secs)</translation>
+</message>
+<message>
+<tag_code>639</tag_code>
+<translation>Set Interval</translation>
+</message>
+<message>
+<tag_code>640</tag_code>
+<translation>Stop</translation>
+</message>
+<message>
+<tag_code>642</tag_code>
+<translation>System Up Time</translation>
+</message>
+<message>
+<tag_code>643</tag_code>
+<translation>Status</translation>
+</message>
+<message>
+<tag_code>644</tag_code>
+<translation>TxPkts</translation>
+</message>
+<message>
+<tag_code>645</tag_code>
+<translation>RxPkts</translation>
+</message>
+<message>
+<tag_code>646</tag_code>
+<translation>Collisions</translation>
+</message>
+<message>
+<tag_code>647</tag_code>
+<translation>Tx B/s</translation>
+</message>
+<message>
+<tag_code>648</tag_code>
+<translation>Rx B/s</translation>
+</message>
+<message>
+<tag_code>649</tag_code>
+<translation>Up Time</translation>
+</message>
+<message>
+<tag_code>675</tag_code>
+<translation>Hardware Version</translation>
+</message>
+<message>
+<tag_code>677</tag_code>
+<translation>GUI Language Version</translation>
+</message>
+<message>
+<tag_code>683</tag_code>
+<translation>Domain Name Server</translation>
+</message>
+<message>
+<tag_code>689</tag_code>
+<translation>Wireless isolation</translation>
+</message>
+<message>
+<tag_code>691</tag_code>
+<translation>Wi-Fi Protected Setup</translation>
+</message>
+<message>
+<tag_code>697</tag_code>
+<translation>Allow guest to access My Local Network</translation>
+</message>
+<message>
+<tag_code>699</tag_code>
+<translation>Wireless Repeating</translation>
+</message>
+<message>
+<tag_code>700</tag_code>
+<translation>Base Station MAC Address</translation>
+</message>
+<message>
+<tag_code>702</tag_code>
+<translation>Repeater IP Address</translation>
+</message>
+<message>
+<tag_code>707</tag_code>
+<translation>Connection Status</translation>
+</message>
+<message>
+<tag_code>708</tag_code>
+<translation>Subnet Mask</translation>
+</message>
+<message>
+<tag_code>709</tag_code>
+<translation>Default Gateway</translation>
+</message>
+<message>
+<tag_code>712</tag_code>
+<translation>Lease Obtained</translation>
+</message>
+<message>
+<tag_code>714</tag_code>
+<translation>Lease Expires</translation>
+</message>
+<message>
+<tag_code>716</tag_code>
+<translation>Release</translation>
+</message>
+<message>
+<tag_code>717</tag_code>
+<translation>Renew</translation>
+</message>
+<message>
+<tag_code>718</tag_code>
+<translation>Connection Time</translation>
+</message>
+<message>
+<tag_code>719</tag_code>
+<translation>Connect</translation>
+</message>
+<message>
+<tag_code>720</tag_code>
+<translation>Disconnect</translation>
+</message>
+<message>
+<tag_code>722</tag_code>
+<translation>ALLOW by schedule, otherwise Block</translation>
+</message>
+<message>
+<tag_code>723</tag_code>
+<translation>BLOCK always</translation>
+</message>
+<message>
+<tag_code>724</tag_code>
+<translation>BLOCK by schedule, otherwise Allow</translation>
+</message>
+<message>
+<tag_code>725</tag_code>
+<translation>Send to LAN Server</translation>
+</message>
+<message>
+<tag_code>726</tag_code>
+<translation>Match</translation>
+</message>
+<message>
+<tag_code>727</tag_code>
+<translation>Not Match</translation>
+</message>
+<message>
+<tag_code>728</tag_code>
+<translation>Add Service</translation>
+</message>
+<message>
+<tag_code>729</tag_code>
+<translation>Service Definition</translation>
+</message>
+<message>
+<tag_code>730</tag_code>
+<translation>Type</translation>
+</message>
+<message>
+<tag_code>733</tag_code>
+<translation>Upload</translation>
+</message>
+<message>
+<tag_code>734</tag_code>
+<translation>Route Name</translation>
+</message>
+<message>
+<tag_code>735</tag_code>
+<translation>Private</translation>
+</message>
+<message>
+<tag_code>736</tag_code>
+<translation>Please select an item to delete.</translation>
+</message>
+<message>
+<tag_code>737</tag_code>
+<translation>Please select an item for editing.</translation>
+</message>
+<message>
+<tag_code>738</tag_code>
+<translation>Updating Settings</translation>
+</message>
+<message>
+<tag_code>739</tag_code>
+<translation>Please wait for updating the GUI language</translation>
+</message>
+<message>
+<tag_code>740</tag_code>
+<translation>Get Language Package error!</translation>
+</message>
+<message>
+<tag_code>741</tag_code>
+<translation>Warning! The firmware version you are trying to upload is older than the one you had.</translation>
+</message>
+<message>
+<tag_code>742</tag_code>
+<translation>&lt;br&gt;Do you still want to continue?</translation>
+</message>
+<message>
+<tag_code>743</tag_code>
+<translation>Current Version</translation>
+</message>
+<message>
+<tag_code>745</tag_code>
+<translation>Uploaded Version</translation>
+</message>
+<message>
+<tag_code>747</tag_code>
+<translation>Firmware upgrade failed. Please check your file.</translation>
+</message>
+<message>
+<tag_code>748</tag_code>
+<translation>Firmware Upgrade</translation>
+</message>
+<message>
+<tag_code>749</tag_code>
+<translation>Upgrade must NOT be interrupted.</translation>
+</message>
+<message>
+<tag_code>750</tag_code>
+<translation>Thank you for purchasing NETGEAR's</translation>
+</message>
+<message>
+<tag_code>751</tag_code>
+<translation>To take advantage of the Wireless-N features offered by the</translation>
+</message>
+<message>
+<tag_code>752</tag_code>
+<translation>Do not display this message again.</translation>
+</message>
+<message>
+<tag_code>753</tag_code>
+<translation>Check for new version from the Internet.</translation>
+</message>
+<message>
+<tag_code>754</tag_code>
+<translation>Check for new version upon login</translation>
+</message>
+<message>
+<tag_code>755</tag_code>
+<translation>Locate and select the upgrade file on your hard disk.</translation>
+</message>
+<message>
+<tag_code>756</tag_code>
+<translation>This screen will automatically return to the previous screen in a few seconds...</translation>
+</message>
+<message>
+<tag_code>757</tag_code>
+<translation>Turn UPnP On</translation>
+</message>
+<message>
+<tag_code>758</tag_code>
+<translation>Advertisement Period</translation>
+</message>
+<message>
+<tag_code>759</tag_code>
+<translation>Advertisement Time to Live</translation>
+</message>
+<message>
+<tag_code>760</tag_code>
+<translation>(in hops)</translation>
+</message>
+<message>
+<tag_code>761</tag_code>
+<translation>UPnP Portmap Table</translation>
+</message>
+<message>
+<tag_code>762</tag_code>
+<translation>Int. Port</translation>
+</message>
+<message>
+<tag_code>763</tag_code>
+<translation>Ext. Port</translation>
+</message>
+<message>
+<tag_code>764</tag_code>
+<translation>USB Storage (Advanced Settings)</translation>
+</message>
+<message>
+<tag_code>765</tag_code>
+<translation>Network/Device Name</translation>
+</message>
+<message>
+<tag_code>766</tag_code>
+<translation>Workgroup</translation>
+</message>
+<message>
+<tag_code>767</tag_code>
+<translation>Access Method</translation>
+</message>
+<message>
+<tag_code>768</tag_code>
+<translation>Link</translation>
+</message>
+<message>
+<tag_code>769</tag_code>
+<translation>Network Neighborhood/MacShare</translation>
+</message>
+<message>
+<tag_code>770</tag_code>
+<translation>Disable</translation>
+</message>
+<message>
+<tag_code>774</tag_code>
+<translation>Http (via Internet)</translation>
+</message>
+<message>
+<tag_code>775</tag_code>
+<translation>@wan_http_url#</translation>
+</message>
+<message>
+<tag_code>779</tag_code>
+<translation>via internet</translation>
+</message>
+<message>
+<tag_code>780</tag_code>
+<translation>@wan_ftp_url#</translation>
+</message>
+<message>
+<tag_code>781</tag_code>
+<translation>Available USB Devices</translation>
+</message>
+<message>
+<tag_code>782</tag_code>
+<translation>Available Network Folders</translation>
+</message>
+<message>
+<tag_code>783</tag_code>
+<translation>Volume Name</translation>
+</message>
+<message>
+<tag_code>784</tag_code>
+<translation>Total Space</translation>
+</message>
+<message>
+<tag_code>785</tag_code>
+<translation>Free Space</translation>
+</message>
+<message>
+<tag_code>786</tag_code>
+<translation>Share Name</translation>
+</message>
+<message>
+<tag_code>787</tag_code>
+<translation>Read Access</translation>
+</message>
+<message>
+<tag_code>788</tag_code>
+<translation>Write Access</translation>
+</message>
+<message>
+<tag_code>789</tag_code>
+<translation>Create Network Folder</translation>
+</message>
+<message>
+<tag_code>790</tag_code>
+<translation>Safely Remove USB Device</translation>
+</message>
+<message>
+<tag_code>791</tag_code>
+<translation>USB Drive Approved Devices</translation>
+</message>
+<message>
+<tag_code>792</tag_code>
+<translation>Allow only approved devices</translation>
+</message>
+<message>
+<tag_code>793</tag_code>
+<translation>Approved USB Devices</translation>
+</message>
+<message>
+<tag_code>794</tag_code>
+<translation>Capacity</translation>
+</message>
+<message>
+<tag_code>795</tag_code>
+<translation>USB Storage (Basic Settings)</translation>
+</message>
+<message>
+<tag_code>796</tag_code>
+<translation>Edit Network Folder</translation>
+</message>
+<message>
+<tag_code>797</tag_code>
+<translation>USB Device</translation>
+</message>
+<message>
+<tag_code>799</tag_code>
+<translation>File System</translation>
+</message>
+<message>
+<tag_code>801</tag_code>
+<translation>Folder</translation>
+</message>
+<message>
+<tag_code>802</tag_code>
+<translation>All - no password</translation>
+</message>
+<message>
+<tag_code>803</tag_code>
+<translation>admin</translation>
+</message>
+<message>
+<tag_code>804</tag_code>
+<translation>Browse</translation>
+</message>
+<message>
+<tag_code>805</tag_code>
+<translation>Browse for Folder</translation>
+</message>
+<message>
+<tag_code>806</tag_code>
+<translation>Please enable JavaScript in your Browser, or use a different Browser.</translation>
+</message>
+<message>
+<tag_code>808</tag_code>
+<translation>Enable any USB Device connected to the USB port</translation>
+</message>
+<message>
+<tag_code>809</tag_code>
+<translation>Approved Devices</translation>
+</message>
+<message>
+<tag_code>810</tag_code>
+<translation>ADD User</translation>
+</message>
+<message>
+<tag_code>811</tag_code>
+<translation>User Properties</translation>
+</message>
+<message>
+<tag_code>812</tag_code>
+<translation>User Password</translation>
+</message>
+<message>
+<tag_code>813</tag_code>
+<translation>Confirm Password</translation>
+</message>
+<message>
+<tag_code>814</tag_code>
+<translation>User Group</translation>
+</message>
+<message>
+<tag_code>815</tag_code>
+<translation>@userpop_group#</translation>
+</message>
+<message>
+<tag_code>816</tag_code>
+<translation>User Add</translation>
+</message>
+<message>
+<tag_code>817</tag_code>
+<translation>Clear</translation>
+</message>
+<message>
+<tag_code>818</tag_code>
+<translation>User Proprity</translation>
+</message>
+<message>
+<tag_code>820</tag_code>
+<translation>User Modify</translation>
+</message>
+<message>
+<tag_code>821</tag_code>
+<translation>Attempting to connect to Netgear Server</translation>
+</message>
+<message>
+<tag_code>822</tag_code>
+<translation>Please wait ...</translation>
+</message>
+<message>
+<tag_code>823</tag_code>
+<translation>Please Connect Internet Port and Retry</translation>
+</message>
+<message>
+<tag_code>824</tag_code>
+<translation>A new version has been found. Do You want to upgrade to the new version now?</translation>
+</message>
+<message>
+<tag_code>826</tag_code>
+<translation>New Firmware Version</translation>
+</message>
+<message>
+<tag_code>827</tag_code>
+<translation>Current GUI Language Version</translation>
+</message>
+<message>
+<tag_code>828</tag_code>
+<translation>New GUI Language Version</translation>
+</message>
+<message>
+<tag_code>830</tag_code>
+<translation>Release Notes</translation>
+</message>
+<message>
+<tag_code>831</tag_code>
+<translation>This process can take a minute or two; please wait...</translation>
+</message>
+<message>
+<tag_code>832</tag_code>
+<translation>No new firmware version available.</translation>
+</message>
+<message>
+<tag_code>833</tag_code>
+<translation>This screen will automatically return to the previous screen in a few seconds...</translation>
+</message>
+<message>
+<tag_code>834</tag_code>
+<translation>There is a new GUI text file available:</translation>
+</message>
+<message>
+<tag_code>835</tag_code>
+<translation>Do you want to download and use this new GUI text file?</translation>
+</message>
+<message>
+<tag_code>836</tag_code>
+<translation>Disable Port Scan and DoS Protection</translation>
+</message>
+<message>
+<tag_code>837</tag_code>
+<translation>Default DMZ Server</translation>
+</message>
+<message>
+<tag_code>838</tag_code>
+<translation>Respond to Ping on Internet Port</translation>
+</message>
+<message>
+<tag_code>839</tag_code>
+<translation>MTU Size</translation>
+</message>
+<message>
+<tag_code>840</tag_code>
+<translation>(in bytes)</translation>
+</message>
+<message>
+<tag_code>841</tag_code>
+<translation>NAT Filtering</translation>
+</message>
+<message>
+<tag_code>842</tag_code>
+<translation>Secured</translation>
+</message>
+<message>
+<tag_code>843</tag_code>
+<translation>Open</translation>
+</message>
+<message>
+<tag_code>844</tag_code>
+<translation>Disable SIP ALG</translation>
+</message>
+<message>
+<tag_code>845</tag_code>
+<translation>Disable IGMP Proxying</translation>
+</message>
+<message>
+<tag_code>846</tag_code>
+<translation>Advanced Wireless Settings</translation>
+</message>
+<message>
+<tag_code>847</tag_code>
+<translation>Enable Wireless Bridging and Repeating</translation>
+</message>
+<message>
+<tag_code>848</tag_code>
+<translation>Wireless Point-to-Point Bridge</translation>
+</message>
+<message>
+<tag_code>849</tag_code>
+<translation>Local</translation>
+</message>
+<message>
+<tag_code>850</tag_code>
+<translation>MAC Address</translation>
+</message>
+<message>
+<tag_code>851</tag_code>
+<translation>Wireless Point to Multi-Point Bridge</translation>
+</message>
+<message>
+<tag_code>852</tag_code>
+<translation>Repeater with Wireless Client Association</translation>
+</message>
+<message>
+<tag_code>853</tag_code>
+<translation>Save</translation>
+</message>
+<message>
+<tag_code>855</tag_code>
+<translation>You already have a valid Internet connection.</translation>
+</message>
+<message>
+<tag_code>856</tag_code>
+<translation>Do you still want to continue with the Smart Setup Wizard?</translation>
+</message>
+<message>
+<tag_code>857</tag_code>
+<translation>IP Over ATM</translation>
+</message>
+<message>
+<tag_code>858</tag_code>
+<translation>Detecting Connection Type on Internet Port</translation>
+</message>
+<message>
+<tag_code>859</tag_code>
+<translation>Please wait a moment...</translation>
+</message>
+<message>
+<tag_code>860</tag_code>
+<translation>Dynamic IP (DHCP) detected</translation>
+</message>
+<message>
+<tag_code>861</tag_code>
+<translation>Static (fixed) IP detected</translation>
+</message>
+<message>
+<tag_code>862</tag_code>
+<translation>PPPoE detected</translation>
+</message>
+<message>
+<tag_code>863</tag_code>
+<translation>PPTP detected</translation>
+</message>
+<message>
+<tag_code>864</tag_code>
+<translation>Static (fixed) IP detected</translation>
+</message>
+<message>
+<tag_code>865</tag_code>
+<translation>or</translation>
+</message>
+<message>
+<tag_code>866</tag_code>
+<translation>Special Setup Needed</translation>
+</message>
+<message>
+<tag_code>867</tag_code>
+<translation>Do you have a Fixed or Static IP Address Assigned by your ISP?</translation>
+</message>
+<message>
+<tag_code>868</tag_code>
+<translation>Not Sure</translation>
+</message>
+<message>
+<tag_code>869</tag_code>
+<translation>Dynamic</translation>
+</message>
+<message>
+<tag_code>870</tag_code>
+<translation>Static IP (Fixed) Addresses</translation>
+</message>
+<message>
+<tag_code>871</tag_code>
+<translation>Detecting Connection Type on Internet Port</translation>
+</message>
+<message>
+<tag_code>872</tag_code>
+<translation>Please check the connections to the Internet WAN port and cable/DSL modem.</translation>
+</message>
+<message>
+<tag_code>873</tag_code>
+<translation>Get Automatically from ISP</translation>
+</message>
+<message>
+<tag_code>874</tag_code>
+<translation>Use These DNS Servers</translation>
+</message>
+<message>
+<tag_code>875</tag_code>
+<translation>The Smart Setup Wizard can detect the type of Internet connection that you have.</translation>
+</message>
+<message>
+<tag_code>876</tag_code>
+<translation>Do you want the Smart Setup Wizard to try and detect the connection type now?</translation>
+</message>
+<message>
+<tag_code>877</tag_code>
+<translation>No. I want to configure the router myself.</translation>
+</message>
+<message>
+<tag_code>879</tag_code>
+<translation>Wireless Card Access List</translation>
+</message>
+<message>
+<tag_code>880</tag_code>
+<translation>Turn Access Control On</translation>
+</message>
+<message>
+<tag_code>881</tag_code>
+<translation>Wireless Card Access Setup</translation>
+</message>
+<message>
+<tag_code>882</tag_code>
+<translation>Available Wireless Cards</translation>
+</message>
+<message>
+<tag_code>883</tag_code>
+<translation>Wireless Card Entry</translation>
+</message>
+<message>
+<tag_code>884</tag_code>
+<translation>Edit Wireless Card</translation>
+</message>
+<message>
+<tag_code>885</tag_code>
+<translation>Accept</translation>
+</message>
+<message>
+<tag_code>886</tag_code>
+<translation>Advanced Wireless Settings</translation>
+</message>
+<message>
+<tag_code>887</tag_code>
+<translation>Enable Wireless Router Radio</translation>
+</message>
+<message>
+<tag_code>889</tag_code>
+<translation>Fragmentation Length (256-2346)</translation>
+</message>
+<message>
+<tag_code>890</tag_code>
+<translation>CTS/RTS Threshold (1-2347)</translation>
+</message>
+<message>
+<tag_code>893</tag_code>
+<translation>Preamble Mode</translation>
+</message>
+<message>
+<tag_code>894</tag_code>
+<translation>Long Preamble</translation>
+</message>
+<message>
+<tag_code>895</tag_code>
+<translation>Short Preamble</translation>
+</message>
+<message>
+<tag_code>897</tag_code>
+<translation>Keep Existing Wireless Settings</translation>
+</message>
+<message>
+<tag_code>898</tag_code>
+<translation>Set Up Access List</translation>
+</message>
+<message>
+<tag_code>899</tag_code>
+<translation>Enable Wireless Repeating Function</translation>
+</message>
+<message>
+<tag_code>900</tag_code>
+<translation>Disable Wireless Client Association</translation>
+</message>
+<message>
+<tag_code>901</tag_code>
+<translation>Wireless MAC of this router</translation>
+</message>
+<message>
+<tag_code>903</tag_code>
+<translation>Wireless Repeater</translation>
+</message>
+<message>
+<tag_code>904</tag_code>
+<translation>Wireless Base Station</translation>
+</message>
+<message>
+<tag_code>905</tag_code>
+<translation>Wireless Network</translation>
+</message>
+<message>
+<tag_code>906</tag_code>
+<translation>Beacon Interval (in ms)</translation>
+</message>
+<message>
+<tag_code>907</tag_code>
+<translation>Enable SSID Broadcast</translation>
+</message>
+<message>
+<tag_code>908</tag_code>
+<translation>Enable Wireless Isolation</translation>
+</message>
+<message>
+<tag_code>909</tag_code>
+<translation>Enable 20/40 MHz Coexistence</translation>
+</message>
+<message>
+<tag_code>910</tag_code>
+<translation>Select Region</translation>
+</message>
+<message>
+<tag_code>911</tag_code>
+<translation>Africa</translation>
+</message>
+<message>
+<tag_code>912</tag_code>
+<translation>Asia</translation>
+</message>
+<message>
+<tag_code>913</tag_code>
+<translation>Australia</translation>
+</message>
+<message>
+<tag_code>914</tag_code>
+<translation>Canada</translation>
+</message>
+<message>
+<tag_code>915</tag_code>
+<translation>Europe</translation>
+</message>
+<message>
+<tag_code>916</tag_code>
+<translation>Israel</translation>
+</message>
+<message>
+<tag_code>917</tag_code>
+<translation>Japan</translation>
+</message>
+<message>
+<tag_code>918</tag_code>
+<translation>Korea</translation>
+</message>
+<message>
+<tag_code>919</tag_code>
+<translation>Mexico</translation>
+</message>
+<message>
+<tag_code>920</tag_code>
+<translation>Middle East</translation>
+</message>
+<message>
+<tag_code>921</tag_code>
+<translation>South America</translation>
+</message>
+<message>
+<tag_code>922</tag_code>
+<translation>United States</translation>
+</message>
+<message>
+<tag_code>923</tag_code>
+<translation>Up to 54 Mbps</translation>
+</message>
+<message>
+<tag_code>924</tag_code>
+<translation>Up to 145 Mbps</translation>
+</message>
+<message>
+<tag_code>925</tag_code>
+<translation>Up to 300 Mbps</translation>
+</message>
+<message>
+<tag_code>926</tag_code>
+<translation>Security Options</translation>
+</message>
+<message>
+<tag_code>927</tag_code>
+<translation>Up to 450 Mbps</translation>
+</message>
+<message>
+<tag_code>928</tag_code>
+<translation>Up to 173 Mbps</translation>
+</message>
+<message>
+<tag_code>929</tag_code>
+<translation>Up to 400 Mbps</translation>
+</message>
+<message>
+<tag_code>930</tag_code>
+<translation>Up to 867 Mbps</translation>
+</message>
+<message>
+<tag_code>931</tag_code>
+<translation>WPA/WPA2 Enterprise</translation>
+</message>
+<message>
+<tag_code>933</tag_code>
+<translation>Mixed</translation>
+</message>
+<message>
+<tag_code>936</tag_code>
+<translation>Security Encryption (WEP)</translation>
+</message>
+<message>
+<tag_code>937</tag_code>
+<translation>Authentication Type</translation>
+</message>
+<message>
+<tag_code>938</tag_code>
+<translation>Automatic</translation>
+</message>
+<message>
+<tag_code>939</tag_code>
+<translation>Shared Key</translation>
+</message>
+<message>
+<tag_code>940</tag_code>
+<translation>Encryption Strength</translation>
+</message>
+<message>
+<tag_code>943</tag_code>
+<translation>Key</translation>
+</message>
+<message>
+<tag_code>944</tag_code>
+<translation>Passphrase</translation>
+</message>
+<message>
+<tag_code>949</tag_code>
+<translation>Generate</translation>
+</message>
+<message>
+<tag_code>954</tag_code>
+<translation>(8-63 characters or 64 hex digits)</translation>
+</message>
+<message>
+<tag_code>955</tag_code>
+<translation>Encryption mode</translation>
+</message>
+<message>
+<tag_code>959</tag_code>
+<translation>Group Key Update Interval</translation>
+</message>
+<message>
+<tag_code>960</tag_code>
+<translation>Seconds</translation>
+</message>
+<message>
+<tag_code>962</tag_code>
+<translation>Guest Network Settings</translation>
+</message>
+<message>
+<tag_code>963</tag_code>
+<translation>Network Profiles</translation>
+</message>
+<message>
+<tag_code>964</tag_code>
+<translation>Enable Guest Network</translation>
+</message>
+<message>
+<tag_code>965</tag_code>
+<translation>Allow guests to see each other and access my local network</translation>
+</message>
+<message>
+<tag_code>966</tag_code>
+<translation>Enable Wireless Isolation</translation>
+</message>
+<message>
+<tag_code>967</tag_code>
+<translation>Guest Wireless Network Name (SSID)</translation>
+</message>
+<message>
+<tag_code>968</tag_code>
+<translation>Security Encryption (WEP)</translation>
+</message>
+<message>
+<tag_code>969</tag_code>
+<translation>Security Encryption (WEP) Key</translation>
+</message>
+<message>
+<tag_code>970</tag_code>
+<translation>Allow guest to access My Local Network</translation>
+</message>
+<message>
+<tag_code>971</tag_code>
+<translation>(8-63 characters or 64 hex digits)</translation>
+</message>
+<message>
+<tag_code>972</tag_code>
+<translation>Select a setup method</translation>
+</message>
+<message>
+<tag_code>973</tag_code>
+<translation>Push Button (recommended)</translation>
+</message>
+<message>
+<tag_code>974</tag_code>
+<translation>You can either press the physical push button on the router or click the button (soft push button) in this screen.</translation>
+</message>
+<message>
+<tag_code>975</tag_code>
+<translation>PIN Number</translation>
+</message>
+<message>
+<tag_code>976</tag_code>
+<translation>WPS procedure has been cancelled by user.</translation>
+</message>
+<message>
+<tag_code>977</tag_code>
+<translation>Failed to add a wireless client to the network in</translation>
+</message>
+<message>
+<tag_code>978</tag_code>
+<translation>Click &lt;b&gt;OK&lt;/b&gt; to go back to the Wi-Fi Protected Setup screen.</translation>
+</message>
+<message>
+<tag_code>979</tag_code>
+<translation>Security Risk: detecting more than one client with push button pressed.</translation>
+</message>
+<message>
+<tag_code>980</tag_code>
+<translation>The client's PIN is not correct.</translation>
+</message>
+<message>
+<tag_code>981</tag_code>
+<translation>Click &lt;b&gt;OK&lt;/b&gt; to go back to the Wi-Fi Protected Setup screen.</translation>
+</message>
+<message>
+<tag_code>982</tag_code>
+<translation>WPS procedure has timed out.</translation>
+</message>
+<message>
+<tag_code>984</tag_code>
+<translation>Please check whether the client supports the WPS function.</translation>
+</message>
+<message>
+<tag_code>985</tag_code>
+<translation>Success</translation>
+</message>
+<message>
+<tag_code>987</tag_code>
+<translation>The wireless client</translation>
+</message>
+<message>
+<tag_code>988</tag_code>
+<translation>has been added to the network successfully.</translation>
+</message>
+<message>
+<tag_code>989</tag_code>
+<translation>Note: The wireless settings have been changed.</translation>
+</message>
+<message>
+<tag_code>990</tag_code>
+<translation>Click &lt;b&gt;OK&lt;/b&gt; to check the new wireless settings...</translation>
+</message>
+<message>
+<tag_code>991</tag_code>
+<translation>Connecting to New Wireless Client</translation>
+</message>
+<message>
+<tag_code>992</tag_code>
+<translation>Please click the software or hardware button on the client to start the WPS process...</translation>
+</message>
+<message>
+<tag_code>994</tag_code>
+<translation>Authenticating the client...</translation>
+</message>
+<message>
+<tag_code>995</tag_code>
+<translation>Collecting the client's information...</translation>
+</message>
+<message>
+<tag_code>996</tag_code>
+<translation>Sending configuration data to the client...</translation>
+</message>
+<message>
+<tag_code>997</tag_code>
+<translation>The client's PIN is</translation>
+</message>
+<message>
+<tag_code>999</tag_code>
+<translation>Please click the software button on the client to start the WPS process...</translation>
+</message>
+<message>
+<tag_code>1000</tag_code>
+<translation>The client's PIN is</translation>
+</message>
+<message>
+<tag_code>1001</tag_code>
+<translation>Sending configuration data to the client...</translation>
+</message>
+<message>
+<tag_code>1002</tag_code>
+<translation>This is the security PIN of the WPS client. While connecting, WPS-enabled adapters provide a randomly-generated security PIN.</translation>
+</message>
+<message>
+<tag_code>1003</tag_code>
+<translation>Enter Client's PIN</translation>
+</message>
+<message>
+<tag_code>1005</tag_code>
+<translation>When you see this information, please go to</translation>
+</message>
+<message>
+<tag_code>1007</tag_code>
+<translation>to manually configure the settings</translation>
+</message>
+<message>
+<tag_code>1010</tag_code>
+<translation>The Traffic Meter monthly limit (</translation>
+</message>
+<message>
+<tag_code>1011</tag_code>
+<translation>has been reached.</translation>
+</message>
+<message>
+<tag_code>1013</tag_code>
+<translation>Your Traffic Meter counter is </translation>
+</message>
+<message>
+<tag_code>1014</tag_code>
+<translation>before the monthly limit is reached.</translation>
+</message>
+<message>
+<tag_code>1015</tag_code>
+<translation>Internet Traffic Meter</translation>
+</message>
+<message>
+<tag_code>1016</tag_code>
+<translation>Enable Traffic Meter</translation>
+</message>
+<message>
+<tag_code>1017</tag_code>
+<translation>Traffic volume control by</translation>
+</message>
+<message>
+<tag_code>1018</tag_code>
+<translation>No limit</translation>
+</message>
+<message>
+<tag_code>1019</tag_code>
+<translation>Download only</translation>
+</message>
+<message>
+<tag_code>1020</tag_code>
+<translation>Both directions</translation>
+</message>
+<message>
+<tag_code>1022</tag_code>
+<translation>Monthly limit</translation>
+</message>
+<message>
+<tag_code>1023</tag_code>
+<translation>Mbytes</translation>
+</message>
+<message>
+<tag_code>1024</tag_code>
+<translation>Round up data volume for each connection by</translation>
+</message>
+<message>
+<tag_code>1025</tag_code>
+<translation>Connection time control</translation>
+</message>
+<message>
+<tag_code>1026</tag_code>
+<translation>Hours</translation>
+</message>
+<message>
+<tag_code>1027</tag_code>
+<translation>Traffic Counter</translation>
+</message>
+<message>
+<tag_code>1028</tag_code>
+<translation>Restart traffic counter at</translation>
+</message>
+<message>
+<tag_code>1029</tag_code>
+<translation>am</translation>
+</message>
+<message>
+<tag_code>1030</tag_code>
+<translation>pm</translation>
+</message>
+<message>
+<tag_code>1031</tag_code>
+<translation>On the</translation>
+</message>
+<message>
+<tag_code>1032</tag_code>
+<translation>1st</translation>
+</message>
+<message>
+<tag_code>1033</tag_code>
+<translation>2nd</translation>
+</message>
+<message>
+<tag_code>1034</tag_code>
+<translation>3rd</translation>
+</message>
+<message>
+<tag_code>1035</tag_code>
+<translation>4th</translation>
+</message>
+<message>
+<tag_code>1036</tag_code>
+<translation>5th</translation>
+</message>
+<message>
+<tag_code>1037</tag_code>
+<translation>6th</translation>
+</message>
+<message>
+<tag_code>1038</tag_code>
+<translation>7th</translation>
+</message>
+<message>
+<tag_code>1039</tag_code>
+<translation>8th</translation>
+</message>
+<message>
+<tag_code>1040</tag_code>
+<translation>9th</translation>
+</message>
+<message>
+<tag_code>1041</tag_code>
+<translation>10th</translation>
+</message>
+<message>
+<tag_code>1042</tag_code>
+<translation>11th</translation>
+</message>
+<message>
+<tag_code>1043</tag_code>
+<translation>12th</translation>
+</message>
+<message>
+<tag_code>1044</tag_code>
+<translation>13th</translation>
+</message>
+<message>
+<tag_code>1045</tag_code>
+<translation>14th</translation>
+</message>
+<message>
+<tag_code>1046</tag_code>
+<translation>15th</translation>
+</message>
+<message>
+<tag_code>1047</tag_code>
+<translation>16th</translation>
+</message>
+<message>
+<tag_code>1048</tag_code>
+<translation>17th</translation>
+</message>
+<message>
+<tag_code>1049</tag_code>
+<translation>18th</translation>
+</message>
+<message>
+<tag_code>1050</tag_code>
+<translation>19th</translation>
+</message>
+<message>
+<tag_code>1051</tag_code>
+<translation>20th</translation>
+</message>
+<message>
+<tag_code>1052</tag_code>
+<translation>21th</translation>
+</message>
+<message>
+<tag_code>1053</tag_code>
+<translation>22th</translation>
+</message>
+<message>
+<tag_code>1054</tag_code>
+<translation>23th</translation>
+</message>
+<message>
+<tag_code>1055</tag_code>
+<translation>24th</translation>
+</message>
+<message>
+<tag_code>1056</tag_code>
+<translation>25th</translation>
+</message>
+<message>
+<tag_code>1057</tag_code>
+<translation>26th</translation>
+</message>
+<message>
+<tag_code>1058</tag_code>
+<translation>27th</translation>
+</message>
+<message>
+<tag_code>1059</tag_code>
+<translation>28th</translation>
+</message>
+<message>
+<tag_code>1060</tag_code>
+<translation>Last</translation>
+</message>
+<message>
+<tag_code>1061</tag_code>
+<translation>day of each month</translation>
+</message>
+<message>
+<tag_code>1062</tag_code>
+<translation>Traffic Control</translation>
+</message>
+<message>
+<tag_code>1063</tag_code>
+<translation>Pop up a warning message</translation>
+</message>
+<message>
+<tag_code>1064</tag_code>
+<translation>Mbytes/Minutes before the monthly limit is reached</translation>
+</message>
+<message>
+<tag_code>1065</tag_code>
+<translation>When the monthly limit is reached</translation>
+</message>
+<message>
+<tag_code>1066</tag_code>
+<translation>Turn the Internet LED to flashing green</translation>
+</message>
+<message>
+<tag_code>1067</tag_code>
+<translation>Disconnect and disable the Internet connection</translation>
+</message>
+<message>
+<tag_code>1068</tag_code>
+<translation>Internet Traffic Statistics</translation>
+</message>
+<message>
+<tag_code>1069</tag_code>
+<translation>Restart Counter Now</translation>
+</message>
+<message>
+<tag_code>1070</tag_code>
+<translation>Traffic Status</translation>
+</message>
+<message>
+<tag_code>1071</tag_code>
+<translation>Counting Period</translation>
+</message>
+<message>
+<tag_code>1072</tag_code>
+<translation>Amount Used</translation>
+</message>
+<message>
+<tag_code>1073</tag_code>
+<translation>Today</translation>
+</message>
+<message>
+<tag_code>1074</tag_code>
+<translation>Yesterday</translation>
+</message>
+<message>
+<tag_code>1075</tag_code>
+<translation>This week</translation>
+</message>
+<message>
+<tag_code>1076</tag_code>
+<translation>This month</translation>
+</message>
+<message>
+<tag_code>1077</tag_code>
+<translation>Last month</translation>
+</message>
+<message>
+<tag_code>1078</tag_code>
+<translation>Start Date/Time</translation>
+</message>
+<message>
+<tag_code>1079</tag_code>
+<translation>Current Date/Time</translation>
+</message>
+<message>
+<tag_code>1080</tag_code>
+<translation>Traffic Volume Left</translation>
+</message>
+<message>
+<tag_code>1081</tag_code>
+<translation>KBytes</translation>
+</message>
+<message>
+<tag_code>1083</tag_code>
+<translation>Hours</translation>
+</message>
+<message>
+<tag_code>1084</tag_code>
+<translation> minutes.</translation>
+</message>
+<message>
+<tag_code>1085</tag_code>
+<translation>Period</translation>
+</message>
+<message>
+<tag_code>1086</tag_code>
+<translation>Traffic Volume (Mbytes)</translation>
+</message>
+<message>
+<tag_code>1087</tag_code>
+<translation>Upload/Avg</translation>
+</message>
+<message>
+<tag_code>1088</tag_code>
+<translation>Download/Avg</translation>
+</message>
+<message>
+<tag_code>1089</tag_code>
+<translation>Total/Avg</translation>
+</message>
+<message>
+<tag_code>1152</tag_code>
+<translation>WiFi Only</translation>
+</message>
+<message>
+<tag_code>1153</tag_code>
+<translation>WiFi and Mobile Broadband</translation>
+</message>
+<message>
+<tag_code>1167</tag_code>
+<translation>Italy</translation>
+</message>
+<message>
+<tag_code>1168</tag_code>
+<translation>Austria</translation>
+</message>
+<message>
+<tag_code>1169</tag_code>
+<translation>UK</translation>
+</message>
+<message>
+<tag_code>1170</tag_code>
+<translation>Denmark</translation>
+</message>
+<message>
+<tag_code>1171</tag_code>
+<translation>Sweden</translation>
+</message>
+<message>
+<tag_code>1173</tag_code>
+<translation>Ireland</translation>
+</message>
+<message>
+<tag_code>1174</tag_code>
+<translation>Hong Kong</translation>
+</message>
+<message>
+<tag_code>1175</tag_code>
+<translation>Vietnam</translation>
+</message>
+<message>
+<tag_code>1176</tag_code>
+<translation>Indonesia</translation>
+</message>
+<message>
+<tag_code>1177</tag_code>
+<translation>USA</translation>
+</message>
+<message>
+<tag_code>1178</tag_code>
+<translation>User Defined</translation>
+</message>
+<message>
+<tag_code>1179</tag_code>
+<translation>Australia</translation>
+</message>
+<message>
+<tag_code>1208</tag_code>
+<translation>Use internal antenna</translation>
+</message>
+<message>
+<tag_code>1214</tag_code>
+<translation>Wireless Button Configuration</translation>
+</message>
+<message>
+<tag_code>1226</tag_code>
+<translation>APN Auto Lookup</translation>
+</message>
+<message>
+<tag_code>1228</tag_code>
+<translation>has detected Mobile Broadband settings for you, do you want to use these settings?</translation>
+</message>
+<message>
+<tag_code>1231</tag_code>
+<translation>ISP</translation>
+</message>
+<message>
+<tag_code>1232</tag_code>
+<translation>APN</translation>
+</message>
+<message>
+<tag_code>1300</tag_code>
+<translation>Enable Router's PIN</translation>
+</message>
+<message>
+<tag_code>1301</tag_code>
+<translation>Enable Router's PIN (disabled because an attack is detected)</translation>
+</message>
+<message>
+<tag_code>1302</tag_code>
+<translation>To prevent PIN compromise, auto disable the PIN after</translation>
+</message>
+<message>
+<tag_code>1303</tag_code>
+<translation>failed PIN connections, until router reboots.</translation>
+</message>
+<message>
+<tag_code>1304</tag_code>
+<translation>In auto disabled mode, router's WPS LED will keep blinking slowly</translation>
+</message>
+<message>
+<tag_code>1745</tag_code>
+<translation>Network Mode</translation>
+</message>
+<message>
+<tag_code>1796</tag_code>
+<translation>Internet Connection Mode</translation>
+</message>
+<message>
+<tag_code>1800</tag_code>
+<translation>Failover Detection Method</translation>
+</message>
+<message>
+<tag_code>1801</tag_code>
+<translation>DNS lookup using WAN DNS Server</translation>
+</message>
+<message>
+<tag_code>1802</tag_code>
+<translation>Ping this IP address</translation>
+</message>
+<message>
+<tag_code>1803</tag_code>
+<translation>Retry Interval is</translation>
+</message>
+<message>
+<tag_code>1804</tag_code>
+<translation>(In Seconds)</translation>
+</message>
+<message>
+<tag_code>1805</tag_code>
+<translation>Failover after</translation>
+</message>
+<message>
+<tag_code>1806</tag_code>
+<translation>Enable Hardware link detection</translation>
+</message>
+<message>
+<tag_code>1846</tag_code>
+<translation>Perform a DNS lookup by a hostname</translation>
+</message>
+<message>
+<tag_code>1937</tag_code>
+<translation>NOT Allow Roaming</translation>
+</message>
+<message>
+<tag_code>1941</tag_code>
+<translation>(In Intervals)</translation>
+</message>
+<message>
+<tag_code>2001</tag_code>
+<translation>Start Blocking</translation>
+</message>
+<message>
+<tag_code>2002</tag_code>
+<translation>End Blocking</translation>
+</message>
+<message>
+<tag_code>2003</tag_code>
+<translation>Thank you for purchasing NETGEAR's JWNR3200 Wireless Router. Be sure to use the Firmware Upgrade Assistant periodically to take advantage of improvements and feature additions NETGEAR offered for this product.</translation>
+</message>
+<message>
+<tag_code>2004</tag_code>
+<translation>router, use a wireless adapter that displays this logo.</translation>
+</message>
+<message>
+<tag_code>2005</tag_code>
+<translation>Delete All</translation>
+</message>
+<message>
+<tag_code>2007</tag_code>
+<translation>Use Wildcards</translation>
+</message>
+<message>
+<tag_code>2008</tag_code>
+<translation>Service Provider Links:</translation>
+</message>
+<message>
+<tag_code>2009</tag_code>
+<translation>Link Status:</translation>
+</message>
+<message>
+<tag_code>2010</tag_code>
+<translation>Service Type:</translation>
+</message>
+<message>
+<tag_code>2011</tag_code>
+<translation>Domain Name Info:</translation>
+</message>
+<message>
+<tag_code>2012</tag_code>
+<translation>Peanuthull Dynamic DNS Service Registration</translation>
+</message>
+<message>
+<tag_code>2013</tag_code>
+<translation>Upgrade to Peanuthull DDNS professional service</translation>
+</message>
+<message>
+<tag_code>2014</tag_code>
+<translation>Peanuthull DDNS help</translation>
+</message>
+<message>
+<tag_code>2015</tag_code>
+<translation>Starting IP Address</translation>
+</message>
+<message>
+<tag_code>2016</tag_code>
+<translation>Ending IP Address</translation>
+</message>
+<message>
+<tag_code>2017</tag_code>
+<translation>Repeater MAC Address 1</translation>
+</message>
+<message>
+<tag_code>2018</tag_code>
+<translation>Repeater MAC Address 2</translation>
+</message>
+<message>
+<tag_code>2019</tag_code>
+<translation>Repeater MAC Address 3</translation>
+</message>
+<message>
+<tag_code>2020</tag_code>
+<translation>Repeater MAC Address 4</translation>
+</message>
+<message>
+<tag_code>2021</tag_code>
+<translation>Use Wildcards</translation>
+</message>
+<message>
+<tag_code>2022</tag_code>
+<translation>Maximum Download Speed per task (0 means no limit)</translation>
+</message>
+<message>
+<tag_code>2023</tag_code>
+<translation>Maximum Upload Speed per task (0 means no limit)</translation>
+</message>
+<message>
+<tag_code>2024</tag_code>
+<translation>Total Max Concurrent Download Tasks</translation>
+</message>
+<message>
+<tag_code>2025</tag_code>
+<translation>The total concurrent downloading tasks allowed regardless of which kind of service (FTP/HTTP or BT)</translation>
+</message>
+<message>
+<tag_code>2026</tag_code>
+<translation>NETGEAR Downloader Settings</translation>
+</message>
+<message>
+<tag_code>2027</tag_code>
+<translation>Download Manager</translation>
+</message>
+<message>
+<tag_code>2028</tag_code>
+<translation>Which folder or path you would like to store?</translation>
+</message>
+<message>
+<tag_code>2029</tag_code>
+<translation>Download Type</translation>
+</message>
+<message>
+<tag_code>2030</tag_code>
+<translation>FTP / HTTP download path</translation>
+</message>
+<message>
+<tag_code>2031</tag_code>
+<translation>Authentication Required (Optional)</translation>
+</message>
+<message>
+<tag_code>2032</tag_code>
+<translation>BitTorrent File Location</translation>
+</message>
+<message>
+<tag_code>2033</tag_code>
+<translation>File Size(B)</translation>
+</message>
+<message>
+<tag_code>2034</tag_code>
+<translation>Download</translation>
+</message>
+<message>
+<tag_code>2035</tag_code>
+<translation>Select All</translation>
+</message>
+<message>
+<tag_code>2036</tag_code>
+<translation>No.</translation>
+</message>
+<message>
+<tag_code>2037</tag_code>
+<translation>Remove</translation>
+</message>
+<message>
+<tag_code>2038</tag_code>
+<translation>Downloader</translation>
+</message>
+<message>
+<tag_code>2039</tag_code>
+<translation>RADIUS Server IP Address:</translation>
+</message>
+<message>
+<tag_code>2040</tag_code>
+<translation>RADIUS server Port:</translation>
+</message>
+<message>
+<tag_code>2041</tag_code>
+<translation>PC</translation>
+</message>
+<message>
+<tag_code>2042</tag_code>
+<translation>USB Storage Device</translation>
+</message>
+<message>
+<tag_code>2043</tag_code>
+<translation>Save Path</translation>
+</message>
+<message>
+<tag_code>2044</tag_code>
+<translation>File Name</translation>
+</message>
+<message>
+<tag_code>2045</tag_code>
+<translation>Download Task Information Table</translation>
+</message>
+<message>
+<tag_code>2046</tag_code>
+<translation>Downloaded Files</translation>
+</message>
+<message>
+<tag_code>2047</tag_code>
+<translation>Remove History</translation>
+</message>
+<message>
+<tag_code>2048</tag_code>
+<translation>Pause</translation>
+</message>
+<message>
+<tag_code>2049</tag_code>
+<translation>Resume</translation>
+</message>
+<message>
+<tag_code>2050</tag_code>
+<translation>Download Link:</translation>
+</message>
+<message>
+<tag_code>2051</tag_code>
+<translation>Download Speed</translation>
+</message>
+<message>
+<tag_code>2052</tag_code>
+<translation>Reset</translation>
+</message>
+<message>
+<tag_code>2053</tag_code>
+<translation>Internet Address</translation>
+</message>
+<message>
+<tag_code>2054</tag_code>
+<translation>Do you want to unmount all devices?</translation>
+</message>
+<message>
+<tag_code>3000</tag_code>
+<translation>- Check that the cable connections are correct. Refer to the router Installation Guide for instructions.</translation>
+</message>
+<message>
+<tag_code>3001</tag_code>
+<translation>- Check that your broadband modem is power cycled correctly. If you have a battery-backed modem, remove and reinsert the battery to power cycle your modem.</translation>
+</message>
+<message>
+<tag_code>3002</tag_code>
+<translation>(default is "password")</translation>
+</message>
+<message>
+<tag_code>3003</tag_code>
+<translation>(format AABBCCDDEEFF)</translation>
+</message>
+<message>
+<tag_code>3004</tag_code>
+<translation>(You can find it on the router product label.)</translation>
+</message>
+<message>
+<tag_code>3005</tag_code>
+<translation>*=required information</translation>
+</message>
+<message>
+<tag_code>3006</tag_code>
+<translation>1.The modem was not power cycled during the cabling step.</translation>
+</message>
+<message>
+<tag_code>3007</tag_code>
+<translation>2.The yellow Ethernet cable is not fully inserted, or is inserted in the wrong place.</translation>
+</message>
+<message>
+<tag_code>3008</tag_code>
+<translation>A MAC address is a unique number.  You can find the MAC address of the computer or router on its product label.</translation>
+</message>
+<message>
+<tag_code>3009</tag_code>
+<translation>A router firmware upgrade is available.</translation>
+</message>
+<message>
+<tag_code>3010</tag_code>
+<translation>Administration</translation>
+</message>
+<message>
+<tag_code>3011</tag_code>
+<translation>ADVANCED Home</translation>
+</message>
+<message>
+<tag_code>3012</tag_code>
+<translation>Advanced Setup</translation>
+</message>
+<message>
+<tag_code>3013</tag_code>
+<translation>ADVANCED</translation>
+</message>
+<message>
+<tag_code>3014</tag_code>
+<translation>After you have checked the Ethernet cable, click &lt;b&gt;Try again&lt;&#47;b&gt;.</translation>
+</message>
+<message>
+<tag_code>3015</tag_code>
+<translation>Alternate DNS Server</translation>
+</message>
+<message>
+<tag_code>3016</tag_code>
+<translation>Answer</translation>
+</message>
+<message>
+<tag_code>3017</tag_code>
+<translation>Applying Internet Connection Settings</translation>
+</message>
+<message>
+<tag_code>3018</tag_code>
+<translation>Are you sure you want to change the admin password without recovery option?</translation>
+</message>
+<message>
+<tag_code>3019</tag_code>
+<translation>Authentication Server</translation>
+</message>
+<message>
+<tag_code>3020</tag_code>
+<translation>Back</translation>
+</message>
+<message>
+<tag_code>3021</tag_code>
+<translation>BASIC</translation>
+</message>
+<message>
+<tag_code>3022</tag_code>
+<translation>BigPond Internet Connection Detected</translation>
+</message>
+<message>
+<tag_code>3023</tag_code>
+<translation>Browse to the router settings backup file you previously saved, and click &lt;b&gt;Next&lt;&#47;b&gt; to proceed.</translation>
+</message>
+<message>
+<tag_code>3024</tag_code>
+<translation>Checking the Internet connection; please wait …</translation>
+</message>
+<message>
+<tag_code>3025</tag_code>
+<translation>Click here</translation>
+</message>
+<message>
+<tag_code>3026</tag_code>
+<translation>Computer does not support a printer.</translation>
+</message>
+<message>
+<tag_code>3027</tag_code>
+<translation>Configuring the Internet connection requires networking experience. Are you sure?</translation>
+</message>
+<message>
+<tag_code>3028</tag_code>
+<translation>Configuring the Internet Connection</translation>
+</message>
+<message>
+<tag_code>3029</tag_code>
+<translation>Congratulations!</translation>
+</message>
+<message>
+<tag_code>3030</tag_code>
+<translation>Connection ID/Name</translation>
+</message>
+<message>
+<tag_code>3031</tag_code>
+<translation>Continue</translation>
+</message>
+<message>
+<tag_code>3032</tag_code>
+<translation>Current NETGEAR Genie will be stopped.</translation>
+</message>
+<message>
+<tag_code>3033</tag_code>
+<translation>Default Gateway</translation>
+</message>
+<message>
+<tag_code>3034</tag_code>
+<translation>Detecting the Internet Connection</translation>
+</message>
+<message>
+<tag_code>3035</tag_code>
+<translation>Did your Internet Service Provider (ISP) assign to you a fixed (static) IP address? This is a &lt;b&gt;very rare&lt;&#47;b&gt; special deployment. </translation>
+</message>
+<message>
+<tag_code>3036</tag_code>
+<translation>DNS address must be specified.</translation>
+</message>
+<message>
+<tag_code>3037</tag_code>
+<translation>Do you want NETGEAR Genie to help?</translation>
+</message>
+<message>
+<tag_code>3038</tag_code>
+<translation>Do you want NETGEAR Genie to try again?</translation>
+</message>
+<message>
+<tag_code>3039</tag_code>
+<translation>Download failure!</translation>
+</message>
+<message>
+<tag_code>3040</tag_code>
+<translation>Enable Password Recovery</translation>
+</message>
+<message>
+<tag_code>3041</tag_code>
+<translation>ENABLED</translation>
+</message>
+<message>
+<tag_code>3042</tag_code>
+<translation>Enter Search Item</translation>
+</message>
+<message>
+<tag_code>3043</tag_code>
+<translation>Enter the fixed IP settings assigned by your Internet Service Provider and click &lt;b&gt;Next&lt;&#47;b&gt; to proceed.</translation>
+</message>
+<message>
+<tag_code>3044</tag_code>
+<translation>Enter the MAC address here:</translation>
+</message>
+<message>
+<tag_code>3045</tag_code>
+<translation>Enter the required information again.</translation>
+</message>
+<message>
+<tag_code>3046</tag_code>
+<translation>Enter the required information below.</translation>
+</message>
+<message>
+<tag_code>3047</tag_code>
+<translation>Enter the router's Serial Number</translation>
+</message>
+<message>
+<tag_code>3048</tag_code>
+<translation>ERROR</translation>
+</message>
+<message>
+<tag_code>3049</tag_code>
+<translation>Failure</translation>
+</message>
+<message>
+<tag_code>3050</tag_code>
+<translation>File name cannot be blank.</translation>
+</message>
+<message>
+<tag_code>3051</tag_code>
+<translation>Firmware Update</translation>
+</message>
+<message>
+<tag_code>3052</tag_code>
+<translation>Firmware Upgrade</translation>
+</message>
+<message>
+<tag_code>3053</tag_code>
+<translation>Fixed Internet IP Settings</translation>
+</message>
+<message>
+<tag_code>3054</tag_code>
+<translation>Gateway IP Address</translation>
+</message>
+<message>
+<tag_code>3055</tag_code>
+<translation>GO</translation>
+</message>
+<message>
+<tag_code>3056</tag_code>
+<translation>GOOD</translation>
+</message>
+<message>
+<tag_code>3057</tag_code>
+<translation>Help &#38; Support</translation>
+</message>
+<message>
+<tag_code>3058</tag_code>
+<translation>Help Center</translation>
+</message>
+<message>
+<tag_code>3059</tag_code>
+<translation>Home</translation>
+</message>
+<message>
+<tag_code>3060</tag_code>
+<translation>I corrected a problem with the Ethernet cable.</translation>
+</message>
+<message>
+<tag_code>3061</tag_code>
+<translation>I don't know. </translation>
+</message>
+<message>
+<tag_code>3062</tag_code>
+<translation>I have saved the router settings in a file and I want to restore the router to those settings.</translation>
+</message>
+<message>
+<tag_code>3063</tag_code>
+<translation>I just power cycled the modem and waited for 2 minutes.</translation>
+</message>
+<message>
+<tag_code>3064</tag_code>
+<translation>I want to configure the Internet connection myself</translation>
+</message>
+<message>
+<tag_code>3065</tag_code>
+<translation>Idle Time-Out(in minutes)</translation>
+</message>
+<message>
+<tag_code>3066</tag_code>
+<translation>If you do not enable password recovery and forget your new password, the only way to recover the password is to reset the device to factory default.</translation>
+</message>
+<message>
+<tag_code>3067</tag_code>
+<translation>If you previously connected to your Internet service with a computer or another router,  NETGEAR Genie can use the same MAC address that worked before.</translation>
+</message>
+<message>
+<tag_code>3068</tag_code>
+<translation>Important Update</translation>
+</message>
+<message>
+<tag_code>3069</tag_code>
+<translation>In what city was your father born?</translation>
+</message>
+<message>
+<tag_code>3070</tag_code>
+<translation>In what city was your mother born?</translation>
+</message>
+<message>
+<tag_code>3071</tag_code>
+<translation>In what city were you born?</translation>
+</message>
+<message>
+<tag_code>3072</tag_code>
+<translation>In what year (YYYY) did you graduate from high school?</translation>
+</message>
+<message>
+<tag_code>3073</tag_code>
+<translation>Incorrect ISP User name or Password</translation>
+</message>
+<message>
+<tag_code>3074</tag_code>
+<translation>Installer Language</translation>
+</message>
+<message>
+<tag_code>3075</tag_code>
+<translation>Internet Provider (WAN) Setup</translation>
+</message>
+<message>
+<tag_code>3076</tag_code>
+<translation>Internet Setup</translation>
+</message>
+<message>
+<tag_code>3077</tag_code>
+<translation>Internet</translation>
+</message>
+<message>
+<tag_code>3078</tag_code>
+<translation>Invalid authentication server IP address.</translation>
+</message>
+<message>
+<tag_code>3079</tag_code>
+<translation>Invalid gateway IP address. Please enter it again.</translation>
+</message>
+<message>
+<tag_code>3080</tag_code>
+<translation>Invalid idle time. Please enter a correct number.\n</translation>
+</message>
+<message>
+<tag_code>3081</tag_code>
+<translation>Invalid IP address. Please enter it again, or leave it blank.</translation>
+</message>
+<message>
+<tag_code>3082</tag_code>
+<translation>Invalid IP address. Please enter it again.</translation>
+</message>
+<message>
+<tag_code>3083</tag_code>
+<translation>Invalid MAC address.</translation>
+</message>
+<message>
+<tag_code>3084</tag_code>
+<translation>Invalid password.</translation>
+</message>
+<message>
+<tag_code>3085</tag_code>
+<translation>Invalid primary DNS address. Please enter it again.\n</translation>
+</message>
+<message>
+<tag_code>3086</tag_code>
+<translation>Invalid secondary DNS address. Please enter it again.\n</translation>
+</message>
+<message>
+<tag_code>3087</tag_code>
+<translation>Invalid subnet mask. Please enter it again.\n</translation>
+</message>
+<message>
+<tag_code>3088</tag_code>
+<translation>IP Address</translation>
+</message>
+<message>
+<tag_code>3089</tag_code>
+<translation>L2TP Internet Connection Detected</translation>
+</message>
+<message>
+<tag_code>3090</tag_code>
+<translation>Last time password was recovered</translation>
+</message>
+<message>
+<tag_code>3091</tag_code>
+<translation>Legend</translation>
+</message>
+<message>
+<tag_code>3092</tag_code>
+<translation>Login again</translation>
+</message>
+<message>
+<tag_code>3093</tag_code>
+<translation>Login is required to manage these router settings:</translation>
+</message>
+<message>
+<tag_code>3094</tag_code>
+<translation>Make sure that the cable is securely plugged into both the broadband modem port and the router Internet port.</translation>
+</message>
+<message>
+<tag_code>3095</tag_code>
+<translation>My IP Address</translation>
+</message>
+<message>
+<tag_code>3096</tag_code>
+<translation>My WiFi</translation>
+</message>
+<message>
+<tag_code>3097</tag_code>
+<translation>Network Connection Issue</translation>
+</message>
+<message>
+<tag_code>3098</tag_code>
+<translation>network key (password)</translation>
+</message>
+<message>
+<tag_code>3099</tag_code>
+<translation>Network Key (Password)</translation>
+</message>
+<message>
+<tag_code>3100</tag_code>
+<translation>Next</translation>
+</message>
+<message>
+<tag_code>3101</tag_code>
+<translation>No Ethernet Cable Is Plugged into the Router Internet Port</translation>
+</message>
+<message>
+<tag_code>3102</tag_code>
+<translation>NO USB DRIVE</translation>
+</message>
+<message>
+<tag_code>3103</tag_code>
+<translation>No, I did not get a fixed (static) IP address from my ISP.</translation>
+</message>
+<message>
+<tag_code>3104</tag_code>
+<translation>No, I want to configure the Internet connection myself.</translation>
+</message>
+<message>
+<tag_code>3105</tag_code>
+<translation>No. I want to configure the Internet connection myself.</translation>
+</message>
+<message>
+<tag_code>3106</tag_code>
+<translation>None of the above.</translation>
+</message>
+<message>
+<tag_code>3107</tag_code>
+<translation>NOT ENABLED</translation>
+</message>
+<message>
+<tag_code>3108</tag_code>
+<translation>Num of devices</translation>
+</message>
+<message>
+<tag_code>3109</tag_code>
+<translation>Number of devices</translation>
+</message>
+<message>
+<tag_code>3110</tag_code>
+<translation>OFF</translation>
+</message>
+<message>
+<tag_code>3111</tag_code>
+<translation>Other's WiFi</translation>
+</message>
+<message>
+<tag_code>3112</tag_code>
+<translation>Parental Controls</translation>
+</message>
+<message>
+<tag_code>3113</tag_code>
+<translation>Password</translation>
+</message>
+<message>
+<tag_code>3114</tag_code>
+<translation>Please assign the correct file. The file format is *.</translation>
+</message>
+<message>
+<tag_code>3115</tag_code>
+<translation>Please complete the answers to the two security questions below and click &lt;b&gt;Continue&lt;&#47;b&gt;.</translation>
+</message>
+<message>
+<tag_code>3116</tag_code>
+<translation>Please enter idle time.\n</translation>
+</message>
+<message>
+<tag_code>3117</tag_code>
+<translation>Please enter your answer for each question.</translation>
+</message>
+<message>
+<tag_code>3118</tag_code>
+<translation>Please review the following items:</translation>
+</message>
+<message>
+<tag_code>3119</tag_code>
+<translation>Please select a question.</translation>
+</message>
+<message>
+<tag_code>3120</tag_code>
+<translation>Please select the language of the installer</translation>
+</message>
+<message>
+<tag_code>3121</tag_code>
+<translation>Please wait a moment...</translation>
+</message>
+<message>
+<tag_code>3122</tag_code>
+<translation>PPPoE DSL Internet Connection Detected</translation>
+</message>
+<message>
+<tag_code>3123</tag_code>
+<translation>PPTP Internet Connection Detected</translation>
+</message>
+<message>
+<tag_code>3124</tag_code>
+<translation>Preferred DNS Server</translation>
+</message>
+<message>
+<tag_code>3125</tag_code>
+<translation>Print this</translation>
+</message>
+<message>
+<tag_code>3126</tag_code>
+<translation>Problem Detecting the Internet Connection - IP Address</translation>
+</message>
+<message>
+<tag_code>3127</tag_code>
+<translation>Problem Detecting the Internet Connection - MAC Address</translation>
+</message>
+<message>
+<tag_code>3128</tag_code>
+<translation>Problem Detecting the Internet Connection</translation>
+</message>
+<message>
+<tag_code>3129</tag_code>
+<translation>READY</translation>
+</message>
+<message>
+<tag_code>3130</tag_code>
+<translation>Restore Router Settings </translation>
+</message>
+<message>
+<tag_code>3131</tag_code>
+<translation>Restoring Router Settings</translation>
+</message>
+<message>
+<tag_code>3132</tag_code>
+<translation>Router Admin Password</translation>
+</message>
+<message>
+<tag_code>3133</tag_code>
+<translation>Router Admin Username</translation>
+</message>
+<message>
+<tag_code>3134</tag_code>
+<translation>Router FAQ</translation>
+</message>
+<message>
+<tag_code>3135</tag_code>
+<translation>Router Firmware Version</translation>
+</message>
+<message>
+<tag_code>3136</tag_code>
+<translation>Router Information</translation>
+</message>
+<message>
+<tag_code>3137</tag_code>
+<translation>Router Login</translation>
+</message>
+<message>
+<tag_code>3138</tag_code>
+<translation>Router Password Recovery</translation>
+</message>
+<message>
+<tag_code>3139</tag_code>
+<translation>SEARCH HELP</translation>
+</message>
+<message>
+<tag_code>3140</tag_code>
+<translation>Search NETGEAR Support</translation>
+</message>
+<message>
+<tag_code>3141</tag_code>
+<translation>Security Question #1</translation>
+</message>
+<message>
+<tag_code>3142</tag_code>
+<translation>Security Question #2</translation>
+</message>
+<message>
+<tag_code>3143</tag_code>
+<translation>Select a question</translation>
+</message>
+<message>
+<tag_code>3144</tag_code>
+<translation>Select an option and click &lt;b&gt;Next&lt;&#47;b&gt; to proceed.</translation>
+</message>
+<message>
+<tag_code>3145</tag_code>
+<translation>Select an option first.</translation>
+</message>
+<message>
+<tag_code>3146</tag_code>
+<translation>Select one of the options below and click &lt;b&gt;Next&lt;&#47;b&gt; to proceed:</translation>
+</message>
+<message>
+<tag_code>3147</tag_code>
+<translation>Server Address</translation>
+</message>
+<message>
+<tag_code>3148</tag_code>
+<translation>Show/Hide Help Center</translation>
+</message>
+<message>
+<tag_code>3149</tag_code>
+<translation>Subnet Mask</translation>
+</message>
+<message>
+<tag_code>3150</tag_code>
+<translation>Take me to the Internet</translation>
+</message>
+<message>
+<tag_code>3151</tag_code>
+<translation>The information you entered does not match what is saved on the router. Please enter it again.</translation>
+</message>
+<message>
+<tag_code>3152</tag_code>
+<translation>The IP address and gateway IP address must be in the same subnet.\n</translation>
+</message>
+<message>
+<tag_code>3153</tag_code>
+<translation>The labels should be 63 characters or less.\n</translation>
+</message>
+<message>
+<tag_code>3154</tag_code>
+<translation>The LAN IP address and WAN IP address must not be in the same subnet.</translation>
+</message>
+<message>
+<tag_code>3155</tag_code>
+<translation>The router cannot connect to the Internet with the current settings.</translation>
+</message>
+<message>
+<tag_code>3156</tag_code>
+<translation>This is most likely due to one of the following reasons:</translation>
+</message>
+<message>
+<tag_code>3157</tag_code>
+<translation>This process can take a few minutes; please wait...</translation>
+</message>
+<message>
+<tag_code>3158</tag_code>
+<translation>This process can take a minute or two; please wait...</translation>
+</message>
+<message>
+<tag_code>3159</tag_code>
+<translation>This router is preset with the following unique wireless network name (SSID) and </translation>
+</message>
+<message>
+<tag_code>3160</tag_code>
+<translation>This screen will automatically return to the previous screen in a few seconds...</translation>
+</message>
+<message>
+<tag_code>3161</tag_code>
+<translation>To avoid a conflict with your Internet Service Provider, your router's IP address has been updated to </translation>
+</message>
+<message>
+<tag_code>3162</tag_code>
+<translation>to get it.</translation>
+</message>
+<message>
+<tag_code>3163</tag_code>
+<translation>To solve this problem, make sure that the yellow Ethernet cable is securely plugged in to the broadband modem port and the router Internet port.</translation>
+</message>
+<message>
+<tag_code>3164</tag_code>
+<translation>To solve this problem, power cycle the modem (turn it off and on). To power cycle a modem with battery backup, you might need to remove and reinsert its battery. After the power cycle, wait 2 minutes for the modem to completely start up.</translation>
+</message>
+<message>
+<tag_code>3165</tag_code>
+<translation>Try again</translation>
+</message>
+<message>
+<tag_code>3166</tag_code>
+<translation>Uninstall</translation>
+</message>
+<message>
+<tag_code>3167</tag_code>
+<translation>User name cannot be blank.</translation>
+</message>
+<message>
+<tag_code>3168</tag_code>
+<translation>User Name</translation>
+</message>
+<message>
+<tag_code>3169</tag_code>
+<translation>Warning! \nRestoring settings from a configuration file will erase all of the current settings. \nAre you sure you want to do this?</translation>
+</message>
+<message>
+<tag_code>3170</tag_code>
+<translation>WARNING</translation>
+</message>
+<message>
+<tag_code>3171</tag_code>
+<translation>We can help you to recover the router’s admin password. Please complete the information below and click &lt;b&gt;Continue&lt;&#47;b&gt;.</translation>
+</message>
+<message>
+<tag_code>3172</tag_code>
+<translation>What is the name of your first employer?</translation>
+</message>
+<message>
+<tag_code>3173</tag_code>
+<translation>What is your best friend's first name?</translation>
+</message>
+<message>
+<tag_code>3174</tag_code>
+<translation>What is your father's middle name?</translation>
+</message>
+<message>
+<tag_code>3175</tag_code>
+<translation>What is your grandfather's first name?</translation>
+</message>
+<message>
+<tag_code>3176</tag_code>
+<translation>What is your grandmother's first name?</translation>
+</message>
+<message>
+<tag_code>3177</tag_code>
+<translation>What is your mother's middle name?</translation>
+</message>
+<message>
+<tag_code>3178</tag_code>
+<translation>What is your oldest brother's first name?</translation>
+</message>
+<message>
+<tag_code>3179</tag_code>
+<translation>What is your oldest sister's first name?</translation>
+</message>
+<message>
+<tag_code>3180</tag_code>
+<translation>What is your youngest brother's first name?</translation>
+</message>
+<message>
+<tag_code>3181</tag_code>
+<translation>What is your youngest sister's first name?</translation>
+</message>
+<message>
+<tag_code>3182</tag_code>
+<translation>What was the first name of your first manager?</translation>
+</message>
+<message>
+<tag_code>3183</tag_code>
+<translation>What was the name of the first NETGEAR product you purchased?</translation>
+</message>
+<message>
+<tag_code>3184</tag_code>
+<translation>What was the name of the first school you attended?</translation>
+</message>
+<message>
+<tag_code>3185</tag_code>
+<translation>WiFi Channel</translation>
+</message>
+<message>
+<tag_code>3186</tag_code>
+<translation>Wireless Isolation</translation>
+</message>
+<message>
+<tag_code>3187</tag_code>
+<translation>Wireless Network Name (SSID)</translation>
+</message>
+<message>
+<tag_code>3188</tag_code>
+<translation>Wireless Setup</translation>
+</message>
+<message>
+<tag_code>3189</tag_code>
+<translation>Wireless</translation>
+</message>
+<message>
+<tag_code>3190</tag_code>
+<translation>Yes</translation>
+</message>
+<message>
+<tag_code>3191</tag_code>
+<translation>Yes. My ISP assigned a fixed (static) IP address to me.</translation>
+</message>
+<message>
+<tag_code>3192</tag_code>
+<translation>You are currently logged in from another device. There can be only one device logged in at a time. If you log in from this device, the other device will be logged out. Do you want to proceed?</translation>
+</message>
+<message>
+<tag_code>3193</tag_code>
+<translation>You are not yet connected to the Internet.</translation>
+</message>
+<message>
+<tag_code>3194</tag_code>
+<translation>You are successfully connected to the Internet.</translation>
+</message>
+<message>
+<tag_code>3195</tag_code>
+<translation>You can now log into the router using username "admin" and this recovered password.</translation>
+</message>
+<message>
+<tag_code>3196</tag_code>
+<translation>You have successfully recovered the admin password.</translation>
+</message>
+<message>
+<tag_code>3197</tag_code>
+<translation>Your router is preset with WPA2-PSK wireless security to protect your network from unwanted access. To join the wireless network, you must enter the network key (password). These preset settings are unique to this device, like a serial number. If you want to change them, you can do so later in the Wireless Settings screen on the router web GUI.</translation>
+</message>
+<message>
+<tag_code>3198</tag_code>
+<translation>Wireless security is not enabled on this router. NETGEAR highly recommends that you</translation>
+</message>
+<message>
+<tag_code>3199</tag_code>
+<translation>to enable wireless security and protect your network.</translation>
+</message>
+<message>
+<tag_code>3200</tag_code>
+<translation>WPS Wizard</translation>
+</message>
+<message>
+<tag_code>3201</tag_code>
+<translation>WAN Setup</translation>
+</message>
+<message>
+<tag_code>3202</tag_code>
+<translation>LAN Setup</translation>
+</message>
+<message>
+<tag_code>3203</tag_code>
+<translation>QoS Setup</translation>
+</message>
+<message>
+<tag_code>3204</tag_code>
+<translation>Not Connected</translation>
+</message>
+<message>
+<tag_code>3205</tag_code>
+<translation>No Security</translation>
+</message>
+<message>
+<tag_code>3206</tag_code>
+<translation>DHCP Server</translation>
+</message>
+<message>
+<tag_code>3207</tag_code>
+<translation>Internet Port</translation>
+</message>
+<message>
+<tag_code>3208</tag_code>
+<translation>ReadySHARE Printer</translation>
+</message>
+<message>
+<tag_code>3209</tag_code>
+<translation>A new firmware upgrade is available. Click here to get it.</translation>
+</message>
+<message>
+<tag_code>3210</tag_code>
+<translation>Auto-Detect</translation>
+</message>
+<message>
+<tag_code>3211</tag_code>
+<translation>This process can take up to six minutes; please wait …</translation>
+</message>
+<message>
+<tag_code>3212</tag_code>
+<translation>Click "Next" to continue.</translation>
+</message>
+<message>
+<tag_code>3213</tag_code>
+<translation>Counter Strike</translation>
+</message>
+<message>
+<tag_code>3214</tag_code>
+<translation>Age of Empires</translation>
+</message>
+<message>
+<tag_code>3215</tag_code>
+<translation>Everquest</translation>
+</message>
+<message>
+<tag_code>3215</tag_code>
+<translation>Everquest</translation>
+</message>
+<message>
+<tag_code>3216</tag_code>
+<translation>Quake 2</translation>
+</message>
+<message>
+<tag_code>3217</tag_code>
+<translation>Quake 3</translation>
+</message>
+<message>
+<tag_code>3218</tag_code>
+<translation>Unreal Tourment</translation>
+</message>
+<message>
+<tag_code>3219</tag_code>
+<translation>Warcraft</translation>
+</message>
+<message>
+<tag_code>3220</tag_code>
+<translation>NOT SUPPORTED</translation>
+</message>
+<message>
+<tag_code>3221</tag_code>
+<translation>Serial Number</translation>
+</message>
+<message>
+<tag_code>3222</tag_code>
+<translation>Check for updates</translation>
+</message>
+<message>
+<tag_code>3223</tag_code>
+<translation>What is it</translation>
+</message>
+<message>
+<tag_code>3224</tag_code>
+<translation>Login failed. Please re-enter the correct admin password for your NETGEAR router.</translation>
+</message>
+<message>
+<tag_code>3225</tag_code>
+<translation>Please connect this device wirelessly to your NETGEAR router, then try again.</translation>
+</message>
+<message>
+<tag_code>3226</tag_code>
+<translation>ReadySHARE</translation>
+</message>
+<message>
+<tag_code>3227</tag_code>
+<translation>FastLane</translation>
+</message>
+<message>
+<tag_code>3228</tag_code>
+<translation>FastLane Status</translation>
+</message>
+<message>
+<tag_code>3229</tag_code>
+<translation>Turn On FastLane</translation>
+</message>
+<message>
+<tag_code>3230</tag_code>
+<translation>Bandwidth Reserved for Trusted IP Address</translation>
+</message>
+<message>
+<tag_code>3231</tag_code>
+<translation>WPS &amp; FastLane Push Button</translation>
+</message>
+<message>
+<tag_code>3232</tag_code>
+<translation>Enable Trusted IP address</translation>
+</message>
+<message>
+<tag_code>3233</tag_code>
+<translation>ReadySHARE Printing</translation>
+</message>
+<message>
+<tag_code>3234</tag_code>
+<translation>Print Sharing for Windows PCs and Mac Computers with a USB Printer</translation>
+</message>
+<message>
+<tag_code>3235</tag_code>
+<translation>How It Works?</translation>
+</message>
+<message>
+<tag_code>3236</tag_code>
+<translation>Step 1: Connect the USB printer to the router's USB port with a USB printer cable.</translation>
+</message>
+<message>
+<tag_code>3237</tag_code>
+<translation>Step 2: Install the USB printer driver software on each computer that will share the printer.</translation>
+</message>
+<message>
+<tag_code>3238</tag_code>
+<translation>If you do not have the driver, contact the company that made the printer to locate and download the latest printer driver software.</translation>
+</message>
+<message>
+<tag_code>3239</tag_code>
+<translation>Step 3: On each computer that will share the printer, download the NETGEAR USB Control Center utility from &lt;a class='linktype' target='_blank' href='http://www.netgear.com/readyshare'&gt;http://www.netgear.com/readyshare&lt;/a&gt;. </translation>
+</message>
+<message>
+<tag_code>3240</tag_code>
+<translation>Follow the instructions in the utility to connect to the printer from your computer and print.</translation>
+</message>
+<message>
+<tag_code>3241</tag_code>
+<translation>Online Support</translation>
+</message>
+<message>
+<tag_code>3242</tag_code>
+<translation>Exit</translation>
+</message>
+<message>
+<tag_code>3243</tag_code>
+<translation>Access to this resource is denied, your client has not supplied the correct authentication.</translation>
+</message>
+<message>
+<tag_code>3244</tag_code>
+<translation>VPN Passthrough</translation>
+</message>
+<message>
+<tag_code>3245</tag_code>
+<translation>IPSec Passthrough</translation>
+</message>
+<message>
+<tag_code>3246</tag_code>
+<translation>PPTP Passthrough</translation>
+</message>
+<message>
+<tag_code>3247</tag_code>
+<translation>L2TP Passthrough</translation>
+</message>
+<message>
+<tag_code>3248</tag_code>
+<translation>Fail - Cannot obtain the file</translation>
+</message>
+<message>
+<tag_code>3249</tag_code>
+<translation>Fail – Insufficient space</translation>
+</message>
+<message>
+<tag_code>3250</tag_code>
+<translation>Fail – Unknown reason</translation>
+</message>
+<message>
+<tag_code>3251</tag_code>
+<translation>Downloading</translation>
+</message>
+<message>
+<tag_code>3252</tag_code>
+<translation>Enable NETGEAR badge LED</translation>
+</message>
+<message>
+<tag_code>3258</tag_code>
+<translation>Subnet Mask</translation>
+</message>
+<message>
+<tag_code>3259</tag_code>
+<translation>Intranet Port</translation>
+</message>
+<message>
+<tag_code>3260</tag_code>
+<translation>Profile</translation>
+</message>
+<message>
+<tag_code>3261</tag_code>
+<translation>SSID</translation>
+</message>
+<message>
+<tag_code>3262</tag_code>
+<translation>Broadcast SSID</translation>
+</message>
+<message>
+<tag_code>3263</tag_code>
+<translation>Pending</translation>
+</message>
+<message>
+<tag_code>3264</tag_code>
+<translation>Choose your city and ISP name:</translation>
+</message>
+<message>
+<tag_code>3265</tag_code>
+<translation>City</translation>
+</message>
+<message>
+<tag_code>3266</tag_code>
+<translation>ISP</translation>
+</message>
+<message>
+<tag_code>3267</tag_code>
+<translation>Manual configuration</translation>
+</message>
+<message>
+<tag_code>3268</tag_code>
+<translation>If your ISP is not presented in the list, please proceed with </translation>
+</message>
+<message>
+<tag_code>3269</tag_code>
+<translation>Do you require to enter login and password for Internet access? Choose "Yes" , if you need to start connection to the Internet manually each type after turning on a PC . Otherwise choose "No".</translation>
+</message>
+<message>
+<tag_code>3270</tag_code>
+<translation>You have chosen "Yes". That means you have a VPN connection, which could be PPTP, L2TP or PPPoE type depending on the ISP. If you do not know what VPN type your ISP is using, you may call your ISP support or check it on a PC directly connected to Internet by clicking "Details" in the Status page of your VPN connection.</translation>
+</message>
+<message>
+<tag_code>3271</tag_code>
+<translation>Choose your VPN type:</translation>
+</message>
+<message>
+<tag_code>3272</tag_code>
+<translation>You have chosen "No". That means you have Dynamic IP (DHCP) or Static IP connection mode. You need to choose, whether your settings are received dynamically or assigned manually.</translation>
+</message>
+<message>
+<tag_code>3273</tag_code>
+<translation>service name is optional</translation>
+</message>
+<message>
+<tag_code>3274</tag_code>
+<translation>Does your ISP provide you local resources? This might include local ftp server, trackers, DC++ hubs, IPTV, etc.</translation>
+</message>
+<message>
+<tag_code>3275</tag_code>
+<translation>Intranet IP Address</translation>
+</message>
+<message>
+<tag_code>3276</tag_code>
+<translation>Attention! You have Static IP settings for your intranet interface. That means you might need to add static routes for ISP local resources working correctly. Please proceed to the Static routes page in router's GUI after CA finishes the setup process.</translation>
+</message>
+<message>
+<tag_code>3277</tag_code>
+<translation>You have finished manual configuration process. Please go through your settings once again to see whether you've made any mistakes:</translation>
+</message>
+<message>
+<tag_code>3278</tag_code>
+<translation>Please click "Check connection" button to check your internet connection.</translation>
+</message>
+<message>
+<tag_code>3279</tag_code>
+<translation>Router has failed connecting to the internet. The cause might be in the wrong input settings or ISP downtime. Choose "Back" to check your settings and try again or "Start from the beginning" to go through the wizard again.</translation>
+</message>
+<message>
+<tag_code>3280</tag_code>
+<translation>Start from the beginning</translation>
+</message>
+<message>
+<tag_code>3281</tag_code>
+<translation>Congratulations! You have successfully connected to the internet!</translation>
+</message>
+<message>
+<tag_code>3282</tag_code>
+<translation>Check connection</translation>
+</message>
+<message>
+<tag_code>3283</tag_code>
+<translation>Please enter static IP address and/or DNS servers for your internet interface if your ISP provided such information. In most cases you should skip this step keeping default values (Get dynamically from ISP).</translation>
+</message>
+<message>
+<tag_code>3284</tag_code>
+<translation>Router MAC Address</translation>
+</message>
+<message>
+<tag_code>3285</tag_code>
+<translation>Use default</translation>
+</message>
+<message>
+<tag_code>3286</tag_code>
+<translation>VPN type</translation>
+</message>
+<message>
+<tag_code>3287</tag_code>
+<translation>PPPoE IP address</translation>
+</message>
+<message>
+<tag_code>3288</tag_code>
+<translation>Does your ISP provide local resources</translation>
+</message>
+<message>
+<tag_code>3289</tag_code>
+<translation>Please enter the following settings(you may find it in the brouchure your ISP provided):</translation>
+</message>
+<message>
+<tag_code>3290</tag_code>
+<translation>Your ISP is using MAC address binding for security reasons. If you are configuring the router from a PC previously connected to the internet, please choose "Use Computer MAC Address". You may want to keep the router's MAC address or change it manually, but you will be required to ask your ISP to update their MAC address information.</translation>
+</message>
+<message>
+<tag_code>3291</tag_code>
+<translation>Router has failed connecting to the internet. The cause might be in wrong input settings, ISP downtime, settings changes made by ISP (which are not correspond to the ones stored in router) or incorrectly chosen ISP connection type (if your ISP has different types of connection). Choose "Configuration manually" to reconfigure your router's internet connection manually. Choose "Configure later" to quit wizard.</translation>
+</message>
+<message>
+<tag_code>3292</tag_code>
+<translation>Configuration manually</translation>
+</message>
+<message>
+<tag_code>3293</tag_code>
+<translation>Configure later</translation>
+</message>
+<message>
+<tag_code>3294</tag_code>
+<translation>Choose your city and ISP name:</translation>
+</message>
+<message>
+<tag_code>3295</tag_code>
+<translation>Your ISP is using static IP address connection type. You need to enter the following information</translation>
+</message>
+<message>
+<tag_code>3296</tag_code>
+<translation>Your ISP is using static IP address for local resource access. Please provide the following settings(DNS servers are optional and only filled when you received them from ISP):</translation>
+</message>
+<message>
+<tag_code>3297</tag_code>
+<translation>Your ISP is using Static IP address for local resources access. Please enter intranet IP address and subnet mask. If you have a gateway specified, you can add it later during static routes configuration.</translation>
+</message>
+<message>
+<tag_code>3298</tag_code>
+<translation>Please select one ...</translation>
+</message>
+<message>
+<tag_code>3299</tag_code>
+<translation>Your ISP may provide Dynamic IP (DHCP) or Static IP connection mode for your intranet interface. You need to choose, whether your settings are received dynamically or assigned manually.</translation>
+</message>
+<message>
+<tag_code>3300</tag_code>
+<translation>Enter DNS servers manually only if your ISP provided you with such information.</translation>
+</message>
+<message>
+<tag_code>3301</tag_code>
+<translation>Some ISPs using MAC address binding for security reasons. Please specify, whether router should use his own MAC address, your current PC's MAC address or manually add MAC address required.</translation>
+</message>
+<message>
+<tag_code>3302</tag_code>
+<translation>Bridge IPTV Streaming to</translation>
+</message>
+<message>
+<tag_code>3303</tag_code>
+<translation>Fail</translation>
+</message>
+<message>
+<tag_code>3304</tag_code>
+<translation>Quit Wizard</translation>
+</message>
+<message>
+<tag_code>3306</tag_code>
+<translation>Internal IP address</translation>
+</message>
+<message>
+<tag_code>3307</tag_code>
+<translation>External Starting Port</translation>
+</message>
+<message>
+<tag_code>3308</tag_code>
+<translation>External Ending Port</translation>
+</message>
+<message>
+<tag_code>3309</tag_code>
+<translation>Internal Starting Port</translation>
+</message>
+<message>
+<tag_code>3310</tag_code>
+<translation>Internal Ending Port</translation>
+</message>
+<message>
+<tag_code>3311</tag_code>
+<translation>Use the same port range for Internal port</translation>
+</message>
+<message>
+<tag_code>3312</tag_code>
+<translation>Or select from currently attached devices</translation>
+</message>
+<message>
+<tag_code>3313</tag_code>
+<translation>Service Name</translation>
+</message>
+<message>
+<tag_code>3314</tag_code>
+<translation>Turn off wireless signal by schedule</translation>
+</message>
+<message>
+<tag_code>3315</tag_code>
+<translation>The wireless signal is scheduled to turn off during the following time period:</translation>
+</message>
+<message>
+<tag_code>3316</tag_code>
+<translation>Recurrence Pattern</translation>
+</message>
+<message>
+<tag_code>3317</tag_code>
+<translation>Add a new period</translation>
+</message>
+<message>
+<tag_code>3318</tag_code>
+<translation>When to turn off wireless signal</translation>
+</message>
+<message>
+<tag_code>3319</tag_code>
+<translation>Select Days</translation>
+</message>
+<message>
+<tag_code>3320</tag_code>
+<translation>Mon</translation>
+</message>
+<message>
+<tag_code>3321</tag_code>
+<translation>Tue</translation>
+</message>
+<message>
+<tag_code>3322</tag_code>
+<translation>Wed</translation>
+</message>
+<message>
+<tag_code>3323</tag_code>
+<translation>Thu</translation>
+</message>
+<message>
+<tag_code>3324</tag_code>
+<translation>Fri</translation>
+</message>
+<message>
+<tag_code>3325</tag_code>
+<translation>Sat</translation>
+</message>
+<message>
+<tag_code>3326</tag_code>
+<translation>Sun</translation>
+</message>
+<message>
+<tag_code>3327</tag_code>
+<translation>Send an email notification when a downloading task is finished</translation>
+</message>
+<message>
+<tag_code>3328</tag_code>
+<translation>Configure Email</translation>
+</message>
+<message>
+<tag_code>3329</tag_code>
+<translation>Upper limit per task. Once set, each download or upload task can use a speed less than or equal to the value you set here.</translation>
+</message>
+<message>
+<tag_code>3330</tag_code>
+<translation>Enable Auto Status Refresh</translation>
+</message>
+<message>
+<tag_code>3331</tag_code>
+<translation>The downloading task status will be refreshed automatically according to specified rate</translation>
+</message>
+<message>
+<tag_code>3332</tag_code>
+<translation>Refresh rate</translation>
+</message>
+<message>
+<tag_code>3333</tag_code>
+<translation>Times/Minute</translation>
+</message>
+<message>
+<tag_code>3334</tag_code>
+<translation>ARP Protection/IP-MAC Binding</translation>
+</message>
+<message>
+<tag_code>3335</tag_code>
+<translation>Enable IP-MAC Binding</translation>
+</message>
+<message>
+<tag_code>3336</tag_code>
+<translation>IP-MAC binding protects your router from ARP attacks. With this function enabled, your router uses the IP-MAC binding table as the static ARP table. You can add, remove, or edit the IP-MAC binding pairs in the table. WARNING! Devices that are not registered in this table will NOT have internet access. Ensure that at least one LAN device's IP and MAC address pair is registered in this table.</translation>
+</message>
+<message>
+<tag_code>3337</tag_code>
+<translation>BitTorrent Link</translation>
+</message>
+<message>
+<tag_code>3338</tag_code>
+<translation>ReadySHARE Mobile Connect</translation>
+</message>
+<message>
+<tag_code>3339</tag_code>
+<translation>Broadband Settings</translation>
+</message>
+<message>
+<tag_code>3340</tag_code>
+<translation>User Ethernet connection first and if fail use 3G/4G mobile connection</translation>
+</message>
+<message>
+<tag_code>3341</tag_code>
+<translation>Always use 3G/4G mobile connection</translation>
+</message>
+<message>
+<tag_code>3342</tag_code>
+<translation>Disable 3G/4G connection</translation>
+</message>
+<message>
+<tag_code>3343</tag_code>
+<translation>Mobile Broadband Settings</translation>
+</message>
+<message>
+<tag_code>3344</tag_code>
+<translation>Access Number</translation>
+</message>
+<message>
+<tag_code>3345</tag_code>
+<translation>APN</translation>
+</message>
+<message>
+<tag_code>3346</tag_code>
+<translation>PDP Type</translation>
+</message>
+<message>
+<tag_code>3347</tag_code>
+<translation>Connect on Demand</translation>
+</message>
+<message>
+<tag_code>3348</tag_code>
+<translation>Connect automatically at startup</translation>
+</message>
+<message>
+<tag_code>3349</tag_code>
+<translation>Reconnect automatically When connection is lost</translation>
+</message>
+<message>
+<tag_code>3350</tag_code>
+<translation>Connecting</translation>
+</message>
+<message>
+<tag_code>3351</tag_code>
+<translation>Detecting Modem</translation>
+</message>
+<message>
+<tag_code>3352</tag_code>
+<translation>Modem Not Supported</translation>
+</message>
+<message>
+<tag_code>3353</tag_code>
+<translation>Initializing Modem</translation>
+</message>
+<message>
+<tag_code>3354</tag_code>
+<translation>Checking SIM card</translation>
+</message>
+<message>
+<tag_code>3355</tag_code>
+<translation>NO SIM Card</translation>
+</message>
+<message>
+<tag_code>3356</tag_code>
+<translation>PIN Checking</translation>
+</message>
+<message>
+<tag_code>3357</tag_code>
+<translation>PIN required on SIM</translation>
+</message>
+<message>
+<tag_code>3358</tag_code>
+<translation>PIN is ready</translation>
+</message>
+<message>
+<tag_code>3359</tag_code>
+<translation>Modem SIM locked</translation>
+</message>
+<message>
+<tag_code>3360</tag_code>
+<translation>Scanning Network</translation>
+</message>
+<message>
+<tag_code>3361</tag_code>
+<translation>NO Network Coverage</translation>
+</message>
+<message>
+<tag_code>3362</tag_code>
+<translation>Wireless Broadband Not Connected</translation>
+</message>
+<message>
+<tag_code>3363</tag_code>
+<translation>Connecting</translation>
+</message>
+<message>
+<tag_code>3364</tag_code>
+<translation>Connected</translation>
+</message>
+<message>
+<tag_code>3365</tag_code>
+<translation>Connection Fail</translation>
+</message>
+<message>
+<tag_code>3366</tag_code>
+<translation>Idle</translation>
+</message>
+<message>
+<tag_code>3367</tag_code>
+<translation>Identifying</translation>
+</message>
+<message>
+<tag_code>3368</tag_code>
+<translation>PUK required on SIM</translation>
+</message>
+<message>
+<tag_code>3369</tag_code>
+<translation>Initializing</translation>
+</message>
+<message>
+<tag_code>3370</tag_code>
+<translation>PIN2 required on SIM</translation>
+</message>
+<message>
+<tag_code>3371</tag_code>
+<translation>PUK2 required on SIM</translation>
+</message>
+<message>
+<tag_code>3372</tag_code>
+<translation>NO APN Configured</translation>
+</message>
+<message>
+<tag_code>3373</tag_code>
+<translation>Mobile Connection Idle</translation>
+</message>
+<message>
+<tag_code>3374</tag_code>
+<translation>Mobile Broadband Radio OFF</translation>
+</message>
+<message>
+<tag_code>3375</tag_code>
+<translation>Wii LAN Adapter Plugged</translation>
+</message>
+<message>
+<tag_code>3376</tag_code>
+<translation>Not Connected</translation>
+</message>
+<message>
+<tag_code>3377</tag_code>
+<translation>No USB Modem Plugged</translation>
+</message>
+<message>
+<tag_code>3378</tag_code>
+<translation>MEP PIN code required</translation>
+</message>
+<message>
+<tag_code>3379</tag_code>
+<translation>Wrong APN</translation>
+</message>
+<message>
+<tag_code>3380</tag_code>
+<translation>Roaming NOT Allowed</translation>
+</message>
+<message>
+<tag_code>3381</tag_code>
+<translation>Choosing Connection Mode</translation>
+</message>
+<message>
+<tag_code>3382</tag_code>
+<translation>Always use Ethernet connection</translation>
+</message>
+<message>
+<tag_code>3383</tag_code>
+<translation>Always use Mobile Broadband connection</translation>
+</message>
+<message>
+<tag_code>3384</tag_code>
+<translation>Detecting Mobile Broadband Modem</translation>
+</message>
+<message>
+<tag_code>3385</tag_code>
+<translation>Connecting to Network</translation>
+</message>
+<message>
+<tag_code>3386</tag_code>
+<translation>No USB Broadband Modem is Deteced</translation>
+</message>
+<message>
+<tag_code>3387</tag_code>
+<translation>Make sure that the USB boardband modem is securely plugged</translation>
+</message>
+<message>
+<tag_code>3388</tag_code>
+<translation>No Mobile Broadband Network</translation>
+</message>
+<message>
+<tag_code>3389</tag_code>
+<translation>No SIM Card Detected</translation>
+</message>
+<message>
+<tag_code>3390</tag_code>
+<translation>SIM card not detected or SIM card rejected</translation>
+</message>
+<message>
+<tag_code>3391</tag_code>
+<translation>Please check to ensure SIM card is installed and is properly seated or SIM card is valid.</translation>
+</message>
+<message>
+<tag_code>3392</tag_code>
+<translation>PIN Issue</translation>
+</message>
+<message>
+<tag_code>3393</tag_code>
+<translation>Please input PIN code.</translation>
+</message>
+<message>
+<tag_code>3394</tag_code>
+<translation>Do you want to setup PIN code?</translation>
+</message>
+<message>
+<tag_code>3395</tag_code>
+<translation>USB modem not supported</translation>
+</message>
+<message>
+<tag_code>3396</tag_code>
+<translation>Please check the NETGEAR website for the latest firmware and supported devices.</translation>
+</message>
+<message>
+<tag_code>3397</tag_code>
+<translation>Please Enter Service Provider Configuration</translation>
+</message>
+<message>
+<tag_code>3398</tag_code>
+<translation>Please select the Internet Service Provider and then click Next.</translation>
+</message>
+<message>
+<tag_code>3399</tag_code>
+<translation>If your Mobile Broadband service provide is not in pulldown list, please select Other.</translation>
+</message>
+<message>
+<tag_code>3400</tag_code>
+<translation>Please enter the configuration parameters. If you do not know what they are, please contact your service provide.</translation>
+</message>
+<message>
+<tag_code>3401</tag_code>
+<translation>Mobile Broadband Port</translation>
+</message>
+<message>
+<tag_code>3402</tag_code>
+<translation>Enable automatic internet connection reset at</translation>
+</message>
+<message>
+<tag_code>3403</tag_code>
+<translation>Italy</translation>
+</message>
+<message>
+<tag_code>3404</tag_code>
+<translation>Austria</translation>
+</message>
+<message>
+<tag_code>3405</tag_code>
+<translation>UK</translation>
+</message>
+<message>
+<tag_code>3406</tag_code>
+<translation>Denmark</translation>
+</message>
+<message>
+<tag_code>3407</tag_code>
+<translation>Sweden</translation>
+</message>
+<message>
+<tag_code>3408</tag_code>
+<translation>Australia</translation>
+</message>
+<message>
+<tag_code>3409</tag_code>
+<translation>Ireland</translation>
+</message>
+<message>
+<tag_code>3410</tag_code>
+<translation>Hong Kong</translation>
+</message>
+<message>
+<tag_code>3411</tag_code>
+<translation>Vietnam</translation>
+</message>
+<message>
+<tag_code>3412</tag_code>
+<translation>Indonesia</translation>
+</message>
+<message>
+<tag_code>3413</tag_code>
+<translation>USA</translation>
+</message>
+<message>
+<tag_code>3414</tag_code>
+<translation>User defined</translation>
+</message>
+<message>
+<tag_code>3415</tag_code>
+<translation>Remember PIN</translation>
+</message>
+<message>
+<tag_code>3416</tag_code>
+<translation>PUK Code</translation>
+</message>
+<message>
+<tag_code>3417</tag_code>
+<translation>PIN2 Code</translation>
+</message>
+<message>
+<tag_code>3418</tag_code>
+<translation>PUK2 Code</translation>
+</message>
+<message>
+<tag_code>3419</tag_code>
+<translation>Network Mode</translation>
+</message>
+<message>
+<tag_code>3420</tag_code>
+<translation>Use internal antenna</translation>
+</message>
+<message>
+<tag_code>3421</tag_code>
+<translation>Idle Timeout (minutes)</translation>
+</message>
+<message>
+<tag_code>3422</tag_code>
+<translation>(in minutes)</translation>
+</message>
+<message>
+<tag_code>3423</tag_code>
+<translation>APN Auto Lookup</translation>
+</message>
+<message>
+<tag_code>3424</tag_code>
+<translation>has detected Mobile Broadband settings for you, do you want to use these settings?</translation>
+</message>
+<message>
+<tag_code>3425</tag_code>
+<translation>ISP</translation>
+</message>
+<message>
+<tag_code>3426</tag_code>
+<translation>manually setup</translation>
+</message>
+<message>
+<tag_code>3427</tag_code>
+<translation>Internet Connection Mode</translation>
+</message>
+<message>
+<tag_code>3428</tag_code>
+<translation>Failover Detection Method</translation>
+</message>
+<message>
+<tag_code>3429</tag_code>
+<translation>DNS lookup using WAN DNS Server</translation>
+</message>
+<message>
+<tag_code>3430</tag_code>
+<translation>Perform a DNS lookup by a hostname</translation>
+</message>
+<message>
+<tag_code>3431</tag_code>
+<translation>Ping this IP address</translation>
+</message>
+<message>
+<tag_code>3432</tag_code>
+<translation>Retry Interval is</translation>
+</message>
+<message>
+<tag_code>3433</tag_code>
+<translation>(In Seconds)</translation>
+</message>
+<message>
+<tag_code>3434</tag_code>
+<translation>Failover after</translation>
+</message>
+<message>
+<tag_code>3435</tag_code>
+<translation>(In Intervals)</translation>
+</message>
+<message>
+<tag_code>3436</tag_code>
+<translation>Resume after</translation>
+</message>
+<message>
+<tag_code>3437</tag_code>
+<translation>Enable Hardware link detection</translation>
+</message>
+<message>
+<tag_code>3438</tag_code>
+<translation>China</translation>
+</message>
+<message>
+<tag_code>3439</tag_code>
+<translation>Russia</translation>
+</message>
+<message>
+<tag_code>3440</tag_code>
+<translation>AP Mode</translation>
+</message>
+<message>
+<tag_code>3441</tag_code>
+<translation>Enable AP Mode</translation>
+</message>
+<message>
+<tag_code>3442</tag_code>
+<translation>Get IP Address Dynamically</translation>
+</message>
+<message>
+<tag_code>3443</tag_code>
+<translation>Get DNS Server Address Dynamically</translation>
+</message>
+<message>
+<tag_code>3444</tag_code>
+<translation>Wireless AP mode allows this device to work as a stand-alone wireless access point on your existing network.</translation>
+</message>
+<message>
+<tag_code>3445</tag_code>
+<translation>Enable fixed IP settings on this device (not recommended)</translation>
+</message>
+<message>
+<tag_code>3446</tag_code>
+<translation>Please follow these instructions to have the optimal setup and performance:</translation>
+</message>
+<message>
+<tag_code>3447</tag_code>
+<translation>&lt;b&gt;Step1:&lt;/b&gt;Make sure this device's &lt;b&gt;Internet port&lt;/b&gt; is connected with an cable to &lt;b&gt;one of the LAN ports&lt;/b&gt; on the existing router.</translation>
+</message>
+<message>
+<tag_code>3448</tag_code>
+<translation>&lt;b&gt;Step2:&lt;/b&gt;If your existing router has wireless capability, turn it off or disable it, to avoid interference with this new AP device. Or at least run it at a defferent wireless channel.</translation>
+</message>
+<message>
+<tag_code>3449</tag_code>
+<translation>Once you are done, click Apply to continue</translation>
+</message>
+<message>
+<tag_code>3450</tag_code>
+<translation>&lt;b&gt;Note:&lt;/b&gt;After you click Apply,this device will change to a new IP assigned by your existing router,therefore this web page might not be available. Please close and restart web browser to http://www.routerlogin.net/ again.</translation>
+</message>
+<message>
+<tag_code>3451</tag_code>
+<translation>Operation Mode</translation>
+</message>
+<message>
+<tag_code>3452</tag_code>
+<translation>AP</translation>
+</message>
+<message>
+<tag_code>3453</tag_code>
+<translation>PIN code</translation>
+</message>
+<message>
+<tag_code>3454</tag_code>
+<translation>China Mobile</translation>
+</message>
+<message>
+<tag_code>3455</tag_code>
+<translation>China Unicom</translation>
+</message>
+<message>
+<tag_code>3456</tag_code>
+<translation>China Telecom</translation>
+</message>
+<message>
+<tag_code>3457</tag_code>
+<translation>Other</translation>
+</message>
+<message>
+<tag_code>3458</tag_code>
+<translation>Operator Name</translation>
+</message>
+<message>
+<tag_code>3459</tag_code>
+<translation>Signal Strength</translation>
+</message>
+<message>
+<tag_code>3460</tag_code>
+<translation>3G/4G setup is done!</translation>
+</message>
+<message>
+<tag_code>3461</tag_code>
+<translation>USB Mobile Broadband Modem Settings</translation>
+</message>
+<message>
+<tag_code>3462</tag_code>
+<translation>3G/4G Connection Mode</translation>
+</message>
+<message>
+<tag_code>3463</tag_code>
+<translation>Connection Protocol</translation>
+</message>
+
+
+<message>
+<tag_code>3475</tag_code>
+<translation>Note:</translation>
+</message>
+<message>
+<tag_code>3476</tag_code>
+<translation>Setup Mobile Broadband</translation>
+</message>
+<message>
+<tag_code>3477</tag_code>
+<translation>This router is also capable of connecting to 3G/4G Mobile Network. If you have a supported 3G/4G mobile broadband adapter, you can use the Setup Mobile Broadband button below to run the wizard.</translation>
+</message>
+<message>
+<tag_code>3478</tag_code>
+<translation>No, I want to continue to set up the 3G/4G mobile broadband connection.</translation>
+</message>
+<message>
+<tag_code>3479</tag_code>
+<translation>Installing Driver…</translation>
+</message>
+<message>
+<tag_code>3480</tag_code>
+<translation>NETGEAR genie is installing the adapter driver. It might take a minute or two. Please wait…</translation>
+</message>
+<message>
+<tag_code>3481</tag_code>
+<translation>3G/4G Connection Issue.</translation>
+</message>
+<message>
+<tag_code>3482</tag_code>
+<translation>The router cannot make a 3G/4G connection.</translation>
+</message>
+<message>
+<tag_code>3483</tag_code>
+<translation>Please review the following error:</translation>
+</message>
+<message>
+<tag_code>3484</tag_code>
+<translation>The mobile broadband modem is not a supported type. You can try a different one.</translation>
+</message>
+<message>
+<tag_code>3485</tag_code>
+<translation>No, Take me to the Internet using an Ethernet connection.</translation>
+</message>
+<message>
+<tag_code>3486</tag_code>
+<translation>No USB broadband adapter detected. Check your USB connection.</translation>
+</message>
+<message>
+<tag_code>3487</tag_code>
+<translation>The router cannot establish an Internet connection. Check the settings with your mobile broadband service provider.</translation>
+</message>
+<message>
+<tag_code>3488</tag_code>
+<translation>Ethernet setup is done!</translation>
+</message>
+<message>
+<tag_code>3489</tag_code>
+<translation>Configure Settings</translation>
+</message>
+<message>
+<tag_code>3490</tag_code>
+<translation>Modem Setup Page</translation>
+</message>
+<message>
+<tag_code>3492</tag_code>
+<translation>I want to continue to set up the 3G/4G mobile broadband connection.</translation>
+</message>
+<message>
+<tag_code>3491</tag_code>
+<translation>Fail-Authentication failed</translation>
+</message>
+<message>
+<tag_code>3502</tag_code>
+<translation>(Temporarily)</translation>
+</message>
+<message>
+<tag_code>3599</tag_code>
+<translation>Enable NETGEAR Downloader</translation>
+</message>
+<message>
+<tag_code>3600</tag_code>
+<translation>Media Server (Settings)</translation>
+</message>
+<message>
+<tag_code>3601</tag_code>
+<translation>Enable Media Server</translation>
+</message>
+<message>
+<tag_code>3602</tag_code>
+<translation>Media Server Name</translation>
+</message>
+<message>
+<tag_code>3603</tag_code>
+<translation>Content Scan</translation>
+</message>
+<message>
+<tag_code>3604</tag_code>
+<translation>Automatic (when new files added)</translation>
+</message>
+<message>
+<tag_code>3605</tag_code>
+<translation>Rescan media files</translation>
+</message>
+<message>
+<tag_code>3606</tag_code>
+<translation>Media Server</translation>
+</message>
+<message>
+<tag_code>3607</tag_code>
+<translation>Enable iTunes Server (Music Only)</translation>
+</message>
+<message>
+<tag_code>3608</tag_code>
+<translation>Enter Passcode displayed on the Remote App</translation>
+</message>
+<message>
+<tag_code>3609</tag_code>
+<translation>Allow Control</translation>
+</message>
+<message>
+<tag_code>3610</tag_code>
+<translation>Authentication Failure</translation>
+</message>
+<message>
+<tag_code>3611</tag_code>
+<translation>Registration Failure</translation>
+</message>
+<message>
+<tag_code>3612</tag_code>
+<translation>Online</translation>
+</message>
+<message>
+<tag_code>3613</tag_code>
+<translation>Standard Service</translation>
+</message>
+<message>
+<tag_code>3614</tag_code>
+<translation>Professional Service</translation>
+</message>
+<message>
+<tag_code>3615</tag_code>
+<translation>Offline</translation>
+</message>
+<message>
+<tag_code>3616</tag_code>
+<translation>Transmit Power Control</translation>
+</message>
+<message>
+<tag_code>3617</tag_code>
+<translation>This action is currently disabled until the wireless On/Off button is pressed.</translation>
+</message>
+<message>
+<tag_code>3618</tag_code>
+<translation>VLAN/IPTV Setup</translation>
+</message>
+<message>
+<tag_code>3619</tag_code>
+<translation>Enable VLAN Tag</translation>
+</message>
+<message>
+<tag_code>3620</tag_code>
+<translation>VLAN ID</translation>
+</message>
+<message>
+<tag_code>3621</tag_code>
+<translation>Outgoing Mail Server Port Number</translation>
+</message>
+<message>
+<tag_code>3700</tag_code>
+<translation>Use NETGEAR Cloud</translation>
+</message>
+<message>
+<tag_code>3701</tag_code>
+<translation>Please check the box and click apply</translation>
+</message>
+<message>
+<tag_code>3702</tag_code>
+<translation>Use NETGEAR Downloader</translation>
+</message>
+<message>
+<tag_code>3703</tag_code>
+<translation>Change Path</translation>
+</message>
+<message>
+<tag_code>3704</tag_code>
+<translation>NETGEAR Cloud Setup</translation>
+</message>
+<message>
+<tag_code>3705</tag_code>
+<translation>NETGEAR Cloud Port</translation>
+</message>
+<message>
+<tag_code>3706</tag_code>
+<translation>NETGEAR Cloud Help</translation>
+</message>
+<message>
+<tag_code>3707</tag_code>
+<translation>NETGEAR Cloud default port is 80. If there is any problem after changing this value, please change it back.</translation>
+</message>
+<message>
+<tag_code>3708</tag_code>
+<translation>Go to NETGEAR Cloud</translation>
+</message>
+<message>
+<tag_code>3709</tag_code>
+<translation>Share your life, share your memory, sharing makes your life more memorable.</translation>
+</message>
+<message>
+<tag_code>3710</tag_code>
+<translation>NETGEAR Cloud provides a private and secure cloud sharing circle.</translation>
+</message>
+<message>
+<tag_code>3711</tag_code>
+<translation>You and your cared ones can share everything in your life.</translation>
+</message>
+<message>
+<tag_code>3712</tag_code>
+<translation>Please explore the feature below.</translation>
+</message>
+<message>
+<tag_code>3713</tag_code>
+<translation>Take me to NETGEAR Cloud.</translation>
+</message>
+<message>
+<tag_code>3714</tag_code>
+<translation>Go</translation>
+</message>
+<message>
+<tag_code>3715</tag_code>
+<translation>NETGEAR Cloud - Cloud Sharing Center</translation>
+</message>
+<message>
+<tag_code>3716</tag_code>
+<translation>NETGEAR Cloud</translation>
+</message>
+<message>
+<tag_code>3717</tag_code>
+<translation>3G/4G Mobile Broadband</translation>
+</message>
+<message>
+<tag_code>3718</tag_code>
+<translation>NETGEAR Cloud Version</translation>
+</message>
+<message>
+<tag_code>3719</tag_code>
+<translation>Please paste link URL here</translation>
+</message>
+<message>
+<tag_code>3720</tag_code>
+<translation>User Name(Optional)</translation>
+</message>
+<message>
+<tag_code>3721</tag_code>
+<translation>Password (Optional)</translation>
+</message>
+<message>
+<tag_code>3800</tag_code>
+<translation>Arrange by internal IP</translation>
+</message>
+<message>
+<tag_code>3801</tag_code>
+<translation>(Please specify ports and port ranges split by commas, example: 30, 50 - 60, 65500 - 65510)</translation>
+</message>
+<message>
+<tag_code>3802</tag_code>
+<translation>External port range</translation>
+</message>
+<message>
+<tag_code>3803</tag_code>
+<translation>Internal port range</translation>
+</message>
+<message>
+<tag_code>3900</tag_code>
+<translation>Access Control</translation>
+</message>
+<message>
+<tag_code>3901</tag_code>
+<translation>You can use Access Control to allow or block computers or electronic devices from accessing your network</translation>
+</message>
+<message>
+<tag_code>3902</tag_code>
+<translation>Turn on Access Control</translation>
+</message>
+<message>
+<tag_code>3903</tag_code>
+<translation>Access Rules:</translation>
+</message>
+<message>
+<tag_code>3904</tag_code>
+<translation>This is a general rule. You can also allow or block individual devices</translation>
+</message>
+<message>
+<tag_code>3905</tag_code>
+<translation>Allow all new devices to connect</translation>
+</message>
+<message>
+<tag_code>3906</tag_code>
+<translation>Block all new devices from connecting</translation>
+</message>
+<message>
+<tag_code>3907</tag_code>
+<translation>View list of allowed devices not currently connected to the network</translation>
+</message>
+<message>
+<tag_code>3908</tag_code>
+<translation>View list of blocked devices not currently connected to the network</translation>
+</message>
+<message>
+<tag_code>3909</tag_code>
+<translation>Allow</translation>
+</message>
+<message>
+<tag_code>3910</tag_code>
+<translation>Block</translation>
+</message>
+<message>
+<tag_code>3911</tag_code>
+<translation>Blocked</translation>
+</message>
+<message>
+<tag_code>3912</tag_code>
+<translation>Allowed</translation>
+</message>
+<message>
+<tag_code>3913</tag_code>
+<translation>Access Point Mode allows you to add a second router to your network as a wireless access point.</translation>
+</message>
+<message>
+<tag_code>3914</tag_code>
+<translation>Enable Access Point Mode</translation>
+</message>
+<message>
+<tag_code>3915</tag_code>
+<translation>This would be this device's wireless settings as an access point:</translation>
+</message>
+<message>
+<tag_code>3916</tag_code>
+<translation>Wireless Name (SSID):</translation>
+</message>
+<message>
+<tag_code>3917</tag_code>
+<translation>Wireless Password (Key):</translation>
+</message>
+<message>
+<tag_code>3918</tag_code>
+<translation>If you want to change, go to Setup->Wireless Setup to change it, your computer needs to reconnect using new setting, then come back to this page.</translation>
+</message>
+<message>
+<tag_code>3919</tag_code>
+<translation>NETGEAR recommends you to use different wireless settings from your existing wireless network to avoid interference, or you should disable or turn off wireless signal on your existing router.</translation>
+</message>
+<message>
+<tag_code>3920</tag_code>
+<translation>To add this router to your network in Access Point Mode:</translation>
+</message>
+<message>
+<tag_code>3921</tag_code>
+<translation>Connect one end of an Ethernet cable to the Internet port of this router, and the other end to a LAN port in the existed router.</translation>
+</message>
+<message>
+<tag_code>3922</tag_code>
+<translation>Choose IP Address settings on this access point</translation>
+</message>
+<message>
+<tag_code>3923</tag_code>
+<translation>Wireless Access Point</translation>
+</message>
+<message>
+<tag_code>3924</tag_code>
+<translation>Get dynamically from existing router.</translation>
+</message>
+<message>
+<tag_code>3925</tag_code>
+<translation>Use fixed IP Address (not recommended).</translation>
+</message>
+<message>
+<tag_code>3926</tag_code>
+<translation>Do you have a NETGEAR DDNS or a No-IP DDNS account?</translation>
+</message>
+<message>
+<tag_code>3927</tag_code>
+<translation>Please enter the following information for registration.</translation>
+</message>
+<message>
+<tag_code>3928</tag_code>
+<translation>Email</translation>
+</message>
+<message>
+<tag_code>3929</tag_code>
+<translation>Password(6~32 characters)</translation>
+</message>
+<message>
+<tag_code>3930</tag_code>
+<translation>Register</translation>
+</message>
+<message>
+<tag_code>3931</tag_code>
+<translation>By submitting this form I agree to the</translation>
+</message>
+<message>
+<tag_code>3932</tag_code>
+<translation>terms of service</translation>
+</message>
+<message>
+<tag_code>3933</tag_code>
+<translation>and that I will only create one free account.</translation>
+</message>
+<message>
+<tag_code>3934</tag_code>
+<translation>Forget your password</translation>
+</message>
+<message>
+<tag_code>3935</tag_code>
+<translation>click here</translation>
+</message>
+<message>
+<tag_code>3936</tag_code>
+<translation>To manage your DDNS account.</translation>
+</message>
+<message>
+<tag_code>3937</tag_code>
+<translation>The NETGEAR DDNS on this router is currently configured to:</translation>
+</message>
+<message>
+<tag_code>3938</tag_code>
+<translation>Account/Email:</translation>
+</message>
+<message>
+<tag_code>3939</tag_code>
+<translation>To change the setting, click</translation>
+</message>
+<message>
+<tag_code>3940</tag_code>
+<translation>to reset the setting first.</translation>
+</message>
+<message>
+<tag_code>3941</tag_code>
+<translation>Please run speed test from</translation>
+</message>
+<message>
+<tag_code>3942</tag_code>
+<translation>to check your uplink bandwidth</translation>
+</message>
+<message>
+<tag_code>4000</tag_code>
+<translation>VPN Service</translation>
+</message>
+<message>
+<tag_code>4001</tag_code>
+<translation>Enable VPN Service</translation>
+</message>
+<message>
+<tag_code>4002</tag_code>
+<translation>To install VPN client on your client devices:</translation>
+</message>
+<message>
+<tag_code>4003</tag_code>
+<translation>Advanced Configurations</translation>
+</message>
+<message>
+<tag_code>4004</tag_code>
+<translation>Service Type</translation>
+</message>
+<message>
+<tag_code>4005</tag_code>
+<translation>Service Port</translation>
+</message>
+<message>
+<tag_code>4006</tag_code>
+<translation>Clients will use this VPN connection to access</translation>
+</message>
+<message>
+<tag_code>4007</tag_code>
+<translation>All sites on the Internet &amp; Home Network</translation>
+</message>
+<message>
+<tag_code>4008</tag_code>
+<translation>Home Network only</translation>
+</message>
+<message>
+<tag_code>4009</tag_code>
+<translation>Auto</translation>
+</message>
+<message>
+<tag_code>4010</tag_code>
+<translation>Step 1: Select the Enable VPN Service check box and click the Apply button.</translation>
+</message>
+<message>
+<tag_code>4011</tag_code>
+<translation>Step 2: Download the client utility from</translation>
+</message>
+<message>
+<tag_code>4012</tag_code>
+<translation>and install it on the devices where you want to run the VPN client.</translation>
+</message>
+<message>
+<tag_code>4013</tag_code>
+<translation>Currently iOS and Android clients are not supported.</translation>
+</message>
+<message>
+<tag_code>4014</tag_code>
+<translation>Step 3: Click the proper button below to download the configuration files for your VPN clients.</translation>
+</message>
+<message>
+<tag_code>4015</tag_code>
+<translation>Step 4:Unzip the configuration files you have just downloaded and copy them to the folder where the VPN client is installed on your device. For a client device with Windows64-bit system, the VPN client is installed at &quot;C:\Program files\OpenVPN\config\&quot; by default.</translation>
+</message>
+<message>
+<tag_code>4016</tag_code>
+<translation>Step 5: For a client device with Windows, you need to modify the VPN interface name to &quot;NETGEAR-VPN&quot;. The VPN interface usually has a Device Name as &quot;TAP-Windows Adapter&quot;.</translation>
+</message>
+<message>
+<tag_code>4017</tag_code>
+<translation>Step 6: Client utility must be installed and run by a user who has administrative privileges.</translation>
+</message>
+<message>
+<tag_code>4018</tag_code>
+<translation>Step 7: For help connecting using OpenVPN clients, please refer to</translation>
+</message>
+<message>
+<tag_code>4019</tag_code>
+<translation>Note: if you want to make any change in Advanced Configurations section, please make the changes before you download the configuration files in Step 3.</translation>
+</message>
+<message>
+<tag_code>4020</tag_code>
+<translation>ReadySHARE Vault</translation>
+</message>
+<message>
+<tag_code>4021</tag_code>
+<translation>ReadySHARE Vault lets you back up files on your Windows PC.</translation>
+</message>
+<message>
+<tag_code>4022</tag_code>
+<translation>To back up a Windows PC on to an HDD in the router:</translation>
+</message>
+<message>
+<tag_code>4023</tag_code>
+<translation>1. Install the genie app on each PC by downloading the software from  &lt;a class='linktype' target='_blank' ref='http://www.netgear.com/genie'>www.netgear.com/genie&lt;/a&gt;.</translation>
+</message>
+<message>
+<tag_code>4024</tag_code>
+<translation>2. Install ReadySHARE Vault on each PC by downloading the software from  &lt;a class='linktype' target='_blank' href='http://www.netgear.com/readyshare'>www.netgear.com/readyshare&lt;/a&gt;.</translation>
+</message>
+<message>
+<tag_code>4025</tag_code>
+<translation>3. Launch ReadySHARE Vault. Use the Dashboard or the Backup tab to set up and run your backup.</translation>
+</message>
+<message>
+<tag_code>4100</tag_code>
+<translation>Internet Connection Type</translation>
+</message>
+<message>
+<tag_code>4101</tag_code>
+<translation>Auto Detect</translation>
+</message>
+<message>
+<tag_code>4102</tag_code>
+<translation></translation>
+</message>
+<message>
+<tag_code>4103</tag_code>
+<translation>6To4 Tunnel</translation>
+</message>
+<message>
+<tag_code>4104</tag_code>
+<translation>Pass Through</translation>
+</message>
+<message>
+<tag_code>4105</tag_code>
+<translation>Fixed</translation>
+</message>
+<message>
+<tag_code>4106</tag_code>
+<translation>Remote 6to4 Relay Router</translation>
+</message>
+<message>
+<tag_code>4107</tag_code>
+<translation>Auto</translation>
+</message>
+<message>
+<tag_code>4108</tag_code>
+<translation>Static IP Address</translation>
+</message>
+<message>
+<tag_code>4109</tag_code>
+<translation>IPv6 Address/Prefix Length</translation>
+</message>
+<message>
+<tag_code>4110</tag_code>
+<translation>Router's IPv6 Address on WAN</translation>
+</message>
+<message>
+<tag_code>4111</tag_code>
+<translation>User Class (if Required)</translation>
+</message>
+<message>
+<tag_code>4112</tag_code>
+<translation>Router's IPv6 Address on LAN</translation>
+</message>
+<message>
+<tag_code>4113</tag_code>
+<translation>IP Address assignment</translation>
+</message>
+<message>
+<tag_code>4114</tag_code>
+<translation>Use DHCP Server</translation>
+</message>
+<message>
+<tag_code>4115</tag_code>
+<translation>Use This interface ID</translation>
+</message>
+<message>
+<tag_code>4116</tag_code>
+<translation>Default IPv6 Gateway</translation>
+</message>
+<message>
+<tag_code>4200</tag_code>
+<translation>Go to  &lt;a  style=text-decoration:underline;color:#0000ff; id=url_ac onclick=goto_formframe('AccessControl.htm&amp;todo=cfg_init')&gt;Access Control&lt;/a&gt; to allow or block devices.</translation>
+</message>
+<message>
+<tag_code>4201</tag_code>
+<translation>to allow or block devices</translation>
+</message>
+<message>
+<tag_code>4202</tag_code>
+<translation>Turned On</translation>
+</message>
+<message>
+<tag_code>4203</tag_code>
+<translation>Turned Off</translation>
+</message>
+<message>
+<tag_code>4204</tag_code>
+<translation>General Rule</translation>
+</message>
+<message>
+<tag_code>4300</tag_code>
+<translation>Facebook Wi-Fi is an application for small businesses. The application turns the router into a Wi-Fi hotspot, allow patrons to check in and like your Facebook Page before using the web for free.</translation>
+</message>
+<message>
+<tag_code>4301</tag_code>
+<translation>Please visit and read the setup procedure</translation>
+</message>
+<message>
+<tag_code>4302</tag_code>
+<translation>&lt;b&gt;Enable Facebook Wi-Fi&lt;/b&gt; enables this device to support Facebook Wi-Fi function.</translation>
+</message>
+<message>
+<tag_code>4303</tag_code>
+<translation>This only applies to the Wi-Fi guest network, so the Wi-Fi guest network needs to be enabled on the router for this to work.</translation>
+</message>
+<message>
+<tag_code>4304</tag_code>
+<translation>Click &lt;b&gt;Configure&lt;/b&gt; to link the router to your existing Facebook Page.</translation>
+</message>
+<message>
+<tag_code>4305</tag_code>
+<translation>Configure</translation>
+</message>
+<message>
+<tag_code>4306</tag_code>
+<translation>(To enable the "Configure" button, please check the "Enable Facebook Wi-Fi" option and click the "Apply" button)</translation>
+</message>
+<message>
+<tag_code>4310</tag_code>
+<translation>Qos Mode:</translation>
+</message>
+<message>
+<tag_code>4311</tag_code>
+<translation>Qos rules</translation>
+</message>
+<message>
+<tag_code>4312</tag_code>
+<translation>Add Rules</translation>
+</message>
+<message>
+<tag_code>4313</tag_code>
+<translation>QoS by Service</translation>
+</message>
+<message>
+<tag_code>4314</tag_code>
+<translation>QoS by Device</translation>
+</message>
+<message>
+<tag_code>4315</tag_code>
+<translation>Queue 1: Highest</translation>
+</message>
+<message>
+<tag_code>4316</tag_code>
+<translation>Queue 2: High</translation>
+</message>
+<message>
+<tag_code>4317</tag_code>
+<translation>Queue 3: Normal</translation>
+</message>
+<message>
+<tag_code>4318</tag_code>
+<translation>Queue 4: Low</translation>
+</message>
+<message>
+<tag_code>4319</tag_code>
+<translation>SpeedTest</translation>
+</message>
+<message>
+<tag_code>4400</tag_code>
+<translation>Previous</translation>
+</message>
+<message>
+<tag_code>4401</tag_code>
+<translation>Downloading the following router apps:</translation>
+</message>
+<message>
+<tag_code>4402</tag_code>
+<translation>Genie app. A personal dashboard that lets you monitor, control, and repair your home network.</translation>
+</message>
+<message>
+<tag_code>4403</tag_code>
+<translation>ReadySHARE Vault app (Only for Windows computers). Enables automatic continuous backup of a Windows computer to a USB drive that’s connected to your router.</translation>
+</message>
+<message>
+<tag_code>4404</tag_code>
+<translation>Downloading…</translation>
+</message>
+<message>
+<tag_code>4405</tag_code>
+<translation>Install the Genie app after the download completes.</translation>
+</message>
+<message>
+<tag_code>4406</tag_code>
+<translation>Click the Next button after you install the Genie app to finish configuring the router.</translation>
+</message>
+<message>
+<tag_code>4407</tag_code>
+<translation>Install the ReadySHARE Vault app after the download completes.</translation>
+</message>
+<message>
+<tag_code>4408</tag_code>
+<translation>Click the Next button after you Install the ReadySHARE Vault app to finish configuring the router.</translation>
+</message>
+<message>
+<tag_code>4409</tag_code>
+<translation>Processing your request…</translation>
+</message>
+<message>
+<tag_code>4410</tag_code>
+<translation>Install the Genie app and ReadySHARE Vault app after the download completes.</translation>
+</message>
+<message>
+<tag_code>4411</tag_code>
+<translation>Click the Next button after you install the Genie app and ReadySHARE Vault app to finish configuring the router.</translation>
+</message>
+<message>
+<tag_code>4412</tag_code>
+<translation>After the installation, please click Next.</translation>
+</message>
+<message>
+<tag_code>4413</tag_code>
+<translation>System will install</translation>
+</message>
+<message>
+<tag_code>4414</tag_code>
+<translation>Click Run to start installing</translation>
+</message>
+<message>
+<tag_code>4430</tag_code>
+<translation>Use the same Login information as IPv4 PPPoE</translation>
+</message>
+<message>
+<tag_code>4431</tag_code>
+<translation>Not available</translation>
+</message>
+<message>
+<tag_code>4432</tag_code>
+<translation>Status Refresh</translation>
+</message>
+<message>
+<tag_code>4500</tag_code>
+<translation>For Windows</translation>
+</message>
+<message>
+<tag_code>4501</tag_code>
+<translation>For non-Windows</translation>
+</message>
+<message>
+<tag_code>4502</tag_code>
+<translation>Bytes</translation>
+</message>
+<message>
+<tag_code>4503</tag_code>
+<translation>(GMT+12:00) Kamchatka</translation>
+</message>
+<message>
+<tag_code>4504</tag_code>
+<translation>LED Control Settings</translation>
+</message>
+<message>
+<tag_code>4505</tag_code>
+<translation>Enable blinking on Internet LED, LAN LED, Wireless LED and USB LED when data traffic is detected</translation>
+</message>
+<message>
+<tag_code>4506</tag_code>
+<translation>Disable blinking on Internet LED, LAN LED, Wireless LED and USB LED when data traffic is detected</translation>
+</message>
+<message>
+<tag_code>4507</tag_code>
+<translation>Turn off all LEDs except Power LED</translation>
+</message>
+</tag_msg>

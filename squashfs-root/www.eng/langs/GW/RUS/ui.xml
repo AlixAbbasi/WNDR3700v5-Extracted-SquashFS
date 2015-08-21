@@ -1,0 +1,1638 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tag_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<message>
+<tag_code>25</tag_code>
+<translation> Далее </translation>
+<variable>Next</variable>
+</message>
+<message>
+<tag_code>61</tag_code>
+<translation> Да </translation>
+<variable>Yes</variable>
+</message>
+<message>
+<tag_code>62</tag_code>
+<translation> Нет </translation>
+<variable>No</variable>
+</message>
+<message>
+<tag_code>67</tag_code>
+<translation>Имя устройства</translation>
+<variable>Account Name</variable>
+</message>
+<message>
+<tag_code>71</tag_code>
+<translation>IP-адрес</translation>
+<variable>IP Address</variable>
+</message>
+<message>
+<tag_code>72</tag_code>
+<translation>Получить автоматически от провайдера</translation>
+<variable>Get Dynamically from ISP</variable>
+</message>
+<message>
+<tag_code>73</tag_code>
+<translation>Использовать статический IP-адрес</translation>
+<variable>Use Static IP Address</variable>
+</message>
+<message>
+<tag_code>74</tag_code>
+<translation>Режим подключения</translation>
+<variable>Connection Mode</variable>
+</message>
+<message>
+<tag_code>75</tag_code>
+<translation>IP-маска подсети</translation>
+<variable>IP Subnet Mask</variable>
+</message>
+<message>
+<tag_code>76</tag_code>
+<translation>Шлюз</translation>
+<variable>Gateway</variable>
+</message>
+<message>
+<tag_code>77</tag_code>
+<translation>IP-адрес DNS-сервера (сервера доменных имен)</translation>
+<variable>Domain Name Server (DNS) Address</variable>
+</message>
+<message>
+<tag_code>78</tag_code>
+<translation>Получить автоматически от провайдера</translation>
+<variable>Get Automatically from ISP</variable>
+</message>
+<message>
+<tag_code>79</tag_code>
+<translation>Использовать следующие адреса DNS-серверов</translation>
+<variable>Use These DNS Servers</variable>
+</message>
+<message>
+<tag_code>80</tag_code>
+<translation>Предпочитаемый DNS-сервер</translation>
+<variable>Primary DNS</variable>
+</message>
+<message>
+<tag_code>81</tag_code>
+<translation>Альтернативный DNS-сервер</translation>
+<variable>Secondary DNS</variable>
+</message>
+<message>
+<tag_code>84</tag_code>
+<translation>Использовать адрес по умолчанию</translation>
+<variable>Use Default Address</variable>
+</message>
+<message>
+<tag_code>85</tag_code>
+<translation>Использовать MAC-адрес компьютера</translation>
+<variable>Use Computer MAC Address</variable>
+</message>
+<message>
+<tag_code>86</tag_code>
+<translation>Использовать этот MAC-адрес</translation>
+<variable>Use This MAC Address</variable>
+</message>
+<message>
+<tag_code>88</tag_code>
+<translation>Тип подключения</translation>
+<variable>Internet Service Provider</variable>
+</message>
+<message>
+<tag_code>91</tag_code>
+<translation>Вход в систему</translation>
+<variable>Login</variable>
+</message>
+<message>
+<tag_code>93</tag_code>
+<translation>Имя службы</translation>
+<variable>Service Name</variable>
+</message>
+<message>
+<tag_code>94</tag_code>
+<translation>Режим подключения</translation>
+<variable>Connection Mode</variable>
+</message>
+<message>
+<tag_code>110</tag_code>
+<translation>Адрес сервера</translation>
+<variable>Server Address</variable>
+</message>
+<message>
+<tag_code>175</tag_code>
+<translation>Назад </translation>
+<variable>Back</variable>
+</message>
+<message>
+<tag_code>466</tag_code>
+<translation>Мастер установки</translation>
+<variable>Setup Wizard</variable>
+</message>
+<message>
+<tag_code>534</tag_code>
+<translation>Страна</translation>
+<variable>Country</variable>
+</message>
+<message>
+<tag_code>552</tag_code>
+<translation>Wi-Fi сеть</translation>
+<variable>Wireless</variable>
+</message>
+<message>
+<tag_code>597</tag_code>
+<translation>Тип соединения</translation>
+<variable>Connection Type</variable>
+</message>
+<message>
+<tag_code>708</tag_code>
+<translation>Маска подсети</translation>
+<variable>Subnet Mask</variable>
+</message>
+<message>
+<tag_code>709</tag_code>
+<translation>Шлюз по умолчанию</translation>
+<variable>Default Gateway</variable>
+</message>
+<message>
+<tag_code>753</tag_code>
+<translation>Повторить попытку</translation>
+<variable>Try again</variable>
+</message>
+<message>
+<tag_code>860</tag_code>
+<translation>Обнаруженный тип подключения: динамический IP-адрес</translation>
+<variable>Dynamic IP (DHCP) detected</variable>
+</message>
+<message>
+<tag_code>870</tag_code>
+<translation>Фиксированный IP-адрес</translation>
+<variable>Static IP (Fixed) Addresses</variable>
+</message>
+<message>
+<tag_code>875</tag_code>
+<translation>Мастер установки поможет определить тип подключения к Интернету.</translation>
+<variable>The Smart Setup Wizard can detect the type of Internet connection that you have.</variable>
+</message>
+<message>
+<tag_code>876</tag_code>
+<translation>Хотите ли вы, чтобы мастер установки сейчас попытался определить тип вашего подключения?</translation>
+<variable>Do you want the Smart Setup Wizard to try and detect the connection type now?</variable>
+</message>
+<message>
+<tag_code>877</tag_code>
+<translation>Нет. Я хочу настроить маршрутизатор самостоятельно.</translation>
+<variable>No. I want to configure the router myself.</variable>
+</message>
+<message>
+<tag_code>3000</tag_code>
+<translation>- Проверьте правильность подключения кабелей. См. инструкции в Руководстве по установке маршрутизатора.</translation>
+<variable>- Check that the cable connections are correct. Refer to the router Installation Guide for instructions.</variable>
+</message>
+<message>
+<tag_code>3001</tag_code>
+<translation>- Убедитесь, что питание широкополосного модема было выключено и снова включено в соответствии с инструкциями. В случае модема с аварийным батарейным питанием извлеките и снова установите батарею для перезапуска модема.</translation>
+<variable>- Check that your broadband modem is power cycled correctly. If you have a battery-backed modem, remove and reinsert the battery to power cycle your modem.</variable>
+</message>
+<message>
+<tag_code>3003</tag_code>
+<translation>(формат AABBCCDDEEFF)</translation>
+<variable>(format AABBCCDDEEFF)</variable>
+</message>
+<message>
+<tag_code>3006</tag_code>
+<translation>1.  На этапе подключения кабеля Питание не было выполнено выключение и повторное включение питания модема.</translation>
+<variable>1.  The modem was not power cycled during the cabling step.</variable>
+</message>
+<message>
+<tag_code>3007</tag_code>
+<translation>2.  Желтый кабель Ethernet подключен ненадежно или подключен не к тому разъему.</translation>
+<variable>2.  The yellow Ethernet cable is not fully inserted, or is inserted in the wrong place.</variable>
+</message>
+<message>
+<tag_code>3008</tag_code>
+<translation>MAC-адрес – это уникальный номер.  MAC-адрес компьютера или маршрутизатора указан на этикетке продукта.</translation>
+<variable>A MAC address is a unique number.  You can find the MAC address of the computer or router on its product label.</variable>
+</message>
+<message>
+<tag_code>3014</tag_code>
+<translation>После проверки кабеля Ethernet нажмите &lt;b&gt;Повторить попытку&lt;/b&gt;.</translation>
+<variable>After you have checked the Ethernet cable, click &lt;b&gt;Try again&lt;/b&gt;.</variable>
+</message>
+<message>
+<tag_code>3015</tag_code>
+<translation>Альтернативный сервер DNS</translation>
+<variable>Alternate DNS Server</variable>
+</message>
+<message>
+<tag_code>3017</tag_code>
+<translation>Применение настроек подключения к Интернету</translation>
+<variable>Applying Internet Connection Settings</variable>
+</message>
+<message>
+<tag_code>3020</tag_code>
+<translation>Назад </translation>
+<variable>Back</variable>
+</message>
+<message>
+<tag_code>3023</tag_code>
+<translation>Перейдите к файлу резервного копирования настроек маршрутизатора (сохраненному ранее) и нажмите &lt;b&gt;Далее&lt;/b&gt; для продолжения процедуры.</translation>
+<variable>Browse to the router settings backup file you previously saved, and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3024</tag_code>
+<translation>Проверка подключения к Интернету; подождите ...</translation>
+<variable>Checking the Internet connection; please wait …</variable>
+</message>
+<message>
+<tag_code>3025</tag_code>
+<translation>Нажмите здесь</translation>
+<variable>Click here</variable>
+</message>
+<message>
+<tag_code>3028</tag_code>
+<translation>Настройка подключения к Интернету</translation>
+<variable>Configuring the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3029</tag_code>
+<translation>Поздравляем!</translation>
+<variable>Congratulations!</variable>
+</message>
+<message>
+<tag_code>3030</tag_code>
+<translation>ID/Имя подключения</translation>
+<variable>Connection ID/Name</variable>
+</message>
+<message>
+<tag_code>3031</tag_code>
+<translation>Продолжить</translation>
+<variable>Continue</variable>
+</message>
+<message>
+<tag_code>3034</tag_code>
+<translation>Обнаружение подключения к Интернету</translation>
+<variable>Detecting the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3035</tag_code>
+<translation>Ваш интернет-провайдер (ISP) назначил вам фиксированный (статический) IP-адрес?; Это &lt;b&gt;очень редкая&lt;/b&gt; специальная опция. </translation>
+<variable>Did your Internet Service Provider (ISP) assign to you a fixed (static) IP address? This is a &lt;b&gt;very rare&lt;/b&gt; special deployment. </variable>
+</message>
+<message>
+<tag_code>3037</tag_code>
+<translation>Использовать NETGEAR Genie?</translation>
+<variable>Do you want NETGEAR Genie to help?</variable>
+</message>
+<message>
+<tag_code>3038</tag_code>
+<translation>Повторить попытку использования NETGEAR Genie?</translation>
+<variable>Do you want NETGEAR Genie to try again?</variable>
+</message>
+<message>
+<tag_code>3043</tag_code>
+<translation>Введите фиксированный IP-адрес, назначенный интернет-провайдером, затем нажмите &lt;b&gt;Далее&lt;/b&gt; для продолжения процедуры.</translation>
+<variable>Enter the fixed IP settings assigned by your Internet Service Provider and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3044</tag_code>
+<translation>Введите MAC-адрес в это поле.</translation>
+<variable>Enter the MAC address here.</variable>
+</message>
+<message>
+<tag_code>3045</tag_code>
+<translation>Введите необходимые сведения еще раз.</translation>
+<variable>Enter the required information again.</variable>
+</message>
+<message>
+<tag_code>3046</tag_code>
+<translation>Введите необходимые сведения ниже.</translation>
+<variable>Enter the required information below.</variable>
+</message>
+<message>
+<tag_code>3049</tag_code>
+<translation>Ошибка</translation>
+<variable>Failure</variable>
+</message>
+<message>
+<tag_code>3053</tag_code>
+<translation>Настройки фиксированного IP-адреса в Интернет</translation>
+<variable>Fixed Internet IP Settings</variable>
+</message>
+<message>
+<tag_code>3054</tag_code>
+<translation>IP-адрес шлюза</translation>
+<variable>Gateway IP Address</variable>
+</message>
+<message>
+<tag_code>3060</tag_code>
+<translation>Я исправил неполадку с кабелем Ethernet.</translation>
+<variable>I corrected a problem with the Ethernet cable.</variable>
+</message>
+<message>
+<tag_code>3061</tag_code>
+<translation>Я не знаю. </translation>
+<variable>I don't know. </variable>
+</message>
+<message>
+<tag_code>3062</tag_code>
+<translation>Я сохранил настройки маршрутизатора в файле и хочу восстановить эти настройки на маршрутизаторе.</translation>
+<variable>I have saved the router settings in a file and I want to restore the router to those settings.</variable>
+</message>
+<message>
+<tag_code>3063</tag_code>
+<translation>Я отключил и снова подключил питание модема и подождал 2 минуты.</translation>
+<variable>I just power cycled the modem and waited for 2 minutes.</variable>
+</message>
+<message>
+<tag_code>3064</tag_code>
+<translation>Я хочу настроить подключение к Интернету самостоятельно</translation>
+<variable>I want to configure the Internet connection myself</variable>
+</message>
+<message>
+<tag_code>3065</tag_code>
+<translation>&lt;B&gt;Время бездействия перед отключением&lt;/B&gt; (в минутах)</translation>
+<variable>&lt;b&gt;Idle Timeout&lt;/b&gt;(In Minutes)</variable>
+</message>
+<message>
+<tag_code>3067</tag_code>
+<translation>Если вы ранее подключались к Интернету с использованием компьютера или другого маршрутизатора, NETGEAR Genie может использовать MAC-адрес этого устройства.</translation>
+<variable>If you previously connected to your Internet service with a computer or another router,  NETGEAR Genie can use the same MAC address that worked before.</variable>
+</message>
+<message>
+<tag_code>3068</tag_code>
+<translation>Важное обновление</translation>
+<variable>Important Update</variable>
+</message>
+<message>
+<tag_code>3073</tag_code>
+<translation>Неверное имя пользователя и/или пароль интернет-провайдера</translation>
+<variable>Incorrect ISP User name or Password</variable>
+</message>
+<message>
+<tag_code>3094</tag_code>
+<translation>Убедитесь, что кабель надежно подключен к порту широкополосного модема и порту сети Интернет маршрутизатора.</translation>
+<variable>Make sure that the cable is securely plugged into both the broadband modem port and the router Internet port.</variable>
+</message>
+<message>
+<tag_code>3095</tag_code>
+<translation>Мой IP-адрес</translation>
+<variable>My IP Address</variable>
+</message>
+<message>
+<tag_code>3097</tag_code>
+<translation>Проблема при подключении к сети</translation>
+<variable>Network Connection Issue</variable>
+</message>
+<message>
+<tag_code>3098</tag_code>
+<translation>сетевого ключа (пароля)</translation>
+<variable>network key (password)</variable>
+</message>
+<message>
+<tag_code>3099</tag_code>
+<translation>сетевого ключа (пароля)</translation>
+<variable>network key (password)</variable>
+</message>
+<message>
+<tag_code>3100</tag_code>
+<translation> Далее </translation>
+<variable>Next</variable>
+</message>
+<message>
+<tag_code>3101</tag_code>
+<translation>Кабель Ethernet не подключен к порту сети Интернет на маршрутизаторе</translation>
+<variable>No Ethernet Cable Is Plugged into the Router Internet Port</variable>
+</message>
+<message>
+<tag_code>3103</tag_code>
+<translation>Нет, я не получил фиксированный (статический) IP-адрес от интернет-провайдера.</translation>
+<variable>No, I did not get a fixed (static) IP address from my ISP.</variable>
+</message>
+<message>
+<tag_code>3104</tag_code>
+<translation>Нет, я хочу настроить подключение к Интернету самостоятельно.</translation>
+<variable>No, I want to configure the Internet connection myself.</variable>
+</message>
+<message>
+<tag_code>3106</tag_code>
+<translation>Ничего из перечисленного.</translation>
+<variable>None of the above.</variable>
+</message>
+<message>
+<tag_code>3113</tag_code>
+<translation>Пароль</translation>
+<variable>Password</variable>
+</message>
+<message>
+<tag_code>3118</tag_code>
+<translation>Проверьте выполнение следующих шагов:</translation>
+<variable>Please review the following items:</variable>
+</message>
+<message>
+<tag_code>3121</tag_code>
+<translation>Подождите...</translation>
+<variable>Please wait a moment...</variable>
+</message>
+<message>
+<tag_code>3122</tag_code>
+<translation>Обнаружено подключение к Интернету по протоколу PPPoE</translation>
+<variable>PPPoE DSL Internet Connection Detected</variable>
+</message>
+<message>
+<tag_code>3123</tag_code>
+<translation>Обнаружено подключение к Интернету по протоколу PPTP</translation>
+<variable>PPTP Internet Connection Detected</variable>
+</message>
+<message>
+<tag_code>3124</tag_code>
+<translation>Предпочтительный сервер DNS</translation>
+<variable>Preferred DNS Server</variable>
+</message>
+<message>
+<tag_code>3125</tag_code>
+<translation>Распечатать</translation>
+<variable>Print this</variable>
+</message>
+<message>
+<tag_code>3126</tag_code>
+<translation>Обнаружена проблема при подключении к Интернету – IP-адрес</translation>
+<variable>Problem Detecting the Internet Connection - IP Address</variable>
+</message>
+<message>
+<tag_code>3127</tag_code>
+<translation>Обнаружена проблема при подключении к Интернету – MAC-адрес</translation>
+<variable>Problem Detecting the Internet Connection - MAC Address</variable>
+</message>
+<message>
+<tag_code>3128</tag_code>
+<translation>Обнаружена проблема при подключении к Интернету</translation>
+<variable>Problem Detecting the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3130</tag_code>
+<translation>Восстановление настроек маршрутизатора </translation>
+<variable>Restore Router Settings </variable>
+</message>
+<message>
+<tag_code>3131</tag_code>
+<translation>Восстановление настроек маршрутизатора</translation>
+<variable>Restoring Router Settings</variable>
+</message>
+<message>
+<tag_code>3135</tag_code>
+<translation>Версия микрокода маршрутизатора</translation>
+<variable>Router Firmware Version</variable>
+</message>
+<message>
+<tag_code>3144</tag_code>
+<translation>Выберите опцию и нажмите &lt;b&gt;Далее&lt;/b&gt; для продолжения процедуры.</translation>
+<variable>Select an option and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3147</tag_code>
+<translation>Адрес сервера</translation>
+<variable>Server Address</variable>
+</message>
+<message>
+<tag_code>3150</tag_code>
+<translation>Перейти в Интернет</translation>
+<variable>Take me to the Internet</variable>
+</message>
+<message>
+<tag_code>3155</tag_code>
+<translation>Маршрутизатор не может подключиться к Интернету с текущими настройками.</translation>
+<variable>The router cannot connect to the Internet with the current settings.</variable>
+</message>
+<message>
+<tag_code>3156</tag_code>
+<translation>Наиболее вероятные причины:</translation>
+<variable>This is most likely due to one of the following reasons:</variable>
+</message>
+<message>
+<tag_code>3157</tag_code>
+<translation>Этот процесс может занять несколько минут; подождите ...</translation>
+<variable>This process can take a few minutes; please wait …</variable>
+</message>
+<message>
+<tag_code>3158</tag_code>
+<translation>Этот процесс может занять одну-две минуты; подождите...</translation>
+<variable>This process can take a minute or two; please wait...</variable>
+</message>
+<message>
+<tag_code>3159</tag_code>
+<translation>Данный маршрутизатор предварительно настроен для использования уникального имени Wi-Fi сети (SSID) и </translation>
+<variable>This router is preset with the following unique wireless network name (SSID) and </variable>
+</message>
+<message>
+<tag_code>3160</tag_code>
+<translation>Эта страница автоматически вернется на предыдущую страницу через несколько секунд...</translation>
+<variable>This screen will automatically return to the previous screen in a few seconds...</variable>
+</message>
+<message>
+<tag_code>3161</tag_code>
+<translation>Для предотвращения конфликта с Интернет-провайдером IP-адрес маршрутизатора был обновлен на </translation>
+<variable>To avoid a conflict with your Internet Service Provider, your router's IP address has been updated to </variable>
+</message>
+<message>
+<tag_code>3163</tag_code>
+<translation>Чтобы решить эту проблему, убедитесь, что желтый кабель Ethernet надежно подключен к порту широкополосного модема и порту сети Интернет маршрутизатора.</translation>
+<variable>To solve this problem, make sure that the yellow Ethernet cable is securely plugged in to the broadband modem port and the router Internet port.</variable>
+</message>
+<message>
+<tag_code>3164</tag_code>
+<translation>Чтобы решить эту проблему, выключите и снова включите питание модема. Чтобы выключить и снова включить питание модема, имеющего резервную батарею, необходимо извлечь и снова установить батарею. После выключения и повторного включения необходимо подождать 2 минуты до полного запуска модема.</translation>
+<variable>To solve this problem, power cycle the modem (turn it off and on). To power cycle a modem with battery backup, you might need to remove and reinsert its battery. After the power cycle, wait 2 minutes for the modem to completely start up.</variable>
+</message>
+<message>
+<tag_code>3165</tag_code>
+<translation>Повторить попытку</translation>
+<variable>Try again</variable>
+</message>
+<message>
+<tag_code>3168</tag_code>
+<translation>Имя пользователя</translation>
+<variable>User Name</variable>
+</message>
+<message>
+<tag_code>3187</tag_code>
+<translation>Имя беспроводной сети (SSID)</translation>
+<variable>Wireless Network Name (SSID)</variable>
+</message>
+<message>
+<tag_code>3189</tag_code>
+<translation>Wi-Fi сеть</translation>
+<variable>Wireless</variable>
+</message>
+<message>
+<tag_code>3190</tag_code>
+<translation> Да </translation>
+<variable>Yes</variable>
+</message>
+<message>
+<tag_code>3191</tag_code>
+<translation>Да. Мой интернет-провайдер назначил мне фиксированный (статический) IP-адрес.</translation>
+<variable>Yes. My ISP assigned a fixed (static) IP address to me.</variable>
+</message>
+<message>
+<tag_code>3193</tag_code>
+<translation>Соединение с Интернетом еще не установлено.</translation>
+<variable>You are not yet connected to the Internet.</variable>
+</message>
+<message>
+<tag_code>3194</tag_code>
+<translation>Соединение с Интернетом установлено.</translation>
+<variable>You are successfully connected to the Internet.</variable>
+</message>
+<message>
+<tag_code>3197</tag_code>
+<translation>Ваш маршрутизатор предварительно настроен для использования системы безопасности беспроводного соединения WPA2-PSK, которая позволяет защитить сеть от несанкционированного доступа. Чтобы подключиться к беспроводной сети, необходимо ввести сетевой ключ (пароль). Эти предварительные настройки являются уникальными для данного устройства (так же, как и серийный номер).  При необходимости можно изменить их позже на экране Настройки беспров. сети в веб-интерфейсе маршрутизатора.</translation>
+<variable>Your router is preset with WPA2-PSK wireless security to protect your network from unwanted access. To join the wireless network, you must enter the network key (password). These preset settings are unique to this device, like a serial number.  If you want to change them, you can do so later in the Wireless Settings screen on the router web GUI.</variable>
+</message>
+<message>
+<tag_code>3198</tag_code>
+<translation>На этом маршрутизаторе не включена система безопасности беспроводной сети. NETGEAR настоятельно рекомендует</translation>
+<variable>Wireless security is not enabled on this router. NETGEAR highly recommends that you</variable>
+</message>
+<message>
+<tag_code>3199</tag_code>
+<translation>включить защиту, чтобы обезопасить свою сеть.</translation>
+<variable>to enable wireless security and protect your network.</variable>
+</message>
+<message>
+<tag_code>3210</tag_code>
+<translation>Автообнаружение</translation>
+<variable>Auto-Detect</variable>
+</message>
+<message>
+<tag_code>3212</tag_code>
+<translation>После этого нажмите "Далее".</translation>
+<variable>Click "Next" to continue.</variable>
+</message>
+<message>
+<tag_code>3259</tag_code>
+<translation>Intranet Port</translation>
+<variable>Intranet Port</variable>
+</message>
+<message>
+<tag_code>3264</tag_code>
+<translation>Выберите город и имя вашего провайдера:</translation>
+<variable>Choose your city and ISP name:</variable>
+</message>
+<message>
+<tag_code>3265</tag_code>
+<translation>Город:</translation>
+<variable>City</variable>
+</message>
+<message>
+<tag_code>3266</tag_code>
+<translation>Имя провайдера:</translation>
+<variable>ISP</variable>
+</message>
+<message>
+<tag_code>3267</tag_code>
+<translation>ручную настройку:</translation>
+<variable>Manual configuration</variable>
+</message>
+<message>
+<tag_code>3268</tag_code>
+<translation>Если вашего провайдера нет в списке, выберите </translation>
+<variable>If your ISP is not presented in the list, please proceed with </variable>
+</message>
+<message>
+<tag_code>3269</tag_code>
+<translation>Укажите, требует ли ваш провайдер ввода логина и пароля для доступа в интернет? Выберите «Да», если вам приходится каждый раз при включении компьютера запускать дополнительное подключение для доступа в интернет вручную. Выберите «Нет», если подключение осуществляется сразу же и ваш провайдер не использует логин и пароль для авторизации пользователей.</translation>
+<variable>Do you require to enter login and password for Internet access? Choose "Yes" , if you need to start connection to the Internet manually each type after turning on a PC . Otherwise choose "No".</variable>
+</message>
+<message>
+<tag_code>3270</tag_code>
+<translation>Вы выбрали «Да». Это означает, что для подключения пользователей ваш провайдер использует т.н. VPN-подключение, которое подразделяется на несколько типов: PPPoE, PPTP или L2TP. Для продолжения установки, вам необходимо знать конкретный тип подключения в вашей сети. Если вы его не знаете, вы можете либо позвонить в службу технической поддержки вашего провайдера, либо на ПК, напрямую подключенному к провайдеру с работающим интернетом, зайти в состояние подключения к интернету и перейти к вкладке «Подробно» (или «Сведения»), где будет указан тип вашего VPN.</translation>
+<variable>You have chosen "Yes". That means you have a VPN connection, which could be PPTP, L2TP or PPPoE type depending on the ISP. If you do not know what VPN type your ISP is using, you may call your ISP support or check it on a PC directly connected to Internet by clicking "Details" in the Status page of your VPN connection.</variable>
+</message>
+<message>
+<tag_code>3271</tag_code>
+<translation>Укажите тип вашего VPN-подключения:</translation>
+<variable>Choose your VPN type:</variable>
+</message>
+<message>
+<tag_code>3272</tag_code>
+<translation>Вы выбрали «Нет». Это означает, что ваш провайдер либо предоставляет настройки в автоматическом режиме (т.н. режиме DHCP), либо использует статические настройки (фиксированный адрес), которые необходимо задавать вручную пользователю. Вам необходимо выбрать один из режимов в зависимости от того, выдаются ли вам настройки автоматически или вам их необходимо прописывать согласно договору с провайдером.</translation>
+<variable>You have chosen "No". That means you have Dynamic IP (DHCP) or Static IP connection mode. You need to choose, whether your settings are received dynamically or assigned manually.</variable>
+</message>
+<message>
+<tag_code>3273</tag_code>
+<translation>Имя службы обычно является необязательным к заполнению.</translation>
+<variable>service name is optional</variable>
+</message>
+<message>
+<tag_code>3274</tag_code>
+<translation>Укажите, предоставляет ли ваш провайдер кроме доступа в интернет доступ к локальным ресурсам (например, ftp серверам, локальным торрент трекерам, DC++ хабам, телевиденью IPTV и пр.)? При выборе «Да» в качестве ответа маршрутизатор будет использовать схему двойного доступа, характерного только для России (т.н. dual-access). В противном случае весь трафик будет передаваться только через VPN-подключение.</translation>
+<variable>Does your ISP provide you local resources? This might include local ftp server, trackers, DC++ hubs, IPTV, etc.</variable>
+</message>
+<message>
+<tag_code>3275</tag_code>
+<translation>Внутренний IP-адрес сети провайдера</translation>
+<variable>Intranet IP Address</variable>
+</message>
+<message>
+<tag_code>3276</tag_code>
+<translation>Внимание! Вы используете фиксированный (статический) IP-адрес для вашего внутреннего интерфейса доступа к локальным ресурсам провайдера. Для того чтобы доступ к ресурсам работал корректно, вам необходимо по завершению текущей настройки указать статические маршруты. Для их настройки перейдите в меню «Статические маршруты» и следуйте соответствующим указаниям в справке. Используйте IP-адрес шлюза, который предоставил вам провайдер, в качестве шлюза назначения для каждого из добавленных маршрутов.</translation>
+<variable>Attention! You have Static IP settings for your intranet interface. That means you might need to add static routes for ISP local resources working correctly. Please proceed to the Static routes page in router's GUI after CA finishes the setup process.</variable>
+</message>
+<message>
+<tag_code>3277</tag_code>
+<translation>Вы завершили процедуру ручной настойки маршрутизатора. Пожалуйста, проверьте ваши настройки еще раз. В случае ошибки вы можете вернуться на соответствующий этап с помощью кнопки «Назад» и исправить допущенные недочеты.</translation>
+<variable>You have finished manual configuration process. Please go through your settings once again to see whether you've made any mistakes:</variable>
+</message>
+<message>
+<tag_code>3278</tag_code>
+<translation>Щелкните по кнопке «Проверить подключение» для того, чтобы маршрутизатор попытался подключиться к интернету.</translation>
+<variable>Please click "Check connection" button to check your internet connection.</variable>
+</message>
+<message>
+<tag_code>3279</tag_code>
+<translation>Маршрутизатору не удалось подключиться к интернету. Причиной могут быть неверно введенные настройки подключения или проблемы на стороне провайдера. Вы можете вернуться к предыдущим шагам с помощью кнопки «Назад» или начать настройку заново, нажав на кнопку «Начать заново».</translation>
+<variable>Router has failed connecting to the internet. The cause might be in the wrong input settings or ISP downtime. Choose "Back" to check your settings and try again or "Start from the beginning" to go through the wizard again.</variable>
+</message>
+<message>
+<tag_code>3280</tag_code>
+<translation>Начать заново</translation>
+<variable>Start from the beginning</variable>
+</message>
+<message>
+<tag_code>3281</tag_code>
+<translation>Поздравляем! Вы успешно подключены к интернету!</translation>
+<variable>Congratulations! You have successfully connected to the internet!</variable>
+</message>
+<message>
+<tag_code>3282</tag_code>
+<translation>Проверить подключение</translation>
+<variable>Check connection</variable>
+</message>
+<message>
+<tag_code>3283</tag_code>
+<translation>Если ваш провайдер использует фиксированный IP-адрес или адреса DNS-серверов для подключения по PPPoE, вам необходимо ввести эти настройки в соответствующие поля. В большинстве случаев, когда провайдер не предоставил вам эти настройки, вам необходимо оставить значения по умолчанию («Автоматические получить от провайдера») и перейти к следующему этапу настройки.</translation>
+<variable>Please enter static IP address and/or DNS servers for your internet interface if your ISP provided such information. In most cases you should skip this step keeping default values (Get dynamically from ISP).</variable>
+</message>
+<message>
+<tag_code>3284</tag_code>
+<translation>MAC-адрес маршрутизатора</translation>
+<variable>Router MAC Address</variable>
+</message>
+<message>
+<tag_code>3285</tag_code>
+<translation>Использовать по умолчанию</translation>
+<variable>Use default</variable>
+</message>
+<message>
+<tag_code>3286</tag_code>
+<translation>Тип VPN-подключения</translation>
+<variable>VPN type</variable>
+</message>
+<message>
+<tag_code>3287</tag_code>
+<translation>IP-адрес PPPoE-подключения</translation>
+<variable>PPPoE IP address</variable>
+</message>
+<message>
+<tag_code>3288</tag_code>
+<translation>Укажите, предоставляет ли ваш провайдер кроме доступа в интернет доступ к локальным ресурсам (например, ftp серверам, локальным торрент трекерам, DC++ хабам, телевиденью IPTV и пр.)? При выборе «Да» в качестве ответа маршрутизатор будет использовать схему двойного доступа, характерного только для России (т.н. dual-access). В противном случае весь трафик будет передаваться только через VPN-подключение.</translation>
+<variable>Does your ISP provide local resources</variable>
+</message>
+<message>
+<tag_code>3289</tag_code>
+<translation>Пожалуйста, введите настройки вашего подключения (вы можете обнаружить их в договоре на оказание услуг доступа в Интернет):</translation>
+<variable>Please enter the following settings(you may find it in the brouchure your ISP provided):</variable>
+</message>
+<message>
+<tag_code>3290</tag_code>
+<translation>Ваш интернет провайдер использует привязку к MAC-адресу компьютера в целях безопасности. Если вы настраиваете маршрутизатор с компьютера, оставьте выбранную по умолчанию опцию «Использовать MAC-адрес компьютера». В противном случае введите нужный MAC-адрес вручную.</translation>
+<variable>Your ISP is using MAC address binding for security reasons. If you are configuring the router from a PC previously connected to the internet, please choose "Use Computer MAC Address". You may want to keep the router's MAC address or change it manually, but you will be required to ask your ISP to update their MAC address information.</variable>
+</message>
+<message>
+<tag_code>3291</tag_code>
+<translation>Маршрутизатору не удалось подключиться к интернету. Причиной могут быть неправильно введенные настройки, проблемы на стороне провайдера, изменение настроек подключения провайдером (несовпадающие с хранящимися в памяти маршрутизатора) или же неверно выбранный тип подключения на начальном этапе мастера (если ваш провайдер поддерживает несколько типов подключения сразу). Для того чтобы попробовать настроить маршрутизатор заново, нажмите «Ручная настройка». Для выхода из мастера настройки нажмите «Настроить позже».</translation>
+<variable>Router has failed connecting to the internet. The cause might be in wrong input settings, ISP downtime, settings changes made by ISP (which are not correspond to the ones stored in router) or incorrectly chosen ISP connection type (if your ISP has different types of connection). Choose "Configuration manually" to reconfigure your router's internet connection manually. Choose "Configure later" to quit wizard.</variable>
+</message>
+<message>
+<tag_code>3292</tag_code>
+<translation>Ручная настройка</translation>
+<variable>Configuration manually</variable>
+</message>
+<message>
+<tag_code>3293</tag_code>
+<translation>Настроить позже</translation>
+<variable>Configure later</variable>
+</message>
+<message>
+<tag_code>3294</tag_code>
+<translation>Выберите город и имя вашего провайдера:</translation>
+<variable>Choose your city and ISP name:</variable>
+</message>
+<message>
+<tag_code>3295</tag_code>
+<translation>Ваш интернет провайдер использует статический (фиксированный) IP-адрес. Пожалуйста, укажите нижеследующие настройки:</translation>
+<variable>Your ISP is using static IP address connection type. You need to enter the following information</variable>
+</message>
+<message>
+<tag_code>3296</tag_code>
+<translation>Ваш интернет провайдер использует статический (фиксированный) IP-адрес для доступа к локальным ресурсам сети. Пожалуйста, укажите нижеследующие настройки (адреса DNS-серверов необязательны для ввода в случае, если провайдер не предоставил данную информацию):</translation>
+<variable>Your ISP is using static IP address for local resource access. Please provide the following settings(DNS servers are optional and only filled when you received them from ISP):</variable>
+</message>
+<message>
+<tag_code>3297</tag_code>
+<translation>Ваш интернет провайдер использует статический (фиксированный) IP-адрес для доступа к локальным ресурсам сети. Пожалуйста, укажите IP-адрес и маску подсети, указанные в вашем договоре с провайдером. IP-адрес шлюза необходимо будет вести отдельно при настройке статических маршрутов.</translation>
+<variable>Your ISP is using Static IP address for local resources access. Please enter intranet IP address and subnet mask. If you have a gateway specified, you can add it later during static routes configuration.</variable>
+</message>
+<message>
+<tag_code>3298</tag_code>
+<translation>Пожалуйста, выберите один …</translation>
+<variable>Please select one ...</variable>
+</message>
+<message>
+<tag_code>3299</tag_code>
+<translation>Ваш интернет провайдер может использовать статический (фиксированный) или динамический (получаемый автоматически) IP-адрес для доступа к локальным ресурсам сети. Укажите, получаются ли настройки для локального интерфейса автоматически или их необходимо вводить вручную (в последнем случае провайдер должен был вам их представить).</translation>
+<variable>Your ISP may provide Dynamic IP (DHCP) or Static IP connection mode for your intranet interface. You need to choose, whether your settings are received dynamically or assigned manually.</variable>
+</message>
+<message>
+<tag_code>3300</tag_code>
+<translation>Укажите IP-адреса DNS-серверов только в том случае, если провайдер предоставил их вам.</translation>
+<variable>Enter DNS servers manually only if your ISP provided you with such information.</variable>
+</message>
+<message>
+<tag_code>3301</tag_code>
+<translation>Некоторые интернет провайдеры использует привязку к MAC-адресу компьютера в целях безопасности. Укажите, должен ли маршрутизатор использовать свой MAC-адрес по умолчанию, MAC-адрес компьютера, с которого вы сейчас производите настройку, или MAC-адрес, заданный вручную.</translation>
+<variable>Some ISPs using MAC address binding for security reasons. Please specify, whether router should use his own MAC address, your current PC's MAC address or manually add MAC address required.</variable>
+</message>
+<message>
+<tag_code>3304</tag_code>
+<translation>Завершить настройку</translation>
+<variable>Quit Wizard</variable>
+</message>
+<message>
+<tag_code>3305</tag_code>
+<translation>Результат работы мастера настройки</translation>
+<variable>Configuration Assistant Result</variable>
+</message>
+<message>
+<tag_code>3307</tag_code>
+<translation>нажать</translation>
+<variable>click</variable>
+</message>
+<message>
+<tag_code>3309</tag_code>
+<translation>Прекратить</translation>
+<variable>Quit</variable>
+</message>
+<message>
+<tag_code>3316</tag_code>
+<translation>Настройка Ethernet WAN завершена</translation>
+<variable>Ethernet WAN Configuration Completed</variable>
+</message>
+<message>
+<tag_code>3317</tag_code>
+<translation>Далее мы поможем вам настроить маршрутизатор для использования мобильного широкополосного соединения.</translation>
+<variable>Next, we will guide you through configuring the router to use your Mobile Broadband Internet connection.</variable>
+</message>
+<message>
+<tag_code>3318</tag_code>
+<translation>Не удается подключиться к Интернету</translation>
+<variable>Could not connect to the Internet</variable>
+</message>
+<message>
+<tag_code>3319</tag_code>
+<translation>Проблема может заключаться в следующем</translation>
+<variable>The problem could be one of the following.</variable>
+</message>
+<message>
+<tag_code>3320</tag_code>
+<translation>Возможные неправильные параметры конфигурации</translation>
+<variable>Possible Incorrect Configuration Setting.</variable>
+</message>
+<message>
+<tag_code>3321</tag_code>
+<translation>Check the configuration settings you entered for your Modem.</translation>
+<variable>Check the configuration settings you entered for your Modem.</variable>
+</message>
+<message>
+<tag_code>3322</tag_code>
+<translation>Невозможно получить доступ к Интернету.</translation>
+<variable>Cannot access internet.</variable>
+</message>
+<message>
+<tag_code>3323</tag_code>
+<translation>Please verify that the modem has been activated and there is network coverage at your current location.</translation>
+<variable>Please verify that the modem has been activated and there is network coverage at your current location.</variable>
+</message>
+<message>
+<tag_code>3324</tag_code>
+<translation>Обнаружены неполадки серверов DNS внутри мобильной широкополосной сети.</translation>
+<variable>There is a problem with the DNS servers in the Mobile Broadband network.</variable>
+</message>
+<message>
+<tag_code>3325</tag_code>
+<translation>Check with your mobile service provider to verify that the service at your location is working properly then run the Setup Wizard Again.</translation>
+<variable>Check with your mobile service provider to verify that the service at your location is working properly then run the Setup Wizard Again.</variable>
+</message>
+<message>
+<tag_code>3326</tag_code>
+<translation>to return to the Internet settings screen.</translation>
+<variable>to return to the Internet settings screen.</variable>
+</message>
+<message>
+<tag_code>3327</tag_code>
+<translation>to try to connect to the network again.</translation>
+<variable>to try to connect to the network again.</variable>
+</message>
+<message>
+<tag_code>3328</tag_code>
+<translation>Повторить попытку</translation>
+<variable>Retry</variable>
+</message>
+<message>
+<tag_code>3329</tag_code>
+<translation>Соединение установлено</translation>
+<variable>Connection Success</variable>
+</message>
+<message>
+<tag_code>3330</tag_code>
+<translation>Your router is now successfully connected to network.</translation>
+<variable>Your router is now successfully connected to network.</variable>
+</message>
+<message>
+<tag_code>3331</tag_code>
+<translation>Click Next to view a summary of settings.</translation>
+<variable>Click Next to view a summary of settings.</variable>
+</message>
+<message>
+<tag_code>3332</tag_code>
+<translation>Обновление параметров</translation>
+<variable>Updating Settings</variable>
+</message>
+<message>
+<tag_code>3333</tag_code>
+<translation>Подождите...</translation>
+<variable>Please wait ...</variable>
+</message>
+<message>
+<tag_code>3334</tag_code>
+<translation>Abort</translation>
+<variable>Abort</variable>
+</message>
+<message>
+<tag_code>3358</tag_code>
+<translation>Страна</translation>
+<variable>Country</variable>
+</message>
+<message>
+<tag_code>3363</tag_code>
+<translation>Введите конфигурацию поставщика услуг</translation>
+<variable>Please Enter Service Provider Configuration</variable>
+</message>
+<message>
+<tag_code>3364</tag_code>
+<translation>Выберите Интернет-провайдер и нажмите Далее.</translation>
+<variable>Please select the Internet Service Provider and then click Next.</variable>
+</message>
+<message>
+<tag_code>3365</tag_code>
+<translation>Если ваш интернет-провайдер мобильной широкополосной сети не указан в раскрывающемся списке, выберите другого провайдера.</translation>
+<variable>If your Mobile Broadband service provide is not in pulldown list, please select other.</variable>
+</message>
+<message>
+<tag_code>3366</tag_code>
+<translation>Италия</translation>
+<variable>Italy</variable>
+</message>
+<message>
+<tag_code>3367</tag_code>
+<translation>Австрия</translation>
+<variable>Austria</variable>
+</message>
+<message>
+<tag_code>3368</tag_code>
+<translation>UK</translation>
+<variable>UK</variable>
+</message>
+<message>
+<tag_code>3369</tag_code>
+<translation>Denmark</translation>
+<variable>Denmark</variable>
+</message>
+<message>
+<tag_code>3370</tag_code>
+<translation>Швеция</translation>
+<variable>Sweden</variable>
+</message>
+<message>
+<tag_code>3371</tag_code>
+<translation>Ireland</translation>
+<variable>Ireland</variable>
+</message>
+<message>
+<tag_code>3372</tag_code>
+<translation>Гонконг</translation>
+<variable>Hong Kong</variable>
+</message>
+<message>
+<tag_code>3373</tag_code>
+<translation>Vietnam</translation>
+<variable>Vietnam</variable>
+</message>
+<message>
+<tag_code>3374</tag_code>
+<translation>Индонезия</translation>
+<variable>Indonesia</variable>
+</message>
+<message>
+<tag_code>3375</tag_code>
+<translation>США</translation>
+<variable>USA</variable>
+</message>
+<message>
+<tag_code>3376</tag_code>
+<translation>Определенный пользователем</translation>
+<variable>User Defined</variable>
+</message>
+<message>
+<tag_code>3377</tag_code>
+<translation>Австралия</translation>
+<variable>Australia</variable>
+</message>
+<message>
+<tag_code>3379</tag_code>
+<translation>код</translation>
+<variable>Code</variable>
+</message>
+<message>
+<tag_code>3380</tag_code>
+<translation>PUK-код</translation>
+<variable>PUK Code</variable>
+</message>
+<message>
+<tag_code>3381</tag_code>
+<translation>PIN-код 2</translation>
+<variable>PIN2 Code</variable>
+</message>
+<message>
+<tag_code>3382</tag_code>
+<translation>PUK-код 2</translation>
+<variable>PUK2 Code</variable>
+</message>
+<message>
+<tag_code>3383</tag_code>
+<translation>Подключение к сети</translation>
+<variable>Connecting to Network</variable>
+</message>
+<message>
+<tag_code>3384</tag_code>
+<translation>Определение мобильного USB-модема</translation>
+<variable>Detecting Mobile Broadband Modem</variable>
+</message>
+<message>
+<tag_code>3385</tag_code>
+<translation>Подключение к сети</translation>
+<variable>Connecting to Network</variable>
+</message>
+<message>
+<tag_code>3386</tag_code>
+<translation>Адаптер мобильного широкополосного USB-модема не обнаружен.</translation>
+<variable>No USB Broadband Modem is Deteced</variable>
+</message>
+<message>
+<tag_code>3395</tag_code>
+<translation>Примечание. Убедитесь, что адаптер мобильного широкополосного USB-модема подключен к USB-порту маршрутизатора.</translation>
+<variable>Make sure that the USB boardband modem is securely plugged</variable>
+</message>
+<message>
+<tag_code>3388</tag_code>
+<translation>No Mobile Broadband Network</translation>
+<variable>No Mobile Broadband Network</variable>
+</message>
+<message>
+<tag_code>3389</tag_code>
+<translation>No SIM Card Detected</translation>
+<variable>No SIM Card Detected</variable>
+</message>
+<message>
+<tag_code>3390</tag_code>
+<translation>SIM card not detected or SIM card rejected</translation>
+<variable>SIM card not detected or SIM card rejected</variable>
+</message>
+<message>
+<tag_code>3391</tag_code>
+<translation>Убедитесь, что SIM-карта установлена и правильно расположена.Убедитесь, что SIM-карта является действительной.</translation>
+<variable>Please check to ensure SIM card is installed and is properly seated or SIM card is valid.</variable>
+</message>
+<message>
+<tag_code>3392</tag_code>
+<translation>PIN Issue</translation>
+<variable>PIN Issue</variable>
+</message>
+<message>
+<tag_code>3393</tag_code>
+<translation>Please input PIN code.</translation>
+<variable>Please input PIN code.</variable>
+</message>
+<message>
+<tag_code>3394</tag_code>
+<translation>Do you want to setup PIN code?</translation>
+<variable>Do you want to setup PIN code?</variable>
+</message>
+<message>
+<tag_code>3395</tag_code>
+<translation>USB-модем не поддерживается</translation>
+<variable>USB Modem not Supported</variable>
+</message>
+<message>
+<tag_code>3396</tag_code>
+<translation>Please check the NETGEAR website for the latest firmware and supported devices.</translation>
+<variable>Please check the NETGEAR website for the latest firmware and supported devices.</variable>
+</message>
+<message>
+<tag_code>3397</tag_code>
+<translation>Введите конфигурацию поставщика услуг</translation>
+<variable>Please Enter Service Provider Configuration</variable>
+</message>
+<message>
+<tag_code>3398</tag_code>
+<translation>Выберите Интернет-провайдер и нажмите Далее.</translation>
+<variable>Please select the Internet Service Provider and then click Next.</variable>
+</message>
+<message>
+<tag_code>3399</tag_code>
+<translation>Если ваш интернет-провайдер мобильной широкополосной сети не указан в раскрывающемся списке, выберите другого провайдера.</translation>
+<variable>If your Mobile Broadband service provide is not in pulldown list, please select other.</variable>
+</message>
+<message>
+<tag_code>3400</tag_code>
+<translation>Введите параметры конфигурации. Если вы не знаете этих параметров, свяжитесь со своим поставщиком услуг.</translation>
+<variable>Please enter the configuration parameters. If you do not know what they are, please contact your service provider.</variable>
+</message>
+<message>
+<tag_code>3400</tag_code>
+<translation>PIN required on SIM</translation>
+<variable>PIN required on SIM</variable>
+</message>
+<message>
+<tag_code>3401</tag_code>
+<translation>Please input PIN code.</translation>
+<variable>Please input PIN code.</variable>
+</message>
+<message>
+<tag_code>3402</tag_code>
+<translation>Do you want to setup PIN code?</translation>
+<variable>Do you want to setup PIN code?</variable>
+</message>
+<message>
+<tag_code>3403</tag_code>
+<translation>Scanning Network</translation>
+<variable>Scanning Network</variable>
+</message>
+<message>
+<tag_code>3404</tag_code>
+<translation>Checking SIM Card</translation>
+<variable>Checking SIM Card</variable>
+</message>
+<message>
+<tag_code>3407</tag_code>
+<translation>China</translation>
+<variable>China</variable>
+</message>
+<message>
+<tag_code>3408</tag_code>
+<translation>Russia</translation>
+<variable>Rusia</variable>
+</message>
+<message>
+<tag_code>3403</tag_code>
+<translation>Италия</translation>
+<variable>Italy</variable>
+</message>
+<message>
+<tag_code>3404</tag_code>
+<translation>Австрия</translation>
+<variable>Austria</variable>
+</message>
+<message>
+<tag_code>3405</tag_code>
+<translation>UK</translation>
+<variable>UK</variable>
+</message>
+<message>
+<tag_code>3406</tag_code>
+<translation>Denmark</translation>
+<variable>Denmark</variable>
+</message>
+<message>
+<tag_code>3407</tag_code>
+<translation>Швеция</translation>
+<variable>Sweden</variable>
+</message>
+<message>
+<tag_code>3408</tag_code>
+<translation>Австралия</translation>
+<variable>Australia</variable>
+</message>
+<message>
+<tag_code>3409</tag_code>
+<translation>Ирландия</translation>
+<variable>Ireland</variable>
+</message>
+<message>
+<tag_code>3410</tag_code>
+<translation>Гонконг</translation>
+<variable>Hong Kong</variable>
+</message>
+<message>
+<tag_code>3411</tag_code>
+<translation>Vietnam</translation>
+<variable>Vietnam</variable>
+</message>
+<message>
+<tag_code>3412</tag_code>
+<translation>Индонезия</translation>
+<variable>Indonesia</variable>
+</message>
+<message>
+<tag_code>3413</tag_code>
+<translation>США</translation>
+<variable>USA</variable>
+</message>
+<message>
+<tag_code>3414</tag_code>
+<translation>Определенный пользователем</translation>
+<variable>User Defined</variable>
+</message>
+<message>
+<tag_code>3438</tag_code>
+<translation>Китай</translation>
+<variable>China</variable>
+</message>
+<message>
+<tag_code>3439</tag_code>
+<translation>Россия</translation>
+<variable>Rusia</variable>
+</message>
+<message>
+<tag_code>3453</tag_code>
+<translation>PIN-код</translation>
+<variable>PIN code</variable>
+</message>
+<message>
+<tag_code>3454</tag_code>
+<translation>China Mobile</translation>
+<variable>China Mobile</variable>
+</message>
+<message>
+<tag_code>3455</tag_code>
+<translation>China Unicom</translation>
+<variable>China Unicom</variable>
+</message>
+<message>
+<tag_code>3456</tag_code>
+<translation>China Telecom</translation>
+<variable>China Telecom</variable>
+</message>
+<message>
+<tag_code>3457</tag_code>
+<translation>Другие</translation>
+<variable>Other</variable>
+</message>
+<message>
+<tag_code>3460</tag_code>
+<translation>Настройка 3G/4G завершена!</translation>
+<variable>3G/4G setup is done!</variable>
+</message>
+<message>
+<tag_code>3461</tag_code>
+<translation>USB Mobile Broadband Modem Settings</translation>
+<variable>USB Mobile Broadband Modem Settings</variable>
+</message>
+<message>
+<tag_code>3462</tag_code>
+<translation>3G/4G Connection Mode</translation>
+<variable>3G/4G Connection Mode</variable>
+</message>
+<message>
+<tag_code>3463</tag_code>
+<translation>Connection Protocol</translation>
+<variable>Connection Protocol</variable>
+</message>
+<message>
+<tag_code>3475</tag_code>
+<translation>Note:</translation>
+<variable>Note:</variable>
+</message>
+<message>
+<tag_code>3476</tag_code>
+<translation>Настроить мобильное широкополосное соединение</translation>
+<variable>Setup Mobile Broadband</variable>
+</message>
+<message>
+<tag_code>3477</tag_code>
+<translation>Этот роутер также может быть подключен к мобильной сети 3G или 4G. При наличии мобильного 3G или 4G USB-модема можно воспользоваться кнопкой "Настроить мобильное широкополосное соединение", представленной ниже, чтобы запустить программу мастера.</translation>
+<variable>This router is also capable of connecting to 3G/4G Mobile Network. If you have a supported 3G/4G mobile broadband adapter, you can use the Setup Mobile Broadband button below to run the wizard.</variable>
+</message>
+<message>
+<tag_code>3478</tag_code>
+<translation>Нет, Я хочу продолжить настройку мобильного широкополосного 3G-/4G-соединения.</translation>
+<variable>No, I want to continue to set up the 3G/4G mobile broadband connection.</variable>
+</message>
+<message>
+<tag_code>3479</tag_code>
+<translation>Установка драйвера…</translation>
+<variable>Installing Driver…</variable>
+</message>
+<message>
+<tag_code>3480</tag_code>
+<translation>NETGEAR genie выполняет установку драйвера адаптера. Это может занять минуту или две. Подождите…</translation>
+<variable>NETGEAR genie is installing the adapter driver. It might take a minute or two. Please wait…</variable>
+</message>
+<message>
+<tag_code>3481</tag_code>
+<translation>Проблема 3G-/4G-соединения</translation>
+<variable>3G/4G Connection Issue</variable>
+</message>
+<message>
+<tag_code>3482</tag_code>
+<translation>Pоутеру не удается установить 3G-/4G-соединение.</translation>
+<variable>The router cannot make a 3G/4G connection.</variable>
+</message>
+<message>
+<tag_code>3483</tag_code>
+<translation>Сообщение об ошибке:</translation>
+<variable>Please review the following error:</variable>
+</message>
+<message>
+<tag_code>3484</tag_code>
+<translation>Мобильный широкополосный модем не поддерживается. Можно попытаться использовать другое устройство.</translation>
+<variable>The mobile broadband modem is not a supported type. You can try a different one.</variable>
+</message>
+<message>
+<tag_code>3485</tag_code>
+<translation>Нет. Подключиться к Интернету с использованием Ethernet-соединения.</translation>
+<variable>No, Take me to the Internet using an Ethernet connection.</variable>
+</message>
+<message>
+<tag_code>3486</tag_code>
+<translation>Широкополосный USB-адаптер не обнаружен. Проверьте USB-соединение.</translation>
+<variable>No USB broadband adapter detected. Check your USB connection.</variable>
+</message>
+<message>
+<tag_code>3487</tag_code>
+<translation>Pоутер не может установить соединение с Интернетом. Обратитесь к провайдеру мобильного широкополосного доступа в Интернет, чтобы проверить соответствующие настройки.</translation>
+<variable>The router cannot establish an Internet connection. Check the settings with your mobile broadband service provider.</variable>
+</message>
+<message>
+<tag_code>3488</tag_code>
+<translation>Настройка Ethernet завершена!</translation>
+<variable>Ethernet setup is done!</variable>
+</message>
+<message>
+<tag_code>3490</tag_code>
+<translation>Если вашего провайдера нет в списке, выберите </translation>
+<variable>If your ISP is not presented in the list, please proceed with </variable>
+</message>
+<message>
+<tag_code>3491</tag_code>
+<translation>ручную настройку</translation>
+<variable>Manual configuration</variable>
+</message>
+<message>
+<tag_code>3492</tag_code>
+<translation>Я хочу продолжить настройку мобильного широкополосного 3G-/4G-соединения.</translation>
+<variable>I want to continue to set up the 3G/4G mobile broadband connection.</variable>
+</message>
+<message>
+<tag_code>3618</tag_code>
+<translation>Настройка VLAN/IPTV</translation>
+<variable>VLAN/IPTV Setup</variable>
+</message>
+<message>
+<tag_code>4400</tag_code>
+<translation>Назад</translation>
+<variable>Previous</variable>
+</message>
+<message>
+<tag_code>4401</tag_code>
+<translation>Загрузить следующие приложения роутера:</translation>
+<variable>Downloading the following router apps:</variable>
+</message>
+<message>
+<tag_code>4402</tag_code>
+<translation>приложение Genie. С помощью персональной инструментальной панели можно наблюдать за домашней сетью, управлять ею и устранять неполадки сети.</translation>
+<variable>Genie app. A personal dashboard that lets you monitor, control, and repair your home network.</variable>
+</message>
+<message>
+<tag_code>4403</tag_code>
+<translation>Приложение ReadySHARE Vault (только для компьютеров под управлением Windows). Включает непрерывное автоматическое резервное копирование данных с компьютера под управлением Windows на USB-накопитель, подключенный к роутеру.</translation>
+<variable>ReadySHARE Vault app (Only for Windows computers). Enables automatic continuous backup of a Windows computer to a USB drive that’s connected to your router.</variable>
+</message>
+<message>
+<tag_code>4404</tag_code>
+<translation>Выполняется загрузка…</translation>
+<variable>Downloading…</variable>
+</message>
+<message>
+<tag_code>4405</tag_code>
+<translation>Установить приложение Genie после завершения загрузки.</translation>
+<variable>Install the Genie app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4406</tag_code>
+<translation>Нажмите кнопку 'Далее' после установки приложения Genie, чтобы выполнить настройку роутера.</translation>
+<variable>Click the Next button after you install the Genie app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4407</tag_code>
+<translation>Установить приложение ReadySHARE Vault после завершения загрузки.</translation>
+<variable>Install the ReadySHARE Vault app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4408</tag_code>
+<translation>Нажмите кнопку 'Далее' после установки приложения ReadySHARE Vault, чтобы выполнить настройку роутера.</translation>
+<variable>Click the Next button after you Install the ReadySHARE Vault app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4409</tag_code>
+<translation>Выполняется обработка вашего запроса…</translation>
+<variable>Processing your request…</variable>
+</message>
+<message>
+<tag_code>4410</tag_code>
+<translation>Install the Genie app and ReadySHARE Vault app after the download completes.</translation>
+<variable>Install the Genie app and ReadySHARE Vault app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4411</tag_code>
+<translation>Click the Next button after you install the Genie app and ReadySHARE Vault app to finish configuring the router.</translation>
+<variable>Click the Next button after you install the Genie app and ReadySHARE Vault app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4412</tag_code>
+<translation>По завершении установки нажмите Далее.</translation>
+<variable>After the installation, please click Next.</variable>
+</message>
+<message>
+<tag_code>4413</tag_code>
+<translation>Система будет установлена</translation>
+<variable>System will install</variable>
+</message>
+<message>
+<tag_code>4414</tag_code>
+<translation>Для начала установки нажмите кнопку Выполнить</translation>
+<variable>Click Run to start installing</variable>
+</message>
+<message>
+<tag_code>4415</tag_code>
+<translation>Мастер обновления микропрограммного обеспечения</translation>
+<variable>Firmware Upgrade Assistant</variable>
+</message>
+<message>
+<tag_code>4416</tag_code>
+<translation>Происходит обновление микропрограммного обеспечения маршрутизатора. Подождите</translation>
+<variable>Upgrading Router Firmware now. Please Wait</variable>
+</message>
+<message>
+<tag_code>4417</tag_code>
+<translation>Примечание. Обновление микропрограммного обеспечения займет около</translation>
+<variable>Note: It will take about</variable>
+</message>
+<message>
+<tag_code>4418</tag_code>
+<translation>минут. &lt;br&gt;Не отключайте электропитание и не нажимайте кнопку сброса.</translation>
+<variable>minutes for firmware upgrade.&lt;br&gt;Please don't turn off the power or press reset button.</variable>
+</message>
+<message>
+<tag_code>4419</tag_code>
+<translation>Подождите...</translation>
+<variable>Please wait ...</variable>
+</message>
+<message>
+<tag_code>4420</tag_code>
+<translation>Отмена</translation>
+<variable>Cancel</variable>
+</message>
+<message>
+<tag_code>4421</tag_code>
+<translation>Сейчас маршрутизатор производит загрузку новой версии. Подождите...</translation>
+<variable>The Router is downloading the new version now. Please wait...</variable>
+</message>
+<message>
+<tag_code>4422</tag_code>
+<translation>Обнаружена новая версия микропрограммного обеспечения. Загрузить новую версию сейчас?</translation>
+<variable>A new version has been found. Do You want to upgrade to the new version now?</variable>
+</message>
+<message>
+<tag_code>4423</tag_code>
+<translation>Текущая версия</translation>
+<variable>Current Version</variable>
+</message>
+<message>
+<tag_code>4424</tag_code>
+<translation>Новая версия микрокода</translation>
+<variable>New Firmware Version</variable>
+</message>
+<message>
+<tag_code>4425</tag_code>
+<translation>Этот процесс может занять одну-две минуты; подождите...</translation>
+<variable>This process can take a minute or two; please wait...</variable>
+</message>
+<message>
+<tag_code>4426</tag_code>
+<translation>Проверка версии микрокода</translation>
+<variable>Firmware Version Check</variable>
+</message>
+<message>
+<tag_code>4427</tag_code>
+<translation>Новая версия микрокода отсутствует.</translation>
+<variable>No new firmware version available.</variable>
+</message>
+<message>
+<tag_code>4428</tag_code>
+<translation>OK</translation>
+<variable>OK</variable>
+</message>
+<message>
+<tag_code>4429</tag_code>
+<translation>Выполняется проверка настройки сети. Подождите…</translation>
+<variable>Checking your network setup,please wait...</variable>
+</message>
+<message>
+<tag_code>4430</tag_code>
+<translation>В вашей сети обнаружен роутер или шлюз</translation>
+<variable>An existing router or gateway is detected in your network</variable>
+</message>
+<message>
+<tag_code>4431</tag_code>
+<translation>Ваш роутер NETGEAR подключен к сети, к которой уже подключен другой роутер. Если другой роутер необходимо отставить подключенным, Genie рекомендует использовать режим точки доступа для роутера NETGEAR. В режиме точки доступа роутер NETGEAR можно использовать для подключения к сети, в то время как другой роутер продолжает выполнять те же сетевые задачи, что и раньше.</translation>
+<variable>Your NETGEAR router is connected to a network that already has another router. If you want to leave the first router connected, genie recommends using Access Point mode for the NETGEAR router. When the NETGEAR router is in Access Point mode, you can use it to join the network and the other router continues to perform the same network tasks as before.</variable>
+</message>
+<message>
+<tag_code>4432</tag_code>
+<translation>Включить режим точки доступа для этого устройства</translation>
+<variable>Do you want to setup this device in Access Point mode</variable>
+</message>
+<message>
+<tag_code>4433</tag_code>
+<translation>Да (рекомендуется)</translation>
+<variable>Yes (recommended)</variable>
+</message>
+<message>
+<tag_code>4434</tag_code>
+<translation>Нет, использовать как роутер в режиме по умолчанию</translation>
+<variable>No, I would like to run it in default mode as a router</variable>
+</message>
+<message>
+<tag_code>4435</tag_code>
+<translation>Чтобы добавить данный роутер в сеть в режиме точки доступа, выполните следующие действия</translation>
+<variable>To add this router to your network in Access Point Mode</variable>
+</message>
+<message>
+<tag_code>4436</tag_code>
+<translation>IP-адрес этого нового устройства</translation>
+<variable>IP Address of this new device</variable>
+</message>
+<message>
+<tag_code>4437</tag_code>
+<translation>Получить динамический IP-адрес от имеющегося роутера</translation>
+<variable>Get IP Address dynamically from existing router</variable>
+</message>
+<message>
+<tag_code>4438</tag_code>
+<translation>Использовать фиксированный IP-адрес (не рекомендуется)</translation>
+<variable>Use fixed IP Address (not recommended)</variable>
+</message>
+<message>
+<tag_code>4439</tag_code>
+<translation>Примечание. После нажатия кнопки 'Далее' этому роутеру будет назначен новый IP-адрес. После этого ваш браузер может отключиться от сети. Для того чтобы подключиться к роутеру, закройте окно и снова запустите браузер.</translation>
+<variable>Note: After you click Next, this router will be assigned a new IP address. When it happens your browser might be disconnected from the network. To reconnect to the router, close the window and launch your browser again.</variable>
+</message>
+<message>
+<tag_code>4441</tag_code>
+<translation></translation>
+<variable>Your NETGEAR router is connected to a network that already has another router.This means that you must select an operation mode:</variable>
+</message>
+<message>
+<tag_code>4442</tag_code>
+<translation></translation>
+<variable>Router Mode</variable>
+</message>
+<message>
+<tag_code>4443</tag_code>
+<translation></translation>
+<variable>Router mode gives you two different networks:The existing network from the original router,and another network form your new NETGEAR router.If all of your devices connect to NETGEAR router,recommend to use Router Mode.</variable>
+</message>
+<message>
+<tag_code>4444</tag_code>
+<translation></translation>
+<variable>Access Point Mode</variable>
+</message>
+<message>
+<tag_code>4445</tag_code>
+<translation></translation>
+<variable>This mode keeps the existing network from the original router only.Not all of the NETGEAR router's features are available in Access Point mode.If you have devices connect to both existing router and NETGEAR router,recommend to use Access Point Mode.</variable>
+</message>
+<message>
+<tag_code>4446</tag_code>
+<translation>Подробнее</translation>
+<variable>Learn More</variable>
+</message>
+<message>
+<tag_code>4447</tag_code>
+<translation>Предупреждение</translation>
+<variable>WARNING</variable>
+</message>
+<message>
+<tag_code>4448</tag_code>
+<translation></translation>
+<variable>Your router is about to setup to Access Point Mode.You may experience short network interruption due to your router and client will need to obtain new IP address from your existing Router.If you lost network connection,you may manually connect to router again by visiting www.routerlogin.net.</variable>
+</message>
+<message>
+<tag_code>4449</tag_code>
+<translation></translation>
+<variable>The following router features are not available if you choose Access Point mode:</variable>
+</message>
+<message>
+<tag_code>4450</tag_code>
+<translation>Родительск. контроль</translation>
+<variable>Parental control</variable>
+</message>
+<message>
+<tag_code>4451</tag_code>
+<translation>Блокировка сайтов</translation>
+<variable>Block sites</variable>
+</message>
+<message>
+<tag_code>4452</tag_code>
+<translation>Блокировка служб</translation>
+<variable>Block services</variable>
+</message>
+<message>
+<tag_code>4453</tag_code>
+<translation>Переадресация порта</translation>
+<variable>Port forwarding</variable>
+</message>
+<message>
+<tag_code>4454</tag_code>
+<translation>Инициирование порта</translation>
+<variable>Port triggering</variable>
+</message>
+<message>
+<tag_code>4455</tag_code>
+<translation>Статические маршруты</translation>
+<variable>Static route</variable>
+</message>
+<message>
+<tag_code>4456</tag_code>
+<translation>Счетчик трафика</translation>
+<variable>Traffic meter</variable>
+</message>
+<message>
+<tag_code>4457</tag_code>
+<translation>Удаленное управление</translation>
+<variable>Remote management</variable>
+</message>
+<message>
+<tag_code>4458</tag_code>
+<translation>Гостевая сеть</translation>
+<variable>Guest network</variable>
+</message>
+</tag_msg>

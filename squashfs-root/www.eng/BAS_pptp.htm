@@ -1,0 +1,466 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><style type="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+var DisableFixedDNS = false;
+var DisableFixedIP = false;
+var flag_pwd=1;
+var MacAddress;
+var DodDisable = false;
+var DodIndex = 1;
+var Idletime = 0;
+var gui_language = "@h_language#";
+var openvpn_status="@openvpn_status#";
+var openvpn_flag ="@openvpn_flag#";
+var ddns_status="@ddns_status#";
+
+function ip6_is_need_gray_dod()
+{
+	var  ip6_mode = "@h_con_type#";
+	var  ip6_mode_auto_result = "@ip6_detect_result#"; 
+	if (ip6_mode == "6to4" || ip6_mode == "6rd")
+	{
+		return true;
+	} else if (ip6_mode == "auto")
+	{
+		if (ip6_mode_auto_result == "6to4" || ip6_mode_auto_result == "6rd")
+			return true;
+	}
+	
+	return false;
+}
+
+function hide_wan_reset()
+{
+        var cf = document.forms[0];
+	var conn_mode = cf.pptp_dod.selectedIndex;
+	
+	var region = "@flash_region#";
+	if(region !="GR" && !(region == "WW" && gui_language == "German"))
+	{
+		cf.wan_reset_enable_pptp.style.display="none";
+                cf.wan_reset_time_pptp.style.display="none";
+                document.getElementById("wan_reset_text").style.display="none";
+        }
+	else{
+	if(conn_mode == 1){
+		setDisabled(true, cf.wan_reset_enable_pptp);
+		setDisabled(true,cf.wan_reset_time_pptp);
+		document.getElementById("wan_reset_text").style.color="gray";
+	}
+	else{
+		setDisabled(false,cf.wan_reset_enable_pptp);
+		setDisabled(false,cf.wan_reset_time_pptp);
+		document.getElementById("wan_reset_text").style.color="black";	
+	}
+	}
+}
+
+function encapChange()
+{
+ 	var cf = document.forms[0];
+	var encaptype = getSelected(cf.login_type);
+	var nextfile;
+
+	if ( encaptype == "PPPoE" )
+		nextfile = "BAS_pppoe.htm";
+	if ( encaptype == "pppoa" )
+		nextfile = "pppoa.htm";
+	if ( encaptype == "PPTP" )
+		nextfile = "BAS_pptp.htm";
+	if ( encaptype == "L2TP")
+		nextfile = "BAS_l2tp.htm";
+
+	location.href = "./" + nextfile;
+}
+function setDNS()
+{
+	var cf = document.forms[0];
+	var dflag = cf.DNSAssign[0].checked;
+	setDisabled(dflag,cf.DAddr1,cf.DAddr2,cf.DAddr3,cf.DAddr4,cf.PDAddr1,cf.PDAddr2,cf.PDAddr3,cf.PDAddr4);
+}
+
+function server_isfqdn()
+{
+	var cf = document.forms[0];
+	var data;
+	if (cf.pptp_serv_ip.value.length > 0){
+		data = cf.pptp_serv_ip.value.match(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/);
+		if(!data) {
+		    /*
+			cf.myip_1.value = "";
+			cf.myip_2.value = "";
+			cf.myip_3.value = "";
+			cf.myip_4.value = "";
+			cf.mygw_1.value = "";
+			cf.mygw_2.value = "";
+			cf.mygw_3.value = "";
+			cf.mygw_4.value = "";
+			setDisabled(true, cf.mygw_1, cf.mygw_2, cf.mygw_3, cf.mygw_4);
+			*/
+			return true;
+		}
+	}
+	return false;
+}
+
+function myip_update()
+{
+
+	var cf = document.forms[0];
+
+	if((cf.myip_1.value.length>0)||(cf.myip_2.value.length>0)||(cf.myip_3.value.length>0)||(cf.myip_4.value.length>0))
+	{
+	    setDisabled(false, cf.pptpcLocalSubnetMask1, cf.pptpcLocalSubnetMask2, cf.pptpcLocalSubnetMask3, cf.pptpcLocalSubnetMask4);
+	    setDisabled(false, cf.mygw_1, cf.mygw_2, cf.mygw_3, cf.mygw_4);
+
+	}
+	else
+	{
+		setDisabled(true, cf.pptpcLocalSubnetMask1, cf.pptpcLocalSubnetMask2, cf.pptpcLocalSubnetMask3, cf.pptpcLocalSubnetMask4);
+		setDisabled(true, cf.mygw_1, cf.mygw_2, cf.mygw_3, cf.mygw_4);
+	}
+
+}
+
+function setMAC()
+{
+ 	var cf = document.forms[0];
+	if (cf.MACAssign[2].checked)
+		cf.Spoofmac.disabled = false;
+	else
+		cf.Spoofmac.disabled = true;
+	DisableFixedMAC = cf.Spoofmac.disabled;
+
+	if(cf.MACAssign[0].checked) {
+		cf.Spoofmac.value = cf.default_wan_mac.value;
+	}
+	if(cf.MACAssign[1].checked) {
+		cf.Spoofmac.value = cf.computer_mac.value;
+	}
+	if(cf.MACAssign[2].checked) {
+		cf.Spoofmac.value = cf.current_wan_mac.value;
+	}
+}
+
+function setConnMode()
+{
+	var cf = document.forms[0];
+	var conn_mode = cf.pptp_dod.selectedIndex;
+	if(conn_mode == 1){
+		DodDisable = false;
+		setDisabled(true,cf.wan_reset_enable_pptp);
+		setDisabled(true,cf.wan_reset_time_pptp);
+		document.getElementById("wan_reset_text").style.color="gray";
+		if (Idletime != 0)
+			cf.pptp_idletime.value = Idletime;
+	}
+	else{
+		DodDisable = true;
+		setDisabled(false,cf.wan_reset_enable_pptp);
+		setDisabled(false,cf.wan_reset_time_pptp);
+		document.getElementById("wan_reset_text").style.color="black";
+	}
+
+	var msg = "";
+
+	if(conn_mode == 0) {
+		if (cf.pptp_idletime.value != 0) {
+			Idletime = cf.pptp_idletime.value;
+			cf.pptp_idletime.value = 0;
+		}
+	}
+	if((conn_mode != 1) && isNumeric(cf.pptp_idletime))
+	{
+		cf.pptp_dod.selectedIndex = DodIndex;
+		if(cf.pptp_idletime.value.length <= 0)
+			msg+= getErrorMsgByVar("gsm_msg_idle_time_blank");
+		else if(isNumeric(cf.pptp_idletime))
+			msg+= getErrorMsgByVar("gsm_msg_idle_time_invalid");
+
+		if (msg.length > 1)
+		{
+			alert(msg);
+			return false;
+		}
+	}
+	else
+	{
+		DodIndex = cf.pptp_dod.selectedIndex;
+		setDisabled(DodDisable,cf.pptp_idletime);
+	}
+	return true;
+}
+
+function loadSettings()
+{
+    var cf = document.forms[0];
+
+	setConnMode();
+	hide_wan_reset();
+	myip_update();
+	setDNS();
+	setMAC();
+	cf.login_type.value = "PPTP";
+}
+
+function checkData()
+{
+ 	var cf = document.forms[0];
+ 	var openvpn_msg = getErrorMsgByVar("gsm_msg_openvpn_disabled_fixedip");
+	var msg = "";
+	var wanIp, wanMask, gwIp;
+	
+	msg += checkInt(cf.pptp_idletime, getErrorMsgByVar("gsm_msg_ppp_idle_time"), 0, 99, true);
+
+	/* The server IP is vaild? */
+	if (cf.pptp_serv_ip.value.length == 0 || isValidStr(cf.pptp_serv_ip.value.toLowerCase(), ValidStr_ddns, cf.pptp_serv_ip.value.length) == false)
+		msg+= getErrorMsgByVar("gsm_msg_pptp_server_addr_invalid");
+
+	if (cf.myip_1.value.length != 0 || cf.myip_2.value.length != 0
+	|| cf.myip_3.value.length != 0 || cf.myip_4.value.length != 0) {
+		if (badLANIP(cf.myip_1, cf.myip_2, cf.myip_3, cf.myip_4, 254)
+		|| (parseInt(cf.myip_4.value, 10)==0)) {
+			msg+= getErrorMsgByVar("gsm_msg_pptp_ip_invalid");
+		}
+		wanMask = cf.pptpcLocalSubnetMask1.value + "." + cf.pptpcLocalSubnetMask2.value + "." + cf.pptpcLocalSubnetMask3.value +"." + cf.pptpcLocalSubnetMask4.value;
+		if(badMASK(cf.pptpcLocalSubnetMask1,cf.pptpcLocalSubnetMask2,cf.pptpcLocalSubnetMask3,cf.pptpcLocalSubnetMask4)
+		    && (wanMask!="255.255.255.255"))
+			msg+= getErrorMsgByVar("gsm_msg_eth_inv_mask");
+		/* check gateway IP address */
+		if (cf.mygw_1.value.length != 0 || cf.mygw_2.value.length != 0
+		|| cf.mygw_3.value.length != 0 || cf.mygw_4.value.length != 0) {
+			wanIp = cf.myip_1.value + "." + cf.myip_2.value + "." + cf.myip_3.value + "." + cf.myip_4.value;			
+			gwIp = cf.mygw_1.value + "." + cf.mygw_2.value + "." + cf.mygw_3.value + "." + cf.mygw_4.value;
+			if (badLANIP(cf.mygw_1, cf.mygw_2, cf.mygw_3, cf.mygw_4, 254)
+			|| (wanIp == gwIp)) {
+				msg+= getErrorMsgByVar("gsm_msg_pptp_gw_ip_invalid");
+			}
+		}
+	}
+    if((cf.myip_1.value.length != 0)||(cf.myip_2.value.length != 0)||(cf.myip_3.value.length != 0)||(cf.myip_4.value.length != 0)) {
+		/* If the Server address is a FQDN, My IP address Must be blank */
+		if(server_isfqdn())
+			cf.DNSAssign[1].checked = true;
+	}
+	/* check if DNS IP is valid */
+	if (cf.DNSAssign[1].checked) {
+		msg += checkDNSValid(
+			cf.DAddr1, cf.DAddr2, cf.DAddr3, cf.DAddr4,
+			cf.PDAddr1, cf.PDAddr2, cf.PDAddr3, cf.PDAddr4);
+	}
+
+	if (cf.MACAssign[2].checked)
+    {
+       if(!checkMacStr(cf.Spoofmac))
+            msg+= getErrorMsgByVar("gsm_msg_eth_inv_mac");
+    }
+    
+    if(openvpn_flag == "1")
+	{
+		if(openvpn_status == "1" && ddns_status == "0")
+		{
+			if (!confirm(openvpn_msg))
+			{
+				return false;
+			}
+			//alert("The VPN Service needs the static IP address or DDNS. Do you want to continue and disable the VPN service?");
+		}
+	}
+	msg += checkBlank(cf.pptp_username, getErrorMsgByVar("gsm_msg_ddns_user_name"))
+
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+
+	if (ip6_is_need_gray_dod() == true)
+	{
+		if (cf.pptp_dod.disabled == true)
+		{
+			cf.pptp_dod.disabled = false;
+		}
+	}
+	
+    cf.pptp_username.value = cf.pptp_username.value.replace(/\xA0/g," ");
+    cf.pptp_passwd_password.value = cf.pptp_passwd_password.value.replace(/\xA0/g," ");
+    cf.pptp_passwd.value = cf.pptp_passwd.value.replace(/\xA0/g," ");
+
+	dataToHidden(cf);
+        if(cf.login_type.value == "PPPoE")
+                cf.h_login_type.value = "pppoe";
+        if(cf.login_type.value == "PPTP")
+                cf.h_login_type.value = "pptpc";
+        if(cf.login_type.value == "L2TP")
+                cf.h_login_type.value = "l2tp";
+	return true;
+}
+
+function saveTest()
+{
+ 	var cf = document.forms[0];
+	if(checkData())
+	{
+		cf.todo.value = "saveandtest";
+		cf.submit();
+		return true;
+	}
+	else
+	    return false;
+}
+
+function goTestApply()
+{
+	var winoptions = "width=640,height=480,menubar=yes,toolbar=yes,status=yes,location=yes,resizable=yes,scrollbars=yes";
+	if(document.forms[0].runtest.value == "yes")
+		window.open('./BAS_wtest_l.htm', 'test_win', winoptions);
+}
+
+function changetotext() {
+	document.getElementById('pptp_passwd_password').style.display="none";
+	document.getElementById('pptp_passwd').style.width = document.getElementById('pptp_username').style.width;
+	document.getElementById('pptp_passwd').style.display="";
+	document.getElementById('pptp_passwd').focus();
+}
+
+function changetopassword() {
+    document.getElementById('pptp_passwd_password').value = document.getElementById('pptp_passwd').value;
+
+	document.getElementById('pptp_passwd_password').style.width = document.getElementById('pptp_username').style.width;
+	document.getElementById('pptp_passwd_password').style.display="";
+	document.getElementById('pptp_passwd').style.display="none";
+}
+
+function graysetting()
+{
+	var cf = document.forms[0];
+	if (ip6_is_need_gray_dod() == true)
+	{
+		cf.pptp_dod.disabled = true;
+	}
+}
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);loadSettings();document.forms[0].elements[0].focus();goTestApply();graysetting();" onResize="if(document.layers) return false;">
+<form name="frmPPTPC" method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title" languageCode="3076">Internet Setup</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="common_bt" type="button" name="Test" value="Test" onClick="if(saveTest()) buttonToDisabled(document.forms[0]);" languageCode="87">
+&nbsp;
+<input class="cancel_bt" type="button" name="cancel" value="Cancel" onClick="location.href='./BAS_pptp.htm'" languageCode="51";buttonToDisabled(document.forms[0])>
+&nbsp;
+<input class="apply_bt" type="SUBMIT" name="apply" value="Apply" onClick="return checkData()" languageCode="50">
+</td></tr>
+</table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2"><a href="javascript:selHelpFile('question')" tabindex="-1"><b languageCode="65">Does your Internet
+		connection require a login?</b></a></td>
+	</tr><tr><td colspan="2"><input type="radio" name="loginreq" value="pppoe" onClick="location.href='BAS_pppoe.htm'"><a href="javascript:selHelpFile('question')" tabindex="-1" languageCode="61">Yes</a></td>
+	</tr><tr><td colspan="2"><input type="radio" name="loginreq" value="dhcp" onClick="location.href='BAS_ether.htm'"><a href="javascript:selHelpFile('question')" tabindex="-1" languageCode="62">No</a></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><!--
+	<tr>
+		<td nowrap colspan="2"><p><b><a href="javascript:loadhelp('BAS_pptp','tcp')" tabindex="-1">LAN TCP/IP Setup</a></b></p></td>
+	</tr>
+--></tr><tr><td width="50%"><a href="javascript:loadhelp('BAS_pptp','enc')" tabindex="-1"><b languageCode="107">Internet Service Provider</b></a></td>
+		<td width="50%" align="right"><select name="login_type" size="1" onChange="encapChange()"><option value="PPTP" selected languageCode="89">PPTP</option>@l2tp_hide_s#<option value="L2TP">L2TP</option>@l2tp_hide_e#<option value="PPPoE" languageCode="90">PPPoE</option></select></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+	</tr><tr><td nowrap width="50%">
+	  	<a href="javascript:loadhelp('BAS_pptp','login')" tabindex="-1"><b languageCode="91">Login</b></a>
+	  </td>
+	  <td nowrap width="50%" align="right"><input type="text" name="pptp_username" id="pptp_username" size="20" maxlength="63" value="@pptp_username#" style="width:150px"></td>
+	</tr><tr><td nowrap width="50%">
+	  	<a href="javascript:loadhelp('BAS_pptp','password')" tabindex="-1"><b languageCode="92">Password</b></a>
+	  </td>
+	  <td nowrap width="50%" align="right">
+	  <input type="password" onFocus="changetotext()" name="pptp_passwd_password" id="pptp_passwd_password" size="20" maxlength="63" value="@pptp_passwd#" style="width:150px"><input type="text" name="pptp_passwd" id="pptp_passwd" size="20" maxlength="63" onBlur="changetopassword()" value="@pptp_passwd#" style="display:none;width:150px"></td>
+	</tr><tr><td nowrap width="50%"><a href="javascript:loadhelp('BAS_pptp','conn_mode')" tabindex="-1"><b languageCode="94">Connection Mode</b></a></td>
+		<td width="50%" align="right">
+        <select name="pptp_dod" size="1" onChange="setConnMode()"><option value="0" languageCode="95">Always On</option><option value="1" languageCode="96">Dial on Demand</option><option value="2" languageCode="97">Manually Connect</option></select></td>
+	</tr><tr><td nowrap><a href="javascript:loadhelp('BAS_pptp','idletime')" tabindex="-1" languageCode="98">&lt;b&gt;Idle Timeout&lt;/b&gt;(In Minutes)<b></b></a></td>
+		<td align="right"><input type="text" class="num" name="pptp_idletime" size="3" maxlength="2" value="@pptp_idletime#"></td>
+	</tr>
+
+<tr><td nowrap colspan="2">
+                <input type="checkbox" name="wan_reset_enable_pptp" value="wan_reset_enable_pptp">
+                <span id="wan_reset_text" languageCode="3402">Enable automatic internet connection reset at</span>
+		<select name="wan_reset_time_pptp" size="1">
+		<option value="0">00:00<option value="1">00:30<option value="2">01:00<option value="3">01:30<option value="4">02:00<option value="5">02:30
+                <option value="6">03:00<option value="7">03:30<option value="8">04:00<option value="9">04:30<option value="10">05:00<option value="11">05:30
+                <option value="12">06:00<option value="13">06:30<option value="14">07:00<option value="15">07:30<option value="16">08:00<option value="17">08:30
+                <option value="18">09:00<option value="19">09:30<option value="20">10:00<option value="21">10:30<option value="22">11:00<option value="23">11:30
+                <option value="24">12:00<option value="25">12:30<option value="26">13:00<option value="27">13:30<option value="28">14:00<option value="29">14:30
+                <option value="30">15:00<option value="31">15:30<option value="32">16:00<option value="33">16:30<option value="34">17:00<option value="35">17:30
+                <option value="36">18:00<option value="37">18:30<option value="38">19:00<option value="39">19:30<option value="40">20:00<option value="41">20:30
+                <option value="42">21:00<option value="43">21:30<option value="44">22:00<option value="45">22:30<option value="46">23:00<option value="47">23:30
+                </select>
+        </td></tr>
+	<tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12">&nbsp;</td>
+	</tr><tr><td nowrap width="50%"><a href="javascript:loadhelp('BAS_pptp','myip')" tabindex="-1"><b languageCode="109">My IP Address</b></a></td>
+		<td nowrap align="right" class="num">
+		<input type="text" name="myip_1" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()" onKeyUp="myip_update()">.<input type="text" name="myip_2" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()" onKeyUp="myip_update()">.<input type="text" name="myip_3" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()" onKeyUp="myip_update()">.<input type="text" name="myip_4" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()" onKeyUp="myip_update()"></td>
+	</tr>
+	<tr><td nowrap width="50%"><b languageCode="3258">Subnet Mask</b></td>
+		<td align="right" class="num">
+			<input type="text" name="pptpcLocalSubnetMask1" class="num" size="4" value="" maxlength="3" onFocus="">.<input type="text" name="pptpcLocalSubnetMask2" class="num" size="4" value="" maxlength="3" onFocus="">.<input type="text" name="pptpcLocalSubnetMask3" class="num" size="4" value="" maxlength="3" onFocus="">.<input type="text" name="pptpcLocalSubnetMask4" class="num" size="4" value="" maxlength="3" onFocus=""></td>
+	</tr>
+	<tr><td><a href="javascript:loadhelp('BAS_pptp','servername')" tabindex="-1">
+			<b languageCode="110">Server Address</b></a></td>
+		<td nowrap width="50%" align="right"><input type="text" name="pptp_serv_ip" size="20" maxlength="63" value="@pptp_serv_ip#"></td>
+	</tr><tr><td nowrap width="50%"><a href="javascript:loadhelp('BAS_pptp','gwip')" tabindex="-1"><b><span languageCode="76">Gateway</span>
+		<span languageCode="71">IP Address</span></b></a></td>
+		<td nowrap align="right" class="num"><input type="text" name="mygw_1" class="num" size="4" maxlength="3" value="">.<input type="text" name="mygw_2" class="num" size="4" maxlength="3" value="">.<input type="text" name="mygw_3" class="num" size="4" maxlength="3" value="">.<input type="text" name="mygw_4" class="num" size="4" maxlength="3" value=""></td>
+	</tr><tr><td nowrap width="50%"><a href="javascript:loadhelp('BAS_pptp','id')" tabindex="-1"><b languageCode="111">Connection ID/Name</b></a></td>
+		<td nowrap width="50%" align="right"><input type="text" name="pptp_conn_id" size="10" maxlength="63" value="@pptp_conn_id#"></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12">&nbsp;</td>
+	</tr><tr><td colspan="2" nowrap><a href="javascript:loadhelp('BAS_ether','DNSaddress')" tabindex="-1"><b languageCode="77">Domain Name Server (DNS) Address</b></a></td>
+	</tr><tr><td colspan="2"><input type="radio" name="DNSAssign" value="0" onClick="setDNS()"><span languageCode="78">Get Automatically from ISP</span></td>
+	</tr><tr><td colspan="2"><input type="radio" name="DNSAssign" value="1" onClick="setDNS()"><span languageCode="112">Use These DNS Servers</span></td>
+	</tr><tr><td><img src="spacer.gif" width="20" height="12" border="0"><span languageCode="80">Primary DNS</span></td>
+		<td align="right" class="num"><input type="text" name="DAddr1" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="DAddr2" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="DAddr3" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="DAddr4" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()"></td>
+	</tr><tr><td><img src="spacer.gif" width="20" height="12" border="0"><span languageCode="81">Secondary DNS</span></td>
+		<td align="right" class="num"><input type="text" name="PDAddr1" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="PDAddr2" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="PDAddr3" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="PDAddr4" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()"></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12">&nbsp;</td>
+	</tr><tr><td nowrap colspan="2"><a href="javascript:loadhelp('BAS_ether','localaddress')" tabindex="-1"><b languageCode="103">Router MAC Address</b></a></td>
+	</tr><tr><td nowrap colspan="2"><input type="radio" name="MACAssign" value="0" onClick="setMAC()"><span languageCode="84">Use Default Address</span></td>
+	</tr><tr><td nowrap colspan="2"><input type="radio" name="MACAssign" value="1" onClick="setMAC()"><span languageCode="85">Use Computer MAC Address</span></td>
+	</tr><tr><td nowrap align="left"><input type="radio" name="MACAssign" value="2" onClick="setMAC()"><span languageCode="86">Use This MAC Address</span></td>
+		<td nowrap align="right" class="num"><input type="text" class="num" name="Spoofmac" size="17" maxlength="17" value="@Spoofmac#" onFocus="if(DisableFixedMAC) this.blur()"></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2" align="center"></td>
+	</tr></table><input type="hidden" name="h_wan_reset_enable_pptp" value="@h_wan_reset_enable_pptp#"><input type="hidden" name="h_wan_reset_time_pptp" value="@h_wan_reset_time_pptp#"><input type="hidden" name="c4_myip_" value="@c4_myip_#"> <input type="hidden" name="c4_pptpcLocalSubnetMask" value="@c4_pptpcLocalSubnetMask#"><input type="hidden" name="h_loginreq" value="pptp"><input type="hidden" name="h_pptp_dod" value="@h_pptp_dod#"><input type="hidden" name="c4_mygw_" value="@c4_mygw_#"><input type="hidden" name="h_DNSAssign" value="@h_DNSAssign#"><input type="hidden" name="c4_DAddr" value="@c4_DAddr#"><input type="hidden" name="c4_PDAddr" value="@c4_PDAddr#"><input type="hidden" name="h_MACAssign" value="@h_MACAssign#"><input type="hidden" name="default_wan_mac" value="@default_wan_mac#"><input type="hidden" name="computer_mac" value="@computer_mac#"><input type="hidden" name="current_wan_mac" value="@Spoofmac#"><input type="hidden" name="runtest" value="@runtest#"><input type="hidden" name="WANAssign" value="Dynamic"><input type="hidden" name="todo" value="save"><input type="hidden" name="this_file" value="BAS_pptp.htm"><input type="hidden" name="next_file" value="BAS_pptp.htm"><input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="BAS_pptp_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

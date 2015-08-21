@@ -1,0 +1,1426 @@
+<html>
+<head>
+<META http-equiv="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">	
+<meta HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT"> 
+
+
+<meta name="description" content="DVG1000 1049">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	
+ 
+
+
+
+
+<title>IPv6</title> 
+<link rel="stylesheet" href="style/form.css">
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript" src="funcs.js"></script>
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+//-->
+
+var  ip6_detect_result = "@ip6_detect_result#"; //dhcp/6to4/6rd/bridge/detecting/disconnect
+
+var eMsg = "";
+var openvpn_flag ="@openvpn_flag#";
+var openvpn_status="@openvpn_status#";
+function do_submit()
+{
+	location.href = "setup.cgi?todo=ipv6_wizard&next_file=ipv6.htm";
+}
+function ip6_pppoe_setting()
+{
+	var cf = document.forms[0];
+	
+	if(cf.ipv6ipv4ppp_one_session.checked)
+	{
+		document.getElementById("pppoe_id_username").style.display="none";
+		document.getElementById("pppoe_id_password").style.display="none";
+		document.getElementById("pppoe_id_servicename").style.display="none";
+		document.getElementById("pppoe_id_mode").style.display="none";
+	} else
+	{
+		document.getElementById("pppoe_id_username").style.display="";
+		document.getElementById("pppoe_id_password").style.display="";
+		document.getElementById("pppoe_id_servicename").style.display="";
+		document.getElementById("pppoe_id_mode").style.display="";
+	}
+}
+function chkReload()
+{
+	var cf = document.forms[0];
+	var mode = getSelected(cf.con_type);
+
+	if(mode == "auto" && ip6_detect_result == "detecting")
+	{
+		setTimeout('do_submit()',2000);
+	}
+
+}
+
+function var1toN(cf, str, basename, n, token)
+{
+	var len = str.length;
+	var i, s, e, val;
+
+	for (s = 0, i = 1; i <= n && s < len; i++) {
+		e = str.indexOf(token, s);
+		if (e < 0)
+			e = len;
+		val = str.substring(s, e);
+		eval("cf." + basename + i + ".value=\"" + val + "\"");
+		s = e + 1;
+	}
+}
+
+// basename start from 1
+function ip1to8(cf, str, basename)
+{
+	var1toN(cf, str, basename, 8, ":");
+}
+
+function ip8to1(cf, str, basename)
+{
+	var i, fv;
+	str.value  = "";
+	for ( i = 1; i <= 8; i++) {
+		eval("fv = cf." + basename + i + ".value");
+		if (fv == "")
+			fv = "0";
+		else {
+			var tmp = fv.match(/[0-9a-fA-F]+/);
+			if (tmp != fv) {
+				eMsg +="invalid ipv6 address: " + fv + "\n";
+			}
+		}
+		str.value += fv;
+		if (i < 8)
+			str.value += ":";
+	}
+}
+
+function ip1to4_ipv6(cf, str, basename)
+{
+	var1toN(cf, str, basename, 4, ":");
+}
+
+function ip4to1_ipv6(cf, str, basename)
+{
+	var i, fv;
+	str.value  = "";
+	for ( i = 1; i <= 4; i++) {
+		eval("fv = cf." + basename + i + ".value");
+		if (fv == "")
+			fv = "0";
+		else {
+			var tmp = fv.match(/[0-9a-fA-F]+/);
+			if (tmp != fv) {
+				eMsg +="invalid ipv6 address: " + fv + "\n";
+			}
+		}
+		str.value += fv;
+		if (i < 4)
+			str.value += ":";
+	}
+}
+
+function setcheckifid()
+{
+	var cf = document.forms[0];
+	var res;
+
+	if (cf.IP_interface_1.value.length == 0 && cf.IP_interface_2.value.length == 0
+		&& cf.IP_interface_3.value.length == 0 && cf.IP_interface_4.value.length == 0) {
+		if (cf.enable_interface.checked) 
+			eMsg += "interface ID can not be blank.\n";
+		else
+			cf.h_ip6_ifid.value = "";
+		return ;
+	}
+
+	res = cf.IP_interface_1.value.match(/[0-9a-fA-F]+/);
+	if (res != cf.IP_interface_1.value)
+		eMsg += "invalid interface ID: " + cf.IP_interface_1.value + "\n";
+
+	res = cf.IP_interface_2.value.match(/[0-9a-fA-F]+/);
+	if (res != cf.IP_interface_2.value)
+		eMsg += "invalid interface ID: " + cf.IP_interface_2.value + "\n";
+
+	res = cf.IP_interface_3.value.match(/[0-9a-fA-F]+/);
+	if (res != cf.IP_interface_3.value)
+		eMsg += "invalid interface ID: " + cf.IP_interface_3.value + "\n";
+
+	res = cf.IP_interface_4.value.match(/[0-9a-fA-F]+/);
+	if (res != cf.IP_interface_4.value)
+		eMsg += "invalid interface ID: " + cf.IP_interface_4.value + "\n";
+
+	cf.h_ip6_ifid.value = cf.IP_interface_1.value + ":" + cf.IP_interface_2.value + ":" 
+								+ cf.IP_interface_3.value + ":" + cf.IP_interface_4.value;
+}
+
+function checkPrefixLength(val)
+{
+	var res, plen;
+	res = val.match(/[0-9]+/);
+	plen  = res==null ? 0 : parseInt(res);
+	if (res != val || plen > 128)
+		eMsg += "invalid prefix length: " + val + "\n";
+}
+
+function convert2CompleteIpV6(ip)
+{
+    var ipV6=ip;
+    var index=ip.indexOf("::");
+    if(index>0)
+    {
+        var size=8-(ip.split(":").length-1);
+        var tmp="";
+        for(var i=0;i<size;i++)
+        {
+            tmp+=":0";
+        }
+        tmp+=":";
+        ipV6=ip.replace("::",tmp);
+    }
+    else if(index==0)
+    {
+        ipV6=ip.replace("::","0:0:0:0:0:0:0:");
+    }
+    return ipV6;
+}
+
+function isIPv6Equals(src,des)
+{
+    var srcArr=convert2CompleteIpV6(src).split(":");
+    var desArr=convert2CompleteIpV6(des).split(":");
+    for(var i=0;i<8;i++)
+    {
+        if(parseInt(srcArr[i],16)!=parseInt(desArr[i],16))
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+function checkUnicast(fieldObj)
+{    
+    var c = fieldObj.value.substring(0, 1);
+    
+    if("2" == c || c == "3")
+    {
+        return false;
+    }
+    else 
+        return true;
+}
+
+function is_prefix_apply(src, pre_len)
+{
+    var srcArr=convert2CompleteIpV6(src).split(":");
+       
+	for(var i=0;i<4;i++)
+	{
+	    if (pre_len > 16)
+	    {
+            // skip this array
+	        pre_len = pre_len - 16; 
+	    }
+	    else
+	    {
+	        var mask = 0;
+	        for (var j=0;j<pre_len;j++)
+	        {
+                mask = mask >> 1;
+		        mask = mask | 0x8000;
+	        }
+	        mask = ~mask;
+            if((parseInt(srcArr[i],16) & mask)==0)
+            {
+            	i++;
+				for(i;i<4;i++)
+				{
+					if (parseInt(srcArr[i],16)!=0)
+						return false;
+				}
+				return true;
+            }
+	        else
+	            return false;
+	    }
+    }
+}
+
+function isSameSubnet(src,des,pre_len)
+{
+    var srcArr=convert2CompleteIpV6(src).split(":");
+    var desArr=convert2CompleteIpV6(des).split(":");
+	for(var i=0;i<8;i++)
+	{
+	    if (pre_len > 16)
+	    {
+            if(parseInt(srcArr[i],16)!=parseInt(desArr[i],16))
+            {
+                return false;
+            }
+	        pre_len = pre_len - 16; 
+	    }
+	    else
+	    {
+	        var mask = 0;
+	        for (var j=0;j<pre_len;j++)
+	        {
+                mask = mask >> 1;
+		        mask = mask | 0x8000;
+	        }
+            if((parseInt(srcArr[i],16) & mask)!=(parseInt(desArr[i],16) & mask))
+            {
+                return false;
+            }
+	        else
+	            return true;
+	    }
+    }
+}
+
+function ip6_wan_use_dyn_or_fixed_dns_dataToHidden(cf)
+{
+	cf.h_wan_use_dyn_or_fixed_dns.value = cf.wan_use_dyn_or_fixed_dns[0].checked ? "0" :"1";
+	
+	if (cf.wan_use_dyn_or_fixed_dns[1].checked)
+	{
+		ip8to1(cf, cf.h_ip6_wan_use_dyn_or_fixed_pri_dns, "IPv6_wan_use_dyn_or_fixed_Pri_DNS_");
+		ip8to1(cf, cf.h_ip6_wan_use_dyn_or_fixed_sec_dns, "IPv6_wan_use_dyn_or_fixed_Sec_DNS_");
+			
+			if (cf.h_ip6_wan_use_dyn_or_fixed_pri_dns.value == "0:0:0:0:0:0:0:0")
+			{
+				eMsg += "IPv6 WAN Primary DNS Address is NOT valid.";
+				return;
+			}		
+			if (cf.h_ip6_wan_use_dyn_or_fixed_sec_dns.value == "0:0:0:0:0:0:0:0")
+			{
+				eMsg += "IPv6 WAN Secondary DNS Address is NOT valid.";
+				return;
+			}				
+			if (checkUnicast(cf.h_ip6_wan_use_dyn_or_fixed_pri_dns))
+		    {
+		        eMsg += "The IPv6 WAN Primary DNS Address is not valid; it has to be a global unicast address.";
+		        return;
+		    }		
+			if (checkUnicast(cf.h_ip6_wan_use_dyn_or_fixed_sec_dns))
+		    {
+		        eMsg += "The IPv6 WAN Secondary DNS Address is not valid; it has to be a global unicast address.";
+		        return;
+		    }			    				
+	}
+}
+
+function ip6_dataToHidden(cf)
+{
+	var mode = getSelected(cf.con_type);
+	
+	if (mode == "auto")
+	{
+		/* we should lan config when auto is no internet connect or unknown. */
+		cf.h_ip6_lan_mode.value = cf.ipv6_lan_ip_assign[0].checked ? "1" :"0";
+		setcheckifid();	
+		if (eMsg.length > 0) 
+		{
+			return;
+		}
+					
+		mode = ip6_detect_result;
+	}
+	
+	switch (mode) {
+		case "dhcp":
+		case "pppoe":
+		case "autoConfig":
+		case "6to4":
+
+			if (mode == "pppoe")
+			{
+				if (cf.ipv6ipv4ppp_one_session.checked)
+				{
+					if ("@wantype#" != "PPPoE")
+					{
+						eMsg += "IPv4 Internet type must be PPPoE";
+						return;
+					}
+				}
+			}
+
+			ip6_wan_use_dyn_or_fixed_dns_dataToHidden(cf);
+						
+			cf.h_ip6_lan_mode.value = cf.ipv6_lan_ip_assign[0].checked ? "1" :"0";
+			setcheckifid();
+			break;
+		case "6rd":
+			ip6_wan_use_dyn_or_fixed_dns_dataToHidden(cf);
+			
+			cf.h_ip6_lan_mode.value = cf.ipv6_lan_ip_assign[0].checked ? "1" :"0";
+			ip4to1_ipv6(cf, cf.h_ip6_6rd_prefix, "ip6_6rd_prefix_");
+			cf.h_ip6_6rd_prefix.value += "::"; // need to append this 
+			
+			if (cf.ip6_6rd_ipv4_mask_length.value>=32)
+			{
+				eMsg += "6rd IPv4 address mask length must be less than 32";
+				return;			
+			}
+			if (is_prefix_apply(cf.h_ip6_6rd_prefix.value, cf.ip6_6rd_prefix_length.value))
+			{
+			} else
+			{
+				eMsg += "The 6rd Prefix and the 6rd Prefix Length NOT match";
+				return;
+			}
+
+			break;			
+		case "static":
+			//cf.h_ip6_lan_mode.value = cf.fix_dhcp_server.checked ? "1" : "0";
+			cf.h_ip6_lan_mode.value = cf.ipv6_static_lan_ip_assign[0].checked ? "1" :"0";
+
+			ip8to1(cf, cf.h_ip6_fix_wan_ipaddr, "IPv6_wan_");
+			ip8to1(cf, cf.h_ip6_fix_gw_ipaddr, "IPv6_gw_");
+			ip8to1(cf, cf.h_ip6_fix_dns1, "IPv6_Pri_DNS_");
+			ip8to1(cf, cf.h_ip6_fix_dns2, "IPv6_Sec_DNS_");
+			ip8to1(cf, cf.h_ip6_fix_lan_ipaddr, "IPv6_lan_");
+			
+			if (eMsg.length > 0) 
+			{
+				return;
+			}
+			
+			//if (cf.h_ip6_lan_mode.value == "1")
+			{
+				if (cf.h_ip6_fix_lan_ipaddr.value == "0:0:0:0:0:0:0:0" ||
+					cf.IPv6_lan_prefix.value == "" || cf.IPv6_lan_prefix.value == "0")
+				{
+					eMsg += "IPv6 Address and Prefix Length are required for the LAN Setup.";
+					return;
+				}
+			}
+			if (cf.h_ip6_fix_wan_ipaddr.value == "0:0:0:0:0:0:0:0" ||
+				cf.IPv6_wan_prefix.value == "" || cf.IPv6_wan_prefix.value == "0")
+			{
+				eMsg += "IPv6 Address and Prefix Length are required for the WAN Setup.";
+				return;
+			}			
+			if (checkUnicast(cf.h_ip6_fix_wan_ipaddr))
+		    {
+		        eMsg += "The WAN IPv6 Address is not valid; it has to be a global unicast address.";
+		        return;
+		    }		
+		    
+		    	   if (checkUnicast(cf.h_ip6_fix_gw_ipaddr))
+			    {
+			        eMsg += "The Gateway IPv6 Address is not valid; it has to be a global unicast address.";
+			        return false;
+			    }
+			if (cf.h_ip6_fix_gw_ipaddr.value == "0:0:0:0:0:0:0:0")
+			{
+				eMsg += "IPv6 Gateway Address is required for the WAN Setup.";
+				return;
+			}			
+		    if (!isSameSubnet(cf.h_ip6_fix_wan_ipaddr.value, cf.h_ip6_fix_gw_ipaddr.value, cf.IPv6_wan_prefix.value))
+		    {
+		        eMsg += "The Gateway IPv6 Address has to be in the same subnet as the WAN IPv6 address.";
+		        return;
+		    }
+		    if (isIPv6Equals(cf.h_ip6_fix_wan_ipaddr.value, cf.h_ip6_fix_gw_ipaddr.value))
+		    {
+		        eMsg += "WAN IPv6 address must different from Default IPv6 Gateway.";
+		        return;
+		    }
+		    	
+            if (isIPv6Equals(cf.h_ip6_fix_dns1.value, cf.h_ip6_fix_dns2.value))
+            {
+                eMsg += "The Primary DNS Server has to be different from Secondary DNS Server.";
+                return;
+            }
+			if (checkUnicast(cf.h_ip6_fix_dns1))
+		    {
+		        eMsg += "The Primary DNS Server is not valid; it has to be a global unicast address.";
+		        return;
+		    }
+			if (checkUnicast(cf.h_ip6_fix_dns2))
+		    {
+		        eMsg += "The Secondary DNS Server is not valid; it has to be a global unicast address.";
+		        return;
+		    }
+		    			
+			checkPrefixLength(cf.IPv6_wan_prefix.value);
+			checkPrefixLength(cf.IPv6_lan_prefix.value);
+
+			break;
+		default:
+			break;
+	}
+}
+
+function ipv6_noipv4hijack()
+{
+	var cf = document.forms[0];
+	cf.todo.value = "ipv6_noipv4hijack";
+	return true;
+}
+
+function checkData()
+{
+	var cf = document.forms[0];
+	var mode = getSelected(cf.con_type);
+	var real_mode = mode == "auto" ? ip6_detect_result : mode;
+	
+	eMsg = "";
+	if(openvpn_flag == "1" && mode !="disable")
+	{
+		if (openvpn_status == "1")
+			eMsg+= getErrorMsgByVar("gsm_msg_openvpn_not_with_ipv6");
+	}
+	dataToHidden(cf);
+	ip6_dataToHidden(cf);
+	
+	if (eMsg.length > 0) {
+		alert(eMsg);
+		return false;
+	}
+	
+	if(mode == "auto" && ip6_detect_result == "")
+	{
+		/* ipv6_detwan will just detect but not ipv6 restart. we need ipv6 restart. */
+		//cf.todo.value = "ipv6_detwan";
+	}
+	if ("@is_ppp_mode#" == "1")
+	{
+		if (cf.dod_disable.value == "0" ||  cf.dod_disable.value=="")
+		{
+	 		if (real_mode == "6to4" || real_mode == "6rd")
+	 		{
+				return confirm(real_mode + ' Tunnel requires the IPv4 PPPoE/PPTP connection mode to be "Always On", other connection modes ("Dial on Demand" and "Manually Connect") will become unavailable. Please confirm the change');
+			}
+		}
+	}
+	return true;
+}
+
+function ip6_6rd_prefix_init()
+{
+	var cf = document.forms[0];
+	ip1to4_ipv6(cf, cf.h_ip6_6rd_prefix.value, "ip6_6rd_prefix_");
+
+	var fv, default_val = "0";
+	for (i = 1; i <= 4; i++) 
+	{
+		eval("fv = cf." + "ip6_6rd_prefix_" + i + ".value");
+		if (fv == "")
+			eval("cf." + "ip6_6rd_prefix_" + i + ".value=\"" + default_val + "\"");
+	}	
+}
+
+function ip6_wan_use_dyn_or_fixed_dns_change()
+{
+	var cf = document.forms[0];
+	if (cf.wan_use_dyn_or_fixed_dns[0].checked)
+	{
+		var i;
+		for (i = 1; i <= 8; i++) 
+		{
+			eval("cf.IPv6_wan_use_dyn_or_fixed_Pri_DNS_" + i + ".disabled = true");
+		}	
+		for (i = 1; i <= 8; i++) 
+		{
+			eval("cf.IPv6_wan_use_dyn_or_fixed_Sec_DNS_" + i + ".disabled = true");
+		}			
+	} else
+	{
+		var i;
+		for (i = 1; i <= 8; i++) 
+		{
+			eval("cf.IPv6_wan_use_dyn_or_fixed_Pri_DNS_" + i + ".disabled = false");
+		}	
+		for (i = 1; i <= 8; i++) 
+		{
+			eval("cf.IPv6_wan_use_dyn_or_fixed_Sec_DNS_" + i + ".disabled = false");
+		}
+	}
+}
+function ip6_wan_use_dyn_or_fixed_dns_init()
+{
+	var cf = document.forms[0];
+	
+	if (cf.h_wan_use_dyn_or_fixed_dns.value == "1") {
+		cf.wan_use_dyn_or_fixed_dns[1].checked = true;
+		ip1to8(cf, cf.h_ip6_wan_use_dyn_or_fixed_pri_dns.value, "IPv6_wan_use_dyn_or_fixed_Pri_DNS_");
+		ip1to8(cf, cf.h_ip6_wan_use_dyn_or_fixed_sec_dns.value, "IPv6_wan_use_dyn_or_fixed_Sec_DNS_");
+		
+
+	} else {
+		cf.wan_use_dyn_or_fixed_dns[0].checked = true;
+		
+		ip6_wan_use_dyn_or_fixed_dns_change();
+	}
+}
+function init()
+{
+	ip6_mode_init();
+	ip6_lan_mode_init();
+	ip6_6to4router_init();
+	ip6_6rd_prefix_init();
+	ip6_ifid_init();
+	ip6_fix_wan_addr_init();
+	ip6_fixdns_init();
+	ip6_fix_lan_addr_init();
+	ip6_wan_use_dyn_or_fixed_dns_init();
+	chkReload();
+}
+
+function ip6_fix_lan_addr_init()
+{
+	var cf = document.forms[0];
+	
+	ip1to8(cf, cf.h_ip6_fix_lan_ipaddr.value, "IPv6_lan_");
+}
+
+function ip6_fix_wan_addr_init()
+{
+	var cf = document.forms[0];
+	
+	ip1to8(cf, cf.h_ip6_fix_wan_ipaddr.value, "IPv6_wan_");
+	ip1to8(cf, cf.h_ip6_fix_gw_ipaddr.value, "IPv6_gw_");
+}
+
+function ip6_fixdns_init()
+{
+	var cf = document.forms[0];
+	
+	ip1to8(cf, cf.h_ip6_fix_dns1.value, "IPv6_Pri_DNS_");
+	ip1to8(cf, cf.h_ip6_fix_dns2.value, "IPv6_Sec_DNS_");
+}
+
+function ip6_ifid_set_disable()
+{
+	var cf = document.forms[0];
+
+	if (cf.enable_interface.checked) {
+		cf.IP_interface_1.disabled = false;
+		cf.IP_interface_2.disabled = false;
+		cf.IP_interface_3.disabled = false;
+		cf.IP_interface_4.disabled = false;
+	}
+	else {
+		cf.IP_interface_1.disabled = true;
+		cf.IP_interface_2.disabled = true;
+		cf.IP_interface_3.disabled = true;
+		cf.IP_interface_4.disabled = true;
+	}
+}
+
+function ip6_ifid_init()
+{
+	var cf = document.forms[0];
+	
+	ip6_ifid_set_disable();
+	var1toN(cf, cf.h_ip6_ifid.value, "IP_interface_", 4, ":");
+}
+
+function ip6_show_detect_result()
+{
+	switch (ip6_detect_result) {
+		case "dhcp":
+			document.getElementById("detect_result").innerHTML = "DHCP/Auto Detect";
+			document.getElementById("dhcp").style.display = "";
+			document.getElementById("wan_use_dyn_or_fixed_dns").style.display = "";
+			document.getElementById("lan").style.display = "";
+			break;
+		case "autoConfig":
+			document.getElementById("detect_result").innerHTML = "DHCP/Auto Detect";
+			document.getElementById("autoConfig").style.display = "";
+			document.getElementById("wan_use_dyn_or_fixed_dns").style.display = "";
+			document.getElementById("lan").style.display = "";
+			break;
+		case "6to4":
+			document.getElementById("detect_result").innerHTML = "6To4 Tunnel/Auto Detect";
+			document.getElementById("6to4").style.display = "";
+			document.getElementById("wan_use_dyn_or_fixed_dns").style.display = "";
+			document.getElementById("lan").style.display = "";
+			break;
+		case "6rd":
+			document.getElementById("detect_result").innerHTML = "6rd Tunnel/Auto Detect";
+			document.getElementById("6rd").style.display = "";
+			document.getElementById("wan_use_dyn_or_fixed_dns").style.display = "";
+			document.getElementById("lan").style.display = "";
+			break;			
+		case "bridge":
+			document.getElementById("detect_result").innerHTML = "Pass Through/Auto Detect";
+			document.getElementById("bridge").style.display = "";
+			document.getElementById("liteblue").style.display = "";
+			break;
+		case "detecting":
+			document.getElementById("detect_result").innerHTML = "Detecting...";
+			document.getElementById("liteblue").style.display = "";
+			break;
+		case "disconnect":
+			document.getElementById("detect_result").innerHTML = "Internet port not connected";
+			document.getElementById("auto_disconnect_wanaddrinfo").style.display = "";
+			document.getElementById("auto_disconnect_wanaddr").style.display = "";
+			document.getElementById("auto_disconnect_wanaddrliteblue").style.display = "";
+			document.getElementById("lan").style.display = "";
+			break;
+		default:
+			document.getElementById("detect_result").innerHTML = "---";
+			document.getElementById("auto").style.display = "";
+			document.getElementById("auto_disconnect_wanaddrinfo").style.display = "";
+			document.getElementById("auto_disconnect_wanaddr").style.display = "";
+			document.getElementById("auto_disconnect_wanaddrliteblue").style.display = "";
+			document.getElementById("lan").style.display = "";
+
+			break;
+	}
+}
+
+function ip6_mode_init()
+{
+	var cf = document.forms[0];
+	var mode = getSelected(cf.con_type);
+	var real_mode = mode;
+
+	document.getElementById("auto").style.display = "none";
+	document.getElementById("6to4").style.display = "none";
+	document.getElementById("6rd").style.display = "none";
+	document.getElementById("bridge").style.display = "none";
+	document.getElementById("dhcp").style.display = "none";
+	document.getElementById("pppoe").style.display = "none";
+	document.getElementById("static").style.display = "none";
+	document.getElementById("autoConfig").style.display = "none";
+	
+	document.getElementById("wan_use_dyn_or_fixed_dns").style.display = "none";
+	
+	document.getElementById("lan").style.display = "none";
+	document.getElementById("liteblue").style.display = "none";
+	
+	document.getElementById("auto_disconnect_wanaddrinfo").style.display = "none";
+	document.getElementById("auto_disconnect_wanaddr").style.display = "none";
+	document.getElementById("auto_disconnect_wanaddrliteblue").style.display = "none";
+
+	switch (mode) {
+		case "auto":
+			real_mode = ip6_detect_result;
+			document.getElementById("auto").style.display = "";
+			ip6_show_detect_result();
+			break;
+		case "6to4":
+			document.getElementById("6to4").style.display = "";
+			document.getElementById("wan_use_dyn_or_fixed_dns").style.display = "";
+			document.getElementById("lan").style.display = "";
+			break;
+		case "6rd":
+			document.getElementById("6rd").style.display = "";
+			document.getElementById("wan_use_dyn_or_fixed_dns").style.display = "";
+			document.getElementById("lan").style.display = "";
+			break;			
+		case "bridge":
+			document.getElementById("bridge").style.display = "";
+			break;
+		case "dhcp":
+			document.getElementById("dhcp").style.display = "";
+			document.getElementById("wan_use_dyn_or_fixed_dns").style.display = "";
+			document.getElementById("lan").style.display = "";
+			break;
+		case "pppoe":
+			document.getElementById("pppoe").style.display = "";
+			document.getElementById("wan_use_dyn_or_fixed_dns").style.display = "";
+			document.getElementById("lan").style.display = "";
+			
+			ip6_pppoe_setting();
+			break;
+		case "static":
+			document.getElementById("static").style.display = "";
+			break;
+		case "autoConfig":
+			document.getElementById("autoConfig").style.display = "";
+			document.getElementById("wan_use_dyn_or_fixed_dns").style.display = "";
+			document.getElementById("lan").style.display = "";
+			break;
+		default:
+			break;
+	}
+	show_refresh_btn(mode);
+}
+
+function ip6_lan_mode_init()
+{
+	var cf = document.forms[0];
+	
+	if (cf.h_ip6_lan_mode.value == "1") {
+		//cf.fix_dhcp_server.checked = true;
+		cf.ipv6_static_lan_ip_assign[0].checked = true;
+		cf.ipv6_lan_ip_assign[0].checked = true;
+	} else {
+		//cf.fix_dhcp_server.checked = false;
+		cf.ipv6_static_lan_ip_assign[1].checked = true;
+		cf.ipv6_lan_ip_assign[1].checked = true;
+	}
+}
+
+function ip6_6to4router_init()
+{
+	var cf = document.forms[0];
+
+	if (cf.remote[1].checked) {
+		cf.Remote_IP_1.disabled = false;
+		cf.Remote_IP_2.disabled = false;
+		cf.Remote_IP_3.disabled = false;
+		cf.Remote_IP_4.disabled = false;
+	}
+	else {
+		cf.Remote_IP_1.disabled = true;
+		cf.Remote_IP_2.disabled = true;
+		cf.Remote_IP_3.disabled = true;
+		cf.Remote_IP_4.disabled = true;
+	}
+}
+
+function show_refresh_btn(mode)
+{
+	if (mode == "dhcp" ||
+		mode == "6to4" ||
+		mode == "6rd" ||
+		mode == "pppoe"||
+		mode == "autoConfig" ||
+		mode == "auto"
+		) {
+			
+			document.getElementById("refresh_btn").style.display = "";
+		} else {
+			document.getElementById("refresh_btn").style.display = "none";
+		}
+}
+
+</script> 
+</head>
+<body bgcolor="#ffffff" onload="dataToVisible(document.forms[0]);document.forms[0].elements[0].focus();init();">
+<form name="frmRoutes" method="POST" action="setup.cgi@post_par#">
+<div class="page_title">IPv6</div>
+
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+	<tr><td nowrap colspan="2" align="center">
+		<input class="cancel_bt" type="RESET" name="Cancel" value="Cancel" onClick="setTimeout('dataToVisible(document.forms[0]);BlockAllClickCheck();',250)" languageCode="51">
+&nbsp;
+		<input class="apply_bt" type="SUBMIT" name="Apply" value="Apply" onClick="return checkData();" languageCode="50">
+		<input class="apply_bt" type="button" id="refresh_btn" name="refresh" value="Status Refresh" onclick="location.href='ipv6.htm'" languageCode="4432">
+	</td></tr>
+</table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+
+<tr>
+	<td ><b><span languageCode="4100">Internet Connection Type</span></b></td>
+	<td width="50%" align="right">
+	<select name="con_type" size="1" onchange="ip6_mode_init()"> 
+	<option value="disable" languageCode = "454">Disabled</option>
+	<option value="auto" languageCode = "4101">Auto Detect</option>
+	<option value="autoConfig" languageCode = "4102">Auto Config</option> 
+	<option value="6to4" languageCode = "4103">6To4 Tunnel</option>
+	<option value="6rd" >6rd Tunnel</option>
+	<option value="bridge" languageCode = "4104">Pass Through</option>
+	<option value="static" languageCode = "4105">Fixed</option>
+	<option value="dhcp" >DHCP</option>
+	<option value="pppoe" >PPPoE</option></select>
+</tr>
+<tr>
+  <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+</tr>
+
+<tr>
+	<td nowrap colspan="2">
+	<div ID="auto"  style="display:none">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr> <td> <b><span languageCode="597">Connection Type </span></b> </td>
+		<td align="right"> <label id="detect_result"></label></td>
+		</tr>
+		
+
+		<tr id="auto_disconnect_wanaddrinfo" style="display:none">
+			<td nowrap colspan=2><b><span languageCode="4110"> Router's IPv6 Address on WAN </span></b></td>
+		</tr>
+		<tr id="auto_disconnect_wanaddr" style="display:none">
+			<td nowrap colspan=2> 
+			<img src="spacer.gif" width="20" height="12" border="0">
+<script>
+if("@ip6_wan_ipaddr#"=="Not Available")
+{
+	document.write("<span languageCode=\"4431\"> Not Available </span>");
+}
+else
+{
+	document.write("@ip6_wan_ipaddr#");
+}
+</script></td>
+		</tr>
+		<tr id="auto_disconnect_wanaddrliteblue" style="display:none">
+		  <td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+		
+			
+		
+		<tr> <td colspan="2"> &nbsp;</td> </tr>
+	</table>
+	</div>
+
+	<div id="6to4"  style="display:none">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr> <td colspan="2" nowrap> <b><span languageCode="4106">Remote 6to4 Relay Router </span></b> </td>
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="radio" name="remote" value="0" onclick="ip6_6to4router_init()"><span  languageCode="4107">Auto</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="remote" value="1" onclick="ip6_6to4router_init()"><span  languageCode="4108">Static IP Address</span>
+			</td>
+			<td align="right">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="Remote_IP_1" class="num" size="4" maxlength="3"  value="" >.
+				<input type="text" name="Remote_IP_2" class="num" size="4" maxlength="3"  value="" >.
+				<input type="text" name="Remote_IP_3" class="num" size="4" maxlength="3"  value="" >.
+				<input type="text" name="Remote_IP_4" class="num" size="4" maxlength="3"  value="" >
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+	</table>
+	</div>
+
+	<div id="6rd"  style="display:none">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr> <td colspan="2" nowrap> <b><span >6rd (IPv6 Rapid Deployment) Configuration </span></b> </td>
+		<tr>
+			<td>
+				<span >6rd Prefix </span>
+			</td>
+			<td align="right">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="ip6_6rd_prefix_1" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="ip6_6rd_prefix_2" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="ip6_6rd_prefix_3" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="ip6_6rd_prefix_4" class="num" size="4" maxlength="4"  value="" >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span >6rd Prefix Length </span>
+			</td>
+			<td align="right">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="ip6_6rd_prefix_length" class="num" size="4" maxlength="4"  value="@ip6_6rd_prefix_length#" >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span >6rd IPv4 Border Relay Address </span>
+			</td>
+			<td align="right">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="ip6_6rdbr_ip1" class="num" size="4" maxlength="3"  value="" >.
+				<input type="text" name="ip6_6rdbr_ip2" class="num" size="4" maxlength="3"  value="" >.
+				<input type="text" name="ip6_6rdbr_ip3" class="num" size="4" maxlength="3"  value="" >.
+				<input type="text" name="ip6_6rdbr_ip4" class="num" size="4" maxlength="3"  value="" >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span >6rd IPv4 Address Mask Length  </span>
+			</td>
+			<td align="right">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="ip6_6rd_ipv4_mask_length" class="num" size="4" maxlength="3"  value="@ip6_6rd_ipv4_mask_length#" >
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+	</table>
+	</div>
+
+	<div id="bridge" >
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	</table>
+	</div>
+
+	<div id="static"  style="display:none">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr> <td colspan=2> <b>WAN <span languageCode="447">Setup</span></b> </td> </tr>
+		
+		<tr> <td colspan=2><span languageCode="4109"> IPv6 Address/Prefix Length </span></td> </tr>
+		<tr>
+			<td  colspan="2" class="num">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="IPv6_wan_1" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_2" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_3" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_4" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_5" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_6" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_7" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_8" class="num" size="4" maxlength="4"  value="" >/
+			   <input type="text" name="IPv6_wan_prefix" class="num" size="4" maxlength="4"  value="@IPv6_wan_prefix#" >
+			</td>
+		</tr>
+		
+		<tr> <td colspan=2><span languageCode="4116"> Default IPv6 Gateway </span></td> </tr>
+		<tr>
+			<td  colspan="2" class="num">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="IPv6_gw_1" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_gw_2" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_gw_3" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_gw_4" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_gw_5" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_gw_6" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_gw_7" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_gw_8" class="num" size="4" maxlength="4"  value="" >
+			</td>
+		</tr>
+				
+		<tr> <td colspan=2><span languageCode="80">Primary DNS Server </span></td> </tr>
+		<tr>
+			<td  colspan="2" class="num">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="IPv6_Pri_DNS_1" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Pri_DNS_2" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Pri_DNS_3" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Pri_DNS_4" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Pri_DNS_5" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Pri_DNS_6" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Pri_DNS_7" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Pri_DNS_8" class="num" size="4" maxlength="4"  value="" >
+			</td>
+		</tr>
+		
+		<tr> <td colspan=2><span languageCode="81">Secondary DNS Server </span></td> </tr>
+		<tr>
+			<td  colspan="2" class="num">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="IPv6_Sec_DNS_1" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Sec_DNS_2" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Sec_DNS_3" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Sec_DNS_4" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Sec_DNS_5" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Sec_DNS_6" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Sec_DNS_7" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_Sec_DNS_8" class="num" size="4" maxlength="4"  value="" >
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+		<tr> <td colspan=2> <b>LAN <span languageCode="447">Setup</span></b> </td> </tr>
+
+<!--		
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="checkbox" name="fix_dhcp_server" value="" ><span languageCode="4114"> Enable DHCP Server</span>
+			</td>
+		</tr>
+-->		
+		<tr>
+			<td nowrap colspan=2><span languageCode="4113"> IP Address assignment </span></td>
+		</tr>
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="radio" name="ipv6_static_lan_ip_assign" value="DHCP"><span languageCode="4114">Use DHCP Server</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="radio" name="ipv6_static_lan_ip_assign" value="Auto Config" ><span languageCode="4102">Auto Config</span>
+			</td>
+		</tr>		
+		
+		<tr> <td colspan=2><span languageCode="4109">IPv6 Address/Prefix Length</span> </td> </tr>
+		<tr>
+			<td  colspan="2" class="num">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="IPv6_lan_1" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_lan_2" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_lan_3" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_lan_4" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_lan_5" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_lan_6" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_lan_7" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_lan_8" class="num" size="4" maxlength="4"  value="" >/
+			   <input type="text" name="IPv6_lan_prefix" class="num" size="4" maxlength="4"  value="@IPv6_lan_prefix#" >
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+	</table>
+	</div>
+
+	<div id="pppoe"  style="display:none">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="checkbox" name="ipv6ipv4ppp_one_session" value="" onClick="ip6_pppoe_setting();" > 
+				<span languageCode="4430">Use the same login information as IPv4 PPPoE</span>
+			</td>
+		</tr>
+			
+		<tr id="pppoe_id_username">
+			<td nowrap><b><span languageCode="91">Login</span></b> &nbsp;</td>
+			<td align="right"><input type="text" name="ipv6_pppoe_username" maxlength="63" size="15" value="@ipv6_pppoe_username#"></td>
+		</tr>
+
+		<tr id="pppoe_id_password">
+			<td nowrap><b><span languageCode="92">Password</span></b> &nbsp;</td>
+			<td align="right"><input type="password" name="ipv6_pppoe_passwd" maxlength="63" size="15" value="@ipv6_pppoe_passwd#"></td>
+		</tr>
+		
+		<tr id="pppoe_id_servicename">
+			<td nowrap><b><span languageCode="3313">Service Name</span></b> (<span languageCode="305">If Required </span>) &nbsp;</td>
+			<td align="right"><input type="text" name="ipv6_pppoe_servername" maxlength="50" size="15" value="@ipv6_pppoe_servername#"></td>
+		</tr>
+		
+		<tr id="pppoe_id_mode">
+			<td nowrap><b><span languageCode="94">Connection Mode</span></b>&nbsp;</td>
+			<td align="right">
+				<select name="ipv6_pppoe_mode" size="1" disabled> 
+					<option value="0" languageCode="95">Always On &nbsp; </option>
+				</select>
+		</tr>
+		<tr>
+			<td nowrap colspan=2> &nbsp; </td>
+		</tr>
+		<tr>
+			<td nowrap colspan=2><b><span languageCode="4110"> Router's IPv6 Address on WAN </span></b></td>
+		</tr>
+		<tr>
+			<td nowrap colspan=2> 
+			<img src="spacer.gif" width="20" height="12" border="0">
+<script>
+if("@ip6_wan_ipaddr#"=="Not Available")
+{
+	document.write("<span languageCode=\"4431\"> Not Available </span>");
+}
+else
+{
+	document.write("@ip6_wan_ipaddr#");
+}
+</script></td>
+		</tr>
+
+<!--	
+		<tr>
+		</tr>
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="checkbox" name="ipv6ipv4ppp_one_session" value=""  > 
+				<span>IPv6 and IPv4 in same ppp session</span>
+			</td>
+		</tr>
+	
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="checkbox" name="ipv6_dhcpc_no_na" value=""  > 
+				<span>DHCP NOT Request NA</span>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="checkbox" name="ipv6_ppp_stateless" value=""  > 
+				<span>Stateless over ppp</span>
+			</td>
+		</tr>
+-->
+		
+		
+		<tr>
+			<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+	</table>
+	</div>
+	
+	<div id="dhcp"  style="display:none">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td nowrap><b><span languageCode="67">Account Name (If Required) </span></b></td>
+			<td align="right"><input type="text" name="userClass" maxlength="50" size="15" value="@userClass#"></td>
+		</tr>
+
+		<tr>
+			<td nowrap><b><span languageCode="69">Domain Name (If Required) </span></b></td>
+			<td align="right"><input type="text" name="domainName" maxlength="50" size="15" value="@domainName#"></td>
+		</tr>
+		<tr> <td colspan=2> &nbsp; </td></tr>
+		<tr>
+			<td nowrap colspan=2><b><span languageCode="4110"> Router's IPv6 Address on WAN</span></b></td>
+		</tr>
+		<tr>
+			<td nowrap colspan=2> 
+			<img src="spacer.gif" width="20" height="12" border="0">
+<script>
+if("@ip6_wan_ipaddr#"=="Not Available")
+{
+	document.write("<span languageCode=\"4431\"> Not Available </span>");
+}
+else
+{
+	document.write("@ip6_wan_ipaddr#");
+}
+</script></td>
+		</tr>
+
+		<tr>
+			<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+	</table>
+	</div>
+	<div id="autoConfig"  style="display:none">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td nowrap><b><span>DHCP</span> <span languageCode="4111">User Class (If Required) </span></b></td>
+			<td align="right"><input type="text" name="userClass" maxlength="50" size="15" value="@userClass#"></td>
+		</tr>
+
+		<tr>
+			<td nowrap><b><span>DHCP</span> <span languageCode="69">Domain Name (If Required)</span></b> </td>
+			<td align="right"><input type="text" name="domainName" maxlength="50" size="15" value="@domainName#"></td>
+		</tr>
+		<tr> <td colspan=2> &nbsp; </td></tr>
+		<tr>
+			<td nowrap colspan=2><b><span languageCode="4110"> Router's IPv6 Address on WAN</span></b></td>
+		</tr>
+		<tr>
+			<td nowrap colspan=2> 
+			<img src="spacer.gif" width="20" height="12" border="0">
+<script>
+if("@ip6_wan_ipaddr#"=="Not Available")
+{
+	document.write("<span languageCode=\"4431\"> Not Available </span>");
+}
+else
+{
+	document.write("@ip6_wan_ipaddr#");
+}
+</script></td>
+		</tr>
+
+		<tr>
+			<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+	</table>
+	</div>	
+	
+	<div id="wan_use_dyn_or_fixed_dns"  style="display:none">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">	
+		<tr>
+			<td nowrap colspan=2><b> IPv6 <span languageCode="77">Domain Name Service (DNS) Address  </span></b></td>
+		</tr>
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="radio" name="wan_use_dyn_or_fixed_dns" value="0" onClick="ip6_wan_use_dyn_or_fixed_dns_change();"><span languageCode="78">Get Automatically from ISP</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="radio" name="wan_use_dyn_or_fixed_dns" value="1" onClick="ip6_wan_use_dyn_or_fixed_dns_change();"><span languageCode="79">Use these DNS servers</span>
+			</td>
+		</tr>
+		<tr> <td colspan=2><span languageCode="80">Primary DNS Server </span></td> </tr>
+		<tr>
+			<td  colspan="2" class="num">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Pri_DNS_1" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Pri_DNS_2" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Pri_DNS_3" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Pri_DNS_4" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Pri_DNS_5" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Pri_DNS_6" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Pri_DNS_7" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Pri_DNS_8" class="num" size="4" maxlength="4"  value="" >
+			</td>
+		</tr>
+		<tr> <td colspan=2><span languageCode="81">Secondary DNS Server </span></td> </tr>
+		<tr>
+			<td  colspan="2" class="num">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Sec_DNS_1" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Sec_DNS_2" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Sec_DNS_3" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Sec_DNS_4" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Sec_DNS_5" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Sec_DNS_6" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Sec_DNS_7" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IPv6_wan_use_dyn_or_fixed_Sec_DNS_8" class="num" size="4" maxlength="4"  value="" >
+			</td>
+		</tr>	
+		<tr>
+			<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+	</table>
+	</div>	
+		
+	<div id="lan"  style="display:none">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td nowrap colspan=2><b>LAN <span languageCode="447">Setup</span></b></td>
+		</tr>
+		<tr> <td nowarp colspan=2> &nbsp; </td> </tr>
+		<tr>
+			<td nowrap colspan=2><b><span languageCode="4112"> Router's IPv6 Address on LAN</span></b> </td>
+		</tr>
+		<tr>
+			<td nowrap colspan=2> 
+			<img src="spacer.gif" width="20" height="12" border="0">
+<script>
+if("@ip6_wan_ipaddr#"=="Not Available")
+{
+	document.write("<span languageCode=\"4431\"> Not Available </span>");
+}
+else
+{
+	document.write("@ip6_wan_ipaddr#");
+}
+</script></td>
+		</tr>
+		<tr> 
+			<td colspan=2> &nbsp; </td>
+		</tr>
+		<tr>
+			<td nowrap colspan=2><span languageCode="4113"> IP Address assignment </span></td>
+		</tr>
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="radio" name="ipv6_lan_ip_assign" value="DHCP"><span languageCode="4114">Use DHCP Server</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="radio" name="ipv6_lan_ip_assign" value="Auto Config" ><span languageCode="4102">Auto Config</span>
+			</td>
+		</tr>
+		<tr> 
+			<td colspan=2> &nbsp; </td>
+		</tr>
+		<tr>
+			<td colspan="2" nowrap>
+				<input type="checkbox" name="enable_interface" value="" onclick="ip6_ifid_set_disable()" > 
+				<span languageCode="4115">Use This interface ID</span>
+			</td>
+		</tr>
+		<tr>
+			<td  colspan="2" class="num">
+				<img src="spacer.gif" width="20" height="12" border="0">
+				<input type="text" name="IP_interface_1" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IP_interface_2" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IP_interface_3" class="num" size="4" maxlength="4"  value="" >:
+				<input type="text" name="IP_interface_4" class="num" size="4" maxlength="4"  value="" >
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+	</table>
+	</div>
+	
+	<div id="liteblue"  style="display:none">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+		</tr>
+	</table>
+	</div>
+		
+	</td>
+</tr>
+
+
+
+</table>
+</DIV> 
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="ipv6.htm">
+<input type="hidden" name="next_file" value="ipv6.htm">
+
+
+<input type="hidden" name="h_con_type" value="@h_con_type#">
+<input type="hidden" name="h_ip6_lan_mode" value="@h_ip6_lan_mode#">
+<input type="hidden" name="h_enable_interface" value="@h_enable_interface#">
+<input type="hidden" name="h_ip6_ifid" value="@h_ip6_ifid#">
+<input type="hidden" name="h_ip6_fix_wan_ipaddr" value="@h_ip6_fix_wan_ipaddr#">
+<input type="hidden" name="h_ip6_fix_gw_ipaddr" value="@h_ip6_fix_gw_ipaddr#">
+<input type="hidden" name="h_ip6_fix_dns1" value="@h_ip6_fix_dns1#">
+<input type="hidden" name="h_ip6_fix_dns2" value="@h_ip6_fix_dns2#">
+<input type="hidden" name="h_ip6_fix_lan_ipaddr" value="@h_ip6_fix_lan_ipaddr#">
+<input type="hidden" name="c4_Remote_IP_" value="@c4_Remote_IP_#">
+<input type="hidden" name="h_remote" value="@h_remote#">
+
+<input type="hidden" name="c4_ip6_6rdbr_ip" value="@c4_ip6_6rdbr_ip#">
+<input type="hidden" name="h_ip6_6rd_prefix" value="@h_ip6_6rd_prefix#">
+
+<input type="hidden" name="h_wan_use_dyn_or_fixed_dns" value="@h_wan_use_dyn_or_fixed_dns#">
+<input type="hidden" name="h_ip6_wan_use_dyn_or_fixed_pri_dns" value="@h_ip6_wan_use_dyn_or_fixed_pri_dns#">
+<input type="hidden" name="h_ip6_wan_use_dyn_or_fixed_sec_dns" value="@h_ip6_wan_use_dyn_or_fixed_sec_dns#">
+
+<input type="hidden" name="dod_disable" value="@dod_disable#">
+
+<input type="hidden" name="h_ipv6ipv4ppp_one_session" value="@h_ipv6ipv4ppp_one_session#">
+<!--
+<input type="hidden" name="h_ipv6_ppp_stateless" value="@h_ipv6_ppp_stateless#"> 
+<input type="hidden" name="h_ipv6_dhcpc_no_na" value="@h_ipv6_dhcpc_no_na#">
+-->
+
+<!--
+<input type="hidden" name="h_ip6_mode" value="6">
+<input type="hidden" name="h_ip6_lan_mode" value="0">
+<input type="hidden" name="h_ip6_ifid_enable" value="disable">
+<input type="hidden" name="h_ip6_ifid" value="12:33:44:dd">
+<input type="hidden" name="h_ip6_fix_wan_ipaddr" value="2001:1201:333:444:eeee:ffff:1:2">
+<input type="hidden" name="h_ip6_fix_dns1" value="2001:1201:333:444:eeee:ffff:1:3">
+<input type="hidden" name="h_ip6_fix_dns2" value="2001:1201:333:444:eeee:ffff:1:4">
+<input type="hidden" name="h_ip6_fix_lan_ipaddr" value="2001:1201:333:444:eeee:ffff:2:1">
+<input type="hidden" name="c4_ip6_6to4router" value="192.168.88.1">
+<input type="hidden" name="h_ip6_custom_6to4router" value="1">
+-->
+
+
+</form>
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="ipv6_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</body>
+</html>

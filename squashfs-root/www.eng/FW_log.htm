@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+/* timer refresh automatically */
+var delaytime = 1000;
+var date_str = "@rt_now_datetime#";
+var year, mon, day, hour, min, sec;
+var is_3g_support = "@is_3g_support#";
+
+function sendLog()
+{
+    var cf = document.forms[0];
+	if(! is_email_on())
+		return false;
+
+    cf.log_detail.value = '';
+	stdAction(cf, 'sendlog');
+}
+
+function clearLog()
+{
+    var cf = document.forms[0];
+
+    cf.log_detail.value = '';
+    stdAction(cf, 'clearlog')
+}
+function is_email_on()
+{
+    var cf = document.forms[0];
+    if(cf.h_email_notify.value != "enable" )  //  e-mail notification on
+    {    alert(getErrorMsgByVar("gsm_msg_log_en_send_log"));
+         return false;
+    }
+    else
+        return true;
+}
+
+function checkData()
+{
+ 	var cf = document.forms[0];
+
+    cf.log_detail.value='';
+	stdAction(cf, 'save');
+	return true;
+}
+
+function show_3glog()
+{
+	if(is_3g_support == "1")
+		document.getElementById("_3g_").style.display = "";
+	else
+		document.getElementById("_3g_").style.display = "none";
+	return true;
+}
+
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]); show_3glog(); self.focus();">
+<form method="POST" action="setup.cgi@post_par#" onSubmit="this.log_detail.value=''">
+<div class="page_title" languageCode="295">Logs</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="button" name="cancel" value="Cancel" onClick="location.href='./FW_log.htm'" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="button" name="Apply" value="Apply" onClick="if(checkData()) buttonToDisabled(document.forms[0]);" languageCode="50">
+</td></tr></table>
+</div>
+<span><b id="curtime" languageCode="296" style="display:none">Current Time</b></span><span style="display:none">: @current_date# </span> <span id="timer" style="display:none"></span>
+<div id="main" class="main_top_button">
+	<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2" align="center">
+ <table border="0" cellspacing="0" cellpadding="0"><tr><td colspan="2"><pre><b id="tm_display"></b>
+<textarea name="log_detail" class="smallfix" rows="15" cols="60" wrap="off" readonly tabindex="-1">
+@rt_log#
+</textarea></pre></td>
+  </tr></table></td>
+</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+</tr><tr><td colspan="2" align="center" height="35"><input class="common_bt" type="button" name="Refresh" value="Refresh" onClick="location.href='./FW_log.htm'" languageCode="194">
+&nbsp;
+<input class="common_bt" type="button" name="action_Clear" value="Clear Log" onClick="clearLog();buttonToDisabled(document.forms[0])" languageCode="306">
+&nbsp;
+<input class="common_bt" type="button" name="action_Send" value="Send Log" onClick="if(sendLog()) buttonToDisabled(document.forms[0])" languageCode="307"></td>
+</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+</tr><tr><td colspan="2"><p><b><a href="javascript:loadhelp('FW_log','contents')" tabindex="-1" languageCode="298">Include in Log</a></b></p></td>
+</tr><tr><td colspan="2"><input type="checkbox" name="log_site" value="log_asites"><span languageCode="299">Attempted access to allowed sites</span></td>
+</tr><tr><td colspan="2"><input type="checkbox" name="log_block" value="log_bsites"><span languageCode="300">Attempted access to blocked sites and services</span></td>
+</tr><tr><td colspan="2"><input type="checkbox" name="log_conn" value="log_mg"><span languageCode="301">Connections to the Web-based interface of this Router</span></td>
+</tr><tr><td colspan="2"><input type="checkbox" name="log_router" value="log_op"><span languageCode="302">Router operation (start up, get time etc)</span></td>
+</tr><tr><td colspan="2"><input type="checkbox" name="log_dosport" value="log_dos"><span languageCode="303">Known DoS attacks and Port Scans</span></td>
+</tr><tr><td colspan="2"><input type="checkbox" name="log_port" value="log_fwd"><span languageCode="304">Port Forwarding/Port Triggering</span></td>
+</tr><tr><td colspan="2"><input type="checkbox" name="log_wire" value="log_wlan"><span languageCode="305">Wireless access</span></td>
+</tr><tr><td colspan="2"><input type="checkbox" name="log_usb" value="log_usb"><span languageCode="">ReadySHARE</span></td>
+</tr><tr id="_3g_"><td colspan="2"><input type="checkbox" name="log_3g" value="log_3g"><span languageCode="">ReadySHARE Mobile Connect</span></td>
+</tr><tr><td colspan="2"><input type="checkbox" name="log_vpn" value="log_vpn"><span languageCode="4000">VPN Service</span></td>
+</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+</tr><tr><td colspan="2" align="center"></td>
+</tr></table><input type="hidden" name="h_log_site" value="@h_log_site#"><input type="hidden" name="h_log_block" value="@h_log_block#"><input type="hidden" name="h_log_conn" value="@h_log_conn#"><input type="hidden" name="h_log_router" value="@h_log_router#"><input type="hidden" name="h_log_dosport" value="@h_log_dosport#"><input type="hidden" name="h_log_port" value="@h_log_port#"><input type="hidden" name="h_log_wire" value="@h_log_wire#"><input type="hidden"
+name="h_log_usb" value="@h_log_usb#"><input type="hidden" name="h_log_3g" value="@h_log_3g#"><input type="hidden" name="h_log_vpn" value="@h_log_vpn#"><!-- ServerEnd --><input type="hidden" name="todo" value=""><!-- newfile, clearlog, sendlog --><input type="hidden" name="this_file" value="FW_log.htm"><input type="hidden" name="next_file" value="FW_log.htm"><input type="hidden" name="h_email_notify" value="@h_email_notify#"><input type="hidden" name="email_on" value="@email_on#"><!-- yes or no --><input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="FW_log_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+<script type="text/javascript">
+	var date_str = "@rt_now_datetime#";
+	var delaytime = 1000;
+	var elem = date_str.split(':');
+	var day = elem[2];
+	var year = elem[0];
+	var hour = parseInt(elem[3], 10);
+	var minute = parseInt(elem[4], 10);
+	var sec =parseInt(elem[5], 10);
+	var str_display = document.getElementById("curtime").innerHTML + ": " + document.getElementById("week_day").innerHTML  + ", " + day + " " + document.getElementById("month").innerHTML +  " " + year + " ";
+
+	function to_string(val) {
+		var ret="";
+		if(val <= 9) {
+			ret += "0";
+		}
+		ret += val;
+		return ret;
+	}
+function tm_dis()
+{
+	var tmp = "";
+	var cf = document.forms[0];
+	sec ++;
+	if(sec>59) {
+		sec = 0;
+		minute ++;
+	
+	if(minute == 60)
+	{
+		hour ++;
+		minute = 0;
+	}
+	}
+	if(hour == 24) {
+		location.href = cf.this_file.value;
+	}
+	tmp += to_string(hour);
+	tmp += ":";
+	tmp += to_string(minute);
+	tmp += ":";
+	tmp += to_string(sec);
+	document.getElementById("tm_display").innerHTML  = str_display + tmp;
+	setTimeout("tm_dis();", delaytime);
+}
+tm_dis();
+
+</script>
+</body></html>

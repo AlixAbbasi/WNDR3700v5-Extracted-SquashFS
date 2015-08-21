@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tag_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<message>
+<tag_code>25</tag_code>
+<translation>İleri</translation>
+<variable>Next</variable>
+</message>
+<message>
+<tag_code>91</tag_code>
+<translation>Oturum Aç</translation>
+<variable>Login</variable>
+</message>
+<message>
+<tag_code>466</tag_code>
+<translation>Kurulum Sihirbazı</translation>
+<variable>Setup Wizard</variable>
+</message>
+<message>
+<tag_code>552</tag_code>
+<translation>Kablosuz</translation>
+<variable>Wireless</variable>
+</message>
+<message>
+<tag_code>597</tag_code>
+<translation>Bağlantı Türü</translation>
+<variable>Connection Type</variable>
+</message>
+<message>
+<tag_code>708</tag_code>
+<translation>Alt Ağ Maskesi</translation>
+<variable>Subnet Mask</variable>
+</message>
+<message>
+<tag_code>709</tag_code>
+<translation>Varsayılan Ağ Geçidi</translation>
+<variable>Default Gateway</variable>
+</message>
+<message>
+<tag_code>753</tag_code>
+<translation>Yeniden dene</translation>
+<variable>Try again</variable>
+</message>
+<message>
+<tag_code>860</tag_code>
+<translation>Dinamik IP (DHCP) algılandı</translation>
+<variable>Dynamic IP (DHCP) detected</variable>
+</message>
+<message>
+<tag_code>875</tag_code>
+<translation>Akıllı Kurulum Sihirbazı, sahip olduğunuz İnternet bağlantısının türünü algılayabilir.</translation>
+<variable>The Smart Setup Wizard can detect the type of Internet connection that you have.</variable>
+</message>
+<message>
+<tag_code>876</tag_code>
+<translation>Akıllı Kurulum Sihirbazı'nın bağlantı türünü şimdi deneyip algılamasını istiyor musunuz?</translation>
+<variable>Do you want the Smart Setup Wizard to try and detect the connection type now?</variable>
+</message>
+<message>
+<tag_code>877</tag_code>
+<translation>Hayır. Yönlendiriciyi kendim yapılandırmak istiyorum.</translation>
+<variable>No. I want to configure the router myself.</variable>
+</message>
+<message>
+<tag_code>3000</tag_code>
+<translation>- Kablo bağlantılarının doğruluğunu kontrol edin. Yönergeler için yönlendirici Yükleme Kılavuzu'na bakın.</translation>
+<variable>- Check that the cable connections are correct. Refer to the router Installation Guide for instructions.</variable>
+</message>
+<message>
+<tag_code>3001</tag_code>
+<translation>- Geniş bant modeminizin doğru bir şekilde kapatılıp açıldığından emin olun. Modeminizin pil yedeklemesi varsa, modeminizin kapatıp açmak için pili çıkarıp yeniden yerleştirin.</translation>
+<variable>- Check that your broadband modem is power cycled correctly. If you have a battery-backed modem, remove and reinsert the battery to power cycle your modem.</variable>
+</message>
+<message>
+<tag_code>3003</tag_code>
+<translation>(biçim: AABBCCDDEEFF)</translation>
+<variable>(format AABBCCDDEEFF)</variable>
+</message>
+<message>
+<tag_code>3006</tag_code>
+<translation>1.  Modem, kablo bağlantısı adımında kapatılıp açılmadı.</translation>
+<variable>1.  The modem was not power cycled during the cabling step.</variable>
+</message>
+<message>
+<tag_code>3007</tag_code>
+<translation>2.  Sarı Ethernet kablosuz tam olarak yerleştirilmedi veya yanlış yere yerleştirildi.</translation>
+<variable>2.  The yellow Ethernet cable is not fully inserted, or is inserted in the wrong place.</variable>
+</message>
+<message>
+<tag_code>3008</tag_code>
+<translation>MAC adresi benzersiz bir numaradır.  Bilgisayarın veya yönlendiricinin MAC adresini ürün etiketinde bulabilirsiniz.</translation>
+<variable>A MAC address is a unique number.  You can find the MAC address of the computer or router on its product label.</variable>
+</message>
+<message>
+<tag_code>3014</tag_code>
+<translation>Ethernet kablosunu kontrol ettikten sonra, &lt;b&gt;Yeniden dene&lt;/b&gt; düğmesini tıklayın.</translation>
+<variable>After you have checked the Ethernet cable, click &lt;b&gt;Try again&lt;/b&gt;.</variable>
+</message>
+<message>
+<tag_code>3015</tag_code>
+<translation>Diğer DNS Sunucusu</translation>
+<variable>Alternate DNS Server</variable>
+</message>
+<message>
+<tag_code>3017</tag_code>
+<translation>İnternet Bağlantısı Ayarları Uygulanıyor</translation>
+<variable>Applying Internet Connection Settings</variable>
+</message>
+<message>
+<tag_code>3020</tag_code>
+<translation>Geri</translation>
+<variable>Back</variable>
+</message>
+<message>
+<tag_code>3023</tag_code>
+<translation>Önceden kaydettiğiniz yönlendirici ayarları yedek dosyasına göz atın ve ilerlemek için &lt;b&gt;İleri&lt;/b&gt; düğmesini tıklayın.</translation>
+<variable>Browse to the router settings backup file you previously saved, and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3024</tag_code>
+<translation>İnternet bağlantısı kontrol ediliyor; lütfen bekleyin …</translation>
+<variable>Checking the Internet connection; please wait …</variable>
+</message>
+<message>
+<tag_code>3025</tag_code>
+<translation>Burayı tıklayın</translation>
+<variable>Click here</variable>
+</message>
+<message>
+<tag_code>3028</tag_code>
+<translation>İnternet Bağlantısı Yapılandırılıyor</translation>
+<variable>Configuring the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3029</tag_code>
+<translation>Tebrikler!</translation>
+<variable>Congratulations!</variable>
+</message>
+<message>
+<tag_code>3030</tag_code>
+<translation>Bağlantı Kimliği/Adı</translation>
+<variable>Connection ID/Name</variable>
+</message>
+<message>
+<tag_code>3031</tag_code>
+<translation>Devam</translation>
+<variable>Continue</variable>
+</message>
+<message>
+<tag_code>3034</tag_code>
+<translation>İnternet Bağlantısı Algılanıyor</translation>
+<variable>Detecting the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3035</tag_code>
+<translation>İnternet Servis Sağlayıcınız (İSS) size sabit (statik) bir IP adresi atadı mı? Bu, &lt;b&gt;çok nadir görülen&lt;/b&gt; özel bir dağıtımdır. </translation>
+<variable>Did your Internet Service Provider (ISP) assign to you a fixed (static) IP address? This is a &lt;b&gt;very rare&lt;/b&gt; special deployment. </variable>
+</message>
+<message>
+<tag_code>3037</tag_code>
+<translation>NETGEAR Genie uygulamasının yardımcı olmasını istiyor musunuz?</translation>
+<variable>Do you want NETGEAR Genie to help?</variable>
+</message>
+<message>
+<tag_code>3038</tag_code>
+<translation>NETGEAR Genie uygulamasının yeniden denemesini istiyor musunuz?</translation>
+<variable>Do you want NETGEAR Genie to try again?</variable>
+</message>
+<message>
+<tag_code>3043</tag_code>
+<translation>İnternet Servis Sağlayıcınız tarafından atanan sabit IP ayarlarını girin ve devam etmek için &lt;b&gt;İleri&lt;/b&gt; düğmesini tıklayın.</translation>
+<variable>Enter the fixed IP settings assigned by your Internet Service Provider and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3044</tag_code>
+<translation>MAC adresini buraya girin.</translation>
+<variable>Enter the MAC address here.</variable>
+</message>
+<message>
+<tag_code>3045</tag_code>
+<translation>Gerekli bilgileri yeniden girin.</translation>
+<variable>Enter the required information again.</variable>
+</message>
+<message>
+<tag_code>3046</tag_code>
+<translation>Gerekli bilgileri aşağıya girin.</translation>
+<variable>Enter the required information below.</variable>
+</message>
+<message>
+<tag_code>3049</tag_code>
+<translation>Hata</translation>
+<variable>Failure</variable>
+</message>
+<message>
+<tag_code>3053</tag_code>
+<translation>Sabit İnternet IP Ayarları</translation>
+<variable>Fixed Internet IP Settings</variable>
+</message>
+<message>
+<tag_code>3054</tag_code>
+<translation>Ağ Geçidi IP Adresi</translation>
+<variable>Gateway IP Address</variable>
+</message>
+<message>
+<tag_code>3060</tag_code>
+<translation>Bir sorunu Ethernet kablosuyla düzelttim.</translation>
+<variable>I corrected a problem with the Ethernet cable.</variable>
+</message>
+<message>
+<tag_code>3061</tag_code>
+<translation>Bilmiyorum. </translation>
+<variable>I don't know. </variable>
+</message>
+<message>
+<tag_code>3062</tag_code>
+<translation>Yönlendirici ayarlarını bir dosyaya kaydettim ve yönlendiriciye bu ayarları geri yüklemek istiyorum.</translation>
+<variable>I have saved the router settings in a file and I want to restore the router to those settings.</variable>
+</message>
+<message>
+<tag_code>3063</tag_code>
+<translation>Modemi kapatıp açtım ve 2 dakika bekledim.</translation>
+<variable>I just power cycled the modem and waited for 2 minutes.</variable>
+</message>
+<message>
+<tag_code>3064</tag_code>
+<translation>İnternet bağlantısını kendim yapılandırmak istiyorum</translation>
+<variable>I want to configure the Internet connection myself</variable>
+</message>
+<message>
+<tag_code>3065</tag_code>
+<translation>&lt;b&gt;Boşta Kalma Zaman Aşımı&lt;/b&gt;(Dakika)</translation>
+<variable>&lt;b&gt;Idle Timeout&lt;/b&gt;(In Minutes)</variable>
+</message>
+<message>
+<tag_code>3067</tag_code>
+<translation>İnternet hizmetinize önceden bir bilgisayar veya başka bir yönlendiriciyle bağlandıysanız, NETGEAR Genie önceden işe yarayan MAC adresini kullanabilir.</translation>
+<variable>If you previously connected to your Internet service with a computer or another router,  NETGEAR Genie can use the same MAC address that worked before.</variable>
+</message>
+<message>
+<tag_code>3068</tag_code>
+<translation>Önemli Güncelleştirme</translation>
+<variable>Important Update</variable>
+</message>
+<message>
+<tag_code>3073</tag_code>
+<translation>Yanlış İSS Kullanıcı adı ve Parola</translation>
+<variable>Incorrect ISP User name or Password</variable>
+</message>
+<message>
+<tag_code>3094</tag_code>
+<translation>Kablonun geniş bant modem bağlantı noktasına ve yönlendirici İnternet bağlantı noktasına güvenli bir şekilde takıldığından emin olun.</translation>
+<variable>Make sure that the cable is securely plugged into both the broadband modem port and the router Internet port.</variable>
+</message>
+<message>
+<tag_code>3095</tag_code>
+<translation>IP Adresim</translation>
+<variable>My IP Address</variable>
+</message>
+<message>
+<tag_code>3097</tag_code>
+<translation>Ağ Bağlantısı Sorunu</translation>
+<variable>Network Connection Issue</variable>
+</message>
+<message>
+<tag_code>3098</tag_code>
+<translation>ağ anahtarı (parola)</translation>
+<variable>network key (password)</variable>
+</message>
+<message>
+<tag_code>3099</tag_code>
+<translation>ağ anahtarı (parola)</translation>
+<variable>network key (password)</variable>
+</message>
+<message>
+<tag_code>3100</tag_code>
+<translation>İleri</translation>
+<variable>Next</variable>
+</message>
+<message>
+<tag_code>3101</tag_code>
+<translation>Yönlendirici İnternet Bağlantı Noktasına Takılı Ethernet Kablosu Yok</translation>
+<variable>No Ethernet Cable Is Plugged into the Router Internet Port</variable>
+</message>
+<message>
+<tag_code>3103</tag_code>
+<translation>Hayır, İSS'mden sabit (statik) bir IP adresi almadım.</translation>
+<variable>No, I did not get a fixed (static) IP address from my ISP.</variable>
+</message>
+<message>
+<tag_code>3104</tag_code>
+<translation>Hayır, İnternet bağlantısını kendim yapılandırmak istiyorum.</translation>
+<variable>No, I want to configure the Internet connection myself.</variable>
+</message>
+<message>
+<tag_code>3106</tag_code>
+<translation>Yukarıdakilerin hiçbiri.</translation>
+<variable>None of the above.</variable>
+</message>
+<message>
+<tag_code>3113</tag_code>
+<translation>Parola</translation>
+<variable>Password</variable>
+</message>
+<message>
+<tag_code>3118</tag_code>
+<translation>Lütfen aşağıdaki öğeleri gözden geçirin:</translation>
+<variable>Please review the following items:</variable>
+</message>
+<message>
+<tag_code>3121</tag_code>
+<translation>Lütfen biraz bekleyin...</translation>
+<variable>Please wait a moment...</variable>
+</message>
+<message>
+<tag_code>3122</tag_code>
+<translation>PPPoE DSL İnternet Bağlantısı Algılandı</translation>
+<variable>PPPoE DSL Internet Connection Detected</variable>
+</message>
+<message>
+<tag_code>3123</tag_code>
+<translation>PPTP İnternet Bağlantısı Algılandı</translation>
+<variable>PPTP Internet Connection Detected</variable>
+</message>
+<message>
+<tag_code>3124</tag_code>
+<translation>Tercih Edilen DNS Sunucusu</translation>
+<variable>Preferred DNS Server</variable>
+</message>
+<message>
+<tag_code>3125</tag_code>
+<translation>Bunu yazdır</translation>
+<variable>Print this</variable>
+</message>
+<message>
+<tag_code>3126</tag_code>
+<translation>İnternet Bağlantısını Algılama Sorunu - IP Adresi</translation>
+<variable>Problem Detecting the Internet Connection - IP Address</variable>
+</message>
+<message>
+<tag_code>3127</tag_code>
+<translation>İnternet Bağlantısını Algılama Sorunu - MAC Adresi</translation>
+<variable>Problem Detecting the Internet Connection - MAC Address</variable>
+</message>
+<message>
+<tag_code>3128</tag_code>
+<translation>İnternet Bağlantısını Algılama Sorunu</translation>
+<variable>Problem Detecting the Internet Connection</variable>
+</message>
+<message>
+<tag_code>3130</tag_code>
+<translation>Yönlendirici Ayarlarını Geri Yükle </translation>
+<variable>Restore Router Settings </variable>
+</message>
+<message>
+<tag_code>3131</tag_code>
+<translation>Yönlendirici Ayarları Geri Yükleniyor</translation>
+<variable>Restoring Router Settings</variable>
+</message>
+<message>
+<tag_code>3135</tag_code>
+<translation>Yönlendirici Ürün Yazılımı Sürümü</translation>
+<variable>Router Firmware Version</variable>
+</message>
+<message>
+<tag_code>3144</tag_code>
+<translation>Bir seçenek belirleyin ve devam etmek için &lt;b&gt;İleri&lt;/b&gt; düğmesini tıklayın.</translation>
+<variable>Select an option and click &lt;b&gt;Next&lt;/b&gt; to proceed.</variable>
+</message>
+<message>
+<tag_code>3147</tag_code>
+<translation>Sunucu Adresi</translation>
+<variable>Server Address</variable>
+</message>
+<message>
+<tag_code>3150</tag_code>
+<translation>Beni İnternet'e götür</translation>
+<variable>Take me to the Internet</variable>
+</message>
+<message>
+<tag_code>3155</tag_code>
+<translation>Yönlendirici, geçerli ayarlarla İnternet'e bağlanamıyor.</translation>
+<variable>The router cannot connect to the Internet with the current settings.</variable>
+</message>
+<message>
+<tag_code>3156</tag_code>
+<translation>Bu durum, büyük olasılıkla aşağıdaki nedenlerin birinden kaynaklanıyordur:</translation>
+<variable>This is most likely due to one of the following reasons:</variable>
+</message>
+<message>
+<tag_code>3157</tag_code>
+<translation>Bu işlemin tamamlanması birkaç dakika sürebilir; lütfen bekleyin …</translation>
+<variable>This process can take a few minutes; please wait …</variable>
+</message>
+<message>
+<tag_code>3158</tag_code>
+<translation>Bu işlemin tamamlanması bir veya iki dakika sürebilir; lütfen bekleyin...</translation>
+<variable>This process can take a minute or two; please wait...</variable>
+</message>
+<message>
+<tag_code>3159</tag_code>
+<translation>Bu yönlendirici, aşağıdaki benzersiz kablosuz ağ adı (SSID) ve ... ile önceden ayarlanmıştır </translation>
+<variable>This router is preset with the following unique wireless network name (SSID) and </variable>
+</message>
+<message>
+<tag_code>3160</tag_code>
+<translation>Bu ekran, birkaç saniye içinde otomatik olarak önceki ekrana dönecektir...</translation>
+<variable>This screen will automatically return to the previous screen in a few seconds...</variable>
+</message>
+<message>
+<tag_code>3161</tag_code>
+<translation>İnternet Servis Sağlayıcınızla bir çakışma olmasını önlemek için, yönlendiricinizin IP adresi şu değeri alması için güncelleştirilmiştir: </translation>
+<variable>To avoid a conflict with your Internet Service Provider, your router's IP address has been updated to </variable>
+</message>
+<message>
+<tag_code>3163</tag_code>
+<translation>Bu sorunu çözmek için, sarı Ethernet kablosunun geniş bant modem bağlantı noktasına ve yönlendirici İnternet bağlantı noktasına güvenli bir şekilde takıldığından emin olun.</translation>
+<variable>To solve this problem, make sure that the yellow Ethernet cable is securely plugged in to the broadband modem port and the router Internet port.</variable>
+</message>
+<message>
+<tag_code>3164</tag_code>
+<translation>Bu sorunu çözmek için modemi kapatıp açın. Pil yedeği olan bir modemi kapatıp açmak için pilini çıkarıp yeniden yerleştirmeniz gerekebilir. Kapatıp açma işleminden sonra, modemin tamamıyla başlaması için 2 dakika bekleyin.</translation>
+<variable>To solve this problem, power cycle the modem (turn it off and on). To power cycle a modem with battery backup, you might need to remove and reinsert its battery. After the power cycle, wait 2 minutes for the modem to completely start up.</variable>
+</message>
+<message>
+<tag_code>3165</tag_code>
+<translation>Yeniden dene</translation>
+<variable>Try again</variable>
+</message>
+<message>
+<tag_code>3168</tag_code>
+<translation>Kullanıcı Adı</translation>
+<variable>User Name</variable>
+</message>
+<message>
+<tag_code>3187</tag_code>
+<translation>Kablosuz Ağ Adı (SSID)</translation>
+<variable>Wireless Network Name (SSID)</variable>
+</message>
+<message>
+<tag_code>3189</tag_code>
+<translation>Kablosuz</translation>
+<variable>Wireless</variable>
+</message>
+<message>
+<tag_code>3190</tag_code>
+<translation>Evet</translation>
+<variable>Yes</variable>
+</message>
+<message>
+<tag_code>3191</tag_code>
+<translation>Evet. İSS'm bana sabit (statik) bir IP adresi atadı.</translation>
+<variable>Yes. My ISP assigned a fixed (static) IP address to me.</variable>
+</message>
+<message>
+<tag_code>3193</tag_code>
+<translation>Henüz İnternet'e bağlı değilsiniz.</translation>
+<variable>You are not yet connected to the Internet.</variable>
+</message>
+<message>
+<tag_code>3194</tag_code>
+<translation>İnternet'e başarıyla bağlandınız.</translation>
+<variable>You are successfully connected to the Internet.</variable>
+</message>
+<message>
+<tag_code>3197</tag_code>
+<translation>Yönlendiriciniz, ağınızı istenmeyen erişimlere karşı korumak için WPA2-PSK kablosuz güvenliği ile önceden ayarlanmıştır. Kablosuz ağa katılmak için, ağ anahtarını (parola) girmeniz gerekir. Bu önceden yapılmış ayarlar, seri numarası gibi bu aygıta özgüdür.  Bunları değiştirmek isterseniz, bunu yönlendirici web GUI'sindeki Kablosuz Ayarları ekranında daha sonra yapabilirsiniz.</translation>
+<variable>Your router is preset with WPA2-PSK wireless security to protect your network from unwanted access. To join the wireless network, you must enter the network key (password). These preset settings are unique to this device, like a serial number.  If you want to change them, you can do so later in the Wireless Settings screen on the router web GUI.</variable>
+</message>
+<message>
+<tag_code>3198</tag_code>
+<translation>Bu yönlendiricide kablosuz güvenliği etkinleştirilmedi. NETGEAR şunu yapmanızı şiddetle önerir</translation>
+<variable>Wireless security is not enabled on this router. NETGEAR highly recommends that you</variable>
+</message>
+<message>
+<tag_code>3199</tag_code>
+<translation>kablosuz güvenliği etkinleştirmek ve ağınızı korumak için.</translation>
+<variable>to enable wireless security and protect your network.</variable>
+</message>
+<message>
+<tag_code>3210</tag_code>
+<translation>Otomatik Algıla</translation>
+<variable>Auto-Detect</variable>
+</message>
+<message>
+<tag_code>3212</tag_code>
+<translation>Devam etmek için "İleri" düğmesini tıklayın.</translation>
+<variable>Click "Next" to continue.</variable>
+</message>
+<message>
+<tag_code>4400</tag_code>
+<translation>Önceki</translation>
+<variable>Previous</variable>
+</message>
+<message>
+<tag_code>4401</tag_code>
+<translation>Aşağıdaki router uygulamalarını indir:</translation>
+<variable>Downloading the following router apps:</variable>
+</message>
+<message>
+<tag_code>4402</tag_code>
+<translation>Genie uyg. Ev ağınızı izlemenizi, kontrol etmenizi ve onarmanızı sağlayan kişisel bir gösterge panosu.</translation>
+<variable>Genie app. A personal dashboard that lets you monitor, control, and repair your home network.</variable>
+</message>
+<message>
+<tag_code>4403</tag_code>
+<translation>ReadySHARE Vault uygulaması (Yalnızca Windows bilgisayarlar için). Bir Windows bilgisayarın router'ınıza bağlanmış bir USB sürücüsüne otomatik ve sürekli olarak yedeklenmesini etkinleştirir.</translation>
+<variable>ReadySHARE Vault app (Only for Windows computers). Enables automatic continuous backup of a Windows computer to a USB drive that’s connected to your router.</variable>
+</message>
+<message>
+<tag_code>4404</tag_code>
+<translation>İndiriliyor…</translation>
+<variable>Downloading…</variable>
+</message>
+<message>
+<tag_code>4405</tag_code>
+<translation>İndirme tamamlandıktan sonra Genie uygulamasını kurun.</translation>
+<variable>Install the Genie app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4406</tag_code>
+<translation>Router'ı yapılandırmayı bitirmek için Genie uygulamasını kurduktan sonra İleri düğmesine tıklayın.</translation>
+<variable>Click the Next button after you install the Genie app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4407</tag_code>
+<translation>İndirme tamamlandıktan sonra ReadySHARE Vault uygulamasını kurun.</translation>
+<variable>Install the ReadySHARE Vault app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4408</tag_code>
+<translation>Router'ı yapılandırmayı bitirmek için ReadySHARE Vault uygulamasını kurduktan sonra İleri düğmesine tıklayın.</translation>
+<variable>Click the Next button after you Install the ReadySHARE Vault app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4409</tag_code>
+<translation>İsteğiniz işleniyor…</translation>
+<variable>Processing your request…</variable>
+</message>
+<message>
+<tag_code>4410</tag_code>
+<translation>Install the Genie app and ReadySHARE Vault app after the download completes.</translation>
+<variable>Install the Genie app and ReadySHARE Vault app after the download completes.</variable>
+</message>
+<message>
+<tag_code>4411</tag_code>
+<translation>Click the Next button after you install the Genie app and ReadySHARE Vault app to finish configuring the router.</translation>
+<variable>Click the Next button after you install the Genie app and ReadySHARE Vault app to finish configuring the router.</variable>
+</message>
+<message>
+<tag_code>4412</tag_code>
+<translation>Kurulumdan sonra, lütfen İleri düğmesini tıklayın.</translation>
+<variable>After the installation, please click Next.</variable>
+</message>
+<message>
+<tag_code>4413</tag_code>
+<translation>Ev Ağınızı İzlemek ve Onarmak için sistem</translation>
+<variable>System will install</variable>
+</message>
+<message>
+<tag_code>4414</tag_code>
+<translation>Kurulumu başlatmak için Çalıştır düğmesine tıklayın</translation>
+<variable>Click Run to start installing</variable>
+</message>
+<message>
+<tag_code>4415</tag_code>
+<translation>Ürün Yazılımı Yükseltme Yardımcısı</translation>
+<variable>Firmware Upgrade Assistant</variable>
+</message>
+<message>
+<tag_code>4416</tag_code>
+<translation>Şimdi Yönlendirici Ürün Yazılımı Yükseltiliyor. Lütfen Bekleyin</translation>
+<variable>Upgrading Router Firmware now. Please Wait</variable>
+</message>
+<message>
+<tag_code>4417</tag_code>
+<translation>Not: Ürün yazılımının yükseltilmesi yaklaşık</translation>
+<variable>Note: It will take about</variable>
+</message>
+<message>
+<tag_code>4418</tag_code>
+<translation>dakika sürer.&lt;br&gt;Lütfen gücü kapatmayın veya sıfırla düğmesine basmayın.</translation>
+<variable>minutes for firmware upgrade.&lt;br&gt;Please don't turn off the power or press reset button.</variable>
+</message>
+<message>
+<tag_code>4419</tag_code>
+<translation>Lütfen bekleyin...</translation>
+<variable>Please wait ...</variable>
+</message>
+<message>
+<tag_code>4420</tag_code>
+<translation>İptal</translation>
+<variable>Cancel</variable>
+</message>
+<message>
+<tag_code>4421</tag_code>
+<translation>Yönlendirici şimdi yeni sürümü indiriyor. Lütfen bekleyin...</translation>
+<variable>The Router is downloading the new version now. Please wait...</variable>
+</message>
+<message>
+<tag_code>4422</tag_code>
+<translation>Yeni bir sürüm bulundu. Şimdi yeni sürüme yükseltmek istiyor musunuz?</translation>
+<variable>A new version has been found. Do You want to upgrade to the new version now?</variable>
+</message>
+<message>
+<tag_code>4423</tag_code>
+<translation>Geçerli Sürüm</translation>
+<variable>Current Version</variable>
+</message>
+<message>
+<tag_code>4424</tag_code>
+<translation>Yeni Ürün Yazılımı Sürümü</translation>
+<variable>New Firmware Version</variable>
+</message>
+<message>
+<tag_code>4425</tag_code>
+<translation>Bu işlemin tamamlanması bir veya iki dakika sürebilir; lütfen bekleyin...</translation>
+<variable>This process can take a minute or two; please wait...</variable>
+</message>
+<message>
+<tag_code>4426</tag_code>
+<translation>Ürün Yazılımı Sürümü Kontrolü</translation>
+<variable>Firmware Version Check</variable>
+</message>
+<message>
+<tag_code>4427</tag_code>
+<translation>Kullanılabilir yeni ürün yazılımı sürümü yok.</translation>
+<variable>No new firmware version available.</variable>
+</message>
+<message>
+<tag_code>4428</tag_code>
+<translation>Tamam</translation>
+<variable>OK</variable>
+</message>
+<message>
+<tag_code>4429</tag_code>
+<translation>Ağ kurulumunuz kontrol ediliyor, lütfen bekleyin…</translation>
+<variable>Checking your network setup,please wait...</variable>
+</message>
+<message>
+<tag_code>4430</tag_code>
+<translation>Ağınızda mevcut bir router veya ağ geçidi gateway algılandı</translation>
+<variable>An existing router or gateway is detected in your network</variable>
+</message>
+<message>
+<tag_code>4431</tag_code>
+<translation>NETGEAR router'ınız zaten başka bir router'ı bulunan bir ağa bağlıdır. İlk router'ı bağlı bırakmak istiyorsanız, genie NETGEAR router için Access Point Erişim Noktası modunu önerir. NETGEAR router Access Point Erişim Noktası modundayken, bu modu ağa katılmak için kullanabilirsiniz ve diğer router aynı ağ görevlerini önceki gibi gerçekleştirmeye devam eder.</translation>
+<variable>Your NETGEAR router is connected to a network that already has another router. If you want to leave the first router connected, genie recommends using Access Point mode for the NETGEAR router. When the NETGEAR router is in Access Point mode, you can use it to join the network and the other router continues to perform the same network tasks as before.</variable>
+</message>
+<message>
+<tag_code>4432</tag_code>
+<translation>Bu aygıtı Access Point Erişim Noktası modunda kurmak istiyor musunuz?</translation>
+<variable>Do you want to setup this device in Access Point mode</variable>
+</message>
+<message>
+<tag_code>4433</tag_code>
+<translation>Evet (önerilir)</translation>
+<variable>Yes (recommended)</variable>
+</message>
+<message>
+<tag_code>4434</tag_code>
+<translation>Hayır, router olarak varsayılan modda çalıştırmak istiyorum</translation>
+<variable>No, I would like to run it in default mode as a router</variable>
+</message>
+<message>
+<tag_code>4435</tag_code>
+<translation>Bu yönlendiriciyi Erişim Noktası Modunda ağınıza bağlamak için</translation>
+<variable>To add this router to your network in Access Point Mode</variable>
+</message>
+<message>
+<tag_code>4436</tag_code>
+<translation>Yeni aygıtın IP Adresi</translation>
+<variable>IP Address of this new device</variable>
+</message>
+<message>
+<tag_code>4437</tag_code>
+<translation>Mevcut yönlendiriciden dinamik IP Adresi al</translation>
+<variable>Get IP Address dynamically from existing router</variable>
+</message>
+<message>
+<tag_code>4438</tag_code>
+<translation>Sabit IP Adresi kullan (önerilmez)</translation>
+<variable>Use fixed IP Address (not recommended)</variable>
+</message>
+<message>
+<tag_code>4439</tag_code>
+<translation>Not: Sonraki seçeneğine tıkladıktan sonra, bu yönlendiriciye yeni bir IP Adresi tayin edilecektir. Bu işlem gerçekleştiğinde tarayıcınızın ağ ile bağlantısı kesilebilir. Router'a yeniden bağlanmak için pencereyi kapatın ve tarayıcınızı yeniden açın.</translation>
+<variable>Note: After you click Next, this router will be assigned a new IP address. When it happens your browser might be disconnected from the network. To reconnect to the router, close the window and launch your browser again.</variable>
+</message>
+<message>
+<tag_code>4441</tag_code>
+<translation></translation>
+<variable>Your NETGEAR router is connected to a network that already has another router.This means that you must select an operation mode:</variable>
+</message>
+<message>
+<tag_code>4442</tag_code>
+<translation></translation>
+<variable>Router Mode</variable>
+</message>
+<message>
+<tag_code>4443</tag_code>
+<translation></translation>
+<variable>Router mode gives you two different networks:The existing network from the original router,and another network form your new NETGEAR router.If all of your devices connect to NETGEAR router,recommend to use Router Mode.</variable>
+</message>
+<message>
+<tag_code>4444</tag_code>
+<translation></translation>
+<variable>Access Point Mode</variable>
+</message>
+<message>
+<tag_code>4445</tag_code>
+<translation></translation>
+<variable>This mode keeps the existing network from the original router only.Not all of the NETGEAR router's features are available in Access Point mode.If you have devices connect to both existing router and NETGEAR router,recommend to use Access Point Mode.</variable>
+</message>
+<message>
+<tag_code>4446</tag_code>
+<translation>Daha fazla bilgi edinin</translation>
+<variable>Learn More</variable>
+</message>
+<message>
+<tag_code>4447</tag_code>
+<translation>Uyarı</translation>
+<variable>WARNING</variable>
+</message>
+<message>
+<tag_code>4448</tag_code>
+<translation></translation>
+<variable>Your router is about to setup to Access Point Mode.You may experience short network interruption due to your router and client will need to obtain new IP address from your existing Router.If you lost network connection,you may manually connect to router again by visiting www.routerlogin.net.</variable>
+</message>
+<message>
+<tag_code>4449</tag_code>
+<translation></translation>
+<variable>The following router features are not available if you choose Access Point mode:</variable>
+</message>
+<message>
+<tag_code>4450</tag_code>
+<translation>Ebeveyn Denetimleri</translation>
+<variable>Parental control</variable>
+</message>
+<message>
+<tag_code>4451</tag_code>
+<translation>Siteleri Engelle</translation>
+<variable>Block sites</variable>
+</message>
+<message>
+<tag_code>4452</tag_code>
+<translation>Hizmetleri Engelle</translation>
+<variable>Block services</variable>
+</message>
+<message>
+<tag_code>4453</tag_code>
+<translation>Bağlantı Noktası İletme</translation>
+<variable>Port forwarding</variable>
+</message>
+<message>
+<tag_code>4454</tag_code>
+<translation>Bağlantı Noktası Tetikleme</translation>
+<variable>Port triggering</variable>
+</message>
+<message>
+<tag_code>4455</tag_code>
+<translation>Statik Rotalar</translation>
+<variable>Static route</variable>
+</message>
+<message>
+<tag_code>4456</tag_code>
+<translation>Trafik Ölçer</translation>
+<variable>Traffic meter</variable>
+</message>
+<message>
+<tag_code>4457</tag_code>
+<translation>Uzaktan Yönetim</translation>
+<variable>Remote management</variable>
+</message>
+<message>
+<tag_code>4458</tag_code>
+<translation>Konuk Ağ</translation>
+<variable>Guest network</variable>
+</message>
+</tag_msg>

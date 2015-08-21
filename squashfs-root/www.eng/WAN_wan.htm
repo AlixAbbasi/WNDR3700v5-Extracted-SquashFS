@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><style type="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+var dev_ip = "@c4_sysLANIPAddr#";
+var dev_mask = "@c4_sysLANSubnetMask#";
+
+var h_wan_mtu_pg = "@wan_mtu#";
+var ipaddr;
+var openvpn_flag ="@openvpn_flag#";
+var openvpn_status="@openvpn_status#";
+/* add this code to fix mantis bug 0017787: IGMP:when playing video file on WAN ,check on "Diasble IGMP proxying" ,the function will not work ,but WAN connection also disab.
+ * h_value_changed :  1    the value on WAN_wan page has been changed except igmp proxying.
+ *                    0    the value on WAN_wan page hasn't been changed except igmp proxying.
+ * h_igmp_changed :   1    the igmp proxying value has been changed.
+ *                    0    the igmp proxying value hasn't been changed.
+ *                                                                         --- Joe
+ */
+function WAN_PG_value_changed()
+{
+    var cf = document.forms[0];
+
+    if(value_enable_disable(cf.h_disable_spi.value) == cf.disable_spi.checked &&
+        value_enable_disable(cf.h_dmz_enable.value) == cf.dmz_enable.checked &&
+        value_enable_disable(cf.h_rspToPing.value) == cf.rspToPing.checked &&
+        h_wan_mtu_pg == cf.wan_mtu.value &&
+        cf.h_NatInboundFiltering.value == getRadioCheckedValue(cf.NatInboundFiltering) &&
+        value_enable_disable(cf.h_disable_sipalg.value) == cf.disable_sipalg.checked )
+        {
+            if((cf.dmz_enable.checked && cf.c4_dmzip.value == ipaddr) || !cf.dmz_enable.checked)
+            {
+                cf.h_value_changed.value = 0;
+                {
+                    if(value_enable_disable(cf.h_disable_igmp.value) == cf.disable_igmp.checked)
+                        cf.h_igmp_changed.value = 0;
+                    else
+                        cf.h_igmp_changed.value = 1;
+
+                    if(cf.h_ipsec_pass.value == getRadioCheckedValue(cf.ipsec_pass)
+                    && cf.h_pptp_pass.value == getRadioCheckedValue(cf.pptp_pass)
+                    && cf.h_l2tp_pass.value == getRadioCheckedValue(cf.l2tp_pass))
+                        cf.h_vpnpass_changed.value = 0;
+                    else
+                        cf.h_vpnpass_changed.value = 1;
+                }
+            }
+            else {
+                cf.h_value_changed.value = 1;
+                /* we just set it as 0 no matter whether igmp value changes */
+                cf.h_igmp_changed.value = 0;
+                cf.h_vpnpass_changed.value = 0;
+            }
+        }
+        else {
+            cf.h_value_changed.value = 1;
+            /* we just set it as 0 no matter whether igmp value changes */
+            cf.h_igmp_changed.value = 0;
+            cf.h_vpnpass_changed.value = 0;
+        }
+    /* iptv vlan check */
+    if(value_enable_disable(cf.h_bri_lan1.value) == cf.bri_lan1.checked
+    && value_enable_disable(cf.h_bri_lan2.value) == cf.bri_lan2.checked
+    && value_enable_disable(cf.h_bri_lan3.value) == cf.bri_lan3.checked
+    && value_enable_disable(cf.h_bri_lan4.value) == cf.bri_lan4.checked
+    && value_enable_disable(cf.h_brig_ssid1.value) == cf.brig_ssid1.checked
+    && value_enable_disable(cf.h_brig_ssid1_5g.value) == cf.brig_ssid1_5g.checked
+    )
+    	cf.h_iptv_vlan_changed.value = 0;
+    else
+    	cf.h_iptv_vlan_changed.value = 1;
+
+}
+
+
+function check_data()
+{
+    var cf = document.forms[0];
+    var msg = "";
+
+	if (cf.dmz_enable.checked)
+	{
+/*	    msg +=  checkInt(cf.dmzip1, "DMZ IP", 1, 254, true);
+		msg +=  checkInt(cf.dmzip2, "DMZ IP", 0, 255, true);
+		msg +=  checkInt(cf.dmzip3, "DMZ IP", 0, 255, true);
+		msg +=  checkInt(cf.dmzip4, "DMZ IP", 1, 254, true);
+*/
+		ipaddr = cf.dmzip1.value + "." + cf.dmzip2.value + "." + cf.dmzip3.value + "." + cf.dmzip4.value;
+		if(badIP2(cf.dmzip1, cf.dmzip2, cf.dmzip3, cf.dmzip4, 254) || IsLanIpValid(dev_ip, dev_mask, ipaddr) == false)	{
+			msg+=getErrorMsgByVar("gsm_msg_eth_inv_ip");
+		}
+	}
+	msg+= checkInt(cf.wan_mtu, getErrorMsgByVar("gsm_msg_wan_sec_mtu_value"), 616, @max_allowed_mtu#, true);
+
+	if (msg.length > 1)	{
+		alert(msg);
+		return false;
+	}
+	WAN_PG_value_changed();
+    dataToHidden(cf);
+
+	if(getRadioCheckedValue(cf.NatInboundFiltering) == "Secured")
+		cf.h_NatInboundFiltering.value = "security";
+	else
+		cf.h_NatInboundFiltering.value = "open";
+
+	return true;
+}
+
+function dodChk()
+{
+    var cf = document.forms[0];
+	if(cf.dod.value == "false")
+		alert(getErrorMsgByVar("gsm_msg_wan_sec_inv_conn_method"));
+}
+
+function RelayChk()
+{
+    var cf = document.forms[0];
+    if(cf.wan_dhcp_status.value == "PPPoA" || cf.wan_dhcp_status.value == "IPoA"|| cf.wan_dhcp_status.value == "None"){
+		alert(getErrorMsgByVar("gsm_msg_wan_sec_must_pppoe_mode"));
+	cf.pppoeRelay_enable.checked=0;
+	}
+
+}
+
+function init()
+{
+
+	var have_bridge_iptv = "@iptv_support#";
+	var wl_ssid1 = "@h_enable_ap#";
+	var wl_ssid1_5g = "@h_enable_ap_an#";
+	var cf=document.forms[0];
+
+	if( have_bridge_iptv == '1' )
+	{
+		document.getElementById("bri_blueline").style.display="";
+		document.getElementById("bri_title").style.display="";
+		document.getElementById("bri_lanports").style.display="";
+		if( wl_ssid1 == "enable" )
+			document.getElementById("bri_wl_ssid1").style.display="";
+		else
+			document.getElementById("bri_wl_ssid1").style.display="none";
+		if( wl_ssid1_5g == "enable" )
+			document.getElementById("bri_wl_ssid_5g").style.display="";
+		else
+			document.getElementById("bri_wl_ssid_5g").style.display="none";
+	}
+	else
+	{
+		document.getElementById("bri_blueline").style.display="none";
+		document.getElementById("bri_title").style.display="none";
+		document.getElementById("bri_lanports").style.display="none";
+		document.getElementById("bri_wl_ssid1").style.display="none";
+		document.getElementById("bri_wl_ssid_5g").style.display="none";
+	}
+	if(openvpn_flag == '1')
+	{
+		if(openvpn_status == '1')
+			document.getElementsByName("rspToPing")[0].disabled =true;
+	}
+	if( cf.h_NatInboundFiltering.value == "open"){
+		cf.NatInboundFiltering[0].checked = false;
+		cf.NatInboundFiltering[1].checked = true;
+	}
+	else{
+		cf.NatInboundFiltering[1].checked = false;
+		cf.NatInboundFiltering[0].checked = true;
+	}
+}
+
+
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);document.forms[0].elements[0].focus(); init();">
+<form name="frmRules" method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title"><span languageCode="3201">WAN  Setup</span></div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="RESET" name="Cancel" value="Cancel" onClick="setTimeout('dataToVisible(document.forms[0])',250)" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="submit" name="Apply" value="Apply" onClick="return check_data()" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%"><td colspan="2"><input type="checkbox" name="disable_spi" value="disable_spi"><a href="javascript:loadhelp('WAN_wan','spi')" tabindex="-1"><b languageCode="836">Disable Port Scan and DoS Protection</b></a></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td nowrap align="left" width="50%"><input type="checkbox" name="dmz_enable" value="dmz_enable"><a href="javascript:loadhelp('WAN_wan','dmz')" tabindex="-1"><b languageCode="837">Default DMZ Server</b></a></td>
+		<td nowrap align="right"><span class="num">
+		    <input type="text" name="dmzip1" class="num" size="4" maxlength="3" value="">.
+		    <input type="text" name="dmzip2" class="num" size="4" maxlength="3" value="">.
+		    <input type="text" name="dmzip3" class="num" size="4" maxlength="3" value="">.
+		    <input type="text" name="dmzip4" class="num" size="4" maxlength="3" value=""></span></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2"><input type="checkbox" name="rspToPing" value="rspToPing"><a href="javascript:loadhelp('WAN_wan','ping')" tabindex="-1"><b languageCode="838">Respond to Ping on Internet Port</b></a></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td><a href="javascript:loadhelp('WAN_wan','mtu')" tabindex="-1"><b languageCode="839">MTU Size</b> <span languageCode="840">(in bytes)</span></a></td>
+		<td align="right" class="num"><input type="text" name="wan_mtu" size="5" maxlength="4" value="@wan_mtu#"></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td><a href="javascript:loadhelp('WAN_wan','nat')" tabindex="-1"><b languageCode="841">NAT Filtering</b></a></td>
+		<td nowrap align="right"><input type="radio" name="NatInboundFiltering" value="Secured"><span languageCode="842">Secured</span><input type="radio" name="NatInboundFiltering" value="Open"><span languageCode="843">Open</span></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2"><input type="checkbox" name="disable_sipalg" value="dSipALG"><a href="javascript:loadhelp('WAN_wan','dsipalg')" tabindex="-1"><b languageCode="844">Disable SIP ALG</b></a></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2"><input type="checkbox" name="disable_igmp" value="dIGMPProxy"><a href="javascript:loadhelp('WAN_wan','igmp')" tabindex="-1"><b languageCode="845">Disable IGMP Proxying</b></a></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr>
+
+ <!-- VPN Passthrough -->
+ <tr>
+  <td colspan="2"><a href="javascript:loadhelp('WAN_wan','vpn_passthrough')" tabindex="-1"><b languageCode="3244">VPN Passthrough</b></a></td>
+ </tr>
+ <tr>
+  <td><span languageCode="3245">IPSec Passthrough</span></td>
+  <td nowrap align="right">
+   <input type="radio" name="ipsec_pass" value="enable"><span languageCode="313">Enable</span>
+   <input type="radio" name="ipsec_pass" value="disable"><span languageCode="454">Disable</span>
+  </td>
+ </tr>
+ <tr>
+  <td><span languageCode="3246">PPTP Passthrough</span></td>
+  <td nowrap align="right">
+   <input type="radio" name="pptp_pass" value="enable"><span languageCode="313">Enable</span>
+   <input type="radio" name="pptp_pass" value="disable"><span languageCode="454">Disable</span>
+  </td>
+ </tr>
+ <tr>
+  <td><span languageCode="3247">L2TP Passthrough</span></td>
+  <td nowrap align="right">
+   <input type="radio" name="l2tp_pass" value="enable"><span languageCode="313">Enable</span>
+   <input type="radio" name="l2tp_pass" value="disable"><span languageCode="454">Disable</span>
+  </td>
+ </tr>
+<tr id=bri_blueline><td colspan="2" background="liteblue.gif" height="12"></tr>
+<tr id=bri_title>
+<td colspan=2><a><b languageCode="3302">Bridge IPTV Streaming to</b></a></td>
+</tr>
+<tr id=bri_lanports>
+<td colspan=2>
+<input type="checkbox" name="bri_lan1">&nbsp;LAN-1&nbsp; &nbsp; &nbsp; &nbsp;
+<input type="checkbox" name="bri_lan2">&nbsp;LAN-2&nbsp; &nbsp; &nbsp; &nbsp;
+<input type="checkbox" name="bri_lan3">&nbsp;LAN-3&nbsp; &nbsp; &nbsp; &nbsp;
+<input type="checkbox" name="bri_lan4">&nbsp;LAN-4</td>
+</tr>
+<tr id=bri_wl_ssid1>
+<td nowrap>
+<input type="checkbox" name="brig_ssid1">&nbsp;
+<span languageCode="905">Wireless Network</span>&nbsp;@wifi_r_ssid#</td>
+</tr>
+<tr id=bri_wl_ssid_5g>
+<td nowrap><input type="checkbox" name="brig_ssid1_5g">&nbsp;
+<span languageCode="905">Wireless Network</span>&nbsp;@wifi_r_ssid1#</td>
+</tr>
+ <tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td></tr>
+<tr><td colspan="2" align="center"></td>
+	</tr></table>
+	<input type="hidden" name="c4_dmzip" value="@c4_dmzip#">
+	<input type="hidden" name="wan_dhcp_status" value="@wan_dhcp_status#">
+	<input type="hidden" name="h_dmz_enable" value="@h_dmz_enable#">
+	<input type="hidden" name="h_rspToPing" value="@h_rspToPing#">
+	<input type="hidden" name="h_disable_spi" value="@h_disable_spi#">
+	<input type="hidden" name="h_dod_enable" value="@h_dod_enable#">
+	<input type="hidden" name="h_pppoeRelay_enable" value="@h_pppoeRelay_enable#">
+	<input type="hidden" name="dod" value="@dod#">
+	<input type="hidden" name="h_NatInboundFiltering" value="@h_NatInboundFiltering#">
+	<input type="hidden" name="h_disable_sipalg" value="@h_disable_sipalg#">
+	<input type="hidden" name="h_disable_igmp" value="@h_disable_igmp#">
+	<input type="hidden" name="todo" value="save">
+	<input type="hidden" name="this_file" value="WAN_wan.htm">
+	<input type="hidden" name="next_file" value="WAN_wan.htm">
+	<input type="hidden" name="SID" value="@SID#">
+	<input type="hidden" name="h_value_changed" value="@h_value_changed#">
+	<input type="hidden" name="h_igmp_changed" value="@h_igmp_changed#">
+	<input type="hidden" name="h_ipsec_pass" value="@h_ipsec_pass#">
+	<input type="hidden" name="h_pptp_pass" value="@h_pptp_pass#">
+	<input type="hidden" name="h_l2tp_pass" value="@h_l2tp_pass#">
+	<input type="hidden" name="h_vpnpass_changed" value="@h_vpnpass_changed#">
+	<input type="hidden" name="h_iptv_vlan_changed" value="0">
+	<input type="hidden" name="h_bri_lan1" value="@h_bri_lan1#">
+	<input type="hidden" name="h_bri_lan2" value="@h_bri_lan2#">
+	<input type="hidden" name="h_bri_lan3" value="@h_bri_lan3#">
+	<input type="hidden" name="h_bri_lan4" value="@h_bri_lan4#">
+	<input type="hidden" name="h_brig_ssid1" value="@h_brig_ssid1#">
+	<input type="hidden" name="h_brig_ssid1_5g" value="@h_brig_ssid1_5g#">
+	</form>
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="WAN_wan_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

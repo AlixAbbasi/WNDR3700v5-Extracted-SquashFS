@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta name="description" content="WNR2500_multilangual">
+<title>NETGEAR Router @model_name#</title>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<link rel="stylesheet" href="style/form.css">
+<script language="javascript" type="text/javascript" src="funcs.js"></script>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+
+function guest_mode_changed()
+{
+    var cf = document.forms[0];
+    if (cf.guest_mode.checked)
+    {
+        document.getElementById("password").style.display = "block";
+	 KeyGen();
+    }
+    else
+        document.getElementById("password").style.display = "none";
+}
+function KeyGen()
+{
+	var cf=document.forms[0];
+	var key="";
+	var i;
+	for(i=0;i<8;i++)
+	{
+		key+=Math.floor(Math.random()*10)+"";
+	}
+	cf.guest_password.value=key;
+	return true;
+}
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+
+	if(msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+
+	dataToHidden(cf);
+	return true;
+}
+function init()
+{
+   var cf=document.forms[0];
+   if (cf.guest_mode.checked)
+    {
+        document.getElementById("password").style.display = "block";	 
+    }
+    else
+        document.getElementById("password").style.display = "none";	
+   var guest="@is_guest#";
+   if( guest == 1)
+   {
+	cf.Apply.disabled="disabled";
+	cf.Apply.className="common_gray_bt";
+   }
+}
+// -->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);init();document.forms[0].elements[0].focus();">
+<form method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+
+<div class="page_title" languageCode="">Guest Management</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+	<tr><td nowrap colspan="2" align="center">
+		<input class="cancel_bt" type="button" value="Cancel" onclick='location.href="GuestManage.html";' languageCode="">
+&nbsp;
+		<input class="apply_bt" type="SUBMIT" name="Apply" value="Apply" onClick="return checkData();" languageCode="">
+	</td></tr>
+</table>
+</div>
+
+
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+		
+	<tr><td colspan="2"> 
+		<input type="checkbox" name="guest_mode" value="guest_mode" onClick="guest_mode_changed()"><span languageCode="">Enable Guest Management</span>
+	</td></tr>
+  
+ 
+  <tbody id="password" style="display:none">   
+	<tr><td><span languageCode = "">Access Password</span>:
+	<input type="text" style="background:transparent;border:none" name="guest_password" size="14" maxlength="32" value="@guest_password#" readonly="true">
+	<input class="common_bt" type="button" name="Generate" value="Change Password" onClick="KeyGen()" languageCode="" >
+	</td></tr>		
+  </tbody>
+  
+  <tr><td colspan="2" background="liteblue.gif" height="12"></td></tr>
+ 
+</table>			
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="h_guest_mode" value="@h_guest_mode#">
+<input type="hidden" name="this_file" value="GuestManage.html">
+<input type="hidden" name="next_file" value="GuestManage.html">
+<input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

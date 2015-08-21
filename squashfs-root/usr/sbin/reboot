@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# temp and dirty solution for reboot will hangup issue on MTK platform
+/usr/sbin/rc wlan stop
+/bin/sleep 1
+/sbin/busybox reboot

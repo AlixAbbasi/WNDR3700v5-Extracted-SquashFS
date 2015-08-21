@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/hijack_03A_E_IP_problem_staticIP_A_inputIP.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="utility.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/brs_hijack_03A_E_IP_problem_staticIP_A_inputIP.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/funcs.js" type=text/javascript></SCRIPT>
+
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+var lan_ip="@c4_sysLANIPAddr#";
+var lan_subnet="@c4_sysLANSubnetMask#";
+</SCRIPT>
+</HEAD>
+<BODY onload="static_ip_input_initPage()">
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+<span><H1 languageCode = "3053">Fixed Internet IP Settings</H1></span>
+<P><span languageCode = "3043">Enter the fixed IP settings assigned by your Internet Service Provider and click &lt;b&gt;Next&lt;/b&gt; to proceed.</span></P>
+<DIV id=mainContent_div>
+<DIV class=input_left_div id=IP_addr align=right><span languageCode = "3095">My IP Address</span></DIV>
+<DIV class=input_img_div>
+    <INPUT class=input_text type=text id=inputIPaddr maxLength=15 align=right name=ip_address> </DIV>
+<DIV class=input_left_div id=Sub_mask align=right><span languageCode = "708">Subnet Mask</span></DIV>
+<DIV class=input_img_div>
+    <INPUT class=input_text id=inputSubMask type=text maxLength=15 align=right name=subnet_mask> </DIV>
+<DIV class=input_left_div id=Gateway align=right><span languageCode = "709">Default Gateway</span></DIV>
+<DIV class=input_img_div>
+    <INPUT class=input_text id=inputGateway maxLength=15 type=text align=right name=gateway> </DIV>
+<DIV class=input_left_div id=preDNS align=right><span languageCode = "3124">Preferred DNS Server</span></DIV>
+<DIV class=input_img_div>
+    <INPUT class=input_text id=inputPreDns maxLength=15 type=text align=right name=prefferd_dns> </DIV>
+<DIV class=input_left_div id=alteDNS align=right><span languageCode = "3015">Alternate DNS Server</span></DIV>
+<DIV class=input_img_div>
+    <INPUT class=input_text id=inputSecDns maxLength=15 type=text align=right name=alternate_dns> </DIV>
+<DIV style="CLEAR: both"></DIV></DIV></DIV>
+<DIV class=wizard_buttons_div id=allBtns_div align=right>
+<DIV class=buttons_img_div id=btnsContainer_div><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div id=btn_text_div align=center name="Next"><span languageCode = "25" >Next</span></DIV></DIV></DIV></DIV>
+
+<input type="hidden" name="SID" value="@SID#">
+<input type="hidden" id="c4_ip" name="c4_WPethr">
+<input type="hidden" id="c4_mask" name="c4_WMask">
+<input type="hidden" id="c4_gateway" name="c4_WGateway">
+<input type="hidden" id="c4_daddr" name="c4_DAddr">
+<input type="hidden" id="c4_paddr" name="c4_PDAddr">
+<input type="hidden" name="h_DNSAssign" value="1">
+<input type="hidden" name="WANAssign" value="Fixed">
+<input type="hidden" name="todo" value="brs_reset_save">
+<input type="hidden" name="this_file" value="BRS_03A_E_IP_problem_staticIP_A_inputIP.html">
+<input type="hidden" name="next_file" value="BRS_04_applySettings.html">
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

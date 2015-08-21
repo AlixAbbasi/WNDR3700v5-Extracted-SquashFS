@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>NETGEAR Router @model_name# </title>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style/hijack_style.css" />
+<script language="javascript" type="text/javascript" src="script/brs_hijack.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+
+<SCRIPT language=javascript type=text/javascript>
+var ap_flag="@ap_flag#";
+function initPage()
+{
+	var btns_div1 = document.getElementById("btnsContainer_div1");
+	var btns_div2 = document.getElementById("btnsContainer_div2");	
+	btns_div1.onclick = function()
+	{
+		
+		location.href="BRS_success.html";
+
+	return true;
+	}
+	
+}
+addLoadEvent(initPage);
+</SCRIPT></HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+
+
+<p><span languageCode = "">This router's wireless settings have been changed.Use the following wireless network name(SSID) and network key(password) to reconnect your device to the router,then click the Finish button below to complete the installation.</span></p>
+<table border="0" cellpadding="0" cellspacing="3" width="90%">
+	<tr><td languageCode = "">2.4GHz Wireless Network Name(SSID):</td>
+	    <td>@ssid#</td>
+	</tr>
+	<tr><td languageCode = "">Wireless Network key(Password):</td>
+	<td>@passphrase#</td></tr>
+	<tr><td languageCode = "">5GHz Wireless Network Name(SSID)</td>
+		<td>@ssid_an#</td></tr>
+	<tr><td languageCode = "">Wireless Network key(Password):</td>
+	<td>@passphrase_an#</td></tr>
+</table>
+<p><span languageCode = "">WARNING:Do not click the Finish button until you reconnect your device to the router.</span></p>
+</DIV>
+<BR>
+<BR>
+<BR>
+<BR>
+<DIV class=wizard_buttons_div id=allBtns_div>
+	<DIV class=buttons_img_div id=btnsContainer_div1 align=center><IMG src="image/ca-little-purple-button.gif">
+		<DIV class=buttons_words_div><span languageCode = "">Finish</span></DIV>
+	</DIV>
+		
+</DIV>
+</DIV>
+<input type="hidden" name="SID" value="@SID#">
+
+<input type="hidden" name="todo" value="change_to_ap">
+<input type="hidden" name="this_file" value="BRS_help_me_choice_05.html">
+<input type="hidden" name="next_file" value="BRS_ap_wifi_setting.html">
+</FORM>
+
+	<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

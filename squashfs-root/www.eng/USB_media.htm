@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META http-equiv="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">	
+<meta HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT"> 
+
+<meta name="description" content="@model_name#_multilangual">
+
+<title>NETGEAR Router @model_name#</title>
+<link rel="stylesheet" href="style/form.css">
+<script language="JavaScript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript" src="funcs.js"></script>
+<script language="javascript" type="text/javascript">    
+<!-- Start Script
+	
+var upnp_media_name="ReadyDLNA: @model_name#";
+var iserver_support="@iserver_support#";
+
+function check_media_scan()
+{
+	var cf = document.forms[0];
+	cf.todo.value="media_rescan";
+	cf.submit();
+}
+
+function allow_control()
+{
+	var cf = document.forms[0];
+
+	cf.todo.value="iserver_allow_ctrl";
+
+	cf.remote_passcode.value = cf.config_passcode.value;
+
+ 	dataToHidden(cf);
+	cf.submit();
+}
+
+function checkData()
+{
+ 	var cf=document.forms[0];
+ 	
+ 	if (cf.media_server.checked)
+ 	{
+ 	    if(!checkInvalidChars(cf.media_server_name.value, invalid_media_name_char))
+ 	    {
+ 	        alert(getErrorMsgByVar("gsm_msg_invalid_mediaserver_name"));
+            return false;
+ 	    }
+ 	    if(cf.media_server_name.value.length <= 0)
+ 	    {
+			alert(getErrorMsgByVar("gsm_msg_invalid_mediaserver_name"));
+			return false;
+		}
+		if(strlen_utf8(cf.media_server_name.value)>24)
+		{
+			alert(getErrorMsgByVar("gsm_msg_invalid_mediaserver_name"));
+			return false;	
+		}
+ 	}
+ 	
+	cf.remote_passcode.value = cf.config_passcode.value;
+
+ 	dataToHidden(cf);
+		
+	return true;	
+}
+
+function init()
+{
+	var cf = document.forms[0];
+
+    dataToVisible(document.forms[0]);
+	if (iserver_support == "1")
+	{
+		document.getElementById("itunes_server_enable").style.display = "";
+		document.getElementById("itunes_server_passcode").style.display = "";
+
+ 	    if(cf.h_itunes_server.value == "enable")
+		{
+			cf.config_passcode.value = cf.remote_passcode.value;
+			cf.config_passcode.disabled = false;
+			cf.allow_cntl_btn.disabled = false;
+		}
+		else
+		{
+			cf.config_passcode.value = "";
+			cf.config_passcode.disabled = true;
+			cf.allow_cntl_btn.disabled = true;
+		}
+	}
+	else
+	{
+		document.getElementById("itunes_server_enable").style.display = "none";
+		document.getElementById("itunes_server_passcode").style.display = "none";
+	}
+}
+
+// End Script -->
+</script>
+</head>
+<body bgcolor="#ffffff" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" onLoad="init();loadhelp('USB_media');" >
+<div class="page_title" languageCode="3600">Media Server (Settings)</div>
+<div id="main" class="main_top_button">
+<FORM name="USB_media" method="POST" action="setup.cgi?@post_par#">
+<TABLE width=100% border=0 cellpadding=0 cellspacing=3>
+<TR>
+	<TD nowrap colspan=3 align="center">
+	<input class="apply_bt" type="submit" name="Apply" value="Apply" onClick="if(!checkData()) return false;" languageCode="50">
+	<input class="cancel_bt" type="RESET" name="Cancel" value="Cancel" onClick="location.href='USB_media.htm';" languageCode="51">
+	</TD>
+</TR>
+<TR><TD colspan=3><img src=liteblue.gif width=100% height=12></TD></TR>
+<TR>
+	<TD nowrap colspan=3>
+	<input type="checkbox" name="media_server" value="@media_server#" onClick="">
+	<A tabindex=-1 href="javascript:loadhelp('USB_media','turnon')"><B languageCode="3601">Enable Media Server</B></A>
+	</TD>
+</TR>
+<TR id="itunes_server_enable" style="display:none">
+	<TD nowrap colspan=3>
+	<input type="checkbox" name="itunes_server" value="@itunes_server#" onClick="">
+	<A tabindex=-1 href="javascript:loadhelp('USB_media','turnon')"><B languageCode="3607">Enable iTunes Server (Music Only)</B></A>
+	</TD>
+</TR>
+<TR id="itunes_server_passcode" style="display:none">
+	<TD nowrap colspan=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span languageCode="3608">Enter Passcode displayed on the Remote App</span> <input type="text" id="config_passcode" name="config_passcode" value="" size="4"><input class="common_bt" type="button" name="allow_cntl_btn" value="Allow Control" onClick="allow_control()" languageCode="3609">
+	</TD>
+</TR>
+<TR>
+	<TD nowrap  colspan=3>
+	<table border="0" cellpadding="2" cellspacing="0" width="100%">
+	<TR>
+	<TD>
+	<A tabindex=-1 href="javascript:loadhelp('USB_media','name')"><B languageCode="3602">Media Server Name</B></A>:
+	</TD>
+	<TD nowrap align=left>
+	<input type="text" name="media_server_name" value="@media_server_name#" size="32" maxlength="24" onBlur="this.value=ignoreSpaces(this.value);">
+	</TD>
+	<TD nowrap align=left>:@model_name#</TD>
+	</TR>
+	</table>
+</TR>
+<TR><TD colspan=3><img src=liteblue.gif width=100% height=12></TD></TR>
+<TR>
+	<TD nowrap colspan=3>
+	<A tabindex=-1 href="javascript:loadhelp('USB_media','scan')"><B languageCode="3603">Content Scan</B></A>
+	</TD>
+</TR>
+<TR>
+	<TD nowrap colspan=3>
+	<input type="radio" name="scan" value="0" onClick=""><span languageCode="3604">Automatic (when new files added)</span>
+	</TD>
+</TR>
+<TR><TD colspan=3><img src=liteblue.gif width=100% height=12></TD></TR>
+<TR>
+	<TD nowrap>
+		<input class="long_common_bt" type="button" name="Apply" value="Rescan media files" onClick="check_media_scan()" languageCode="3605">
+	</TD>
+</TR>
+</TABLE>
+
+<input type="Hidden" name="h_media_server" value="@h_media_server#">
+<input type="Hidden" name="h_itunes_server" value="@h_itunes_server#">
+<input type="Hidden" name="remote_passcode" value="@remote_passcode#">
+<input type="Hidden" name="h_scan" value="0">
+
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="USB_media.htm">
+<input type="hidden" name="next_file" value="USB_media.htm">
+</FORM>
+</div>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="USB_media_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center" languageCode="3058">Help Center</div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;" languageCode="3148">Show/Hide Help Center</a></div>
+</div>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY>
+</HTML>

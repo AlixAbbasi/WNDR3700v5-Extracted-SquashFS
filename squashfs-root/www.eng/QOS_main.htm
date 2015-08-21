@@ -1,0 +1,669 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><style type="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style>
+<style type="text/css">
+	span.seld
+	{
+		background-color:#9d98ff
+	}
+	span.origin
+	{
+		background-color:#ffffff
+	}
+	</style>
+<script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript" src="qos.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+
+var dev_ip = "@c4_sysLANIPAddr#";
+var dev_mask = "@c4_sysLANSubnetMask#";
+var en_speedtest = "@en_speedtest#";
+
+/* parseAllPolicy() in qos.js will parser these format values */
+var apply_qos_rules = "@apply_qos_rules#";  
+var apply_qos_adv_rules = "@apply_qos_adv_rules#" /* String format. ONLY used in mac page */
+var apply_qos_rules_list="";                    /* sigle array format  []  */
+var apply_qos="";                               /* double-array format [][]*/
+var apply_adv_qos="";
+
+var predef_qos_rules = "@predef_qos_rules#";    /* String format */
+var predef_qos_rule_list="";                    /* sigle array format  []  */
+var predef_qos="";                              /* double-array format [][]*/
+
+var apply_qos_rules_count=0;
+var predef_qos_rules_count=0;
+
+var qn = parseInt("@qn#", 10);
+var qos_prio_level = "@qos_prio_level#";
+
+var ed_mode_flag=0;
+
+var rad_mac_name = "MacSelect";
+var tab_mac_name = "tb_mac";
+
+var rulename = "";
+
+/* Fix IE6, IE7 and IE8 do not have getElementsByClassName method */
+if(!document.getElementsByClassName)
+{
+	document.getElementsByClassName = function(search) {
+		var d = document, elements, pattern, i, results = [];
+		if(d.querySelectorAll) { //IE8
+			return d.querySelectorAll("." + search);
+		}
+		else {
+			elements = d.getElementsByTagName("*");
+			pattern = new RegExp("(^|\\s)" + search + "(\\s|$)");
+			for(i = 0; i < elements.length; i ++) {
+				if(pattern.test(elements[i].className)) {
+					results.push(elements[i]);
+				}
+			}
+		}
+		return results;
+	}
+}
+
+function checkNameBlank()
+{
+ 	var cf = document.forms[0];
+
+	if(cf.policy_name.value.length< 1)
+	{
+		alert(getErrorMsgByVar("gsm_qos_blnk"));
+		return false;
+	}
+	return true;
+}
+
+function changecursor(x)
+{
+	x.style.cursor="pointer";
+}
+
+function resumecursor(x)
+{
+	x.style.cursor="default";
+}
+
+function clickit(x)
+{
+	var cf = document.forms[0];
+	var i;
+  	rulename = x.firstChild.nodeValue;
+	var old = document.getElementsByClassName("seld");
+	if(old.length != 0)
+	{
+		for(i = 0; i < old.length; i ++)
+		{
+			old[i].className = "origin";
+		}
+	}
+	
+	x.className = "seld";
+	
+	if(cf.h_ap_mode.value == "disable" && cf.h_wds.value == "disable" && cf.h_wds1.value == "disable")
+	{
+		cf.edit.className = "edit_bt";
+		cf.delete_item.className = "delete_bt";
+		cf.edit.disabled = false;
+		cf.delete_item.disabled = false;
+	}
+}
+
+function toEdit()
+{
+	var idx;
+	var rule;
+	var cf = document.forms[0];
+	if(rulename.length > 0)
+	{
+		idx = get_rule_idx_byname(rulename);
+		switch(parseInt(apply_qos[idx][_category],10))
+		{
+			case CATEGORY_APP:
+			case CATEGORY_GAME: 
+				rule = get_predefined_rules(apply_qos[idx][apply_qos[idx].length==5?_name:_desc_name]);
+		
+				if(rule.length) {
+				next_file = "QOS_edit.htm";
+				}
+				else {
+					next_file = "QOS_edit_app_new.htm";
+				}
+				break;
+			
+			case CATEGORY_MAC:
+				next_file = "QOS_edit_mac.htm";
+				break;
+		}
+			cf.todo.value = "qos_edit";
+			cf.next_file.value = next_file;
+			cf.qos_edit_idx.value = idx;
+			cf.submit();
+	}
+}
+
+function toDelete()
+{
+	var cf = document.forms[0];
+	var result;
+	var idx = get_rule_idx_byname(rulename);
+		
+	apply_qos.splice(idx, 1);
+	apply_qos_rules_count = apply_qos.length;
+		
+	result = build_qos_rules();
+		
+	cf.apply_qos_rules.value = result;
+	cf.todo.value = "del_qos";
+	cf.submit();
+}
+
+function deleteAll()
+{
+	var cf = document.forms[0];
+	
+	cf.edit.disabled = true;
+	cf.delete_item.disabled = true;
+	
+	apply_qos = "";
+	result = build_qos_rules();
+	
+	cf.apply_qos_rules.value = result;
+	cf.next_file.value = cf.this_file.value;
+	cf.todo.value = "save";
+	
+	cf.submit();
+}	
+
+function prioToPhrase(prio){
+    var str_priorty = new Array("Highest", "High", "Normal", "Low");
+    return str_priorty[prio];
+}
+
+function updateMacTable(rdname, clickfxn){
+	var body="",header="", footer="";
+	var qospolicy, prio, dev_name="";
+	var mac;
+	var i;
+	var rule;
+
+    header+="<table id='MACDevicelist' border='1' cellpadding='0' cellspacing='0' width='100%'>";
+    header+="<tr>";
+    header+="  <td align='center' width='5%'><span class='thead'>&nbsp;";
+    header+="  <td align='center' width='25%'><span class='thead'>"+getErrorMsgByVar("gsm_msg_qos_policy")+"";
+    header+="  <td align='center' width='15%'><span class='thead'>"+getErrorMsgByVar("gsm_msg_qos_priority")+"";
+    header+="   <td align='center'width='30%'><span class='thead'>"+getErrorMsgByVar("gsm_msg_qos_device_name")+"";
+    header+="   <td align='center'width='25%'><span class='thead'>"+getErrorMsgByVar("gsm_msg_qos_mac_ad")+"";
+    header+="";
+
+	for(i=0; i<apply_adv_qos.length; i++) {
+	    rule = apply_adv_qos[i];
+	    if(rule[_category] != CATEGORY_MAC) {
+	        continue;
+	    }
+        qospolicy = rule[_name];
+        qospolicy = qospolicy.replace(/</g,"&lt;");
+        qospolicy = qospolicy.replace(/>/g,"&gt;");
+        prio = prioToPhrase(rule[_prio]);
+        dev_name = rule[_dev_name];
+        mac = rule[_src];
+        dev_name = dev_name.replace(/</g,"&lt;");
+        dev_name = dev_name.replace(/>/g,"&gt;");
+        body+="<tr><td align='center'><input type='radio' name='"+rdname+"' value="+i+" onClick='"+clickfxn+"'>";
+        body+="<td align='center'><span class='ttext'>"+qospolicy+"";
+        body+="<td align='center'><span class='ttext'>"+prio+"";
+        body+="<td align='center'><span class='ttext'>"+dev_name+"";
+        body+="<td align='center'><span class='ttext'>"+mac+"";
+        body+="";
+    }
+	return  (header+body+footer);
+
+}
+
+function macX2mac()
+{
+    var cf = document.forms[0];
+    mac1to6(cf.mac, cf.mac1, cf.mac2, cf.mac3, cf.mac4, cf.mac5, cf.mac6);
+}
+
+function mac2macX()
+{
+    var cf = document.forms[0];
+    mac6to1(cf.mac, cf.mac1, cf.mac2, cf.mac3, cf.mac4, cf.mac5, cf.mac6);
+}
+
+function addmac_click_apply()
+{
+    macX2mac();
+    return click_apply();
+}
+
+function click_add_mac(){
+ 	var cf = document.forms[0];
+	var new_rule="", name="",srcpart="",dev_name="",prio="";
+	var index;
+
+	doing_add_mac = true;
+	if(cf.mac.value.indexOf(":") < 0 || !checkMacStr(cf.mac))
+	{
+		cf.mac.focus();
+		alert(getErrorMsgByVar("gsm_msg_wls_inv_mac"));
+		return false;
+	}
+
+	macX2mac();
+	if(!mac_section_valid())
+		return false;
+    if(!checkNameBlank())
+        return false;
+        
+    if(new_policy_name_is_exist()) {
+        alert(getErrorMsgByVar("gsm_msg_qos_conflict_predef_name"));
+        return false;
+    }
+	
+	 if(new_add_rules() == false)
+	 {
+	 	 return false;
+	 } 
+	 show_apply_rules();
+
+	document.getElementById(tab_mac_name).innerHTML = updateMacTable(rad_mac_name, "rad_click_mac(this)");
+}
+
+function rad_click_mac(selobj){
+	var cf = document.forms[0];
+	selectIdx = parseInt(selobj.value, 10);
+
+	cf.mac.value = apply_adv_qos[selectIdx][_src];
+	cf.policy_name.value = apply_adv_qos[selectIdx][_name];
+	cf.dev_name.value = apply_adv_qos[selectIdx][_dev_name];
+	cf.mac_priority.selectedIndex = apply_adv_qos[selectIdx][_prio];
+
+	//mac2macX();
+
+	//cf.Edit.disabled = false;
+	//cf.Delete.disabled = false;
+}
+
+
+
+function init()
+{
+
+    var cf = document.forms[0];
+	//check_tv_sel();
+
+	if(en_speedtest == "1")
+	{
+		check_bw_sel();
+		document.getElementById("speedtest_url").style.display="none";
+		document.getElementById("speedtest_btn1").style.display="";
+		document.getElementById("speedtest_btn2").style.display="";
+	}
+
+	else
+	{
+		document.getElementById("speedtest_url").style.display="";
+		document.getElementById("speedtest_btn1").style.display="none";
+		document.getElementById("speedtest_btn2").style.display="none";
+	}
+
+	if(cf.h_ap_mode.value == "enable" || cf.h_wds.value == "enable" || cf.h_wds1.value == "enable")
+	{
+	    cf.qosEnable.disabled = true;
+		cf.bwEnable.disabled = true;
+		cf.tcbw_value[0].disabled = true;
+		cf.tcbw_value[1].disabled = true;
+		cf.tcbw_unit[0].disabled = true;
+		cf.tcbw_unit[1].disabled = true;
+		cf.list_qos.disabled = true;
+		cf.qos_mode[0].disabled = true;
+		cf.qos_mode[1].disabled = true;
+		cf.rule_sel[0].disabled = true;
+		cf.rule_sel[1].disabled = true;
+		cf.apps.disabled = true;
+		cf.priority.disabled = true;
+		cf.app_add.disabled = true;
+		cf.app_add.className = "add_gray_bt";
+		cf.app_reset.disabled = true;
+		cf.app_reset.className = "common_gray_bt";
+		cf.policy_name.disabled = true;
+		cf.mac.disabled = true;
+		cf.dev_name.disabled = true;
+		cf.mac_priority.disabled = true;
+		cf.dev_add.disabled = true;
+		cf.dev_add.className = "add_gray_bt";
+		cf.dev_reset.disabled =true;
+		cf.dev_reset.className = "common_gray_bt";
+		cf.delete_all.disabled = true;
+		cf.delete_all.className = "delete_gray_bt";
+
+		if(en_speedtest == "1")
+		{
+			cf.bw_sel[0].disabled = true;
+			cf.bw_sel[1].disabled = true;
+			cf.checkbandwidth.disabled = true;
+			cf.checkbandwidth.className = "common_gray_bt";
+		}
+		cf.list_qos.className = "long_common_gray_bt";
+	//	cf.checkbandwidth.disabled = true;
+	}
+	sel_rule();
+	show_apply_rules();
+	document.getElementById(tab_mac_name).innerHTML = updateMacTable(rad_mac_name, "rad_click_mac(this)");
+}
+
+function initValue()
+{
+    var cf = document.forms[0];
+
+    if(cf.qosEnable.checked)
+    {
+        cf.bwEnable.checked = 1;
+	}
+	if(en_speedtest == "1")
+		check_bw_sel();
+	return true;
+}
+
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+
+	if(en_speedtest == "1")
+	{
+		var bwunit = cf.tcbw_unit[1].value;
+
+		msg += checkBW(cf.tcbw_value[1], getErrorMsgByVar("gsm_msg_qos_uplink_bandwidth"), 0, bwunit, true);
+	}
+
+	else
+	{
+		var bwunit = cf.tcbw_unit[0].value;
+
+		msg += checkBW(cf.tcbw_value[0], getErrorMsgByVar("gsm_msg_qos_uplink_bandwidth"), 0, bwunit, true);
+	}
+
+/*	if(cf.qosTV_active.checked) {
+		ipaddr = cf.qosTVIPAddr1.value + "." + cf.qosTVIPAddr2.value + "." + cf.qosTVIPAddr3.value + "." + cf.qosTVIPAddr4.value;
+		if(badIP2(cf.qosTVIPAddr1, cf.qosTVIPAddr2, cf.qosTVIPAddr3, cf.qosTVIPAddr4, 254)
+		|| (IsLanIpValid(dev_ip, dev_mask, ipaddr) == false)) {
+			msg+= getErrorMsgByVar("gsm_msg_eth_inv_ip");
+		}
+		if(dev_ip == ipaddr)
+    		msg += getErrorMsgByCode("11004");
+	}	*/
+
+	if (msg.length > 1)
+    {
+        alert(msg);
+        return false;
+	}
+	cf.apply_qos_rules.value = apply_qos_rules;
+    dataToHidden(cf);
+
+    return true;
+}
+
+function sel_rule()
+{
+	var cf = document.forms[0];
+	
+	if(cf.rule_sel[0].checked == true)
+	{
+		document.getElementById("app_rule_1").style.display = "";
+		document.getElementById("app_rule_2").style.display = "";
+		document.getElementById("app_rule_3").style.display = "";
+
+		document.getElementById("device_rule_1").style.display = "none";
+		document.getElementById("device_rule_2").style.display = "none";
+		document.getElementById("device_rule_3").style.display = "none";
+		document.getElementById("device_rule_4").style.display = "none";
+		document.getElementById("device_rule_5").style.display = "none";
+		document.getElementById("device_rule_6").style.display = "none";
+		document.getElementById("device_rule_7").style.display = "none";
+	}
+	if(cf.rule_sel[1].checked == true)
+	{
+		document.getElementById("app_rule_1").style.display = "none";
+		document.getElementById("app_rule_2").style.display = "none";
+		document.getElementById("app_rule_3").style.display = "none";
+
+		document.getElementById("device_rule_1").style.display = "";
+		document.getElementById("device_rule_2").style.display = "";
+		document.getElementById("device_rule_3").style.display = "";
+		document.getElementById("device_rule_4").style.display = "";
+		document.getElementById("device_rule_5").style.display = "";
+		document.getElementById("device_rule_6").style.display = "";
+		document.getElementById("device_rule_7").style.display = "";
+	}
+	return true;
+}
+function update_bw_sel(index)
+{
+    var cf = document.forms[0];
+
+    if (index == 1)
+    {
+        cf.bw_sel[0].checked = true;
+        cf.bw_sel[1].checked = false;
+        //cf.checkbandwidth.disabled = true;
+    }
+    else
+    {
+        cf.bw_sel[0].checked = false;
+        cf.bw_sel[1].checked = true;
+        //cf.checkbandwidth.disabled = false;
+    }
+
+    return true;
+}
+
+function check_bw_sel()
+{
+    var cf = document.forms[0];
+    if(!cf.bwEnable.checked)
+    {
+        cf.bw_sel[0].disabled = true;
+        cf.bw_sel[1].disabled = true;
+        //cf.checkbandwidth.disabled = true;
+    }
+    else
+    {
+        cf.bw_sel[0].disabled = false;
+        cf.bw_sel[1].disabled = false;
+        cf.tcbw_value[1].disabled = false;
+        if (cf.h_bw_sel.value == "2")
+            update_bw_sel(2);
+        else
+            update_bw_sel(1);
+    }
+}
+
+function reset_app()
+{
+	var cf = document.forms[0];
+	cf.apps.selectedIndex = 0;
+	cf.priority.selectedIndex =2;
+	return true;
+}
+
+function reset_dev()
+{
+	var cf = document.forms[0];
+	cf.policy_name.value = "";
+	cf.mac.value = "";
+	cf.dev_name.value = "";
+	cf.mac_priority.selectedIndex = 2;
+	return true;
+}
+
+function set_btn_bw()
+{
+	var bw = document.getElementById("bw_url").value;
+	document.getElementById("bw_btn").value = bw;
+	return true;
+}
+
+function set_url_bw()
+{
+	var bw = document.getElementById("bw_btn").value;
+	document.getElementById("bw_url").value = bw;
+	return true;
+}
+
+// -->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);parseAllPolicy();parse_apply_qos_adv_rules();init();">
+<form method="POST" action="setup.cgi@post_par#" name="qos" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title"><span languageCode="3203">QoS Setup</span></div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="RESET" name="Cancel" value="Cancel" onClick="location.href='QOS_main.htm';" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="SUBMIT" name="Apply" value="Apply" onClick="return checkData()" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+	<table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="4"><input type="checkbox" name="wmm_enable_24G" value="wmm_enable_24G"><a href="javascript:loadhelp('QOS_main','wifi')" tabindex="-1"><b languageCode="617">Enable WMM (Wi-Fi multimedia) settings</b><b> (2.4GHz b/g/n)</b></a></td>
+			</tr><tr><td colspan="4"><input type="checkbox" name="wmm_enable_5G" value="wmm_enable_5G"><a href="javascript:loadhelp('QOS_main','wifi')" tabindex="-1"><b languageCode="617">Enable WMM (Wi-Fi multimedia) settings</b><b> (5GHz a/n)</b></a></td>
+
+	</tr><tr><td colspan="4" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="4"><input type="checkbox" name="qosEnable" value="qosEnable" onClick="return initValue()"><a href="javascript:loadhelp('QOS_main','qos_on')" tabindex="-1"><b languageCode="618">Turn Internet Access QoS On</b></a></td>
+	</tr><tr><td colspan="4" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="4"><input type="checkbox" name="bwEnable" value="bwEnable" onclick="check_bw_sel()"><a href="javascript:loadhelp('QOS_main','bw_contrl')" tabindex="-1"><b languageCode="619">Turn Bandwidth Control On</b></a></td>
+</tr>            
+<tr id="speedtest_url" style="display:none"><td><span languageCode="620">Uplink bandwidth</span>&nbsp;<input id="bw_url" type="text" class="num" name="tcbw_value" value="@tcbw_value#" size="6" maxlength="6" onchange="set_btn_bw()">&nbsp;<select name="tcbw_unit"><option value="Kbps" languageCode="622">Kbps</option><option value="Mbps" languageCode="623">Mbps</option></select></td><td><span languageCode="3941">Please run speed test from</span> <a href="http://www.speedtest.net" target="_blank"
+			style="text-decoration:underline; color:blue">http://www.speedtest.net</a> <span languageCode="3942">to check your uplink bandwidth.</span></td></tr>
+<tr id="speedtest_btn1"><td class="hlc" nowrap><img src="spacer.gif" width="20" height="12" border="0"><input type="radio" name="bw_sel" value="1" onClick="update_bw_sel(1)"><span languageCode="620">Uplink bandwidth</span><span languageCode="621">Maximum</span>
+            <input type="text" id="bw_btn" class="num" name="tcbw_value" value="@tcbw_value#" size="4" maxlength="4" onchange="set_url_bw()">&nbsp;<select name="tcbw_unit"><option value="Kbps" languageCode="622">Kbps</option><option value="Mbps" languageCode="623">Mbps</option></select></td>
+
+	</tr><tr id="speedtest_btn2" nowrap><td width="50%" nowrap><img src="spacer.gif" width="20" height="12" border="0"><input type="radio" name="bw_sel" value="2" onClick="update_bw_sel(2)"><span languageCode="625">Automatically check Internet Uplink bandwidth</span>
+			&nbsp;&nbsp;@h_max_uplink_rate#&nbsp;&nbsp;
+		</td><td width="50%" nowrap><input class="common_bt" type="button" name="checkbandwidth" value="SpeedTest" onClick="self.location.href='qos_wait.htm'" languageCode="4319">&nbsp;&nbsp;<img src="image/poweredbyookla.png" border="0"></td>
+		</tr>
+		<tr><td colspan="4" background="liteblue.gif" height="12"></td>
+	</tr><tr style="display:none"><td class="hlc"><b languageCode="613">QoS Priority Rule list</b></td>
+		<td colspan="2"><input class="long_common_bt" type="button" name="list_qos" value="Set Up QoS Rule" onClick="self.location.href='setup.cgi?next_file=QOS_list.htm';buttonToDisabled(document.forms[0])" languageCode="627"></td>
+	</tr>
+	<tr>
+		<td><b languageCode="4310">QoS Mode:</b></td>
+		<td><input type="radio" checked="checked" name="qos_mode" value="1"><span languageCode="4311">QoS Rules</span></td>
+		<td style="display:none"><input type="radio" name="qos_mode" value="2" disabled=true><span>FastTrack</span></td>
+	</tr>
+		<tr><td colspan="4" background="liteblue.gif" height="12"></td>
+		</tr>
+		<tr>
+			<td><b languageCode="4312">Add Rules:</b></td>
+			<td><input type="radio" checked="checked" name="rule_sel" value="0" onClick="sel_rule()"><span languageCode="4313">QoS By Service</span></td>
+			<td><input type="radio" name="rule_sel" value="1" onClick="sel_rule()"><span languageCode="4314">QoS By Device</span></td>
+		</tr>
+		<tr name="app_rule" id="app_rule_1">
+			<td align="center"><span languageCode="581">Applications</span></td>
+			<td><select name="apps" size="1" onChange="new_setPolicyName();new_show_customer();"><option value="0" languageCode="584">MSN Messenger</option><option value="1">Skype</option><option value="2" languageCode="585">Yahoo Messenger</option><option value="3" languageCode="586">IP Phone</option><option value="4" languageCode="587">Vonage IP Phone</option><option value="5" languageCode="278">NetMeeting</option><option value="6">AIM</option><option value="7" languageCode="589">Google Talk</option><option
+value="8">Netgear EVA</option><option value="9">SSH</option><option value="10">Telnet</option><option value="11">VPN</option><option value="12">FTP</option><option value="13">SMTP</option><option value="14">WWW</option><option value="15">DNS</option><option value="16">eMule/eDonkey</option><option value="17">Kazaa</option><option value="18">Gnutella</option><option value="19">BT/Azureus</option><option value="20"
+languageCode="3213">Counter Strike</option><option value="21" languageCode="3214">Age of Empires</option><option value="22" languageCode="3215">Everquest</option><option value="23" languageCode="3216">Quake 2</option><option value="24" languageCode="3217">Quake 3</option><option value="25" languageCode="3218">Unreal Tourment</option><option value="26" languageCode="3219">Warcraft</option><option value="99" languageCode="591">Add a new application</option></select></td>
+</tr>
+<tr name="app_rule" id="app_rule_2">
+	<td align="center" languageCode="578">Priority</td>
+	<td><select name="priority"><option value="3" languageCode="592">Highest</option><option value="2" languageCode="593">High</option><option value="1" selected languageCode="594">Normal</option><option value="0" languageCode="595">Low</option></select></td>
+</tr>
+<tr name="app_rule" id="app_rule_3" width="100%">
+	<td width="50%" align="center"><input type="button" class="add_bt" name="app_add" value="Add" languageCode="146" onclick="new_add_rules(); show_apply_rules()"></td>
+	<td width="50%"><input type="button" class="common_bt" name="app_reset" value="Reset" languageCode="2052" onclick="reset_app();"></td>
+</tr>
+
+<tr name="device_rule" id="device_rule_1" style="display:none">
+	<td colspan="4" background="liteblue.gif" height="12"></td>
+</tr>
+<tr name="device_rule"  id="device_rule_2" style="display:none">
+	<td width="100%" align="center" colspan="4"><span id="tb_mac"></span></td>
+</tr>
+<tr name="device_rule"  id="device_rule_3" style="display:none">
+	<td width="50%" size="1" languageCode="579" align="center">QoS Policy for</td>
+	<td width="50%"><input type="text" name="policy_name" size="33" maxlength="32"></td>
+</tr>
+<tr name="device_rule"  id="device_rule_4" style="display:none">
+	<td width="50%" languageCode="83" align="center">MAC Address</td>
+	<td width="50%"><input type="text" name="mac" value="" size="17" maxlength="17"></td>
+</tr>
+<tr name="device_rule"  id="device_rule_5" style="display:none">
+	<td width="50%" languageCode="192" align="center">Device Name</td>
+	<td width="50%"><input type="text" name="dev_name" size="33" maxlength="32"></td>
+</tr>
+<tr name="device_rule"  id="device_rule_6" style="display:none">
+	<td width="50%" languageCode="578" align="center">Priority</td>
+	<td width="50%"><select name="mac_priority"><option value="3" languageCode="592">Highest</option><option value="2" languageCode="593">High</option><option value="1" selected languageCode="594">Normal</option><option value="0" languageCode="595">Low</option></select></td>
+</tr>
+<tr name="device_rule"  id="device_rule_7" style="display:none" width="100%">
+	<td width="50%" align="center"><input type="button" class="add_bt" name="dev_add" value="Add" languageCode="146" onclick="click_add_mac();"></td>
+	<td width="50%"><input type="button" class="common_bt" name="dev_reset" value="Reset" languageCode="2052" onclick="reset_dev();"></td>
+</tr>
+<tr>
+	<td colspan="4" background="liteblue.gif" height="12"></td>
+</tr>
+<tr> 
+	<td align="left"><b languageCode="4311">QoS rules</b>:</td>
+</tr>
+<tr align="center">
+	<td width="100%" colspan="4">
+		<table border="1" width="100%">
+			<tr width="100%">
+				<td width="25%" nowrap languageCode="4315">Queue1: Highest</td>
+				<td width="25%" nowrap languageCode="4316">Queue2: High</td>
+				<td width="25%" nowrap languageCode="4317">Queue3: Normal</td>
+				<td width="25%" nowrap languageCode="4318">Queue4: Low</td>
+			</tr>
+			<tr width="100%">
+				<td width="25%" height="80px"><div id="highest" style="overflow:scroll; height:80px"></div></td>
+				<td width="25%" height="80px"><div id="high" style="overflow:scroll; height:80px"></div></td>
+				<td width="25%" height="80px"><div id="normal" style="overflow:scroll; height:80px"></div></td>
+				<td width="25%" height="80px"><div id="low" style="overflow:scroll; height:80px"></div></td>
+			</tr>
+		</table>
+	</td>
+</tr>
+<tr nowrap>
+	<td width="20%" align="center"><input disabled=true type="button" class="edit_gray_bt" name="edit" value="Edit" languageCode="147" onclick="toEdit()"></td>
+	<td width="20%" align="center"><input disabled=true type="button" class="delete_gray_bt" name="delete_item" value="Delete" languageCode="148" onclick="toDelete()"></td>
+	<td width="20%" align="center"><input type="button" class="delete_bt" name="delete_all" value="Delete All" languageCode="2005" onclick="deleteAll()"></td>
+	<td width="40%"></td>
+</tr>
+		
+    <tr><td colspan="4" align="center"></td>
+</tr></table><input type="hidden" name="h_ap_mode" value="@h_ap_mode#"><input type="hidden" name="h_wmm_enable_24G" value="@h_wmm_enable_24G#"><input type="hidden" name="h_wmm_enable_5G" value="@h_wmm_enable_5G#"><input type="hidden" name="h_qosEnable" value="@h_qosEnable#"><input type="hidden" name="h_bwEnable" value="@h_bwEnable#"><input type="hidden" name="h_tcbw_unit" value="@h_tcbw_unit#"><input type="hidden" name="h_max_uplink_rate"
+value="@h_max_uplink_rate#"><input type="hidden" name="h_bw_sel" value="@h_bw_sel#"><input type="hidden" name="h_qos_mode" value="@h_qos_mode#"><input type="hidden" name="h_wds" value="@h_wds_enable#"><input type="hidden" name="h_wds1" value="@h_wds1_enable#"><input type="hidden" name="h_apmode" value="@h_wds_mode#"><input type="hidden" name="apply_qos_rules" value=""><input type="hidden" name="qos_edit_idx" value=""><input type="hidden" name="mac1" value=""><input type="hidden" name="mac2" value=""><input type="hidden" name="mac3" value=""><input type="hidden"
+name="mac4" value=""><input type="hidden" name="mac5" value=""><input type="hidden" name="mac6" value=""><input type="hidden" name="this_file" value="QOS_main.htm"><input type="hidden" name="next_file" value="QOS_main.htm"><input type="hidden" name="todo" value="save"><input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="QOS_main_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

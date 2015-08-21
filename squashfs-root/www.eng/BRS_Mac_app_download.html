@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>NETGEAR Router @model_name# </title>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style/hijack_style.css" />
+<script language="javascript" type="text/javascript" src="script/brs_hijack.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+</HEAD>
+<style type="text/css">
+	#allBtns_div { width:600px;  margin:10px auto;}
+
+	#allBtns_div .success_buttons_split { height:30px; width:10%; margin:0px 0px; float:left; }
+
+	#btnsContainer_div1 { width:30%; float:left; right :30px;}
+
+	#btnsContainer_div2 { width:30%; float:left; }
+
+	#btnsContainer_div3 { width:30%; float:right; }
+</style>
+<SCRIPT language=javascript type=text/javascript>
+
+function initPage()
+{
+	var btns_div1 = document.getElementById("btnsContainer_div1");
+	var btns_div2 = document.getElementById("btnsContainer_div2");
+	var btns_div3 = document.getElementById("btnsContainer_div3");	
+	btns_div1.onclick = function()
+	{
+		location.href="BRS_netgear_success.html";
+
+	return true;
+	}
+	btns_div2.onclick = function()
+	{
+		location.href = "BRS_success.html";
+		return true;
+	}
+	btns_div3.onclick = function()
+	{
+		var choices_div = document.getElementById("choices_div");
+		var choices = choices_div.getElementsByTagName("input");
+		if(choices[0].checked)
+		{
+		 	location.href ="setup.cgi?next_file=BRS_applySettings_app.html&app=0";
+		}
+
+		else
+		{
+			location.href="setup.cgi?todo=wizard_upg_detfw";
+		}	
+		return true;
+		
+	}
+}
+addLoadEvent(initPage);
+</SCRIPT>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+<H1><span languageCode = "4401">Downloading the following router apps:</span></H1>
+<DIV class=helpChoice_divs id=choices_div>
+	<DIV class=radio_div><INPUT type=checkbox value=1 name=help_choice checked> <span languageCode = "4402">Genie app.A personal dashboard that lets you monitor,control,and repair your home network. </span></DIV>
+
+</DIV>
+</DIV>
+<BR>
+<BR>
+<BR>
+<BR>
+<DIV class=wizard_buttons_div id=allBtns_div>
+	<DIV class=buttons_img_div id=btnsContainer_div1 align=center><IMG src="image/ca-little-purple-button.gif">
+		<DIV class=buttons_words_div><span languageCode = "3242">Exit</span></DIV>
+	</DIV>
+	<DIV class=buttons_img_div id=btnsContainer_div2 align=center><IMG src="image/ca-little-purple-button.gif">
+		<DIV class=buttons_words_div><span languageCode = "4400">Previous</span></DIV>
+	</DIV>
+	<DIV class=buttons_img_div id=btnsContainer_div3 align=center><IMG src="image/ca-little-purple-button.gif">
+		<DIV class=buttons_words_div><span languageCode = "25">Next</span></DIV>
+	</DIV>
+</DIV>
+
+
+
+
+</DIV></FORM>
+	<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

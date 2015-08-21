@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><style type="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript">
+
+var allow_or_block = "@allow_or_block#";
+var man_mac = "@cur_mac#";
+
+function checkData()
+{
+	var cf = document.forms[0];
+	var msg = "";
+	var sel_option = "";
+
+	if(cf.dev_name.value == "UNKNOWN")
+	{
+		msg += getErrorMsgByVar("gsm_msg_resv_enter_name");
+	}
+
+	if(cf.dev_name.value.match(/[^(\x20-\x7E)\xA0)]/ ))
+	{
+		msg += getErrorMsgByVar("gsm_msg_dev_name_invalid");
+	}
+
+	cf.dev_name.value = cf.dev_name.value.replace(/\xA0/g, " ");
+
+	if(msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+
+	if(cf.mac_addr.value == man_mac && cf.access_control_option.value == "block")
+	{
+		alert(getErrorMsgByVar("gsm_msg_block_manage_device"));
+		return false;
+	}
+
+	if(cf.access_control_option.value == "allow")
+		sel_option = "0";
+	else
+		sel_option = "1";
+
+	cf.edit_ac_dev.value = cf.mac_addr.value + "\x01" + cf.dev_name.value + "\x01" + sel_option;
+
+	return true;
+}
+
+function init()
+{
+	var cf = document.forms[0];
+	var arr = new Array();
+	var dev_info = "@edit_dev_info#";
+	arr = dev_info.split("\x01");
+	cf.mac_addr.value = arr[0];
+	cf.dev_name.value = arr[1];
+
+	if(allow_or_block == "0")
+		cf.access_control_option.selectedIndex = 0;
+	else
+		cf.access_control_option.selectedIndex = 1;
+
+	return true;
+}
+</script></head>
+<body bgcolor="#ffffff" onload="init();">
+<form name="add_block_dev" action="setup.cgi@post_par#" method="post" onsubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title" languageCode="">Edit Device Name</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="RESET" name="Cancel" value="Cancel" onClick="location.href='AccessControl.htm';" languageCode="51">
+&nbsp;
+<input class="apply_bt" type="SUBMIT" name="Apply" value="Apply" onClick="return checkData()" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+	<tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr>
+	<tr><td nowrap><span languageCode="">Access Control</span></td>
+		<td nowrap><select name="access_control_option" id="access_control_option">
+				<option value="allow">Allow</option>
+				<option value="block">Block</option>
+			</select>
+		</td>
+	<tr><td nowrap><span languageCode="">MAC Address</span></td>
+		<td nowrap><input type="text" size="17" maxlength="17" name="mac_addr" disabled="true"></td>
+	</tr>
+	<tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr>
+	<tr><td nowrap><span languageCode="">Device Name</span></td>
+		<td nowrap><input type="text" size="24" maxlength="24" name="dev_name"></td>
+	</tr>
+	<tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr>
+</table>
+</div>
+<div>
+	<input type="hidden" name="edit_ac_dev" value="@edit_ac_dev#">
+	<input type="hidden" name="todo" value="save">
+	<input type="hidden" name="this_file" value="edit_ac_dev.htm">
+	<input type="hidden" name="next_file" value="AccessControl.htm">
+	<input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="AccessControl_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

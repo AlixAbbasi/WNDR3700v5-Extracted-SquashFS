@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<error_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<message>
+		<err_code>13421</err_code>
+		<translation>حدد خياراً أولاً.</translation>
+		<variable>bh_select_an_option</variable>
+	</message>
+	<message>
+		<err_code>13422</err_code>
+		<translation>لا يمكن أن يكون اسم المستخدم فارغًا.</translation>
+		<variable>bh_login_name_null</variable>
+	</message>
+	<message>
+		<err_code>13423</err_code>
+		<translation>كلمة المرور غير صالحة.</translation>
+		<variable>bh_password_error</variable>
+	</message>
+	<message>
+		<err_code>13424</err_code>
+		<translation>يرجى إدخال وقت الخمول.[NEL]</translation>
+		<variable>bh_idle_time_null</variable>
+	</message>
+	<message>
+		<err_code>13425</err_code>
+		<translation>وقت الخمول غير صالح. يرجى إدخال رقم صحيح.[NEL]</translation>
+		<variable>bh_invalid_idle_time</variable>
+	</message>
+	<message>
+		<err_code>13426</err_code>
+		<translation>عنوان IP غير صالح. يرجى إدخاله مرة أخرى، أو تركه فارغًا.</translation>
+		<variable>bh_invalid_myip</variable>
+	</message>
+	<message>
+		<err_code>13427</err_code>
+		<translation>عنوان IP الخاص بالبوابة غير صالح. يرجى إدخاله مرة أخرى.</translation>
+		<variable>bh_invalid_gateway</variable>
+	</message>
+	<message>
+		<err_code>13428</err_code>
+		<translation>لا يدعم الكمبيوتر طابعة.</translation>
+		<variable>bh_not_support_print</variable>
+	</message>
+	<message>
+		<err_code>13429</err_code>
+		<translation>لا يمكن أن يكون اسم الملف فارغًا.</translation>
+		<variable>bh_filename_null</variable>
+	</message>
+	<message>
+		<err_code>13430</err_code>
+		<translation>يرجى تعيين الملف الصحيح. تنسيق الملف *.</translation>
+		<variable>bh_not_correct_file</variable>
+	</message>
+	<message>
+		<err_code>13431</err_code>
+		<translation>عنوان IP غير صالح. يرجى إدخاله مرة أخرى.</translation>
+		<variable>bh_invalid_ip</variable>
+	</message>
+	<message>
+		<err_code>13432</err_code>
+		<translation>قناع الشبكة الفرعية غير صالح. يرجى إدخاله مرة أخرى.[NEL]</translation>
+		<variable>bh_invalid_mask</variable>
+	</message>
+	<message>
+		<err_code>13433</err_code>
+		<translation>يجب أن يكون عنوان IP على LAN وعنوان IP على WAN في نفس الشبكة الفرعية.</translation>
+		<variable>bh_same_lan_wan_subnet</variable>
+	</message>
+	<message>
+		<err_code>13434</err_code>
+		<translation>لا يمكن أن يكون اسم الملف فارغًا.</translation>
+		<variable>bh_filename_null</variable>
+	</message>
+	<message>
+		<err_code>13435</err_code>
+		<translation>يتطلب تكوين اتصال إنترنت خبرة في الشبكات. هل أنت متأكد؟</translation>
+		<variable>bh_no_genie_help_confirm</variable>
+	</message>
+	<message>
+		<err_code>13436</err_code>
+		<translation>تحذير! [NEL]تؤدي استعادة الإعدادات من ملف تكوين إلى مسح كافة الإعدادات الحالية. [NEL]هل أنت متأكد من رغبتك في القيام بذلك?</translation>
+		<variable>bh_ask_for_restore</variable>
+	</message>
+		<message>
+		<err_code>13438</err_code>
+		<translation>عنوان MAC غير صالح. يرجى إدخاله مرة أخرى.</translation>
+		<variable>gsm_msg_invalid_mac</variable>
+	</message>
+	<message>
+		<err_code>13439</err_code>
+		<translation>اسم</translation>
+		<variable>gsm_msg_resv_name</variable>
+	</message>
+	<message>
+		<err_code>13440</err_code>
+		<translation>يجب ألا يكون فارغًا.[NEL]</translation>
+		<variable>gsm_msg_blank</variable>
+	</message>
+	<message>
+		<err_code>13441</err_code>
+		<translation>غير مسموح بالحرف في SSID.</translation>
+		<variable>gsm_msg_inv_ssid</variable>
+	</message>
+	<message>
+		<err_code>13442</err_code>
+		<translation>طول عبارة المرور غير كافٍ. يجب أن تكون 8 أحرف على الأقل.</translation>
+		<variable>gsm_msg_wls_wpa_key_must_8</variable>
+	</message>
+	<message>
+		<err_code>13443</err_code>
+		<translation>تتألف عبارة المرور من 8 إلى 63 حرف ASCII أو بالتحديد 64 رقماً سداسياً عشرياً. الرقم السداسي العشري هو أحد هذه الأحرف: 0، 1، 2، ...، 8، 9، A، B، C، D، E، F.</translation>
+		<variable>gsm_msg_wls_wpa_key_must_63</variable>
+	</message>
+	<message>
+		<err_code>13444</err_code>
+		<translation>غير مسموح بالحرف في عبارة المرور.</translation>
+		<variable>gsm_msg_wls_wpa_key_forbid</variable>
+	</message>
+</error_msg>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>NETGEAR Router @model_name# </title>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style/hijack_style.css" />
+<script language="javascript" type="text/javascript" src="script/brs_hijack.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+</HEAD>
+
+<SCRIPT language=javascript type=text/javascript>
+var app="@app_type#";
+function init()
+{
+	if(app == 0)
+		setTimeout('location.href = "BRS_only_genie_downloading.html";',2000);
+	else if(app ==1)
+		setTimeout('location.href = "BRS_only_ReadyShare_downloading.html";',2000);
+	else if(app == 2)
+		setTimeout('location.href = "BRS_genie_and_ReadyShare_downloading.html";',2000);
+		
+}
+</SCRIPT>
+<BODY onload="init();">
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div id=words_div_success>
+<P><H1 align=center><span languageCode = "4409" >Processing your request …</span></H1></p>
+<DIV class=waiting_img_div id=applySettings_wait align=center><IMG alt=waiting src="image/wait30.gif"> </DIV>
+</DIV>
+</DIV>
+</FORM>
+	<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY>
+</HTML>

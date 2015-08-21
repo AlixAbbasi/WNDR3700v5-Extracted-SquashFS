@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/hijack_02_genieHelp.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<style type="text/css">
+	#allBtns_div { width:600px;  margin:10px auto;}
+
+	#allBtns_div .success_buttons_split { height:30px; width:10%; margin:0px 0px; float:left; }
+
+	#btnsContainer_div1 { width:30%; float:right;}
+	.gray_font{font-size: 12px;font-weight: Bold;color:gray;}
+	.normal_font{font-size: 12px;}
+</style>
+<SCRIPT language=javascript type=text/javascript>
+var download="genie";
+function initPage()
+{
+	var btns_container_div1 = document.getElementById("btnsContainer_div1");
+	document.getElementById("genie").style.display="";
+	btns_container_div1.onclick = function()
+	{
+		if(download == "genie")
+		{	
+			setTimeout('location.href="http://updates1.netgear.com/readysharevault/ReadySHAREVault-install.exe";',1000);
+			download="readyshare";
+		document.getElementById("genie").style.display="none";
+		document.getElementById("ge").className="normal_font";
+		document.getElementById("readyshare").style.display="";
+		document.getElementById("rs").className="gray_font";
+		}
+		else
+		{	
+			location.href="setup.cgi?todo=wizard_upg_detfw";
+		}
+		
+	}
+	setTimeout('location.href="http://updates1.netgear.com/netgeargenie/update/NETGEARGenie-install.exe";',2000);
+       
+}
+
+addLoadEvent(initPage);
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div id=choices_div>
+<H1><span languageCode = "4413">System will install</span></H1>
+<P><span languageCode = "4402" id="ge" class="gray_font">Genie app.A personal dashboard that lets you monitor,control,and repair your home network..</span></P>
+<P><span languageCode = "4403" id="rs" class="normal_font">ReadySHARE Vault app(Only for Windows computers).Enable automatic continuous backup of a Windows computer to a USB drive that's connected to your router.</span></P>
+<p><span languageCode = "4414">Click Run to start installing</span> <span id="genie" style="display:none">Desktop Genie</span><span id="readyshare" style="display:none">ReadySHARE Vault</span>.</p>
+<p><span languageCode = "4412">After the installation,please click Next.</span></p>
+<DIV class=waiting_img_div id=applySettings_wait align=center><IMG alt=waiting src="image/wait30.gif"> </DIV>
+</DIV>
+</DIV></DIV>
+<DIV class=wizard_buttons_div id=allBtns_div>
+	<DIV class=buttons_img_div id=btnsContainer_div1 align=center><IMG src="image/ca-little-purple-button.gif">
+	<DIV class=buttons_words_div ><span languageCode = "25">Next</span></DIV>
+	</DIV>
+</DIV>
+
+<input type="hidden" name="SID" value="@SID#">
+<input type="hidden" name="todo" value="download_app">
+<input type="hidden" name="this_file" value="BRS_genie_and_ReadyShare_downloading.html">
+<input type="hidden" name="next_file" value="BRS_genie_and_ReadyShare_downloading.html">
+
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

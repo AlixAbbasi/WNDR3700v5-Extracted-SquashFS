@@ -1,0 +1,248 @@
+<html>
+<head>
+<META name="description" content="@model_name#">
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META http-equiv="Pragma" content="no-cache">
+<META HTTP-equiv="Cache-Control" content="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+
+<title>Readyshare Remote</title>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<link rel="stylesheet" href="style/form.css">
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+
+<script type="text/javascript">
+<!-- hide script from old browsers
+
+var status = "@remoteshare_status#";
+
+function show_type()
+{
+	if (status == "bootup")
+		document.write('');
+	else if (status == "registered")
+		document.write('<span languagecode="9999">Registration completed successfully.</span>');
+	//else if (status == "registering")
+	//	document.write('<span languagecode="9999">Registration in process.</span>');
+	else if (status == "unregisterfail")
+		document.write('<span languagecode="9999">Unregisteration fail.</span>');
+	else if (status == "registerfail")
+		document.write('<span languagecode="9999">Registeration fail.</span>');	
+	else if (status == "unregistered")
+		document.write('<span languagecode="9999">Unregistration completed successfully.</span>');
+}
+
+function checkData(is_unregister)
+{
+	if (is_unregister == 1)
+	{
+		document.forms[0].is_unregister.value = 1;
+	}
+
+	return true;
+}
+
+function init()
+{
+	document.getElementById("div1").style.display="none";
+	document.getElementById("div2").style.display="none";
+	
+	if (status == "registered")
+	{
+		document.getElementById("div2").style.display = "block";
+	} else if (status == "registering")
+	{
+		// keep two div hidden
+	} else
+	{
+		document.getElementById("div1").style.display = "block";
+	}
+}
+
+// -->
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" onLoad="init();">
+<form name="wsw_summary" action="setup.cgi@post_par#" method="post">
+<div class="page_title" languageCode="9999">ReadyCLOUD</div>
+
+<table>
+<tr>
+   <td>
+     <p><script>show_type();</script></p>
+   </td>
+</tr>
+
+  
+<tr>
+	<td colspan="2" background="liteblue.gif" height="12"></td>
+  </tr>
+  
+  
+  
+<tr>
+<td>
+<span languagecode="1913">
+The ReadyCLOUD feature gives you remote access over the Internet to a USB storage device that is connected to your router's USB port.
+</span>
+</td>
+</tr>    
+
+<tr>
+<td>
+</td>
+</tr> 
+<tr>
+<td>
+</td>
+</tr> 
+
+<tr>
+<td>
+<strong><span languagecode="1914">How to Set Up ReadyCLOUD</span></strong>
+</td>
+</tr> 
+
+<tr>
+<td>
+<span languagecode="1915">
+Step 1: You need a ReadyCLOUD account. If you do not have one, 
+</span>
+<a class="style1" style="color: #0000FF;text-decoration: underline" href="http://readycloud-test3.netgear.com/client/index.htm#page=manage" target="_blank"><span languagecode="1916">click here</span> </a>
+<span languagecode="1917">
+ to get one.
+ </span>
+</td>
+</tr> 
+
+<tr>
+<td>
+<span languagecode="1918">
+Step 2: On this page, enter your ReadyCLOUD user name and password to register 
+your router and the USB devide that is connected to it with your account.
+</span>
+</td>
+</tr> 
+<tr>
+<td>
+<span languagecode="1919">
+Step 3: Log back to into 
+</span>
+<a class="style1" style="color: #0000FF;text-decoration: underline" href="http://readycloud-test3.netgear.com" target="_blank">http://readycloud.netgear.com </a>
+<span languagecode="1920">
+with your ReadyCLOUD account. 
+The USB device that is connected to your router.
+</span>
+</td>
+</tr> 
+<tr>
+<td>
+<span languagecode="1921">
+<b>Note:</b>You can use a supplementary remote application to make a secure connection from your computer or mobile device to the router's USB device. 
+Log in to this remote application and you can access the USB device from anywhere. 
+<a class="style1" style="color: #0000FF;text-decoration: underline" href="http://readycloud-test3.netgear.com/client/cloud_download.html" target="_blank">Click here</a> to get the remote application.
+
+</span>
+</td>
+</tr> 
+<tr>
+<td>
+<span languagecode="1922">Note: Without this client, you can brower your USB device contents 
+but you cannot open files or make changes to them.</span>
+</td>
+</tr> 
+
+ <tr>
+	<td colspan="2" background="liteblue.gif" height="12"></td>
+  </tr>
+  <tr>
+
+</table>
+
+
+<div id="div1" >
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td>
+<strong><span languagecode="1928">Register your router and USB device with ReadyCLOUD</span></strong>
+</td>
+</tr> 
+<tr>
+<td>
+<span languagecode="1930">
+If you don't have a ReadyCLOUD account, 
+ </span>
+<a class="style1" style="color: #0000FF;text-decoration: underline" href="http://readycloud-test3.netgear.com" target="_blank"><span languagecode="1916">click here</span> </a>
+<span languagecode="1917">
+ to get one.
+ </span>
+</td>
+</tr> 
+<tr>
+<td><strong><span languagecode="1931">User Name: </span></strong>
+<input type="text" name="readyshare_remote_login_gui" size="20" maxlength="60" value="@readyshare_remote_login_gui#"></td>
+</tr>
+<tr>
+<td><strong><span languagecode="1932">Password: </span></strong> 
+<input type="password" name="readyshare_remote_password_gui" size="20" maxlength="60" value="@readyshare_remote_password_gui#"></td>
+</tr>
+<tr>
+<td>
+<input type="submit" name="actionbutton" value="Register" languagecode="1934" onClick="checkData(0);">
+<span languagecode="9999"><b>Note:</b> Your Internet will be kept active until you unregister.</span>
+</td>
+</tr>
+<tr>
+	<td colspan="2" background="liteblue.gif" height="12"></td>
+  </tr>
+  
+</table>
+</div>	
+
+
+<div id="div2" >
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td>
+<strong><span languagecode="1923">ReadyCLOUD is registered with user:</span> @readyshare_remote_login_gui# </strong>
+</td>
+</tr> 
+<tr>
+<td>
+<span languagecode="1924">
+Now you can login at <a class="style1" style="color: #0000FF;text-decoration: underline" href="http://readycloud-test3.netgear.com" target="_blank"><span languagecode="1916">http://readycloud.netgear.com</span> </a>
+ with your ReadyCLOUD account to access your USB device from anywhere.
+</span>
+</td>
+</tr> 
+<tr>
+<td>
+<span languagecode="1925">
+Click </span><strong><span languagecode="1926">Unregister</span></strong> <span languagecode="1927">to register ReadyCLOUD with a different user.</span>
+</td>
+</tr> 
+<tr>
+<td>
+<input type="submit" name="actionbutton" value="Unregister" languagecode="1926" onClick="checkData(1);">
+</td>
+</tr>
+<tr>
+	<td colspan="2" background="liteblue.gif" height="12"></td>
+  </tr>
+</table>
+</div>	
+
+
+<input type="hidden" name="is_unregister" value="0">
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="Readyshare_remote.htm">
+<input type="hidden" name="next_file" value="Readyshare_remote.htm">
+</form>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY>
+
+</HTML>
+
+

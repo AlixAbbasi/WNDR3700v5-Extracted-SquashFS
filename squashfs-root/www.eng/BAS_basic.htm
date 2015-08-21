@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="JWNR3200T">
+<title>NETGEAR Router @model_name#</title>
+<script>
+var select_basic="@h_loginreq#";
+
+function loadvalue()
+{
+	if( select_basic == "dhcp" )
+		window.location.href="BAS_ether.htm";
+	else
+	{                
+		if( select_basic == "pppoe" )
+			window.location.href="BAS_pppoe.htm";
+		else if(select_basic == "pptp" )
+			window.location.href="BAS_pptp.htm";
+		else if(select_basic == "l2tp" )
+			window.location.href="BAS_l2tp.htm";
+		else
+			window.location.href="BAS_pppoe.htm";
+	}
+}
+</script>
+<BODY onLoad="loadvalue();">
+</BODY>
+</html>

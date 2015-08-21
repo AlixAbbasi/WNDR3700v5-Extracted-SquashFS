@@ -1,0 +1,116 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/hijack_03A_wanInput.css" type=text/css rel=stylesheet><LINK href="style/RU_staticIP.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/funcs.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="linux.js" type=text/javascript></SCRIPT>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+var wan_mode = "@brs_rus_wan_mode#"
+var vlan_support="@vlan_support#";
+
+function setMAC()
+{
+ 	var cf = document.forms[0];
+	if (cf.MACAssign[2].checked)
+		cf.Spoofmac.disabled = false;
+	else
+		cf.Spoofmac.disabled = true;
+	DisableFixedMAC = cf.Spoofmac.disabled;
+
+	if(cf.MACAssign[0].checked) {
+		cf.Spoofmac.value = cf.default_wan_mac.value;
+	}
+	if(cf.MACAssign[1].checked) {
+		cf.Spoofmac.value = cf.computer_mac.value;
+	}
+	if(cf.MACAssign[2].checked) {
+		cf.Spoofmac.value = cf.current_wan_mac.value;
+	}
+}
+
+function initPage()
+{
+	var btns_container_div1 = document.getElementById("btnsContainer_div1");
+	var btns_container_div2 = document.getElementById("btnsContainer_div2");
+	btns_container_div1.onclick = function()
+	{
+		if(wan_mode == "dhcpc")
+			location.href = "BRS_RUS_manual_static_ip_input.html";
+		else
+			location.href = "BRS_RUS_manual_ip_type_check.html";
+	}
+	btns_container_div2.onclick = function()
+	{
+		return check_before_post();
+	}
+	dataToVisible(document.forms[0]);
+    showFirmVersion("none");
+}
+
+function check_before_post()
+{
+	/*Add select option to value's trans*/
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[0];
+
+	if(vlan_support == "1")
+	{
+		cf.next_file.value="BRS_RUS_vlan_setting.html";
+	}
+
+	dataToHidden(document.forms[0]);
+	cf.submit();
+
+	return true;
+}
+
+addLoadEvent(initPage);
+
+-->
+</script>
+</HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+<H1><span languageCode = "3301">Some ISPs using MAC address binding for security reasons. Please specify, whether router should use his own MAC address, your current PC's MAC address or manually add MAC address required.</span></H1>
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr><td nowrap align="left"><input type="radio" checked name="MACAssign" value="0" onClick="setMAC()"><span languageCode="84">Use
+		Default Address</span></td>
+	</tr><tr><td nowrap align="left"><input type="radio" name="MACAssign" value="1" onClick="setMAC()"><span languageCode="85">Use
+		Computer MAC Address</span></td>
+	</tr><tr><td nowrap align="left"><input type="radio" name="MACAssign" value="2" onClick="setMAC()"><span languageCode="86">Use
+		This MAC Address</span></td>
+		<td nowrap align="left" class="num"><input type="text" class="num" name="Spoofmac" size="17" maxlength="17" value="@Spoofmac#" onFocus="if(DisableFixedMAC) this.blur()"></td>
+	</tr>
+</table>
+<table width="100%">
+<tr>
+<td>
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=btnsContainer_div1><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "3020">Back</span></DIV></DIV>
+<DIV class=buttons_img_div id=btnsContainer_div2><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span></DIV></DIV>
+</DIV>
+</td>
+</tr>
+</table>
+
+<input type="hidden" name="h_MACAssign" value="@h_MACAssign#">
+<input type="hidden" name="default_wan_mac" value="@default_wan_mac#">
+<input type="hidden" name="computer_mac" value="@computer_mac#">
+<input type="hidden" name="current_wan_mac" value="@Spoofmac#">
+
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="BRS_RUS_manual_spoof_mac.html">
+<input type="hidden" name="next_file" value="BRS_RUS_manual_input_info_confirm.html">
+<input type="hidden" name="SID" value="@SID#">
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

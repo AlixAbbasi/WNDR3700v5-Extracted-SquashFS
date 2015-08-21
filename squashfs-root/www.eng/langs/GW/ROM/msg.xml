@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<error_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<message>
+		<err_code>13421</err_code>
+		<translation>Selectaţi mai întâi o opţiune.</translation>
+		<variable>bh_select_an_option</variable>
+	</message>
+	<message>
+		<err_code>13422</err_code>
+		<translation>Numele de utilizator nu poate fi necompletat.</translation>
+		<variable>bh_login_name_null</variable>
+	</message>
+	<message>
+		<err_code>13423</err_code>
+		<translation>Parolã nevalidã.</translation>
+		<variable>bh_password_error</variable>
+	</message>
+	<message>
+		<err_code>13424</err_code>
+		<translation>Introduceţi durata de inactivitate.[NEL]</translation>
+		<variable>bh_idle_time_null</variable>
+	</message>
+	<message>
+		<err_code>13425</err_code>
+		<translation>Duratã de inactivitate nevalidã. Introduceþi un numãr corect.[NEL]</translation>
+		<variable>bh_invalid_idle_time</variable>
+	</message>
+	<message>
+		<err_code>13426</err_code>
+		<translation>Adresã IP nevalidã. Introduceþi-o din nou sau lãsaþi spaþiul liber.</translation>
+		<variable>bh_invalid_myip</variable>
+	</message>
+	<message>
+		<err_code>13427</err_code>
+		<translation>Adresã IP gateway nevalidã. Introduceþi-o din nou.[NEL]</translation>
+		<variable>bh_invalid_gateway</variable>
+	</message>
+	<message>
+		<err_code>13428</err_code>
+		<translation>Computerul nu acceptă o imprimantă.</translation>
+		<variable>bh_not_support_print</variable>
+	</message>
+	<message>
+		<err_code>13429</err_code>
+		<translation>Numele fiºierului nu poate fi necompletat.</translation>
+		<variable>bh_filename_null</variable>
+	</message>
+	<message>
+		<err_code>13430</err_code>
+		<translation>Asociaþi fiºierul corect. Formatul fiºierului este *.</translation>
+		<variable>bh_not_correct_file</variable>
+	</message>
+	<message>
+		<err_code>13431</err_code>
+		<translation>Adresã IP nevalidã. Introduceþi-o din nou.</translation>
+		<variable>bh_invalid_ip</variable>
+	</message>
+	<message>
+		<err_code>13432</err_code>
+		<translation>Masca de subreþea este nevalidã. Introduceþi-o din nou.[NEL]</translation>
+		<variable>bh_invalid_mask</variable>
+	</message>
+	<message>
+		<err_code>13433</err_code>
+		<translation>Adresa IP LAN ºi adresa IP WAN trebuie sã fie în aceeaºi subreþea.[NEL]</translation>
+		<variable>bh_same_lan_wan_subnet</variable>
+	</message>
+	<message>
+		<err_code>13434</err_code>
+		<translation>Numele fiºierului nu poate fi necompletat.</translation>
+		<variable>bh_filename_null</variable>
+	</message>
+	<message>
+		<err_code>13435</err_code>
+		<translation>Configurarea conexiunii la Internet necesită experienţă în reţele. Sigur doriţi să continuaţi?</translation>
+		<variable>bh_no_genie_help_confirm</variable>
+	</message>
+	<message>
+		<err_code>13436</err_code>
+		<translation>Avertisment! [NEL]Restabilirea setãrilor dintr-o configuraþie va ºterge toate setãrile curente. [NEL]Sigur efectuaþi aceastã operaþie?</translation>
+		<variable>bh_ask_for_restore</variable>
+	</message>
+		<message>
+		<err_code>13438</err_code>
+		<translation>Adresã MAC nevalidã. Introduceþi-o din nou.</translation>
+		<variable>gsm_msg_invalid_mac</variable>
+	</message>
+	<message>
+		<err_code>13439</err_code>
+		<translation>Nume</translation>
+		<variable>gsm_msg_resv_name</variable>
+	</message>
+	<message>
+		<err_code>13440</err_code>
+		<translation>nu trebuie sã fie necompletat.[NEL]</translation>
+		<variable>gsm_msg_blank</variable>
+	</message>
+	<message>
+		<err_code>13441</err_code>
+		<translation>Caracterul nu este permis în SSID</translation>
+		<variable>gsm_msg_inv_ssid</variable>
+	</message>
+	<message>
+		<err_code>13442</err_code>
+		<translation>Lungime insuficientã cod de acces. Trebuie sã aibã minimum 8 caractere.</translation>
+		<variable>gsm_msg_wls_wpa_key_must_8</variable>
+	</message>
+	<message>
+		<err_code>13443</err_code>
+		<translation>Un cod de acces constă din 8~63 caractere ASCII sau exact 64 de cifre hexazecimale. O cifră hexazecimală este unul dintre caracterele următoare: 0, 1, 2, ..., 8, 9, A, B, C, D, E, F.</translation>
+		<variable>gsm_msg_wls_wpa_key_must_63</variable>
+	</message>
+	<message>
+		<err_code>13444</err_code>
+		<translation>Caracterul nu este permis în codul de acces</translation>
+		<variable>gsm_msg_wls_wpa_key_forbid</variable>
+	</message>
+</error_msg>

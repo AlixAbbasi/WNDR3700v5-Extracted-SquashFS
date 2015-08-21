@@ -1,0 +1,14 @@
+#info_div { height:100px; width:600px; }
+
+#allBtns_div { width:900px;  margin:10px ; auto;}
+
+#allBtns_div .small_buttons_split { height:30px; width:60px; margin:0px 0px; float:left; }
+#allBtns_div .middle_buttons_split { height:30px; width:120px; margin:0px 0px; float:left; }
+
+#btnsContainer_div1 { width:200px; float:left; }
+
+#btnsContainer_div2 { width:200px; float:left;}
+
+#btnsContainer_div3 { width:220px; float:left; }
+
+#words_div_success{  margin:30px 10% 0px 10%;}

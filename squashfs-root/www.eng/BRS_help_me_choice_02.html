@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>NETGEAR Router @model_name# </title>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style/hijack_style.css" />
+<script language="javascript" type="text/javascript" src="script/brs_hijack.js"></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<style type="text/css">
+	#allBtns_div { width:600px;  margin:10px auto;}
+
+	#allBtns_div .success_buttons_split { height:30px; width:10%; margin:0px 0px; float:left; }
+
+	#btnsContainer_div1 { width:30%; float:left; right :30px;}	
+
+	#btnsContainer_div2 { width:30%; float:right; }
+</style>
+<SCRIPT language=javascript type=text/javascript>
+
+function initPage()
+{
+	var btns_div1 = document.getElementById("btnsContainer_div1");
+	var btns_div2 = document.getElementById("btnsContainer_div2");	
+	btns_div1.onclick = function()
+	{
+		location.href="BRS_help_me_choice_01.html";
+
+	return true;
+	}
+	btns_div2.onclick = function()
+	{
+		var choices_div = document.getElementById("choices_div");
+		var choices = choices_div.getElementsByTagName("input");
+		if(choices[0].checked)
+		{
+		    location.href ="setup.cgi?next_file=BRS_help_me_choice_03.html&this_file=BRS_help_me_choice_02.html";
+		}
+		else if(choices[1].checked)
+		{
+		     location.href="setup.cgi?next_file=BRS_help_me_choice_04.html&this_file=BRS_help_me_choice_02.html";
+		}
+		else
+		{
+			alert(getErrorMsgByVar("bh_select_an_option"));
+			return false;
+		}
+	}
+	return true;
+}
+addLoadEvent(initPage);
+</SCRIPT></HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+<p><span languageCode = "">Do you currently use <a  style="text-decoration:underline;color:#0000ff;" target="_blank"  href="./BRS_ap_msg1.html" languageCode = "">advanced functions</a> like <a  style="text-decoration:underline;color:#0000ff;" target="_blank"  href="./BRS_ap_msg3.html" languageCode = "">port forwarding</a>(sometimes called port mapping) on your existing gateway? These functions are usually used by advanced users.</span></p>
+<DIV class=helpChoice_divs id=choices_div>
+	<DIV class=radio_div>
+	<INPUT type=radio  value=0 name=help_choice ><b languageCode = "">Yes</b>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<INPUT type=radio  value=0 name=help_choice ><b languageCode = "">No</b>
+	</DIV>
+</DIV>
+</DIV>
+<BR>
+<BR>
+<BR>
+<BR>
+<DIV class=wizard_buttons_div id=allBtns_div>
+	<DIV class=buttons_img_div id=btnsContainer_div1 align=center><IMG src="image/ca-little-purple-button.gif">
+		<DIV class=buttons_words_div><span languageCode = "175">Back</span></DIV>
+	</DIV>
+	<DIV class=buttons_img_div id=btnsContainer_div2 align=center><IMG src="image/ca-little-purple-button.gif">
+		<DIV class=buttons_words_div><span languageCode = "3100">Next</span></DIV>
+	</DIV>	
+</DIV>
+</DIV>
+<input type="hidden" name="SID" value="@SID#">
+
+<input type="hidden" name="todo" value="change_to_ap">
+<input type="hidden" name="this_file" value="BRS_help_me_choice_02.html">
+<input type="hidden" name="next_file" value="BRS_help_me_choice_03.html">
+</FORM>
+
+	<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

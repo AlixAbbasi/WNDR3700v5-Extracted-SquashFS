@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<error_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<message>
+		<err_code>13421</err_code>
+		<translation>まずオプションを選択してください。</translation>
+		<variable>bh_select_an_option</variable>
+	</message>
+	<message>
+		<err_code>13422</err_code>
+		<translation>ユーザ名は空欄にできません。</translation>
+		<variable>bh_login_name_null</variable>
+	</message>
+	<message>
+		<err_code>13423</err_code>
+		<translation>無効なパスワードです。</translation>
+		<variable>bh_password_error</variable>
+	</message>
+	<message>
+		<err_code>13424</err_code>
+		<translation>アイドル時間を入力してください。[NEL]</translation>
+		<variable>bh_idle_time_null</variable>
+	</message>
+	<message>
+		<err_code>13425</err_code>
+		<translation>無効なアイドル時間です。 正しい数値を入力してください。[NEL]</translation>
+		<variable>bh_invalid_idle_time</variable>
+	</message>
+	<message>
+		<err_code>13426</err_code>
+		<translation>無効なIPアドレスです。 もう一度入力するか、空白にしてください</translation>
+		<variable>bh_invalid_myip</variable>
+	</message>
+	<message>
+		<err_code>13427</err_code>
+		<translation>無効なゲートウェイIPアドレスです。 もう一度入力してください。</translation>
+		<variable>bh_invalid_gateway</variable>
+	</message>
+	<message>
+		<err_code>13428</err_code>
+		<translation>コンピュータはプリンタに対応していません。</translation>
+		<variable>bh_not_support_print</variable>
+	</message>
+	<message>
+		<err_code>13429</err_code>
+		<translation>ファイル名は空欄にできません。</translation>
+		<variable>bh_filename_null</variable>
+	</message>
+	<message>
+		<err_code>13430</err_code>
+		<translation>正しいファイルを割り当ててください。 ファイル形式は *. です</translation>
+		<variable>bh_not_correct_file</variable>
+	</message>
+	<message>
+		<err_code>13431</err_code>
+		<translation>無効なIPアドレスです。 もう一度入力してください。</translation>
+		<variable>bh_invalid_ip</variable>
+	</message>
+	<message>
+		<err_code>13432</err_code>
+		<translation>無効なサブネットマスクです。 もう一度入力してください。[NEL]</translation>
+		<variable>bh_invalid_mask</variable>
+	</message>
+	<message>
+		<err_code>13433</err_code>
+		<translation>LAN IPアドレスとWAN IPアドレスは同じサブネットに設定しないでください。</translation>
+		<variable>bh_same_lan_wan_subnet</variable>
+	</message>
+	<message>
+		<err_code>13434</err_code>
+		<translation>ファイル名は空欄にできません。</translation>
+		<variable>bh_filename_null</variable>
+	</message>
+	<message>
+		<err_code>13435</err_code>
+		<translation>インターネット接続を設定するには、ネットワーク設定の経験が必要です。 よろしいですか？</translation>
+		<variable>bh_no_genie_help_confirm</variable>
+	</message>
+	<message>
+		<err_code>13436</err_code>
+		<translation>警告！ [NEL]設定ファイルを復元すると、現在の設定をすべて消去します。 [NEL]実行してよろしいですか？</translation>
+		<variable>bh_ask_for_restore</variable>
+	</message>
+		<message>
+		<err_code>13438</err_code>
+		<translation>無効なMACアドレスです。 もう一度入力してください。</translation>
+		<variable>gsm_msg_invalid_mac</variable>
+	</message>
+	<message>
+		<err_code>13439</err_code>
+		<translation>名前</translation>
+		<variable>gsm_msg_resv_name</variable>
+	</message>
+	<message>
+		<err_code>13440</err_code>
+		<translation>は空欄にできません。[NEL]</translation>
+		<variable>gsm_msg_blank</variable>
+	</message>
+	<message>
+		<err_code>13441</err_code>
+		<translation>この文字はSSIDに使用できません。</translation>
+		<variable>gsm_msg_inv_ssid</variable>
+	</message>
+	<message>
+		<err_code>13442</err_code>
+		<translation>パスフレーズの長さが足りません。 少なくとも8文字で設定してください。</translation>
+		<variable>gsm_msg_wls_wpa_key_must_8</variable>
+	</message>
+	<message>
+		<err_code>13443</err_code>
+		<translation>パスフレーズは 8 ～ 63 桁の ASCII 文字、または64 桁 (0～9 および A～F) の十六進）の数字になります。</translation>
+		<variable>gsm_msg_wls_wpa_key_must_63</variable>
+	</message>
+	<message>
+		<err_code>13444</err_code>
+		<translation>この文字はパスフレーズに使用できません。</translation>
+		<variable>gsm_msg_wls_wpa_key_forbid</variable>
+	</message>
+</error_msg>

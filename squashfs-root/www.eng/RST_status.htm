@@ -1,0 +1,840 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><link rel="stylesheet" href="style/form.css">
+<script language=javascript type=text/javascript src=funcs.js></script>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<link rel="stylesheet" href="style/advanced_home.css">
+<title>NETGEAR Router JWNR3200 </title><meta http-equiv=content-type content='text/html; charset=UTF-8'>
+<meta content="MSHTML 6.00.2800.1141" name="GENERATOR">
+<style type="text/css">
+	.breakLong{word-break:break-all;}
+</style>
+</head>
+
+
+<BODY onLoad="loadvalue();" bgcolor=#ffffff>   <!-- loadhelp('_info'); -->
+<!--% table_header("Router Status") %-->
+<!--TABLE width=100%% border=0 cellpadding=0 cellspacing=3>
+<TR><TD colSpan=2><H1>Router Status</H1></TD></TR>
+<TR><TD colSpan=2></TD></TR>
+</table-->
+<script>
+var on_mark="On"
+var off_mark="Off"
+var wanproto="DHCP";
+var endis_wl_radio="1";
+var endis_wla_radio="1";
+
+var wan_status="1";
+var wl_sectype="5";
+var wla_sectype="5";
+var guest_sectype="1";
+var guest_sectype_an="1";
+
+var an_router_flag = parent.an_router_flag;
+var guest_router_flag=parent.guest_router_flag;
+var gui_region='English';
+var netgear_region="NA";
+//var dns_third_flag=(top.dns_third_fla2g == 1 && gui_region == "Russian" && (netgear_region == "WW" || netgear_region == "RU")) ? 1 : 0 ;
+var dns_third_flag=top.dns_third_flag;
+var adv_icon_num = 2; /*to count the number of the modules in advanced home: 2 = Router Information + (WAN or repeater) */
+var dyn_get_ip_flag="1";
+var enable_ap_flag=@ap_mode#;//according to spec Rev10,add AP mode
+
+//wan status
+var wan_status_flag = "@wan_up_time#";
+var eth_wan_status_flag = "@eth_wan_up#";
+var signal = "---";
+var yota_support="@yota_support#";
+//wireless
+var wlan_status_flag = "@wlan_if_up_flag#";
+var wlan_security_type = "@h_security_type#";
+var wlan_status_flag_5g = "@wlan_if_up_flag_5g#";
+var wlan_security_type_5g = "@h_security_type_an#";
+
+//guest_network
+var Guest_wlan_status_flag = "@h_guest_network_enable_status#";
+var Guest_wlan_security_type = "@h_guest_security_type_status#";
+var Guest_wlan_status_flag_5g = "@h_guest_network_enable_status_5g#";
+var Guest_wlan_security_type_5g = "@h_guest_security_type_status_5g#";
+
+function loadvalue()
+{
+	IE_RST_status();
+	if(enable_ap_flag == 1)
+	{	//there will be no "Internet Port" info after AP mode is on
+//		document.getElementById("ap_lan_port").style.display="";
+		document.getElementById("wan_port").style.display="none";
+		document.getElementById("ap_port").style.display="";
+		document.getElementById("mode_1").style.display="";
+		document.getElementById("mode_2").style.display="";
+		document.getElementById("ap1").style.display="none";
+		document.getElementById("ap2").style.display="none";
+		document.getElementById("ap3").style.display="none";
+		document.getElementById("ap4").style.display="none";
+		document.getElementById("ap5").style.display="none";
+		document.getElementById("ap6").style.display="none";
+		document.getElementById("ap7").style.display="none";
+		document.getElementById("ap8").style.display="none";
+	}
+	else
+	{
+		//document.getElementById("ap_lan_port").style.display="none";
+		document.getElementById("wan_port").style.display="";
+		document.getElementById("ap_port").style.display="none";
+		document.getElementById("mode_1").style.display="none";
+		document.getElementById("mode_2").style.display="none";
+		document.getElementById("ap1").style.display="";
+		document.getElementById("ap2").style.display="";
+		document.getElementById("ap3").style.display="";
+		document.getElementById("ap4").style.display="";
+		document.getElementById("ap5").style.display="";
+		document.getElementById("ap6").style.display="";
+		document.getElementById("ap7").style.display="";
+		document.getElementById("ap8").style.display="";
+	}
+
+}
+function show_3g_protocol()
+{
+	var protocol="---";
+	switch("@pdp_type#")
+	{
+		case "0":
+		protocol = "IP";
+		break;
+
+		case "1":
+		protocol = "PDP-IP";
+		break;
+
+		case "2":
+		protocol = "PPP";
+		break;
+
+		case "3":
+		protocol = "PDP-PPP";
+		break;
+	}
+
+	document.write(protocol);
+}
+function show_3g_signal()
+{
+	switch("@hsdpa_signalquality#")
+	{
+		case "2":
+		signal = "<img src=\"image/2.jpg\" />";
+		break;
+
+		case "3":
+		signal = "<img src=\"image/3.jpg\" />";
+		break;
+
+		case "4":
+		signal = "<img src=\"image/4.jpg\" />";
+		break;
+
+		case "5":
+		signal = "<img src=\"image/5.jpg\" />";
+		break;
+	}
+
+}
+
+function show_wan_ip()
+{
+    var ip ="";
+	var wan_ip="@status_wan_ip#";
+	var ether_wan_ip="@status_eth_wan_ip#";
+
+    if("@eth_wan_e#" == "")
+        ip = wan_ip+"<br>("+ether_wan_ip+")";
+    else
+        ip = wan_ip;
+        
+	document.write(ip);
+}
+function show_wan_mode()
+{
+    var mode ="";
+	var wan_mode="@wan_dhcp_status#";
+	var ether_wan_mode="@eth_wan_dhcp_status#";
+
+    if("@eth_wan_e#" == "")
+        mode = wan_mode+" ("+ether_wan_mode+")";
+    else
+        mode = wan_mode;
+        
+	document.write(mode);
+}
+function show_wan_mask()
+{
+    var mask ="";
+	var wan_mask="@status_wan_mask#";
+	var ether_wan_mask="@status_eth_wan_mask#";
+
+    if("@eth_wan_e#" == "")
+        mask = wan_mask+"<br>("+ether_wan_mask+")";
+    else
+        mask = wan_mask;
+        
+	document.write(mask);
+}
+function setTitleClass(str,id)
+{
+	var title_div = document.getElementById(id);
+
+	if( str.length >=46 )
+	{
+		title_div.className = "title_doubleline";
+	}
+	else if(gui_region=='Polish' && wan_status != '1' && str.length >=42)
+	{
+		title_div.className = "title_doubleline";
+	}
+	else if(str.length >=30 )
+	{
+		title_div.className = "title_smallFonts";
+	}
+	else
+	{
+		title_div.className = "title";
+	}
+}
+
+function click_direct(str1,str2)
+{
+	/*Spec Rev13: if ap mode, show LAN Port info, click "lan port", direct to "ap mode settting page"*/
+  if(enable_ap_flag == 1 && str2.indexOf("internet") !=-1 ){
+			str1="advanced";
+			str2="wlap";
+	}
+   var sub_name= str1+"_sub";
+    if(top.document.getElementById(sub_name).style.display == "none")
+	parent.open_or_close_sub(str1);
+
+	parent.click_adv_action(str2);
+}
+
+function confirm_reboot()
+{
+	if(confirm(getErrorMsgByVar("gsm_msg_confirm_reboot")))
+		return true;
+	else
+		return false;
+}
+
+</script>
+
+<div id="content_icons">
+
+<form name="formname" method="POST" action="setup.cgi@post_par#">
+<div id="icon1" class="adv_icon">
+	<div class="title">
+		<img src="image/icon/advanced-status-good.gif" />
+		<b languageCode = "3136">Router Information</b>
+	</div>
+	<div class="info_div">
+	<TABLE class="icon_table" id="RouterInfo" width=100% border=0 cellpadding=0 cellspacing=3>
+<TR>
+	<TD width="65%"><B languageCode = "675">Hardware Version</B></TD>
+	<TD>@model_name#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "537">Firmware Version</B></TD>
+	<TD>@fw_version#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD width="65%"><B languageCode = "677">GUI Language Version</B></TD>
+	<TD>@gui_version#</TD>
+</TR>
+
+<TR id=mode_1><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=mode_2>
+	<TD width="65%"><B languageCode = "3451">Operation Mode</B></TD>
+	<TD><span languageCode = "3452">AP</span></TD>
+</TR>
+<TR id=ap1><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=ap2>
+	<TD colspan=2><span class="subhead_blue" languageCode = "608">LAN Port</span></TD>
+</TR>
+<TR id=ap3><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=ap4>
+	<TD width="65%"><B languageCode = "83">MAC Address</B></TD>
+	<TD>@lan_mac#</TD>
+</TR>
+<TR id=ap5><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=ap6>
+	<TD><B languageCode = "71">IP Address</B></TD>
+	<TD>@c4_sysLANIPAddr#</TD>
+</TR>
+<TR id=ap7><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=ap8>
+	<TD><B languageCode = "3206">DHCP Server</B></TD>
+	<TD>@lan_dhcp_status#</TD>
+</TR>
+</table>
+</div>
+<div class="button_div">
+<TABLE border="0" cellpadding="0" cellspacing="0">
+<TR>
+	<TD nowrap colspan=2 align=center>
+		<input type="submit" name="Reboot" class="reboot" value="Reboot" onclick="return confirm_reboot();"languageCode = "209">
+	<input type="hidden" name="todo" value="reboot">
+	</TD>
+</TR>
+</TABLE>
+</div>
+</div>
+</form>
+
+@wds_wan_s#
+@hsdpa_hide_s#
+<div id="icon2" class="adv_icon">
+	<div id="icon2_title" class="title" onclick='click_direct("usb","usb_mobile");' style="cursor:pointer">
+		<script>
+		if( (enable_ap_flag == 1) || (enable_ap_flag != 1 &&  "@hsdpa_status_lanid#" == "3364") )
+			document.write('<img src="image/icon/advanced-status-good.gif" />');
+		else
+			document.write('<img src="image/icon/advanced-status-error.gif" />');
+		if(enable_ap_flag == 1)
+		{
+			document.write('<b languageCode = \"608\">LAN Port</b>');
+			setTitleClass("LAN Port","icon2_title");
+		} else
+		{
+			document.write('<b languageCode = \"3401\">Mobile Broadband Port</b>');
+			setTitleClass("Mobile Broadband Port","icon2_title");
+		}
+		</script>
+	</div>
+	<div class="info_div" id="wan_port">
+<TABLE class="icon_table" width=100% border=0 cellpadding=0 cellspacing=3 >
+<script>
+    if (yota_support == "1"){
+        document.write('<TR>');
+	    document.write('<TD width="65%"><B languageCode = "597">Connection Type</B></TD>');
+	    document.write('<TD><span >---</span></TD>');
+        document.write('</TR>');
+        document.write('<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>');
+        document.write('<TR>');
+	    document.write('<TD width="65%"><B languageCode="3459">Signal Strength</B></TD>');
+	    document.write('<TD>---</TD>');
+        document.write('</TR>');
+        document.write('<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>');
+        document.write('<TR>');
+        document.write('<TD width="65%"><B languageCode = "707">Connection Status</B></TD>');
+        document.write('<TD>---</TD>');
+        document.write('</TR>');
+        document.write('<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>');
+		document.write('<TR>');
+		document.write('<TD nowrap><B languageCode = "3490">Modem Setup Page</B></TD>');
+		document.write('<TD nowrap><a class="linktype" target="_blank" href="http://10.0.0.1">http://10.0.0.1</a></TD>');
+		document.write('</TR>');
+	}
+	else
+	{
+        document.write('<TR>');
+	    document.write('<TD width="65%"><B languageCode = "597">Connection Type</B></TD>');
+	    document.write('<TD><span >@hsdpa_mode#</span></TD>');
+        document.write('</TR>');
+        document.write('<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>');
+        document.write('<TR>');
+	    document.write('<TD width="65%"><B languageCode="3459">Signal Strength</B></TD>');
+	    show_3g_signal();
+	    document.write('<TD>'+signal+'</TD>');
+        document.write('</TR>');
+        document.write('<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>');
+        document.write('<TR>');
+	    document.write('<TD width="65%"><B languageCode = "707">Connection Status</B></TD>');
+	    document.write('<TD><span languagecode="@hsdpa_status_lanid#">@hsdpa_status#</span></TD>');
+        document.write('</TR>');
+    }
+</script>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "71">IP Address</B></TD>
+	<TD>@status_wan_ip_3g#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "151">Protocol</B></TD>
+	<TD><script>show_3g_protocol()</script></TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "75">IP Subnet Mask</B></TD>
+	<TD>@status_wan_mask_3g#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "683">Domain Name Server</B></TD>
+	<TD>@status_wan_dns_3g#</TD>
+</TR>
+</table>
+</div>
+<div class="button_div">
+<TABLE class="icon_table" width=100% border=0 cellpadding=0 cellspacing=3>
+	<TR></TR>
+	<TR></TR>
+<TR>
+	<TD nowrap colspan=2 align=center>
+	<input class="middle_common_bt" type="button" name="Show Statistics" value="Show Statistics" onClick="window.open('RST_statistics.htm', 'show_statistic', 'width=961,height=400,top=200,left=200,status=yes');" languageCode = "563">
+	<input id="conn_status" class="com_bt" type="button" name="Connection Status" value="Connection Status" onClick="click_status()" languageCode = "707">
+	<script>
+        if (wanproto == "Static IP") document.getElementById("conn_status").style.display="none";
+        </script>
+        </TD>
+</TR>
+</TABLE>
+</div>
+</div>
+@hsdpa_hide_e#
+
+@ether_hide_s#
+<div id="icon2" class="adv_icon">
+	<div id="icon2_title" class="title" onclick='click_direct("setup","internet");' style="cursor:pointer">
+		<script>
+		if((enable_ap_flag == 1) || (enable_ap_flag != 1 &&  wan_status_flag != "00:00:00"))
+			document.write('<img src="image/icon/advanced-status-good.gif" />');
+		else
+			document.write('<img src="image/icon/advanced-status-error.gif" />');
+		if(enable_ap_flag == 1)
+		{
+			document.write('<b languageCode = \"608\">LAN Port</b>');
+			setTitleClass("LAN Port","icon2_title");
+		} else
+		{
+			document.write('<b languageCode = \"3207\">Internet Port</b>');
+			setTitleClass("Internet Port","icon2_title");
+		}
+		</script>
+	</div>
+	<div class="info_div" id="wan_port">
+<TABLE class="icon_table" id="InternetPro" style="table-layout:fixed" width=100% border=0 cellpadding=0 cellspacing=3 >
+
+<TR>
+	<TD width="65%"><B languageCode = "83">MAC Address</B></TD>
+	<TD>@status_wan_mac#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "71">IP Address</B></TD>
+	<TD><script>show_wan_ip()</script></TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "74">Connection</B></TD>
+	<TD><script>show_wan_mode()</script></TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "75">IP Subnet Mask</B></TD>
+	<TD><script>show_wan_mask()</script></TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "683">Domain Name Server</B></TD>
+	<TD>@status_wan_dns#</TD>
+</TR>
+</table>
+</div>
+
+
+<div class="info_div" id="ap_port" style="display:none">
+<TABLE class="icon_table" style="table-layout:fixed" width=100% border=0 cellpadding=0 cellspacing=3 >
+
+<TR>
+        <TD width="65%"><B languageCode = "83">MAC Address</B></TD>
+        <TD>@lan_mac#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+        <TD><B languageCode = "71">IP Address</B></TD>
+        <TD>@c4_APether#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line.gif" /></TD></TR>
+<TR>
+        <TD><B languageCode = "74">Connection</B></TD>
+        <TD>@wan_dhcp_status#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+        <TD><B languageCode = "75">IP Subnet Mask</B></TD>
+        <TD>@c4_APMask#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+        <TD><B languageCode = "683">Domain Name Server</B></TD>
+        <TD>@c4_AP_DAddr#<br>@c4_AP_PDAddr#</TD>
+</TR>
+</table>
+</div>
+
+<div class="button_div">
+<TABLE class="icon_table" width=100% border=0 cellpadding=0 cellspacing=3>
+	<TR></TR>
+	<TR></TR>
+<TR>
+	<TD nowrap colspan=2 align=center>
+	<input class="middle_common_bt" type="button" name="Show Statistics" value="Show Statistics" onClick="window.open('RST_statistics.htm', 'show_statistic', 'width=961,height=400,top=200,left=200,status=yes');" languageCode = "563">
+	<input id="conn_status" class="com_bt" type="button" name="Connection Status" value="Connection Status" onClick="click_status()" languageCode = "707">
+	<script>
+        if (wanproto == "Static IP") document.getElementById("conn_status").style.display="none";
+        </script>
+        </TD>
+</TR>
+</TABLE>
+</div>
+</div>
+@ether_hide_e#
+@wds_wan_e#
+<!--end of Internet port-->
+<img id="pl_1" style="display:none;" class="page_line" src="image/icon/advanced_page_line.gif"/>
+@wireless_hide_s#
+
+<!-- For 2.4G setting -->
+<div id="title_bgn" class="adv_icon">
+	<div id="words_title" class="title" onclick='click_direct("setup","wireless");' style="cursor:pointer">
+		<script>
+		if (wlan_status_flag != "1")
+			document.write('<img src="image/icon/advanced-status-error.gif" />');
+		else
+		{
+			if (wlan_security_type != "Disable")
+			     document.write('<img src="image/icon/advanced-status-good.gif" />');
+			else
+			     document.write('<img src="image/icon/advanced-status-warning.gif" />');
+		}
+		</script>
+		<b languageCode = "468">Wireless Settings(2.4GHz)</b>
+	</div>
+	<script>setTitleClass("Wireless Settings","words_title");</script>
+	<div class="info_div" id="">
+	<TABLE class="icon_table" id="Wireless2.4G" width=100% border=0 cellpadding=0 cellspacing=3>
+
+<TR>
+	<TD width="65%" nowrap><B languageCode = "32">Name (SSID)</B></TD>
+	<TD class="breakLong">@wifi_r_ssid#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "34">Region</B></TD>
+	<TD>@h_status_WRegion#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "36">Channel</B></TD>
+	<TD>@h_w_r_channel#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "561">Mode</B></TD>
+	<TD>@h_dual_mode_state#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "38">Wireless AP</B></TD>
+	<TD>@h_enable_ap_status#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "40">Broadcast Name</B></TD>
+	<TD>@h_ssid_bc_status#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "691">Wi-Fi Protected Setup</B></TD>
+	<TD>@h_wsc_config_status#</TD>
+</TR>
+</table>
+</div>
+</div>
+
+<!-- For 5G setting -->
+<div id="title_bgn" class="adv_icon">
+	<div id="words_title" class="title" onclick='click_direct("setup","wireless");' style="cursor:pointer">
+		<script>
+		if (wlan_status_flag_5g != "1")
+			document.write('<img src="image/icon/advanced-status-error.gif" />');
+		else
+		{
+			if (wlan_security_type_5g != "Disable")
+			     document.write('<img src="image/icon/advanced-status-good.gif" />');
+			else
+			     document.write('<img src="image/icon/advanced-status-warning.gif" />');
+		}
+		</script>
+		<b languageCode = "469">Wireless Settings(5GHz)</b>
+	</div>
+	<script>setTitleClass("Wireless Settings","words_title");</script>
+	<div class="info_div" id="">
+	<TABLE class="icon_table" id="Wireless5G" width=100% border=0 cellpadding=0 cellspacing=3>
+
+<TR>
+	<TD width="65%" nowrap><B languageCode = "32">Name (SSID)</B></TD>
+	<TD class="breakLong">@wifi_r_ssid1#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "34">Region</B></TD>
+	<TD>@h_status_WRegion#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "36">Channel</B></TD>
+	<TD class=breakLong>@h_w_r_channel1#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "561">Mode</B></TD>
+	<TD>@h_dual_mode_state_an#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "38">Wireless AP</B></TD>
+	<TD>@h_enable_ap_an_status#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "40">Broadcast Name</B></TD>
+	<TD>@h_ssid_bc_an_status#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD><B languageCode = "691">Wi-Fi Protected Setup</B></TD>
+	<TD>@h_wsc_config_an_status#</TD>
+</TR>
+</table>
+</div>
+</div>
+
+
+<!-- wireless a/n -->
+@guest_hide_s#
+
+<!-- For 2.4G Guest -->
+<div id="wl_title_bgn" class="adv_icon">
+	<div id="guest_bgn" class="title" onclick='click_direct("setup","guest");' style="cursor:pointer">
+		<script>
+		/* spec says : "when wireless radio is off, then it should display red cross 'X' sign " */
+			if (wlan_status_flag != "1")
+				document.write('<img src="image/icon/advanced-status-error.gif" />');
+		/* Guest_wlan_status_flag has been added with languagecode in cgi, so we should use indexOf() here. */
+			else if ( (Guest_wlan_status_flag.indexOf("On") >= 0) && (
+			Guest_wlan_security_type == "1" || Guest_wlan_security_type == "2" ||
+			Guest_wlan_security_type == "3" || Guest_wlan_security_type == "4") )
+				document.write('<img src="image/icon/advanced-status-good.gif" />');
+			else
+				document.write('<img src="image/icon/advanced-status-warning.gif" />');
+		</script>
+		<b><span languageCode = "470">Guest Network</span>(2.4GHz)</b>
+	</div>
+	<script>setTitleClass("Guest Network","guest_bgn");</script>
+	<div class="info_div" id="">
+	<TABLE class="icon_table" id="GuestNetwork2.4G" width=100% border=0 cellpadding=0 cellspacing=3>
+<TR id=wlanssid>
+	<TD nowrap><B languageCode = "32">Name (SSID)</B></TD>
+	<TD class="breakLong">@h_guest_ssid_status#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=wlanap>
+	<TD><B languageCode = "38">Wireless AP</B></TD>
+	<TD>@h_guest_network_enable_status#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=wlanbro>
+	<TD><B languageCode = "40">Broadcast Name</B></TD>
+	<TD>@h_guest_ssid_bc_status#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=wlanallow>
+	<TD width="65%"><B languageCode = "697">Allow guest to access My Local Network</B></TD>
+	<TD>@h_guest_allow_access_status#</TD>
+</TR>
+</table>
+</div>
+</div>
+
+<!-- For 5G Guest -->
+<div id="wl_title_bgn" class="adv_icon">
+	<div id="guest_bgn" class="title" onclick='click_direct("setup","guest");' style="cursor:pointer">
+		<script>
+		/* spec says : "when wireless radio is off, then it should display red cross 'X' sign " */
+			if (wlan_status_flag_5g != "1")
+				document.write('<img src="image/icon/advanced-status-error.gif" />');
+		/* Guest_wlan_status_flag has been added with languagecode in cgi, so we should use indexOf() here. */
+			else if ( (Guest_wlan_status_flag_5g.indexOf("On") >= 0) && (
+			Guest_wlan_security_type_5g == "1" || Guest_wlan_security_type_5g == "2" ||
+			Guest_wlan_security_type_5g == "3" || Guest_wlan_security_type_5g == "4") )
+				document.write('<img src="image/icon/advanced-status-good.gif" />');
+			else
+				document.write('<img src="image/icon/advanced-status-warning.gif" />');
+		</script>
+		<b><span languageCode = "470">Guest Network</span>(5GHz)</b>
+	</div>
+	<script>setTitleClass("Guest Network","guest_bgn");</script>
+	<div class="info_div" id="">
+	<TABLE class="icon_table" id="GuestNetwork5G" width=100% border=0 cellpadding=0 cellspacing=3>
+<TR id=wlanssid>
+	<TD nowrap><B languageCode = "32">Name (SSID)</B></TD>
+	<TD class="breakLong">@h_guest_ssid_status_5g#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=wlanap>
+	<TD><B languageCode = "38">Wireless AP</B></TD>
+	<TD>@h_guest_network_enable_status_5g#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=wlanbro>
+	<TD><B languageCode = "40">Broadcast Name</B></TD>
+	<TD>@h_guest_ssid_bc_status_5g#</TD>
+</TR>
+<TR><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR id=wlanallow>
+	<TD width="65%"><B languageCode = "697">Allow guest to access My Local Network</B></TD>
+	<TD>@h_guest_allow_access_status_5g#</TD>
+</TR>
+</table>
+</div>
+</div>
+
+
+@guest_hide_e#
+@wireless_hide_e#
+<!--  end this -->
+<img id="pl_2_1" style="display:none;" class="page_line" src="image/icon/advanced_page_line.gif"/>
+@wds_station_s#
+
+<div id="wds2_4_repeater" class="adv_icon">
+	<div id="wds2_4_title" class="title" >
+		<img src="image/icon/advanced-status-good.gif" />
+		<b><span languageCode = "903">Wireless Repeater</span>  (2.4GHz b/g/n)</b>
+	</div>
+	<script>setTitleClass("Wireless Repeater","wds2_4_title");</script>
+	<div class="info_div" id="">
+	<TABLE class="icon_table" width=100% border=0 cellpadding=0 cellspacing=3>
+	<TR>
+	<TD width="65%"><B languageCode = "700">Base Station MAC Address</B></TD>
+	<TD>@status_station_mac#</TD>
+</TR>
+<TR id=wlaniso_line><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+</table>
+</div>
+</div>
+
+@wds_station_e#
+
+@wds_station_s_an#
+<div id="wds5_repeater" class="adv_icon">
+	<div id="wds5_title" class="title" >
+		<img src="image/icon/advanced-status-good.gif" />
+		<b><span languageCode = "903">Wireless Repeater</span> (5GHz a/n)</b>
+	</div>
+	<script>setTitleClass("Wireless Repeater","wds5_title");</script>
+	<div class="info_div" id="">
+	<TABLE class="icon_table" width=100% border=0 cellpadding=0 cellspacing=3>
+	<TR>
+	<TD width="65%"><B languageCode = "700">Base Station MAC Address</B></TD>
+	<TD>@status_station_mac_an#</TD>
+</TR>
+<TR id=wlaniso_line><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+</table>
+</div>
+</div>
+@wds_station_e_an#
+
+@wds_repeater_s#
+<div id="wds2_4_repeater" class="adv_icon">
+	<div id="wds2_4_title" class="title" >
+		<img src="image/icon/advanced-status-good.gif" />
+		<b><span languageCode = "903">Wireless Repeater</span>  (2.4GHz b/g/n)</b>
+	</div>
+	<script>setTitleClass("Wireless Repeater","wds2_4_title");</script>
+	<div class="info_div" id="">
+<table class="icon_table" width=100% border=0 cellpadding=0 cellspacing=3>
+<TR>
+	<TD width="65%"><B languageCode = "2017">Repeater MAC Address 1</B></TD>
+	<TD>@status_repeater1_mac#</TD>
+</TR>
+<TR id=wlaniso_line><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD width="65%"><B languageCode = "2018">Repeater MAC Address 2</B></TD>
+	<TD>@status_repeater2_mac#</TD>
+</TR>
+<TR id=wlaniso_line><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD width="65%"><B languageCode = "2019">Repeater MAC Address 3</B></TD>
+	<TD>@status_repeater3_mac#</TD>
+</TR>
+<TR id=wlaniso_line><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD width="65%"><B languageCode = "2020">Repeater MAC Address 4</B></TD>
+	<TD>@status_repeater4_mac#</TD>
+</TR>
+<TR id=wlaniso_line><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+</table>
+</div>
+</div>
+
+@wds_repeater_e#
+
+@wds_repeater_s_an#
+<div id="wds5_repeater" class="adv_icon">
+	<div id="wds5_title" class="title" >
+		<img src="image/icon/advanced-status-good.gif" />
+		<b><span languageCode = "903">Wireless Repeater</span> (5GHz a/n)</b>
+	</div>
+	<script>setTitleClass("Wireless Repeater","wds5_title");</script>
+	<div class="info_div" id="">
+<table class="icon_table" width=100% border=0 cellpadding=0 cellspacing=3>
+<TR>
+	<TD width="65%"><B languageCode = "2017">Repeater MAC Address 1</B></TD>
+	<TD>@status_repeater1_mac_an#</TD>
+</TR>
+<TR id=wlaniso_line><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD width="65%"><B languageCode = "2018">Repeater MAC Address 2</B></TD>
+	<TD>@status_repeater2_mac_an#</TD>
+</TR>
+<TR id=wlaniso_line><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD width="65%"><B languageCode = "2019">Repeater MAC Address 3</B></TD>
+	<TD>@status_repeater3_mac_an#</TD>
+</TR>
+<TR id=wlaniso_line><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+<TR>
+	<TD width="65%"><B languageCode = "2020">Repeater MAC Address 4</B></TD>
+	<TD>@status_repeater4_mac_an#</TD>
+</TR>
+<TR id=wlaniso_line><TD colspan=2><img src="image/icon/advanced_icon_line1.gif" /></TD></TR>
+</table>
+</div>
+</div>
+@wds_repeater_e_an#
+
+<img id="pl_2_2" style="display:none;" class="page_line" src="image/icon/advanced_page_line.gif"/>
+<img id="pl_3" style="display:none;" class="page_line" src="image/icon/advanced_page_line.gif"/>
+<script>
+function click_status()
+{
+	var conn = "@wantype#";
+	var winoptions;
+		/* ONLY FIX IP use small window */
+	if (conn == "Static IP")
+		winoptions = "width=400,height=260,status=yes,resizable=yes";
+	else
+		winoptions = "width=400,height=360,status=yes,resizable=yes";
+	window.open('RST_wanstat.htm', 'connect_status', winoptions);
+}
+</script>
+<!--/TABLE-->
+
+</div><!-- end of content_icons -->
+
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+
+</BODY>
+</HTML>

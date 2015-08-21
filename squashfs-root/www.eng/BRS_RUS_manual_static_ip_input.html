@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/hijack_03A_E_IP_problem_staticIP_A_inputIP.css" type=text/css rel=stylesheet><LINK href="style/RU_staticIP.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="utility.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="linux.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/funcs.js" type=text/javascript></SCRIPT>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+var MacAddress;
+var DisableFixedIP = false;
+var DisableClassicIP = false;
+var DisableFixedDNS = false;
+var DisableFixedMAC = false;
+var wan_mode = "@brs_rus_wan_mode#"
+
+function loadcheck()
+{
+	if(isIE()){
+		document.formname.system_name.size="24";
+		document.formname.domain_name.size="24";
+	}
+	MacAddress=document.formname.Spoofmac.value;
+	setIP();
+	setDNS();
+	setMAC();
+}
+
+function setIP()
+{
+ 	var cf = document.forms[0];
+	var dflag = cf.WANAssign[0].checked;
+	setDisabled(dflag,cf.WPethr1,cf.WPethr2,cf.WPethr3,cf.WPethr4,cf.WMask1,cf.WMask2,cf.WMask3,cf.WMask4,cf.WGateway1,cf.WGateway2,cf.WGateway3,cf.WGateway4);
+	DisableFixedIP = dflag;
+	dflag = ( cf.WANAssign[0].checked ||  cf.WANAssign[1].checked );
+	DisableClassicIP = dflag;
+	if ( cf.WANAssign[1].checked && cf.DNSAssign[0].checked)
+	{
+		cf.DNSAssign[1].checked = true;
+	}
+}
+
+function setDNS()
+{
+ 	var cf = document.forms[0];
+	if ( cf.WANAssign[1].checked && cf.DNSAssign[0].checked)
+	{
+		alert(getErrorMsgByVar("gsm_msg_eth_dns_before_ip"));
+		cf.DNSAssign[1].checked = true;
+	}
+	var dflag = cf.DNSAssign[0].checked;
+	setDisabled(dflag,cf.DAddr1,cf.DAddr2,cf.DAddr3,cf.DAddr4,cf.PDAddr1,cf.PDAddr2,cf.PDAddr3,cf.PDAddr4);
+	DisableFixedDNS = dflag;
+}
+
+
+function checkData()
+{
+ 	var cf = document.forms[0];
+	var msg = "";
+	var WPethr;
+	var WMask;
+	var fixgw;
+	var accountname = "";
+	var domainname = "";
+
+	if(cf.WANAssign[1].checked)
+	{
+		if(badLANIP(cf.WPethr1,cf.WPethr2,cf.WPethr3,cf.WPethr4,254)
+			|| (parseInt(cf.WPethr4.value, 10)==0))
+			msg+= getErrorMsgByVar("gsm_msg_eth_inv_ip");
+		if(badMASK(cf.WMask1,cf.WMask2,cf.WMask3,cf.WMask4))
+			msg+= getErrorMsgByVar("gsm_msg_eth_inv_mask");
+		//Gateway last byte could be zero
+		if(badSubLANIP(cf.WGateway1,cf.WGateway2,cf.WGateway3,cf.WGateway4,254))
+			msg+= getErrorMsgByVar("gsm_msg_eth_inv_gateway");
+		if (msg.length > 1)
+		{
+			alert(msg);
+			return false;
+		}
+		/* check IP setting valid */
+		WPethr = cf.WPethr1.value + "." + cf.WPethr2.value + "." + cf.WPethr3.value +"." + cf.WPethr4.value;
+		WMask = cf.WMask1.value + "." + cf.WMask2.value + "." + cf.WMask3.value +"." + cf.WMask4.value;
+		fixgw = cf.WGateway1.value + "." + cf.WGateway2.value + "." + cf.WGateway3.value +"." + cf.WGateway4.value;
+		if(IsGatewayValid(WPethr, WMask, fixgw) == false){
+			msg += getErrorMsgByVar("gsm_msg_eth_inv_gateway");
+		}
+	}
+	if(cf.DNSAssign[1].checked)
+	{
+		msg += checkDNSValid(
+			cf.DAddr1, cf.DAddr2, cf.DAddr3, cf.DAddr4,
+			cf.PDAddr1, cf.PDAddr2, cf.PDAddr3, cf.PDAddr4);
+	}
+	if (cf.MACAssign[2].checked)
+	{
+		if(!checkMacStr(cf.Spoofmac))
+			msg+= getErrorMsgByVar("gsm_msg_eth_inv_mac");
+	}
+
+	accountname = cf.system_name.value;
+	domainname = cf.domain_name.value;
+	/* domainname use the same valid characters as DDNS, so we use ValidStr_ddns here. */
+//	if (accountname.length > 0 && isValidStr(accountname.toLowerCase(), ValidStr_ddns, accountname.length) == false) {
+	if(accountname.match( /[^(\x20-\x7E\xA0)]/ )){
+	    msg+= getErrorMsgByVar("gsm_msg_account_invalid");
+	}
+	if (domainname.length > 0 && isValidStr(domainname.toLowerCase(), ValidStr_ddns, domainname.length) == false) {
+	    msg+= getErrorMsgByVar("gsm_msg_domain_invalid");
+	}
+
+    cf.system_name.value = cf.system_name.value.replace(/\xA0/g," ");
+    cf.domain_name.value = cf.domain_name.value.replace(/\xA0/g," ");
+	if (msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+/*
+	if (cf.h_natEnable.value != getRadioCheckedValue(cf.natEnable))   // NAT changed
+	{
+	    if (!confirm("Change NAT setting?\n\nRouter is reset to factory defaults when the NAT setting is changed,\nall the current data will be lost!"))
+	        return false;
+	}
+*/
+	dataToHidden(cf);
+	return true;
+}
+
+
+function natMsg()
+{
+  var msg = getErrorMsgByVar("gsm_msg_eth_warn_nat_allow_all");
+  alert(msg);
+}
+function fwMsg()
+{
+  var msg = getErrorMsgByVar("gsm_msg_eth_warn_no_fw_prot");
+  alert(msg);
+}
+function saveTest()
+{
+ 	var cf = document.forms[0];
+	if(checkData())
+	{
+		cf.todo.value = "saveandtest";
+		cf.submit();
+		return true;
+	}
+	else
+	    return false;
+}
+
+function initPage()
+{
+	var btns_container_div1 = document.getElementById("btnsContainer_div1");
+	var btns_container_div2 = document.getElementById("btnsContainer_div2");
+	btns_container_div1.onclick = function()
+	{
+		if(wan_mode == "dhcpc")
+			location.href = "BRS_RUS_manual_need_account_check.html";
+		else
+			location.href = "BRS_RUS_manual_ip_type_check.html";	
+	}
+	btns_container_div2.onclick = function()
+	{
+		return check_before_post();
+	}
+
+	dataToVisible(document.forms[0]);
+	setDNS();
+	setIP();
+
+    showFirmVersion("none");
+}
+
+function check_before_post()
+{
+	/*Add select option to value's trans*/
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[0];
+
+
+	dataToHidden(document.forms[0]);
+
+	cf.submit();
+
+	return true;
+}
+
+addLoadEvent(initPage);
+
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<!--If you want move WANAssign's place, check the set function of c4_WPethr-->
+ <input type="hidden" name="h_WANAssign" value="@h_WANAssign#">
+ <input type="hidden" name="h_DNSAssign" value="@h_DNSAssign#">
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+<H1><span languageCode = "3272">You have chosen "No". That means you have Dynamic IP (DHCP) or Static IP connection mode. You need to choose, whether your settings are received dynamically or assigned manually.</span></H1>
+
+<DIV id=mainContent_div>
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+	<tr><td colspan="2"><b languageCode="70">Internet</b> <b languageCode="71">IP Address</b></a></td>
+	</tr><tr><td colspan="2" nowrap><input type="radio" name="WANAssign" value="Dynamic" onClick="setIP();setDNS()"><span languageCode="72">Get Dynamically from ISP</span></td>
+	</tr><tr><td colspan="2" nowrap><input type="radio" name="WANAssign" value="Fixed" onClick="setIP();setDNS()"><span languageCode="73">Use Static IP Address</span></td>
+	</tr><tr><td nowrap align="right"><span languageCode="71">IP Address</span></td>
+		<td nowrap align="center" class="num">
+			<input type="text" name="WPethr1" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+			<input type="text" name="WPethr2" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+			<input type="text" name="WPethr3" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+			<input type="text" name="WPethr4" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()"></td>
+	</tr><tr><td nowrap align="right"><span languageCode="75">IP Subnet Mask</span></td>
+		<td align="center" class="num">
+			<input type="text" name="WMask1" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+			<input type="text" name="WMask2" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+			<input type="text" name="WMask3" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+			<input type="text" name="WMask4" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()"></td>
+	</tr><tr><td nowrap align="right"><span languageCode = "3054">Gateway IP Address</span></td>
+		<td align="center" class="num">
+			<input type="text" name="WGateway1" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+			<input type="text" name="WGateway2" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+			<input type="text" name="WGateway3" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()">.
+			<input type="text" name="WGateway4" class="num" size="4" value="" maxlength="3" onFocus="if(DisableFixedIP) this.blur()"></td>
+	</tr>
+	<tr><td colspan="2"><b languageCode="77">Domain Name Server (DNS) Address</b></a></td></tr>
+	<tr><td colspan="2"><input type="radio" name="DNSAssign" value="0" onClick="setDNS()"><span languageCode="78">Get
+		Automatically From ISP</span></td>
+	</tr><tr><td colspan="2"><input type="radio" name="DNSAssign" value="1" onClick="setDNS()"><span languageCode="79">Use These
+		DNS Servers</span></td>
+	</tr><tr><td nowrap align="right"><span languageCode="80">Primary DNS</span></td>
+		<td align="center" class="num"><input type="text" name="DAddr1" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="DAddr2" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="DAddr3" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="DAddr4" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()"></td>
+	</tr><tr><td nowrap align="right"><span languageCode="81">Secondary DNS</span></td>
+		<td align="center" class="num"><input type="text" name="PDAddr1" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="PDAddr2" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="PDAddr3" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()">.<input type="text" name="PDAddr4" class="num" size="4" maxlength="3" value="" onFocus="if(DisableFixedDNS) this.blur()"></td>
+	</tr>
+</table>
+</DIV>
+</DIV>
+</DIV>
+<table width="100%">
+<tr>
+<td>
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=btnsContainer_div1><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "3020">Back</span>
+</DIV>
+</DIV>
+<DIV class=buttons_img_div id=btnsContainer_div2><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span>
+</DIV>
+</DIV>
+</DIV>
+</td>
+</tr>
+</table>
+ <input type="hidden" name="c4_WPethr" value="@c4_WPethr#">
+ <input type="hidden" name="c4_WMask" value="@c4_WMask#">
+ <input type="hidden" name="c4_WGateway" value="@c4_WGateway#">
+ <input type="hidden" name="c4_DAddr" value="@c4_DAddr#">
+ <input type="hidden" name="c4_PDAddr" value="@c4_PDAddr#">
+<input type="hidden" name="brs_rus_wizard_mode" value="manual">
+
+<input type="hidden" name="todo" value="brs_reset_save">
+<input type="hidden" name="this_file" value="BRS_RUS_manual_static_ip_input.html">
+<input type="hidden" name="next_file" value="BRS_RUS_manual_spoof_mac.html">
+<input type="hidden" name="SID" value="@SID#">
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

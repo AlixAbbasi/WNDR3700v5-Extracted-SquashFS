@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta name="description" content="WNR2500_multilangual">
+<title>NETGEAR Router @model_name#</title>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<link rel="stylesheet" href="style/form.css">
+<script language="javascript" type="text/javascript" src="funcs.js"></script>
+<!-- link rel="stylesheet" href="form.css" -->
+<style type="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style><script language="javascript" type="text/javascript"> 
+var speed = 1000;
+var wait_time = 10;
+
+function ShowResult() {
+	if(wait_time  == 0)
+	{
+		location.href="./DNS_ddns_st.htm";
+	}
+	else
+	{
+		wait_time --;
+		window.setTimeout("ShowResult()", speed);
+	}
+}
+ 
+</script></head><body bgcolor="#ffffff" onLoad="ShowResult()">
+<form>
+<div class="fix_button">
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td colspan="2" align="center"><b><span languageCode = "859">Please wait a moment...</span></b></td>
+</tr><tr></tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12">&nbsp; </td>
+</tr></table><input type="hidden" name="todo" value="save"><input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+<p></p>
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

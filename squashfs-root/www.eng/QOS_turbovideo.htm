@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+
+var dev_ip = "@c4_sysLANIPAddr#";
+var dev_mask = "@c4_sysLANSubnetMask#";
+
+function init()
+{
+    var cf = document.forms[0];
+
+    check_tv_sel();
+}
+
+function check_tv_sel()
+{
+    var cf = document.forms[0];
+    if(!cf.qosTV_active.checked)
+    {
+//        cf.qosTV_bandwidth.disabled = true;
+        cf.qosTVIPAddr1.disabled = true;
+        cf.qosTVIPAddr2.disabled = true;
+        cf.qosTVIPAddr3.disabled = true;
+        cf.qosTVIPAddr4.disabled = true;
+    }
+    else
+    {
+//        cf.qosTV_bandwidth.disabled = false;
+        cf.qosTVIPAddr1.disabled = false;
+        cf.qosTVIPAddr2.disabled = false;
+        cf.qosTVIPAddr3.disabled = false;
+        cf.qosTVIPAddr4.disabled = false;
+    }
+}
+
+function checkData()
+{
+ 	var cf = document.forms[0];
+	var msg = "";
+
+    if(cf.qosTV_active.checked)
+    {
+        cf.qosTVIPAddr1.value = cf.qosTVIPAddr1.value.replace(/:/g,"");
+        cf.qosTVIPAddr2.value = cf.qosTVIPAddr2.value.replace(/:/g,"");
+        cf.qosTVIPAddr3.value = cf.qosTVIPAddr3.value.replace(/:/g,"");
+        cf.qosTVIPAddr4.value = cf.qosTVIPAddr4.value.replace(/:/g,"");
+
+        ipaddr = cf.qosTVIPAddr1.value + "." + cf.qosTVIPAddr2.value + "." + cf.qosTVIPAddr3.value + "." + cf.qosTVIPAddr4.value;
+        if(blankIP(cf.qosTVIPAddr1.value, cf.qosTVIPAddr2.value, cf.qosTVIPAddr3.value, cf.qosTVIPAddr4.value)
+        || cf.qosTVIPAddr1.value == "" || cf.qosTVIPAddr2.value == ""
+        || cf.qosTVIPAddr3.value == "" || cf.qosTVIPAddr4.value == ""
+        || badIP2(cf.qosTVIPAddr1, cf.qosTVIPAddr2, cf.qosTVIPAddr3, cf.qosTVIPAddr4, 254)
+        || IsLanIpValid(dev_ip, dev_mask, ipaddr) == false)
+			msg += getErrorMsgByVar("gsm_msg_eth_inv_ip");
+    	if(dev_ip == ipaddr)
+    		msg += getErrorMsgByCode("11004");
+    }
+
+	if (msg.length > 1) {
+	    alert(msg);
+	    return false;
+	}
+
+	dataToHidden(cf);
+
+	return true;
+}
+
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);init();loadhelp('QOS_turbovideo');document.forms[0].elements[0].focus();" onUnload="closeWin(datSubWinVar);">
+<form method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title"><span languageCode = "3227">FastLane</span></div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="RESET" name="Cancel" value="Cancel" onClick='location.href="QOS_turbovideo.htm";' languageCode="51">
+&nbsp;
+<input class="apply_bt" type="SUBMIT" name="cfAlert_Apply" value="Apply" onClick="return checkData()" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+ <!-- Turbo video status -->
+ <tr>
+  <td colspan="2" height="18">
+   <a href="javascript:loadhelp('QOS_turbovideo','status')" tabindex="-1"><b><span languageCode = "3228">FastLane Status</span>:</b></a>&nbsp;&nbsp;&nbsp;@qosTV_status#
+  </td>
+ </tr>
+ <tr>
+  <td colspan="2">
+   <input type="checkbox" name="qosTV_active" value="disable" onclick="check_tv_sel();"><a href="javascript:loadhelp('QOS_turbovideo','active')" tabindex="-1"><b><span languageCode = "3229">Turn On FastLane</span></b></a>
+  </td>
+ </tr>
+ <tr>
+  <td colspan="2" background="liteblue.gif" height="12"></td>
+ </tr>
+
+ <!-- trust IP bandwidth -->
+<!--
+ <tr>
+  <td width="50%" align="left" nowrap>
+   <a href="javascript:loadhelp('QOS_turbovideo','bandwidth')" tabindex="-1">
+    <b><span languageCode = "3230">Bandwidth Reserved for Trusted IP Address</span></b>
+   </a>
+  </td>
+-->
+<!--
+  <td width="50%" align="right">
+   <select name="qosTV_bandwidth" size="1">
+    <option value="percent50" selected>50%</option>
+    <option value="percent60">60%</option>
+    <option value="percent70">70%</option>
+    <option value="percent80">80%</option>
+   </select>
+  </td>
+-->
+ </tr>
+ <tr>
+  <td nowrap>
+   <b><span languageCode = "136">Trusted IP Address</span></b>
+  </td>
+  <td width="297">
+   <input type="text" name="qosTVIPAddr1" class="num" size="4" value="@qosTVIPAddr1#" maxlength="3" tabindex="1">.
+   <input type="text" name="qosTVIPAddr2" class="num" size="4" value="@qosTVIPAddr2#" maxlength="3" tabindex="2">.
+   <input type="text" name="qosTVIPAddr3" class="num" size="4" value="@qosTVIPAddr3#" maxlength="3" tabindex="3">.
+   <input type="text" name="qosTVIPAddr4" class="num" size="4" value="@qosTVIPAddr4#" maxlength="3" tabindex="4">
+  </td>
+ </tr>
+ <tr>
+  <td colspan="2" background="liteblue.gif" height="12"></td>
+ </tr>
+
+ <!-- WPS/Turbo video button select -->
+ <tr>
+  <td colspan="2" align="left" nowrap>
+   <a href="javascript:loadhelp('QOS_turbovideo','buttonsel')" tabindex="-1">
+    <b><span languageCode = "3231">WPS & FastLane Push Button</span></b>
+   </a>
+  </td>
+ </tr>
+ <tr>
+  <td colspan="2">
+   <input type="radio" name="qosTV_buttonsel" value="wps"><span>WPS</span>
+  </td>
+ </tr>
+ <tr>
+  <td colspan="2">
+   <input type="radio" name="qosTV_buttonsel" value="tv"><span languageCode = "3227">FastLane</span>
+  </td>
+ </tr>
+    <tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td></tr>
+
+    <tr><td colspan="2" align="center"></td></tr>
+   </table>
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="QOS_turbovideo.htm">
+<input type="hidden" name="next_file" value="QOS_turbovideo.htm">
+<!-- ServerStart -->
+<input type="hidden" name="h_qosTV_active" value="@h_qosTV_active#">
+<!--
+<input type="hidden" name="h_qosTV_bandwidth" value="@h_qosTV_bandwidth#">
+-->
+<input type="hidden" name="c4_qosTVIPAddr" value="@c4_qosTVIPAddr#">
+<input type="hidden" name="h_qosTV_buttonsel" value="@h_qosTV_buttonsel#">
+<!-- ServerEnd -->
+<input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="QOS_turbovideo_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

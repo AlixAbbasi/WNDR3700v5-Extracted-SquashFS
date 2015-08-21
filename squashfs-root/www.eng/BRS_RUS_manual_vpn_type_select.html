@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/hijack_03A_wanInput.css" type=text/css rel=stylesheet><LINK href="style/RU_staticIP.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/funcs.js" type=text/javascript></SCRIPT>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+<!--
+
+function getSelected(sel_obj)  // single select. Returns value. If value blank, return text
+{
+	var index = sel_obj.selectedIndex;
+	if (index >= 0)
+		return (sel_obj.options[index].value != "") ? sel_obj.options[index].value : sel_obj.options[index].text;
+	else return "";
+}
+
+function check_before_post()
+{
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[0];
+
+	var vpn_var = getSelected(cf.vpn_type);
+
+	//set tmp wan mode
+	cf.brs_rus_wan_mode.value = vpn_var;
+
+	if(vpn_var == "pptpc")
+	{
+		cf.next_file.value = "BRS_RUS_manual_pptp_account.html";
+	}else
+	if(vpn_var == "l2tp")
+	{
+		cf.next_file.value = "BRS_RUS_manual_l2tp_account.html";
+	}else
+	if(vpn_var == "pppoe")
+	{
+		cf.next_file.value = "BRS_RUS_manual_pppoe_account.html";
+	}
+
+	cf.submit();
+
+	return true;
+}
+
+function initPage()
+{
+
+	var btns_container_div1 = document.getElementById("btnsContainer_div1");
+	var btns_container_div2 = document.getElementById("btnsContainer_div2");
+	btns_container_div1.onclick = function()
+	{
+		location.href = "BRS_RUS_manual_need_account_check.html";		
+	}
+	btns_container_div2.onclick = function()
+	{
+		return check_before_post();
+	}
+}
+
+addLoadEvent(initPage);
+-->
+</script>
+</HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+<H1><span languageCode = "3270">You have chosen "Yes". That means you have a VPN connection, which could be PPTP, L2TP or PPPoE type depending on the ISP. If you do not know what VPN type your ISP is using, you may call your ISP support or check it on a PC directly connected to Internet by clicking "Details" in the Status page of your VPN connection.</span></H1>
+<DIV class=wanInput_content_div>
+<DIV>
+	<select name="vpn_type" id="vpn_sel" onClick="">
+		<option value="pptpc">PPTP</option>
+		<option value="l2tp">L2TP</option>
+		<option value="pppoe">PPPOE</option>
+	</select>
+</DIV>
+<DIV style="CLEAR: both"></DIV>
+</DIV>
+</DIV>
+</DIV>
+<table width="100%">
+<tr>
+<td>
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=btnsContainer_div1><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "3020">Back</span></DIV></DIV>
+<DIV class=buttons_img_div id=btnsContainer_div2><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span></DIV></DIV>
+</DIV>
+</td>
+</tr>
+</table>
+<input type="hidden" name="brs_rus_wizard_mode" value="manual">
+<input type="hidden" name="todo" value="save">
+<input type="hidden" name="this_file" value="BRS_RUS_manual_vpn_type_select.html">
+<!--Default value is pptp-->
+<input type="hidden" name="next_file" value="BRS_RUS_manual_pptp_account.html">
+<input type="hidden" name="brs_rus_wan_mode" value="pptpc">
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

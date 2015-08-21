@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/RU_staticIP.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+<SCRIPT language=javascript src="script/funcs.js" type=text/javascript></SCRIPT>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+<!--
+function initPage()
+{
+	var btns_container_div1 = document.getElementById("btnsContainer_div1");
+	btns_container_div1.onclick = function()
+	{
+		return quit_wizard();
+	}
+	var btns_container_div2 = document.getElementById("btnsContainer_div2");
+	btns_container_div2.onclick = function()
+	{
+		return go_manual_wiz();
+	}
+	/*
+	var btns_container_div3 = document.getElementById("btnsContainer_div3");
+	btns_container_div3.onclick = function()
+	{
+		return go_3G_wiz();
+	}
+	*/
+}
+function go_manual_wiz()
+{
+	this.location.href = "BRS_RUS_manual_need_account_check.html";
+}
+
+function quit_wizard()
+{
+	top.location.href = "BRS_start.htm";
+}
+/*
+function go_3G_wiz()
+{
+	var forms = document.getElementsByTagName("form");
+      var cf = forms[0];
+
+      showFirmVersion("none");
+      cf.submit();
+
+      return true;
+}
+*/
+addLoadEvent(initPage);
+-->
+</script>
+</HEAD>
+<BODY>
+<FORM action="setup.cgi@post_par#" method=post>
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div>
+<H1><span languageCode = "3291">Router has failed connecting to the internet. The cause might be in wrong input settings, ISP downtime, settings changes made by ISP (which are not correspond to the ones stored in router) or incorrectly chosen ISP connection type (if your ISP has different types of connection). Choose "Configuration manually" to reconfigure your router's internet connection manually. Choose "Configure later" to quit wizard.</span></H1>
+@hsdpa_hide_3g_s#
+<P><span languageCode = "3477">This router is also capable of connecting to 3G/4G Mobile Network. If you have a supported 3G/4G mobile broadband adapter, you can use the Setup Mobile Broadband button below to run the wizard.</span></P>
+@hsdpa_hide_3g_e#
+<br>
+<br>
+<br>
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=btnsContainer_div1><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode="3293">Configure later</span></DIV></DIV>
+<DIV class=small_buttons_split ></DIV>
+<DIV class=buttons_img_div id=btnsContainer_div2><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode="3292">Configuration manually</span></DIV></DIV>
+@hsdpa_hide_3g_s#
+<DIV class=small_buttons_split ></DIV>
+<DIV class=buttons_img_div id=btnsContainer_div3><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode="3476">Setup Mobile Broadband</span></DIV></DIV>
+@hsdpa_hide_3g_e#
+</DIV>
+</DIV>
+</DIV>
+<input type="hidden" name="h_sysWAN_conn_method" value="2">
+<input type="hidden" name="todo" value="wizard_3g_setup">
+<input type="hidden" name="this_file" value="BRS_RUS_auto_wiz_fail.html">
+<input type="hidden" name="SID" value="@SID#">
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

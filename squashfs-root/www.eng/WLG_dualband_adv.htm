@@ -1,0 +1,676 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta name="description" content="@model_name#_multilangual">
+<title>NETGEAR Router @model_name#</title>
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<link rel="stylesheet" href="style/form.css">
+<script language="javascript" type="text/javascript" src="funcs.js"></script>
+<!-- link rel="stylesheet" href="form.css" -->
+<style type="text/javascript">
+	classes.num.all.fontFamily = "Courier";
+	classes.num.all.fontSize = "10pt" ;
+</style>
+<script language="javascript" type="text/javascript" src="utility.js"></script>
+<script language="javascript" type="text/javascript" src="linux.js"></script>
+<script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+var NTP_isOK = 0;
+var wps_mode = "@wps_mode#";
+
+function check_network_name(netName)
+{
+	var i, num;
+	var msg = "";
+    if(netName.length == 0)
+    {
+        msg = getErrorMsgByVar("gsm_msg_dev_name_blank");
+        return msg;
+    }
+	for (num = 0, i = 0; i < netName.length; i++) {
+		var c = netName.charAt(i);
+		if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')
+			|| (c >= 'A' && c <= 'Z') || c == '-')) {
+			    msg += (c +" ");
+			}
+	}
+	if (msg.length >= 1)
+	{
+		msg = getErrorMsgByVar("gsm_msg_usb_inv_char_network_name") + msg;
+		return msg;
+	}
+
+	return msg;
+}
+
+function default_turnoff()
+{
+	var cf = document.forms[0];
+	var year = @rt_now_year#;
+	if(year >= 2010)
+		NTP_isOK = 1; //if NTP doesn't work, wifi schedule should gray-out
+
+    // 2.4G Hz
+	if(cf.h_wireless_schedule.value == "enable")
+	{
+		cf.wireless_schedule.checked=true;
+		document.getElementById("turnOff_WS").style.color = "black";
+	}
+	else
+    {
+		cf.wireless_schedule.checked=false;
+		document.getElementById("turnOff_WS").style.color = "gray";
+	}
+	if(cf.h_enable_ap.value=="enable")
+		cf.enable_ap.checked=true;
+	else
+		cf.enable_ap.checked=false;
+	if(NTP_isOK == 1)
+	{
+		dis_turnoff();
+	}
+	else
+	{
+		cf.wireless_schedule.disabled = true;
+		cf.add_period.disabled = true;
+		cf.edit_period.disabled = true;
+		cf.delete_period.disabled = true;
+	}
+
+    // 5G Hz
+	if(cf.h_wireless_schedule_an.value == "enable")
+	{
+		cf.wireless_schedule_an.checked=true;
+		document.getElementById("turnOff_WS_an").style.color = "black";
+	}
+	else
+    {
+		cf.wireless_schedule_an.checked=false;
+		document.getElementById("turnOff_WS_an").style.color = "gray";
+	}
+	if(cf.h_enable_ap_an.value=="enable")
+		cf.enable_ap_an.checked=true;
+	else
+		cf.enable_ap_an.checked=false;
+	if(NTP_isOK == 1)
+	{
+		dis_turnoff_an();
+	}
+	else
+	{
+		cf.wireless_schedule_an.disabled = true;
+		cf.add_period_an.disabled = true;
+		cf.edit_period_an.disabled = true;
+		cf.delete_period_an.disabled = true;
+	}
+
+}
+
+function dis_turnoff()
+{
+	var cf = document.forms[0];
+	if(cf.enable_ap.checked==false && NTP_isOK == 1)
+	{
+		cf.wireless_schedule.checked = false;
+		cf.wireless_schedule.disabled = true;
+		document.getElementById("turnOff_WS").style.color = "gray";
+		cf.add_period.disabled = true;
+		cf.edit_period.disabled = true;
+		cf.delete_period.disabled = true;
+	}
+	if(cf.enable_ap.checked==true && NTP_isOK == 1)
+	{
+		cf.wireless_schedule.disabled = false;
+		document.getElementById("turnOff_WS").style.color = "black";
+		cf.add_period.disabled = false;
+		cf.edit_period.disabled = false;
+		cf.delete_period.disabled = false;
+	}
+}
+function dis_turnoff_an()
+{
+	var cf = document.forms[0];
+	if(cf.enable_ap_an.checked==false && NTP_isOK == 1)
+	{
+		cf.wireless_schedule_an.checked = false;
+		cf.wireless_schedule_an.disabled = true;
+		document.getElementById("turnOff_WS_an").style.color = "gray";
+		cf.add_period_an.disabled = true;
+		cf.edit_period_an.disabled = true;
+		cf.delete_period_an.disabled = true;
+	}
+	if(cf.enable_ap_an.checked==true && NTP_isOK == 1)
+	{
+		cf.wireless_schedule_an.disabled = false;
+		document.getElementById("turnOff_WS_an").style.color = "black";
+		cf.add_period_an.disabled = false;
+		cf.edit_period_an.disabled = false;
+		cf.delete_period_an.disabled = false;
+	}
+}
+function schedule_add(amode)
+{
+    var cf = document.forms[0];
+    if(amode == 0)
+    {
+        cf.nBand.value= "24G";
+        cf.todo.value="schedule_add";
+        cf.submit();
+    }
+    else
+    {
+        cf.nBand.value= "5G";
+        cf.todo.value="schedule_add";
+        cf.submit();
+    }
+     return true ;
+}
+
+function checkData( save_only )
+{
+	var cf = document.forms[0];
+	var msg = "";
+
+	if(!showWpsAlert()) return false;
+	if(checkInt(cf.frag, "", 256, 2346, true).length > 0)
+	{
+		msg += getErrorMsgByVar("gsm_msg_wls_fragm_throd");
+	}
+	if(checkInt(cf.rts, "", 1, 2347, true).length > 0)
+	{
+		msg += 	getErrorMsgByVar("gsm_msg_wls_crts_throd");
+	}
+	if(checkInt(cf.frag_an, "", 256, 2346, true).length > 0)
+	{
+		msg += getErrorMsgByVar("gsm_msg_wls_fragm_throd");
+	}
+	if(checkInt(cf.rts_an, "", 1, 2347, true).length > 0)
+	{
+		msg += 	getErrorMsgByVar("gsm_msg_wls_crts_throd");
+	}
+	if(checkInt(cf.max_pin_failed, "", 1, 10, true).length > 0)
+	{
+		msg += 	getErrorMsgByVar("gsm_msg_invalid");
+	}
+	
+	if(msg.length > 1)
+	{
+		alert(msg);
+		return false;
+	}
+    if(cf.h_wl0_on.value == 0)
+    {
+		//cf.wsc_config.checked = (cf.h_wsc_config.value == "enable");
+	}
+	if(cf.h_wl1_on.value == 0)
+    {
+		//cf.wsc_config_an.checked = (cf.h_wsc_config_an.value == "enable");
+	}
+	dataToHidden(cf);
+	cf.h_ruleSelect_an.value = getRadioCheckedValue(cf.priod_select_an);
+	cf.ruleSelect_an.value = getRadioCheckedValue(cf.priod_select_an);
+	cf.ruleSelect.value = getRadioCheckedValue(cf.priod_select);
+	cf.h_ruleSelect.value = getRadioCheckedValue(cf.priod_select);
+
+	//alertR("LLLLLLLLLLLLLLLLLLLLL");
+	if( save_only == 1)
+		cf.save_only.value = "1";
+	else
+		cf.save_only.value = "0";
+
+//	if ( save_only == 1)
+//		return true;
+
+	return true;
+}
+
+var idx_number = 2; //parseInt("@h_idxn#");
+var idx_name_all = "802.11G,802.11N";
+var idx_nameArr = idx_name_all.split(",");
+if( idx_nameArr.length!= idx_number)
+	idx_nameArr=Array(idx_number); //prevent error
+if( idx_nameArr.length != idx_number){
+	alert("MAJOR ERROR: nvram pvcn:" + idx_number + "does not match with idx_names:" + idx_nameArr.length + "!");
+}
+autoNameIDX(); //preven ssidX without a name
+
+function autoNameIDX(){
+	var n;
+	for (n=0 ; n<idx_nameArr.length ; n++ ){
+		if ( idx_nameArr[n].length==0){
+			idx_nameArr[n] = "UnnamedIf"+(n+1);
+		}
+	}
+}
+
+function show_idx()
+{
+	var cf = document.forms[0];
+	cf.idx_num.options.length=0;//flush out all the items
+
+	for(i=0;i<idx_nameArr.length;i++){
+		cf.idx_num.options[i] = new Option(idx_nameArr[i], (i) +"");
+	}
+}
+
+function init()
+{
+	var cf = document.forms[0];
+
+	if(cf.h_pin_enable.value == "enable"){
+		document.getElementById("wPIN1").style.color = "black";
+		document.getElementById("wPIN2").style.color = "black";
+		document.getElementById("div_wps_auto_lockdown").style.display = "block";
+	}else{
+		document.getElementById("wPIN1").style.color = "gray";
+		document.getElementById("wPIN2").style.color = "gray";
+		document.getElementById("div_wps_auto_lockdown").style.display = "none";
+	}
+	if(cf.wifi_btn_on.value == "0"){
+		document.getElementById("btn_off_warning").style.display = "block";
+		document.getElementById("btn_off_warning").style.color = "gray";
+		document.getElementById("btn_off_warning_an").style.display = "block";
+		document.getElementById("btn_off_warning_an").style.color = "gray";
+		cf.enable_ap.disabled = true;
+		cf.enable_ap.style.color = "gray";
+		cf.enable_ap_an.disabled = true;
+		cf.enable_ap_an.style.color = "gray";
+	} else {
+		document.getElementById("btn_off_warning").style.display = "none";
+		document.getElementById("btn_off_warning_an").style.display = "none";
+		cf.enable_ap.disabled = false;
+		cf.enable_ap.style.color = "black";
+		cf.enable_ap_an.disabled = false;
+		cf.enable_ap_an.style.color = "black";
+	}
+
+	if(wps_mode == "disabled"){
+	document.getElementById("wPIN1").style.color = "gray";
+	document.getElementById("wPIN2").style.color = "gray";
+	cf.pin_enable.disabled = true;
+	cf.wps_auto_lockdown.disabled = true;
+	cf.max_pin_failed.disabled = true;
+	cf.wsc_config.disabled = true;
+	//cf.wsc_config.checked = false ;
+	cf.wsc_config_an.disabled = true;
+	//cf.wsc_config_an.checked = false ;
+	}
+}
+function showWpsAlert()
+{
+	var cf = document.forms[0];
+	if(cf.show_wps_alert.value != "0")
+	{
+		alert(getErrorMsgByVar("gsm_msg_wps_in_prog_warn"));
+	    return  false ;
+	}
+	return  true ;
+}
+function edit_wifi_schedule(amode)
+{
+    var cf = document.forms[0];
+    if(amode == 0)
+    {
+        cf.nBand.value= "24G";
+	cf.h_ruleSelect_an.value = getRadioCheckedValue(cf.priod_select_an);
+	cf.ruleSelect_an.value = getRadioCheckedValue(cf.priod_select_an);
+	cf.ruleSelect.value = getRadioCheckedValue(cf.priod_select);
+	cf.h_ruleSelect.value = getRadioCheckedValue(cf.priod_select);
+        radioTable(cf,cf.priod_select,'edit');
+    }
+    else
+    {
+        cf.nBand.value= "5G";
+	cf.h_ruleSelect_an.value = getRadioCheckedValue(cf.priod_select_an);
+	cf.ruleSelect_an.value = getRadioCheckedValue(cf.priod_select_an);
+	cf.ruleSelect.value = getRadioCheckedValue(cf.priod_select);
+	cf.h_ruleSelect.value = getRadioCheckedValue(cf.priod_select);
+        radioTable(cf,cf.priod_select_an,'edit');
+    }
+}
+function setEnablePIN()
+{
+    var cf = document.forms[0];
+	if(cf.pin_enable.checked == true)
+	{
+		document.getElementById("div_wps_auto_lockdown").style.display = "block";
+	} 
+	else
+	{
+		document.getElementById("div_wps_auto_lockdown").style.display = "none";
+	}
+}
+function delete_wifi_schedule(amode)
+{
+    var cf = document.forms[0];
+    if(amode == 0)
+    {
+        cf.nBand.value= "24G";
+        cf.h_ruleSelect.value = getRadioCheckedValue(cf.priod_select);
+        radioTable(cf,cf.priod_select,'delete');
+    }
+    else
+    {
+        cf.nBand.value= "5G";
+        cf.h_ruleSelect_an.value = getRadioCheckedValue(cf.priod_select_an);
+        radioTable(cf,cf.priod_select_an,'delete');
+    }
+}
+function set2GState()
+{
+    var cf = document.forms[0];
+    if(cf.wsc_config.checked == true)
+    {
+        cf.wsc_config.checked = true;
+        cf.wsc_config_an.checked = true;
+    }
+    if(cf.wsc_config.checked == false)
+    {
+        cf.wsc_config.checked = false;
+        cf.wsc_config_an.checked = false;
+    }
+}
+function set5GState()
+{
+    var cf = document.forms[0];
+    if(cf.wsc_config_an.checked == true)
+    {
+        cf.wsc_config.checked = true;
+        cf.wsc_config_an.checked = true;
+    }
+    if(cf.wsc_config_an.checked == false)
+    {
+        cf.wsc_config.checked = false;
+        cf.wsc_config_an.checked = false;
+    }
+}
+
+var wifi_power_percent_last = 1;
+function save_wifi_power_percent_last()
+{
+	var cf = document.forms[0];
+	wifi_power_percent_last = cf.wifi_power_percent.selectedIndex;
+}
+function set_wifi_power_percent()
+{
+    var cf = document.forms[0];
+	if(cf.wifi_power_percent.selectedIndex == 0) /* super wifi */
+	{
+		if(!confirm(getErrorMsgByVar("gsm_msg_super_wifi_warning")))  
+		{
+			cf.wifi_power_percent.selectedIndex = wifi_power_percent_last;
+		}
+	}
+}
+var wifi_power_percent_last1 = 1;
+function save_wifi_power_percent_last1()
+{
+	var cf = document.forms[0];
+	wifi_power_percent_last1 = cf.wifi_power_percent1.selectedIndex;
+}
+function set_wifi_power_percent1()
+{
+    var cf = document.forms[0];
+	if(cf.wifi_power_percent1.selectedIndex == 0) /* super wifi */
+	{
+		if(!confirm(getErrorMsgByVar("gsm_msg_super_wifi_warning")))  
+		{
+			cf.wifi_power_percent1.selectedIndex = wifi_power_percent_last1;
+		}
+	}
+}
+
+function loadmenu()
+{
+//	top.contents.location.href="./@menupage#";
+//	return true;
+	if(top.is_advindex_pg==1)
+    {
+		top.load_menu('ap');
+        top.load_menu('wps');
+    }
+}
+//WPS_end
+// -->
+</script>
+</head>
+<body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);init();document.forms[0].elements[0].focus();default_turnoff();loadmenu();">
+<form method="POST" action="setup.cgi@post_par#" onSubmit="buttonToDisabled(document.forms[0])">
+<div class="page_title" languageCode="846">Advanced Wireless Settings</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2">
+<tr><td nowrap colspan="2" align="center">
+<input class="cancel_bt" type="button" value = "Cancel" onclick='location.href="WLG_dualband_adv.htm";' languageCode="51">
+&nbsp;
+<input class="apply_bt" type="SUBMIT" name="Apply" value = "Apply" onClick="return checkData(0);" languageCode="50">
+</td></tr>
+</table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr><td colspan="2">
+<a href="javascript:loadhelp('WLG_adv','settings')" tabindex="-1">
+<b languageCode="905">Wireless Settings</b><b> (2.4GHz b/g/n)</b></a>
+</td></tr>
+<tr><td colspan="2">
+<input type="checkbox" name="enable_ap" value="enable_ap" onClick="dis_turnoff()">
+<span languageCode="887">Enable Wireless Router Radio</span>
+<div id="btn_off_warning">(<span languageCode="3617">This action is currently disabled until the wireless On/Off button is pressed</span>)</div>
+</td></tr>
+
+<tr><td class="hlc"><span languageCode="889">Fragmentation Length (256-2346)</span></td>
+		<td class="hrc"><input type="text" name="frag" size="5" maxlength="4" value="@frag#"></td>
+	</tr><tr><td><span languageCode="890">CTS/RTS Threshold (1-2347)</span></td>
+		<td align="left"><input type="text" name="rts" size="5" maxlength="4" value="@rts#"></td>
+	</tr><tr><td align="left"><span languageCode="893">Preamble Mode</span></td>
+		<td align="left">
+		<select name="enable_shortpreamble">
+		<option value="1" selected languageCode="894">Long Preamble</option>
+		<option value="2" languageCode="895">Short Preamble</option></select></td>
+	</tr>
+	<tr><td align="left" style="@tx_power_control_show_hide#"><span languageCode="3616">Transmit Power Control</span></td>
+		<td align="left">
+		<select name="wifi_power_percent" style="@tx_power_control_show_hide#" value= "wifi_power_percent" onClick="save_wifi_power_percent_last()" onChange="set_wifi_power_percent()">
+@hidden_only_pr_s#
+		<option value="120">Super WiFi</option>
+@hidden_only_pr_e#
+		<option value="100" selected>100%</option>
+		<option value="75">75%</option>
+		<option value="50">50%</option>
+		<option value="25">25%</option>
+		</select>
+		</td>
+	</tr>
+	<tr><td colspan="2">
+	   <div ID="turnOff_WS">
+	   <input type="checkbox" name="wireless_schedule">
+	   <b languageCode="3314">Turn off wireless signal by schedule</b>
+	   <br/>
+	   <b languageCode="3315">The wireless signal is scheduled to turn off during the following time period:</b></div></td>
+    </tr>
+    <tr><td colspan="2" align="center">
+        <div ID="wifi_sched_rules">
+		<TABLE id="WirelessOnOff" class="tables" border="0" cellpadding="2" cellspacing="0" width="100%">
+			<TR class="table_header">
+				<td nowrap align="center"><span class="thead" languageCode="1085">Period</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="360">Start</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="364">End</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="3316">Recurrence Pattern</span></td>
+			</tr>
+			@schedule_rule#
+		</table>
+	    </div>
+	</td>
+	</tr>
+	<tr><td colspan="2" align="center">
+		<table border="0" cellpadding="0" cellspacing="3" width="80%">
+			<tr>
+				<td width="20%"></td>
+				<td nowrap="nowrap"><input class="long_long_add_bt" type="button" name="add_period" value="Add a new period" languageCode="3317"  onClick="schedule_add(0)">
+	&nbsp;
+	<input class="edit_bt" type="button" name="edit_period" value="Edit" languageCode="147" onClick="edit_wifi_schedule(0)">
+	&nbsp;
+	<input class="delete_bt" type="button" name="delete_period" value="Delete" languageCode="148" onClick="delete_wifi_schedule(0)"></td>
+			</tr>
+		</table>
+	</td>
+	</tr>
+	<tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr>
+	<tr><td colspan="2">
+	<a href="javascript:loadhelp('WLG_adv','settings')" tabindex="-1">
+	<b languageCode="905">Wireless Settings</b><b> (5GHz @5g_supp_info#)</b></a></td>
+	</tr>
+	<tr><td colspan="2">
+	<input type="checkbox" name="enable_ap_an" value="enable_ap_an" onClick="dis_turnoff_an()">
+	<span languageCode="887">Enable Wireless Router Radio</span>
+		<div id="btn_off_warning_an">(<span languageCode="3617">This action is currently disabled until the wireless On/Off button is pressed</span>)</div>
+	</td></tr>
+	<tr><td class="hlc"><span languageCode="889">Fragmentation Length (256-2346)</span></td>
+		<td class="hrc">
+		<input type="text" name="frag_an" size="5" maxlength="4" value="@frag_an#"></td>
+	</tr><tr><td><span languageCode="890">CTS/RTS Threshold (1-2347)</span></td>
+		<td align="left">
+		<input type="text" name="rts_an" size="5" maxlength="4" value="@rts_an#"></td>
+	</tr><tr><td align="left"><span languageCode="893">Preamble Mode</span></td>
+		<td align="left">
+		<select name="enable_shortpreamble_an">
+		<option value="1" selected languageCode="894">Long Preamble</option>
+		<option value="2" languageCode="895">Short Preamble</option></select></td>
+	</tr>
+	<tr><td align="left" style="@tx_power_control_show_hide#"><span languageCode="3616">Transmit Power Control</span></td>
+		<td align="left">
+		<select name="wifi_power_percent1" style="@tx_power_control_show_hide#" value= "wifi_power_percent1" onClick="save_wifi_power_percent_last1()" onChange="set_wifi_power_percent1()">
+@hidden_only_pr_s#
+		<option value="120">Super WiFi</option>
+@hidden_only_pr_e#
+		<option value="100" selected>100%</option>
+		<option value="75">75%</option>
+		<option value="50">50%</option>
+		<option value="25">25%</option>
+		</select>
+		</td>
+	</tr>
+	<tr><td colspan="2">
+	   <div ID="turnOff_WS_an">
+	   <input type="checkbox" name="wireless_schedule_an">
+	   <b languageCode="3314">Turn off wireless signal by schedule</b>
+	   <br/>
+	   <b languageCode="3315">The wireless signal is scheduled to turn off during the following time period:</b>
+	   </div></td>
+    </tr><tr><td colspan="2" align="center">
+        <div ID="wifi_sched_rules">
+		<TABLE id="WirelessOnOff5G" class="tables" border="0" cellpadding="2" cellspacing="0" width="100%">
+			<TR class="table_header">
+				<td nowrap align="center"><span class="thead" languageCode="1085">Period</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="360">Start</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="364">End</span></td>
+				<td nowrap align="center"><span class="thead" languageCode="3316">Recurrence Pattern</span></td>
+			</tr>
+			@schedule_rule_an#
+		</table>
+	    </div>
+	</td>
+	</tr><tr><td colspan="2" align="center">
+		<table border="0" cellpadding="0" cellspacing="3" width="80%">
+			<tr>
+				<td width="20%"></td>
+				<td nowrap="nowrap"><input class="long_long_add_bt" type="button" name="add_period_an" value="Add a new period" languageCode="3317"  onClick="schedule_add(1)">
+	&nbsp;
+	<input class="edit_bt" type="button" name="edit_period_an" value="Edit" languageCode="147" onClick="edit_wifi_schedule(1)">
+	&nbsp;
+	<input class="delete_bt" type="button" name="delete_period_an" value="Delete" languageCode="148" onClick="delete_wifi_schedule(1)"></td>
+			</tr>
+		</table>
+	</td>
+	</tr>
+	<!--WPS--><!-- RULE --><tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><td colspan="2"><a href="javascript:loadhelp('WLG_adv','wps')" tabindex="-1">
+	<b languageCode="44">WPS Settings</b></a></td>
+	<tr><td>
+		<div id="wPIN1"><span languageCode="46">Router's PIN</span>:</div>
+		</td>
+		<td>
+		<div id="wPIN2"><b><font size="4">@routerPIN#</font></b></div>
+		</td>
+	</tr><tr><td colspan="2"><input type="checkbox" name="pin_enable" value="pin_enable" onClick="setEnablePIN();">@router_pin_message#</td></tr>
+	<tr><td colspan="2">
+	<div id="div_wps_auto_lockdown" style="display:block">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="wps_auto_lockdown" value="wps_auto_lockdown"><span languageCode="1302">To prevent PIN compromise, auto disable the PIN after</span><input type="text" name="max_pin_failed" size="4" maxlength="2" value="@max_pin_failed#"><span languageCode="1303">failed PIN connections, util router reboots.</span>
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span languageCode="1304">In auto disabled mode, router's WPS LED will be keep blinking slowly</span>
+	</div>
+	</td></tr><tr><td colspan="2"><input type="checkbox" name="wsc_config" value="wsc_config" checked onClick="set2GState();">
+	<span languageCode="897">Keep Existing Wireless Settings</span> (2.4GHz b/g/n)</td>
+	</tr><tr><td colspan="2"><input type="checkbox" name="wsc_config_an" value="wsc_config_an" checked onClick="set5GState();"><span languageCode="897">Keep Existing Wireless Settings</span> (5GHz @5g_supp_info#)</td>
+	</tr><!--WPS--><!-- RULE --><tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr>
+	
+	
+</table><!-- ServerStart -->
+
+    <input type="hidden" name="h_enable_ap" value="@h_enable_ap#">
+    <input type="hidden" name="h_enable_ap_an" value="@h_enable_ap_an#">
+    
+
+    <input type="hidden" name="h_enable_shortpreamble" value="@h_enable_shortpreamble#">
+    <input type="hidden" name="h_enable_shortpreamble_an" value="@h_enable_shortpreamble_an#"><!-- WPS -->
+    <input type="hidden" name="h_wifi_power_percent" value="@h_wifi_power_percent#">
+    <input type="hidden" name="h_wifi_power_percent1" value="@h_wifi_power_percent1#">
+    <input type="hidden" name="h_pin_enable" value="@h_pin_enable#">
+    <input type="hidden" name="h_wps_auto_lockdown" value="@h_wps_auto_lockdown#">
+    <input type="hidden" name="h_wsc_config" value="@h_wsc_config#">
+    <input type="hidden" name="h_wsc_config_an" value="@h_wsc_config_an#">
+    <input type="hidden" name="h_wl0_type" value="@h_wl0_type#">
+    <input type="hidden" name="h_authAlgm" value="@h_authAlgm#">
+    <input type="hidden" name="h_wl0_on" value="@h_wl0_on#">
+    <input type="hidden" name="h_wl1_on" value="@h_wl1_on#">
+    <input type="hidden" name="show_wps_alert" value="@show_wps_alert#">
+    <input type="hidden" name="wifi_btn_on" value="@wifi_btn_on#">
+    <!-- ServerEnd -->
+    <input type="hidden" name="h_idx_num" value="@h_idx_num#">
+    <input type="hidden" name="h_wireless_schedule" value="@h_wireless_schedule#">
+    <input type="hidden" name="h_wireless_schedule_an" value="@h_wireless_schedule_an#">
+    <input type="hidden" name="save_only" value="sss">
+    <input type="hidden" name="todo" value="save">
+    <input type="hidden" name="this_file" value="WLG_dualband_adv.htm">
+    <input type="hidden" name="next_file" value="WLG_dualband_adv.htm">
+    <input type="hidden" name="ruleSelect" value="">
+    <input type="hidden" name="ruleSelect_an" value="">
+    <!--input type="hidden" name="h_ruleSelect" value="@h_ruleSelect#">
+    <input type="hidden" name="h_ruleSelect_an" value="@h_ruleSelect_an#"-->
+     <input type="hidden" name="h_ruleSelect" value="">
+    <input type="hidden" name="h_ruleSelect_an" value="">
+    <input type="hidden" name="nBand" value="">
+    <input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="WLG_adv_h.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

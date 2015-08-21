@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML><HEAD><TITLE>NETGEAR Router @model_name#</TITLE>
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Expires" CONTENT="Mon, 06 Jan 1990 00:00:01 GMT">
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK href="style/hijack_style.css" type=text/css rel=stylesheet><LINK href="style/hijack_02_genieHelp.css" type=text/css rel=stylesheet><LINK href="style/RU_staticIP.css" type=text/css rel=stylesheet>
+<SCRIPT language=javascript src="script/brs_hijack.js" type=text/javascript></SCRIPT>
+
+<script language="javascript" type="text/javascript" src="string.js"></script>
+<SCRIPT language=javascript type=text/javascript>
+var wan_mode = "@brs_rus_wan_mode#"
+function initPage()
+{
+	var btns_container_div1 = document.getElementById("btnsContainer_div1");
+	var btns_container_div2 = document.getElementById("btnsContainer_div2");
+	btns_container_div1.onclick = function()
+	{
+		if(wan_mode == "pppoe")
+			location.href = "BRS_RUS_manual_pppoe_internet.html";
+		else if(wan_mode == "pptpc")
+			location.href = "BRS_RUS_manual_pptp_account.html";
+		else
+			location.href = "BRS_RUS_manual_l2tp_account.html";
+	}
+	btns_container_div2.onclick = function()
+	{
+		return genieHelpChecking();
+	}
+}
+function genieHelpChecking()
+{
+	var choices_div = document.getElementById("choices_div");
+	var choices = choices_div.getElementsByTagName("input");
+	var forms = document.getElementsByTagName("form");
+	var cf = forms[0];
+	if(choices[0].checked)
+	{
+		if(wan_mode == "pppoe")
+		{
+			this.location.href = "BRS_RUS_manual_pppoe_intranet.html";
+		}else
+		{
+			this.location.href = "BRS_RUS_manual_static_ip_input.html";
+		}
+	}
+	else if(choices[1].checked)
+	{
+	    this.location.href= "BRS_RUS_manual_spoof_mac.html";
+	}
+	else
+	{
+		alert(getErrorMsgByVar("bh_select_an_option"));
+		return false;
+	}
+	return true;
+}
+addLoadEvent(initPage);
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM action="setup.cgi?id=@post_par#" method=post>
+
+<DIV class=wizard_content_div>
+<DIV class=wizard_words_div id=choices_div>
+<H1><span languageCode = "3274">Does your ISP provide you local resources? This might include local ftp server, trackers, DC++ hubs, IPTV, etc.</span></H1>
+<DIV class=helpChoice_divs id=choices_div>
+<DIV class=radio_div><INPUT type=radio CHECKED value=0 name=help_choice> <span languageCode = "61">Yes.</span></DIV>
+<DIV class=radio_div><INPUT type=radio value=1 name=help_choice> <span languageCode = "62">No.</span></DIV>
+</DIV></DIV>
+
+<DIV class=wizard_buttons_div id=allBtns_div align=center>
+<DIV class=buttons_img_div id=btnsContainer_div1><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "175">Back</span></DIV></DIV>
+<DIV class=buttons_img_div id=btnsContainer_div2><IMG src="image/ca-little-purple-button.gif">
+<DIV class=buttons_words_div align=center><span languageCode = "25">Next</span></DIV></DIV>
+</DIV></DIV>
+
+<input type="hidden" name="this_file" value="BRS_RUS_manual_ip_type_check.html">
+<input type="hidden" name="SID" value="@SID#">
+</FORM>
+<script language="javascript" type="text/javascript" src="langs.js"></script>
+</BODY></HTML>

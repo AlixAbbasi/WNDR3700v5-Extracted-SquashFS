@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!--
+
+var attached_dev="@attached_dev#";  //0 means no devices attached, 1 means yes
+//var attached_dev="0";
+var is_3g_support = "@is_3g_support#";
+var is_remote = @is_remote#;
+function show_smb_connection(name, ip)
+{
+	var buf = "";
+	var browser = get_browser_type();
+	if (is_remote=="true")
+		buf += '\\\\' + name;
+	else if (browser == 'ie')
+		buf += '<a href="\\\\' + name +'" class="cnA" target="_blank">\\\\' + name + '</a>';
+	else if (browser == "safari")
+		buf += '<a href="smb://' + ip + '/" class="cnA" target="_blank">\\\\' + name + '</a>';
+	else
+		buf += '\\\\' + name;
+	document.write(buf);
+}
+
+function button_grey()
+{
+	var cf = document.forms[0];
+    if (attached_dev == 0) {
+	cf.safeRemove.disabled = true;
+	}
+	else
+	cf.safeRemove.disabled = false;
+
+}
+
+function init()
+{
+	var cf = document.forms[0];
+	dataToVisible(cf);
+	cf.elements[0].focus();
+	button_grey();
+	cf.usb_serv_type[0].checked = true;
+}
+
+function remove_dev()
+{
+        var cf = document.forms[0];
+        var msg = "setup.cgi?next_file=remove_usb_dev.htm&usb_opener_htm="+cf.this_file.value;
+        openDataSubWin(msg, usbFLDsub );
+}
+
+function print_all_dir()
+{
+	var all_dir = "@ava_network_folders#";
+	var dir_array = all_dir.split('\x02');
+	var len = dir_array.length - 1;
+	var direc_item;
+	var i;
+
+	for(i = 0; i < len; i++)
+	{
+		direc_item = dir_array[i].split('\x01');
+		if(direc_item[0] == '0')
+		{
+			document.write("<tr>\n");
+			document.write("<td class='usbLL' nowrap><a href='setup.cgi?next_file=usb_adv.htm&todo=cfg_init' class='cnA' target='_self'> Not Shared</a></td>\n");
+			document.write("<td class='usbLL' width='150'>&nbsp;</td>\n");
+			document.write("<td class='usbLL' width='150'>&nbsp;</td>\n");
+			document.write("<td class='usbLL' width='100'>"+direc_item[1]+"</td>\n");
+			document.write("<td class='usbLL' width='150'>"+direc_item[2]+"</td>\n");
+			document.write("<td class='usbLL' width='80'>"+direc_item[3]+"</td>\n");
+			document.write("<td class='usbLL' width='80'>"+direc_item[4]+"</td></tr>\n");
+		}
+		else
+		{
+			document.write("<tr>\n ");
+			document.write(" <td class='usbLL'><script> show_smb_connection('"+direc_item[1]+"\\\\"+direc_item[2]+"', '"+direc_item[3]+"') </script></td>\n");
+			document.write(" <td class='usbLL' width='150'>"+direc_item[4]+"</td>\n");
+			document.write(" <td class='usbLL' width='150'>"+direc_item[5]+"</td>\n");
+			document.write("<td class='usbLL' width='100'>"+direc_item[6]+"</td>\n");
+			document.write("<td class='usbLL' width='150'>"+direc_item[7]+"</td>\n");
+			document.write("<td class='usbLL' width='80'>"+direc_item[8]+"</td>\n");
+			document.write("<td class='usbLL' width='80'>"+direc_item[9]+"</td></tr>\n");
+		}
+	}
+
+}
+
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="init();">
+<form name="usb_basic" method="post" action="setup.cgi@post_par#">
+<div class="page_title" languageCode="795">USB Storage (Basic Settings)</div>
+<div class="fix_button">
+</div>
+
+
+<div id="main" class="main_top_button">
+
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+
+<script type="text/javascript">
+var readyShareSupportedLevel=@readysharesupportlevel#;
+
+if( readyShareSupportedLevel >1 )
+{
+	document.write('<tr><td nowrap="nowrap"><input type="radio" name="usb_serv_type" value="0" /><span languageCode = "3021">Basic</span></td></tr>');
+
+	//if( readyShareSupportedLevel == 3 || readyShareSupportedLevel == 7 || readyShareSupportedLevel == 29)
+		//document.write("<tr><td nowrap=\"nowrap\"><input type=\"radio\" name=\"usb_serv_type\" value=\"1\" onclick=\"location.href='RMT_invite.htm';\" />ReadySHARE Cloud (Allows you to access ReadySHARE Storage from anywhere.)</td></tr>");
+	if( readyShareSupportedLevel == 29)
+		document.write('<tr><td nowrap="nowrap"><input type="radio" name="usb_serv_type" value="4" onclick="location.href=\'Readyshare_remote.htm\';" /><span languageCode = "9999">ReadyCLOUD (Allows you to access ReadySHARE Storage from anywhere)</span></td></tr>');
+	
+	if( readyShareSupportedLevel == 5 || readyShareSupportedLevel == 7 || readyShareSupportedLevel == 13 || readyShareSupportedLevel == 29)
+		document.write('<tr><td nowrap="nowrap"><input type="radio" name="usb_serv_type" value="2" onclick="location.href=\'RMT_print.htm\';" /><span languageCode = "3208">ReadySHARE Printer</span></td></tr>');
+	
+	if( readyShareSupportedLevel == 8 || readyShareSupportedLevel == 13 || readyShareSupportedLevel == 29)
+		document.write('<tr><td nowrap="nowrap"><input type="radio" name="usb_serv_type" value="3" onclick="location.href=\'RMT_vault.htm\';" /><span languageCode = "4020">ReadySHARE Vault</span></td></tr>');
+
+	//document.write('<TR><TD colspan="20"><img src=liteblue.gif width=100%% height="12"></TD></TR>');
+	document.write('<tr><td colspan="2" background="liteblue.gif" height="12"></td></tr>');
+}
+</script>
+
+<tr><td><a href="javascript:loadhelp('_usb_basic','NetworkName')" tabindex="-1"> <b languageCode="765">Network/Device Name</b> </a>:</td></tr>
+		<script type="text/javascript">
+	document.write("<td class=\"hrc\" align=\"left\">")
+	if(WhichBrowser()==1){
+		document.write("<a href=\"\\\\@deviceName#\" class=\"cnA\" target=\"_blank\">	\\\\@deviceName#	");
+	}else if(WhichBrowser()==2){
+		document.write("\\\\@deviceName#");
+	}else if(WhichBrowser()==3){
+		document.write("<a href=\"smb:\/\/@deviceName#\" class=\"cnA\" target=\"_blank\">smb:\/\/@deviceName#");
+	}else{
+		document.write("<a class=\"cnA\" target=\"_blank\">\\\\@deviceName#");
+	}
+
+</script>
+<tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td class="hlc"><a href="javascript:loadhelp('_usb_basic','NetworkFolders')" tabindex="-1"> <b languageCode="782">Available Network Folders</b> </a></td>
+		<td class="hrc"></td>
+	</tr><tr><td colspan="2">
+		<TABLE class="tables" border="0" cellpadding="2" cellspacing="0" width="100%">
+			<TR class="table_header">
+		<th class="usbLL" languageCode = "786">Share Name</th>
+		<th class="usbLL" width="100" languageCode = "787">Read Access</th>
+		<th class="usbLL" width="100" languageCode = "788">Write Access</th>
+		<th class="usbLL" width="150" languageCode="189">Folder Name</th>
+		<th class="usbLL" width="150" languageCode = "783">Volume Name</th>
+		<th class="usbLL" width="100" languageCode = "784">Total Space</th>
+		<th class="usbLL" width="100" languageCode = "785">Free Space</th>
+	</tr>
+	<script type="text/javascript">
+	print_all_dir();
+    </script>
+</table></td>
+	</tr><tr><td colspan="2" height="10"></td>
+	</tr><tr><td colspan="2" align="left"><input class="edit_bt" type="button" name="Edit" value=" Edit " onClick="self.location.href='setup.cgi?next_file=usb_adv.htm'" languageCode="147"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td align="left"><input class="long_common_bt" type="button" name="safeRemove" value="Safely Remove USB Device" onClick="remove_dev()" languageCode="790"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr></table><table border="0" cellpadding="0" cellspacing="3" width="100%"><tr><td align="left"><input class="common_bt" type="button" name="refresh" value="Refresh" onClick="self.location.href='setup.cgi?next_file=usb_basic.htm'" languageCode="194"></td>
+	</tr></table><input type="hidden" name="todo" value="save"><input type="hidden" name="this_file" value="usb_basic.htm"><input type="hidden" name="next_file" value="usb_basic.htm"><input type="hidden" name="SID" value="@SID#">
+</div>
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="h_usb_basic.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

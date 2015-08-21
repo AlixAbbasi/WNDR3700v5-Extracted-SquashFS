@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT"><meta name="description" content="WNR2500_multilangual"><title>NETGEAR Router @model_name#</title><script language="javascript" type="text/javascript" src="string.js"></script><link rel="stylesheet" href="style/form.css"><script language="javascript" type="text/javascript" src="funcs.js"></script><!-- link rel="stylesheet" href="form.css" --><script language="javascript" type="text/javascript" src="utility.js"></script><script language="javascript" type="text/javascript" src="linux.js"></script><script language="javascript" type="text/javascript">
+<!-- hide script from old browsers
+
+
+//-->
+</script></head><body bgcolor="#ffffff" onLoad="dataToVisible(document.forms[0]);document.forms[0].elements[0].focus()">
+<form name="formname" method="POST" action="setup.cgi@post_par#">
+<div class="page_title" languageCode="466">Setup Wizard</div>
+<div class="fix_button">
+<table width="100%" border="0" cellpadding="0" cellspacing="2"><tr><td nowrap colspan="2" align="center">
+<input class="apply_bt" type="submit" name="next" value="Apply" onClick="dataToHidden(this.form)" languageCode="50">
+</td></tr></table>
+</div>
+<div id="main" class="main_top_button">
+<table border="0" cellpadding="0" cellspacing="4" width="100%"><tr><td colspan="2"><b languageCode="533">Select the Country and Language</b></td>
+	</tr><tr><td width="50%"><span languageCode="534">Country</span>:</td>
+		<td nowrap width="50%">
+		<select name="country" size="1">
+			@wiz_country#
+		</select></td>
+	</tr><tr><td width="50%"><span languageCode="536">Language</span>:</td>
+		<td nowrap width="50%">
+		<select name="language" size="1" onChange="stdAction(document.forms[0],'changeLang');">
+	            <option value="English">English</option>
+	            <option value="German">Deutsch</option>
+	            <option value="Chinese">ÃÂÃÂ¤ÃÂÃÂ¸ÃÂÃÂ­ÃÂÃÂ¦ÃÂÃÂÃÂÃÂ</option>
+	            <option value="Korean">ÃÂÃÂ­ÃÂÃÂÃÂÃÂÃÂÃÂªÃÂÃÂµÃÂÃÂ­ÃÂÃÂ¬ÃÂÃÂÃÂÃÂ´</option>
+	            <option value="Russian">ÃÂÃÂÃÂÃÂ ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂºÃÂÃÂÃÂÃÂ¸ÃÂÃÂÃÂÃÂ¹</option>
+	            <option value="Spanish">EspaÃÂÃÂÃÂÃÂ±ol</option>
+	            <option value="Polish">Polski</option>
+	            <option value="French">FranÃÂÃÂÃÂÃÂ§ais</option>
+	            <option value="Italian">Italiano</option>
+	            <option value="Swedish">Svenska</option>
+	            <option value="Danish">Dansk</option>
+	            <option value="Dutch">Nederlands</option>
+	            <option value="Greek">ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ»ÃÂÃÂÃÂÃÂ»ÃÂÃÂÃÂÃÂ·ÃÂÃÂÃÂÃÂ½ÃÂÃÂÃÂÃÂ¹ÃÂÃÂÃÂÃÂºÃÂÃÂÃÂÃÂ¬</option>
+	            <option value="Norwegian">Norsk</option>
+	            <option value="Czech">ÃÂÃÂÃÂÃÂeÃÂÃÂÃÂÃÂ¡tina</option>
+	            <option value="Slovenian">SlovenÃÂÃÂÃÂÃÂ¡ÃÂÃÂÃÂÃÂina</option>
+	            <option value="Portuguese">PortuguÃÂÃÂÃÂÃÂªs</option>
+	            <option value="Hungarian">Magyar</option>
+	            <option value="Romanian">RomÃÂÃÂÃÂÃÂ¢nÃÂÃÂÃÂÃÂ</option>
+	            <option value="Finnish">Suomi</option>
+	            <option value="Slovak">SlovenÃÂÃÂÃÂÃÂin</option>
+		</select></td>
+	</tr><tr><!-- RULE --><td colspan="2" background="liteblue.gif" height="12"></td>
+	</tr><tr><td colspan="2" align="center"></td>
+	</tr></table><input type="hidden" name="this_file" value="modem_wiz_sel.htm"><input type="hidden" name="next_file" value="modem_wiz_sel.htm"><input type="hidden" name="todo" value="change_default"><input type="hidden" name="h_country" value="@h_country#"><input type="hidden" name="h_language" value="@h_language#"><input type="hidden" name="SID" value="@SID#">
+</div>	
+</form>
+
+<div id="help" style="display: none">
+		<iframe name="help_iframe" id="helpframe" src="hmodem_wizard.htm" allowtransparency="true" width="100%" frameborder="0">
+		</iframe>
+</div>
+<div id="help_switch" class="close_help">
+	 <img class="help_switch_img" src="image/help/help-bar.gif"><script>
+var help_flag=0;
+if(isIE()){
+	show_hidden_help_top_button(1);
+	var frame_div = top.document.getElementById("formframe_div");
+	frame_div.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+if(get_browser() == "Opera"){
+	window.onresize =  function(){
+		if(help_flag == 0)  show_hidden_help_top_button(1);
+		else{show_hidden_help_top_button(--help_flag);help_flag++;}
+};}
+</script><div id="help_space" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_center"><span languageCode="3058">Help Center</span></div>
+<div id="help_button" onClick="show_hidden_help_top_button(help_flag); help_flag++;"></div>
+<div id="help_show_hidden"><a href="javascript:void(0)" onClick="show_hidden_help_top_button(help_flag); help_flag++;"><span languageCode="3148">Show/Hide Help Center</span></a></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="langs.js"></script></body></html>

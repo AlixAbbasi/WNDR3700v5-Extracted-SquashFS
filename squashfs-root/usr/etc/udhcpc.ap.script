@@ -1,0 +1,95 @@
+#!/bin/sh
+
+# udhcpc script edited by Tim Riker <Tim@Rikers.org>
+
+[ -z "$1" ] && echo "Error: should be called from udhcpc" && exit 1
+RESOLV_CONF="/etc/resolv.conf"
+[ -n "$broadcast" ] && BROADCAST="broadcast $broadcast"
+[ -n "$subnet" ] && NETMASK="netmask $subnet"
+
+/bin/echo PATH=$PATH
+
+#env > "/var/run/dhcpc.env.$w"
+echo "ap$w: dhcpc $1" > /dev/console 
+
+case "$1" in
+	deconfig|cabledown)
+		/bin/rm /tmp/wan_uptime
+		/usr/sbin/led_app on  30
+		/usr/sbin/led_app off 20
+		/usr/bin/echo 0 > /proc/net/dns_hijack
+		/sbin/ifconfig $interface 0.0.0.0
+		/usr/sbin/rc lan ap_down $w
+		[ -n "$info" ]  &&  /bin/rm  $info
+		;;
+
+	renew|bound)
+		echo "hook.bin $1 $interface $w" > /dev/console	
+		/etc/dhclient-enter-hook.in $1 $interface $w
+#		/usr/sbin/rc lan ap_down $w
+		echo "ifconfig $interface $ip $BROADCAST $NETMASK" > /dev/console
+		/sbin/ifconfig $interface $ip $BROADCAST $NETMASK
+		/bin/rm -f $RESOLV_CONF && /bin/touch $RESOLV_CONF
+		[ -n "$domain" ] && echo search $domain >> $RESOLV_CONF
+		for i in $dns ; do
+			echo adding dns $i
+			echo nameserver $i >> $RESOLV_CONF
+		done
+		/usr/sbin/led_app on 20
+		/usr/sbin/led_app off 30
+		if [ -n "$router" ] ; then
+			echo "deleting routers"
+			while /usr/sbin/route del default gw 0.0.0.0 dev $interface ; do
+				:
+			done
+
+			for i in $router ; do
+				/usr/sbin/route add default gw $i dev $interface
+			done
+		fi
+		if [ "$1" = "bound" ] ; then
+			/bin/cp /proc/uptime /tmp/wan_uptime
+		fi
+		if [ ! -e "/tmp/wan_uptime" ] ; then
+			/bin/cp /proc/uptime /tmp/wan_uptime
+		fi
+		/usr/sbin/rc ntp start
+		/usr/bin/echo $ip > /proc/net/dns_hijack
+
+		#   create info file
+		if [ -n "$info" ] ; then
+			echo "dhcpc" >  $info
+			[ -n "$ip" ] && echo ip $ip >> $info
+			[ -n "$subnet" ] && echo subnet $subnet >> $info
+			if [ -n "$router" ] ; then
+				for i in $router ; do
+					echo route $i >> $info
+				done
+			fi
+			[ -n "$domain" ] && echo domain $domain >> $info
+			for i in $dns ; do
+				echo dns $i >> $info
+			done
+			[ -n "$lease" ] && echo lease $lease >> $info
+			[ -n "$serverid" ] && echo serverid $serverid >> $info
+		fi
+		
+		if [ "$1" = "renew" ]; then
+			if [ "$cfg_update" = "0" ]; then
+				echo "Cfg isn't changed. Don't restart AP\n" > /dev/console 
+			else
+				echo "Cfg is changed. Restart AP\n" > /dev/console 
+				/usr/sbin/rc lan ap_up $w
+			fi
+		else
+			/usr/sbin/rc lan ap_up $w
+		fi
+		
+		;;
+		
+	FAIL)
+		/etc/dhclient-exit-hook.in $1 $interface $w
+		;;
+esac
+
+exit 0
